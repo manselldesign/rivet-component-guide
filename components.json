@@ -1,0 +1,51 @@
+{
+  "components": [
+    {
+      "slug": "accordion",
+      "name": "Accordion",
+      "summary": "A stacked list of titles that each open to show more content.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-14"
+    },
+    {
+      "slug": "badge",
+      "name": "Badge",
+      "summary": "A small label that shows the status or category of something at a glance.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-14",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-4"
+    },
+    {
+      "slug": "alert",
+      "name": "Alert",
+      "summary": "A colored box that tells readers something important about the page or a task.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-14",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-2"
+    },
+    {
+      "slug": "avatar",
+      "name": "Avatar",
+      "summary": "A small circle that shows who a person is, with their photo, initials or the IU trident.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-14",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-3"
+    },
+    {
+      "slug": "billboard",
+      "name": "Billboard",
+      "summary": "A large image paired with a short title, description and links that spotlights one important section of your site.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-14",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=2077-13019"
+    },
+    {
+      "slug": "breadcrumbs",
+      "name": "Breadcrumbs",
+      "summary": "A short trail of links that shows where a page sits in your site and lets people go back up a level.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-15",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-6"
+    }
+  ]
+}

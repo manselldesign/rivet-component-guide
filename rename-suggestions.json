@@ -1,0 +1,10 @@
+{
+  "instructions": "Add one object per token you'd rename. figmaName must match the name in the token guide exactly. Send this file to Jenn; she applies it in Figma and the guide updates.",
+  "suggestions": [
+    {
+      "figmaName": "text/default",
+      "suggestedName": "text/body",
+      "reason": "Example only — delete this entry."
+    }
+  ]
+}

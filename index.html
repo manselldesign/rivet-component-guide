@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rivet 3 Component Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,300..800&family=Roboto+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: rvt-hero-callout (Dark mode) on every page, then one reading column.
+   Index = rvt-text-input + rvt-list-hub (Single List Hub, Compact). Detail = rvt-breadcrumbs + prose built from
+   rvt-alert, rvt-list, rvt-table (Crimson, Default) and rvt-badge. Values come from the Rivet 3 Components (cleaning) Figma variables:
+   Light-mode values on bare :root, Dark-mode values in the dark blocks. Borders use the Dark-mode border/default (#000000) in both. */
+:root{
+  --bg:#ffffff;            /* background/default */
+  --surface:#fdfaf7;       /* background/brand-subtle */
+  --border:#000000;        /* border/default (Dark mode value, per Jenn) */
+  --text:#343c42;          /* text/default */
+  --text-strong:#1f2528;   /* text/strong */
+  --text-brand:#990000;    /* text/brand */
+  --text-accent:#990000;   /* text/accent */
+  --icon-brand:#990000;    /* icon/brand */
+  --icon-default:#343c42;  /* icon/default */
+  --icon-accent:#990000;   /* icon/accent */
+  --text-link-subtle:#343c42;   /* text/link-subtle */
+  --icon-link-subtle:#343c42;   /* icon/link-subtle */
+  --text-brand-strong:#6d0808;  /* text/brand-strong (hover) */
+  --icon-accent-strong:#6d0808; /* icon/accent-strong (hover) */
+  --border-accent-strong:#6d0808; /* border/accent-strong (hover) */
+  --text-muted:#5b646b;
+  --code-bg:#f7f1ea;
+  --table-border:#efdfc8;  /* border/default (rvt-table + rvt-list-hub spec) */
+  --th-bg:#990000;         /* background/table-header */
+  --th-fg:#ffffff;         /* text/table-header */
+  --input-border:#1f2528;  /* component/input/border */
+  --badge-bg:#1f2528;      /* background/inverse */
+  --badge-fg:#ffffff;      /* text/inverse */
+  --input-text:#343c42;   /* component/input/text */
+  --input-focus:#990000;   /* border/accent */
+  /* rvt-alert: background/<status>, text/<status> */
+  --al-default-bg:#fdfaf7; --al-default-title:#990000;
+  --al-info-bg:#f5fcff;    --al-info-title:#004f9e;
+  --al-success-bg:#f5fff6; --al-success-title:#13650b;
+  --al-warning-bg:#fffbf0; --al-warning-title:#1f2528;
+  --al-danger-bg:#fff6f5;  --al-danger-title:#cd210a;
+
+  --font-sans:"Roboto Flex",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --w-normal:350; --w-bold:600; --w-black:700;
+  --page:1400px; --read:800px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1f2528;--surface:#14181a;--border:#000000;--text:#ffffff;--text-strong:#ffffff;--text-brand:#ffffff;--text-accent:#fdfaf7;--text-link-subtle:#fdfaf7;--icon-link-subtle:#fdfaf7;--text-brand-strong:#efdfc8;--icon-accent-strong:#efdfc8;--border-accent-strong:#efdfc8;
+  --icon-brand:#ffffff;--icon-default:#ffffff;--icon-accent:#fdfaf7;--text-muted:#b9b3ac;--code-bg:#14181a;--th-bg:#14181a;--th-fg:#ffffff;--table-border:#000000;
+  --input-border:#faf6ef;--input-text:#faf6ef;--input-focus:#fdfaf7;--badge-bg:#ffffff;--badge-fg:#1f2528;
+  --al-default-bg:#000000;--al-default-title:#ffffff;--al-info-bg:#000000;--al-info-title:#ffffff;
+  --al-success-bg:#000000;--al-success-title:#ffffff;--al-warning-bg:#000000;--al-warning-title:#ffffff;
+  --al-danger-bg:#000000;--al-danger-title:#ffffff;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1f2528;--surface:#14181a;--border:#000000;--text:#ffffff;--text-strong:#ffffff;--text-brand:#ffffff;--text-accent:#fdfaf7;--text-link-subtle:#fdfaf7;--icon-link-subtle:#fdfaf7;--text-brand-strong:#efdfc8;--icon-accent-strong:#efdfc8;--border-accent-strong:#efdfc8;
+  --icon-brand:#ffffff;--icon-default:#ffffff;--icon-accent:#fdfaf7;--text-muted:#b9b3ac;--code-bg:#14181a;--th-bg:#14181a;--th-fg:#ffffff;--table-border:#000000;
+  --input-border:#faf6ef;--input-text:#faf6ef;--input-focus:#fdfaf7;--badge-bg:#ffffff;--badge-fg:#1f2528;
+  --al-default-bg:#000000;--al-default-title:#ffffff;--al-info-bg:#000000;--al-info-title:#ffffff;
+  --al-success-bg:#000000;--al-success-title:#ffffff;--al-warning-bg:#000000;--al-warning-title:#ffffff;
+  --al-danger-bg:#000000;--al-danger-title:#ffffff;
+  color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);font-weight:var(--w-normal);
+  font-size:18px;line-height:28px;-webkit-font-smoothing:antialiased}
+a{color:var(--text-accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
+svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
+.wrap{max-width:var(--page);margin-inline:auto;padding-inline:clamp(16px,5vw,80px)}
+
+/* ---------- rvt-hero-callout, Dark mode ---------- */
+.hero{background:#1f2528;color:#ffffff;padding-top:clamp(48px,8vw,96px)}
+.hero-inner{padding-bottom:clamp(48px,8vw,96px);border-bottom:1px solid #000000}
+.hero-inner>*{max-width:936px}
+.hero .tag{font-family:var(--font-mono);font-size:14px;line-height:14px;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px;color:#ffffff}
+.hero .tag a{color:inherit;text-decoration:none}
+.hero .tag a:hover{text-decoration:underline}
+.hero h1{font-size:clamp(36px,6vw,48px);line-height:1.0834;font-weight:var(--w-black);margin:0;color:#ffffff;text-wrap:balance;font-variation-settings:"opsz" 144}
+.hero .intro{font-size:18px;line-height:28px;margin:20px 0 0;max-width:800px;color:#ffffff}
+.hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:40px}
+.hero :focus-visible{outline-color:#efdfc8}
+/* rvt-hero-callout, Column(s)=2: text column + rvt-card-default (Style=Raised), Dark mode.
+   Card: background/raised #14181a, shadow/md Dark (0 4px 8px black 32%), 32px padding.
+   Tag: tag/sm/regular mono 12/16, text/brand. Title: action/xl/strong SemiBold 20/28 (18/24 mobile), text/strong.
+   Description: body/base/regular 18/28 (16/24 mobile), text/default, 16px above. Columns: 64px gap. */
+.hero-inner>.hero-cols{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:64px;align-items:start}
+.hero-main>*{max-width:936px}
+.hero-card{background:#14181a;box-shadow:0 4px 8px 0 rgb(0 0 0 / 32%);padding:32px;color:#ffffff}
+.hero-card-tag{font-family:var(--font-mono);font-size:12px;line-height:16px;margin:0;padding:0 0 4px 2px;color:#ffffff}
+.hero-card-title{font-size:20px;line-height:28px;font-weight:var(--w-bold);margin:0;color:#ffffff}
+.hero-card-desc{font-size:18px;line-height:28px;margin:0;padding-top:16px;color:#ffffff}
+.hero-card-link{background:none;border:0;padding:0;cursor:pointer;font-family:var(--font-sans);text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:#fdfaf7;font-size:16px;line-height:24px;font-weight:var(--w-bold)}
+.hero-card-link:hover{color:#efdfc8}
+/* rvt-button CTA, Style=Subtle (rivet-source .rvt-button--cta.rvt-button--subtle on .rvt-theme-dark):
+   no border, transparent background; text accent (brand/ultra-light #fdfaf7) -> accent-strong #efdfc8 on hover. */
+.btn.btn-subtle{border-color:transparent;margin-top:16px}
+.hero-card .btn.btn-subtle{padding-left:0;border-left:0}
+.btn.btn-subtle:hover{border-color:transparent;color:#efdfc8}
+.hero-card-msg{margin:8px 0 0;font-size:14px;line-height:20px;color:#ffffff}
+.hero-card-msg:empty{display:none}
+@media (max-width:900px){.hero-inner>.hero-cols{grid-template-columns:1fr;gap:40px}}
+@media (max-width:560px){.hero-card{padding:24px}.hero-card-title{font-size:18px;line-height:24px}.hero-card-desc{font-size:16px;line-height:24px}}
+/* rvt-button: CTA, Normal, Extra-large (Dark mode). Link type External = rvt-arrow-up-right; In-page = rvt-arrow-down */
+.btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 16px;border:1px solid #fdfaf7;color:#fdfaf7;background:transparent;
+  font-family:var(--font-sans);font-size:16px;line-height:24px;font-weight:var(--w-bold);text-decoration:none;white-space:nowrap}
+/* Hover/focus from rivet-source .rvt-button--cta on .rvt-theme-dark: background stays transparent;
+   border + text go from accent (brand-ultra-light #fdfaf7) to accent-strong (brand-light #efdfc8). Focus: 2px accent-strong outline, 2px offset. */
+.btn:hover{background:transparent;border-color:#efdfc8;color:#efdfc8;text-decoration:none}
+.btn:focus-visible{outline:2px solid #efdfc8;outline-offset:2px}
+button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;appearance:none;border-radius:0}
+.prose h2:focus{outline:none}
+.prose h2{scroll-margin-top:24px}
+
+/* ---------- rvt-badge, Strong (list hub badge slot) ----------
+   Default = background/inverse + text/inverse; status styles use background/<status>-strong. SemiBold 14/20, 12px side padding, 4px gap. */
+.badge{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 12px;border-radius:9999px;
+  background:#1f2528;color:#ffffff;font-size:14px;line-height:20px;font-weight:var(--w-bold);white-space:nowrap;
+  /* component/badge/ring: 1px white ring outside every badge, same in Light, Dark and Crimson (matches the build) */
+  box-shadow:0 0 0 1px #ffffff}
+/* rvt-badge Strong colors are fixed across themes: component/badge/<status>-strong-background / -text / -icon */
+.badge svg{width:12px;height:12px;fill:currentColor;flex:none}
+/* rvt-badge Layout=Icon Only: 24 x 24 fixed, border-radius/circle, 12px icon centered; status read out by screen readers */
+.badge{width:24px;padding:0;justify-content:center}
+/* rvt-badge Layout=Default (icon + label): hug width, spacing/12 sides, spacing/4 gap */
+.badge.has-label{width:auto;padding:0 12px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.badge[data-s="ready-for-dev"],.badge[data-s="released"]{background:#13650b;color:#ffffff}
+.badge[data-s="in-review"]{background:#004f9e;color:#ffffff}
+.badge[data-s="in-progress"]{background:#ff9602;color:#1f2528}
+.badge[data-s="deprecated"]{background:#cd210a;color:#ffffff}
+
+/* ---------- rvt-text-input ---------- */
+.field{display:grid;gap:8px;max-width:24rem;min-width:0}
+.field-label{font-size:16px;line-height:20px;font-weight:var(--w-bold);color:var(--text-strong);margin:0}
+/* rvt-text-input, Size=Medium: 40px field, 1px border/strong, Body/small/regular 16/24 text/default, 0 16 0 12 padding;
+   Focus = 2px border/accent ring sitting 2px outside the field. */
+.field input{font-family:var(--font-sans);font-size:16px;line-height:24px;font-weight:var(--w-normal);color:var(--input-text);background:transparent;
+  border:1px solid var(--input-border);border-radius:0;height:40px;padding:0 16px 0 12px;width:100%;-webkit-appearance:none;appearance:none}
+.field input::placeholder{color:var(--text-muted);opacity:1}
+.field input:focus,.field input:focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
+.field input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+
+/* ---------- rvt-list-hub: Single List Hub, Size=Compact (List hub page, local _rvt-list-hub-item) ----------
+   Item: 16px top/bottom, 0 sides, 1px border/default dividers.
+   Tag: Tag/small/regular mono 12/16, text/brand, 24px indent, 4px below.
+   Title row: rvt-arrow-right-12 (12px, icon/strong) in a 16px slot, 8px down desktop / 6px mobile, 8px gap;
+     title SemiBold 20/28 desktop, 18/24 mobile, text/strong.
+   Description: Body/extra-small/regular 14/20, text/default, 8px above, 24px indent. Badge slot 16px above, 24px indent.
+   Hover: title text/accent + underline (as rvt-card-default), arrow icon/accent. */
+.index{padding-block:48px 64px;display:grid;gap:48px}
+.empty{padding-block:24px;color:var(--text-muted);font-size:16px}
+.hub-title{font-family:var(--font-mono);font-size:12px;line-height:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-brand);margin:0;padding-bottom:16px}
+.hub{list-style:none;margin:0;padding:0}
+.hub-item{position:relative;display:grid;padding:16px 0;border-top:1px solid var(--table-border);grid-template-columns:minmax(0,1fr) auto;column-gap:24px}
+.hub-item>*{grid-column:1}
+.hub-item:last-child{border-bottom:1px solid var(--table-border)}
+.hub-tag{font-family:var(--font-mono);font-size:12px;line-height:16px;color:var(--text-brand);margin:0;padding:0 0 4px 24px;font-variant-numeric:tabular-nums}
+.hub-head{display:flex;gap:8px;align-items:flex-start}
+.hub-arrow{width:16px;flex:none;padding-top:8px;color:var(--text-strong)}
+.hub-arrow svg{width:12px;height:12px;display:block;fill:currentColor}
+.hub-link{font-size:20px;line-height:28px;font-weight:var(--w-bold);color:var(--text-strong);text-decoration:none}
+.hub-link::after{content:"";position:absolute;inset:0}
+.hub-item:hover .hub-link,.hub-item:focus-within .hub-link{color:var(--text-accent);text-decoration:underline solid;text-decoration-thickness:auto;text-underline-offset:auto;text-decoration-skip-ink:auto}
+.hub-item:hover .hub-arrow,.hub-item:focus-within .hub-arrow{color:var(--icon-accent)}
+.hub-link:focus-visible{outline:none}
+.hub-item:focus-within{outline:2px solid var(--input-focus);outline-offset:-2px}
+.hub-desc{font-size:14px;line-height:20px;font-weight:var(--w-normal);margin:0;padding:8px 0 0 24px;color:var(--text);max-width:750px}
+.hub-item>.hub-meta{grid-column:2;grid-row:1 / span 4;align-self:center;padding:0;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px}
+@media (max-width:560px){
+  .hub-title{padding-bottom:8px}
+  .hub-arrow{padding-top:6px}
+  .hub-link{font-size:18px;line-height:24px}
+}
+
+/* ---------- rvt-breadcrumbs (Breadcrumbs / WIP page) ----------
+   Home: 12px rvt-home in icon/link-subtle; hover = icon/accent-strong with a border/accent-strong underline.
+   Visited: Action/small/regular 14/20 text/link-subtle; hover = text/brand-strong + underline (same hover logic as buttons).
+   Current: Action/small/strong 14/20 SemiBold text/strong, no underline.
+   Separator: 12px rvt-chevron-right in icon/brand, never changes on hover. 4px gaps throughout. */
+.crumbs{padding-top:24px}
+.crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px;font-size:14px;line-height:20px}
+.crumbs li{display:flex;align-items:center;gap:4px}
+.crumbs li:not(:last-child)::after{content:"";width:12px;height:12px;flex:none;background:var(--icon-brand);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.26341 15.1459L12.31 8L6.26341 0.854065L4.73663 2.14595L9.69007 8L4.73663 13.8541L6.26341 15.1459Z'/%3E%3C/svg%3E") center/12px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.26341 15.1459L12.31 8L6.26341 0.854065L4.73663 2.14595L9.69007 8L4.73663 13.8541L6.26341 15.1459Z'/%3E%3C/svg%3E") center/12px no-repeat}
+.crumbs a{color:var(--text-link-subtle);font-weight:var(--w-normal);text-decoration:none;display:flex;align-items:center}
+.crumbs a:hover{color:var(--text-brand-strong);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.crumbs .home{color:var(--icon-link-subtle);padding-block:4px;border-bottom:1px solid transparent}
+.crumbs .home svg{width:12px;height:12px}
+.crumbs .home:hover{color:var(--icon-accent-strong);border-bottom-color:var(--border-accent-strong);text-decoration:none}
+.crumbs [aria-current]{color:var(--text-strong);font-weight:var(--w-bold);text-decoration:none}
+
+/* ---------- Detail ---------- */
+.detail{padding-block:40px 64px}
+/* Text stays at the 800px reading width; tables use the full content width so columns have room. */
+.doc{min-width:0}
+.prose>:not(.table-wrap):not(.ex),.doc-foot{max-width:var(--read)}
+.doc-foot{margin-top:48px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:16px}
+.doc-foot p{margin:0;font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--text-muted)}
+
+/* ---------- Prose ---------- */
+.prose>:first-child{margin-top:0}
+.prose h2{font-size:29px;line-height:36px;font-weight:var(--w-black);color:var(--text-strong);margin:0;text-wrap:balance}
+.prose h3{font-size:23px;line-height:28px;font-weight:var(--w-black);color:var(--text-strong);margin:0;text-wrap:balance}
+.prose h4{font-family:var(--font-mono);font-size:12px;line-height:16px;letter-spacing:2px;text-transform:uppercase;font-weight:400;color:var(--text-brand);margin:24px 0 8px}
+.prose p{margin:0 0 16px}
+.prose strong{font-weight:var(--w-bold);color:var(--text-strong)}
+.prose mark{background:#fffbf0;color:#1f2528;box-shadow:inset 0 -2px 0 #ffd580;padding-inline:2px}
+.prose hr{border:0;height:0;margin:0}
+.prose img{border:1px solid var(--border);display:block;margin-block:16px}
+.prose code{font-family:var(--font-mono);font-size:.85em;background:var(--code-bg);padding:1px 5px;color:var(--text-strong);white-space:nowrap}
+.prose pre{background:var(--code-bg);padding:16px;overflow:auto;max-height:75vh;margin:0 0 16px;border:1px solid var(--border)}
+.prose pre code{background:none;padding:0;white-space:pre;font-size:14px;line-height:22px}
+.sw{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px;box-shadow:inset 0 0 0 1px rgba(127,127,127,.5)}
+.prose blockquote{margin:0 0 16px;padding-left:16px;border-left:2px solid var(--border)}
+
+/* rvt-list: Unordered (6px square bullet, icon/brand) and Ordered */
+.prose ul,.prose ol{margin:0 0 16px;padding:0;display:grid;gap:12px}
+.prose ul{list-style:none}
+.prose ul>li{position:relative;padding-left:38px}
+.prose ul>li::before{content:"";position:absolute;left:24px;top:11px;width:6px;height:6px;background:var(--icon-brand)}
+.prose ul ul,.prose ol ol,.prose ul ol,.prose ol ul{margin:12px 0 0}
+.prose ul ul>li{padding-left:30px}
+.prose ul ul>li::before{left:16px}
+.prose ol{padding-left:44px}
+.prose ol>li::marker{color:var(--icon-brand);font-weight:var(--w-bold)}
+
+/* rvt-table: Type=Default, Striped=False, Size=Default (local Table page spec)
+   Table: background/default fill, 1px border/default outline. Rows: 0 8px inset, 1px border/default bottom.
+   Header row/cells: background/table-header; label Tag/medium/strong = Roboto Mono SemiBold 14/14, 1px tracking (desktop + mobile), text/table-header; 16px padding (48px row desktop, 44px mobile).
+   First column = Main Item (Heading/small/strong SemiBold 16/20, text/strong); others = Default (Body/small/regular 16/24, text/default); 24/16 padding.
+   Mobile: cells fixed 243px (table scrolls), 16/12 padding, Main Item SemiBold 14/20, Default 14/20. */
+.table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--table-border);background:var(--bg)}
+.prose table{border-collapse:collapse;width:100%;table-layout:fixed}
+.prose thead tr{background:var(--th-bg);border-bottom:1px solid var(--table-border)}
+.prose tbody tr{border-bottom:1px solid var(--table-border)}
+.prose tbody tr:last-child{border-bottom:0}
+.prose tbody code{white-space:normal;overflow-wrap:normal;word-break:normal}
+.prose tbody th{text-align:left;padding:24px 16px 24px 24px;vertical-align:middle;font-size:16px;line-height:20px;font-weight:var(--w-bold);color:var(--text-strong);background:var(--bg);overflow-wrap:break-word}
+.table-wrap:focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
+.prose thead th{background:var(--th-bg);color:var(--th-fg);font-family:var(--font-mono);font-size:14px;line-height:14px;letter-spacing:1px;font-weight:600;
+  text-align:left;vertical-align:middle;padding:16px;height:48px;overflow-wrap:normal;word-break:normal;hyphens:none}
+.prose td{padding:24px 16px;vertical-align:middle;font-size:16px;line-height:24px;font-weight:var(--w-normal);color:var(--text);background:var(--bg);overflow-wrap:break-word}
+.prose td:first-child{font-weight:var(--w-bold);line-height:20px;color:var(--text-strong)}
+.prose th:first-child,.prose td:first-child{padding-left:24px}
+.prose th:last-child,.prose td:last-child{padding-right:24px}
+@media (max-width:560px){
+  .prose table{width:auto;table-layout:auto}
+  .prose th,.prose td{width:243px;min-width:243px;max-width:243px}
+  .prose thead th{height:44px}
+  .prose tbody th{padding:16px 12px 16px 20px;font-size:14px;line-height:20px}
+  .prose td{padding:16px 12px;font-size:14px;line-height:20px}
+  .prose td:first-child{padding-left:20px}
+  .prose td:last-child{padding-right:20px}
+}
+
+/* rvt-alert: Default type */
+.alert{--al-bg:var(--al-info-bg);--al-bd:#9ed5fd;--al-strong:#004f9e;--al-icon:#ffffff;--al-title:var(--al-info-title);
+  background:var(--al-bg);border:1px solid var(--al-bd);padding:24px;margin:0 0 24px;display:grid;gap:16px}
+.alert[data-k="default"]{--al-bg:var(--al-default-bg);--al-bd:#efdfc8;--al-strong:#990000;--al-title:var(--al-default-title)}
+.alert[data-k="success"]{--al-bg:var(--al-success-bg);--al-bd:#acee8b;--al-strong:#13650b;--al-title:var(--al-success-title)}
+.alert[data-k="warning"]{--al-bg:var(--al-warning-bg);--al-bd:#ffd580;--al-strong:#ff9602;--al-icon:#1f2528;--al-title:var(--al-warning-title)}
+.alert[data-k="danger"]{--al-bg:var(--al-danger-bg);--al-bd:#faa094;--al-strong:#cd210a;--al-title:var(--al-danger-title)}
+.alert-head{display:flex;align-items:center;gap:8px}
+.alert-ic{width:32px;height:32px;border-radius:50%;background:var(--al-strong);color:var(--al-icon);display:grid;place-items:center;flex:none}
+.alert-title{font-size:20px;line-height:24px;font-weight:var(--w-black);color:var(--al-title);margin:0}
+.alert-body{padding-left:40px;min-width:0}
+.alert-body>:last-child{margin-bottom:0}
+.alert:not(:has(.alert-body>*)) {gap:0}
+
+/* Do / Don't */
+.dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:16px;margin:16px 0 24px}
+.dd-card{border:1px solid var(--border);border-top:4px solid #13650b;padding:24px;min-width:0}
+.dd-card.dont{border-top-color:#cd210a}
+.dd-card h3{margin:0 0 12px;font-size:20px;line-height:24px;display:flex;align-items:center;gap:8px}
+.dd-card h3 .alert-ic{width:24px;height:24px;background:#13650b;color:#ffffff}
+.dd-card.dont h3 .alert-ic{background:#cd210a}
+.dd-card h3 .alert-ic svg{width:12px;height:12px}
+.dd-card ul,.dd-card ol{margin:0}
+/* Bad / good examples: side-by-side figures, full content width, stacked under 900px */
+.ex{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+.ex-item{margin:0;min-width:0}
+.prose .ex-item img{width:100%;height:auto;margin:0;border:1px solid var(--table-border)}
+.prose .ex-item h3{font-size:20px;line-height:28px;margin:24px 0 8px}
+/* rvt-list-hub, Type=Checklist / X, Size=Compact (title only), always Dark theme so it reads the same in light and dark pages.
+   Panel background/default (Dark) #1f2528; 12px top/bottom per item, border/default (Dark) #000000 dividers;
+   32px circle: Check = component/list-hub/check-background and X = component/list-hub/x-background,
+   both Dark → color/base/ultra-dark #000000; 16px glyph component/list-hub/icon #ffffff;
+   12px gap; title action/lg/strong SemiBold 16/24 text/strong (Dark → #ffffff). */
+.prose ul.checklist{list-style:none;margin:0;padding:12px 24px;display:block;background:#1f2528;color-scheme:dark;
+  --ck-border:#000000;--ck-text:#ffffff;--ck-icon:#ffffff}
+.prose ul.checklist>li{display:flex;align-items:center;gap:12px;padding:12px 0;margin:0;border-top:1px solid var(--ck-border);
+  font-size:16px;line-height:24px;font-weight:var(--w-bold);color:var(--ck-text)}
+.prose ul.checklist>li:last-child{border-bottom:1px solid var(--ck-border)}
+.prose ul.checklist>li::before{content:"";position:static;flex:none;width:32px;height:32px;border-radius:50%;
+  background-position:center;background-size:16px 16px;background-repeat:no-repeat;
+  -webkit-mask:none;mask:none}
+.prose ul.checklist>li{--ck-bg:#000000}
+.prose ul.checklist.x>li{--ck-bg:#000000}
+.prose ul.checklist>li::before{background-color:var(--ck-bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23ffffff' d='M14.9142 4L5.44353 13.4707L1.08997 8.39153L2.60848 7.08995L5.5565 10.5293L13.5 2.58578L14.9142 4Z'/%3E%3C/svg%3E")}
+.prose ul.checklist.x>li::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23ffffff' d='M3.50003 2.08578L8.00003 6.58578L12.5 2.08578L13.9142 3.5L9.41424 8L13.9142 12.5L12.5 13.9142L8.00003 9.41421L3.50003 13.9142L2.08582 12.5L6.58582 8L2.08582 3.5L3.50003 2.08578Z'/%3E%3C/svg%3E")}
+@media (max-width:560px){.prose ul.checklist{padding:8px 16px}}
+/* On a dark page the panel matches the page, so drop the inset and align with the heading. */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .prose ul.checklist{padding:0}}
+:root[data-theme="dark"] .prose ul.checklist{padding:0}
+@media (max-width:900px){.ex{grid-template-columns:1fr;gap:40px}}
+@media (max-width:560px){.prose .ex-item h3{font-size:18px;line-height:24px;margin-top:16px}}
+/* rvt-text-block rhythm (Text Block page, _Text Block Item): no dividers; space ABOVE each element.
+   Desktop: H2 48px (Heading/extra-large/strong 29/36), H3 40px (Heading/large/strong 23/28), Paragraph 24px (18/28),
+   List 16px (18/28, 12px between items), Note/alert 32px. Tables, Do/Don't and code follow Paragraph (24px).
+   H3 directly under an H2 (not in the Text Block layout) gets the Paragraph spacing: 24px desktop, 16px mobile.
+   Mobile: H2 24px (23/32), H3 24px (20/24), Paragraph 16px (16/24), List 16px (16/24), Note 16px. */
+.prose>*{margin-top:24px;margin-bottom:0}
+.prose>h2{margin-top:48px}
+.prose>h3{margin-top:40px}
+.prose>h4{margin-top:32px}
+.prose>p{margin-top:24px}
+.prose>ul,.prose>ol{margin-top:16px}
+.prose>.alert{margin-top:32px;margin-bottom:0}
+.prose>.table-wrap,.prose>.dd,.prose>.ex,.prose>pre,.prose>blockquote{margin-top:24px;margin-bottom:0}
+.prose>hr{margin-top:48px}
+.prose>h2+h3{margin-top:24px}
+.prose>:first-child{margin-top:0}
+@media (max-width:560px){
+  .prose{font-size:16px;line-height:24px}
+  .prose h2{font-size:23px;line-height:32px}
+  .prose h3{font-size:20px;line-height:24px}
+  .prose>h2,.prose>h3{margin-top:24px}
+  .prose>p,.prose>ul,.prose>ol,.prose>.alert,.prose>.table-wrap,.prose>.dd,.prose>.ex,.prose>pre,.prose>blockquote{margin-top:16px}
+  .prose>h2+h3{margin-top:16px}
+  .prose>:first-child{margin-top:0}
+}
+.load{padding-block:64px;color:var(--text-muted)}
+/* ---------- Component rail (sidebar-v2-children sidenav, Dark mode) ----------
+   Ported from prototype-hub sidebar/sidebar-v2-children: 280px rail, 24px inner pad, full height, 1px rule on the right edge.
+   Persistent title = t-section-heading 14/16 wght 600 wdth 115, accent + underline, 12px below, 1px rule.
+   Rows = sidenav-item: 12px top/bottom, T18 14/20 wght 350 wdth 112.5, 16px rvt-chevron-right, 8px gap, 1px hairline under each row.
+   Current row: accent + underline (from-font), no chevron. Hover/focus: label underlined, label + chevron accent.
+   Light prototype colors map to Dark-mode tokens: background/default #1f2528, border/default #000000,
+   text/default #ffffff (ink), text/accent #fdfaf7 (crimson), accent-strong #efdfc8 (hover).
+   Always dark, in both page themes, like the hero. Below 1024px the rail becomes the prototype's
+   in-flow disclosure under a compact bar (400ms max-height ease, content pushes down). */
+#rail-shell{--rail-pad:24px;--rail-bg:#1f2528;--rail-rule:#000000;--rail-text:#ffffff;--rail-accent:#fdfaf7;--rail-strong:#efdfc8;color-scheme:dark}
+:root{--rail-w:280px}
+body:not(.has-rail) #rail-shell{display:none}
+#rail{background:var(--rail-bg);color:var(--rail-text)}
+#rail ul{list-style:none;margin:0;padding:0}
+#rail li{border-bottom:1px solid var(--rail-rule)}
+#rail li:last-child{border-bottom:0}
+.rail-title{display:flex;width:100%;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--rail-rule);
+  color:var(--rail-accent);text-decoration:none;font-size:14px;line-height:16px;font-weight:600;font-variation-settings:'wdth' 115}
+.rail-title-label{min-width:0;flex:1;text-decoration:none;text-decoration-thickness:1px;text-underline-offset:3px}
+.rail-title:hover,.rail-title:focus-visible{color:var(--rail-strong);text-decoration:none}
+.rail-title:hover .rail-title-label,.rail-title:focus-visible .rail-title-label{text-decoration:underline}
+.rail-item{display:flex;align-items:center;gap:8px;padding:12px 0;color:var(--rail-text);text-decoration:none;
+  font-size:14px;line-height:20px;font-weight:350;font-variation-settings:'wdth' 112.5}
+.rail-label{min-width:0;flex:1;white-space:normal}
+.rail-chev{display:block;width:16px;height:16px;flex:none}
+.rail-chev svg{width:16px;height:16px;display:block;fill:currentColor}
+.rail-item[aria-current="page"]{color:var(--rail-accent)}
+.rail-item[aria-current="page"] .rail-label{text-decoration:underline;text-underline-position:from-font;text-decoration-thickness:1px}
+.rail-item[aria-current="page"] .rail-chev{display:none}
+.rail-item:active,.rail-item:focus-visible{color:var(--rail-strong);text-decoration:none}
+.rail-item:active .rail-label,.rail-item:focus-visible .rail-label{text-decoration:underline;text-decoration-thickness:1px}
+#rail-shell :focus-visible{outline:2px solid var(--rail-strong);outline-offset:2px;isolation:isolate}
+@media (hover:hover){
+  .rail-item:hover{color:var(--rail-strong)}
+  .rail-item:hover .rail-label{text-decoration:underline;text-decoration-thickness:1px}
+}
+
+/* Desktop: full-bleed fixed rail from the top of the viewport to the bottom, content offset by the rail width. */
+@media (min-width:1024px){
+  .rail-bar{display:none}
+  #rail{position:fixed;top:0;left:0;bottom:0;z-index:10;width:var(--rail-w);border-right:1px solid var(--rail-rule);
+    padding:0 var(--rail-pad) var(--rail-pad);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#5b646b transparent;
+    max-height:none!important;visibility:visible}
+  /* Title label centers on the hero's tag line (hero top pad minus 1px for the 16px vs 14px line box). */
+  #rail-nav{padding-top:calc(clamp(48px,8vw,96px) - 1px)}
+  body.has-rail #app{margin-left:var(--rail-w)}
+}
+
+/* Mobile/tablet: compact sticky bar + in-flow disclosure (prototype's < 1024px sidenav). */
+@media (max-width:1023.98px){
+  #rail-shell{position:sticky;top:0;z-index:20}
+  .rail-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;
+    padding-inline:clamp(16px,5vw,80px);background:var(--rail-bg);border-bottom:1px solid var(--rail-rule)}
+  .rail-bar-title{color:var(--rail-text);text-decoration:none;font-size:14px;line-height:16px;font-weight:600;font-variation-settings:'wdth' 115}
+  .rail-bar-title:hover{color:var(--rail-strong)}
+  #rail-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;flex:none;cursor:pointer;
+    border:1px solid var(--rail-accent);background:transparent;color:var(--rail-accent);border-radius:0;-webkit-appearance:none;appearance:none}
+  #rail-toggle:hover,#rail-toggle:active{border-color:var(--rail-strong);color:var(--rail-strong)}
+  #rail-toggle svg{width:16px;height:16px;fill:currentColor;display:block}
+  #rail-toggle .rail-ic-close{display:none}
+  #rail-toggle[aria-expanded="true"] .rail-ic-menu{display:none}
+  #rail-toggle[aria-expanded="true"] .rail-ic-close{display:block}
+  #rail{max-height:0;overflow:hidden;visibility:hidden;pointer-events:none;
+    transition:max-height 400ms cubic-bezier(0.4,0,0.2,1),box-shadow 400ms cubic-bezier(0.4,0,0.2,1)}
+  #rail.is-open{visibility:visible;pointer-events:auto;box-shadow:0 4px 8px 0 rgb(0 0 0 / 32%)}
+  #rail-nav{max-height:calc(100vh - 57px);max-height:calc(100dvh - 57px);overflow-y:auto;overscroll-behavior:contain;
+    padding:24px clamp(16px,5vw,80px) 8px}
+}
+@media (prefers-reduced-motion:reduce){#rail{transition:none}}
+
+@media (max-width:560px){ .alert{padding:16px} .alert-body{padding-left:0} }
+</style>
+</head>
+<body>
+
+<div id="app"><div class="wrap load">Loading component docs…</div></div>
+
+<script src="lib/marked.min.js"></script>
+<script src="lib/purify.min.js"></script>
+<script>
+(() => {
+  const app = document.getElementById('app');
+  const STATUS = {
+    'draft': 'Draft', 'in-progress': 'In progress', 'in-review': 'In review',
+    'ready-for-dev': 'Ready for dev', 'released': 'Released', 'deprecated': 'Deprecated'
+  };
+  /* Official Rivet icons, exported from the Rivet 3 Components library */
+  const P = {
+    home: 'M8 0.798157L15 5.46482V15H9V10.5556H7V15H1V5.46482L8 0.798157ZM3 6.53519V13H5V8.55556H11V13H13V6.53519L8 3.20186L3 6.53519Z',
+    arrowRight: 'M1 7.00001L11.8439 7.00001L7.73661 2.14595L9.26339 0.854065L15.31 8.00001L9.26339 15.1459L7.73661 13.8541L11.8439 9.00001L1 9.00001L1 7.00001Z',
+    arrowDown: 'M7 1L6.99999 11.8439L2.14593 7.73661L0.85405 9.26339L7.99999 15.31L15.1459 9.26339L13.8541 7.73661L8.99999 11.8439L9 1L7 1Z',
+    arrowUpRight: 'M10.5858 4H4.00001V2H14V12H12V5.41421L3.70712 13.7071L2.29291 12.2929L10.5858 4Z',
+    info: 'M7 5.5H9V15H7V5.5Z M9.25 2.25C9.25 2.94036 8.69036 3.5 8 3.5C7.30964 3.5 6.75 2.94036 6.75 2.25C6.75 1.55964 7.30964 1 8 1C8.69036 1 9.25 1.55964 9.25 2.25Z',
+    check: 'M14.9142 4L5.44353 13.4707L1.08997 8.39153L2.60848 7.08995L5.5565 10.5293L13.5 2.58578L14.9142 4Z',
+    minus: 'M15 9H1V7H15V9Z',
+    exclamation: 'M7 1H9V10.5H7V1Z M9.25 13.75C9.25 14.4404 8.69036 15 8 15C7.30964 15 6.75 14.4404 6.75 13.75C6.75 13.0596 7.30964 12.5 8 12.5C8.69036 12.5 9.25 13.0596 9.25 13.75Z',
+    close: 'M3.50003 2.08578L8.00003 6.58578L12.5 2.08578L13.9142 3.5L9.41424 8L13.9142 12.5L12.5 13.9142L8.00003 9.41421L3.50003 13.9142L2.08582 12.5L6.58582 8L2.08582 3.5L3.50003 2.08578Z',
+    bell: 'M10 14L15.5 14L15.5 12L14.118 12L13.7516 11.2672C13.5771 10.918 13.4758 10.5368 13.4542 10.147L13.2203 5.93837C13.0854 3.50893 11.3068 1.54301 9 1.09569V0H7V1.09569C4.69318 1.543 2.91463 3.50892 2.77966 5.93837L2.54585 10.147C2.52419 10.5368 2.42295 10.918 2.24835 11.2672L1.88197 12H0.5V14L6 14C6 15.1046 6.89543 16 8 16C9.10457 16 10 15.1046 10 14ZM11.8857 12L4.11434 12C4.36381 11.4514 4.50928 10.8607 4.54277 10.2579L4.77658 6.04931C4.87162 4.33853 6.28658 3 8 3C9.71341 3 11.1284 4.33853 11.2234 6.04931L11.4572 10.2579C11.4907 10.8607 11.6362 11.4514 11.8857 12Z'
+  };
+  const icon = name => `<svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="${P[name]}"/></svg>`;
+  const ALERT_ICON = {default: 'bell', info: 'info', success: 'check', warning: 'minus', danger: 'exclamation'};
+  const KIND = {note: 'info', info: 'info', abstract: 'info', summary: 'info', tip: 'success', success: 'success', check: 'success', done: 'success',
+    warning: 'warning', caution: 'warning', attention: 'warning', question: 'warning', help: 'warning', faq: 'warning',
+    danger: 'danger', error: 'danger', failure: 'danger', bug: 'danger', important: 'default', example: 'default', quote: 'default'};
+
+  let list = [];
+  const cache = {};
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmtDate = d => {
+    if (!d) return '';
+    const dt = new Date(d + 'T12:00:00Z');
+    return isNaN(dt) ? esc(d) : dt.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric', timeZone:'UTC'});
+  };
+  const badge = s => {
+    const key = STATUS[s] ? s : 'draft';
+    const ic = key === 'ready-for-dev' || key === 'released' ? 'check' : key === 'deprecated' ? 'close' : key === 'in-review' ? 'info' : key === 'in-progress' ? 'minus' : 'bell';
+    if (key === 'ready-for-dev') return `<span class="badge has-label" data-s="${key}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="${P[ic]}"/></svg>Ready</span>`;
+    return `<span class="badge" data-s="${key}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="${P[ic]}"/></svg><span class="sr-only">${STATUS[key]}</span></span>`;
+  };
+  const hero = ({tag, title, intro, actions, aside}) => {
+    const main = `
+      <p class="tag">${tag}</p>
+      <h1>${esc(title)}</h1>
+      ${intro ? `<p class="intro">${esc(intro)}</p>` : ''}
+      ${actions ? `<div class="actions">${actions}</div>` : ''}`;
+    return `
+    <header class="hero"><div class="wrap"><div class="hero-inner">
+      ${aside ? `<div class="hero-cols"><div class="hero-main">${main}</div>${aside}</div>` : main}
+    </div></div></header>`;
+  };
+
+  async function loadManifest() {
+    const r = await fetch('components.json', {cache: 'no-store'});
+    if (!r.ok) throw new Error('components.json ' + r.status);
+    const data = await r.json();
+    list = (data.components || []).slice().sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  /* ---------- Index ---------- */
+  function renderIndex() {
+    document.title = 'Rivet 3 Component Guide';
+    app.innerHTML = hero({tag: 'Rivet Design System', title: 'Component Guide', intro: 'Design notes and build specs for each Rivet 3 component.', actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a>`}) + `
+      <main class="wrap index">
+        <div class="field">
+          <label class="field-label" for="filter">Filter components</label>
+          <input id="filter" type="search" autocomplete="off">
+        </div>
+        <section aria-labelledby="hub-title">
+          <h2 class="hub-title" id="hub-title"></h2>
+          <ul class="hub" id="list"></ul>
+        </section>
+      </main>`;
+    const ul = document.getElementById('list');
+    const title = document.getElementById('hub-title');
+    const input = document.getElementById('filter');
+    const draw = () => {
+      const q = input.value.trim().toLowerCase();
+      const rows = list.filter(c => !q || c.name.toLowerCase().includes(q) || (c.summary || '').toLowerCase().includes(q));
+      title.textContent = q ? `${rows.length} of ${list.length} components` : `${list.length} component${list.length === 1 ? '' : 's'}`;
+      ul.innerHTML = rows.length ? rows.map(c => `
+        <li class="hub-item">
+          <p class="hub-tag">${c.updated ? 'Updated ' + fmtDate(c.updated) : '&nbsp;'}</p>
+          <div class="hub-head"><span class="hub-arrow"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span><a class="hub-link" href="#${esc(c.slug)}">${esc(c.name)}</a></div>
+          ${c.summary ? `<p class="hub-desc">${esc(c.summary)}</p>` : ''}
+          <div class="hub-meta">${badge(c.status)}</div>
+        </li>`).join('') : `<li class="empty">${list.length ? 'No components match that filter.' : 'No components published yet.'}</li>`;
+    };
+    input.addEventListener('input', draw);
+    draw();
+  }
+
+  /* ---------- Markdown helpers ---------- */
+  function preprocess(md) {
+    md = md.replace(/^﻿/, '').replace(/^---\n[\s\S]*?\n---\n/, '');
+    md = md.replace(/^#\s+.*\n+/, '');
+    md = md.replace(/%%[\s\S]*?%%/g, '');
+    md = md.replace(/==([^=\n]+)==/g, '<mark>$1</mark>');
+    md = md.replace(/!\[\[([^\]]+)\]\]/g, '');
+    md = md.replace(/\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|([^\]]+))?\]\]/g, (m, target, alias) => {
+      const t = target.trim();
+      const hit = list.find(c => c.name.toLowerCase() === t.toLowerCase() || c.slug === t.toLowerCase());
+      const text = alias || t;
+      return hit ? `[${text}](#${hit.slug})` : text;
+    });
+    return md;
+  }
+
+  function enhance(root) {
+    // Tables: name each from its preceding heading, mark column + row headers, make the scroll box keyboard-reachable
+    root.querySelectorAll('table').forEach((t, i) => {
+      let h = t.previousElementSibling;
+      while (h && !/^H[2-4]$/.test(h.tagName)) h = h.previousElementSibling;
+      const w = document.createElement('div'); w.className = 'table-wrap';
+      w.setAttribute('role', 'region'); w.tabIndex = 0;
+      if (h) { if (!h.id) h.id = 'tbl-h-' + i; t.setAttribute('aria-labelledby', h.id); w.setAttribute('aria-labelledby', h.id); }
+      else { w.setAttribute('aria-label', 'Table ' + (i + 1)); }
+      t.querySelectorAll('thead th').forEach(th => th.setAttribute('scope', 'col'));
+      t.querySelectorAll('tbody tr').forEach(tr => {
+        const td = tr.firstElementChild;
+        if (td && td.tagName === 'TD') { const th = document.createElement('th'); th.setAttribute('scope', 'row'); th.innerHTML = td.innerHTML; td.replaceWith(th); }
+      });
+      t.replaceWith(w); w.appendChild(t);
+    });
+    root.querySelectorAll('tbody code').forEach(c => { if (c.children.length === 0 && c.textContent.includes('/')) c.innerHTML = esc(c.textContent).replace(/\//g, '/<wbr>'); });
+    root.querySelectorAll('code').forEach(c => {
+      if (c.closest('pre')) return;
+      const m = c.textContent.trim().match(/^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i);
+      if (m) { const s = document.createElement('span'); s.className = 'sw'; s.style.background = m[0]; c.prepend(s); }
+    });
+    // Obsidian callouts -> rvt-alert
+    root.querySelectorAll('blockquote').forEach(bq => {
+      const first = bq.querySelector('p');
+      if (!first) return;
+      const m = first.innerHTML.match(/^\[!(\w+)\][+-]?\s*([^\n<]*)(?:\n|<br>)?/i);
+      if (!m) return;
+      const raw = m[1].toLowerCase();
+      const kind = KIND[raw] || 'info';
+      const title = m[2].trim() || raw.charAt(0).toUpperCase() + raw.slice(1);
+      first.innerHTML = first.innerHTML.slice(m[0].length).trim();
+      if (!first.innerHTML) first.remove();
+      const box = document.createElement('div');
+      box.className = 'alert'; box.dataset.k = kind; box.setAttribute('role', 'note');
+      box.innerHTML = `<div class="alert-head"><span class="alert-ic">${icon(ALERT_ICON[kind])}</span><p class="alert-title">${esc(title)}</p></div><div class="alert-body"></div>`;
+      const body = box.querySelector('.alert-body');
+      while (bq.firstChild) body.appendChild(bq.firstChild);
+      if (!body.textContent.trim()) body.remove();
+      bq.replaceWith(box);
+    });
+    // Do / Don't
+    const isDo = t => /^do['’]?s?$/i.test(t.trim());
+    const isDont = t => /^don['’]?t'?s?$/i.test(t.trim()) || /^do not$/i.test(t.trim());
+    let group = null;
+    [...root.querySelectorAll('h3, h4')].forEach(h => {
+      const txt = h.textContent;
+      if (!isDo(txt) && !isDont(txt)) { group = null; return; }
+      const card = document.createElement('div');
+      card.className = 'dd-card' + (isDont(txt) ? ' dont' : '');
+      const h3 = document.createElement('h3');
+      h3.innerHTML = `<span class="alert-ic">${icon(isDont(txt) ? 'close' : 'check')}</span><span>${esc(txt.trim())}</span>`;
+      card.appendChild(h3);
+      let n = h.nextElementSibling;
+      while (n && !/^H[1-4]$/.test(n.tagName) && !n.classList.contains('dd')) { const next = n.nextElementSibling; card.appendChild(n); n = next; }
+      if (group && group.nextElementSibling === h) { h.remove(); group.appendChild(card); }
+      else { group = document.createElement('div'); group.className = 'dd'; h.replaceWith(group); group.appendChild(card); }
+    });
+  }
+
+  /* ---------- Detail ---------- */
+  async function renderDoc(c) {
+    document.title = c.name + ' · Rivet 3 Component Guide';
+    const actions = (c.figma ? `<a class="btn" href="${esc(c.figma)}" target="_blank" rel="noopener">Open in Figma${icon('arrowUpRight')}</a>` : '') + `<button class="btn" type="button" id="jump-dev" hidden>Jump to developer specs${icon('arrowDown')}</button>`;
+    app.innerHTML = hero({tag: '<a href="#">Components</a>', title: c.name, intro: c.summary, actions}) + `
+      <nav class="wrap crumbs" aria-label="Breadcrumb"><ol>
+        <li><a class="home" href="#" aria-label="Components home">${icon('home')}</a></li>
+        <li><a href="#">Components</a></li>
+        <li><span aria-current="page">${esc(c.name)}</span></li>
+      </ol></nav>
+      <main class="wrap detail">
+        <article class="doc"><div class="prose" id="prose"><p class="load">Loading…</p></div>
+          <footer class="doc-foot">
+            <p>${c.updated ? 'Last updated ' + fmtDate(c.updated) : ''}</p>
+          </footer>
+        </article>
+      </main>`;
+    const prose = document.getElementById('prose');
+    try {
+      if (!cache[c.slug]) {
+        const r = await fetch(`docs/${encodeURIComponent(c.slug)}.md`, {cache: 'no-store'});
+        if (!r.ok) throw new Error(r.status);
+        cache[c.slug] = await r.text();
+      }
+      if (location.hash.slice(1) !== c.slug) return;
+      const html = marked.parse(preprocess(cache[c.slug]), {gfm: true, breaks: false});
+      prose.innerHTML = DOMPurify.sanitize(html);
+      enhance(prose);
+      prose.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
+      const devH = [...prose.querySelectorAll('h2')].find(h => /developer spec/i.test(h.textContent));
+      const jump = document.getElementById('jump-dev');
+      if (devH && jump) {
+        jump.hidden = false;
+        jump.addEventListener('click', () => {
+          devH.setAttribute('tabindex', '-1');
+          const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          devH.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
+          devH.focus({preventScroll: true});
+        });
+      }
+    } catch (e) {
+      prose.innerHTML = `<p>This page's notes could not be loaded (docs/${esc(c.slug)}.md). Republish the component with <code>/doc-publish ${esc(c.slug)}</code>.</p>`;
+    }
+  }
+
+  /* ---------- Token changes (JSON viewer) ---------- */
+  let tokenJson = null;
+  async function renderTokens() {
+    document.title = 'Token guide · Rivet 3 Component Guide';
+    app.innerHTML = hero({tag: '<a href="#">Components</a>', title: 'Figma to code token guide', intro: 'Figma is the source of truth. Every token has one name, used the same way in Figma and in code: --rvt- plus the Figma name. Start with toDo.',
+      actions: `<button class="btn" type="button" id="copy-json">Copy JSON</button><button class="btn" type="button" id="copy-css">Copy tokens CSS</button><span id="copy-msg" role="status" style="color:#ffffff;font-size:14px"></span>`,
+      aside: `<aside class="hero-card" aria-labelledby="naming-title">
+        <h2 class="hero-card-title" id="naming-title">Naming adjustments</h2>
+        <p class="hero-card-desc">Want a different name? Add it to the template and send it to Jenn. She'll rename it in Figma, and this guide and the tokens CSS will update to match.</p>
+        <a class="btn btn-subtle" id="dl-template" href="rename-suggestions.json" download="rename-suggestions.json">Download the template${icon('arrowDown')}</a><p class="hero-card-msg" id="dl-msg" role="status"></p>
+      </aside>`}) + `
+      <nav class="wrap crumbs" aria-label="Breadcrumb"><ol>
+        <li><a class="home" href="#" aria-label="Components home">${icon('home')}</a></li>
+        <li><a href="#">Components</a></li>
+        <li><span aria-current="page">Token guide</span></li>
+      </ol></nav>
+      <main class="wrap detail"><div class="prose"><pre id="json-view" tabindex="0" aria-label="Token guide JSON"><code>Loading…</code></pre></div></main>`;
+    const view = document.querySelector('#json-view code');
+    try {
+      if (!tokenJson) { const r = await fetch('token-changes.json', {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); tokenJson = await r.text(); }
+      if (location.hash.slice(1) !== 'token-changes') return;
+      view.textContent = tokenJson;
+    } catch (e) { view.textContent = 'The JSON file could not be loaded. Try reloading the page.'; }
+    const fetchText = async path => { const r = await fetch(path, {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); return r.text(); };
+    document.getElementById('copy-css').addEventListener('click', async () => {
+      const msg = document.getElementById('copy-msg');
+      try {
+        const cssText = await fetchText('generated/rivet-tokens.css');
+        try { await navigator.clipboard.writeText(cssText); msg.textContent = 'Tokens CSS copied.'; return; } catch (e) {}
+        const a = document.createElement('a'); a.href = 'generated/rivet-tokens.css'; a.download = 'rivet-tokens.css'; document.body.appendChild(a); a.click(); a.remove();
+        msg.textContent = 'Copy is blocked here, so the CSS file was downloaded instead.';
+      } catch (e) { msg.textContent = e && e.code === 'declined' ? '' : 'Could not copy the CSS. Try reloading the page.'; }
+    });
+    document.getElementById('copy-json').addEventListener('click', () => {
+      const msg = document.getElementById('copy-msg');
+      const select = () => { const r = document.createRange(); r.selectNodeContents(view); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+      if (!tokenJson) return;
+      (navigator.clipboard ? navigator.clipboard.writeText(tokenJson) : Promise.reject())
+        .then(() => { msg.textContent = 'Copied.'; }, () => { select(); msg.textContent = 'Copy is blocked here. The JSON is selected: press Ctrl/Cmd+C.'; });
+    });
+  }
+
+  /* ---------- Component rail ---------- */
+  const CHEV = 'M6.263 15.146 12.31 8 6.263.854 4.737 2.146 9.69 8l-4.953 5.854 1.526 1.292Z';
+  const MENU = 'M15 4H1V2H15V4ZM15 9H1V7H15V9ZM1 14H15V12H1V14Z';
+  let railToggle, railPanel, railNav;
+  const desktop = window.matchMedia('(min-width: 1024px)');
+  function buildRail() {
+    const shell = document.createElement('div');
+    shell.id = 'rail-shell';
+    shell.innerHTML = `
+      <div class="rail-bar">
+        <a class="rail-bar-title" href="#">Component Guide</a>
+        <button type="button" id="rail-toggle" aria-expanded="false" aria-controls="rail">
+          <svg class="rail-ic-menu" viewBox="0 0 16 16" aria-hidden="true"><path d="${MENU}"/></svg>
+          <svg class="rail-ic-close" viewBox="0 0 16 16" aria-hidden="true"><path d="${P.close}"/></svg>
+          <span class="sr-only">All components</span>
+        </button>
+      </div>
+      <nav id="rail" aria-label="All components"><div id="rail-nav">
+        <a class="rail-title" href="#"><span class="rail-title-label">Components</span></a>
+        <ul>${list.map(c => `<li><a class="rail-item" href="#${esc(c.slug)}" data-slug="${esc(c.slug)}"><span class="rail-label">${esc(c.name)}</span><span class="rail-chev" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="${CHEV}"/></svg></span></a></li>`).join('')}</ul>
+      </div></nav>`;
+    document.body.insertBefore(shell, app);
+    railToggle = document.getElementById('rail-toggle');
+    railPanel = document.getElementById('rail');
+    railNav = document.getElementById('rail-nav');
+    railToggle.addEventListener('click', () => setRailOpen(railToggle.getAttribute('aria-expanded') !== 'true'));
+    shell.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && railToggle.getAttribute('aria-expanded') === 'true') { setRailOpen(false); railToggle.focus(); }
+    });
+    desktop.addEventListener('change', () => setRailOpen(false));
+  }
+  function setRailOpen(open) {
+    if (!railToggle) return;
+    railToggle.setAttribute('aria-expanded', String(open));
+    railPanel.classList.toggle('is-open', open);
+    railPanel.style.maxHeight = open ? railNav.offsetHeight + 'px' : '';
+  }
+  function markRail(slug) {
+    if (!railPanel) return;
+    let cur = null;
+    railPanel.querySelectorAll('.rail-item').forEach(a => {
+      const on = a.dataset.slug === slug;
+      if (on) { a.setAttribute('aria-current', 'page'); cur = a; } else a.removeAttribute('aria-current');
+    });
+    // Keep the current component in view inside the rail (desktop rail scrolls on its own).
+    if (cur && desktop.matches) {
+      const top = cur.offsetTop, h = cur.offsetHeight, st = railPanel.scrollTop, ch = railPanel.clientHeight;
+      if (top < st || top + h > st + ch) railPanel.scrollTop = Math.max(0, top - ch / 2 + h / 2);
+    }
+  }
+
+  function route() {
+    const slug = decodeURIComponent(location.hash.slice(1));
+    const c = slug && list.find(x => x.slug === slug);
+    const onDoc = slug !== 'token-changes' && !!c;
+    document.body.classList.toggle('has-rail', onDoc);
+    setRailOpen(false);
+    markRail(onDoc ? c.slug : null);
+    if (slug === 'token-changes') renderTokens(); else if (c) renderDoc(c); else renderIndex();
+    window.scrollTo(0, 0);
+  }
+
+  loadManifest().then(() => { buildRail(); route(); window.addEventListener('hashchange', route); })
+    .catch(() => { app.innerHTML = '<div class="wrap load">The component list could not be loaded. Try reloading the page.</div>'; });
+})();
+</script>
+
+</body>
+</html>
