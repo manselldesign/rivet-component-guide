@@ -1,7 +1,7 @@
 # Card
 
 ## What it is
-A box that previews one item and links to its full page, like an event, a news story or a degree program. People click anywhere on the card to open it.
+A clickable box that previews one page, like a resource, service or degree program, and links to it. People click anywhere on the card to open it. For events and news stories, use the Event or News card instead.
 
 ## Which card should I use?
 
