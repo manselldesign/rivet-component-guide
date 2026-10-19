@@ -73,12 +73,13 @@ An alert is a colored box that tells readers something important about the page 
 
 ### Inline
 
-| Element | Spec |
-| --- | --- |
-| Container padding | `spacing/4` (4px) all sides |
-| Gap | `spacing/4` (4px) icon to text |
-| Background | `background/{status}-subtle` |
-| Border | 1px `border/{status}` |
-| Icon | 20px circle, `background/{status}-strong`, `border-radius/full`, 12px glyph centered |
-| Message | `body/xs/regular` (14 / 20px), `text/default`, max width 500px |
-| Close button | 12px icon, 4px from top and right (no token) |
+| Element | Desktop | Mobile |
+| --- | --- | --- |
+| Container width | Hugs the message, up to a 500px message. With a close button: fixed 520px, so the button has room | Fills its container (327px on a 375px screen) |
+| Container padding | `spacing/4` (4px) all sides | Same |
+| Gap | `spacing/4` (4px) icon to text | Same |
+| Background | `background/{status}-subtle` | Same |
+| Border | 1px `border/{status}` | Same |
+| Icon | 16px circle, `background/{status}-strong`, `border-radius/full`, 12px glyph centered | Same |
+| Message | `body/xs/regular` (14 / 20px), `text/default`, one line, max width 500px | `body/xs/regular` (14 / 20px), wraps to fill the width. Max width 280px when there's a close button |
+| Close button | 12px icon, 4px from top and right (no token). On Default, Info and Success only | Same |
