@@ -290,21 +290,21 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .prose .ex-item h3{font-size:20px;line-height:28px;margin:24px 0 8px}
 /* rvt-list-hub, Type=Checklist / X, Size=Compact (title only), always Dark theme so it reads the same in light and dark pages.
    Panel background/default (Dark) #1f2528; 12px top/bottom per item, border/default (Dark) #000000 dividers;
-   32px circle: Check = component/list-hub/check-background and X = component/list-hub/x-background,
-   both Dark → color/base/ultra-dark #000000; 16px glyph component/list-hub/icon #ffffff;
-   12px gap; title action/lg/strong SemiBold 16/24 text/strong (Dark → #ffffff). */
+   Compact = smaller icon + container: 24px circle: Check = component/list-hub/check-background and X = component/list-hub/x-background,
+   both Dark → color/base/ultra-dark #000000; 12px glyph (rvt-check-12 / rvt-close-12) component/list-hub/icon #ffffff;
+   spacing/8 gap; title action/lg/strong SemiBold 16/24 text/strong (Dark → #ffffff). */
 .prose ul.checklist{list-style:none;margin:0;padding:12px 24px;display:block;background:#1f2528;color-scheme:dark;
   --ck-border:#000000;--ck-text:#ffffff;--ck-icon:#ffffff}
-.prose ul.checklist>li{display:flex;align-items:center;gap:12px;padding:12px 0;margin:0;border-top:1px solid var(--ck-border);
+.prose ul.checklist>li{display:flex;align-items:center;gap:8px;padding:12px 0;margin:0;border-top:1px solid var(--ck-border);
   font-size:16px;line-height:24px;font-weight:var(--w-bold);color:var(--ck-text)}
 .prose ul.checklist>li:last-child{border-bottom:1px solid var(--ck-border)}
-.prose ul.checklist>li::before{content:"";position:static;flex:none;width:32px;height:32px;border-radius:50%;
-  background-position:center;background-size:16px 16px;background-repeat:no-repeat;
+.prose ul.checklist>li::before{content:"";position:static;flex:none;width:24px;height:24px;border-radius:50%;
+  background-position:center;background-size:12px 12px;background-repeat:no-repeat;
   -webkit-mask:none;mask:none}
 .prose ul.checklist>li{--ck-bg:#000000}
 .prose ul.checklist.x>li{--ck-bg:#000000}
-.prose ul.checklist>li::before{background-color:var(--ck-bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23ffffff' d='M14.9142 4L5.44353 13.4707L1.08997 8.39153L2.60848 7.08995L5.5565 10.5293L13.5 2.58578L14.9142 4Z'/%3E%3C/svg%3E")}
-.prose ul.checklist.x>li::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23ffffff' d='M3.50003 2.08578L8.00003 6.58578L12.5 2.08578L13.9142 3.5L9.41424 8L13.9142 12.5L12.5 13.9142L8.00003 9.41421L3.50003 13.9142L2.08582 12.5L6.58582 8L2.08582 3.5L3.50003 2.08578Z'/%3E%3C/svg%3E")}
+.prose ul.checklist>li::before{background-color:var(--ck-bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M11.1841 2.979L4.08154 10.0815L0.815918 6.27295L1.95459 5.29639L4.16553 7.87549L10.1235 1.91846L11.1841 2.979Z'/%3E%3C/svg%3E")}
+.prose ul.checklist.x>li::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M10.5 2.56055L7.06055 6L10.5 9.43945L9.43945 10.5L6 7.06055L2.56055 10.5L1.5 9.43945L4.93945 6L1.5 2.56055L2.56055 1.5L6 4.93945L9.43945 1.5L10.5 2.56055Z'/%3E%3C/svg%3E")}
 @media (max-width:560px){.prose ul.checklist{padding:8px 16px}}
 /* On a dark page the panel matches the page, so drop the inset and align with the heading. */
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .prose ul.checklist{padding:0}}
