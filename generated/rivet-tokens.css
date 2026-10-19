@@ -1,6 +1,7 @@
 /* Rivet 3 tokens generated from Figma (source of truth). Names = --rvt- + Figma name. */
 
 :root {
+	--rvt-color-brand-ultra-dark: #300404;
 	--rvt-color-brand-extra-dark: #510606;
 	--rvt-color-brand-dark: #6d0808;
 	--rvt-color-brand-main: #990000;
@@ -494,7 +495,7 @@
 	--rvt-background-inverse-alt: var(--rvt-color-base-ultra-light);
 	--rvt-background-inverse-strong: var(--rvt-color-base-ultra-light);
 	--rvt-background-inverse-subtle: var(--rvt-color-base-ultra-light);
-	--rvt-background-muted: var(--rvt-color-base-ultra-dark);
+	--rvt-background-muted: var(--rvt-color-brand-ultra-dark);
 	--rvt-background-raised: var(--rvt-color-brand-dark);
 	--rvt-background-required: var(--rvt-color-brand-extra-dark);
 	--rvt-background-strong: var(--rvt-color-brand-dark);
@@ -544,7 +545,7 @@
 	--rvt-border-brand-alt: var(--rvt-color-base-ultra-light);
 	--rvt-border-danger: var(--rvt-color-status-danger-border);
 	--rvt-border-danger-fixed: var(--rvt-color-status-danger-main);
-	--rvt-border-default: var(--rvt-color-base-ultra-dark);
+	--rvt-border-default: var(--rvt-color-brand-ultra-dark);
 	--rvt-border-info: var(--rvt-color-status-info-border);
 	--rvt-border-info-fixed: var(--rvt-color-status-info-main);
 	--rvt-border-inverse-strong: var(--rvt-color-base-ultra-light);
@@ -605,12 +606,12 @@
 	--rvt-component-table-header-background: var(--rvt-color-brand-dark);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
-	--rvt-shadow-color-xs: rgb(81 6 6 / 14%);
-	--rvt-shadow-color-sm: rgb(81 6 6 / 20%);
-	--rvt-shadow-color-md: rgb(81 6 6 / 32%);
-	--rvt-shadow-color-lg: rgb(81 6 6 / 42%);
-	--rvt-shadow-color-xl: rgb(81 6 6 / 50%);
-	--rvt-shadow-color-2xl: rgb(81 6 6 / 60%);
+	--rvt-shadow-color-xs: rgb(48 4 4 / 14%);
+	--rvt-shadow-color-sm: rgb(48 4 4 / 20%);
+	--rvt-shadow-color-md: rgb(48 4 4 / 32%);
+	--rvt-shadow-color-lg: rgb(48 4 4 / 42%);
+	--rvt-shadow-color-xl: rgb(48 4 4 / 50%);
+	--rvt-shadow-color-2xl: rgb(48 4 4 / 60%);
 }
 
 :root {

@@ -43,7 +43,7 @@
   "summary": {
     "themeColors": 129,
     "themeColorsReplacingAnExistingCodeName": 36,
-    "paletteColors": 37,
+    "paletteColors": 38,
     "textStyles": 76,
     "textStylesThatAreRenameOnly": 18,
     "spacing": 16,
@@ -150,6 +150,14 @@
   "tokens": {
     "color": {
       "palette": [
+        {
+          "name": "color/brand/ultra-dark",
+          "css": "--rvt-color-brand-ultra-dark",
+          "value": "#300404",
+          "codeToday": null,
+          "action": "add (new)",
+          "note": "Darkest crimson. Crimson-theme counterpart to color/base/ultra-dark: borders/dividers on brand/dark and brand/extra-dark surfaces."
+        },
         {
           "name": "color/brand/extra-dark",
           "css": "--rvt-color-brand-extra-dark",
@@ -670,11 +678,11 @@
             "css": "--rvt-background-muted",
             "light": "#efdfc8",
             "dark": "#000000",
-            "crimson": "#000000",
+            "crimson": "#300404",
             "cssValue": {
               "light": "--rvt-color-brand-light",
               "dark": "--rvt-color-base-ultra-dark",
-              "crimson": "--rvt-color-base-ultra-dark"
+              "crimson": "--rvt-color-brand-ultra-dark"
             },
             "replaces": "--rvt-color-theme-ui",
             "action": "add (replaces --rvt-color-theme-ui)"
@@ -1377,11 +1385,11 @@
             "css": "--rvt-border-default",
             "light": "#efdfc8",
             "dark": "#000000",
-            "crimson": "#000000",
+            "crimson": "#300404",
             "cssValue": {
               "light": "--rvt-color-brand-light",
               "dark": "--rvt-color-base-ultra-dark",
-              "crimson": "--rvt-color-base-ultra-dark"
+              "crimson": "--rvt-color-brand-ultra-dark"
             },
             "replaces": "--rvt-color-theme-ui",
             "action": "add (replaces --rvt-color-theme-ui)"
@@ -4541,7 +4549,7 @@
             "css": "--rvt-shadow-color-xs",
             "light": "rgb(31 37 40 / 4%)",
             "dark": "rgb(0 0 0 / 14%)",
-            "crimson": "rgb(81 6 6 / 14%)"
+            "crimson": "rgb(48 4 4 / 14%)"
           },
           "codeToday": null,
           "action": "add"
@@ -4554,7 +4562,7 @@
             "css": "--rvt-shadow-color-sm",
             "light": "rgb(31 37 40 / 7%)",
             "dark": "rgb(0 0 0 / 20%)",
-            "crimson": "rgb(81 6 6 / 20%)"
+            "crimson": "rgb(48 4 4 / 20%)"
           },
           "codeToday": "--rvt-shadow-subtle (0 3px 6px, 7%)",
           "action": "replace (value changes)"
@@ -4567,7 +4575,7 @@
             "css": "--rvt-shadow-color-md",
             "light": "rgb(31 37 40 / 10%)",
             "dark": "rgb(0 0 0 / 32%)",
-            "crimson": "rgb(81 6 6 / 32%)"
+            "crimson": "rgb(48 4 4 / 32%)"
           },
           "codeToday": "--rvt-shadow-base / --rvt-shadow-standard (0 4px 8px, 16%)",
           "action": "replace (value changes)"
@@ -4580,7 +4588,7 @@
             "css": "--rvt-shadow-color-lg",
             "light": "rgb(31 37 40 / 18%)",
             "dark": "rgb(0 0 0 / 42%)",
-            "crimson": "rgb(81 6 6 / 42%)"
+            "crimson": "rgb(48 4 4 / 42%)"
           },
           "codeToday": "--rvt-shadow-heavy (0 4px 16px, 20%)",
           "action": "replace (value changes)"
@@ -4593,7 +4601,7 @@
             "css": "--rvt-shadow-color-xl",
             "light": "rgb(31 37 40 / 20%)",
             "dark": "rgb(0 0 0 / 50%)",
-            "crimson": "rgb(81 6 6 / 50%)"
+            "crimson": "rgb(48 4 4 / 50%)"
           },
           "codeToday": null,
           "action": "add"
@@ -4606,7 +4614,7 @@
             "css": "--rvt-shadow-color-2xl",
             "light": "rgb(31 37 40 / 24%)",
             "dark": "rgb(0 0 0 / 60%)",
-            "crimson": "rgb(81 6 6 / 60%)"
+            "crimson": "rgb(48 4 4 / 60%)"
           },
           "codeToday": null,
           "action": "add"
