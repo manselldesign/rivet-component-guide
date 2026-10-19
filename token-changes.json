@@ -2196,12 +2196,12 @@
             "name": "component/table-header/background",
             "css": "--rvt-component-table-header-background",
             "light": "#990000",
-            "dark": "#14181a",
-            "crimson": "#6d0808",
+            "dark": "#000000",
+            "crimson": "#300404",
             "cssValue": {
               "light": "--rvt-color-brand-main",
-              "dark": "--rvt-color-base-dark",
-              "crimson": "--rvt-color-brand-dark"
+              "dark": "--rvt-color-base-ultra-dark",
+              "crimson": "--rvt-color-brand-ultra-dark"
             },
             "replaces": null,
             "action": "add (new)"

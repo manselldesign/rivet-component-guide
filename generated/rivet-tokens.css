@@ -465,7 +465,7 @@
 	--rvt-component-input-border: var(--rvt-color-brand-extra-light);
 	--rvt-component-input-icon: var(--rvt-color-brand-extra-light);
 	--rvt-component-input-text: var(--rvt-color-brand-extra-light);
-	--rvt-component-table-header-background: var(--rvt-color-base-dark);
+	--rvt-component-table-header-background: var(--rvt-color-base-ultra-dark);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
 	--rvt-shadow-color-xs: rgb(0 0 0 / 14%);
@@ -603,7 +603,7 @@
 	--rvt-component-input-border: var(--rvt-color-brand-extra-light);
 	--rvt-component-input-icon: var(--rvt-color-brand-extra-light);
 	--rvt-component-input-text: var(--rvt-color-brand-extra-light);
-	--rvt-component-table-header-background: var(--rvt-color-brand-dark);
+	--rvt-component-table-header-background: var(--rvt-color-brand-ultra-dark);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
 	--rvt-shadow-color-xs: rgb(48 4 4 / 14%);
