@@ -62,6 +62,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-19",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-8"
+    },
+    {
+      "slug": "callout",
+      "name": "Callout",
+      "summary": "A highlighted box that draws attention to one thing on a page, with a short title, description, picture and up to two links.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-19",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-5"
     }
   ]
 }
