@@ -349,7 +349,7 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
    text/default #ffffff (ink), text/accent #fdfaf7 (crimson), accent-strong #efdfc8 (hover).
    Always dark, in both page themes, like the hero. Below 1024px the rail becomes the prototype's
    in-flow disclosure under a compact bar (400ms max-height ease, content pushes down). */
-#rail-shell{--rail-pad:24px;--rail-bg:#1f2528;--rail-rule:#000000;--rail-text:#ffffff;--rail-accent:#fdfaf7;--rail-strong:#efdfc8;color-scheme:dark}
+#rail-shell{--rail-pad:24px;--rail-bg:#1f2528;--rail-rule:#000000;--rail-text:#ffffff;--rail-accent:#faf6ef;--rail-strong:#efdfc8;color-scheme:dark}
 :root{--rail-w:280px}
 body:not(.has-rail) #rail-shell{display:none}
 #rail{background:var(--rail-bg);color:var(--rail-text)}
@@ -368,7 +368,7 @@ body:not(.has-rail) #rail-shell{display:none}
 .rail-chev svg{width:16px;height:16px;display:block;fill:currentColor}
 .rail-item[aria-current="page"]{color:var(--rail-accent)}
 .rail-item[aria-current="page"] .rail-label{text-decoration:underline;text-underline-position:from-font;text-decoration-thickness:1px}
-.rail-item[aria-current="page"] .rail-chev{display:none}
+.rail-item[aria-current="page"] .rail-chev{color:var(--rail-accent)} /* icon/accent: chevron stays, changes color with the label */
 .rail-item:active,.rail-item:focus-visible{color:var(--rail-strong);text-decoration:none}
 .rail-item:active .rail-label,.rail-item:focus-visible .rail-label{text-decoration:underline;text-decoration-thickness:1px}
 #rail-shell :focus-visible{outline:2px solid var(--rail-strong);outline-offset:2px;isolation:isolate}
