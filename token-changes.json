@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-10-15",
+  "updated": "2026-10-19",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -44,7 +44,7 @@
     "themeColors": 129,
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 37,
-    "textStyles": 75,
+    "textStyles": 76,
     "textStylesThatAreRenameOnly": 18,
     "spacing": 16,
     "shadows": 6
@@ -2371,8 +2371,8 @@
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-20-26)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans-display)"
           },
           {
-            "name": "heading/2xl/strong",
-            "css": "--rvt-font-heading-2xl-strong",
+            "name": "heading/3xl/strong",
+            "css": "--rvt-font-heading-3xl-strong",
             "spec": {
               "font": "Roboto Flex",
               "weight": 700,
@@ -2394,8 +2394,8 @@
             }
           },
           {
-            "name": "heading/xl/strong",
-            "css": "--rvt-font-heading-xl-strong",
+            "name": "heading/2xl/strong",
+            "css": "--rvt-font-heading-2xl-strong",
             "spec": {
               "font": "Roboto Flex",
               "weight": 700,
@@ -2412,6 +2412,29 @@
             "codeToday": null,
             "action": "add",
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans-heading)",
+            "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+            }
+          },
+          {
+            "name": "heading/xl/strong",
+            "css": "--rvt-font-heading-xl-strong",
+            "spec": {
+              "font": "Roboto Flex",
+              "weight": 700,
+              "width": 110,
+              "size": {
+                "desktop": 26,
+                "mobile": 23
+              },
+              "lineHeight": {
+                "desktop": 32,
+                "mobile": 28
+              }
+            },
+            "codeToday": null,
+            "action": "add",
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-28-32) var(--rvt-font-family-sans-heading)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
             }
@@ -3782,6 +3805,14 @@
           "value": 23,
           "codeToday": "--rvt-size-23 / --rvt-ts-23",
           "action": "rename"
+        },
+        {
+          "name": "type/size/23-26",
+          "css": "--rvt-type-size-23-26",
+          "desktop": 26,
+          "mobile": 23,
+          "codeToday": null,
+          "action": "add"
         },
         {
           "name": "type/size/23-29",
@@ -5245,11 +5276,11 @@
       },
       {
         "before": "✅ Heading/ultra-large/strong",
-        "after": "heading/2xl/strong"
+        "after": "heading/3xl/strong"
       },
       {
         "before": "✅ Heading/extra-large/strong",
-        "after": "heading/xl/strong"
+        "after": "heading/2xl/strong"
       },
       {
         "before": "✅ Heading/large/strong",
@@ -5522,6 +5553,18 @@
       {
         "before": "✅ Custom/avatar/32",
         "after": "component/avatar/32"
+      },
+      {
+        "before": "heading/2xl/strong",
+        "after": "heading/3xl/strong",
+        "date": "2026-10-19",
+        "why": "Made room for a 26px heading/xl/strong; heading names now match the body scale (2xl 29, xl 26, lg 23)."
+      },
+      {
+        "before": "heading/xl/strong",
+        "after": "heading/2xl/strong",
+        "date": "2026-10-19",
+        "why": "Same change as above."
       }
     ],
     "themeColors": [
