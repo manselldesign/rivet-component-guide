@@ -16,19 +16,19 @@ A small label that shows the status or category of something at a glance, like "
 ## Variants
 
 ### Status
-- Default: Use for neutral tags, like a category or format
-- Info: Use for helpful notes, like "New" or "Updated"
-- Success: Use for good or finished states, like "Open" or "Approved"
-- Warning: Use when something needs attention soon, like "Closing soon"
-- Danger: Use for problems or closed states, like "Full" or "Canceled"
+- **Default:** Use for neutral tags, like a category or format
+- **Info:** Use for helpful notes, like "New" or "Updated"
+- **Success:** Use for good or finished states, like "Open" or "Approved"
+- **Warning:** Use when something needs attention soon, like "Closing soon"
+- **Danger:** Use for problems or closed states, like "Full" or "Canceled"
 
 ### Style
-- Strong: Use when the status needs to stand out. Use it sparingly
-- Subtle: Use in lists or pages with many badges, so they don't compete
+- **Strong:** Use when the status needs to stand out. Use it sparingly
+- **Subtle:** Use in lists or pages with many badges, so they don't compete
 
 ### Layout
-- Default: Icon and text. Use this in most cases
-- Icon Only: Use only in tight spaces where nearby text already makes the meaning clear
+- **Default:** Icon and text. Use this in most cases
+- **Icon Only:** Use only in tight spaces where nearby text already makes the meaning clear
 
 ## Writing tips
 - Keep it to one or two words

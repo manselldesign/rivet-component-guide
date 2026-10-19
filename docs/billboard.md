@@ -41,8 +41,8 @@ A large block that pairs a big image with a short title, a sentence or two, and 
 ## Variants
 
 ### Links
-- Single: Use when there's one clear next step, like "Apply now"
-- Multiple: Use when there are a few related pages, like "Tuition", "Financial aid" and "Scholarships"
+- **Single:** Use when there's one clear next step, like "Apply now"
+- **Multiple:** Use when there are a few related pages, like "Tuition", "Financial aid" and "Scholarships"
 
 ### Order
 - Image on the left, text on the right

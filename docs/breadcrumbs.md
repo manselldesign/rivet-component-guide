@@ -15,9 +15,9 @@ A short trail of links at the top of a page that shows where the page sits in yo
 ## Variants
 
 ### Parts of the trail
-- Home: The house icon. Always the first link and takes people to your site's homepage
-- Earlier pages: Links to the pages above this one, in order
-- Current page: The page people are on. It's bold and isn't a link
+- **Home:** The house icon. Always the first link and takes people to your site's homepage
+- **Earlier pages:** Links to the pages above this one, in order
+- **Current page:** The page people are on. It's bold and isn't a link
 
 ## Writing tips
 - Use the same page names people see in your navigation and page titles

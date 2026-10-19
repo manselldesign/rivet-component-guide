@@ -1,7 +1,10 @@
 # Button
 
 ## What it is
-A button lets people take an action, like submitting a form, or move to the next step, like "Apply now." It tells readers what will happen when they click.
+A button lets people take an action or move to the next step. There are two main kinds, and the difference is what happens after the click:
+
+- **Action buttons** (called Form in Figma) do something right here, on this page, like submitting a form, saving a change or filtering a list of events
+- **Link buttons** take people somewhere else, like "Apply now" going to the application page. They always show an arrow that tells people where they're headed
 
 ## When to use it
 - Use it for the main action on a page, like "Register for orientation"
@@ -16,21 +19,21 @@ A button lets people take an action, like submitting a form, or move to the next
 ## Variants
 
 ### Type
-- Action: Use when the click does something on the page, like "Submit" or "Filter events"
-- Link: Use when the click takes people somewhere. The arrow shows where: down for this page, right for another IU page, angled for an outside site
-- Icon only: Use for small, familiar actions, like "Add" or "Close"
-- Social: Use to link to IU's social media accounts
+- **Action:** Use when the click does something on the page, like "Submit" or "Filter events". Called Form in Figma
+- **Link:** Use when the click takes people somewhere. The arrow shows where: down for this page, right for another IU page, angled for an outside site
+- **Icon only:** Use for small, familiar actions, like "Add" or "Close"
+- **Social:** Use to link to IU's social media accounts
 
 ### Style
-- Strong: Use for the single most important action in a section
-- Normal: Use for secondary actions, like "View all events"
-- Subtle: Use for low-priority actions, like "Cancel"
+- **Strong:** Use for the single most important action in a section
+- **Normal:** Use for secondary actions, like "View all events"
+- **Subtle:** Use for low-priority actions, like "Cancel"
 
 ### Size
-- Extra-large (48px): Use where one action is the focus, like a login page, site search or a single sign-up field
-- Large (40px): Use on standard pages and forms, like settings pages, multi-step applications or "Create new event" forms
-- Medium (32px): Use in busy, information-heavy areas, like tables, sidebars and filter bars
-- Small (24px): Use in the tightest spots, like inside a table row or next to a short list item
+- **Extra-large (48px):** Use where one action is the focus, like a login page, site search or a single sign-up field
+- **Large (40px):** Use on standard pages and forms, like settings pages, multi-step applications or "Create new event" forms
+- **Medium (32px):** Use in busy, information-heavy areas, like tables, sidebars and filter bars
+- **Small (24px):** Use in the tightest spots, like inside a table row or next to a short list item
 
 ## Writing tips
 - Start with a verb: "Apply now," "Download the guide"

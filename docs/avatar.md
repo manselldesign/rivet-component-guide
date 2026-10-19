@@ -14,14 +14,14 @@ A small circle that shows who a person is. It holds their photo, their initials,
 ## Variants
 
 ### Layout
-- Image: Use when you have a clear, current photo of the person
-- Initials: Use when there's no photo but you know the person's name
-- No Image: Use when there's no photo and no name, for example a placeholder before a profile is filled in
+- **Image:** Use when you have a clear, current photo of the person
+- **Initials:** Use when there's no photo but you know the person's name
+- **No Image:** Use when there's no photo and no name, for example a placeholder before a profile is filled in
 
 ### Size
-- 32–48px: Use in tight spaces like lists, comments and bylines
-- 64–96px: Use on contact and profile cards
-- 128–224px: Use as the main image at the top of a profile page
+- **32–48px:** Use in tight spaces like lists, comments and bylines
+- **64–96px:** Use on contact and profile cards
+- **128–224px:** Use as the main image at the top of a profile page
 
 ## Writing tips
 - Use a square, recent headshot with the face centered so the circle crop doesn't cut off the head
