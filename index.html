@@ -33,6 +33,7 @@
   --table-border:#efdfc8;  /* border/default (rvt-table + rvt-list-hub spec) */
   --th-bg:#990000;         /* background/table-header */
   --th-fg:#ffffff;         /* text/table-header */
+  --row-tint:#fdfaf7;      /* background/tint (rvt-table Striped row) */
   --input-border:#1f2528;  /* component/input/border */
   --badge-bg:#1f2528;      /* background/inverse */
   --badge-fg:#ffffff;      /* text/inverse */
@@ -52,7 +53,7 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#1f2528;--surface:#14181a;--border:#000000;--text:#ffffff;--text-strong:#ffffff;--text-brand:#ffffff;--text-accent:#fdfaf7;--text-link-subtle:#fdfaf7;--icon-link-subtle:#fdfaf7;--text-brand-strong:#efdfc8;--icon-accent-strong:#efdfc8;--border-accent-strong:#efdfc8;
-  --icon-brand:#ffffff;--icon-default:#ffffff;--icon-accent:#fdfaf7;--text-muted:#b9b3ac;--code-bg:#14181a;--th-bg:#14181a;--th-fg:#ffffff;--table-border:#000000;
+  --icon-brand:#ffffff;--icon-default:#ffffff;--icon-accent:#fdfaf7;--text-muted:#b9b3ac;--code-bg:#14181a;--th-bg:#14181a;--th-fg:#ffffff;--table-border:#000000;--row-tint:#14181a;
   --input-border:#faf6ef;--input-text:#faf6ef;--input-focus:#fdfaf7;--badge-bg:#ffffff;--badge-fg:#1f2528;
   --al-default-bg:#000000;--al-default-title:#ffffff;--al-info-bg:#000000;--al-info-title:#ffffff;
   --al-success-bg:#000000;--al-success-title:#ffffff;--al-warning-bg:#000000;--al-warning-title:#ffffff;
@@ -60,7 +61,7 @@
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#1f2528;--surface:#14181a;--border:#000000;--text:#ffffff;--text-strong:#ffffff;--text-brand:#ffffff;--text-accent:#fdfaf7;--text-link-subtle:#fdfaf7;--icon-link-subtle:#fdfaf7;--text-brand-strong:#efdfc8;--icon-accent-strong:#efdfc8;--border-accent-strong:#efdfc8;
-  --icon-brand:#ffffff;--icon-default:#ffffff;--icon-accent:#fdfaf7;--text-muted:#b9b3ac;--code-bg:#14181a;--th-bg:#14181a;--th-fg:#ffffff;--table-border:#000000;
+  --icon-brand:#ffffff;--icon-default:#ffffff;--icon-accent:#fdfaf7;--text-muted:#b9b3ac;--code-bg:#14181a;--th-bg:#14181a;--th-fg:#ffffff;--table-border:#000000;--row-tint:#14181a;
   --input-border:#faf6ef;--input-text:#faf6ef;--input-focus:#fdfaf7;--badge-bg:#ffffff;--badge-fg:#1f2528;
   --al-default-bg:#000000;--al-default-title:#ffffff;--al-info-bg:#000000;--al-info-title:#ffffff;
   --al-success-bg:#000000;--al-success-title:#ffffff;--al-warning-bg:#000000;--al-warning-title:#ffffff;
@@ -244,6 +245,8 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .prose tbody code{white-space:normal;overflow-wrap:normal;word-break:normal}
 .prose tbody th{text-align:left;padding:24px 16px 24px 24px;vertical-align:middle;font-size:16px;line-height:20px;font-weight:var(--w-bold);color:var(--text-strong);background:var(--bg);overflow-wrap:break-word}
 .table-wrap:focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
+/* Card pages: the row for the card being documented uses the rvt-table Striped row fill (background/tint) */
+.prose tbody tr.is-current th,.prose tbody tr.is-current td{background:var(--row-tint)}
 .prose thead th{background:var(--th-bg);color:var(--th-fg);font-family:var(--font-mono);font-size:14px;line-height:14px;letter-spacing:1px;font-weight:600;
   text-align:left;vertical-align:middle;padding:16px;height:48px;overflow-wrap:normal;word-break:normal;hyphens:none}
 .prose td{padding:24px 16px;vertical-align:middle;font-size:16px;line-height:24px;font-weight:var(--w-normal);color:var(--text);background:var(--bg);overflow-wrap:break-word}
@@ -612,6 +615,20 @@ body:not(.has-rail) #rail-shell{display:none}
       const html = marked.parse(preprocess(cache[c.slug]), {gfm: true, breaks: false});
       prose.innerHTML = DOMPurify.sanitize(html);
       enhance(prose);
+      if (c.slug.startsWith('card-')) {
+        const kind = c.slug.slice(5).toLowerCase();
+        prose.querySelectorAll('table').forEach(t => {
+          const col = [...t.querySelectorAll('thead th')].findIndex(th => th.textContent.trim().toLowerCase() === 'use');
+          if (col < 0) return;
+          t.querySelectorAll('tbody tr').forEach(tr => {
+            const cell = tr.children[col];
+            if (cell && cell.textContent.trim().toLowerCase() === kind) {
+              tr.classList.add('is-current');
+              cell.insertAdjacentHTML('beforeend', '<span class="sr-only"> (this card)</span>');
+            }
+          });
+        });
+      }
       prose.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
       const devH = [...prose.querySelectorAll('h2')].find(h => /developer spec/i.test(h.textContent));
       const jump = document.getElementById('jump-dev');
