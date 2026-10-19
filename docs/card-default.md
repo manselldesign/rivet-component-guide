@@ -3,12 +3,46 @@
 ## What it is
 A box that previews one item and links to its full page, like an event, a news story or a degree program. People click anywhere on the card to open it.
 
+## Which card should I use?
+
+Start with one question: what does the card lead to?
+
+- **A group of things:** Use a Feature card. It's a doorway to a topic, like "Mental health support" or "Types of financial aid". Clicking it opens a page with more cards
+- **One thing:** Use the card that matches what it is
+  - **An event** with a date, time and place: Event card
+  - **A news story** or announcement: News card
+  - **A person**, like a faculty member or advisor: Profile card
+  - **An office or department** people need to reach: Contact card
+  - **Anything else**, like a resource, degree program, service or page: Default card
+
+### How they work together
+
+A mental health section might use every card:
+
+| On this page | You show | Use |
+| --- | --- | --- |
+| Mental health landing page | Topics: Counseling, Crisis support, Wellness workshops | Feature |
+| Counseling page | Services: Individual counseling, Group therapy, After-hours support | Default |
+| Counseling page | An upcoming stress management workshop | Event |
+| Counseling page | Counselors and their specialties | Profile |
+| Counseling page | The counseling center's address, phone and hours | Contact |
+| Counseling page | A story about the new wellness space | News |
+
+Degree programs work the same way. "Arts and Humanities" is a Feature card, and each degree inside it, like "BA in English", is a Default card.
+
+### Rules of thumb
+
+- If clicking the card opens a list of more cards, it's a Feature card
+- Don't mix Feature and Default cards in the same row. They sit on different levels
+- When an item has a date, a person or contact details, use the matching card. That information then shows in the same place every time, so people can scan a list quickly
+
 ## When to use it
 - Use it to list several items people can choose from, like upcoming events or program options
 - Use it to preview news stories or blog posts on a landing page
 - Use it to point to related pages at the end of an article
 
 ## When not to use it
+- Don't use it for a topic that leads to more cards. Use a Feature card instead
 - Don't use it for one important message. Use a callout instead
 - Don't add extra links or buttons inside a card. The whole card is already the link
 - Don't mix card layouts or styles in the same row
