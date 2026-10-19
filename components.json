@@ -73,7 +73,7 @@
     },
     {
       "slug": "card-default",
-      "name": "Card",
+      "name": "Card-default",
       "summary": "A clickable box that previews one page, like a resource, service or degree program, and links to it.",
       "status": "ready-for-dev",
       "updated": "2026-10-19",
