@@ -77,9 +77,9 @@ An alert is a colored box that tells readers something important about the page 
 | --- | --- | --- |
 | Container width | Hugs the message, up to a 500px message. With a close button: fixed 520px, so the button has room | Fills its container (327px on a 375px screen) |
 | Container padding | `spacing/4` (4px) all sides | Same |
-| Gap | `spacing/4` (4px) icon to text | Same |
+| Gap | `spacing/4` (4px) icon to text. Icon and text top-aligned | Same |
 | Background | `background/{status}-subtle` | Same |
 | Border | 1px `border/{status}` | Same |
-| Icon | 16px circle, `background/{status}-strong`, `border-radius/full`, 12px glyph centered | Same |
+| Icon | 16px circle, `background/{status}-strong`, `border-radius/full`, 12px glyph centered. Top-aligned and centered on the first line of text: it sits in a 16 × 20px slot (height `type/line-height/20`), 2px from the top. Stays on the first line when the message wraps | Same |
 | Message | `body/xs/regular` (14 / 20px), `text/default`, hugs its text, max width 500px | `body/xs/regular` (14 / 20px), fills the width and wraps. With a close button, max width 280px so the text clears the button |
 | Close button | 12px icon, 4px from top and right (no token). On Default, Info and Success only | Same |
