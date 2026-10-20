@@ -65,7 +65,7 @@ Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Rais
 | Card padding | `spacing/32` all sides (32px) | `spacing/24` all sides (24px) |
 | Image (Vertical) | Full width, 3:2, `spacing/32` below | Full width, 3:2, `spacing/24` below |
 | Image (Horizontal) | 180 × 180px, `spacing/32` gap to text column | Stacks like Vertical |
-| Sticker (Vertical) | 80px sticker, `spacing/24` below (24px) | Same |
+| Sticker (Vertical) | 80px sticker, `spacing/24` below (24px) | 64px sticker, `spacing/16` below (16px) |
 | Sticker (Horizontal) | 80px sticker, `spacing/24` gap to text column | Stacks like Vertical |
 | Text column (Horizontal) | `spacing/4` top | — |
 | Top badge | Strong badge, `spacing/12` below | Same |

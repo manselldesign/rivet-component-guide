@@ -95,7 +95,7 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 | Background | `background/raised` | `background/raised` |
 | Image (Vertical) | 3:2, full width, `spacing/32` below (24px on Mobile) | 3:2, full width, `spacing/24` below |
 | Image (Horizontal, Desktop) | 3:2 (240 × 160px), `spacing/32` to text | TBD |
-| Sticker | 80px, `spacing/24` below | TBD |
+| Sticker | 80px, `spacing/24` below (24px) | 64px, `spacing/16` below (16px) |
 | Featured badge | `rvt-badge` Default, Strong, `spacing/12` below | Same |
 | Eyebrow (tag) | `tag/sm/regular` (12 / 12px), `text/brand`, `spacing/4` below | Same |
 | Title | `action/xl/strong` (20 / 28px; 18 / 24px on Mobile), `text/strong` | `action/lg/strong` (16 / 24px), `text/strong` |
