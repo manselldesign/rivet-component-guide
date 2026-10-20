@@ -283,6 +283,7 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .alert.is-dark[data-k="default"],.alert.is-dark[data-k="success"],.alert.is-dark[data-k="warning"],.alert.is-dark[data-k="danger"]{--al-bg:#000000;--al-title:#ffffff}
 .alert.is-dark .alert-body,.alert.is-dark .alert-body li{color:#ffffff}
 .prose .alert-title{margin:0}
+.index-note{margin:0}
 /* rvt-alert Desktop, Type=Default (Figma 1915:434): title row, then description 8px below (title-block gap spacing/8),
    list 16px below (spacing/16), list items 8px apart (spacing/8), bullet flush with the description's 32px indent (spacing/32: 24px icon + 8px gap), 8px bullet-to-text.
    No close button on the guide. */
@@ -501,6 +502,12 @@ body:not(.has-rail) #rail-shell{display:none}
     document.title = 'Rivet 3 Component Guide';
     app.innerHTML = hero({tag: 'Rivet Design System', title: 'Component Guide', intro: 'Design notes and build specs for each Rivet 3 component.', actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a><a class="btn" href="downloads/rivet-icons-12x12.zip" download="rivet-icons-12x12.zip">Download 12x12 icons${icon('download')}</a>`}) + `
       <main class="wrap index">
+        <div class="prose index-note">
+          <div class="alert is-dark" data-k="danger" role="note">
+            <div class="alert-head"><span class="alert-ic">${icon(ALERT_ICON.danger)}</span><p class="alert-title">Some things were optimized</p></div>
+            <div class="alert-body"><p>While organizing the Figma file, I cleaned up parts of some components and may not have noted every change. When you have time, please go through each component and check the specs section.</p></div>
+          </div>
+        </div>
         <div class="field">
           <label class="field-label" for="filter">Filter components</label>
           <input id="filter" type="search" autocomplete="off">
