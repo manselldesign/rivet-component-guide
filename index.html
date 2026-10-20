@@ -271,9 +271,10 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .alert[data-k="warning"]{--al-bg:var(--al-warning-bg);--al-bd:#ffd580;--al-strong:#ff9602;--al-icon:#1f2528;--al-title:var(--al-warning-title)}
 .alert[data-k="danger"]{--al-bg:var(--al-danger-bg);--al-bd:#faa094;--al-strong:#cd210a;--al-title:var(--al-danger-title)}
 .alert-head{display:flex;align-items:center;gap:8px}
-.alert-ic{width:32px;height:32px;border-radius:50%;background:var(--al-strong);color:var(--al-icon);display:grid;place-items:center;flex:none}
+.alert-ic{width:24px;height:24px;border-radius:50%;background:var(--al-strong);color:var(--al-icon);display:grid;place-items:center;flex:none}
 .alert-title{font-size:20px;line-height:24px;font-weight:var(--w-black);color:var(--al-title);margin:0}
-.alert-body{padding-left:40px;min-width:0}
+.alert-ic svg{width:16px;height:16px}
+.alert-body{padding-left:32px;min-width:0;font-size:16px;line-height:24px}
 .alert-body>:last-child{margin-bottom:0}
 .alert:not(:has(.alert-body>*)) {gap:0}
 /* rvt-alert, Dark theme (forced with [!type|dark]): Info = background/info-subtle #000000, border/info #9ed5fd,
@@ -283,15 +284,15 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .alert.is-dark .alert-body,.alert.is-dark .alert-body li{color:#ffffff}
 .prose .alert-title{margin:0}
 /* rvt-alert Desktop, Type=Default (Figma 1915:434): title row, then description 8px below (title-block gap spacing/8),
-   list 16px below (spacing/16), list items 8px apart (spacing/8), bullet flush with the description's 40px indent, 8px bullet-to-text.
+   list 16px below (spacing/16), list items 8px apart (spacing/8), bullet flush with the description's 32px indent (spacing/32: 24px icon + 8px gap), 8px bullet-to-text.
    No close button on the guide. */
 .prose .alert{position:relative;gap:8px}
 .prose .alert-body>p{margin:0 0 16px}
 .prose .alert-body>:last-child{margin-bottom:0}
 .prose .alert-body ul>li{padding-left:14px}
-.prose .alert-body ul>li::before{left:0;background:var(--icon-default)}
+.prose .alert-body ul>li::before{left:0;top:9px;background:var(--icon-default)}
+.prose .alert-body p,.prose .alert-body li{font-size:16px;line-height:24px}
 .prose .alert-body ul{gap:8px;max-width:934px}
-@media (max-width:560px){.prose .alert-body ul>li::before{top:9px}}
 
 /* Do / Don't */
 .dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:16px;margin:16px 0 24px}
@@ -426,7 +427,7 @@ body:not(.has-rail) #rail-shell{display:none}
 }
 @media (prefers-reduced-motion:reduce){#rail{transition:none}}
 
-@media (max-width:560px){ .alert{padding:16px} .alert-body{padding-left:0} }
+@media (max-width:560px){ .alert{padding:16px} }
 </style>
 </head>
 <body>
