@@ -94,6 +94,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-20",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1651-77507"
+    },
+    {
+      "slug": "card-feature",
+      "name": "Card-feature",
+      "summary": "A feature card is a large doorway to a topic, like \"Types of financial aid\" or \"Mental health support\".",
+      "status": "ready-for-dev",
+      "updated": "2026-10-20",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=2077-16743"
     }
   ]
 }
