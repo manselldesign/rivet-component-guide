@@ -431,6 +431,7 @@ body:not(.has-rail) #rail-shell{display:none}
     home: 'M8 0.798157L15 5.46482V15H9V10.5556H7V15H1V5.46482L8 0.798157ZM3 6.53519V13H5V8.55556H11V13H13V6.53519L8 3.20186L3 6.53519Z',
     arrowRight: 'M1 7.00001L11.8439 7.00001L7.73661 2.14595L9.26339 0.854065L15.31 8.00001L9.26339 15.1459L7.73661 13.8541L11.8439 9.00001L1 9.00001L1 7.00001Z',
     arrowDown: 'M7 1L6.99999 11.8439L2.14593 7.73661L0.85405 9.26339L7.99999 15.31L15.1459 9.26339L13.8541 7.73661L8.99999 11.8439L9 1L7 1Z',
+    download: 'M9 7.82578L9 1H7L7 7.82578L4.39153 5.58995L3.08995 7.10846L8 11.3171L12.91 7.10847L11.6085 5.58995L9 7.82578Z M3 13V10H1V13C1 14.1046 1.89543 15 3 15H13C14.1046 15 15 14.1046 15 13V10H13V13H3Z',
     arrowUpRight: 'M10.5858 4H4.00001V2H14V12H12V5.41421L3.70712 13.7071L2.29291 12.2929L10.5858 4Z',
     info: 'M7 5.5H9V15H7V5.5Z M9.25 2.25C9.25 2.94036 8.69036 3.5 8 3.5C7.30964 3.5 6.75 2.94036 6.75 2.25C6.75 1.55964 7.30964 1 8 1C8.69036 1 9.25 1.55964 9.25 2.25Z',
     check: 'M14.9142 4L5.44353 13.4707L1.08997 8.39153L2.60848 7.08995L5.5565 10.5293L13.5 2.58578L14.9142 4Z',
@@ -481,7 +482,7 @@ body:not(.has-rail) #rail-shell{display:none}
   /* ---------- Index ---------- */
   function renderIndex() {
     document.title = 'Rivet 3 Component Guide';
-    app.innerHTML = hero({tag: 'Rivet Design System', title: 'Component Guide', intro: 'Design notes and build specs for each Rivet 3 component.', actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a><a class="btn" href="downloads/rivet-icons-12x12.zip" download="rivet-icons-12x12.zip">Download 12x12 icons${icon('arrowDown')}</a>`}) + `
+    app.innerHTML = hero({tag: 'Rivet Design System', title: 'Component Guide', intro: 'Design notes and build specs for each Rivet 3 component.', actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a><a class="btn" href="downloads/rivet-icons-12x12.zip" download="rivet-icons-12x12.zip">Download 12x12 icons${icon('download')}</a>`}) + `
       <main class="wrap index">
         <div class="field">
           <label class="field-label" for="filter">Filter components</label>

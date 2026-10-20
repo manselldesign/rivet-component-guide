@@ -60,7 +60,7 @@
       "name": "Calendar tile",
       "summary": "A small square that shows a date at a glance, with the month, day and year stacked.",
       "status": "ready-for-dev",
-      "updated": "2026-10-19",
+      "updated": "2026-10-20",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-8"
     },
     {
@@ -86,6 +86,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-19",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1640-65714"
+    },
+    {
+      "slug": "card-event",
+      "name": "Card-event",
+      "summary": "A card that previews one event, like a lecture, open house or performance, with its date, time and place.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-20",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1651-77507"
     }
   ]
 }

@@ -17,7 +17,7 @@ A small square that shows a date at a glance, with the month, day and year stack
 
 ### Parts
 - **Month:** Short month name, like "JUN". Always shown in capital letters
-- **Day:** The day of the month, in large type
+- **Day:** The day of the month, in large type. Always shown
 - **Year:** Show it when the date isn't in the current year or could be unclear. Hide it in a list of upcoming events
 
 ## Writing tips
@@ -42,4 +42,4 @@ A small square that shows a date at a glance, with the month, day and year stack
 | Month | `tag/lg/caps` (16 / 16px), Roboto Mono, uppercase, `font/tracking/lg` (2px), `color/brand/main` |
 | Day | `component/number/strong` (42 / 44px), Roboto Flex, `font/weight/825`, `color/brand/main` |
 | Year | `tag/lg/caps` (16 / 16px), Roboto Mono, `font/tracking/lg` (2px), `color/brand/main` |
-| Optional parts | Month, Day and Year can each be hidden |
+| Optional parts | Month and Year can each be hidden. Day is always shown |
