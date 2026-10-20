@@ -63,7 +63,6 @@ Shared rules: Outlined = 1px `border/default` border, no radius. Raised = `shado
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Card width | Vertical 440px, Horizontal 1200px in Figma | Fills container (327px in Figma) |
 | Card padding | `spacing/32` all sides (32px) | `spacing/24` all sides (24px) |
 | Image (Vertical) | Full width, 3:2, `spacing/32` below | Full width, 3:2, `spacing/24` below |
 | Image (Horizontal) | 180 × 180px, `spacing/32` gap to text column | Stacks like Vertical |

@@ -57,7 +57,6 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Card width | Vertical 440px, Horizontal 960px | 327px (Horizontal stacks like Vertical) |
 | Surface | `background/raised`, `shadow/md`, no border, no corner radius | Same |
 | Card padding | `spacing/32` all sides (32px) | `spacing/24` all sides (24px) |
 | Icon (Default) | 80×80 sticker, Crimson, contained | 64×64 |
