@@ -1,5 +1,11 @@
 # Card-default
 
+> [!info|dark] Quick note
+> A few parts of this card changed. Please double-check:
+>
+> - **Compact version:** A new, smaller card size was added
+> - **Tags:** Tag buttons are now badges
+
 ## What it is
 A clickable box that previews one page, like a resource, service or degree program, and links to it. People click anywhere on the card to open it. For events and news stories, use the Event or News card instead.
 

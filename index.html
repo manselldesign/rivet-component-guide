@@ -276,6 +276,12 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .alert-body{padding-left:40px;min-width:0}
 .alert-body>:last-child{margin-bottom:0}
 .alert:not(:has(.alert-body>*)) {gap:0}
+/* rvt-alert, Dark theme (forced with [!type|dark]): Info = background/info-subtle #000000, border/info #9ed5fd,
+   background/info-strong icon circle, text/info + text/default #ffffff, list bullets icon/default #ffffff */
+.alert.is-dark{color-scheme:dark;--al-bg:#000000;--al-title:#ffffff;--text:#ffffff;--text-strong:#ffffff;--icon-brand:#ffffff;--icon-default:#ffffff;color:#ffffff}
+.alert.is-dark[data-k="default"],.alert.is-dark[data-k="success"],.alert.is-dark[data-k="warning"],.alert.is-dark[data-k="danger"]{--al-bg:#000000;--al-title:#ffffff}
+.alert.is-dark .alert-body,.alert.is-dark .alert-body li{color:#ffffff}
+.prose .alert-title{margin:0}
 
 /* Do / Don't */
 .dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:16px;margin:16px 0 24px}
@@ -554,15 +560,15 @@ body:not(.has-rail) #rail-shell{display:none}
     root.querySelectorAll('blockquote').forEach(bq => {
       const first = bq.querySelector('p');
       if (!first) return;
-      const m = first.innerHTML.match(/^\[!(\w+)\][+-]?\s*([^\n<]*)(?:\n|<br>)?/i);
+      const m = first.innerHTML.match(/^\[!(\w+)(?:\|(\w+))?\][+-]?\s*([^\n<]*)(?:\n|<br>)?/i);
       if (!m) return;
       const raw = m[1].toLowerCase();
       const kind = KIND[raw] || 'info';
-      const title = m[2].trim() || raw.charAt(0).toUpperCase() + raw.slice(1);
+      const title = m[3].trim() || raw.charAt(0).toUpperCase() + raw.slice(1);
       first.innerHTML = first.innerHTML.slice(m[0].length).trim();
       if (!first.innerHTML) first.remove();
       const box = document.createElement('div');
-      box.className = 'alert'; box.dataset.k = kind; box.setAttribute('role', 'note');
+      box.className = 'alert' + ((m[2] || '').toLowerCase() === 'dark' ? ' is-dark' : ''); box.dataset.k = kind; box.setAttribute('role', 'note');
       box.innerHTML = `<div class="alert-head"><span class="alert-ic">${icon(ALERT_ICON[kind])}</span><p class="alert-title">${esc(title)}</p></div><div class="alert-body"></div>`;
       const body = box.querySelector('.alert-body');
       while (bq.firstChild) body.appendChild(bq.firstChild);
