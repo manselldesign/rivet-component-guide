@@ -28,6 +28,21 @@ A contact card shows people how to reach an office, team or department. It puts 
 - Add hours when people visit in person
 - Use buttons only for real next steps, like "Schedule an appointment"
 
+## How they work together
+
+An admissions section might use every card:
+
+| On this page | You show | Use |
+| --- | --- | --- |
+| Admissions landing page | Topics: Apply, Visit campus, Cost and aid | Feature |
+| Visit campus page | Ways to visit: Campus tours, Virtual tour, Visit days | Default |
+| Visit campus page | An upcoming fall open house | Event |
+| Visit campus page | Admissions counselors by region | Profile |
+| Visit campus page | The Office of Admissions' address, phone and hours | Contact |
+| Visit campus page | A story about the new welcome center | News |
+
+Department pages work the same way. Each one ends with a Contact card for its main office, and a "Contact us" page shows several Contact cards side by side.
+
 ## Writing tips
 - Write the office name the way people search for it, like "Office of Admissions"
 - Write out the full address, including the building and room
