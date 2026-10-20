@@ -283,19 +283,15 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .alert.is-dark .alert-body,.alert.is-dark .alert-body li{color:#ffffff}
 .prose .alert-title{margin:0}
 /* rvt-alert Desktop, Type=Default (Figma 1915:434): title row, then description 8px below (title-block gap spacing/8),
-   list 16px below (spacing/16), list items 12px apart, bullet flush with the description's 40px indent, 8px bullet-to-text.
-   Close button: 16px rvt-close, absolute 16px from top and right, icon/strong. */
+   list 16px below (spacing/16), list items 8px apart (spacing/8), bullet flush with the description's 40px indent, 8px bullet-to-text.
+   No close button on the guide. */
 .prose .alert{position:relative;gap:8px}
 .prose .alert-body>p{margin:0 0 16px}
 .prose .alert-body>:last-child{margin-bottom:0}
 .prose .alert-body ul>li{padding-left:14px}
-.prose .alert-body ul>li::before{left:0}
-.alert-close{position:absolute;top:16px;right:16px;width:16px;height:16px;padding:0;border:0;background:none;color:var(--al-title);cursor:pointer;display:grid;place-items:center}
-.alert-close svg{width:16px;height:16px;fill:currentColor;display:block}
-.alert-close:focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
-.alert.is-dark .alert-close{color:#ffffff}
-.alert.is-dark .alert-close:focus-visible{outline-color:#fdfaf7}
-.alert-head{padding-right:24px}
+.prose .alert-body ul>li::before{left:0;background:var(--icon-default)}
+.prose .alert-body ul{gap:8px;max-width:934px}
+@media (max-width:560px){.prose .alert-body ul>li::before{top:9px}}
 
 /* Do / Don't */
 .dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:16px;margin:16px 0 24px}
@@ -587,13 +583,6 @@ body:not(.has-rail) #rail-shell{display:none}
       const body = box.querySelector('.alert-body');
       while (bq.firstChild) body.appendChild(bq.firstChild);
       if (!body.textContent.trim()) body.remove();
-      if (box.classList.contains('is-dark')) {
-        const x = document.createElement('button');
-        x.type = 'button'; x.className = 'alert-close'; x.setAttribute('aria-label', 'Dismiss ' + title);
-        x.innerHTML = icon('close');
-        x.addEventListener('click', () => box.remove());
-        box.appendChild(x);
-      }
       bq.replaceWith(box);
     });
     // Do / Don't

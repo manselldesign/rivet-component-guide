@@ -55,7 +55,7 @@ An alert is a colored box that tells readers something important about the page 
 | Title | `heading/md/strong` (20 / 24px), `text/{status}`, `spacing/4` (4px) top padding, max width 850px | Same |
 | Description | `body/base/regular` (18 / 28px; 16 / 24px on Mobile), `text/default`, `spacing/8` (8px) below title row, max width 850px | Same, no left indent |
 | Description and list indent | `spacing/40` (40px) left, aligns with title | None (icon stacks above title instead) |
-| List | `body/base/regular`, items `spacing/12` (12px) apart, bullet 6px `icon/default`, `spacing/8` (8px) bullet to text, max width 920px | Same |
+| List | `body/base/regular` (18 / 28px), `text/default`, items `spacing/8` (8px) apart, bullet 6px `icon/default` centered on the first line (bullet slot height `type/line-height/28`), `spacing/8` (8px) bullet to text, max width 920px | `body/base/regular` (16 / 24px), items `spacing/8` (8px) apart, no left indent |
 | Close button | 16px icon, 16px from top and right (no token) | Same |
 | Title colors | Info `text/info`, Success `text/success`, Warning `text/warning`, Danger `text/danger`, Default `text/brand` | Same |
 
