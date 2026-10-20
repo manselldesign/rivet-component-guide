@@ -102,6 +102,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-20",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=2077-16743"
+    },
+    {
+      "slug": "card-news",
+      "name": "Card-news",
+      "summary": "A news card previews one story, like a research discovery, a faculty award or a campus update.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-20",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1658-82209"
     }
   ]
 }
