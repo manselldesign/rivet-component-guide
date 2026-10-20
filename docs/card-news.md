@@ -58,14 +58,14 @@ A school news page works the same way. It lists News cards, newest first.
 
 ## Developer spec checklist
 
-Shared rules: Both styles use `background/raised` fill and `shadow/md`, no radius. Outlined adds a 1px `border/default` border. Hover: title turns `text/accent` with underline. Horizontal cards stack like Vertical on Mobile.
+Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Raised = `shadow/md`, no border. Both use `background/raised` fill. Hover: title turns `text/accent` with underline. Horizontal cards stack like Vertical on Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
 | Card padding | `spacing/32` all sides (32px) | `spacing/24` all sides (24px) |
 | Image (Vertical) | Full width, 3:2, `spacing/32` below | Full width, 3:2, `spacing/24` below |
 | Image (Horizontal) | 180 × 180px, `spacing/32` gap to text column | Stacks like Vertical |
-| Sticker (Vertical) | 80px sticker, `spacing/24` below | 80px sticker, `spacing/12` below |
+| Sticker (Vertical) | 80px sticker, `spacing/24` below (24px) | Same |
 | Sticker (Horizontal) | 80px sticker, `spacing/24` gap to text column | Stacks like Vertical |
 | Text column (Horizontal) | `spacing/4` top | — |
 | Top badge | Strong badge, `spacing/12` below | Same |

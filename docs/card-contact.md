@@ -61,7 +61,7 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 | Card padding | `spacing/32` all sides (32px) | `spacing/24` all sides (24px) |
 | Icon (Default) | 80×80 sticker, Crimson, contained | 64×64 |
 | Photo (Avatar) | `rvt-avatar` Image, 80px, Crimson | 64px |
-| Icon or photo, vertical | `spacing/24` below (24px) | `spacing/16` below (16px) |
+| Icon or photo, vertical | `spacing/24` below (24px) | Same |
 | Icon or photo, horizontal | `spacing/24` gap to content | Stacks above content |
 | Horizontal columns | Left: name and address, `spacing/24` right padding. Right: contact info, 1px `border/default` left divider, `spacing/24` left padding | Single column |
 | Tag | `tag/sm/regular` (12 / 12px), `text/brand`, `spacing/4` below | Same |
