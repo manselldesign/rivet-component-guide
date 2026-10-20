@@ -16,12 +16,12 @@ A contact card shows people how to reach an office, team or department. It puts 
 ## Variants
 
 ### Layout
-- Default: Use it for an office or team. Shows an icon
-- Avatar: Use it for a person or a team with a photo. Shows a round photo
+- **Default:** Use it for an office or team. Shows an icon
+- **Avatar:** Use it for a person or a team with a photo. Shows a round photo
 
 ### Orientation
-- Vertical: Use it in a sidebar or a grid of two to three contacts
-- Horizontal: Use it in the main page column when you have one main contact. It stacks to vertical on phones
+- **Vertical:** Use it in a sidebar or a grid of two to three contacts
+- **Horizontal:** Use it in the main page column when you have one main contact. It stacks to vertical on phones
 
 ### Optional parts
 - Turn on only what you have: tag, address, email, phone, website, pronouns, hours, social links and buttons
