@@ -78,6 +78,7 @@
 	--rvt-type-size-23-29: 29px;
 	--rvt-type-size-24-32: 32px;
 	--rvt-type-size-26: 26px;
+	--rvt-type-size-26-29: 29px;
 	--rvt-type-size-26-36: 36px;
 	--rvt-type-size-28-40: 40px;
 	--rvt-type-size-29: 29px;
@@ -167,6 +168,7 @@
 		--rvt-type-size-23-29: 23px;
 		--rvt-type-size-24-32: 24px;
 		--rvt-type-size-26: 20px;
+		--rvt-type-size-26-29: 26px;
 		--rvt-type-size-26-36: 23px;
 		--rvt-type-size-28-40: 28px;
 		--rvt-type-size-29-36: 29px;
@@ -325,8 +327,11 @@
 	--rvt-component-button-form-text-subtle: var(--rvt-color-base-body);
 	--rvt-component-hero-background: var(--rvt-color-brand-main);
 	--rvt-component-input-border: var(--rvt-color-base-main);
-	--rvt-component-input-icon: var(--rvt-color-base-main);
+	--rvt-component-input-icon: var(--rvt-color-base-body);
 	--rvt-component-input-text: var(--rvt-color-base-body);
+	--rvt-component-list-hub-check-background: var(--rvt-color-brand-main);
+	--rvt-component-list-hub-icon: var(--rvt-color-base-ultra-light);
+	--rvt-component-list-hub-x-background: var(--rvt-color-base-main);
 	--rvt-component-table-header-background: var(--rvt-color-brand-main);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
@@ -368,7 +373,7 @@
 	--rvt-background-warning-container: var(--rvt-color-status-warning-container);
 	--rvt-background-warning-strong: var(--rvt-color-status-warning-main);
 	--rvt-background-warning-subtle: var(--rvt-color-base-ultra-dark);
-	--rvt-text-accent: var(--rvt-color-brand-ultra-light);
+	--rvt-text-accent: var(--rvt-color-brand-extra-light);
 	--rvt-text-brand: var(--rvt-color-base-ultra-light);
 	--rvt-text-brand-strong: var(--rvt-color-brand-light);
 	--rvt-text-danger: var(--rvt-color-base-ultra-light);
@@ -388,7 +393,7 @@
 	--rvt-text-success-fixed: var(--rvt-color-status-success-main);
 	--rvt-text-warning: var(--rvt-color-base-ultra-light);
 	--rvt-text-warning-fixed: var(--rvt-color-status-warning-main);
-	--rvt-icon-accent: var(--rvt-color-brand-ultra-light);
+	--rvt-icon-accent: var(--rvt-color-brand-extra-light);
 	--rvt-icon-accent-strong: var(--rvt-color-brand-light);
 	--rvt-icon-brand: var(--rvt-color-base-ultra-light);
 	--rvt-icon-danger: var(--rvt-color-base-ultra-light);
@@ -401,7 +406,7 @@
 	--rvt-icon-strong: var(--rvt-color-base-ultra-light);
 	--rvt-icon-success: var(--rvt-color-base-ultra-light);
 	--rvt-icon-warning: var(--rvt-color-base-ultra-light);
-	--rvt-border-accent: var(--rvt-color-brand-ultra-light);
+	--rvt-border-accent: var(--rvt-color-brand-extra-light);
 	--rvt-border-accent-strong: var(--rvt-color-brand-light);
 	--rvt-border-brand: var(--rvt-color-brand-light);
 	--rvt-border-brand-alt: var(--rvt-color-base-ultra-light);
@@ -465,6 +470,9 @@
 	--rvt-component-input-border: var(--rvt-color-brand-extra-light);
 	--rvt-component-input-icon: var(--rvt-color-brand-extra-light);
 	--rvt-component-input-text: var(--rvt-color-brand-extra-light);
+	--rvt-component-list-hub-check-background: var(--rvt-color-base-ultra-dark);
+	--rvt-component-list-hub-icon: var(--rvt-color-base-ultra-light);
+	--rvt-component-list-hub-x-background: var(--rvt-color-base-ultra-dark);
 	--rvt-component-table-header-background: var(--rvt-color-base-ultra-dark);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
@@ -506,7 +514,7 @@
 	--rvt-background-warning-container: var(--rvt-color-status-warning-container);
 	--rvt-background-warning-strong: var(--rvt-color-status-warning-main);
 	--rvt-background-warning-subtle: var(--rvt-color-brand-extra-dark);
-	--rvt-text-accent: var(--rvt-color-brand-ultra-light);
+	--rvt-text-accent: var(--rvt-color-brand-extra-light);
 	--rvt-text-brand: var(--rvt-color-base-ultra-light);
 	--rvt-text-brand-strong: var(--rvt-color-brand-light);
 	--rvt-text-danger: var(--rvt-color-base-ultra-light);
@@ -526,7 +534,7 @@
 	--rvt-text-success-fixed: var(--rvt-color-status-success-main);
 	--rvt-text-warning: var(--rvt-color-base-ultra-light);
 	--rvt-text-warning-fixed: var(--rvt-color-status-warning-main);
-	--rvt-icon-accent: var(--rvt-color-brand-ultra-light);
+	--rvt-icon-accent: var(--rvt-color-brand-extra-light);
 	--rvt-icon-accent-strong: var(--rvt-color-brand-light);
 	--rvt-icon-brand: var(--rvt-color-base-ultra-light);
 	--rvt-icon-danger: var(--rvt-color-base-ultra-light);
@@ -539,7 +547,7 @@
 	--rvt-icon-strong: var(--rvt-color-base-ultra-light);
 	--rvt-icon-success: var(--rvt-color-base-ultra-light);
 	--rvt-icon-warning: var(--rvt-color-base-ultra-light);
-	--rvt-border-accent: var(--rvt-color-brand-ultra-light);
+	--rvt-border-accent: var(--rvt-color-brand-extra-light);
 	--rvt-border-accent-strong: var(--rvt-color-brand-light);
 	--rvt-border-brand: var(--rvt-color-brand-light);
 	--rvt-border-brand-alt: var(--rvt-color-base-ultra-light);
@@ -603,6 +611,9 @@
 	--rvt-component-input-border: var(--rvt-color-brand-extra-light);
 	--rvt-component-input-icon: var(--rvt-color-brand-extra-light);
 	--rvt-component-input-text: var(--rvt-color-brand-extra-light);
+	--rvt-component-list-hub-check-background: var(--rvt-color-brand-extra-dark);
+	--rvt-component-list-hub-icon: var(--rvt-color-base-ultra-light);
+	--rvt-component-list-hub-x-background: var(--rvt-color-brand-extra-dark);
 	--rvt-component-table-header-background: var(--rvt-color-brand-ultra-dark);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
@@ -620,7 +631,7 @@
 	--rvt-font-display-lg-strong: var(--rvt-font-weight-700) var(--rvt-type-size-29-48)/var(--rvt-type-line-height-32-52) var(--rvt-font-family-sans-display);
 	--rvt-font-display-md-strong: var(--rvt-font-weight-700) var(--rvt-type-size-26-36)/var(--rvt-type-line-height-28-40) var(--rvt-font-family-sans-display);
 	--rvt-font-display-sm-strong: var(--rvt-font-weight-700) var(--rvt-type-size-29)/var(--rvt-type-line-height-32) var(--rvt-font-family-sans-display);
-	--rvt-font-display-xs-strong: var(--rvt-font-weight-700) var(--rvt-type-size-20-26)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans-display);
+	--rvt-font-display-xs-strong: var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans-display);
 	--rvt-font-heading-3xl-strong: var(--rvt-font-weight-700) var(--rvt-type-size-26-36)/var(--rvt-type-line-height-28-40) var(--rvt-font-family-sans-heading);
 	--rvt-font-heading-2xl-strong: var(--rvt-font-weight-700) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans-heading);
 	--rvt-font-heading-xl-strong: var(--rvt-font-weight-700) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-28-32) var(--rvt-font-family-sans-heading);
@@ -629,19 +640,21 @@
 	--rvt-font-heading-sm-strong: var(--rvt-font-weight-700) var(--rvt-type-size-16)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans-heading);
 	--rvt-font-heading-xs-strong: var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans-heading);
 	--rvt-font-heading-2xs-strong: var(--rvt-font-weight-700) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans-heading);
-	--rvt-font-body-xl-strong: var(--rvt-font-weight-600) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans);
-	--rvt-font-body-xl-regular: var(--rvt-font-weight-350) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans);
-	--rvt-font-body-xl-italic: italic var(--rvt-font-weight-350) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans);
+	--rvt-font-body-2xl-strong: var(--rvt-font-weight-600) var(--rvt-type-size-26-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans);
+	--rvt-font-body-2xl-regular: var(--rvt-font-weight-350) var(--rvt-type-size-26-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans);
+	--rvt-font-body-2xl-italic: italic var(--rvt-font-weight-350) var(--rvt-type-size-26-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans);
+	--rvt-font-body-xl-strong: var(--rvt-font-weight-600) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans);
+	--rvt-font-body-xl-regular: var(--rvt-font-weight-350) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans);
+	--rvt-font-body-xl-italic: italic var(--rvt-font-weight-350) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans);
 	--rvt-font-body-lg-strong: var(--rvt-font-weight-600) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-28-32) var(--rvt-font-family-sans);
 	--rvt-font-body-lg-regular: var(--rvt-font-weight-350) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-28-32) var(--rvt-font-family-sans);
-	--rvt-font-body-lead-regular: var(--rvt-font-weight-350) var(--rvt-type-size-20-26)/var(--rvt-type-line-height-28-36) var(--rvt-font-family-sans);
 	--rvt-font-body-lg-italic: italic var(--rvt-font-weight-350) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-28-32) var(--rvt-font-family-sans);
-	--rvt-font-body-md-strong: var(--rvt-font-weight-600) var(--rvt-type-size-20)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans);
-	--rvt-font-body-md-regular: var(--rvt-font-weight-350) var(--rvt-type-size-18-20)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans);
-	--rvt-font-body-md-italic: italic var(--rvt-font-weight-350) var(--rvt-type-size-20)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans);
-	--rvt-font-body-base-strong: var(--rvt-font-weight-600) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans);
-	--rvt-font-body-base-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans);
-	--rvt-font-body-base-italic: italic var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans);
+	--rvt-font-body-md-strong: var(--rvt-font-weight-600) var(--rvt-type-size-18-20)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans);
+	--rvt-font-body-md-regular: var(--rvt-font-weight-350) var(--rvt-type-size-18-20)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans);
+	--rvt-font-body-md-italic: italic var(--rvt-font-weight-350) var(--rvt-type-size-18-20)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans);
+	--rvt-font-body-base-strong: var(--rvt-font-weight-600) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans);
+	--rvt-font-body-base-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans);
+	--rvt-font-body-base-italic: italic var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans);
 	--rvt-font-body-sm-strong: var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans);
 	--rvt-font-body-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans);
 	--rvt-font-body-sm-italic: italic var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans);
@@ -659,36 +672,36 @@
 	--rvt-font-action-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans);
 	--rvt-font-tag-lg-caps: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono);
 	--rvt-font-tag-lg-strong: var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono);
-	--rvt-font-tag-lg-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-mono);
+	--rvt-font-tag-lg-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono);
 	--rvt-font-tag-md-caps: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-mono);
 	--rvt-font-tag-md-strong: var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-mono);
 	--rvt-font-tag-md-regular: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-mono);
 	--rvt-font-tag-sm-caps: var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-mono);
 	--rvt-font-tag-sm-strong: var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-mono);
-	--rvt-font-tag-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono);
+	--rvt-font-tag-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-mono);
 	--rvt-font-editorial-xl-regular: var(--rvt-font-weight-350) var(--rvt-type-size-36-54)/var(--rvt-type-line-height-40-56) var(--rvt-font-family-serif);
 	--rvt-font-editorial-lg-regular: var(--rvt-font-weight-350) var(--rvt-type-size-29-48)/var(--rvt-type-line-height-36-56) var(--rvt-font-family-serif);
 	--rvt-font-editorial-md-regular: var(--rvt-font-weight-350) var(--rvt-type-size-29)/var(--rvt-type-line-height-36) var(--rvt-font-family-serif);
 	--rvt-font-editorial-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-serif);
 	--rvt-font-link-serif-xl-strong: var(--rvt-font-weight-600) var(--rvt-type-size-32-52)/var(--rvt-type-line-height-36-56) var(--rvt-font-family-serif);
-	--rvt-font-link-base-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans);
+	--rvt-font-link-base-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans);
 	--rvt-font-link-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans);
 	--rvt-font-link-xs-regular: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-campus-title: var(--rvt-font-weight-700) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-eyebrow-2line: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans);
-	--rvt-font-component-lockup-eyebrow-3line: var(--rvt-font-weight-350) 11px/11px var(--rvt-font-family-sans);
+	--rvt-font-component-lockup-eyebrow-3line: var(--rvt-font-weight-350) var(--rvt-component-lockup-type-eyebrow-3line)/var(--rvt-component-lockup-type-eyebrow-3line) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-title-2line: var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-title-3line: var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-title-4line: var(--rvt-font-weight-700) var(--rvt-type-size-12)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans);
 	--rvt-font-component-number-strong: var(--rvt-font-weight-825) var(--rvt-type-size-42)/var(--rvt-type-line-height-44) var(--rvt-font-family-sans);
 	--rvt-font-component-number-regular: var(--rvt-font-weight-350) var(--rvt-type-size-42)/var(--rvt-type-line-height-44) var(--rvt-font-family-sans);
-	--rvt-font-component-avatar-224: var(--rvt-font-weight-600) 108px/108px var(--rvt-font-family-sans);
-	--rvt-font-component-avatar-160: var(--rvt-font-weight-600) 72px/72px var(--rvt-font-family-sans);
-	--rvt-font-component-avatar-128: var(--rvt-font-weight-600) 56px/56px var(--rvt-font-family-sans);
-	--rvt-font-component-avatar-96: var(--rvt-font-weight-600) 48px/48px var(--rvt-font-family-sans);
-	--rvt-font-component-avatar-80: var(--rvt-font-weight-600) 36px/var(--rvt-type-line-height-36) var(--rvt-font-family-sans);
-	--rvt-font-component-avatar-64: var(--rvt-font-weight-600) 28px/28px var(--rvt-font-family-sans);
-	--rvt-font-component-avatar-48: var(--rvt-font-weight-600) var(--rvt-type-size-20)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans);
+	--rvt-font-component-avatar-224: var(--rvt-font-weight-600) var(--rvt-component-avatar-type-224)/var(--rvt-component-avatar-type-224) var(--rvt-font-family-sans);
+	--rvt-font-component-avatar-160: var(--rvt-font-weight-600) var(--rvt-component-avatar-type-160)/var(--rvt-component-avatar-type-160) var(--rvt-font-family-sans);
+	--rvt-font-component-avatar-128: var(--rvt-font-weight-600) var(--rvt-component-avatar-type-128)/var(--rvt-component-avatar-type-128) var(--rvt-font-family-sans);
+	--rvt-font-component-avatar-96: var(--rvt-font-weight-600) var(--rvt-component-avatar-type-96)/var(--rvt-component-avatar-type-96) var(--rvt-font-family-sans);
+	--rvt-font-component-avatar-80: var(--rvt-font-weight-600) var(--rvt-component-avatar-type-80)/var(--rvt-component-avatar-type-80) var(--rvt-font-family-sans);
+	--rvt-font-component-avatar-64: var(--rvt-font-weight-600) var(--rvt-component-avatar-type-64)/var(--rvt-component-avatar-type-64) var(--rvt-font-family-sans);
+	--rvt-font-component-avatar-48: var(--rvt-font-weight-600) var(--rvt-component-avatar-type-48)/var(--rvt-component-avatar-type-48) var(--rvt-font-family-sans);
 	--rvt-font-component-avatar-40: var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
 	--rvt-font-component-avatar-32: var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans);
 	/* Text styles with a width or tracking also need the alsoSet properties listed in the guide (font-stretch, letter-spacing, text-transform). */
@@ -736,6 +749,7 @@
 	--rvt-letter-spacing-normal: var(--rvt-font-tracking-none);
 	--rvt-shadow-subtle: var(--rvt-shadow-sm);
 	--rvt-shadow-heavy: var(--rvt-shadow-lg);
+	--rvt-font-body-lead-regular: var(--rvt-font-body-xl-regular); /* body/lead/regular was removed from Figma 2026-10-21; closest is body/xl/regular */
 }
 
 /* Old theme names → their closest new name (same values). Use role-specific names in new CSS. */

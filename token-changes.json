@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-10-19",
+  "updated": "2026-10-21",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -41,10 +41,10 @@
     "After that, Figma and code match 1:1. New tokens start in Figma; name suggestions go through 'namingSuggestions'."
   ],
   "summary": {
-    "themeColors": 129,
+    "themeColors": 132,
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
-    "textStyles": 76,
+    "textStyles": 78,
     "textStylesThatAreRenameOnly": 18,
     "spacing": 16,
     "shadows": 6
@@ -831,16 +831,16 @@
             "name": "text/accent",
             "css": "--rvt-text-accent",
             "light": "#990000",
-            "dark": "#fdfaf7",
-            "crimson": "#fdfaf7",
+            "dark": "#faf6ef",
+            "crimson": "#faf6ef",
             "cssValue": {
               "light": "--rvt-color-brand-main",
-              "dark": "--rvt-color-brand-ultra-light",
-              "crimson": "--rvt-color-brand-ultra-light"
+              "dark": "--rvt-color-brand-extra-light",
+              "crimson": "--rvt-color-brand-extra-light"
             },
             "replaces": "--rvt-color-theme-accent",
             "action": "add (replaces --rvt-color-theme-accent)",
-            "valueChange": "Dark and Crimson now use color/brand/ultra-light (#fdfaf7), was color/brand/extra-light (#faf6ef). All interactive items in non-Light themes use this cream."
+            "figmaChange": "2026-10-21: Dark and Crimson changed back to color/brand/extra-light (#faf6ef); was color/brand/ultra-light (#fdfaf7)."
           },
           {
             "name": "text/brand",
@@ -1114,16 +1114,16 @@
             "name": "icon/accent",
             "css": "--rvt-icon-accent",
             "light": "#990000",
-            "dark": "#fdfaf7",
-            "crimson": "#fdfaf7",
+            "dark": "#faf6ef",
+            "crimson": "#faf6ef",
             "cssValue": {
               "light": "--rvt-color-brand-main",
-              "dark": "--rvt-color-brand-ultra-light",
-              "crimson": "--rvt-color-brand-ultra-light"
+              "dark": "--rvt-color-brand-extra-light",
+              "crimson": "--rvt-color-brand-extra-light"
             },
             "replaces": "--rvt-color-theme-accent",
             "action": "add (replaces --rvt-color-theme-accent)",
-            "valueChange": "Dark and Crimson now use color/brand/ultra-light (#fdfaf7), was color/brand/extra-light (#faf6ef). All interactive items in non-Light themes use this cream."
+            "figmaChange": "2026-10-21: Dark and Crimson changed back to color/brand/extra-light (#faf6ef); was color/brand/ultra-light (#fdfaf7)."
           },
           {
             "name": "icon/accent-strong",
@@ -1299,16 +1299,16 @@
             "name": "border/accent",
             "css": "--rvt-border-accent",
             "light": "#990000",
-            "dark": "#fdfaf7",
-            "crimson": "#fdfaf7",
+            "dark": "#faf6ef",
+            "crimson": "#faf6ef",
             "cssValue": {
               "light": "--rvt-color-brand-main",
-              "dark": "--rvt-color-brand-ultra-light",
-              "crimson": "--rvt-color-brand-ultra-light"
+              "dark": "--rvt-color-brand-extra-light",
+              "crimson": "--rvt-color-brand-extra-light"
             },
             "replaces": "--rvt-color-theme-accent",
             "action": "add (replaces --rvt-color-theme-accent)",
-            "valueChange": "Dark and Crimson now use color/brand/ultra-light (#fdfaf7), was color/brand/extra-light (#faf6ef). All interactive items in non-Light themes use this cream."
+            "figmaChange": "2026-10-21: Dark and Crimson changed back to color/brand/extra-light (#faf6ef); was color/brand/ultra-light (#fdfaf7)."
           },
           {
             "name": "border/accent-strong",
@@ -2167,16 +2167,17 @@
           {
             "name": "component/input/icon",
             "css": "--rvt-component-input-icon",
-            "light": "#1f2528",
+            "light": "#343c42",
             "dark": "#faf6ef",
             "crimson": "#faf6ef",
             "cssValue": {
-              "light": "--rvt-color-base-main",
+              "light": "--rvt-color-base-body",
               "dark": "--rvt-color-brand-extra-light",
               "crimson": "--rvt-color-brand-extra-light"
             },
             "replaces": null,
-            "action": "add (new)"
+            "action": "add (new)",
+            "figmaChange": "2026-10-21: Light changed to color/base/body (#343c42); was color/base/main (#1f2528)."
           },
           {
             "name": "component/input/text",
@@ -2191,6 +2192,51 @@
             },
             "replaces": null,
             "action": "add (new)"
+          },
+          {
+            "name": "component/list-hub/check-background",
+            "css": "--rvt-component-list-hub-check-background",
+            "light": "#990000",
+            "dark": "#000000",
+            "crimson": "#510606",
+            "cssValue": {
+              "light": "--rvt-color-brand-main",
+              "dark": "--rvt-color-base-ultra-dark",
+              "crimson": "--rvt-color-brand-extra-dark"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-21: added in Figma."
+          },
+          {
+            "name": "component/list-hub/icon",
+            "css": "--rvt-component-list-hub-icon",
+            "light": "#ffffff",
+            "dark": "#ffffff",
+            "crimson": "#ffffff",
+            "cssValue": {
+              "light": "--rvt-color-base-ultra-light",
+              "dark": "--rvt-color-base-ultra-light",
+              "crimson": "--rvt-color-base-ultra-light"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-21: added in Figma."
+          },
+          {
+            "name": "component/list-hub/x-background",
+            "css": "--rvt-component-list-hub-x-background",
+            "light": "#1f2528",
+            "dark": "#000000",
+            "crimson": "#510606",
+            "cssValue": {
+              "light": "--rvt-color-base-main",
+              "dark": "--rvt-color-base-ultra-dark",
+              "crimson": "--rvt-color-brand-extra-dark"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-21: added in Figma."
           },
           {
             "name": "component/table-header/background",
@@ -2376,7 +2422,7 @@
               "weight 750 vs Figma 700",
               "width 'semi-condensed' vs Figma 100"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-20-26)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans-display)"
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans-display)"
           },
           {
             "name": "heading/3xl/strong",
@@ -2555,15 +2601,15 @@
             }
           },
           {
-            "name": "body/xl/strong",
-            "css": "--rvt-font-body-xl-strong",
+            "name": "body/2xl/strong",
+            "css": "--rvt-font-body-2xl-strong",
             "spec": {
               "font": "Roboto Flex",
               "weight": 600,
               "width": 110,
               "size": {
                 "desktop": 29,
-                "mobile": 23
+                "mobile": 26
               },
               "lineHeight": {
                 "desktop": 40,
@@ -2572,10 +2618,83 @@
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans)",
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-26-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
-            }
+            },
+            "figmaChange": "2026-10-21: added in Figma."
+          },
+          {
+            "name": "body/2xl/regular",
+            "css": "--rvt-font-body-2xl-regular",
+            "spec": {
+              "font": "Roboto Flex",
+              "weight": 350,
+              "width": 110,
+              "size": {
+                "desktop": 29,
+                "mobile": 26
+              },
+              "lineHeight": {
+                "desktop": 40,
+                "mobile": 36
+              }
+            },
+            "codeToday": null,
+            "action": "add",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-26-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans)",
+            "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+            },
+            "figmaChange": "2026-10-21: added in Figma."
+          },
+          {
+            "name": "body/2xl/italic",
+            "css": "--rvt-font-body-2xl-italic",
+            "spec": {
+              "font": "Roboto Flex",
+              "weight": 350,
+              "width": 110,
+              "size": {
+                "desktop": 29,
+                "mobile": 26
+              },
+              "lineHeight": {
+                "desktop": 40,
+                "mobile": 36
+              }
+            },
+            "codeToday": null,
+            "action": "add",
+            "cssValue": "italic var(--rvt-font-weight-350) var(--rvt-type-size-26-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans)",
+            "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+            },
+            "figmaChange": "2026-10-21: added in Figma."
+          },
+          {
+            "name": "body/xl/strong",
+            "css": "--rvt-font-body-xl-strong",
+            "spec": {
+              "font": "Roboto Flex",
+              "weight": 600,
+              "width": 110,
+              "size": {
+                "desktop": 26,
+                "mobile": 23
+              },
+              "lineHeight": {
+                "desktop": 36,
+                "mobile": 32
+              }
+            },
+            "codeToday": null,
+            "action": "add",
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans)",
+            "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+            },
+            "figmaChange": "2026-10-21: now 26/23px size, 36/32px line height (was 29/23, 40/36; those values moved to body/2xl)."
           },
           {
             "name": "body/xl/regular",
@@ -2585,20 +2704,21 @@
               "weight": 350,
               "width": 110,
               "size": {
-                "desktop": 29,
+                "desktop": 26,
                 "mobile": 23
               },
               "lineHeight": {
-                "desktop": 40,
-                "mobile": 36
+                "desktop": 36,
+                "mobile": 32
               }
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans)",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
-            }
+            },
+            "figmaChange": "2026-10-21: now 26/23px size, 36/32px line height (was 29/23, 40/36; those values moved to body/2xl)."
           },
           {
             "name": "body/xl/italic",
@@ -2608,20 +2728,21 @@
               "weight": 350,
               "width": 110,
               "size": {
-                "desktop": 29,
+                "desktop": 26,
                 "mobile": 23
               },
               "lineHeight": {
-                "desktop": 40,
-                "mobile": 36
+                "desktop": 36,
+                "mobile": 32
               }
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "italic var(--rvt-font-weight-350) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-36-40) var(--rvt-font-family-sans)",
+            "cssValue": "italic var(--rvt-font-weight-350) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
-            }
+            },
+            "figmaChange": "2026-10-21: now 26/23px size, 36/32px line height (was 29/23, 40/36; those values moved to body/2xl)."
           },
           {
             "name": "body/lg/strong",
@@ -2686,11 +2807,13 @@
               }
             },
             "codeToday": "--rvt-font-20-fluid",
-            "action": "rename",
+            "action": "removed from Figma",
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-20-26)/var(--rvt-type-line-height-28-36) var(--rvt-font-family-sans)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
-            }
+            },
+            "figmaChange": "2026-10-21: removed from Figma. Closest style is body/xl/regular (26/23px, 36/32px). generated/rivet-tokens.css keeps --rvt-font-body-lead-regular as an alias to --rvt-font-body-xl-regular.",
+            "deprecatedAlias": "--rvt-font-body-xl-regular"
           },
           {
             "name": "body/lg/italic",
@@ -2722,7 +2845,10 @@
               "font": "Roboto Flex",
               "weight": 600,
               "width": 110,
-              "size": 20,
+              "size": {
+                "desktop": 20,
+                "mobile": 18
+              },
               "lineHeight": {
                 "desktop": 28,
                 "mobile": 24
@@ -2731,13 +2857,15 @@
             "codeToday": "--rvt-font-20-bold",
             "action": "rename + value change",
             "valueChanges": [
+              "size 20 vs Figma 20/18",
               "line-height 24 vs Figma 28/24",
               "width 'expanded' vs Figma 110"
             ],
-            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-20)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans)",
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-18-20)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
-            }
+            },
+            "figmaChange": "2026-10-21: size now 20/18px (was 20px on both)."
           },
           {
             "name": "body/md/regular",
@@ -2757,7 +2885,7 @@
             },
             "codeToday": "--rvt-font-18-fluid",
             "action": "rename",
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-18-20)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans)",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-18-20)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
             }
@@ -2769,7 +2897,10 @@
               "font": "Roboto Flex",
               "weight": 350,
               "width": 110,
-              "size": 20,
+              "size": {
+                "desktop": 20,
+                "mobile": 18
+              },
               "lineHeight": {
                 "desktop": 28,
                 "mobile": 24
@@ -2778,12 +2909,14 @@
             "codeToday": "--rvt-font-20",
             "action": "rename + value change",
             "valueChanges": [
+              "size 20 vs Figma 20/18",
               "line-height 28 vs Figma 28/24"
             ],
-            "cssValue": "italic var(--rvt-font-weight-350) var(--rvt-type-size-20)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans)",
+            "cssValue": "italic var(--rvt-font-weight-350) var(--rvt-type-size-18-20)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
-            }
+            },
+            "figmaChange": "2026-10-21: size now 20/18px (was 20px on both)."
           },
           {
             "name": "body/base/strong",
@@ -2806,7 +2939,7 @@
             "valueChanges": [
               "weight 350 vs Figma 600"
             ],
-            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans)",
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
             }
@@ -2829,7 +2962,7 @@
             },
             "codeToday": "--rvt-font-16-fluid",
             "action": "rename",
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans)",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
             }
@@ -2852,7 +2985,7 @@
             },
             "codeToday": "--rvt-font-16-fluid",
             "action": "rename",
-            "cssValue": "italic var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans)",
+            "cssValue": "italic var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-semi-expanded)"
             }
@@ -3186,14 +3319,18 @@
               "font": "Roboto Mono",
               "weight": 350,
               "size": 16,
-              "lineHeight": 24
+              "lineHeight": 16
             },
             "codeToday": "--rvt-font-16-mono",
-            "action": "rename",
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-mono)",
+            "action": "rename + value change",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-md)"
-            }
+            },
+            "valueChanges": [
+              "line-height 24 vs Figma 16"
+            ],
+            "figmaChange": "2026-10-21: line height now 16px (was 24px)."
           },
           {
             "name": "tag/md/caps",
@@ -3303,14 +3440,18 @@
               "font": "Roboto Mono",
               "weight": 350,
               "size": 12,
-              "lineHeight": 16
+              "lineHeight": 12
             },
             "codeToday": "--rvt-font-12-mono",
-            "action": "rename",
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
+            "action": "rename + value change",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-md)"
-            }
+            },
+            "valueChanges": [
+              "line-height 16 vs Figma 12"
+            ],
+            "figmaChange": "2026-10-21: line height now 12px (was 16px)."
           },
           {
             "name": "editorial/xl/regular",
@@ -3429,7 +3570,7 @@
             "valueChanges": [
               "width 'semi-expanded' vs Figma 100"
             ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans)"
           },
           {
             "name": "link/sm/regular",
@@ -3518,7 +3659,7 @@
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-350) 11px/11px var(--rvt-font-family-sans)",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-component-lockup-type-eyebrow-3line)/var(--rvt-component-lockup-type-eyebrow-3line) var(--rvt-font-family-sans)",
             "alsoSet": {
               "text-transform": "uppercase"
             }
@@ -3614,7 +3755,7 @@
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-600) 108px/108px var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-component-avatar-type-224)/var(--rvt-component-avatar-type-224) var(--rvt-font-family-sans)"
           },
           {
             "name": "component/avatar/160",
@@ -3627,7 +3768,7 @@
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-600) 72px/72px var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-component-avatar-type-160)/var(--rvt-component-avatar-type-160) var(--rvt-font-family-sans)"
           },
           {
             "name": "component/avatar/128",
@@ -3640,7 +3781,7 @@
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-600) 56px/56px var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-component-avatar-type-128)/var(--rvt-component-avatar-type-128) var(--rvt-font-family-sans)"
           },
           {
             "name": "component/avatar/96",
@@ -3653,7 +3794,7 @@
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-600) 48px/48px var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-component-avatar-type-96)/var(--rvt-component-avatar-type-96) var(--rvt-font-family-sans)"
           },
           {
             "name": "component/avatar/80",
@@ -3666,7 +3807,7 @@
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-600) 36px/var(--rvt-type-line-height-36) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-component-avatar-type-80)/var(--rvt-component-avatar-type-80) var(--rvt-font-family-sans)"
           },
           {
             "name": "component/avatar/64",
@@ -3679,7 +3820,7 @@
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-600) 28px/28px var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-component-avatar-type-64)/var(--rvt-component-avatar-type-64) var(--rvt-font-family-sans)"
           },
           {
             "name": "component/avatar/48",
@@ -3695,7 +3836,7 @@
             "valueChanges": [
               "line-height 24 vs Figma 20"
             ],
-            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-20)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-component-avatar-type-48)/var(--rvt-component-avatar-type-48) var(--rvt-font-family-sans)"
           },
           {
             "name": "component/avatar/40",
@@ -3845,6 +3986,15 @@
           "mobile": 20,
           "codeToday": "--rvt-size-26 / --rvt-ts-26",
           "action": "rename"
+        },
+        {
+          "name": "type/size/26-29",
+          "css": "--rvt-type-size-26-29",
+          "desktop": 29,
+          "mobile": 26,
+          "codeToday": null,
+          "action": "add",
+          "figmaChange": "2026-10-21: added in Figma (used by body/2xl)."
         },
         {
           "name": "type/size/26-36",
