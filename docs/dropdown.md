@@ -1,7 +1,7 @@
 # Dropdown
 
 > [!warning|dark] This may change
-> The dropdown may change based on the navigation work that's in progress. Check back before you build it.
+> The dropdown may change based on the navigation work that's in progress.
 
 ## What it is
 A dropdown is a short menu that opens from a button or a header link, like an account menu with "My profile" and "Sign out". It keeps a few related links or actions out of the way until people need them.
