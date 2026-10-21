@@ -22,8 +22,9 @@ An event card previews one event, like a lecture, open house or performance. It 
 - **Plain:** Use it in long lists, like a weekly events feed, where images would slow people down
 
 ### Style
-- **Outlined:** A thin border. Use it on white or light pages
-- **Raised:** A soft shadow. Use it to lift cards off a colored or busy background
+- Use Outlined as the main style. Save Raised for cards that need to stand out
+- **Outlined:** A thin border. Use it for most cards, in grids and lists
+- **Raised:** A soft shadow. Use it for a featured item, or to lift a card off a colored or busy background
 
 ### Orientation
 - **Vertical:** Use it in grids of two to four cards across

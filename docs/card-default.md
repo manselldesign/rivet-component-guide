@@ -61,8 +61,9 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 - **Plain:** Text only. Use for simple lists, like policies or resources
 
 ### Style
-- **Outlined:** A thin border. Use in most grids and lists
-- **Raised:** A soft shadow. Use to lift cards off a colored or busy background
+- Use Outlined as the main style. Save Raised for cards that need to stand out
+- **Outlined:** A thin border. Use it for most cards, in grids and lists
+- **Raised:** A soft shadow. Use it for a featured item, or to lift a card off a colored or busy background
 
 ### Orientation
 - **Vertical:** Picture above the text. Use in grids of two to four cards

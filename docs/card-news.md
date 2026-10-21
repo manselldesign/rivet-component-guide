@@ -21,8 +21,9 @@ A news card previews one story, like a research discovery, a faculty award or a 
 - **Plain:** Text only. Use it in long feeds or sidebars
 
 ### Style
-- **Outlined:** A thin border. Use it on white or light pages
-- **Raised:** A soft shadow. Use it to lift cards off a colored or busy background
+- Use Outlined as the main style. Save Raised for cards that need to stand out
+- **Outlined:** A thin border. Use it for most cards, in grids and lists
+- **Raised:** A soft shadow. Use it for a featured item, or to lift a card off a colored or busy background
 
 ### Orientation
 - **Vertical:** Use it in grids of two to four cards across
