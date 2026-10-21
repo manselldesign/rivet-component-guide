@@ -142,6 +142,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-21",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-12"
+    },
+    {
+      "slug": "dropdown",
+      "name": "Dropdown",
+      "summary": "A dropdown is a short menu that opens from a button or a header link, like an account menu with \"My profile\" and \"Sign out\".",
+      "status": "ready-for-dev",
+      "updated": "2026-10-21",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-13"
     }
   ]
 }
