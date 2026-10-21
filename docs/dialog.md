@@ -43,7 +43,6 @@ Shared rules: `background/raised` fill, `shadow/lg`, no radius. Modal adds a ful
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Width | 640px | 327px |
 | Title bar (Default, Form) | `spacing/24` top and bottom (24px), `spacing/40` sides (40px); `background/brand-subtle` fill, `border/brand` bottom border | `spacing/40` sides (32px) |
 | Title area (confirmations) | `spacing/40` all sides (40px), `spacing/16` gap; fill and bottom border `background/success-subtle` + `border/success`, `background/warning-subtle` + `border/warning`, or `background/danger-subtle` + `border/danger` | `spacing/40` all sides (32px) |
 | Status sticker | 80px `check`, `minus-circle` or `x` | 64px |

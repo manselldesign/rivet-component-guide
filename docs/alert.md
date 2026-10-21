@@ -85,7 +85,6 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Container width | Hugs the message, up to a 500px message. With a close button: fixed 520px, so the button has room | Fills its container (327px on a 375px screen) |
 | Container padding | `spacing/4` (4px) all sides | Same |
 | Gap | `spacing/4` (4px) icon to text. Icon and text top-aligned | Same |
 | Background | `background/{status}-subtle` | Same |
