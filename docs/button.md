@@ -35,6 +35,13 @@ A button lets people take an action or move to the next step. There are two main
 - **Medium (32px):** Use in busy, information-heavy areas, like tables, sidebars and filter bars
 - **Small (24px):** Use in the tightest spots, like inside a table row or next to a short list item
 
+## Button order
+- Use one Strong button per group. It's the main action
+- On wider screens, put the main button last, on the right. Put the secondary button to its left
+- On phones, stack the buttons full width with the main button on top
+- Keep this order everywhere, in dialogs, forms and empty states, so people always know where to look
+- Put a cancel or back button on the left, next to the main button, not on its own
+
 ## Writing tips
 - Start with a verb: "Apply now," "Download the guide"
 - Keep it to one to four words
@@ -44,6 +51,8 @@ A button lets people take an action or move to the next step. There are two main
 ---
 
 ## Developer spec checklist
+
+Button groups: Desktop places buttons side by side with the Strong button last (right), `spacing/16` gap. Mobile stacks them full width with the Strong button first (top), `spacing/8` gap.
 
 ### Size (Action, Link, Icon only)
 
