@@ -40,14 +40,14 @@ A dropdown is a short menu that opens from a button or a header link, like an ac
 
 ## Developer spec checklist
 
-Shared rules: Menus use `background/raised` fill and `shadow/md`, no radius. Hover, in every menu: `action/sm/strong`, `text/strong`, underline. Selected item: `action/sm/strong`, `text/accent`, underline. The same values apply on Desktop and Mobile.
+Shared rules: Menus use `background/raised` fill and `shadow/md`, no radius. Hover, in every menu: `action/sm/regular`, `text/strong`, underline. Selected item: `action/sm/strong`, `text/accent`, underline, sized so the bold doesn't shift the item. The same values apply on Desktop and Mobile.
 
 | Element | App | Header |
 | --- | --- | --- |
 | Button | `rvt-button` (form), `spacing/8` above the menu | None, the header link opens it |
 | Menu | `spacing/8` between groups, `spacing/8` bottom padding | `spacing/12` top and bottom, `spacing/16` sides, 1px `border/default` border |
 | Item | 32px tall, `spacing/12` top and bottom, `spacing/16` sides; `action/sm/regular` (14 / 20px), `text/strong`, `background/default` | 32px tall, `spacing/8` sides; `action/sm/regular` (14 / 20px), `text/strong` |
-| Item hover | `action/sm/strong`, `text/strong`, underline. Text box sized for bold so items don't shift | Same |
+| Item hover | `action/sm/regular`, `text/strong`, underline | Same |
 | Group title | `_Title Item`: 32px tall, `spacing/16` sides; `body/sm/strong` (16 / 24px), `text/strong` | — |
-| Action item | `_Button Item`: 32px tall, `spacing/16` sides, 16px icon, `spacing/4` gap; `action/sm/regular` (14 / 20px), `text/strong`; hover `action/sm/strong`, underline | — |
+| Action item | `_Button Item`: 32px tall, `spacing/16` sides, 16px icon, `spacing/4` gap; `action/sm/regular` (14 / 20px), `text/strong`; hover adds an underline | — |
 | Profile header | 64px `rvt-avatar`, `spacing/8` gap, name `body/sm/strong` (16 / 24px), `spacing/16` sides | — |
