@@ -118,6 +118,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-21",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1305-12140"
+    },
+    {
+      "slug": "checkbox",
+      "name": "Checkbox",
+      "summary": "A checkbox lets people pick one or more options from a list, like the programs they're interested in or the topics they want emails about.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-21",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-11"
     }
   ]
 }
