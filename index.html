@@ -136,6 +136,8 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .badge[data-s="ready-for-dev"],.badge[data-s="released"]{background:#13650b;color:#ffffff}
 .badge[data-s="in-review"]{background:#004f9e;color:#ffffff}
 .badge[data-s="in-progress"]{background:#ff9602;color:#1f2528}
+/* Status=Warning, Style=Strong: background/warning-strong, text + icon ramp/base/main */
+.badge[data-s="working"]{background:#ff9602;color:#1f2528}
 .badge[data-s="deprecated"]{background:#cd210a;color:#ffffff}
 
 /* ---------- rvt-text-input ---------- */
@@ -442,7 +444,7 @@ body:not(.has-rail) #rail-shell{display:none}
   const app = document.getElementById('app');
   const STATUS = {
     'draft': 'Draft', 'in-progress': 'In progress', 'in-review': 'In review',
-    'ready-for-dev': 'Ready for dev', 'released': 'Released', 'deprecated': 'Deprecated'
+    'ready-for-dev': 'Ready for dev', 'released': 'Released', 'deprecated': 'Deprecated', 'working': 'Working'
   };
   /* Official Rivet icons, exported from the Rivet 3 Components library */
   const P = {
@@ -474,7 +476,8 @@ body:not(.has-rail) #rail-shell{display:none}
   };
   const badge = s => {
     const key = STATUS[s] ? s : 'draft';
-    const ic = key === 'ready-for-dev' || key === 'released' ? 'check' : key === 'deprecated' ? 'close' : key === 'in-review' ? 'info' : key === 'in-progress' ? 'minus' : 'bell';
+    const ic = key === 'ready-for-dev' || key === 'released' ? 'check' : key === 'deprecated' ? 'close' : key === 'in-review' ? 'info' : key === 'in-progress' || key === 'working' ? 'minus' : 'bell';
+    if (key === 'working') return `<span class="badge has-label" data-s="${key}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="${P[ic]}"/></svg>Working</span>`;
     if (key === 'ready-for-dev') return `<span class="badge has-label" data-s="${key}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="${P[ic]}"/></svg>Ready</span>`;
     return `<span class="badge" data-s="${key}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="${P[ic]}"/></svg><span class="sr-only">${STATUS[key]}</span></span>`;
   };
