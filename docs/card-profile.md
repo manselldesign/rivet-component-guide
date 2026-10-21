@@ -65,13 +65,13 @@ Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Rais
 | Card padding | `spacing/32` all sides (32px) | `spacing/24` all sides (24px) |
 | Avatar (Vertical) | `rvt-avatar` 96px, `spacing/24` below (24px) | 64px, `spacing/16` below (16px) |
 | Avatar (Horizontal) | `rvt-avatar` 128px; gap to text `spacing/32` (Image) or `spacing/24` (No Image) | Stacks like Vertical |
-| Top metadata | `tag/md/regular` (14 / 14px), `text/brand`, `spacing/4` below | Same |
+| Top metadata | `tag/sm/regular` (12 / 12px), `text/brand`, `spacing/4` below | Same |
 | Name | `action/xl/strong` (20 / 28px), `text/strong` | `action/xl/strong` (18 / 24px) |
 | Arrow icon | 16px `rvt-arrow-right`, `spacing/16` gap from name | Same |
 | Job title | `body/base/regular` (18 / 28px), `text/default`, `spacing/4` above | `body/base/regular` (16 / 24px) |
 | Details group | `collapse-guard` 12px + `spacing/12` gap (24px above), `spacing/12` between rows | Guard 8px + `spacing/12` (20px above) |
 | Detail row | 16px icon (envelope, phone, device), `spacing/8` gap; link `body/base/regular` (18 / 28px), `text/accent`, underline | Link 16 / 24px |
 | Pronouns row | 16px `rvt-user`, `spacing/4` gap; label `body/sm/strong` (16 / 24px), value `body/base/regular`, `text/default` | Same |
-| Bottom group | `spacing/24` above, `spacing/16` gap | Same |
+| Bottom group | Label and tags show and hide together. `spacing/24` above, `spacing/16` gap | Same |
 | Bottom label | "Area(s) of expertise:" `tag/sm/regular` (12 / 12px), `text/default` | Same |
 | Tags row | Subtle badges, `spacing/8` gap, wraps | Same |
