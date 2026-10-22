@@ -52,7 +52,7 @@
       "name": "Button",
       "summary": "A clickable box that lets people take an action, like submitting a form, or move to the next step, like \"Apply now.\"",
       "status": "ready-for-dev",
-      "updated": "2026-10-21",
+      "updated": "2026-10-22",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-7"
     },
     {
@@ -166,6 +166,20 @@
       "status": "ready-for-dev",
       "updated": "2026-10-21",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-15"
+    },
+    {
+      "slug": "footer",
+      "name": "Footer",
+      "summary": "The band at the bottom of every page with IU contact details, key links, social media links and required legal links.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-22"
+    },
+    {
+      "slug": "hero-split",
+      "name": "Hero – Split",
+      "summary": "A large banner at the top of a page with the headline and intro on one side and a photo on the other.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-22"
     }
   ]
 }

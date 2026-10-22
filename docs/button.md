@@ -41,6 +41,7 @@ A button lets people take an action or move to the next step. There are two main
 - On phones, stack the buttons full width with the main button on top
 - Keep this order everywhere, in dialogs, forms and empty states, so people always know where to look
 - Put a cancel or back button on the left, next to the main button, not on its own
+- **Marketing components:** In heroes, billboards and other marketing sections, put the Strong button first on Desktop (left) and Mobile (top) so the main call to action is seen first
 
 ## Writing tips
 - Start with a verb: "Apply now," "Download the guide"
@@ -53,6 +54,8 @@ A button lets people take an action or move to the next step. There are two main
 ## Developer spec checklist
 
 Button groups: Desktop places buttons side by side with the Strong button last (right), `spacing/16` gap. Mobile stacks them full width with the Strong button first (top), `spacing/8` gap.
+
+Marketing components (heroes, billboards): Strong button first on Desktop and Mobile.
 
 ### Size (Action, Link, Icon only)
 
