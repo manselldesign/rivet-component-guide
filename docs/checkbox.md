@@ -50,7 +50,7 @@ Shared rules: Box 20 × 20px, no radius. Unchecked: 1px `border/strong` border, 
 
 | Element | Default | Inline |
 | --- | --- | --- |
-| Group label | `body/sm/strong` (16 / 24px), `text/strong`; asterisk `text/required`; `spacing/8` below (8px) | Same |
+| Group label | `heading/sm/strong` (16 / 20px), `text/strong`; asterisk `text/required`; `spacing/8` below (8px) | Same |
 | Status message | `rvt-alert` between label and options, `spacing/8` below (8px) | Same |
 | Helper text | `body/xs/regular` (14 / 20px), `text/default`; `spacing/4` below (4px); off by default | Same |
 | Options group | Stacked, `spacing/12` between options (12px) | One row, `spacing/24` between options (24px) |
