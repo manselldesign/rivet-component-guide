@@ -56,7 +56,6 @@ Shared rules: Height 92px (Desktop and Mobile). Light uses `color/base/ultra-lig
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Side padding | `spacing/80` (80px) | `spacing/20` (20px) |
 | Top and bottom padding | `spacing/24` (24px) | Same |
 | Logo to navigation | 16px gap, token TBD | — |
 | Navigation links | `spacing/24` between links | Inside the menu |
