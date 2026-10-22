@@ -50,13 +50,12 @@ On phones, the main navigation moves into a menu button next to search.
 
 ## Developer spec checklist
 
-Shared rules: Height 92px (Desktop and Mobile). Light uses `color/base/ultra-light` fill; Crimson uses `background/brand-strong`. Logo lockup is vertically centered; the logo sits left and the navigation and buttons sit right. On Mobile the navigation is replaced by a menu button.
+Shared rules: Height 96px (Desktop and Mobile): the 48px logo plus `spacing/24` (24px) above and below. Light uses `color/base/ultra-light` fill; Crimson uses `background/brand-strong`. Logo lockup is vertically centered; the logo sits left and the navigation and buttons sit right. On Mobile the navigation is replaced by a menu button.
 
 ### Header
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Top and bottom padding | `spacing/24` (24px) | Same |
 | Logo to navigation | 16px gap, token TBD | — |
 | Navigation links | `spacing/24` between links | Inside the menu |
 | Navigation to buttons | `spacing/32` (32px) | — |
@@ -76,7 +75,7 @@ Shared rules: Height 92px (Desktop and Mobile). Light uses `color/base/ultra-lig
 
 | Element | Spec |
 | --- | --- |
-| Trident mark | 37 × 44px, `background/brand-strong` shield with `icon/on-brand-fixed` trident. Inverse: `color/base/ultra-light` shield with `color/brand/main` trident |
+| Trident mark | 48px tab trident, 41 × 48px, with a 27 × 34px trident centered. Default: `background/brand-strong` tab, `icon/on-brand-fixed` trident. Inverse (on Crimson): `icon/on-brand-fixed` tab, `background/brand-strong` trident. Both colors stay the same in every theme. No background behind the mark |
 | Mark to text | 6px gap, token TBD |
 | Text column | 1px top padding (0 on Mobile 4-line); Campus lines 2px apart, other layouts 1px |
 | Text color | `text/strong` titles, `text/default` campus name. Inverse: `color/base/ultra-light` |
