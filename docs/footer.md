@@ -43,11 +43,11 @@ The footer is the band at the bottom of every page with the university's contact
 
 ## Developer spec checklist
 
-Shared rules: Full width. 1px `border/brand` top border on the footer and on the bottom bar. Background: Light `color/base/ultra-light`, Crimson `background/brand-strong`, Dark `color/base/main`. Text on Crimson and Dark is `color/base/ultra-light`. Link hover: underline, `color/brand/main` on Light, `color/brand/extra-light` on Crimson and Dark. Mobile stacks every section in one column.
+Shared rules: Full width. Every theme has the same two borders: a 1px top border on the footer and a 1px top border on the bottom bar. Both run the full width of the footer, edge to edge; only the content is inset. Border color: Light `border/brand`, Crimson `color/brand/dark`, Dark `color/base/dark`. Background: Light `color/base/ultra-light`, Crimson `background/brand-strong`, Dark `color/base/main`. Text on Crimson and Dark is `color/base/ultra-light`. Link hover: underline, `color/brand/main` on Light, `color/brand/extra-light` on Crimson and Dark. Mobile stacks every section in one column.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Side padding | `spacing/80` left and right (80px) | `spacing/24` left and right (24px) |
+| Side padding | `spacing/80` left and right (80px) on each row inside the footer, not on the footer itself, so the borders stay full width | `spacing/24` left and right (24px) on each row, same reason |
 | Between sections | None | `spacing/24` gap (24px) |
 | Resource links area | `spacing/40` top and bottom (40px); groups in a row, `spacing/64` gap (64px) | `spacing/40` top (32px); groups stacked, `spacing/40` gap (32px) |
 | Contact group | `spacing/16` name to details (16px), `spacing/8` between lines (8px) | `spacing/8` gap plus `spacing/8` top padding on the details (16px total), `spacing/8` between lines (8px) |
