@@ -272,6 +272,7 @@
 	--rvt-border-danger: var(--rvt-color-status-danger-border);
 	--rvt-border-danger-fixed: var(--rvt-color-status-danger-main);
 	--rvt-border-default: var(--rvt-color-brand-light);
+	--rvt-border-on-brand: var(--rvt-color-brand-extra-dark);
 	--rvt-border-info: var(--rvt-color-status-info-border);
 	--rvt-border-info-fixed: var(--rvt-color-status-info-main);
 	--rvt-border-inverse-strong: var(--rvt-color-base-ultra-dark);
@@ -413,6 +414,7 @@
 	--rvt-border-danger: var(--rvt-color-status-danger-border);
 	--rvt-border-danger-fixed: var(--rvt-color-status-danger-main);
 	--rvt-border-default: var(--rvt-color-base-ultra-dark);
+	--rvt-border-on-brand: var(--rvt-color-brand-extra-dark);
 	--rvt-border-info: var(--rvt-color-status-info-border);
 	--rvt-border-info-fixed: var(--rvt-color-status-info-main);
 	--rvt-border-inverse-strong: var(--rvt-color-base-ultra-light);
@@ -553,7 +555,8 @@
 	--rvt-border-brand-alt: var(--rvt-color-base-ultra-light);
 	--rvt-border-danger: var(--rvt-color-status-danger-border);
 	--rvt-border-danger-fixed: var(--rvt-color-status-danger-main);
-	--rvt-border-default: var(--rvt-color-brand-ultra-dark);
+	--rvt-border-default: var(--rvt-border-on-brand);
+	--rvt-border-on-brand: var(--rvt-color-brand-extra-dark);
 	--rvt-border-info: var(--rvt-color-status-info-border);
 	--rvt-border-info-fixed: var(--rvt-color-status-info-main);
 	--rvt-border-inverse-strong: var(--rvt-color-base-ultra-light);

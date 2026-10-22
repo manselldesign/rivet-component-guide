@@ -43,7 +43,7 @@ The footer is the band at the bottom of every page with the university's contact
 
 ## Developer spec checklist
 
-Shared rules: Full width. Every theme has the same two borders: a 1px top border on the footer and a 1px top border on the bottom bar. Both run the full width of the footer, edge to edge; only the content is inset. Border color: Light `border/brand`, Crimson `color/brand/dark`, Dark `color/base/dark`. Background: Light `color/base/ultra-light`, Crimson `background/brand-strong`, Dark `color/base/main`. Text on Crimson and Dark is `color/base/ultra-light`. Link hover: underline, `color/brand/main` on Light, `color/brand/extra-light` on Crimson and Dark. Mobile stacks every section in one column.
+Shared rules: Full width. Every theme has the same two borders: a 1px top border on the footer and a 1px top border on the bottom bar. Both run the full width of the footer, edge to edge; only the content is inset. Border color: Light `border/brand`, Crimson `border/on-brand` (`color/brand/extra-dark`, #510606), Dark `color/base/dark`. Background: Light `color/base/ultra-light`, Crimson `background/brand-strong`, Dark `color/base/main`. Text on Crimson and Dark is `color/base/ultra-light`. Link hover: underline, `color/brand/main` on Light, `color/brand/extra-light` on Crimson and Dark. Mobile stacks every section in one column.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

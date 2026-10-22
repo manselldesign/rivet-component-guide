@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -41,7 +41,7 @@
     "After that, Figma and code match 1:1. New tokens start in Figma; name suggestions go through 'namingSuggestions'."
   ],
   "summary": {
-    "themeColors": 132,
+    "themeColors": 133,
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
     "textStyles": 78,
@@ -1385,14 +1385,29 @@
             "css": "--rvt-border-default",
             "light": "#efdfc8",
             "dark": "#000000",
-            "crimson": "#300404",
+            "crimson": "#510606",
             "cssValue": {
               "light": "--rvt-color-brand-light",
               "dark": "--rvt-color-base-ultra-dark",
-              "crimson": "--rvt-color-brand-ultra-dark"
+              "crimson": "--rvt-border-on-brand"
             },
             "replaces": "--rvt-color-theme-ui",
             "action": "add (replaces --rvt-color-theme-ui)"
+          },
+          {
+            "name": "border/on-brand",
+            "css": "--rvt-border-on-brand",
+            "light": "#510606",
+            "dark": "#510606",
+            "crimson": "#510606",
+            "cssValue": {
+              "light": "--rvt-color-brand-extra-dark",
+              "dark": "--rvt-color-brand-extra-dark",
+              "crimson": "--rvt-color-brand-extra-dark"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "note": "Borders and dividers that sit on a crimson (brand) surface, like the Crimson footer. border/default uses it in the Crimson theme."
           },
           {
             "name": "border/info",
