@@ -32,6 +32,7 @@ A checkbox lets people pick one or more options from a list, like the programs t
 - **Disabled:** Use it only when an option can't be picked yet, and say why nearby
 
 ### Optional parts
+- Add helper text under the group label for a short hint, like "Pick all that apply"
 - Leave out the group label only when a heading already asks the question
 - The red asterisk marks a required question
 
@@ -45,13 +46,14 @@ A checkbox lets people pick one or more options from a list, like the programs t
 
 ## Developer spec checklist
 
-Shared rules: Box 20 × 20px, no radius. Unchecked: 1px `border/strong` border, no fill. Checked: `background/brand` fill, 1px `border/accent` border, 16px check icon. Disabled: box at 40% opacity, checked or unchecked. No separate Mobile values.
+Shared rules: Box 20 × 20px, no radius. Unchecked: 1px `border/strong` border, no fill. Checked: `background/brand` fill, 1px `border/accent` border, 16px check icon. Disabled: box at 40% opacity, checked or unchecked. Label, status message, helper text and spacing match every other form field. No separate Mobile values.
 
 | Element | Default | Inline |
 | --- | --- | --- |
-| Group label | `heading/sm/strong` (16 / 20px), `text/default`; asterisk `text/required`; `spacing/8` below | Same |
-| Status message | `rvt-alert` between label and options, `spacing/8` below | Same |
-| Options group | Stacked, `spacing/4` above, `spacing/12` between options | One row, `spacing/24` between options |
+| Group label | `body/sm/strong` (16 / 24px), `text/strong`; asterisk `text/required`; `spacing/8` below (8px) | Same |
+| Status message | `rvt-alert` between label and options, `spacing/8` below (8px) | Same |
+| Helper text | `body/xs/regular` (14 / 20px), `text/default`; `spacing/4` below (4px); off by default | Same |
+| Options group | Stacked, `spacing/12` between options (12px) | One row, `spacing/24` between options (24px) |
 | Box to label | `spacing/8` gap | Same |
 | Option label | `action/lg/regular` (16 / 24px), `text/default` | Same |
 | Description | `body/xs/regular` (14 / 20px), `text/default`, 29px left indent to line up with the label, `spacing/4` above | Same |
