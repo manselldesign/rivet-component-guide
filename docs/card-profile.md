@@ -59,7 +59,7 @@ A faculty directory works the same way. It lists Profile cards, often in Horizon
 
 ## Developer spec checklist
 
-Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Raised = `shadow/md`, no border. Both use `background/raised` fill. Hover: name turns `text/accent` with underline. Horizontal cards stack like Vertical on Mobile.
+Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Raised = `shadow/sm`, no border. Both use `background/raised` fill. Hover: name turns `text/accent` with underline. Horizontal cards stack like Vertical on Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

@@ -60,7 +60,7 @@ An events calendar page works the same way. It lists Event cards, often in Horiz
 
 ## Developer spec checklist
 
-Shared rules: Outlined = 1px `border/default` border, no radius. Raised = `shadow/md`, no border. Both use `background/raised` fill. Hover: title turns `text/accent` with underline. Title truncates with an ellipsis. Horizontal cards stack like Vertical on Mobile.
+Shared rules: Outlined = 1px `border/default` border, no radius. Raised = `shadow/sm`, no border. Both use `background/raised` fill. Hover: title turns `text/accent` with underline. Title truncates with an ellipsis. Horizontal cards stack like Vertical on Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

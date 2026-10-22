@@ -57,7 +57,7 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Surface | `background/raised`, `shadow/md`, no border, no corner radius | Same |
+| Surface | `background/raised`, `shadow/sm`, no border, no corner radius | Same |
 | Card padding | `spacing/32` all sides (32px) | `spacing/24` all sides (24px) |
 | Icon (Default) | 80×80 sticker, Crimson, contained | 64×64 |
 | Photo (Avatar) | `rvt-avatar` Image, 80px, Crimson | 64px |

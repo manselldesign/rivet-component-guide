@@ -95,8 +95,9 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 | Card padding | `spacing/32` all sides (24px on Mobile) | `spacing/16` all sides |
 | Background | `background/raised` | `background/raised` |
 | Image (Vertical) | 3:2, full width, `spacing/32` below (24px on Mobile) | 3:2, full width, `spacing/24` below |
-| Image (Horizontal, Desktop) | 3:2 (240 × 160px), `spacing/32` to text | TBD |
-| Sticker | 80px, `spacing/24` below (24px) | 64px, `spacing/16` below (16px) |
+| Image (Horizontal, Desktop) | 3:2 (240 × 160px), `spacing/32` to text | Same |
+| Sticker (Vertical) | 80px, `spacing/24` below (24px); 64px, `spacing/16` below (16px) on Mobile | 48px, `spacing/8` below (8px) |
+| Sticker (Horizontal, Desktop) | 80px, `spacing/24` to text (24px) | 48px, `spacing/8` to text (8px) |
 | Featured badge | `rvt-badge` Default, Strong, `spacing/12` below | Same |
 | Eyebrow (tag) | `tag/sm/regular` (12 / 12px), `text/brand`, `spacing/4` below | Same |
 | Title | `action/xl/strong` (20 / 28px; 18 / 24px on Mobile), `text/strong` | `action/lg/strong` (16 / 24px), `text/strong` |
@@ -113,6 +114,6 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 | Element | Outlined | Raised |
 | --- | --- | --- |
 | Border | `border/default` (1px) | None |
-| Shadow | None | `shadow/md` |
+| Shadow | None | `shadow/sm` |
 | Corner radius | 0 | 0 |
 | Title, hover | `text/accent`, underlined | `text/accent`, underlined |
