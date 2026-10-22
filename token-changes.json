@@ -34,14 +34,14 @@
   },
   "toDo": [
     "1. Add generated/rivet-tokens.css (download from this guide) after the current token CSS. It defines every token with its Figma name: palette, all three themes, mobile values, text-style shorthands, shadows, and aliases for the old names so nothing breaks.",
-    "2. Make the changes in 'componentChanges' (6 visual changes, plus badge token names and the CTA hover icon token, which don't change the look).",
+    "2. Make the changes in 'componentChanges' (7 visual changes, plus badge token names and the CTA hover icon token, which don't change the look).",
     "3. Replace old names with new ones using 'migration' (search and replace; old names keep working through the aliases until you're done).",
     "4. Apply the value changes marked 'value change' (text styles, font weight 700, font width 110%, shadows, mobile spacing).",
     "5. Delete the deprecated aliases and the code-only tokens Jenn approves removing ('codeOnly').",
     "After that, Figma and code match 1:1. New tokens start in Figma; name suggestions go through 'namingSuggestions'."
   ],
   "summary": {
-    "themeColors": 133,
+    "themeColors": 134,
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
     "textStyles": 78,
@@ -144,6 +144,16 @@
         "home icon:hover": "--rvt-icon-accent-strong, 1px --rvt-border-accent-strong underline",
         "separator (all states)": "--rvt-icon-brand",
         "current page": "--rvt-text-strong"
+      }
+    },
+    {
+      "component": "Logo lockup (Default) — header lockup",
+      "change": "Text turns white on Dark and Crimson; trident box stays crimson in every theme. Light looks the same.",
+      "use": {
+        "title text": "--rvt-text-strong",
+        "campus or department line": "--rvt-text-default",
+        "trident box": "--rvt-background-brand-strong",
+        "trident": "--rvt-icon-on-brand-fixed"
       }
     }
   ],
@@ -1238,6 +1248,21 @@
             },
             "replaces": "--rvt-color-theme-background",
             "action": "add (replaces --rvt-color-theme-background)"
+          },
+          {
+            "name": "icon/on-brand-fixed",
+            "css": "--rvt-icon-on-brand-fixed",
+            "light": "#ffffff",
+            "dark": "#ffffff",
+            "crimson": "#ffffff",
+            "cssValue": {
+              "light": "--rvt-color-base-ultra-light",
+              "dark": "--rvt-color-base-ultra-light",
+              "crimson": "--rvt-color-base-ultra-light"
+            },
+            "codeToday": null,
+            "action": "add",
+            "note": "Always white in every theme. For icons and marks on a fixed crimson background, like the trident in the logo lockup."
           },
           {
             "name": "icon/required",

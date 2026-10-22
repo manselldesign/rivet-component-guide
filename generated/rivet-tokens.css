@@ -262,6 +262,7 @@
 	--rvt-icon-inverse: var(--rvt-color-base-ultra-light);
 	--rvt-icon-link-subtle: var(--rvt-color-base-body);
 	--rvt-icon-on-brand-alt: var(--rvt-color-base-ultra-light);
+	--rvt-icon-on-brand-fixed: var(--rvt-color-base-ultra-light);
 	--rvt-icon-required: var(--rvt-color-status-danger-main);
 	--rvt-icon-strong: var(--rvt-color-base-main);
 	--rvt-icon-success: var(--rvt-color-status-success-main);
@@ -404,6 +405,7 @@
 	--rvt-icon-inverse: var(--rvt-color-base-main);
 	--rvt-icon-link-subtle: var(--rvt-color-brand-ultra-light);
 	--rvt-icon-on-brand-alt: var(--rvt-color-base-main);
+	--rvt-icon-on-brand-fixed: var(--rvt-color-base-ultra-light);
 	--rvt-icon-required: var(--rvt-color-status-danger-container);
 	--rvt-icon-strong: var(--rvt-color-base-ultra-light);
 	--rvt-icon-success: var(--rvt-color-base-ultra-light);
@@ -546,6 +548,7 @@
 	--rvt-icon-inverse: var(--rvt-color-base-main);
 	--rvt-icon-link-subtle: var(--rvt-color-brand-ultra-light);
 	--rvt-icon-on-brand-alt: var(--rvt-color-brand-main);
+	--rvt-icon-on-brand-fixed: var(--rvt-color-base-ultra-light);
 	--rvt-icon-required: var(--rvt-color-status-danger-container);
 	--rvt-icon-strong: var(--rvt-color-base-ultra-light);
 	--rvt-icon-success: var(--rvt-color-base-ultra-light);
