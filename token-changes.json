@@ -3303,7 +3303,7 @@
             ],
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
             "alsoSet": {
-              "letter-spacing": "var(--rvt-font-tracking-lg)",
+              "letter-spacing": "var(--rvt-font-tracking-xl)",
               "text-transform": "uppercase"
             }
           },
@@ -3324,7 +3324,7 @@
             ],
             "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
             "alsoSet": {
-              "letter-spacing": "var(--rvt-font-tracking-md)"
+              "letter-spacing": "var(--rvt-font-tracking-lg)"
             }
           },
           {
@@ -3340,7 +3340,7 @@
             "action": "rename + value change",
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
             "alsoSet": {
-              "letter-spacing": "var(--rvt-font-tracking-md)"
+              "letter-spacing": "var(--rvt-font-tracking-lg)"
             },
             "valueChanges": [
               "line-height 24 vs Figma 16"
@@ -3364,7 +3364,7 @@
             ],
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-mono)",
             "alsoSet": {
-              "letter-spacing": "var(--rvt-font-tracking-lg)",
+              "letter-spacing": "var(--rvt-font-tracking-xl)",
               "text-transform": "uppercase"
             }
           },
@@ -3385,7 +3385,7 @@
             ],
             "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-mono)",
             "alsoSet": {
-              "letter-spacing": "var(--rvt-font-tracking-md)"
+              "letter-spacing": "var(--rvt-font-tracking-lg)"
             }
           },
           {
@@ -3404,7 +3404,7 @@
             ],
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-mono)",
             "alsoSet": {
-              "letter-spacing": "var(--rvt-font-tracking-md)"
+              "letter-spacing": "var(--rvt-font-tracking-lg)"
             }
           },
           {
@@ -3424,7 +3424,7 @@
             ],
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-mono)",
             "alsoSet": {
-              "letter-spacing": "var(--rvt-font-tracking-lg)",
+              "letter-spacing": "var(--rvt-font-tracking-xl)",
               "text-transform": "uppercase"
             }
           },
@@ -3445,7 +3445,7 @@
             ],
             "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-mono)",
             "alsoSet": {
-              "letter-spacing": "var(--rvt-font-tracking-md)"
+              "letter-spacing": "var(--rvt-font-tracking-lg)"
             }
           },
           {
@@ -3461,7 +3461,7 @@
             "action": "rename + value change",
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-mono)",
             "alsoSet": {
-              "letter-spacing": "var(--rvt-font-tracking-md)"
+              "letter-spacing": "var(--rvt-font-tracking-lg)"
             },
             "valueChanges": [
               "line-height 16 vs Figma 12"
@@ -4457,22 +4457,30 @@
         {
           "name": "font/tracking/md",
           "css": "--rvt-font-tracking-md",
+          "value": 0.75,
+          "cssValue": "0.75px",
+          "codeToday": null,
+          "action": "add (new)"
+        },
+        {
+          "name": "font/tracking/lg",
+          "css": "--rvt-font-tracking-lg",
           "value": 1,
           "cssValue": "1px",
           "codeToday": null,
           "action": "add"
         },
         {
-          "name": "font/tracking/lg",
-          "css": "--rvt-font-tracking-lg",
+          "name": "font/tracking/xl",
+          "css": "--rvt-font-tracking-xl",
           "value": 2,
           "cssValue": "2px",
           "codeToday": null,
           "action": "add"
         },
         {
-          "name": "font/tracking/xl",
-          "css": "--rvt-font-tracking-xl",
+          "name": "font/tracking/2xl",
+          "css": "--rvt-font-tracking-2xl",
           "value": 3,
           "cssValue": "3px",
           "codeToday": null,
@@ -5946,15 +5954,15 @@
       },
       {
         "before": "font/tracking/normal",
-        "after": "font/tracking/md"
-      },
-      {
-        "before": "font/tracking/wide",
         "after": "font/tracking/lg"
       },
       {
-        "before": "font/tracking/ultra-wide",
+        "before": "font/tracking/wide",
         "after": "font/tracking/xl"
+      },
+      {
+        "before": "font/tracking/ultra-wide",
+        "after": "font/tracking/2xl"
       },
       {
         "before": "border-radius/circle",
@@ -5983,6 +5991,18 @@
       {
         "before": "input/height/large",
         "after": "component/input/height-lg"
+      },
+      {
+        "before": "font/tracking/xl",
+        "after": "font/tracking/2xl"
+      },
+      {
+        "before": "font/tracking/lg",
+        "after": "font/tracking/xl"
+      },
+      {
+        "before": "font/tracking/md",
+        "after": "font/tracking/lg"
       }
     ],
     "collection": "Figma variable collection \"Colors\" is now \"Theme\" (modes Light, Dark, Crimson)."

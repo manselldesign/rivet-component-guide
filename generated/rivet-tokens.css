@@ -122,9 +122,10 @@
 	--rvt-font-tracking-2xs: 0.1px;
 	--rvt-font-tracking-xs: 0.25px;
 	--rvt-font-tracking-sm: 0.5px;
-	--rvt-font-tracking-md: 1px;
-	--rvt-font-tracking-lg: 2px;
-	--rvt-font-tracking-xl: 3px;
+	--rvt-font-tracking-md: 0.75px;
+	--rvt-font-tracking-lg: 1px;
+	--rvt-font-tracking-xl: 2px;
+	--rvt-font-tracking-2xl: 3px;
 	--rvt-font-family-sans-heading: var(--rvt-font-family-sans);
 	--rvt-font-family-sans-display: var(--rvt-font-family-sans);
 	/* --rvt-font-family-sans, -mono, -serif: keep the existing definitions (full fallback stacks). */
