@@ -28,8 +28,6 @@ The footer is the band at the bottom of every page with the university's contact
 - **Secondary:** A link inside a group, or the address and phone number under the university name
 - **Tertiary:** The small legal links in the bottom bar, like Accessibility and Privacy Notice
 
-In Figma these are `_rvt-footer-resource-item`, Type Title, Secondary and Tertiary.
-
 ### Optional parts
 - **Resource Links:** Turn it off for a simple footer with only social and legal links
 - **Social Badges:** Turn it off if your unit has no active social accounts

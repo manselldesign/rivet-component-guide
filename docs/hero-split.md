@@ -18,8 +18,6 @@ A split hero is the large banner at the top of a page, with the headline and int
 - **With list hub:** Adds a short list of links under the intro, like "On this page". Use it when people need to jump to a few key sections, like Admissions, Tuition and Visit
 - **Without list hub:** Headline, intro and buttons only. Use it when the page has one main path
 
-In Figma this is List Hub = True or False.
-
 ### Device
 - **Desktop:** Text on the left, photo on the right
 - **Mobile:** Everything stacks: text, buttons, photo, then the list hub
@@ -27,8 +25,8 @@ In Figma this is List Hub = True or False.
 ### Optional parts
 - **Metadata:** A short label above the headline, like the school or section name
 - **Body:** One or two sentences of intro
-- **CTA Buttons:** Turn off when the list hub covers the next steps
-- **Secondary CTA Button:** Turn on only when there's a real second action
+- **Buttons:** Leave them out when the list hub already covers the next steps
+- **Second button:** Add it only when there's a real second action
 
 ## Writing tips
 - Keep headlines under 40 characters

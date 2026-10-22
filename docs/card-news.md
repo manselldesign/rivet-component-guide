@@ -30,7 +30,7 @@ A news card previews one story, like a research discovery, a faculty award or a 
 - **Horizontal:** Picture beside the text. Use it in a single-column list of stories. It stacks to vertical on phones
 
 ### Optional parts
-- Turn on only what you have: badge, top category, arrow, bottom details and tags
+- Include only the details you have: badge, top category, arrow, bottom details and tags
 - Use the badge for one short label, like "Featured"
 - Use the bottom line for the date, like "Oct 14, 2026"
 

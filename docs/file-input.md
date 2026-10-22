@@ -14,17 +14,17 @@ A file input lets people attach a file to a form, like a letter of recommendatio
 
 ## Variants
 
-### Uploaded
-- **False:** Before a file is picked. The button says {Choose file} and a status badge says {No file selected}
-- **True:** After a file is picked. The button says {Change file} and each file shows as a chip with its name and an × to remove it
+### Before and after a file is picked
+- **No file yet:** Before a file is picked. The button says {Choose file} and a status badge says {No file selected}
+- **File picked:** After a file is picked. The button says {Change file} and each file shows as a chip with its name and an × to remove it
 
 ### Device
 - **Desktop:** Button and status sit side by side
 - **Mobile:** The button goes full width and the status or files sit below it
 
 ### Optional parts
-- Turn on helper text to list accepted file types and size, like "PDF or Word, up to 10 MB"
-- Turn off the label only when a heading right above already names the file
+- Add helper text to list accepted file types and size, like "PDF or Word, up to 10 MB"
+- Leave out the label only when a heading right above already names the file
 
 ## Writing tips
 - Name the document in the label, like "Letter of recommendation", not "Upload"

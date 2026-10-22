@@ -30,7 +30,7 @@ A profile card introduces one person, like a faculty member, advisor or staff co
 - **Horizontal:** Avatar beside the text. Use it in a single-column list. It stacks to vertical on phones
 
 ### Optional parts
-- Turn on only what you have: department, email, phone, website, pronouns, areas of expertise
+- Include only the details you have: department, email, phone, website, pronouns and areas of expertise
 - The name always shows
 - Only show pronouns the person has chosen to share
 

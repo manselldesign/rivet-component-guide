@@ -27,7 +27,7 @@ A dialog is a small window that opens over the page to ask for a decision or a f
 - **Form:** Collects a few details with fields and checkboxes
 
 ### Optional parts
-- Turn off the close button only when people must pick one of the buttons
+- Leave out the close button only when people must pick one of the buttons
 
 ## Writing tips
 - Write the title as the question or the result, like "Delete project?" or "Changes saved"

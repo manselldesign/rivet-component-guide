@@ -15,12 +15,12 @@ An empty state fills a space that has nothing in it yet, like a file upload area
 
 ## Variants
 
-### Files Added
-- **False:** Nothing added yet. It explains what goes here and offers a way to add it
-- **True:** Shows what's been added, as removable file chips, with a way to add more or finish
+### Before and after files are added
+- **Empty:** Nothing has been added yet. It explains what goes here and offers a way to add it
+- **With files:** Shows what's been added as file chips people can remove, with a way to add more or finish
 
 ### Optional parts
-- Turn on only what you have: sticker, body text, buttons, second button
+- Include only the parts you need: a sticker, body text, and one or two buttons
 - Use a sticker that matches the state, like a bell when empty and a check when files are added
 - Keep at least one button so people always have a next step
 

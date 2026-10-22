@@ -31,10 +31,8 @@ A checkbox lets people pick one or more options from a list, like the programs t
 - **Description:** A short line under an option. Use it when the label alone isn't clear
 - **Disabled:** Use it only when an option can't be picked yet, and say why nearby
 
-The single option is `_rvt-checkbox-item` in Figma.
-
 ### Optional parts
-- Turn off the group label only when a heading already asks the question
+- Leave out the group label only when a heading already asks the question
 - The red asterisk marks a required question
 
 ## Writing tips

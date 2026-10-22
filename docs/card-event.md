@@ -31,8 +31,8 @@ An event card previews one event, like a lecture, open house or performance. It 
 - **Horizontal:** Use it in a single-column list of events. It stacks to vertical on phones
 
 ### Optional parts
-- Turn on only what you have: badge, tag, date, time, location and tags
-- Turn off a detail you don't know yet instead of writing "TBD"
+- Include only the details you have: badge, tag, date, time, location and tags
+- Leave out a detail you don't know yet instead of writing "TBD"
 - Use the badge for one short label, like "Featured" or "Free"
 
 ## How they work together

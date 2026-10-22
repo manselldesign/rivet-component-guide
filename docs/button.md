@@ -3,7 +3,7 @@
 ## What it is
 A button lets people take an action or move to the next step. There are two main kinds, and the difference is what happens after the click:
 
-- **Action buttons** (called Form in Figma) do something right here, on this page, like submitting a form, saving a change or filtering a list of events
+- **Action buttons** do something right here, on this page, like submitting a form, saving a change or filtering a list of events
 - **Link buttons** take people somewhere else, like "Apply now" going to the application page. They always show an arrow that tells people where they're headed
 
 ## When to use it
@@ -19,7 +19,7 @@ A button lets people take an action or move to the next step. There are two main
 ## Variants
 
 ### Type
-- **Action:** Use when the click does something on the page, like "Submit" or "Filter events". Called Form in Figma
+- **Action:** Use when the click does something on the page, like "Submit" or "Filter events"
 - **Link:** Use when the click takes people somewhere. The arrow shows where: down for this page, right for another IU page, angled for an outside site
 - **Icon only:** Use for small, familiar actions, like "Add" or "Close"
 - **Social:** Use to link to IU's social media accounts

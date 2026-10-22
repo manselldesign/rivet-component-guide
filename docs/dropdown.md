@@ -30,7 +30,7 @@ A dropdown is a short menu that opens from a button or a header link, like an ac
 - **Closed and Open:** App dropdowns show just the button when closed. Header dropdowns only come Open
 
 ### Optional parts
-- Turn on only the groups you need: a profile header, link groups with or without a group title, and action buttons
+- Include only the groups you need: a profile header, link groups with or without a group title, and action buttons
 - Hide the button only when something else on the page opens the menu
 
 ## Writing tips

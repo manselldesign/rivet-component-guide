@@ -24,7 +24,7 @@ A contact card shows people how to reach an office, team or department. It puts 
 - **Horizontal:** Use it in the main page column when you have one main contact. It stacks to vertical on phones
 
 ### Optional parts
-- Turn on only what you have: tag, address, email, phone, website, pronouns, hours, social links and buttons
+- Include only the details you have: tag, address, email, phone, website, pronouns, hours, social links and buttons
 - Add hours when people visit in person
 - Use buttons only for real next steps, like "Schedule an appointment"
 
