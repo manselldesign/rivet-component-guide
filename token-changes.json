@@ -34,14 +34,14 @@
   },
   "toDo": [
     "1. Add generated/rivet-tokens.css (download from this guide) after the current token CSS. It defines every token with its Figma name: palette, all three themes, mobile values, text-style shorthands, shadows, and aliases for the old names so nothing breaks.",
-    "2. Make the changes in 'componentChanges' (7 visual changes, plus badge token names and the CTA hover icon token, which don't change the look).",
+    "2. Make the changes in 'componentChanges' (9 visual changes, plus badge token names and the CTA hover icon token, which don't change the look).",
     "3. Replace old names with new ones using 'migration' (search and replace; old names keep working through the aliases until you're done).",
     "4. Apply the value changes marked 'value change' (text styles, font weight 700, font width 110%, shadows, mobile spacing).",
     "5. Delete the deprecated aliases and the code-only tokens Jenn approves removing ('codeOnly').",
     "After that, Figma and code match 1:1. New tokens start in Figma; name suggestions go through 'namingSuggestions'."
   ],
   "summary": {
-    "themeColors": 134,
+    "themeColors": 136,
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
     "textStyles": 78,
@@ -154,6 +154,26 @@
         "campus or department line": "--rvt-text-default",
         "trident box": "--rvt-background-brand-strong",
         "trident": "--rvt-icon-on-brand-fixed"
+      }
+    },
+    {
+      "component": "Header nav items",
+      "change": "On Dark and Crimson, nav items are cream like buttons. Hover and selected are underlined, crimson on Light and cream on Dark and Crimson.",
+      "use": {
+        "nav text": "--rvt-text-link-strong",
+        "chevron": "--rvt-icon-link-strong",
+        "hover and selected text": "--rvt-text-accent",
+        "hover and selected chevron": "--rvt-icon-accent"
+      }
+    },
+    {
+      "component": "Footer links",
+      "change": "On Dark and Crimson, footer links and legal links are cream like buttons; hover is underlined. Group titles stay white.",
+      "use": {
+        "links": "--rvt-text-link-subtle",
+        "hover": "--rvt-text-accent",
+        "group title": "--rvt-text-strong",
+        "trident in the bottom bar": "--rvt-icon-brand (crimson on Light, white on Dark and Crimson)"
       }
     }
   ],
@@ -982,31 +1002,47 @@
             "name": "text/link",
             "css": "--rvt-text-link",
             "light": "#990000",
-            "dark": "#fdfaf7",
-            "crimson": "#fdfaf7",
+            "dark": "#faf6ef",
+            "crimson": "#faf6ef",
             "cssValue": {
               "light": "--rvt-color-brand-main",
-              "dark": "--rvt-color-brand-ultra-light",
-              "crimson": "--rvt-color-brand-ultra-light"
+              "dark": "--rvt-color-brand-extra-light",
+              "crimson": "--rvt-color-brand-extra-light"
             },
             "replaces": "--rvt-color-theme-accent",
             "action": "add (replaces --rvt-color-theme-accent)",
-            "valueChange": "Dark and Crimson now use color/brand/ultra-light (#fdfaf7), was color/brand/extra-light (#faf6ef). All interactive items in non-Light themes use this cream."
+            "valueChange": "Dark and Crimson now use color/brand/ultra-light (#fdfaf7), was color/brand/extra-light (#faf6ef). All interactive items in non-Light themes use this cream.",
+            "note": "Dark and Crimson now use button cream (brand/extra-light) so every interactive element matches."
           },
           {
             "name": "text/link-subtle",
             "css": "--rvt-text-link-subtle",
             "light": "#343c42",
-            "dark": "#fdfaf7",
-            "crimson": "#fdfaf7",
+            "dark": "#faf6ef",
+            "crimson": "#faf6ef",
             "cssValue": {
               "light": "--rvt-color-base-body",
-              "dark": "--rvt-color-brand-ultra-light",
-              "crimson": "--rvt-color-brand-ultra-light"
+              "dark": "--rvt-color-brand-extra-light",
+              "crimson": "--rvt-color-brand-extra-light"
             },
             "replaces": null,
             "action": "add (new token)",
-            "note": "Quiet link text, e.g. breadcrumb links: body gray in Light, ultra-light cream in Dark/Crimson."
+            "note": "Dark and Crimson now use button cream (brand/extra-light) so every interactive element matches."
+          },
+          {
+            "name": "text/link-strong",
+            "css": "--rvt-text-link-strong",
+            "light": "#1f2528",
+            "dark": "#faf6ef",
+            "crimson": "#faf6ef",
+            "cssValue": {
+              "light": "--rvt-color-base-main",
+              "dark": "--rvt-color-brand-extra-light",
+              "crimson": "--rvt-color-brand-extra-light"
+            },
+            "codeToday": null,
+            "action": "add",
+            "note": "Interactive text or icons with no underline by default, like header nav items. Cream on Dark and Crimson, matching buttons."
           },
           {
             "name": "text/on-brand",
@@ -1154,16 +1190,31 @@
             "name": "icon/link-subtle",
             "css": "--rvt-icon-link-subtle",
             "light": "#343c42",
-            "dark": "#fdfaf7",
-            "crimson": "#fdfaf7",
+            "dark": "#faf6ef",
+            "crimson": "#faf6ef",
             "cssValue": {
               "light": "--rvt-color-base-body",
-              "dark": "--rvt-color-brand-ultra-light",
-              "crimson": "--rvt-color-brand-ultra-light"
+              "dark": "--rvt-color-brand-extra-light",
+              "crimson": "--rvt-color-brand-extra-light"
             },
             "replaces": null,
             "action": "add (new token)",
-            "note": "Quiet link icons, e.g. the breadcrumb home icon: body gray in Light, ultra-light cream in Dark/Crimson."
+            "note": "Dark and Crimson now use button cream (brand/extra-light) so every interactive element matches."
+          },
+          {
+            "name": "icon/link-strong",
+            "css": "--rvt-icon-link-strong",
+            "light": "#1f2528",
+            "dark": "#faf6ef",
+            "crimson": "#faf6ef",
+            "cssValue": {
+              "light": "--rvt-color-base-main",
+              "dark": "--rvt-color-brand-extra-light",
+              "crimson": "--rvt-color-brand-extra-light"
+            },
+            "codeToday": null,
+            "action": "add",
+            "note": "Interactive text or icons with no underline by default, like header nav items. Cream on Dark and Crimson, matching buttons."
           },
           {
             "name": "icon/brand",
