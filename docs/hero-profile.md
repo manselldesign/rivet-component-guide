@@ -44,15 +44,15 @@ Shared rules: Background `background/default`. Text color `text/brand` for the t
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Outer padding | `spacing/96` top (96px), `spacing/80` left and right (80px); with sidebar: `spacing/96` left, `spacing/80` right | `spacing/40` top (32px), `spacing/24` left and right (24px), `spacing/48` bottom (36px) |
+| Outer padding | `spacing/96` top (96px), `spacing/80` left and right (80px); with sidebar: `spacing/96` left, `spacing/80` right | `spacing/40` top (32px), `spacing/24` left and right (24px), `spacing/48` bottom (36px); Contact layout has no bottom padding, the details grid sits at the bottom |
 | Photo and text | Side by side, `spacing/48` gap (48px); `spacing/96` below (96px), or `spacing/64` (64px) when the details grid follows | Stacked, photo first, `spacing/16` below the photo (16px) |
 | Photo | `rvt-avatar`, 224 × 224px | `rvt-avatar`, 96 × 96px |
 | Download icon | 32px circle on the photo, `background/default` with a 1px `border/default` border, 16px `rvt-download` icon | 28px circle, 12px icon |
 | Tag | `tag/md/caps` (14 / 14px), `text/brand`; `spacing/8` below (8px) | Same |
 | Name | `display/lg/strong` (48 / 52px) | `display/lg/strong` (29 / 32px) |
-| Credentials | `display/xs/strong` (26 / 28px), `spacing/4` above (4px) | `heading/md/strong` (20 / 24px) |
+| Credentials | `display/xs/strong` (26 / 28px), `spacing/4` above (4px) | `heading/md/strong` (20 / 24px), no space above |
 | Job title | `body/md/regular` (20 / 28px), `spacing/8` above (8px) | `body/md/regular` (18 / 24px), `spacing/4` above (4px) |
 | Buttons | Side by side, `spacing/40` above (40px), `spacing/16` gap (16px), 48px tall | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |
 | Details grid (Contact) | `_rvt-factoid`, two columns, 1px `color/brand/light` dividers | One column, `spacing/48` above (36px) |
-| Detail item | `spacing/20` top and bottom (20px), `spacing/24` left and right (24px). Label `tag/md/regular` (14 / 14px), `text/strong`, `spacing/4` below (4px); value `body/sm/strong` (16 / 24px), `text/strong` | Same |
+| Detail item | `spacing/20` top and bottom (20px), `spacing/24` left and right (24px). Label `tag/md/regular` (14 / 14px), `text/strong`, `spacing/4` below plus a `spacing/4` gap (8px total); value `body/sm/strong` (16 / 24px), `text/strong` | Same |
 | Detail item types | Default (text), Tags (`rvt-badge` Subtle, `spacing/8` gap), Social (24px icon buttons, `spacing/8` gap) | Same |
