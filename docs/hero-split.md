@@ -44,11 +44,11 @@ Shared rules: Background `background/default`. Desktop is 1600 × 900px. Primary
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Outer padding | `spacing/80` left (80px); `spacing/48` gap between text and photo (48px) | `spacing/40` top (32px), `spacing/24` bottom (24px); `spacing/24` left and right on each block (24px) |
+| Outer padding | `spacing/80` left (80px); `spacing/48` gap between text and photo (48px) | `spacing/40` top and bottom (32px); `spacing/24` left and right on each block (24px) |
 | Text column | 672px wide. With list hub: `spacing/96` top (96px), `spacing/32` bottom (32px), `spacing/64` above the list hub (64px). Without list hub: `spacing/48` top and bottom (48px), centered | Full width |
 | Metadata | `tag/lg/caps` (16 / 16px), `text/brand`; `spacing/12` below (12px) | Same |
 | Headline | `display/xl/caps` (54 / 56px), `text/brand` | `display/xl/caps` (36 / 36px) |
 | Body | `body/base/regular` (18 / 28px), `text/default`; `spacing/24` above (24px) | `body/base/regular` (16 / 24px); `spacing/20` above (20px) |
 | Buttons | Side by side, `spacing/48` above (48px), `spacing/16` gap (16px) | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |
-| Photo | `spacing/48` top (48px), `spacing/80` right (80px), `spacing/32` bottom (32px), `spacing/64` left (64px) | `spacing/32` above (24px) |
+| Photo | `spacing/40` top and bottom (40px), `spacing/80` right (80px), `spacing/64` left (64px) | `spacing/32` above (24px) |
 | List hub | Below the text, `spacing/64` above (64px) | Below the photo, `spacing/8` gap plus `spacing/32` top padding (32px total) |
