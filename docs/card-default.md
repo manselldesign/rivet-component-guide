@@ -101,7 +101,7 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 | Featured badge | `rvt-badge` Default, Strong, `spacing/12` below | Same |
 | Eyebrow (tag) | `tag/sm/regular` (12 / 12px), `text/brand`, `spacing/4` below | Same |
 | Title | `action/xl/strong` (20 / 28px; 18 / 24px on Mobile), `text/strong` | `action/lg/strong` (16 / 24px), `text/strong` |
-| Arrow icon | `rvt-arrow-right` 16px, `spacing/16` from title | Same |
+| Arrow icon | `rvt-arrow-right` 16px, `spacing/16` from title | `rvt-arrow-right-12` 12px, `spacing/16` from title; sits in a 24px box with 0.5px top padding so the line is 12.25px from the top of the first title line |
 | Description | `body/base/regular` (18 / 28px; 16 / 24px on Mobile), `text/default`, `spacing/16` above | `body/xs/regular` (14 / 20px), `spacing/8` above |
 | List | `rvt-list` Medium, `body/sm/regular` (16 / 24px), `spacing/16` above | `rvt-list` Small, `body/xs/regular` (14 / 20px), `spacing/8` above |
 | Footer block | `spacing/24` above, `spacing/16` between metadata and tags | `spacing/16` above, `spacing/16` between |
