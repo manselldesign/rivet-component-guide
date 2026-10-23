@@ -4,7 +4,7 @@
 A statement hero opens a page with a bold headline and one to three large photos. It sets the tone with a strong visual first impression, and can add a card that highlights one thing, like an upcoming deadline.
 
 ## When to use it
-- Use it on high-visibility pages that need a strong visual opening, like a school home page or a campaign page
+- Use it at the top of landing pages that need a strong visual opening, like a school home page or a campaign page
 - Use it when you have great photos that show the people and places behind the message
 
 ## When not to use it
@@ -21,7 +21,7 @@ A statement hero opens a page with a bold headline and one to three large photos
 - **Triple image:** Three square photos. Use it to show range, like students, faculty and campus
 
 ### Device
-- **Desktop:** Photos sit in a row below the text, and the card overlaps their bottom edge
+- **Desktop:** Photos sit in a row below the text, and the card overlaps their bottom right corner
 - **Mobile:** Everything stacks, with full-width buttons and the card below the photos
 
 ### Optional parts
@@ -55,4 +55,4 @@ Shared rules: Background `background/default`. Desktop is 1600px wide, Mobile 37
 | Photos, Single | One 1440 × 720px (2:1) | One 327 × 200px; `spacing/32` above (24px) |
 | Photos, Double | Two 716px squares | Two 160px squares side by side; `spacing/32` above (24px) |
 | Photos, Triple | Three 475px squares | Two 160px squares side by side, then one below; `spacing/32` above (24px) |
-| Card | 1200px wide, centered, overlapping the bottom of the photos; `spacing/32` padding all sides (32px) | Full width below the photos, `spacing/8` above (8px); `spacing/32` padding all sides (24px) |
+| Card | 1200px wide, overlapping the photos, lined up with their right and bottom edges; `spacing/32` padding all sides (32px) | Full width below the photos, `spacing/8` above (8px); `spacing/32` padding all sides (24px) |
