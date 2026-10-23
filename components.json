@@ -204,6 +204,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=314-3617"
+    },
+    {
+      "slug": "hero-statement",
+      "name": "Hero – Statement",
+      "summary": "A statement hero opens a page with a bold headline and one to three large photos.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-23",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=3551-18446"
     }
   ]
 }
