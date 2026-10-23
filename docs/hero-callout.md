@@ -1,33 +1,31 @@
 # Hero – Callout
 
 ## What it is
-A callout hero is the large banner at the top of a page, with the headline and intro next to a small card that highlights one thing. It tells people what the page is about and points them to the most timely next step.
+The callout hero is the default hero, the banner at the top of most pages. It shows the page title and a short intro, with an optional card that highlights one thing, like a deadline or an upcoming event.
 
 ## When to use it
-- Use it at the top of a landing page that needs to feature one item, like an application deadline or an upcoming open house
-- Use it when you don't have a strong photo but still want a clear starting point
+- Use it at the top of most pages, like a program, service or department page
+- Use the card to point people to one timely next step, like "Applications close March 1"
 
 ## When not to use it
-- Don't use it more than once on a page
-- Don't use it on detail pages, like a news story or event. Start with a simple page title instead
-- Don't use it when a strong photo tells the story. Use Hero – Split instead
+- Don't use it on landing pages, like a school or department home page. Use Hero – Split instead
 - Don't use it to introduce a person. Use Hero – Profile instead
+- Don't use more than one hero on a page
 
 ## Variants
 
 ### Layout
-- **Side by side:** Text on the left, card on the right. Use it on wide pages. Figma calls it Column(s) 1
-- **Stacked:** Card sits under the text. Use it on narrower content areas. Figma calls it Column(s) 2
+- **Side by side:** Text on the left, card on the right. Use it in full-width pages. Figma calls it Column(s) 1
+- **Stacked:** The card sits under the text. Use it in narrower content areas. Figma calls it Column(s) 2
 
 ### Device
 - **Desktop:** Buttons sit side by side
 - **Mobile:** Everything stacks, with full-width buttons and the card last
 
 ### Optional parts
-- Turn on only what you have:
-- **Metadata:** A short label above the headline, like the school or section name
+- **Metadata:** A short label above the headline, like the section name
 - **Body:** One short paragraph of intro
-- **Buttons:** Leave them out when the card already covers the next step
+- **Buttons:** Leave them out when the page has no clear next step
 - **Second button:** Add it only when there's a real second action
 - **Hero card:** Leave it out when there's nothing timely to feature
 
