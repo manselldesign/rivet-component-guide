@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -44,7 +44,7 @@
     "themeColors": 136,
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
-    "textStyles": 78,
+    "textStyles": 79,
     "textStylesThatAreRenameOnly": 18,
     "spacing": 16,
     "shadows": 6
@@ -1011,7 +1011,7 @@
             },
             "replaces": "--rvt-color-theme-accent",
             "action": "add (replaces --rvt-color-theme-accent)",
-            "valueChange": "Dark and Crimson now use color/brand/ultra-light (#fdfaf7), was color/brand/extra-light (#faf6ef). All interactive items in non-Light themes use this cream.",
+            "valueChange": "2026-10-23: Dark and Crimson back to color/brand/extra-light (#faf6ef, button cream), was color/brand/ultra-light (#fdfaf7).",
             "note": "Dark and Crimson now use button cream (brand/extra-light) so every interactive element matches."
           },
           {
@@ -3702,7 +3702,7 @@
             "css": "--rvt-font-component-lockup-campus-title",
             "spec": {
               "font": "Roboto Flex",
-              "weight": 700,
+              "weight": 600,
               "size": 16,
               "lineHeight": 16,
               "textTransform": "uppercase"
@@ -3710,17 +3710,35 @@
             "codeToday": "--rvt-font-16-bold",
             "action": "rename + value change",
             "valueChanges": [
-              "line-height 24 vs Figma 16",
-              "weight 600 vs Figma 700"
+              "line-height 24 vs Figma 16"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans)",
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans)",
             "alsoSet": {
               "text-transform": "uppercase"
-            }
+            },
+            "figmaChange": "2026-10-23: weight now 600 (was 700) and tracking now font/tracking/none (was font/tracking/xs)."
           },
           {
-            "name": "component/lockup/eyebrow-2line",
-            "css": "--rvt-font-component-lockup-eyebrow-2line",
+            "name": "component/lockup/campus-title-2line",
+            "css": "--rvt-font-component-lockup-campus-title-2line",
+            "spec": {
+              "font": "Roboto Flex",
+              "weight": 600,
+              "size": 12,
+              "lineHeight": 12,
+              "textTransform": "uppercase"
+            },
+            "codeToday": null,
+            "action": "add",
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-sans)",
+            "alsoSet": {
+              "text-transform": "uppercase"
+            },
+            "figmaChange": "2026-10-23: new in Figma. Replaces component/lockup/eyebrow-3line (removed), which is kept in CSS as an alias to this style."
+          },
+          {
+            "name": "component/lockup/campus-name",
+            "css": "--rvt-font-component-lockup-campus-name",
             "spec": {
               "font": "Roboto Flex",
               "weight": 350,
@@ -3736,24 +3754,8 @@
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans)",
             "alsoSet": {
               "text-transform": "uppercase"
-            }
-          },
-          {
-            "name": "component/lockup/eyebrow-3line",
-            "css": "--rvt-font-component-lockup-eyebrow-3line",
-            "spec": {
-              "font": "Roboto Flex",
-              "weight": 350,
-              "size": 11,
-              "lineHeight": 11,
-              "textTransform": "uppercase"
             },
-            "codeToday": null,
-            "action": "add",
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-component-lockup-type-eyebrow-3line)/var(--rvt-component-lockup-type-eyebrow-3line) var(--rvt-font-family-sans)",
-            "alsoSet": {
-              "text-transform": "uppercase"
-            }
+            "figmaChange": "2026-10-23: renamed from component/lockup/eyebrow-2line; tracking now font/tracking/none (was font/tracking/sm). Old CSS name kept as an alias."
           },
           {
             "name": "component/lockup/title-2line",
@@ -3787,7 +3789,8 @@
               "line-height 20 vs Figma 16",
               "weight 600 vs Figma 700"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans)",
+            "figmaChange": "2026-10-23: tracking now font/tracking/none (was font/tracking/2xs, 0.1px)."
           },
           {
             "name": "component/lockup/title-4line",
@@ -3804,7 +3807,22 @@
               "line-height 20 vs Figma 14",
               "weight 600 vs Figma 700"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-12)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-12)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans)",
+            "figmaChange": "2026-10-23: tracking now font/tracking/none (was font/tracking/2xs, 0.1px)."
+          },
+          {
+            "name": "component/required/required-field",
+            "css": "--rvt-font-component-required-required-field",
+            "spec": {
+              "font": "Roboto Flex",
+              "weight": 700,
+              "size": 14,
+              "lineHeight": 14
+            },
+            "codeToday": null,
+            "action": "add",
+            "cssValue": "var(--rvt-font-weight-700) 14px/var(--rvt-type-line-height-14) var(--rvt-font-family-sans)",
+            "figmaChange": "2026-10-23: new in Figma. Font size isn't bound to a variable in Figma, so the CSS uses 14px."
           },
           {
             "name": "component/number/strong",
@@ -5749,11 +5767,12 @@
       },
       {
         "before": "✅ Custom/lockup/lockup-eyebrow-2lines",
-        "after": "component/lockup/eyebrow-2line"
+        "after": "component/lockup/campus-name"
       },
       {
         "before": "✅ Custom/lockup/lockup-eyebrow-3lines",
-        "after": "component/lockup/eyebrow-3line"
+        "after": "component/lockup/campus-title-2line",
+        "change": "eyebrow-3line removed 2026-10-23; closest match"
       },
       {
         "before": "✅ Custom/lockup/title-2lines",
@@ -5822,6 +5841,15 @@
         "after": "heading/2xl/strong",
         "date": "2026-10-19",
         "why": "Same change as above."
+      },
+      {
+        "before": "component/lockup/eyebrow-2line",
+        "after": "component/lockup/campus-name"
+      },
+      {
+        "before": "component/lockup/eyebrow-3line",
+        "after": "component/lockup/campus-title-2line",
+        "change": "removed 2026-10-23; closest match, kept as a CSS alias"
       }
     ],
     "themeColors": [

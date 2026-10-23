@@ -700,12 +700,13 @@
 	--rvt-font-link-base-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans);
 	--rvt-font-link-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans);
 	--rvt-font-link-xs-regular: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans);
-	--rvt-font-component-lockup-campus-title: var(--rvt-font-weight-700) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
-	--rvt-font-component-lockup-eyebrow-2line: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans);
-	--rvt-font-component-lockup-eyebrow-3line: var(--rvt-font-weight-350) var(--rvt-component-lockup-type-eyebrow-3line)/var(--rvt-component-lockup-type-eyebrow-3line) var(--rvt-font-family-sans);
+	--rvt-font-component-lockup-campus-title: var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
+	--rvt-font-component-lockup-campus-title-2line: var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-sans);
+	--rvt-font-component-lockup-campus-name: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-title-2line: var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-title-3line: var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-title-4line: var(--rvt-font-weight-700) var(--rvt-type-size-12)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans);
+	--rvt-font-component-required-required-field: var(--rvt-font-weight-700) 14px/var(--rvt-type-line-height-14) var(--rvt-font-family-sans); /* font size is not bound to a variable in Figma */
 	--rvt-font-component-number-strong: var(--rvt-font-weight-825) var(--rvt-type-size-42)/var(--rvt-type-line-height-44) var(--rvt-font-family-sans);
 	--rvt-font-component-number-regular: var(--rvt-font-weight-350) var(--rvt-type-size-42)/var(--rvt-type-line-height-44) var(--rvt-font-family-sans);
 	--rvt-font-component-avatar-224: var(--rvt-font-weight-600) var(--rvt-component-avatar-type-224)/var(--rvt-component-avatar-type-224) var(--rvt-font-family-sans);
@@ -763,6 +764,8 @@
 	--rvt-shadow-subtle: var(--rvt-shadow-sm);
 	--rvt-shadow-heavy: var(--rvt-shadow-lg);
 	--rvt-font-body-lead-regular: var(--rvt-font-body-xl-regular); /* body/lead/regular was removed from Figma 2026-10-21; closest is body/xl/regular */
+	--rvt-font-component-lockup-eyebrow-2line: var(--rvt-font-component-lockup-campus-name); /* renamed in Figma 2026-10-23 to component/lockup/campus-name (tracking now none) */
+	--rvt-font-component-lockup-eyebrow-3line: var(--rvt-font-component-lockup-campus-title-2line); /* removed from Figma 2026-10-23; closest is component/lockup/campus-title-2line (12/12, weight 600) */
 }
 
 /* Old theme names → their closest new name (same values). Use role-specific names in new CSS. */

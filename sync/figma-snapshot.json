@@ -3,7 +3,7 @@
     "file": "Rivet 3 Components (cleaning)",
     "fileKey": "h8vuH2kAA3FkJlUEitXK9t"
   },
-  "syncedAt": "2026-10-21T13:37Z",
+  "syncedAt": "2026-10-23T13:55Z",
   "note": "Normalized snapshot written by the daily token sync. Values: colors hex (8-digit = alpha), '@name' = alias to another variable, numbers in px. Mode-specific values are objects keyed by mode.",
   "variables": {
     "Foundation": {
@@ -270,11 +270,11 @@
         },
         "font/tracking/lg": {
           "type": "FLOAT",
-          "value": 2
+          "value": 1
         },
         "font/tracking/md": {
           "type": "FLOAT",
-          "value": 1
+          "value": 0.75
         },
         "font/tracking/none": {
           "type": "FLOAT",
@@ -286,7 +286,7 @@
         },
         "font/tracking/xl": {
           "type": "FLOAT",
-          "value": 3
+          "value": 2
         },
         "font/tracking/xs": {
           "type": "FLOAT",
@@ -780,6 +780,10 @@
             "Desktop": 72,
             "Mobile": 64
           }
+        },
+        "font/tracking/2xl": {
+          "type": "FLOAT",
+          "value": 3
         }
       }
     },
@@ -1152,7 +1156,7 @@
           "value": {
             "Light": "@color/brand/light",
             "Dark": "@color/base/ultra-dark",
-            "Crimson": "@color/brand/ultra-dark"
+            "Crimson": "@border/on-brand"
           }
         },
         "border/info": {
@@ -1539,8 +1543,8 @@
           "type": "COLOR",
           "value": {
             "Light": "@color/base/body",
-            "Dark": "@color/brand/ultra-light",
-            "Crimson": "@color/brand/ultra-light"
+            "Dark": "@color/brand/extra-light",
+            "Crimson": "@color/brand/extra-light"
           }
         },
         "icon/on-brand-alt": {
@@ -1659,16 +1663,16 @@
           "type": "COLOR",
           "value": {
             "Light": "@color/brand/main",
-            "Dark": "@color/brand/ultra-light",
-            "Crimson": "@color/brand/ultra-light"
+            "Dark": "@color/brand/extra-light",
+            "Crimson": "@color/brand/extra-light"
           }
         },
         "text/link-subtle": {
           "type": "COLOR",
           "value": {
             "Light": "@color/base/body",
-            "Dark": "@color/brand/ultra-light",
-            "Crimson": "@color/brand/ultra-light"
+            "Dark": "@color/brand/extra-light",
+            "Crimson": "@color/brand/extra-light"
           }
         },
         "text/on-brand": {
@@ -1726,6 +1730,30 @@
         "text/warning-fixed": {
           "type": "COLOR",
           "value": "@color/status/warning/main"
+        },
+        "border/on-brand": {
+          "type": "COLOR",
+          "value": "@color/brand/extra-dark"
+        },
+        "icon/on-brand-fixed": {
+          "type": "COLOR",
+          "value": "@color/base/ultra-light"
+        },
+        "text/link-strong": {
+          "type": "COLOR",
+          "value": {
+            "Light": "@color/base/main",
+            "Dark": "@color/brand/extra-light",
+            "Crimson": "@color/brand/extra-light"
+          }
+        },
+        "icon/link-strong": {
+          "type": "COLOR",
+          "value": {
+            "Light": "@color/base/main",
+            "Dark": "@color/brand/extra-light",
+            "Crimson": "@color/brand/extra-light"
+          }
         }
       }
     }
@@ -2425,7 +2453,7 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/350",
         "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/lg",
+        "letterSpacing": "font/tracking/xl",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
       "description": "tracking: wide"
@@ -2443,7 +2471,7 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/600",
         "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/md",
+        "letterSpacing": "font/tracking/lg",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
       "description": "tracking: normal"
@@ -2461,7 +2489,7 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/350",
         "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/md",
+        "letterSpacing": "font/tracking/lg",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
       "description": "tracking: normal"
@@ -2479,7 +2507,7 @@
         "lineHeight": "type/line-height/14",
         "fontWeight": "font/weight/350",
         "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/lg",
+        "letterSpacing": "font/tracking/xl",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
       "description": "tracking: wide"
@@ -2497,7 +2525,7 @@
         "lineHeight": "type/line-height/14",
         "fontWeight": "font/weight/600",
         "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/md",
+        "letterSpacing": "font/tracking/lg",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
       "description": "tracking: normal"
@@ -2515,7 +2543,7 @@
         "lineHeight": "type/line-height/14",
         "fontWeight": "font/weight/350",
         "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/md",
+        "letterSpacing": "font/tracking/lg",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
       "description": "tracking: normal"
@@ -2533,7 +2561,7 @@
         "lineHeight": "type/line-height/12",
         "fontWeight": "font/weight/350",
         "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/lg",
+        "letterSpacing": "font/tracking/xl",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
       "description": "tracking: wide"
@@ -2551,7 +2579,7 @@
         "lineHeight": "type/line-height/12",
         "fontWeight": "font/weight/600",
         "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/md",
+        "letterSpacing": "font/tracking/lg",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
       "description": "tracking: normal"
@@ -2569,7 +2597,7 @@
         "lineHeight": "type/line-height/12",
         "fontWeight": "font/weight/350",
         "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/md",
+        "letterSpacing": "font/tracking/lg",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
       "description": "tracking: normal"
@@ -2715,54 +2743,18 @@
       "fontStyle": "Bold",
       "fontSize": 16,
       "lineHeight": 16,
-      "letterSpacing": 0.25,
+      "letterSpacing": 0,
       "textCase": "UPPER",
       "textDecoration": "NONE",
       "boundVariables": {
         "fontSize": "type/size/16",
         "lineHeight": "type/line-height/16",
-        "fontWeight": "font/weight/700",
+        "fontWeight": "font/weight/600",
         "fontFamily": "font/family/sans",
-        "letterSpacing": "font/tracking/xs",
+        "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "**Maps to:** --rvt-font-20.\n\n, tracking: tighter"
-    },
-    "component/lockup/eyebrow-2line": {
-      "fontFamily": "Roboto Flex",
-      "fontStyle": "Regular",
-      "fontSize": 14,
-      "lineHeight": 14,
-      "letterSpacing": 0.5,
-      "textCase": "UPPER",
-      "textDecoration": "NONE",
-      "boundVariables": {
-        "fontSize": "type/size/14",
-        "lineHeight": "type/line-height/14",
-        "fontWeight": "font/weight/350",
-        "fontFamily": "font/family/sans",
-        "letterSpacing": "font/tracking/sm",
-        "paragraphSpacing": "type/paragraph-spacing/step-01"
-      },
-      "description": "tracking: tight"
-    },
-    "component/lockup/eyebrow-3line": {
-      "fontFamily": "Roboto Flex",
-      "fontStyle": "Regular",
-      "fontSize": 11,
-      "lineHeight": 11,
-      "letterSpacing": 0.5,
-      "textCase": "UPPER",
-      "textDecoration": "NONE",
-      "boundVariables": {
-        "fontSize": "component/lockup/type-eyebrow-3line",
-        "lineHeight": "component/lockup/type-eyebrow-3line",
-        "fontWeight": "font/weight/350",
-        "fontFamily": "font/family/sans",
-        "letterSpacing": "font/tracking/sm",
-        "paragraphSpacing": "type/paragraph-spacing/step-01"
-      },
-      "description": "**Maps to:** No Rivet 3 CSS counterpart (Figma-only bespoke style).\n\ntracking: tight"
+      "description": ""
     },
     "component/lockup/title-2line": {
       "fontFamily": "Roboto Flex",
@@ -2787,7 +2779,7 @@
       "fontStyle": "Bold",
       "fontSize": 14,
       "lineHeight": 16,
-      "letterSpacing": 0.1,
+      "letterSpacing": 0,
       "textCase": "ORIGINAL",
       "textDecoration": "NONE",
       "boundVariables": {
@@ -2795,17 +2787,17 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/700",
         "fontFamily": "font/family/sans",
-        "letterSpacing": "font/tracking/2xs",
+        "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "**Maps to:** --rvt-font-16.\n\nwdth: 112.5%"
+      "description": ""
     },
     "component/lockup/title-4line": {
       "fontFamily": "Roboto Flex",
       "fontStyle": "Bold",
       "fontSize": 12,
       "lineHeight": 14,
-      "letterSpacing": 0.1,
+      "letterSpacing": 0,
       "textCase": "ORIGINAL",
       "textDecoration": "NONE",
       "boundVariables": {
@@ -2813,10 +2805,10 @@
         "lineHeight": "type/line-height/14",
         "fontWeight": "font/weight/700",
         "fontFamily": "font/family/sans",
-        "letterSpacing": "font/tracking/2xs",
+        "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "**Maps to:** --rvt-font-16.\n\nwdth: 112.5%"
+      "description": ""
     },
     "body/2xl/italic": {
       "fontFamily": "Roboto Flex",
@@ -3114,6 +3106,57 @@
         "letterSpacing": "font/tracking/none"
       },
       "description": "wght: 600"
+    },
+    "component/required/required-field": {
+      "fontFamily": "Roboto Flex",
+      "fontStyle": "Bold",
+      "fontSize": 14,
+      "lineHeight": 14,
+      "letterSpacing": "0%",
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "boundVariables": {
+        "fontFamily": "font/family/sans",
+        "lineHeight": "type/line-height/14",
+        "fontWeight": "font/weight/700"
+      },
+      "description": ""
+    },
+    "component/lockup/campus-title-2line": {
+      "fontFamily": "Roboto Flex",
+      "fontStyle": "SemiBold",
+      "fontSize": 12,
+      "lineHeight": 12,
+      "letterSpacing": 0,
+      "textCase": "UPPER",
+      "textDecoration": "NONE",
+      "boundVariables": {
+        "fontSize": "type/size/12",
+        "lineHeight": "type/line-height/12",
+        "fontWeight": "font/weight/600",
+        "fontFamily": "font/family/sans",
+        "letterSpacing": "font/tracking/none",
+        "paragraphSpacing": "type/paragraph-spacing/step-01"
+      },
+      "description": ""
+    },
+    "component/lockup/campus-name": {
+      "fontFamily": "Roboto Flex",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 14,
+      "letterSpacing": 0,
+      "textCase": "UPPER",
+      "textDecoration": "NONE",
+      "boundVariables": {
+        "fontSize": "type/size/14",
+        "lineHeight": "type/line-height/14",
+        "fontWeight": "font/weight/350",
+        "fontFamily": "font/family/sans",
+        "letterSpacing": "font/tracking/none",
+        "paragraphSpacing": "type/paragraph-spacing/step-01"
+      },
+      "description": ""
     }
   },
   "effectStyles": {
