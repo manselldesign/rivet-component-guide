@@ -57,7 +57,7 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Surface | `background/raised`, `shadow/sm`, no border, no corner radius | Same |
+| Surface | `background/raised`, `shadow/md`, no border, no corner radius | Same |
 | Card padding | `spacing/32` all sides (32px) | `spacing/24` all sides (24px) |
 | Icon (Default) | 80×80 sticker, Crimson, contained | 64×64 |
 | Photo (Avatar) | `rvt-avatar` Image, 80px, Crimson | 64px |
@@ -66,7 +66,7 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 | Horizontal columns | Left: name and address, `spacing/24` right padding. Right: contact info, 1px `border/default` left divider, `spacing/24` left padding | Single column |
 | Tag | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below | Same |
 | Title | `heading/md/strong` (20 / 24px), `text/default` | Same |
-| Address | `body/base/regular` (18 / 28px; 16 / 24px on Mobile), `text/default`, `spacing/8` above | Same |
+| Address | `body/base/regular` (18 / 28px; 16 / 24px on Mobile), `text/default`, `spacing/4` above (4px) | Same |
 | Contact info group | `spacing/24` above, `spacing/12` between rows | Same |
 | Contact info row | 16px icon, `spacing/8` gap; link `action/lg/regular` (16 / 24px), `text/accent`, underlined | Same |
 | Pronouns row | `rvt-user` 16px, `spacing/4` gap; label `heading/sm/strong` (16 / 20px), `text/strong`; value `body/base/regular` (18 / 28px; 16 / 24px on Mobile) | Same |
