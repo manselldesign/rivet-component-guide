@@ -65,7 +65,7 @@ A large block that pairs a big image with a short title, a sentence or two, and 
 | Background | `background/strong` | `background/strong` |
 | Image | 1:1, `spacing/24` (24px) top, bottom and outer side | 1:1, `spacing/20` (20px) top, left, right |
 | Content padding | `spacing/64` (64px) outer side and bottom, content bottom-aligned | `spacing/32` (24px) all sides |
-| Eyebrow | `tag/md/caps` (14 / 14px), `text/brand`, `spacing/8` below | Same |
+| Eyebrow | `tag/md/caps` (14 / 18px), `text/brand`, `spacing/8` below | Same |
 | Title | `display/sm/strong` (29 / 32px), `text/brand` | Same |
 | Description | `body/base/regular` (18 / 28px), `text/default`, `spacing/24` above | (16 / 24px), `spacing/20` above |
 | Single link | `rvt-button` CTA, Extra-large, `component/button/height-lg` (48px), `spacing/32` above | Full width, `spacing/32` (24px) sides, `spacing/40` (32px) below |

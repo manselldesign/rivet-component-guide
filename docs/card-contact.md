@@ -64,13 +64,13 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 | Icon or photo, vertical | `spacing/24` below (24px) | `spacing/16` below (16px) |
 | Icon or photo, horizontal | `spacing/24` gap to content | Stacks above content |
 | Horizontal columns | Left: name and address, `spacing/24` right padding. Right: contact info, 1px `border/default` left divider, `spacing/24` left padding | Single column |
-| Tag | `tag/sm/regular` (12 / 12px), `text/brand`, `spacing/4` below | Same |
+| Tag | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below | Same |
 | Title | `heading/md/strong` (20 / 24px), `text/default` | Same |
 | Address | `body/base/regular` (18 / 28px; 16 / 24px on Mobile), `text/default`, `spacing/8` above | Same |
 | Contact info group | `spacing/24` above, `spacing/12` between rows | Same |
 | Contact info row | 16px icon, `spacing/8` gap; link `action/lg/regular` (16 / 24px), `text/accent`, underlined | Same |
 | Pronouns row | `rvt-user` 16px, `spacing/4` gap; label `heading/sm/strong` (16 / 20px), `text/strong`; value `body/base/regular` (18 / 28px; 16 / 24px on Mobile) | Same |
-| Social links | `spacing/24` above; label "Social:" `tag/sm/regular` (12 / 12px), `text/default`; `spacing/16` to icons; `rvt-button` Icon 24×24, `spacing/8` between | Same |
+| Social links | `spacing/24` above; label "Social:" `tag/sm/regular` (12 / 16px), `text/default`; `spacing/16` to icons; `rvt-button` Icon 24×24, `spacing/8` between | Same |
 | Buttons | `spacing/24` above; `rvt-button` Form, Normal, Medium (32px), stacked, `spacing/8` between; label `action/sm/strong` (14 / 20px) | Full width |
 
 ### Hours (`_Hours`)

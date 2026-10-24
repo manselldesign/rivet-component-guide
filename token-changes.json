@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -174,6 +174,15 @@
         "hover": "--rvt-text-accent",
         "group title": "--rvt-text-strong",
         "trident in the bottom bar": "--rvt-icon-brand (crimson on Light, white on Dark and Crimson)"
+      }
+    },
+    {
+      "component": "Tag text styles — line height",
+      "change": "Every tag style's line height is now its font size plus 4px: tag/sm/* 12/16, tag/md/* 14/18, tag/lg/* 16/20. Adds a new --rvt-type-line-height-18 token.",
+      "use": {
+        "12px tags": "--rvt-font-tag-sm-* (line-height --rvt-type-line-height-16)",
+        "14px tags": "--rvt-font-tag-md-* (line-height --rvt-type-line-height-18)",
+        "16px tags": "--rvt-font-tag-lg-* (line-height --rvt-type-line-height-20)"
       }
     }
   ],
@@ -3369,19 +3378,20 @@
               "font": "Roboto Mono",
               "weight": 350,
               "size": 16,
-              "lineHeight": 16,
+              "lineHeight": 20,
               "textTransform": "uppercase"
             },
             "codeToday": "--rvt-font-16-mono",
             "action": "rename + value change",
             "valueChanges": [
-              "line-height 24 vs Figma 16"
+              "line-height 24 vs Figma 20"
             ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-20) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-xl)",
               "text-transform": "uppercase"
-            }
+            },
+            "figmaChange": "2026-10-24: line height is now the font size plus 4px (16/20)"
           },
           {
             "name": "tag/lg/strong",
@@ -3390,18 +3400,19 @@
               "font": "Roboto Mono",
               "weight": 600,
               "size": 16,
-              "lineHeight": 16
+              "lineHeight": 20
             },
             "codeToday": "--rvt-font-16-mono",
             "action": "rename + value change",
             "valueChanges": [
-              "line-height 24 vs Figma 16",
+              "line-height 24 vs Figma 20",
               "weight 350 vs Figma 600"
             ],
-            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-20) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-lg)"
-            }
+            },
+            "figmaChange": "2026-10-24: line height is now the font size plus 4px (16/20)"
           },
           {
             "name": "tag/lg/regular",
@@ -3410,18 +3421,18 @@
               "font": "Roboto Mono",
               "weight": 350,
               "size": 16,
-              "lineHeight": 16
+              "lineHeight": 20
             },
             "codeToday": "--rvt-font-16-mono",
             "action": "rename + value change",
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-20) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-lg)"
             },
             "valueChanges": [
-              "line-height 24 vs Figma 16"
+              "line-height 24 vs Figma 20"
             ],
-            "figmaChange": "2026-10-21: line height now 16px (was 24px)."
+            "figmaChange": "2026-10-24: line height is now the font size plus 4px (16/20)"
           },
           {
             "name": "tag/md/caps",
@@ -3430,19 +3441,20 @@
               "font": "Roboto Mono",
               "weight": 350,
               "size": 14,
-              "lineHeight": 14,
+              "lineHeight": 18,
               "textTransform": "uppercase"
             },
             "codeToday": "--rvt-font-14-mono",
             "action": "rename + value change",
             "valueChanges": [
-              "line-height 16 vs Figma 14"
+              "line-height 16 vs Figma 18"
             ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-mono)",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-18) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-xl)",
               "text-transform": "uppercase"
-            }
+            },
+            "figmaChange": "2026-10-24: line height is now the font size plus 4px (14/18)"
           },
           {
             "name": "tag/md/strong",
@@ -3451,18 +3463,19 @@
               "font": "Roboto Mono",
               "weight": 600,
               "size": 14,
-              "lineHeight": 14
+              "lineHeight": 18
             },
             "codeToday": "--rvt-font-14-mono",
             "action": "rename + value change",
             "valueChanges": [
-              "line-height 16 vs Figma 14",
+              "line-height 16 vs Figma 18",
               "weight 350 vs Figma 600"
             ],
-            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-mono)",
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-18) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-lg)"
-            }
+            },
+            "figmaChange": "2026-10-24: line height is now the font size plus 4px (14/18)"
           },
           {
             "name": "tag/md/regular",
@@ -3471,17 +3484,18 @@
               "font": "Roboto Mono",
               "weight": 350,
               "size": 14,
-              "lineHeight": 14
+              "lineHeight": 18
             },
             "codeToday": "--rvt-font-14-mono",
             "action": "rename + value change",
             "valueChanges": [
-              "line-height 16 vs Figma 14"
+              "line-height 16 vs Figma 18"
             ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-mono)",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-18) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-lg)"
-            }
+            },
+            "figmaChange": "2026-10-24: line height is now the font size plus 4px (14/18)"
           },
           {
             "name": "tag/sm/caps",
@@ -3490,19 +3504,17 @@
               "font": "Roboto Mono",
               "weight": 350,
               "size": 12,
-              "lineHeight": 12,
+              "lineHeight": 16,
               "textTransform": "uppercase"
             },
             "codeToday": "--rvt-font-12-mono",
-            "action": "rename + value change",
-            "valueChanges": [
-              "line-height 16 vs Figma 12"
-            ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-mono)",
+            "action": "rename",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-xl)",
               "text-transform": "uppercase"
-            }
+            },
+            "figmaChange": "2026-10-24: line height is now the font size plus 4px (12/16)"
           },
           {
             "name": "tag/sm/strong",
@@ -3511,18 +3523,18 @@
               "font": "Roboto Mono",
               "weight": 600,
               "size": 12,
-              "lineHeight": 12
+              "lineHeight": 16
             },
             "codeToday": "--rvt-font-12-mono",
             "action": "rename + value change",
             "valueChanges": [
-              "line-height 16 vs Figma 12",
               "weight 350 vs Figma 600"
             ],
-            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-mono)",
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-lg)"
-            }
+            },
+            "figmaChange": "2026-10-24: line height is now the font size plus 4px (12/16)"
           },
           {
             "name": "tag/sm/regular",
@@ -3531,18 +3543,15 @@
               "font": "Roboto Mono",
               "weight": 350,
               "size": 12,
-              "lineHeight": 12
+              "lineHeight": 16
             },
             "codeToday": "--rvt-font-12-mono",
-            "action": "rename + value change",
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-mono)",
+            "action": "rename",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono)",
             "alsoSet": {
               "letter-spacing": "var(--rvt-font-tracking-lg)"
             },
-            "valueChanges": [
-              "line-height 16 vs Figma 12"
-            ],
-            "figmaChange": "2026-10-21: line height now 12px (was 16px)."
+            "figmaChange": "2026-10-24: line height is now the font size plus 4px (12/16)"
           },
           {
             "name": "editorial/xl/regular",
@@ -4229,6 +4238,14 @@
           "value": 16,
           "codeToday": "--rvt-size-16",
           "action": "rename"
+        },
+        {
+          "name": "type/line-height/18",
+          "css": "--rvt-type-line-height-18",
+          "value": 18,
+          "codeToday": null,
+          "action": "add",
+          "figmaChange": "2026-10-24: new in Figma for tag/md/* styles"
         },
         {
           "name": "type/line-height/18-20",

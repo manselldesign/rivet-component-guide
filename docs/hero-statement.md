@@ -48,7 +48,7 @@ Shared rules: Background `background/default`. Desktop is 1600px wide, Mobile 37
 | --- | --- | --- |
 | Outer padding | `spacing/80` left and right (80px), `spacing/40` bottom (40px) | `spacing/40` top and bottom (32px); `spacing/24` left and right on each block (24px) |
 | Text block | `spacing/128` top (128px), `spacing/48` bottom (48px) | Starts at the top padding |
-| Metadata | `tag/md/caps` (14 / 14px), `text/brand`; `spacing/16` below (16px) | `tag/md/caps` (14 / 14px); `spacing/12` below (12px) |
+| Metadata | `tag/md/caps` (14 / 18px), `text/brand`; `spacing/16` below (16px) | `tag/md/caps` (14 / 18px); `spacing/12` below (12px) |
 | Headline | `display/xl/caps` (54 / 56px), `text/brand` | `display/xl/caps` (36 / 36px) |
 | Body | `body/md/regular` (20 / 28px), `text/default`; `spacing/24` above (24px) | `body/md/regular` (18 / 24px); `spacing/20` above (20px) |
 | Buttons | Side by side, `spacing/48` above (48px), `spacing/16` gap (16px) | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |

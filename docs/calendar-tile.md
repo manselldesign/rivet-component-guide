@@ -39,7 +39,7 @@ A small square that shows a date at a glance, with the month, day and year stack
 | Corner radius | 0 |
 | Content alignment | Centered, stacked vertically |
 | Gap between month, day and year | `spacing/12` |
-| Month | `tag/lg/caps` (16 / 16px), Roboto Mono, uppercase, `font/tracking/xl` (2px), `color/brand/main` |
+| Month | `tag/lg/caps` (16 / 20px), Roboto Mono, uppercase, `font/tracking/xl` (2px), `color/brand/main` |
 | Day | `component/number/strong` (42 / 44px), Roboto Flex, `font/weight/825`, `color/brand/main` |
-| Year | `tag/lg/caps` (16 / 16px), Roboto Mono, `font/tracking/xl` (2px), `color/brand/main` |
+| Year | `tag/lg/caps` (16 / 20px), Roboto Mono, `font/tracking/xl` (2px), `color/brand/main` |
 | Optional parts | Month and Year can each be hidden. Day is always shown |

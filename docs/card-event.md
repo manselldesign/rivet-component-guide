@@ -71,11 +71,11 @@ Shared rules: Outlined = 1px `border/default` border, no radius. Raised = `shado
 | Date tile (Horizontal) | `rvt-calendar-tile` 128 × 128px, `spacing/24` gap to text column | Stacks like Vertical |
 | Text column (Horizontal) | `spacing/4` top | — |
 | Top badge | Strong badge, `heading/xs/strong` (14 / 20px), `spacing/12` below | Same |
-| Top metadata | `tag/sm/regular` (12 / 12px), `text/brand`, `spacing/4` below | Same |
+| Top metadata | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below | Same |
 | Title | `action/xl/strong` (20 / 28px), `text/strong` | `action/xl/strong` (18 / 24px) |
 | Arrow icon | 16px `rvt-arrow-right`, `spacing/16` gap from title | Same |
 | Details group | 24px above (`spacing/12` + `spacing/12`), `spacing/12` between rows | Same |
 | Detail row | 16px icon (calendar, clock, map pin) centered in a box as tall as one text line (`type/line-height/28`, 28px), `spacing/8` gap; text `body/base/regular` (18 / 28px), `text/default` | Icon box 24px; text `body/base/regular` (16 / 24px) |
 | Bottom group | Label and tags show and hide together. `spacing/24` above, `spacing/16` gap | Same |
-| Bottom label | "Tags:" `tag/sm/regular` (12 / 12px), `text/default` | Same |
+| Bottom label | "Tags:" `tag/sm/regular` (12 / 16px), `text/default` | Same |
 | Tags row | Subtle badges, `spacing/8` gap, wraps | Same |

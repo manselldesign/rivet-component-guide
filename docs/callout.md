@@ -54,7 +54,7 @@ A highlighted box that draws attention to one thing on a page, like an upcoming 
 | Sticker | 80px, Crimson, with container | 80px, Crimson, with container |
 | Avatar | `rvt-avatar` 96px (Left), 80px (Top) | `rvt-avatar` 64px |
 | Image | 3:2 ratio (350 × 233px) | 3:2 ratio, full width (279 × 186px) |
-| Eyebrow (tag) | `tag/sm/caps` (12 / 12px), `font/tracking/xl` (2px), `spacing/8` below | Same |
+| Eyebrow (tag) | `tag/sm/caps` (12 / 16px), `font/tracking/xl` (2px), `spacing/8` below | Same |
 | Title | `display/sm/strong` (29 / 32px) | Same |
 | Description | `body/base/regular` (18 / 28px), `spacing/16` above | `body/base/regular` (16 / 24px), `spacing/24` above |
 | Button row | `spacing/32` (32px) above | `spacing/32` (24px on Mobile) above |
