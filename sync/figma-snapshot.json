@@ -3,7 +3,7 @@
     "file": "Rivet 3 Components (cleaning)",
     "fileKey": "h8vuH2kAA3FkJlUEitXK9t"
   },
-  "syncedAt": "2026-10-23T13:55Z",
+  "syncedAt": "2026-10-26T14:31Z",
   "note": "Normalized snapshot written by the daily token sync. Values: colors hex (8-digit = alpha), '@name' = alias to another variable, numbers in px. Mode-specific values are objects keyed by mode.",
   "variables": {
     "Foundation": {
@@ -264,6 +264,10 @@
           "type": "STRING",
           "value": "-10"
         },
+        "font/tracking/2xl": {
+          "type": "FLOAT",
+          "value": 3
+        },
         "font/tracking/2xs": {
           "type": "FLOAT",
           "value": 0.1
@@ -425,6 +429,10 @@
         "type/line-height/16": {
           "type": "FLOAT",
           "value": 16
+        },
+        "type/line-height/18": {
+          "type": "FLOAT",
+          "value": 18
         },
         "type/line-height/18-20": {
           "type": "FLOAT",
@@ -780,10 +788,6 @@
             "Desktop": 72,
             "Mobile": 64
           }
-        },
-        "font/tracking/2xl": {
-          "type": "FLOAT",
-          "value": 3
         }
       }
     },
@@ -1775,7 +1779,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "wght: 825, wdth: 100%, slnt: -10"
+      "description": "**Variable adjustments:** wght: 825, wdth: 100%, slnt: -10"
     },
     "display/xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -1793,7 +1797,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "\"YTAS\" 720, \"YTLC\" 530"
+      "description": "**Variable adjustments:** &quot;YTAS&quot; 720, &quot;YTLC&quot; 530"
     },
     "display/lg/strong": {
       "fontFamily": "Roboto Flex",
@@ -1811,7 +1815,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "\"YTAS\" 720, \"YTLC\" 530"
+      "description": "**Variable adjustments:** &quot;YTAS&quot; 720, &quot;YTLC&quot; 530"
     },
     "display/md/strong": {
       "fontFamily": "Roboto Flex",
@@ -1829,7 +1833,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "\"YTAS\" 720, \"YTLC\" 530"
+      "description": "**Variable adjustments:** &quot;YTAS&quot; 720, &quot;YTLC&quot; 530"
     },
     "display/sm/strong": {
       "fontFamily": "Roboto Flex",
@@ -1847,7 +1851,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "\"YTAS\" 720, \"YTLC\" 530"
+      "description": "**Variable adjustments:** &quot;YTAS&quot; 720, &quot;YTLC&quot; 530"
     },
     "display/xs/strong": {
       "fontFamily": "Roboto Flex",
@@ -1865,7 +1869,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "\"YTAS\" 720, \"YTLC\" 530"
+      "description": "**Variable adjustments:** &quot;YTAS&quot; 720, &quot;YTLC&quot; 530"
     },
     "heading/3xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -1883,7 +1887,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "YTAS\" 720, \"YTLC\" 530 wdth: 110%"
+      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530 wdth: 110%"
     },
     "heading/2xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -1901,7 +1905,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "YTAS\" 720, \"YTLC\" 530\nwdth: 110%"
+      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
     },
     "heading/xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -1937,7 +1941,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "YTAS\" 720, \"YTLC\" 530\nwdth: 110%"
+      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
     },
     "heading/md/strong": {
       "fontFamily": "Roboto Flex",
@@ -1955,7 +1959,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "YTAS\" 720, \"YTLC\" 530\nwdth: 110%"
+      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
     },
     "heading/sm/strong": {
       "fontFamily": "Roboto Flex",
@@ -1973,7 +1977,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "YTAS\" 720, \"YTLC\" 530\nwdth: 110%"
+      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
     },
     "heading/xs/strong": {
       "fontFamily": "Roboto Flex",
@@ -1991,7 +1995,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "YTAS\" 720, \"YTLC\" 530\nwdth: 110%"
+      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
     },
     "heading/2xs/strong": {
       "fontFamily": "Roboto Flex",
@@ -2009,7 +2013,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "YTAS\" 720, \"YTLC\" 530\nwdth: 110%"
+      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
     },
     "body/2xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -2027,7 +2031,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/2xl/regular": {
       "fontFamily": "Roboto Flex",
@@ -2045,7 +2049,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -2063,7 +2067,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/xl/regular": {
       "fontFamily": "Roboto Flex",
@@ -2081,7 +2085,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/xl/italic": {
       "fontFamily": "Roboto Flex",
@@ -2099,7 +2103,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/lg/strong": {
       "fontFamily": "Roboto Flex",
@@ -2117,7 +2121,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/md/strong": {
       "fontFamily": "Roboto Flex",
@@ -2135,7 +2139,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/md/regular": {
       "fontFamily": "Roboto Flex",
@@ -2153,7 +2157,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/base/strong": {
       "fontFamily": "Roboto Flex",
@@ -2171,7 +2175,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/base/regular": {
       "fontFamily": "Roboto Flex",
@@ -2189,7 +2193,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/base/italic": {
       "fontFamily": "Roboto Flex",
@@ -2207,7 +2211,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/sm/strong": {
       "fontFamily": "Roboto Flex",
@@ -2225,7 +2229,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/sm/regular": {
       "fontFamily": "Roboto Flex",
@@ -2243,7 +2247,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/xs/strong": {
       "fontFamily": "Roboto Flex",
@@ -2261,7 +2265,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/xs/regular": {
       "fontFamily": "Roboto Flex",
@@ -2279,7 +2283,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/2xs/strong": {
       "fontFamily": "Roboto Flex",
@@ -2297,7 +2301,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/2xs/regular": {
       "fontFamily": "Roboto Flex",
@@ -2315,7 +2319,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/2xs/italic": {
       "fontFamily": "Roboto Flex",
@@ -2333,7 +2337,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "action/xl/strong-fixed": {
       "fontFamily": "Roboto Flex",
@@ -2351,7 +2355,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wght: 600, wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "action/xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -2368,7 +2372,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600, wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "action/lg/strong": {
       "fontFamily": "Roboto Flex",
@@ -2386,7 +2390,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "wght: 600, wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "action/lg/regular": {
       "fontFamily": "Roboto Flex",
@@ -2404,7 +2408,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "action/sm/strong": {
       "fontFamily": "Roboto Flex",
@@ -2421,7 +2425,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600, wdth: 110"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110"
     },
     "action/sm/regular": {
       "fontFamily": "Roboto Flex",
@@ -2438,169 +2442,169 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "tag/lg/caps": {
       "fontFamily": "Roboto Mono",
       "fontStyle": "Regular",
       "fontSize": 16,
-      "lineHeight": 16,
+      "lineHeight": 20,
       "letterSpacing": 2,
       "textCase": "UPPER",
       "textDecoration": "NONE",
       "boundVariables": {
         "fontSize": "type/size/16",
-        "lineHeight": "type/line-height/16",
+        "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/350",
         "fontFamily": "font/family/mono",
         "letterSpacing": "font/tracking/xl",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "tracking: wide"
+      "description": "**Variable adjustments:** tracking: wide"
     },
     "tag/lg/strong": {
       "fontFamily": "Roboto Mono",
       "fontStyle": "Bold",
       "fontSize": 16,
-      "lineHeight": 16,
+      "lineHeight": 20,
       "letterSpacing": 1,
       "textCase": "ORIGINAL",
       "textDecoration": "NONE",
       "boundVariables": {
         "fontSize": "type/size/16",
-        "lineHeight": "type/line-height/16",
+        "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/600",
         "fontFamily": "font/family/mono",
         "letterSpacing": "font/tracking/lg",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "tracking: normal"
+      "description": "**Variable adjustments:** tracking: normal"
     },
     "tag/lg/regular": {
       "fontFamily": "Roboto Mono",
       "fontStyle": "Regular",
       "fontSize": 16,
-      "lineHeight": 16,
+      "lineHeight": 20,
       "letterSpacing": 1,
       "textCase": "ORIGINAL",
       "textDecoration": "NONE",
       "boundVariables": {
         "fontSize": "type/size/16",
+        "lineHeight": "type/line-height/20",
+        "fontWeight": "font/weight/350",
+        "fontFamily": "font/family/mono",
+        "letterSpacing": "font/tracking/lg",
+        "paragraphSpacing": "type/paragraph-spacing/step-01"
+      },
+      "description": "**Variable adjustments:** tracking: normal"
+    },
+    "tag/md/caps": {
+      "fontFamily": "Roboto Mono",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 18,
+      "letterSpacing": 2,
+      "textCase": "UPPER",
+      "textDecoration": "NONE",
+      "boundVariables": {
+        "fontSize": "type/size/14",
+        "lineHeight": "type/line-height/18",
+        "fontWeight": "font/weight/350",
+        "fontFamily": "font/family/mono",
+        "letterSpacing": "font/tracking/xl",
+        "paragraphSpacing": "type/paragraph-spacing/step-01"
+      },
+      "description": "**Variable adjustments:** tracking: wide"
+    },
+    "tag/md/strong": {
+      "fontFamily": "Roboto Mono",
+      "fontStyle": "Bold",
+      "fontSize": 14,
+      "lineHeight": 18,
+      "letterSpacing": 1,
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "boundVariables": {
+        "fontSize": "type/size/14",
+        "lineHeight": "type/line-height/18",
+        "fontWeight": "font/weight/600",
+        "fontFamily": "font/family/mono",
+        "letterSpacing": "font/tracking/lg",
+        "paragraphSpacing": "type/paragraph-spacing/step-01"
+      },
+      "description": "**Variable adjustments:** tracking: normal"
+    },
+    "tag/md/regular": {
+      "fontFamily": "Roboto Mono",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 18,
+      "letterSpacing": 1,
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "boundVariables": {
+        "fontSize": "type/size/14",
+        "lineHeight": "type/line-height/18",
+        "fontWeight": "font/weight/350",
+        "fontFamily": "font/family/mono",
+        "letterSpacing": "font/tracking/lg",
+        "paragraphSpacing": "type/paragraph-spacing/step-01"
+      },
+      "description": "**Variable adjustments:** tracking: normal"
+    },
+    "tag/sm/caps": {
+      "fontFamily": "Roboto Mono",
+      "fontStyle": "Regular",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 2,
+      "textCase": "UPPER",
+      "textDecoration": "NONE",
+      "boundVariables": {
+        "fontSize": "type/size/12",
+        "lineHeight": "type/line-height/16",
+        "fontWeight": "font/weight/350",
+        "fontFamily": "font/family/mono",
+        "letterSpacing": "font/tracking/xl",
+        "paragraphSpacing": "type/paragraph-spacing/step-01"
+      },
+      "description": "**Variable adjustments:** tracking: wide"
+    },
+    "tag/sm/strong": {
+      "fontFamily": "Roboto Mono",
+      "fontStyle": "Bold",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 1,
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "boundVariables": {
+        "fontSize": "type/size/12",
+        "lineHeight": "type/line-height/16",
+        "fontWeight": "font/weight/600",
+        "fontFamily": "font/family/mono",
+        "letterSpacing": "font/tracking/lg",
+        "paragraphSpacing": "type/paragraph-spacing/step-01"
+      },
+      "description": "**Variable adjustments:** tracking: normal"
+    },
+    "tag/sm/regular": {
+      "fontFamily": "Roboto Mono",
+      "fontStyle": "Regular",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 1,
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "boundVariables": {
+        "fontSize": "type/size/12",
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/350",
         "fontFamily": "font/family/mono",
         "letterSpacing": "font/tracking/lg",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "tracking: normal"
-    },
-    "tag/md/caps": {
-      "fontFamily": "Roboto Mono",
-      "fontStyle": "Regular",
-      "fontSize": 14,
-      "lineHeight": 14,
-      "letterSpacing": 2,
-      "textCase": "UPPER",
-      "textDecoration": "NONE",
-      "boundVariables": {
-        "fontSize": "type/size/14",
-        "lineHeight": "type/line-height/14",
-        "fontWeight": "font/weight/350",
-        "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/xl",
-        "paragraphSpacing": "type/paragraph-spacing/step-01"
-      },
-      "description": "tracking: wide"
-    },
-    "tag/md/strong": {
-      "fontFamily": "Roboto Mono",
-      "fontStyle": "Bold",
-      "fontSize": 14,
-      "lineHeight": 14,
-      "letterSpacing": 1,
-      "textCase": "ORIGINAL",
-      "textDecoration": "NONE",
-      "boundVariables": {
-        "fontSize": "type/size/14",
-        "lineHeight": "type/line-height/14",
-        "fontWeight": "font/weight/600",
-        "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/lg",
-        "paragraphSpacing": "type/paragraph-spacing/step-01"
-      },
-      "description": "tracking: normal"
-    },
-    "tag/md/regular": {
-      "fontFamily": "Roboto Mono",
-      "fontStyle": "Regular",
-      "fontSize": 14,
-      "lineHeight": 14,
-      "letterSpacing": 1,
-      "textCase": "ORIGINAL",
-      "textDecoration": "NONE",
-      "boundVariables": {
-        "fontSize": "type/size/14",
-        "lineHeight": "type/line-height/14",
-        "fontWeight": "font/weight/350",
-        "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/lg",
-        "paragraphSpacing": "type/paragraph-spacing/step-01"
-      },
-      "description": "tracking: normal"
-    },
-    "tag/sm/caps": {
-      "fontFamily": "Roboto Mono",
-      "fontStyle": "Regular",
-      "fontSize": 12,
-      "lineHeight": 12,
-      "letterSpacing": 2,
-      "textCase": "UPPER",
-      "textDecoration": "NONE",
-      "boundVariables": {
-        "fontSize": "type/size/12",
-        "lineHeight": "type/line-height/12",
-        "fontWeight": "font/weight/350",
-        "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/xl",
-        "paragraphSpacing": "type/paragraph-spacing/step-01"
-      },
-      "description": "tracking: wide"
-    },
-    "tag/sm/strong": {
-      "fontFamily": "Roboto Mono",
-      "fontStyle": "Bold",
-      "fontSize": 12,
-      "lineHeight": 12,
-      "letterSpacing": 1,
-      "textCase": "ORIGINAL",
-      "textDecoration": "NONE",
-      "boundVariables": {
-        "fontSize": "type/size/12",
-        "lineHeight": "type/line-height/12",
-        "fontWeight": "font/weight/600",
-        "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/lg",
-        "paragraphSpacing": "type/paragraph-spacing/step-01"
-      },
-      "description": "tracking: normal"
-    },
-    "tag/sm/regular": {
-      "fontFamily": "Roboto Mono",
-      "fontStyle": "Regular",
-      "fontSize": 12,
-      "lineHeight": 12,
-      "letterSpacing": 1,
-      "textCase": "ORIGINAL",
-      "textDecoration": "NONE",
-      "boundVariables": {
-        "fontSize": "type/size/12",
-        "lineHeight": "type/line-height/12",
-        "fontWeight": "font/weight/350",
-        "fontFamily": "font/family/mono",
-        "letterSpacing": "font/tracking/lg",
-        "paragraphSpacing": "type/paragraph-spacing/step-01"
-      },
-      "description": "tracking: normal"
+      "description": "**Variable adjustments:** tracking: normal"
     },
     "editorial/xl/regular": {
       "fontFamily": "Crimson Pro",
@@ -2617,7 +2621,8 @@
         "fontFamily": "font/family/serif",
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
-      }
+      },
+      "description": ""
     },
     "editorial/lg/regular": {
       "fontFamily": "Crimson Pro",
@@ -2634,7 +2639,8 @@
         "fontFamily": "font/family/serif",
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
-      }
+      },
+      "description": ""
     },
     "editorial/md/regular": {
       "fontFamily": "Crimson Pro",
@@ -2651,7 +2657,8 @@
         "fontFamily": "font/family/serif",
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
-      }
+      },
+      "description": ""
     },
     "editorial/sm/regular": {
       "fontFamily": "Crimson Pro",
@@ -2668,7 +2675,8 @@
         "fontFamily": "font/family/serif",
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
-      }
+      },
+      "description": ""
     },
     "link/serif-xl/strong": {
       "fontFamily": "Crimson Pro",
@@ -2685,7 +2693,8 @@
         "fontFamily": "font/family/serif",
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
-      }
+      },
+      "description": ""
     },
     "link/base/regular": {
       "fontFamily": "Roboto Flex",
@@ -2772,7 +2781,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "**Maps to:** --rvt-font-20.\n\nwdth: 112.5%"
+      "description": ""
     },
     "component/lockup/title-3line": {
       "fontFamily": "Roboto Flex",
@@ -2826,7 +2835,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/lg/regular": {
       "fontFamily": "Roboto Flex",
@@ -2844,7 +2853,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/lg/italic": {
       "fontFamily": "Roboto Flex",
@@ -2862,7 +2871,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/md/italic": {
       "fontFamily": "Roboto Flex",
@@ -2880,7 +2889,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/sm/italic": {
       "fontFamily": "Roboto Flex",
@@ -2898,7 +2907,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-02"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "body/xs/italic": {
       "fontFamily": "Roboto Flex",
@@ -2916,7 +2925,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-01"
       },
-      "description": "wdth: 110%"
+      "description": "**Variable adjustments:** wdth: 110%"
     },
     "component/number/strong": {
       "fontFamily": "Roboto Flex",
@@ -2934,7 +2943,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "**Maps to:** --rvt-font-42-extra-black.\n\nwght: 825, wdth: 150%"
+      "description": "**Maps to:** --rvt-font-42-extra-black.\n\n**Variable adjustments:** wght: 825, wdth: 150%"
     },
     "component/number/regular": {
       "fontFamily": "Roboto Flex",
@@ -2952,7 +2961,7 @@
         "letterSpacing": "font/tracking/none",
         "paragraphSpacing": "type/paragraph-spacing/step-03"
       },
-      "description": "**Maps to:** --rvt-font-42-extra-black.\n\nwght: 825, wdth: 150%"
+      "description": "**Maps to:** --rvt-font-42-extra-black.\n\n**Variable adjustments:** wght: 825, wdth: 150%"
     },
     "component/avatar/224": {
       "fontFamily": "Roboto Flex",
@@ -2969,7 +2978,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600"
+      "description": "**Variable adjustments:** wght: 600"
     },
     "component/avatar/160": {
       "fontFamily": "Roboto Flex",
@@ -2986,7 +2995,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600"
+      "description": "**Variable adjustments:** wght: 600"
     },
     "component/avatar/128": {
       "fontFamily": "Roboto Flex",
@@ -3003,7 +3012,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600"
+      "description": "**Variable adjustments:** wght: 600"
     },
     "component/avatar/96": {
       "fontFamily": "Roboto Flex",
@@ -3020,7 +3029,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600"
+      "description": "**Variable adjustments:** wght: 600"
     },
     "component/avatar/80": {
       "fontFamily": "Roboto Flex",
@@ -3037,7 +3046,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600"
+      "description": "**Variable adjustments:** wght: 600"
     },
     "component/avatar/64": {
       "fontFamily": "Roboto Flex",
@@ -3054,7 +3063,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600"
+      "description": "**Variable adjustments:** wght: 600"
     },
     "component/avatar/48": {
       "fontFamily": "Roboto Flex",
@@ -3071,7 +3080,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600"
+      "description": "**Variable adjustments:** wght: 600"
     },
     "component/avatar/40": {
       "fontFamily": "Roboto Flex",
@@ -3088,7 +3097,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600"
+      "description": "**Variable adjustments:** wght: 600"
     },
     "component/avatar/32": {
       "fontFamily": "Roboto Flex",
@@ -3105,7 +3114,7 @@
         "fontFamily": "font/family/sans",
         "letterSpacing": "font/tracking/none"
       },
-      "description": "wght: 600"
+      "description": "**Variable adjustments:** wght: 600"
     },
     "component/required/required-field": {
       "fontFamily": "Roboto Flex",
