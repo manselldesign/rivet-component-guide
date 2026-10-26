@@ -35,6 +35,11 @@ A button lets people take an action or move to the next step. There are two main
 - **Medium (32px):** Use in busy, information-heavy areas, like tables, sidebars and filter bars
 - **Small (24px):** Use in the tightest spots, like inside a table row or next to a short list item
 
+### Icons on action buttons
+An icon is optional. Use one at most, on the left or the right.
+- **Left icon:** Shows what the button does, so people spot it before they read. Use it for familiar actions, like Search, Delete, Edit or Favorite
+- **Right icon:** Shows where the button goes or what opens next. Use it for arrows, dropdown arrows and links to outside sites
+
 ## Button order
 - Use one Strong button per group. It's the main action
 - On wider screens, put the main button last, on the right. Put the secondary button to its left
@@ -66,7 +71,7 @@ Marketing components (heroes, billboards): Strong button first on Desktop and Mo
 | Padding (Subtle) | 0, hugs text | 0, fixed 40px height | 0, hugs text | 0, hugs text |
 | Icon-to-text gap | `spacing/8` | `spacing/8` | `spacing/8` | `spacing/4` |
 | Label | `action/lg/strong` (16 / 24px) | `action/lg/strong` (16 / 24px) | `action/sm/strong` (14 / 20px) | `action/sm/strong` (14 / 20px) |
-| Action leading icon | 16px | 16px | 12px | 12px |
+| Action icon, left or right | 16px | 16px | 12px | 12px |
 | Link arrow icon | 16px, after label | 16px, after label | 16px, after label | 16px, after label |
 | Icon only (square) | `component/button/height-lg` (48 × 48px) | `spacing/40` (40 × 40px; 32px on Mobile) | `component/button/height-md` (32 × 32px) | TBD (24 × 24px) |
 | Corner radius | 0 | 0 | 0 | 0 |
