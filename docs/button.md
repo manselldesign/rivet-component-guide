@@ -38,7 +38,7 @@ A button lets people take an action or move to the next step. There are two main
 ### Icons on action buttons
 An icon is optional. Use one at most, on the left or the right.
 - **Left icon:** Shows what the button does, so people spot it before they read. Use it for familiar actions, like Search, Delete, Edit or Favorite
-- **Right icon:** Shows where the button goes or what opens next. Use it for arrows, dropdown arrows and links to outside sites
+- **Right icon:** Shows that something opens next, like a menu or more options. Use the down chevron. Arrows are only for Link buttons
 
 ## Button order
 - Use one Strong button per group. It's the main action
