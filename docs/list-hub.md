@@ -54,7 +54,6 @@ Shared rules: items are separated by a 1px `border/default` line below each item
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Width | 1400px (TOC 800px, Compact single list 480px) | 375px |
 | Gap, introduction or image to list | `spacing/64` (64px), side by side | `spacing/32` (24px), stacked |
 | Gap, intro text to button | `spacing/40` (40px) | `spacing/40` (32px) |
 | Headline | `display/md/strong` (36 / 40px), `text/brand` | TBD |
