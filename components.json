@@ -236,6 +236,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-27",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-20"
+    },
+    {
+      "slug": "list-hub",
+      "name": "List hub",
+      "summary": "A section that gathers related links in one place, each with a title and optional details, so readers can scan and pick where to go next.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-27",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1262-10587"
     }
   ]
 }
