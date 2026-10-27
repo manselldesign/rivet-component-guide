@@ -85,10 +85,10 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Container padding | `spacing/4` (4px) all sides | Same |
+| Container padding | `spacing/4` (4px) top and bottom, `spacing/8` (8px) left and right | `spacing/4` (4px) all sides |
 | Gap | `spacing/4` (4px) icon to text. Icon and text top-aligned | Same |
 | Background | `background/{status}-subtle` | Same |
 | Border | 1px `border/{status}` | Same |
 | Icon | 16px circle, `background/{status}-strong`, `border-radius/full`, 12px glyph centered. Top-aligned and centered on the first line of text: it sits in a 16 × 20px slot (height `type/line-height/20`), 2px from the top. Stays on the first line when the message wraps | Same |
 | Message | `body/xs/regular` (14 / 20px), `text/default`, hugs its text, max width 500px | `body/xs/regular` (14 / 20px), fills the width and wraps. With a close button, max width 280px so the text clears the button |
-| Close button | 12px icon, 4px from top and right (no token). On Default, Info and Success only | Same |
+| Close button | 12px icon, sits inside the message row, 4px from top and right (no token). On Default, Info and Success only | Same |
