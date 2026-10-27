@@ -44,7 +44,7 @@ A group of options where readers can pick only one. Every choice stays visible, 
 
 ## Developer spec checklist
 
-Shared rules: the same specs apply on Desktop and Mobile. Required labels end with an asterisk in `text/required`. Status messages use `rvt-alert` and sit between the label and the options. A disabled option shows its circle, option text and description at 40% opacity.
+Shared rules: the same specs apply on Desktop and Mobile. Required labels end with an asterisk in `text/required`. Status messages use `rvt-alert` and sit between the label and the options. A disabled option shows its circle at 40% opacity. The option text and description stay at full opacity.
 
 | Element | Default | Inline |
 | --- | --- | --- |
