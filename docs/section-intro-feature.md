@@ -1,17 +1,18 @@
 # Section intro – Feature
 
 ## What it is
-A large, centered statement that opens an important section of a page. It gives one big message room to breathe, with an optional tag, introduction, button and image.
+A large, centered marketing statement that sums up why a page matters. It gives one big message room to breathe, with an optional tag, introduction, button and image.
 
 ## When to use it
-- Use it for a section that carries the page's main message, like "Why IU" on an admissions page
-- Use it once or twice on a long page to signal a major shift in topic
+- Use it for the page's one key marketing message, like "Why IU" on an admissions page
+- Use it to make a bold promise or value statement, like what makes a program different
 - Use it to lead into a campaign or big announcement, like a new school opening
 
 ## When not to use it
-- Don't use it for everyday sections. Use Section intro – Default instead
+- Don't use it more than once on a page. A second one competes with the first
+- Don't use it for everyday sections or to switch topics. Use Section intro – Default instead
+- Don't use it for instructions or facts, like deadlines. Keep it to a marketing message
 - Don't use it at the very top of a page. Use a hero instead
-- Don't use it more than twice on one page. It loses impact
 
 ## Variants
 
