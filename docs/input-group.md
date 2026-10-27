@@ -21,8 +21,6 @@ An input group joins a text field with a button or a fixed label, like a search 
 - **Append:** The button or label sits after the field. Use it in most cases
 - **Prepend:** The button or label sits before the field, like "https://"
 
-In Figma these are Append = True and False.
-
 ### Size
 - **Large:** Use it in most forms and page search
 - **Medium:** Use it in tighter spaces, like a sidebar

@@ -20,8 +20,8 @@ A profile hero opens a person's page with their photo, name, credentials and job
 - **Contact:** Adds a grid of details under the header, like email, phone, office and areas of expertise
 
 ### Width
-- **Full width:** Use it on pages with no sidebar (called 1 column in Figma)
-- **With sidebar:** A narrower version for pages with a side menu (called 2 column in Figma)
+- **Full width:** Use it on pages with no sidebar
+- **With sidebar:** A narrower version for pages with a side menu
 
 ### Optional parts
 - **Photo:** Leave it out only when there's no approved headshot

@@ -70,4 +70,4 @@ A large block that pairs a big image with a short title, a sentence or two, and 
 | Description | `body/base/regular` (18 / 28px), `text/default`, `spacing/24` above | (16 / 24px), `spacing/20` above |
 | Single link | `rvt-button` CTA, Extra-large, `component/button/height-lg` (48px), `spacing/32` above | Full width, `spacing/32` (24px) sides, `spacing/40` (32px) below |
 | Multiple links | `rvt-list-hub` Desktop, Compact, `spacing/32` above | `rvt-list-hub` Mobile, Compact, full width, `spacing/32` (24px) sides, `spacing/40` (32px) below |
-| Reversed | Image column moves to the right | No change in Figma (stacked) |
+| Reversed | Image column moves to the right | No change (stacked) |

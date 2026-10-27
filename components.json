@@ -36,7 +36,7 @@
       "name": "Billboard",
       "summary": "A large image paired with a short title, description and links that spotlights one important section of your site.",
       "status": "ready-for-dev",
-      "updated": "2026-10-24",
+      "updated": "2026-10-27",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=2077-13019"
     },
     {
@@ -186,7 +186,7 @@
       "name": "Hero – Profile",
       "summary": "A profile hero opens a person's page with their photo, name, credentials and job title.",
       "status": "ready-for-dev",
-      "updated": "2026-10-24",
+      "updated": "2026-10-27",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1708-98577"
     },
     {
@@ -202,7 +202,7 @@
       "name": "Hero – Callout",
       "summary": "The callout hero is the default hero, the banner at the top of most pages.",
       "status": "ready-for-dev",
-      "updated": "2026-10-24",
+      "updated": "2026-10-27",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=314-3617"
     },
     {
@@ -226,7 +226,7 @@
       "name": "Input group",
       "summary": "An input group joins a text field with a button or a fixed label, like a search box with a \"Search\" button or an email field that ends in \"@iu.edu\".",
       "status": "ready-for-dev",
-      "updated": "2026-10-26",
+      "updated": "2026-10-27",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-19"
     }
   ]

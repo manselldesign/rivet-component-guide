@@ -14,8 +14,8 @@ The callout hero is the default hero, the banner at the top of most pages. It sh
 ## Variants
 
 ### Layout
-- **Side by side:** Text on the left, card on the right. Use it in full-width pages. Figma calls it Column(s) 1
-- **Stacked:** The card sits under the text. Use it in narrower content areas. Figma calls it Column(s) 2
+- **Side by side:** Text on the left, card on the right. Use it in full-width pages
+- **Stacked:** The card sits under the text. Use it in narrower content areas
 
 ### Device
 - **Desktop:** Buttons sit side by side
