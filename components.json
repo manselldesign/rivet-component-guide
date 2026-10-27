@@ -252,6 +252,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-27",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-22"
+    },
+    {
+      "slug": "radio",
+      "name": "Radio",
+      "summary": "A group of options where readers can pick only one.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-27",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-24"
     }
   ]
 }
