@@ -51,21 +51,21 @@ Shared rules: lists fill their container. Items stack with `spacing/8` (8px) bet
 | Element | Small | Medium | Large |
 | --- | --- | --- | --- |
 | Item text | `body/xs/regular` (14 / 20px) | `body/sm/regular` (16 / 24px) | `body/base/regular` (18 / 28px) |
-| Number | `body/xs/strong` (14 / 20px) | `body/sm/strong` | `body/base/strong` (18 / 28px) |
+| Number | `body/xs/strong` (14 / 20px) | `body/sm/strong` (16 / 24px) | `body/base/strong` (18 / 28px) |
 | Bullet size | 5 × 5px | 6 × 6px | 6 × 6px |
 | Gap, bullet or number to text | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/12` (12px) |
 | Top-level indent | `spacing/24` (24px), left | `spacing/24` (24px), left | `spacing/24` (24px), left |
 | Nested indent, Desktop | `spacing/40` (40px), left | `spacing/40` (40px), left | `spacing/64` (64px), left |
 | Nested indent, Mobile | `spacing/40` (32px), left | `spacing/40` (32px), left | `spacing/64` (48px), left |
-| Inline, gap between items | `spacing/24` (24px) | `spacing/24` (24px) | `spacing/20` (20px) |
-| Definition term | `body/xs/strong` (14 / 20px), `text/strong` | `body/sm/strong`, `text/strong` | `body/base/strong` (18 / 28px), `text/strong` |
+| Inline, gap between items | `spacing/24` (24px) | `spacing/24` (24px) | `spacing/24` (24px) |
+| Definition term | `body/xs/strong` (14 / 20px), `text/strong` | `body/sm/strong` (16 / 24px), `text/strong` | `body/base/strong` (18 / 28px), `text/strong` |
 | Definition description | `body/xs/regular` (14 / 20px) | `body/sm/regular` (16 / 24px) | `body/base/regular` (18 / 28px) |
 | Gap, term to description | `spacing/4` (4px) | `spacing/4` (4px) | `spacing/8` (8px) |
 | Gap between definition pairs | `spacing/20` (20px) | `spacing/20` (20px) | `spacing/20` (20px) |
 
 | Element | Alert (Medium only) |
 | --- | --- |
-| Item text and number | `body/sm/regular` / `body/sm/strong`, `text/default` |
+| Item text and number | `body/sm/regular` (16 / 24px) / `body/sm/strong` (16 / 24px), `text/default` |
 | Top-level indent | 0 |
 | Nested indent | `spacing/24` (24px), left |
 | Gap, bullet or number to text | `spacing/8` (8px) |
