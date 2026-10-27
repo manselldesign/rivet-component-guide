@@ -38,6 +38,10 @@ An alert is a colored box that tells readers something important about the page 
 - **CTA:** Adds one or two buttons when you want people to act, like "Register now"
 - **Inline:** One short line with no title. Use it next to a form field or section it's about
 
+### Optional parts
+
+- **Close button:** Only Info and Success alerts have one, so readers can dismiss news they've read. Warning, Danger and Default alerts stay until the issue is fixed or the notice ends
+
 ## Writing tips
 
 - Keep the title to a few words that sum up the message
@@ -66,7 +70,7 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 | Description and list indent | `spacing/32` (32px) left, lines up with the title text | 32px left (raw value: `spacing/32` is 24px in Mobile mode) |
 | List | `body/sm/regular` (16 / 24px), `text/default`, items `spacing/8` (8px) apart, each item 24px tall, bullet 6px `icon/default` centered in a 24px slot, `spacing/8` (8px) bullet to text, max width 920px | Same |
 | Height with title, description and 3 list items | 208px (264px with buttons) | 240px (296px with buttons) at 327px wide |
-| Close button | 16px icon, 16px from top and right (no token). On Default, Info and Success only | Same |
+| Close button | 16px icon, 16px from top and right (no token). On Info and Success only | Same |
 | Title colors | Info `text/info`, Success `text/success`, Warning `text/warning`, Danger `text/danger`, Default `text/brand` | Same |
 
 ### CTA actions row
@@ -91,4 +95,4 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 | Border | 1px `border/{status}` | Same |
 | Icon | 16px circle, `background/{status}-strong`, `border-radius/full`, 12px glyph centered. Top-aligned and centered on the first line of text: it sits in a 16 × 20px slot (height `type/line-height/20`), 2px from the top. Stays on the first line when the message wraps | Same |
 | Message | `body/xs/regular` (14 / 20px), `text/default`, hugs its text, max width 500px | `body/xs/regular` (14 / 20px), fills the width and wraps. With a close button, max width 280px so the text clears the button |
-| Close button | 12px icon, sits inside the message row, 4px from top and right (no token). On Default, Info and Success only | Same |
+| Close button | 12px icon, sits inside the message row, 4px from top and right (no token). On Info and Success only | Same |
