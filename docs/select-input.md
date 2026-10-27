@@ -19,7 +19,7 @@ A field that opens a list of options so readers can pick one. It saves space whe
 ### Size
 - **Large:** Use it for main forms, like an application or registration
 - **Medium:** Use it for most forms and settings
-- **Small:** Use it in compact spaces, like filters above a list of news stories
+- **Small:** Use it in dense layouts like dashboards, such as filtering a table of course enrollments
 
 ### Status
 - **Default:** Use it before the reader has answered, or when there's nothing to report
@@ -33,7 +33,7 @@ A field that opens a list of options so readers can pick one. It saves space whe
 - **Focus:** Shows a ring around the field when a reader tabs to it or clicks it. Never remove it
 
 ### Optional parts
-- **Label:** the question above the field. Keep it on
+- **Label:** the question above the field. Keep it on. In Figma, Small uses its own `Label (Small)` text field, so retype the label if you switch to Small
 - **Helper text:** a short hint, like "Choose the campus you plan to attend"
 - **Leading icon:** a small icon before the value, like a magnifying glass for search
 - **Trailing icon:** the down arrow that shows the field opens a list. Keep it on
@@ -49,11 +49,25 @@ A field that opens a list of options so readers can pick one. It saves space whe
 
 ## Developer spec checklist
 
-Shared rules: 1px `component/input/border` border on all sides, no radius. Field text is `component/input/text`. Focus adds a 2px `border/accent-strong` ring outside the field. Label is `text/strong` with a `text/required` asterisk, `spacing/8` below (8px). Status messages use `rvt-alert` and sit between the label and helper text. Helper text is `body/xs/regular` (14 / 20px), `text/default`, `spacing/4` above the field (4px). Sizes don't change on Mobile.
+Shared rules: No fill and no radius, with a 1px `component/input/border` border on all sides. Value text is `component/input/text`. Both icons are 16px and `component/input/icon`. Focus adds a 2px `border/accent-strong` ring, 2px outside the field. The label is `text/strong` with a `text/required` asterisk. Status messages use `rvt-alert` (Inline) and sit between the label and the helper text, `spacing/8` (8px) above and below. Helper text is `body/xs/regular` (14 / 20px), `text/default`, `spacing/4` (4px) above the field. Sizes don't change on Mobile.
 
 | Element | Large | Medium | Small |
 | --- | --- | --- | --- |
+| Field height | `component/input/height-lg` (48px) | `component/input/height-md` (40px) | `component/input/height-sm` (32px) |
 | Field padding | `spacing/12` left and right (12px) | `spacing/12` left and right (12px) | `spacing/8` left and right (8px) |
 | Label | `heading/sm/strong` (16 / 20px) | `heading/sm/strong` (16 / 20px) | `heading/xs/strong` (14 / 20px) |
+| Label to helper text, no status message | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/4` (4px) |
 | Value text | `body/sm/regular` (16 / 24px) | `body/sm/regular` (16 / 24px) | `body/xs/regular` (14 / 20px) |
 | Gap, icon to value to arrow | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/8` (8px) |
+
+### Status messages
+
+Shared rules: The status message is an `rvt-alert` (Type Inline, Device Desktop) in every status variant except Default. It spans the field's full width and is the same at every size. Padding is `spacing/4` top and bottom (4px) and `spacing/8` left and right (8px), with a `spacing/4` gap (4px) between the icon, message and close button. The message is `body/xs/regular` (14 / 20px), `text/default`. Links are `link/xs/regular` (14 / 20px), underlined. The status icon is a 16px badge with a 12px glyph.
+
+| Element | Info | Success | Warning | Danger |
+| --- | --- | --- | --- | --- |
+| Background | `background/info-subtle` | `background/success-subtle` | `background/warning-subtle` | `background/danger-subtle` |
+| Border | 1px `border/info` | 1px `border/success` | 1px `border/warning` | 1px `border/danger` |
+| Icon badge | `background/info-strong` | `background/success-strong`, `border/success-fixed` outline | `background/warning-strong` | `background/danger-strong` |
+| Icon glyph | `color/base/ultra-light` | `color/base/ultra-light` | `color/base/main` | `color/base/ultra-light` |
+| Close button | 12px, `icon/strong` | 12px, `icon/strong` | None | None |
