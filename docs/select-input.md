@@ -49,10 +49,11 @@ A field that opens a list of options so readers can pick one. It saves space whe
 
 ## Developer spec checklist
 
-Shared rules: 1px `component/input/border` border on all sides, no radius. Field text is `component/input/text`. Focus adds a 2px `border/accent-strong` ring outside the field. Label is `heading/sm/strong` (16 / 20px), `text/strong`, with a `text/required` asterisk, `spacing/8` below (8px). Status messages use `rvt-alert` and sit between the label and helper text. Helper text is `body/xs/regular` (14 / 20px), `text/default`, `spacing/4` above the field (4px). Sizes don't change on Mobile.
+Shared rules: 1px `component/input/border` border on all sides, no radius. Field text is `component/input/text`. Focus adds a 2px `border/accent-strong` ring outside the field. Label is `text/strong` with a `text/required` asterisk, `spacing/8` below (8px). Status messages use `rvt-alert` and sit between the label and helper text. Helper text is `body/xs/regular` (14 / 20px), `text/default`, `spacing/4` above the field (4px). Sizes don't change on Mobile.
 
 | Element | Large | Medium | Small |
 | --- | --- | --- | --- |
 | Field padding | `spacing/12` left and right (12px) | `spacing/12` left and right (12px) | `spacing/8` left and right (8px) |
-| Value text | `body/base/regular` (18 / 28px) | `body/xs/regular` (14 / 20px) | `body/xs/regular` (14 / 20px) |
+| Label | `heading/sm/strong` (16 / 20px) | `heading/sm/strong` (16 / 20px) | `heading/xs/strong` (14 / 20px) |
+| Value text | `body/sm/regular` (16 / 24px) | `body/sm/regular` (16 / 24px) | `body/xs/regular` (14 / 20px) |
 | Gap, icon to value to arrow | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/8` (8px) |

@@ -40,13 +40,13 @@ An input group joins a text field with a button or a fixed label, like a search 
 
 ## Developer spec checklist
 
-Shared rules: 1px `component/input/border` border on all sides, no radius. The button or label shares the field's height and sits flush inside the border. Focus adds a 2px `border/accent-strong` ring outside the field. Field text is `component/input/text`. Label above the field is `heading/sm/strong` (16 / 20px), `text/strong`, `spacing/8` below (8px); helper text sits `spacing/4` above the field (4px). Sizes don't change on Mobile.
+Shared rules: 1px `component/input/border` border on all sides, no radius. The button or label shares the field's height and sits flush inside the border. Focus adds a 2px `border/accent-strong` ring outside the field. Field text is `component/input/text`. Label above the field is `heading/sm/strong` (16 / 20px) on Large and Medium and `heading/xs/strong` (14 / 20px) on Small, `text/strong`, `spacing/8` below (8px); helper text sits `spacing/4` above the field (4px). Sizes don't change on Mobile.
 
 | Element | Large | Medium | Small |
 | --- | --- | --- | --- |
 | Field height | `component/input/height-lg` (48px) | `component/input/height-md` (40px) | `component/input/height-sm` (32px) |
 | Field padding | `spacing/12` on the text side (12px) | `spacing/12` (12px) | `spacing/8` (8px) |
-| Field text | `body/base/regular` (18 / 28px) | `body/xs/regular` (14 / 20px) | `body/xs/regular` (14 / 20px) |
+| Field text | `body/sm/regular` (16 / 24px) | `body/sm/regular` (16 / 24px) | `body/xs/regular` (14 / 20px) |
 | Gap, icon to text to button | `spacing/8` (8px); `spacing/12` (12px) for Label type | Same | Same |
 | Button size | `rvt-button` Size Extra-large (48px) | Size Large (40px) | Size Medium (32px) |
 | Button padding and text | `spacing/16` left and right (16px), `action/lg/strong` | `spacing/16` (16px), `action/lg/strong` | `spacing/12` (12px), `action/sm/strong` |
