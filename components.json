@@ -228,6 +228,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-27",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-19"
+    },
+    {
+      "slug": "list",
+      "name": "List",
+      "summary": "A group of related items shown with bullets, numbers or no markers, so readers can scan them quickly.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-27",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-20"
     }
   ]
 }
