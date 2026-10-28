@@ -17,7 +17,7 @@ A row or grid of big numbers that each sum up one fact, like enrollment or job p
 
 ### Type
 - **Default:** Four stats side by side. Use it for a quick overview across a wide page
-- **Grid:** Four stats in two rows of two. Use it when the stats need longer descriptions or the space is narrower
+- **Grid:** Four stats in two rows of two. Use it in the main column of a details page, or when the stats need longer descriptions
 
 On phones, both types stack the stats in one column.
 
@@ -40,6 +40,6 @@ Shared rules: The group has a `background/default` fill and a 1px `border/defaul
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Stat padding | `spacing/64` top and bottom (64px), `spacing/32` right (32px), 52px left (no token) | `spacing/64` top and bottom (48px), `spacing/32` right (24px), 52px left (no token) |
-| Default row side padding | 84px left and right (no token) | Stacked, none |
+| Stat padding | `spacing/64` top and bottom (64px), `spacing/32` left and right (32px) | `spacing/64` top and bottom (48px), `spacing/32` left and right (24px) |
+| Side padding around the stats | `spacing/48` left and right (48px). With the stat padding, content sits 80px in from each side, matching the page margin on index pages and the content margin on details pages | None, stats run edge to edge so content lines up with the 24px margin |
 | Note side padding | `spacing/80` left and right (80px) | `spacing/32` left and right (24px) |

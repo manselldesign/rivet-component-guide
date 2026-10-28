@@ -162,11 +162,11 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .empty{padding-block:24px;color:var(--text-muted);font-size:16px}
 .hub-title{font-family:var(--font-mono);font-size:12px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:var(--text-brand);margin:0;padding-bottom:16px}
 .hub{list-style:none;margin:0;padding:0}
-.hub-item{position:relative;display:grid;padding:16px 0;border-top:1px solid var(--table-border);grid-template-columns:minmax(0,1fr) auto;column-gap:24px}
+.hub-item{position:relative;display:grid;padding:16px;border-top:1px solid var(--table-border);grid-template-columns:minmax(0,1fr) auto;column-gap:24px}
 .hub-item>*{grid-column:1}
 .hub-item:last-child{border-bottom:1px solid var(--table-border)}
-/* Grouped items (cards, heroes, section intros) use the rvt-table Striped row fill, background/tint; the fill stays within the list width and the content is inset 16px */
-.hub-item.is-grouped{background:var(--row-tint);padding-inline:16px}
+/* Grouped items (cards, heroes, section intros) use the rvt-table Striped row fill, background/tint; the fill stays within the list width; every item is inset 16px so all items line up */
+.hub-item.is-grouped{background:var(--row-tint)}
 .hub-tag{font-family:var(--font-mono);font-size:12px;line-height:16px;color:var(--text-brand);margin:0;padding:0 0 4px 24px;font-variant-numeric:tabular-nums}
 .hub-head{display:flex;gap:8px;align-items:flex-start}
 .hub-arrow{width:16px;flex:none;padding-top:8px;color:var(--text-strong)}
