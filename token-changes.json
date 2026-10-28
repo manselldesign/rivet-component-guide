@@ -3723,9 +3723,11 @@
             ],
             "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans)",
             "alsoSet": {
-              "text-transform": "uppercase"
+              "text-transform": "uppercase",
+              "font-stretch": "40%",
+              "font-variation-settings": "\"opsz\" 16"
             },
-            "figmaChange": "2026-10-23: weight now 600 (was 700) and tracking now font/tracking/none (was font/tracking/xs)."
+            "figmaChange": "2026-10-23: weight now 600 (was 700) and tracking now font/tracking/none (was font/tracking/xs). 2026-10-28: width (wdth) 40 and optical size (opsz) 16 set the same on Desktop and Mobile."
           },
           {
             "name": "component/lockup/campus-title-2line",
@@ -3741,9 +3743,11 @@
             "action": "add",
             "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-sans)",
             "alsoSet": {
-              "text-transform": "uppercase"
+              "text-transform": "uppercase",
+              "font-stretch": "40%",
+              "font-variation-settings": "\"opsz\" 14"
             },
-            "figmaChange": "2026-10-23: new in Figma. Replaces component/lockup/eyebrow-3line (removed), which is kept in CSS as an alias to this style."
+            "figmaChange": "2026-10-23: new in Figma. Replaces component/lockup/eyebrow-3line (removed), which is kept in CSS as an alias to this style. 2026-10-28: width (wdth) 40 and optical size (opsz) 14 set the same on Desktop and Mobile."
           },
           {
             "name": "component/lockup/campus-name",
@@ -3762,9 +3766,11 @@
             ],
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans)",
             "alsoSet": {
-              "text-transform": "uppercase"
+              "text-transform": "uppercase",
+              "font-stretch": "40%",
+              "font-variation-settings": "\"opsz\" 20"
             },
-            "figmaChange": "2026-10-23: renamed from component/lockup/eyebrow-2line; tracking now font/tracking/none (was font/tracking/sm). Old CSS name kept as an alias."
+            "figmaChange": "2026-10-23: renamed from component/lockup/eyebrow-2line; tracking now font/tracking/none (was font/tracking/sm). Old CSS name kept as an alias. 2026-10-28: width (wdth) 40 and optical size (opsz) 20 set the same on Desktop and Mobile."
           },
           {
             "name": "component/lockup/title-2line",
@@ -3781,7 +3787,12 @@
               "line-height 20 vs Figma 16",
               "weight 600 vs Figma 700"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans)",
+            "alsoSet": {
+              "font-stretch": "90%",
+              "font-variation-settings": "\"opsz\" 14"
+            },
+            "figmaChange": "2026-10-28: width (wdth) 90 and optical size (opsz) 14 set the same on Desktop and Mobile."
           },
           {
             "name": "component/lockup/title-3line",
@@ -3799,7 +3810,11 @@
               "weight 600 vs Figma 700"
             ],
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans)",
-            "figmaChange": "2026-10-23: tracking now font/tracking/none (was font/tracking/2xs, 0.1px)."
+            "figmaChange": "2026-10-23: tracking now font/tracking/none (was font/tracking/2xs, 0.1px). 2026-10-28: width (wdth) 90 and optical size (opsz) 14 set the same on Desktop and Mobile.",
+            "alsoSet": {
+              "font-stretch": "90%",
+              "font-variation-settings": "\"opsz\" 14"
+            }
           },
           {
             "name": "component/lockup/title-4line",
@@ -3817,7 +3832,11 @@
               "weight 600 vs Figma 700"
             ],
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-12)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans)",
-            "figmaChange": "2026-10-23: tracking now font/tracking/none (was font/tracking/2xs, 0.1px)."
+            "figmaChange": "2026-10-23: tracking now font/tracking/none (was font/tracking/2xs, 0.1px). 2026-10-28: width (wdth) 90 and optical size (opsz) 12 set the same on Desktop and Mobile.",
+            "alsoSet": {
+              "font-stretch": "90%",
+              "font-variation-settings": "\"opsz\" 12"
+            }
           },
           {
             "name": "component/required/required-field",
