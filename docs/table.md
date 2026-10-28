@@ -52,13 +52,13 @@ Shared rules: header and body cells in a column share the same left and right pa
 | Main item text (first column) | `body/sm/strong` (16 / 24px), `text/strong` | `body/xs/strong` (14 / 20px), `text/strong` | `heading/xs/strong` (14 / 20px), `text/strong` |
 | Default text (Default and App) | `body/sm/regular` (16 / 24px), `text/default` | `body/xs/regular` (14 / 20px), `text/default` | `body/xs/regular` (14 / 20px), `text/default` |
 
-App type parts (same on every size and device):
+App type parts (same on every size and device unless noted). Default text follows the main table above:
 
 | Element | Spec |
 | --- | --- |
 | Checkbox | 20 × 20px box; header checkbox border `component/table-header/border`, body `border/strong` |
 | User avatar | 32 × 32px, `spacing/8` (8px) gap to the name |
-| User name and email | `body/xs/regular` (14 / 20px), `text/default`; email can be turned off |
+| User name and email | Desktop Default `body/sm/regular` (16 / 24px); Mobile and Compact `body/xs/regular` (14 / 20px); `text/default`; email can be turned off |
 | Status | `rvt-badge` (Default, Strong) |
 | Action icons | 16px `rvt-pencil`, `rvt-trash`, ellipsis, `icon/strong`, `spacing/12` (12px) apart |
 | Arrow icon | 16px, `icon/strong` |
