@@ -41,16 +41,16 @@ A grid of rows and columns that lets readers compare facts side by side, like tu
 
 ## Developer spec checklist
 
-Shared rules: 1px `border/default` around the table and between rows, square corners. Header row uses `component/table-header/background` with `component/table-header/text`. Body rows use `background/default`; striped rows alternate with `background/tint`. Rows have `spacing/8` (8px) padding left and right. On Mobile the table keeps its desktop column widths and scrolls sideways inside the screen. The table cell is the hidden `_rvt-table-cell` component.
+Shared rules: header and body cells in a column share the same left and right padding so text lines up. 1px `border/default` around the table and between rows, square corners. Header row uses `component/table-header/background` with `component/table-header/text`. Body rows use `background/default`; striped rows alternate with `background/tint`. Rows have `spacing/8` (8px) padding left and right. On Mobile the table keeps its desktop column widths and scrolls sideways inside the screen. The table cell is the hidden `_rvt-table-cell` component.
 
 | Element | Desktop Default | Mobile Default | Compact (both devices) |
 | --- | --- | --- | --- |
-| Header cell padding | `spacing/16` (16px) all sides | `spacing/16` (16px) all sides | `spacing/8` (8px) all sides |
+| Header cell padding | `spacing/16` (16px) all sides | `spacing/16` (16px) top and bottom, `spacing/12` (12px) left and right | `spacing/8` (8px) all sides |
 | Header label | `tag/md/regular` (14 / 18px) | `tag/md/regular` (14 / 18px) | `tag/sm/regular` (12 / 16px) |
 | Body cell padding | `spacing/24` (24px) top and bottom, `spacing/16` (16px) left and right | `spacing/20` (20px) top and bottom, `spacing/12` (12px) left and right | `spacing/8` (8px) all sides |
 | Gap inside a cell | `spacing/12` (12px) | `spacing/12` (12px) | `spacing/12` (12px) |
 | Main item text (first column) | `body/sm/strong` (16 / 24px), `text/strong` | `body/xs/strong` (14 / 20px), `text/strong` | `heading/xs/strong` (14 / 20px), `text/strong` |
-| Default text | `body/sm/regular` (16 / 24px), `text/default` | `body/xs/regular` (14 / 20px), `text/default` | `body/xs/regular` (14 / 20px), `text/default` |
+| Default text (Default and App) | `body/sm/regular` (16 / 24px), `text/default` | `body/xs/regular` (14 / 20px), `text/default` | `body/xs/regular` (14 / 20px), `text/default` |
 
 App type parts (same on every size and device):
 
@@ -59,7 +59,6 @@ App type parts (same on every size and device):
 | Checkbox | 20 × 20px box; header checkbox border `component/table-header/border`, body `border/strong` |
 | User avatar | 32 × 32px, `spacing/8` (8px) gap to the name |
 | User name and email | `body/xs/regular` (14 / 20px), `text/default`; email can be turned off |
-| Default text | `body/xs/regular` (14 / 20px), `text/default` |
 | Status | `rvt-badge` (Default, Strong) |
 | Action icons | 16px `rvt-pencil`, `rvt-trash`, ellipsis, `icon/strong`, `spacing/12` (12px) apart |
 | Arrow icon | 16px, `icon/strong` |
