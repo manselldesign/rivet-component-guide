@@ -308,6 +308,14 @@
       "status": "working",
       "updated": "2026-10-28",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=11845-53528"
+    },
+    {
+      "slug": "stat-group",
+      "name": "Stat group",
+      "summary": "A row or grid of big numbers that each sum up one fact, like enrollment or job placement rates.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-28",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-28"
     }
   ]
 }
