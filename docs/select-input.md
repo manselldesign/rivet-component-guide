@@ -33,7 +33,7 @@ A field that opens a list of options so readers can pick one. It saves space whe
 - **Focus:** Shows a ring around the field when a reader tabs to it or clicks it. Never remove it
 
 ### Optional parts
-- **Label:** the question above the field. Keep it on. In Figma, Small uses its own `Label (Small)` text field, so retype the label if you switch to Small
+- **Label:** the question above the field. Keep it on
 - **Helper text:** a short hint, like "Choose the campus you plan to attend"
 - **Leading icon:** a small icon before the value, like a magnifying glass for search
 - **Trailing icon:** the down arrow that shows the field opens a list. Keep it on

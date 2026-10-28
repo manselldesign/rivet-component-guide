@@ -25,7 +25,7 @@ A pair of links at the end of a page that take readers to the previous or next p
 - **Hover:** The background tints when a reader points at a link. Desktop only, since phones don't hover
 
 ### Optional parts
-- **Previous and Next links:** Turn off `Show previous` on the first page of a series and `Show next` on the last. The other link stretches to fill the space
+- **Previous and Next links:** Show only Next on the first page of a series and only Previous on the last. The remaining link stretches to fill the space
 
 ## Writing tips
 - Use the real page title so readers know where they'll land, like "Part 2: Finding your advisor"

@@ -27,14 +27,13 @@ A side menu that shows the pages in one section of a site, one level at a time. 
 - **Hover:** The title underlines when a reader points at it, on both default and selected items
 
 ### Optional parts
-- **Arrow:** Turn on `Icon` only for items that open more pages. Leave it off for items that go straight to a page
+- **Arrow:** Show it only on items that open more pages. Leave it off for items that go straight to a page
 
 ## Writing tips
 - Use the same titles as the pages they lead to
 - Keep item titles short, ideally one line
 - Put the section name at the top, like "Admissions"
 - Mark only one item as selected
-- In Figma, each state has its own title field, so retype the title if you change an item's state
 
 ---
 
