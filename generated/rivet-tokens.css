@@ -338,6 +338,7 @@
 	--rvt-component-list-hub-check-background: var(--rvt-color-brand-main);
 	--rvt-component-list-hub-icon: var(--rvt-color-base-ultra-light);
 	--rvt-component-list-hub-x-background: var(--rvt-color-base-main);
+	--rvt-component-list-marker: var(--rvt-color-brand-main);
 	--rvt-component-table-header-background: var(--rvt-color-brand-main);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
@@ -483,6 +484,7 @@
 	--rvt-component-list-hub-check-background: var(--rvt-color-base-ultra-dark);
 	--rvt-component-list-hub-icon: var(--rvt-color-base-ultra-light);
 	--rvt-component-list-hub-x-background: var(--rvt-color-base-ultra-dark);
+	--rvt-component-list-marker: var(--rvt-color-brand-light);
 	--rvt-component-table-header-background: var(--rvt-color-base-ultra-dark);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
@@ -628,6 +630,7 @@
 	--rvt-component-list-hub-check-background: var(--rvt-color-brand-extra-dark);
 	--rvt-component-list-hub-icon: var(--rvt-color-base-ultra-light);
 	--rvt-component-list-hub-x-background: var(--rvt-color-brand-extra-dark);
+	--rvt-component-list-marker: var(--rvt-color-brand-light);
 	--rvt-component-table-header-background: var(--rvt-color-brand-ultra-dark);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
