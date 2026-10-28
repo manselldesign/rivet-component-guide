@@ -36,7 +36,7 @@ A pair of links at the end of a page that take readers to the previous or next p
 
 ## Developer spec checklist
 
-Shared rules: Each link is a `_rvt-series-nav-item` with a `background/default` fill and a 1px `border/default` border, no radius. The two links share a border (-1px gap) over `background/muted`. Hover changes the fill to `background/tint` on Desktop. The label is `tag/md/strong` (14 / 18px), `text/accent`, with a 12px `icon/accent` arrow and a `spacing/4` gap (4px); the arrow sits before Previous and after Next. The title is `action/xl/strong-fixed` (20 / 24px), `text/default`, left-aligned, three lines max, then cut off with an ellipsis. When one link is hidden, the other fills the full width.
+Shared rules: Each link is a `_rvt-series-nav-item` with a `background/default` fill and a 1px `border/default` border, no radius. The two links share a border (-1px gap) over `background/muted`. Hover changes the fill to `background/tint` on Desktop. The label is `tag/md/strong` (14 / 18px), `text/accent`, with a 12px `icon/accent` arrow and a `spacing/8` gap (8px); the arrow sits before Previous and after Next. The title is `action/xl/strong-fixed` (20 / 24px), `text/default`, left-aligned, three lines max, then cut off with an ellipsis. When one link is hidden, the other fills the full width.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
