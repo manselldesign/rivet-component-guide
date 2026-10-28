@@ -5,7 +5,6 @@ A grid of rows and columns that lets readers compare facts side by side, like tu
 
 ## When to use it
 - Use it when readers need to compare the same details across several items, like credit hours, format and start date for each degree
-- Use it for data people scan or look up, like a class schedule or a list of department contacts
 - Use it in staff tools where people review and act on records, like a list of applications to approve
 
 ## When not to use it
