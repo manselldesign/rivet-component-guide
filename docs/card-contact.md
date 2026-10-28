@@ -16,7 +16,7 @@ A contact card shows people how to reach an office, team or department. It puts 
 ## Variants
 
 ### Layout
-- **Default:** Use it for an office or team. Shows an icon
+- **Default:** Use it for an office or team. Shows a sticker
 - **Avatar:** Use it for a person or a team with a photo. Shows a round photo
 
 ### Orientation
@@ -59,10 +59,10 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 | --- | --- | --- |
 | Surface | `background/raised`, `shadow/md`, no border, no corner radius | Same |
 | Card padding | `spacing/32` all sides (32px) | `spacing/24` all sides (24px) |
-| Icon (Default) | 80×80 sticker, Crimson, contained | 64×64 |
+| Sticker (Default) | 80×80 sticker, Crimson, contained | 64×64 |
 | Photo (Avatar) | `rvt-avatar` Image, 80px, Crimson | 64px |
-| Icon or photo, vertical | `spacing/24` below (24px) | `spacing/16` below (16px) |
-| Icon or photo, horizontal | `spacing/24` gap to content | Stacks above content |
+| Sticker or photo, vertical | `spacing/24` below (24px) | `spacing/16` below (16px) |
+| Sticker or photo, horizontal | `spacing/24` gap to content | Stacks above content |
 | Horizontal columns | Left: name and address, `spacing/24` right padding. Right: contact info, 1px `border/default` left divider, `spacing/24` left padding | Single column |
 | Tag | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below | Same |
 | Title | `heading/md/strong` (20 / 24px), `text/default` | Same |

@@ -22,7 +22,7 @@ A row or grid of big numbers that each sum up one fact, like enrollment or job p
 On phones, both types stack the stats in one column.
 
 ### Optional parts
-- **Icon:** A small illustration above each number. Pick one that matches the stat, like a graduation cap for degrees
+- **Sticker:** A small illustration above each number. Pick one that matches the stat, like a graduation cap for degrees
 - **Note:** A line under the group for the source or date, like "Statistics are current as of 2024"
 
 ## Writing tips
@@ -30,13 +30,13 @@ On phones, both types stack the stats in one column.
 - Keep each description to one short line that says what the number counts
 - Round large numbers so they're easy to read
 - Say how current the figures are in the note, and update them every year
-- Use four stats, so rows stay even
+- Use at least two stats
 
 ---
 
 ## Developer spec checklist
 
-Shared rules: The group has a `background/default` fill and a 1px `border/default` border. Stats are separated by 1px `border/default` dividers. Each stat shows an optional 64px icon, then `spacing/24` (24px) below it the number in `component/number/strong` (42 / 44px) and the description in `tag/lg/regular` (16 / 20px), both `text/brand`, with `spacing/16` (16px) between them. The optional note is `tag/sm/regular` (12 / 16px), `text/accent`, `spacing/16` (16px) below the stats and `spacing/16` (16px) from the bottom edge. Every stat stacks in one column on Mobile.
+Shared rules: The group has a `background/default` fill and a 1px `border/default` border. Stats are separated by 1px `border/default` dividers. Each stat shows an optional 64px sticker, then `spacing/24` (24px) below it the number in `component/number/strong` (42 / 44px) and the description in `tag/lg/regular` (16 / 20px), both `text/brand`, with `spacing/16` (16px) between them. The optional note is `tag/sm/regular` (12 / 16px), `text/accent`, `spacing/16` (16px) below the stats and `spacing/16` (16px) from the bottom edge. Every stat stacks in one column on Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

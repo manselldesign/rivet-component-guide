@@ -17,7 +17,7 @@ A news card previews one story, like a research discovery, a faculty award or a 
 
 ### Layout
 - **Image:** Use it when the story has a strong photo
-- **Sticker:** An illustrated icon. Use it when there's no photo but a sticker fits the topic
+- **Sticker:** An illustration. Use it when there's no photo but a sticker fits the topic
 - **Plain:** Text only. Use it in long feeds or sidebars
 
 ### Style

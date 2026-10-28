@@ -20,7 +20,7 @@ A highlighted box that draws attention to one thing on a page, like an upcoming 
 - **Normal:** White background with a thin border. Use for supporting messages
 
 ### Layout
-- **Sticker:** An illustrated icon. Use for general messages, like "Applications are open"
+- **Sticker:** An illustration. Use for general messages, like "Applications are open"
 - **Avatar:** A person's photo. Use when the message is about someone, like "Meet your advisor"
 - **Image:** A photo. Use when it adds meaning, like a campus building for a tour
 

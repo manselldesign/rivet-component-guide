@@ -17,7 +17,7 @@ A feature card is a large doorway to a topic, like "Types of financial aid" or "
 
 ### Layout
 - **Image:** Use it when a photo helps people recognize the topic, like a residence hall for housing
-- **Sticker:** Use it when you don't have a good photo. An illustrated icon sits on a light block
+- **Sticker:** Use it when you don't have a good photo. An illustration sits on a light block
 - **Plain:** Use it for simple topic lists where pictures would slow people down
 
 ### Orientation

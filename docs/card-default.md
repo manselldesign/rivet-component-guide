@@ -57,7 +57,7 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 
 ### Layout
 - **Image:** A photo on top or to the side. Use when a picture helps people choose, like an event or a building
-- **Sticker:** An illustrated icon. Use when you don't have a good photo
+- **Sticker:** An illustration. Use when you don't have a good photo
 - **Plain:** Text only. Use for simple lists, like policies or resources
 
 ### Style

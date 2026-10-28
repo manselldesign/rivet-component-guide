@@ -68,7 +68,7 @@
       "name": "Callout",
       "summary": "A highlighted box that draws attention to one thing on a page, with a short title, description, picture and up to two links.",
       "status": "ready-for-dev",
-      "updated": "2026-10-24",
+      "updated": "2026-10-28",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-5"
     },
     {
@@ -76,7 +76,7 @@
       "name": "Card-default",
       "summary": "A clickable box that previews one page, like a resource, service or degree program, and links to it.",
       "status": "ready-for-dev",
-      "updated": "2026-10-24",
+      "updated": "2026-10-28",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-10"
     },
     {
@@ -84,7 +84,7 @@
       "name": "Card-contact",
       "summary": "A card that shows people how to reach an office, team or department, with the address, email, phone, website, hours and social links in one place.",
       "status": "ready-for-dev",
-      "updated": "2026-10-24",
+      "updated": "2026-10-28",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1640-65714"
     },
     {
@@ -100,7 +100,7 @@
       "name": "Card-feature",
       "summary": "A feature card is a large doorway to a topic, like \"Types of financial aid\" or \"Mental health support\".",
       "status": "ready-for-dev",
-      "updated": "2026-10-24",
+      "updated": "2026-10-28",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=2077-16743"
     },
     {
@@ -108,7 +108,7 @@
       "name": "Card-news",
       "summary": "A news card previews one story, like a research discovery, a faculty award or a campus update.",
       "status": "ready-for-dev",
-      "updated": "2026-10-24",
+      "updated": "2026-10-28",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1658-82209"
     },
     {
