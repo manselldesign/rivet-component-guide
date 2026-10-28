@@ -165,8 +165,8 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .hub-item{position:relative;display:grid;padding:16px 0;border-top:1px solid var(--table-border);grid-template-columns:minmax(0,1fr) auto;column-gap:24px}
 .hub-item>*{grid-column:1}
 .hub-item:last-child{border-bottom:1px solid var(--table-border)}
-/* Grouped items (cards, heroes, section intros) use the rvt-table Striped row fill, background/tint; the fill bleeds 16px past the text so it stays aligned */
-.hub-item.is-grouped{background:var(--row-tint);margin-inline:-16px;padding-inline:16px}
+/* Grouped items (cards, heroes, section intros) use the rvt-table Striped row fill, background/tint; the fill stays within the list width and the content is inset 16px */
+.hub-item.is-grouped{background:var(--row-tint);padding-inline:16px}
 .hub-tag{font-family:var(--font-mono);font-size:12px;line-height:16px;color:var(--text-brand);margin:0;padding:0 0 4px 24px;font-variant-numeric:tabular-nums}
 .hub-head{display:flex;gap:8px;align-items:flex-start}
 .hub-arrow{width:16px;flex:none;padding-top:8px;color:var(--text-strong)}
