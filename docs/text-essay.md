@@ -21,7 +21,8 @@ A text essay is a long block of reading content: a title, short sections with su
 - **Two columns:** Two sections side by side that stack on mobile. Use it for two related topics of similar length
 
 ### Optional parts
-- Turn on only what you have: sticker icon, tag, subheadings, body paragraphs and buttons
+- Turn on only what you have: sticker icon, tag, subheadings, body paragraphs, bulleted list and buttons
+- Turn parts off instead of leaving placeholder text. The spacing adjusts on its own
 - Keep the title on. It tells people what the essay covers
 
 ## Writing tips
@@ -35,7 +36,7 @@ A text essay is a long block of reading content: a title, short sections with su
 
 ## Developer spec checklist
 
-Shared rules: Background `background/default`. Sticker, tag, title and subheadings use `text/brand`; body and list text use `text/default`. One column centers the sticker, tag, title and subheadings; body and list stay left-aligned. Two columns are left-aligned and stack on Mobile. List items use the same text style as the body text around them. Bullets are squares in `component/list/marker` (Light `color/brand/main` #990000, Dark and Crimson `color/brand/light` #efdfc8), centered on the first line of text in a fixed 16px column. Buttons are `rvt-button`.
+Shared rules: Background `background/default`. Sticker, tag, title and subheadings use `text/brand`; body and list text use `text/default`. One column centers the sticker, tag, title and subheadings; body and list stay left-aligned. Two columns are left-aligned and stack on Mobile. List items use the same text style as the body text around them. Bullets are squares in `component/list/marker` (Light `color/brand/main` #990000, Dark and Crimson `color/brand/light` #efdfc8), centered on the first line of text in a fixed 16px column. Buttons are `rvt-button`. Every part except the title is optional. Space between parts belongs to the part below it (a top margin), so hiding any part never leaves a doubled or missing gap.
 
 | Element | Desktop one column | Desktop two columns | Mobile one column | Mobile two columns |
 | --- | --- | --- | --- | --- |
