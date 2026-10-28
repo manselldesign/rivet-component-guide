@@ -295,11 +295,19 @@
     },
     {
       "slug": "sidenav-drilldown",
-      "name": "Sidenav drilldown",
+      "name": "Sidenav – Drilldown",
       "summary": "A side menu that shows the pages in one section of a site, one level at a time.",
       "status": "working",
       "updated": "2026-10-28",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-27"
+    },
+    {
+      "slug": "sidenav-tree",
+      "name": "Sidenav – Tree",
+      "summary": "A side menu that shows the pages in one section of a site as an expanding outline.",
+      "status": "working",
+      "updated": "2026-10-28",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=11845-53528"
     }
   ]
 }

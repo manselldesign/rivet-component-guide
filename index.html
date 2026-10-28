@@ -165,6 +165,8 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .hub-item{position:relative;display:grid;padding:16px 0;border-top:1px solid var(--table-border);grid-template-columns:minmax(0,1fr) auto;column-gap:24px}
 .hub-item>*{grid-column:1}
 .hub-item:last-child{border-bottom:1px solid var(--table-border)}
+/* Grouped items (cards, heroes, section intros) use the rvt-table Striped row fill, background/tint; the fill bleeds 16px past the text so it stays aligned */
+.hub-item.is-grouped{background:var(--row-tint);margin-inline:-16px;padding-inline:16px}
 .hub-tag{font-family:var(--font-mono);font-size:12px;line-height:16px;color:var(--text-brand);margin:0;padding:0 0 4px 24px;font-variant-numeric:tabular-nums}
 .hub-head{display:flex;gap:8px;align-items:flex-start}
 .hub-arrow{width:16px;flex:none;padding-top:8px;color:var(--text-strong)}
@@ -541,8 +543,11 @@ body:not(.has-rail) #rail-shell{display:none}
       const q = input.value.trim().toLowerCase();
       const rows = list.filter(c => !q || c.name.toLowerCase().includes(q) || (c.summary || '').toLowerCase().includes(q));
       title.textContent = q ? `${rows.length} of ${list.length} components` : `${list.length} component${list.length === 1 ? '' : 's'}`;
+      // Cluster groups (Card-*, Hero – *, Section intro – *): items sharing a prefix get the table's darker row fill
+      const groupOf = n => { const m = n.match(/^(.+?)(?:\s+[–—-]\s+|-)/); return m ? m[1].trim().toLowerCase() : null; };
+      const counts = {}; list.forEach(c => { const g = groupOf(c.name); if (g) counts[g] = (counts[g] || 0) + 1; });
       ul.innerHTML = rows.length ? rows.map(c => `
-        <li class="hub-item">
+        <li class="hub-item${counts[groupOf(c.name)] > 1 ? ' is-grouped' : ''}">
           <p class="hub-tag">${c.updated ? 'Updated ' + fmtDate(c.updated) : '&nbsp;'}</p>
           <div class="hub-head"><span class="hub-arrow"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span><a class="hub-link" href="#${esc(c.slug)}">${esc(c.name)}</a></div>
           <div class="hub-meta">${badge(c.status)}</div>

@@ -1,4 +1,4 @@
-# Sidenav drilldown
+# Sidenav – Drilldown
 
 > [!warning|dark] This may change
 > The sidenav drilldown may change based on the navigation work that's in progress.
