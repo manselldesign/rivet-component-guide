@@ -431,6 +431,20 @@ body:not(.has-rail) #rail-shell{display:none}
 @media (prefers-reduced-motion:reduce){#rail{transition:none}}
 
 @media (max-width:560px){ .alert{padding:16px} }
+/* Series nav (rvt-series-nav): previous/next component at the bottom of each detail page.
+   Item: background/default, 1px border/default, hover background/tint. Label tag/md/strong + 12px icon/accent arrow, spacing/4 gap.
+   Title action/xl/strong-fixed, text/default, 3 lines max. Desktop padding spacing/24 x spacing/32, label to title spacing/12; Mobile spacing/32 (24px) all sides, spacing/8. */
+.series-nav{max-width:var(--read);margin-top:48px;display:grid;grid-template-columns:1fr 1fr}
+.series-nav.is-single{grid-template-columns:1fr}
+.sn-item{position:relative;display:flex;flex-direction:column;gap:12px;padding:24px 32px;background:var(--bg);border:1px solid var(--table-border);color:var(--text);text-decoration:none;min-width:0}
+.sn-item+.sn-item{margin-left:-1px}
+.sn-item:hover{background:var(--row-tint)}
+.sn-item:focus-visible{z-index:1}
+.sn-label{display:flex;align-items:center;gap:4px;font-family:var(--font-mono);font-weight:var(--w-bold);font-size:14px;line-height:18px;letter-spacing:1px;color:var(--text-accent)}
+.sn-label svg{width:12px;height:12px;flex:none;fill:var(--icon-accent)}
+.sn-prev .sn-label svg{transform:scaleX(-1)}
+.sn-title{font-size:20px;line-height:24px;font-weight:var(--w-bold);color:var(--text);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media (max-width:560px){.series-nav{grid-template-columns:1fr}.sn-item{padding:24px;gap:8px}.sn-item+.sn-item{margin-left:0;margin-top:-1px}}
 </style>
 </head>
 <body>
@@ -615,6 +629,18 @@ body:not(.has-rail) #rail-shell{display:none}
     });
   }
 
+  /* ---------- Series nav: previous / next component, same A-Z order as the rail ---------- */
+  function seriesNav(c) {
+    const i = list.findIndex(x => x.slug === c.slug);
+    const prev = list[i - 1], next = list[i + 1];
+    if (!prev && !next) return '';
+    const arrow = `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="${P.arrowRight}"/></svg>`;
+    const item = (x, kind) => `<a class="sn-item sn-${kind}" href="#${esc(x.slug)}" rel="${kind}">
+        <span class="sn-label">${kind === 'prev' ? arrow + 'Previous' : 'Next' + arrow}</span>
+        <span class="sn-title">${esc(x.name)}</span></a>`;
+    return `<nav class="series-nav${prev && next ? '' : ' is-single'}" aria-label="Previous and next components">${prev ? item(prev, 'prev') : ''}${next ? item(next, 'next') : ''}</nav>`;
+  }
+
   /* ---------- Detail ---------- */
   async function renderDoc(c) {
     document.title = c.name + ' · Rivet 3 Component Guide';
@@ -630,6 +656,7 @@ body:not(.has-rail) #rail-shell{display:none}
           <footer class="doc-foot">
             <p>${c.updated ? 'Last updated ' + fmtDate(c.updated) : ''}</p>
           </footer>
+          ${seriesNav(c)}
         </article>
       </main>`;
     const prose = document.getElementById('prose');
