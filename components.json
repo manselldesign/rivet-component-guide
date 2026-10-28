@@ -284,6 +284,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-27",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-25"
+    },
+    {
+      "slug": "series-nav",
+      "name": "Series nav",
+      "summary": "A pair of links at the end of a page that take readers to the previous or next page in a series.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-28",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-26"
     }
   ]
 }
