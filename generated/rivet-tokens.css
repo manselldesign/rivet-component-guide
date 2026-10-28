@@ -341,12 +341,12 @@
 	--rvt-component-table-header-background: var(--rvt-color-brand-main);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
-	--rvt-shadow-color-xs: rgb(31 37 40 / 4%);
-	--rvt-shadow-color-sm: rgb(31 37 40 / 7%);
-	--rvt-shadow-color-md: rgb(31 37 40 / 10%);
-	--rvt-shadow-color-lg: rgb(31 37 40 / 18%);
-	--rvt-shadow-color-xl: rgb(31 37 40 / 20%);
-	--rvt-shadow-color-2xl: rgb(31 37 40 / 24%);
+	--rvt-shadow-color-xs: rgb(31 37 40 / 10%);
+	--rvt-shadow-color-sm: rgb(31 37 40 / 12%);
+	--rvt-shadow-color-md: rgb(31 37 40 / 14%);
+	--rvt-shadow-color-lg: rgb(31 37 40 / 16%);
+	--rvt-shadow-color-xl: rgb(31 37 40 / 15%);
+	--rvt-shadow-color-2xl: rgb(31 37 40 / 17%);
 }
 
 .rvt-theme-dark {
@@ -486,9 +486,9 @@
 	--rvt-component-table-header-background: var(--rvt-color-base-ultra-dark);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
-	--rvt-shadow-color-xs: rgb(0 0 0 / 14%);
-	--rvt-shadow-color-sm: rgb(0 0 0 / 20%);
-	--rvt-shadow-color-md: rgb(0 0 0 / 32%);
+	--rvt-shadow-color-xs: rgb(0 0 0 / 18%);
+	--rvt-shadow-color-sm: rgb(0 0 0 / 24%);
+	--rvt-shadow-color-md: rgb(0 0 0 / 34%);
 	--rvt-shadow-color-lg: rgb(0 0 0 / 42%);
 	--rvt-shadow-color-xl: rgb(0 0 0 / 50%);
 	--rvt-shadow-color-2xl: rgb(0 0 0 / 60%);
@@ -631,9 +631,9 @@
 	--rvt-component-table-header-background: var(--rvt-color-brand-ultra-dark);
 	--rvt-component-table-header-border: var(--rvt-color-base-ultra-light);
 	--rvt-component-table-header-text: var(--rvt-color-base-ultra-light);
-	--rvt-shadow-color-xs: rgb(48 4 4 / 14%);
-	--rvt-shadow-color-sm: rgb(48 4 4 / 20%);
-	--rvt-shadow-color-md: rgb(48 4 4 / 32%);
+	--rvt-shadow-color-xs: rgb(48 4 4 / 18%);
+	--rvt-shadow-color-sm: rgb(48 4 4 / 24%);
+	--rvt-shadow-color-md: rgb(48 4 4 / 34%);
 	--rvt-shadow-color-lg: rgb(48 4 4 / 42%);
 	--rvt-shadow-color-xl: rgb(48 4 4 / 50%);
 	--rvt-shadow-color-2xl: rgb(48 4 4 / 60%);
@@ -720,12 +720,12 @@
 	--rvt-font-component-avatar-40: var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
 	--rvt-font-component-avatar-32: var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans);
 	/* Text styles with a width or tracking also need the alsoSet properties listed in the guide (font-stretch, letter-spacing, text-transform). */
-	--rvt-shadow-xs: 0 1px 3px 0px var(--rvt-shadow-color-xs);
-	--rvt-shadow-sm: 0 2px 6px 0px var(--rvt-shadow-color-sm);
-	--rvt-shadow-md: 0 4px 8px 0px var(--rvt-shadow-color-md);
-	--rvt-shadow-lg: 0 8px 16px 0px var(--rvt-shadow-color-lg);
-	--rvt-shadow-xl: 0 14px 28px 2px var(--rvt-shadow-color-xl);
-	--rvt-shadow-2xl: 0 24px 48px 4px var(--rvt-shadow-color-2xl);
+	--rvt-shadow-xs: 0 1px 4px 0px var(--rvt-shadow-color-xs);
+	--rvt-shadow-sm: 0 2px 8px 0px var(--rvt-shadow-color-sm);
+	--rvt-shadow-md: 0 4px 12px 0px var(--rvt-shadow-color-md);
+	--rvt-shadow-lg: 0 8px 24px 0px var(--rvt-shadow-color-lg);
+	--rvt-shadow-xl: 0 14px 36px 2px var(--rvt-shadow-color-xl);
+	--rvt-shadow-2xl: 0 24px 56px 4px var(--rvt-shadow-color-2xl);
 }
 
 /* Deprecated aliases: keep until nothing uses the old names, then delete. */

@@ -800,32 +800,32 @@
       "vars": {
         "shadow/blur/2xl": {
           "type": "FLOAT",
-          "value": 48
+          "value": 56
         },
         "shadow/blur/lg": {
           "type": "FLOAT",
-          "value": 16
+          "value": 24
         },
         "shadow/blur/md": {
           "type": "FLOAT",
-          "value": 8
+          "value": 12
         },
         "shadow/blur/sm": {
           "type": "FLOAT",
-          "value": 6
+          "value": 8
         },
         "shadow/blur/xl": {
           "type": "FLOAT",
-          "value": 28
+          "value": 36
         },
         "shadow/blur/xs": {
           "type": "FLOAT",
-          "value": 3
+          "value": 4
         },
         "shadow/color/2xl": {
           "type": "COLOR",
           "value": {
-            "Light": "#1f25283d",
+            "Light": "#1f25282b",
             "Dark": "#00000099",
             "Crimson": "#30040499"
           }
@@ -833,7 +833,7 @@
         "shadow/color/lg": {
           "type": "COLOR",
           "value": {
-            "Light": "#1f25282e",
+            "Light": "#1f252829",
             "Dark": "#0000006b",
             "Crimson": "#3004046b"
           }
@@ -841,23 +841,23 @@
         "shadow/color/md": {
           "type": "COLOR",
           "value": {
-            "Light": "#1f25281a",
-            "Dark": "#00000052",
-            "Crimson": "#30040452"
+            "Light": "#1f252824",
+            "Dark": "#00000057",
+            "Crimson": "#30040457"
           }
         },
         "shadow/color/sm": {
           "type": "COLOR",
           "value": {
-            "Light": "#1f252812",
-            "Dark": "#00000033",
-            "Crimson": "#30040433"
+            "Light": "#1f25281f",
+            "Dark": "#0000003d",
+            "Crimson": "#3004043d"
           }
         },
         "shadow/color/xl": {
           "type": "COLOR",
           "value": {
-            "Light": "#1f252833",
+            "Light": "#1f252826",
             "Dark": "#00000080",
             "Crimson": "#30040480"
           }
@@ -865,9 +865,9 @@
         "shadow/color/xs": {
           "type": "COLOR",
           "value": {
-            "Light": "#1f25280a",
-            "Dark": "#00000024",
-            "Crimson": "#30040424"
+            "Light": "#1f25281a",
+            "Dark": "#0000002e",
+            "Crimson": "#3004042e"
           }
         },
         "shadow/offset-y/2xl": {
@@ -3174,9 +3174,9 @@
         "type": "DROP_SHADOW",
         "x": 0,
         "y": 1,
-        "blur": 3,
+        "blur": 4,
         "spread": 0,
-        "color": "#1f25280a",
+        "color": "#1f25281a",
         "boundVariables": {
           "color": "shadow/color/xs",
           "spread": "shadow/spread/xs",
@@ -3190,9 +3190,9 @@
         "type": "DROP_SHADOW",
         "x": 0,
         "y": 2,
-        "blur": 6,
+        "blur": 8,
         "spread": 0,
-        "color": "#1f252812",
+        "color": "#1f25281f",
         "boundVariables": {
           "color": "shadow/color/sm",
           "spread": "shadow/spread/sm",
@@ -3206,13 +3206,14 @@
         "type": "DROP_SHADOW",
         "x": 0,
         "y": 4,
-        "blur": 8,
+        "blur": 12,
         "spread": 0,
-        "color": "#1f25281a",
+        "color": "#1f252824",
         "boundVariables": {
           "color": "shadow/color/md",
           "spread": "shadow/spread/md",
-          "radius": "shadow/blur/md"
+          "radius": "shadow/blur/md",
+          "offsetY": "shadow/offset-y/md"
         }
       }
     ],
@@ -3221,9 +3222,9 @@
         "type": "DROP_SHADOW",
         "x": 0,
         "y": 8,
-        "blur": 16,
+        "blur": 24,
         "spread": 0,
-        "color": "#1f25282e",
+        "color": "#1f252829",
         "boundVariables": {
           "color": "shadow/color/lg",
           "spread": "shadow/spread/lg",
@@ -3237,9 +3238,9 @@
         "type": "DROP_SHADOW",
         "x": 0,
         "y": 14,
-        "blur": 28,
+        "blur": 36,
         "spread": 2,
-        "color": "#1f252833",
+        "color": "#1f252826",
         "boundVariables": {
           "color": "shadow/color/xl",
           "spread": "shadow/spread/xl",
@@ -3253,9 +3254,9 @@
         "type": "DROP_SHADOW",
         "x": 0,
         "y": 24,
-        "blur": 48,
+        "blur": 56,
         "spread": 4,
-        "color": "#1f25283d",
+        "color": "#1f25282b",
         "boundVariables": {
           "color": "shadow/color/2xl",
           "spread": "shadow/spread/2xl",

@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-10-24",
+  "updated": "2026-10-28",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -4842,17 +4842,17 @@
       }
     ],
     "shadows": {
-      "note": "Shadow colors change per theme.",
+      "note": "Shadow colors change per theme. Updated 2026-10-28: blur widened so each shadow shows on all four sides (keeps white cards visible on white), and light-mode opacity adjusted.",
       "tokens": [
         {
           "name": "shadow/xs",
           "css": "--rvt-shadow-xs",
-          "value": "0 1px 3px 0px var(--rvt-shadow-color-xs)",
+          "value": "0 1px 4px 0px var(--rvt-shadow-color-xs)",
           "colorToken": {
             "css": "--rvt-shadow-color-xs",
-            "light": "rgb(31 37 40 / 4%)",
-            "dark": "rgb(0 0 0 / 14%)",
-            "crimson": "rgb(48 4 4 / 14%)"
+            "light": "rgb(31 37 40 / 10%)",
+            "dark": "rgb(0 0 0 / 18%)",
+            "crimson": "rgb(48 4 4 / 18%)"
           },
           "codeToday": null,
           "action": "add"
@@ -4860,12 +4860,12 @@
         {
           "name": "shadow/sm",
           "css": "--rvt-shadow-sm",
-          "value": "0 2px 6px 0px var(--rvt-shadow-color-sm)",
+          "value": "0 2px 8px 0px var(--rvt-shadow-color-sm)",
           "colorToken": {
             "css": "--rvt-shadow-color-sm",
-            "light": "rgb(31 37 40 / 7%)",
-            "dark": "rgb(0 0 0 / 20%)",
-            "crimson": "rgb(48 4 4 / 20%)"
+            "light": "rgb(31 37 40 / 12%)",
+            "dark": "rgb(0 0 0 / 24%)",
+            "crimson": "rgb(48 4 4 / 24%)"
           },
           "codeToday": "--rvt-shadow-subtle (0 3px 6px, 7%)",
           "action": "replace (value changes)"
@@ -4873,12 +4873,12 @@
         {
           "name": "shadow/md",
           "css": "--rvt-shadow-md",
-          "value": "0 4px 8px 0px var(--rvt-shadow-color-md)",
+          "value": "0 4px 12px 0px var(--rvt-shadow-color-md)",
           "colorToken": {
             "css": "--rvt-shadow-color-md",
-            "light": "rgb(31 37 40 / 10%)",
-            "dark": "rgb(0 0 0 / 32%)",
-            "crimson": "rgb(48 4 4 / 32%)"
+            "light": "rgb(31 37 40 / 14%)",
+            "dark": "rgb(0 0 0 / 34%)",
+            "crimson": "rgb(48 4 4 / 34%)"
           },
           "codeToday": "--rvt-shadow-base / --rvt-shadow-standard (0 4px 8px, 16%)",
           "action": "replace (value changes)"
@@ -4886,10 +4886,10 @@
         {
           "name": "shadow/lg",
           "css": "--rvt-shadow-lg",
-          "value": "0 8px 16px 0px var(--rvt-shadow-color-lg)",
+          "value": "0 8px 24px 0px var(--rvt-shadow-color-lg)",
           "colorToken": {
             "css": "--rvt-shadow-color-lg",
-            "light": "rgb(31 37 40 / 18%)",
+            "light": "rgb(31 37 40 / 16%)",
             "dark": "rgb(0 0 0 / 42%)",
             "crimson": "rgb(48 4 4 / 42%)"
           },
@@ -4899,10 +4899,10 @@
         {
           "name": "shadow/xl",
           "css": "--rvt-shadow-xl",
-          "value": "0 14px 28px 2px var(--rvt-shadow-color-xl)",
+          "value": "0 14px 36px 2px var(--rvt-shadow-color-xl)",
           "colorToken": {
             "css": "--rvt-shadow-color-xl",
-            "light": "rgb(31 37 40 / 20%)",
+            "light": "rgb(31 37 40 / 15%)",
             "dark": "rgb(0 0 0 / 50%)",
             "crimson": "rgb(48 4 4 / 50%)"
           },
@@ -4912,10 +4912,10 @@
         {
           "name": "shadow/2xl",
           "css": "--rvt-shadow-2xl",
-          "value": "0 24px 48px 4px var(--rvt-shadow-color-2xl)",
+          "value": "0 24px 56px 4px var(--rvt-shadow-color-2xl)",
           "colorToken": {
             "css": "--rvt-shadow-color-2xl",
-            "light": "rgb(31 37 40 / 24%)",
+            "light": "rgb(31 37 40 / 17%)",
             "dark": "rgb(0 0 0 / 60%)",
             "crimson": "rgb(48 4 4 / 60%)"
           },
