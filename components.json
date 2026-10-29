@@ -214,6 +214,14 @@
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=3551-18446"
     },
     {
+      "slug": "hero-feature",
+      "name": "Hero – Feature",
+      "summary": "A feature hero is the large banner at the top of a page, with a wide headline and intro above a large photo.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-29",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=3824-11364"
+    },
+    {
       "slug": "quote",
       "name": "Quote",
       "summary": "A quote pulls out a short statement from a real person, with their name and title underneath.",
