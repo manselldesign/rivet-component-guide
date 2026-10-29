@@ -380,6 +380,14 @@
       "status": "ready-for-dev",
       "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-32"
+    },
+    {
+      "slug": "image-hub",
+      "name": "Image hub",
+      "summary": "One photo, or a group of three, that shows what a place, program or event feels like.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-29",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1747-109787"
     }
   ]
 }
