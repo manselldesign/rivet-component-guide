@@ -105,12 +105,25 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
 .btn.btn-subtle{border-color:transparent;margin-top:16px}
 .hero-card .btn.btn-subtle{padding-left:0;border-left:0}
 .btn.btn-subtle:hover{border-color:transparent;color:#efdfc8}
-/* rvt-card-default sticker slot (Vertical): 80px Crimson contained sticker, spacing/24 below; 64px, spacing/16 below on Mobile */
-.hero-card-sticker{display:block;width:80px;height:80px;margin:0 0 24px}
 .hero-card-msg{margin:8px 0 0;font-size:14px;line-height:20px;color:#ffffff}
 .hero-card-msg:empty{display:none}
+/* rvt-hero-callout Column(s)=2, Dark mode: rvt-card-default (Size=Compact, Layout=Plain, Style=Raised, Vertical) sits under the actions,
+   spacing/64 below them, 700px wide. Card: background/raised (#14181a on Dark), shadow/sm, spacing/16 padding, no radius; the whole card is the link.
+   Tag: tag/sm/regular 12/16 text/brand, spacing/4 below, 2px left. Title row: action/lg/strong 16/24 text/strong + rvt-arrow-right-12 in a 12px slot, spacing/16 gap.
+   Body: body/xs/regular 14/20 text/default, spacing/8 above. Hover: title text/accent + underline, arrow icon/accent. */
+.hero-compact{display:block;width:100%;max-width:700px;margin-top:64px;padding:16px;background:#14181a;box-shadow:0 2px 8px 0 rgb(0 0 0 / 24%);color:#ffffff;text-decoration:none}
+.hero-compact-tag{font-family:var(--font-mono);font-size:12px;line-height:16px;letter-spacing:1px;margin:0;padding:0 0 4px 2px;color:#ffffff}
+.hero-compact-head{display:flex;align-items:flex-start;gap:16px}
+.hero-compact-title{flex:1 1 auto;min-width:0;margin:0;font-size:16px;line-height:24px;font-weight:var(--w-bold);color:#ffffff}
+.hero-compact-arrow{flex:none;width:12px;height:24px;display:flex;align-items:center;justify-content:center;padding-top:.5px;color:#ffffff}
+.hero-compact-arrow svg{width:12px;height:12px;display:block;fill:currentColor}
+.hero-compact-desc{margin:0;padding-top:8px;font-size:14px;line-height:20px;color:#ffffff}
+.hero-compact:hover .hero-compact-title{color:#fdfaf7;text-decoration:underline;text-underline-offset:3px}
+.hero-compact:hover .hero-compact-arrow{color:#fdfaf7}
+.hero-compact:focus-visible{outline:2px solid #efdfc8;outline-offset:2px}
+@media (max-width:560px){.hero-compact{margin-top:48px}}
 @media (max-width:900px){.hero-inner>.hero-cols{grid-template-columns:1fr;gap:40px}}
-@media (max-width:560px){.hero-card-sticker{width:64px;height:64px;margin-bottom:16px}.hero-card{padding:24px}.hero-card-title{font-size:18px;line-height:24px}.hero-card-desc{font-size:16px;line-height:24px}}
+@media (max-width:560px){.hero-card{padding:24px}.hero-card-title{font-size:18px;line-height:24px}.hero-card-desc{font-size:16px;line-height:24px}}
 /* rvt-button: CTA, Normal, Extra-large (Dark mode). Link type External = rvt-arrow-up-right; In-page = rvt-arrow-down */
 .btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 16px;border:1px solid #fdfaf7;color:#fdfaf7;background:transparent;
   font-family:var(--font-sans);font-size:16px;line-height:24px;font-weight:var(--w-bold);text-decoration:none;white-space:nowrap}
@@ -499,12 +512,13 @@ body:not(.has-rail) #rail-shell{display:none}
     if (key === 'ready-for-dev') return `<span class="badge has-label" data-s="${key}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="${P[ic]}"/></svg>Ready</span>`;
     return `<span class="badge" data-s="${key}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="${P[ic]}"/></svg><span class="sr-only">${STATUS[key]}</span></span>`;
   };
-  const hero = ({tag, title, intro, actions, aside}) => {
+  const hero = ({tag, title, intro, actions, aside, below}) => {
     const main = `
       <p class="tag">${tag}</p>
       <h1>${esc(title)}</h1>
       ${intro ? `<p class="intro">${esc(intro)}</p>` : ''}
-      ${actions ? `<div class="actions">${actions}</div>` : ''}`;
+      ${actions ? `<div class="actions">${actions}</div>` : ''}
+      ${below || ''}`;
     return `
     <header class="hero"><div class="wrap"><div class="hero-inner">
       ${aside ? `<div class="hero-cols"><div class="hero-main">${main}</div>${aside}</div>` : main}
@@ -522,12 +536,11 @@ body:not(.has-rail) #rail-shell{display:none}
   function renderIndex() {
     document.title = 'Rivet 3 Component Guide';
     app.innerHTML = hero({tag: 'Rivet Design System', title: 'Component Guide', intro: 'Design notes and build specs for each Rivet 3 component.', actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a><a class="btn" href="downloads/rivet-icons-12x12.zip" download="rivet-icons-12x12.zip">Download 12x12 icons${icon('download')}</a>`,
-      aside: `<aside class="hero-card" aria-labelledby="type-card-title">
-        <img class="hero-card-sticker" src="img/sticker-page-code.svg" alt="" width="80" height="80">
-        <h2 class="hero-card-title" id="type-card-title">Text style and font details</h2>
-        <p class="hero-card-desc">The type scale, the math behind each size, and why each group of text styles looks the way it does.</p>
-        <a class="btn btn-subtle" href="#text-styles">View details${icon('arrowRight')}</a>
-      </aside>`}) + `
+      below: `<a class="hero-compact" href="#text-styles">
+        <p class="hero-compact-tag">Typography</p>
+        <span class="hero-compact-head"><span class="hero-compact-title">Text style and font details</span><span class="hero-compact-arrow" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span></span>
+        <p class="hero-compact-desc">The type scale, the math behind each size, and why each group of text styles looks the way it does.</p>
+      </a>`}) + `
       <main class="wrap index">
         <div class="prose index-note">
           <div class="alert is-dark" data-k="danger" role="note">

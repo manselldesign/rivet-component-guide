@@ -1,5 +1,10 @@
 # Hero – Callout
 
+> [!info|dark] Quick note
+> A part of this hero changed. Please double-check:
+>
+> - **Hero card:** The card is now the smaller, compact card, with tighter spacing and smaller text
+
 ## What it is
 The callout hero is the default hero, the banner at the top of most pages. It shows the page title and a short intro, with an optional card that highlights one thing, like a deadline or an upcoming event.
 
@@ -39,7 +44,7 @@ The callout hero is the default hero, the banner at the top of most pages. It sh
 
 ## Developer spec checklist
 
-Shared rules: Background `background/default`, with a 1px `border/default` line along the bottom of the content. Side by side is 1600px wide, Stacked 1200px, Mobile 375px. Primary button is `rvt-button` with `background/brand`; secondary has a 1px `border/accent` border. The card is `rvt-card-default` (`background/raised`, `shadow/sm`). Headline max width 920px; body max width 800px.
+Shared rules: Background `background/default`, with a 1px `border/default` line along the bottom of the content. Side by side is 1600px wide, Stacked 1200px, Mobile 375px. Primary button is `rvt-button` with `background/brand`; secondary has a 1px `border/accent` border. The card is `rvt-card-default`, Compact size, Raised style (`background/raised`, `shadow/sm`); see Card-default for its full spec. Headline max width 920px; body max width 800px.
 
 | Element | Side by side | Stacked | Mobile |
 | --- | --- | --- | --- |
@@ -49,4 +54,7 @@ Shared rules: Background `background/default`, with a 1px `border/default` line 
 | Headline | `display/lg/strong` (48 / 52px), `text/brand` | Same | `display/lg/strong` (29 / 32px) |
 | Body | `body/base/regular` (18 / 28px), `text/default`; `spacing/20` above (20px) | Same | `body/base/regular` (16 / 24px); `spacing/24` above (24px) |
 | Buttons | Side by side, `spacing/40` above (40px), `spacing/16` gap (16px), `spacing/16` left and right padding (16px) | Same | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |
-| Card padding | `spacing/32` all sides (32px) | Same | `spacing/32` all sides (24px) |
+| Card padding | `spacing/16` all sides (16px) | Same | Same |
+| Card eyebrow | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below (4px) | Same | Same |
+| Card title | `action/lg/strong` (16 / 24px), `text/strong`; `rvt-arrow-right-12` icon (12px), `spacing/16` from title | Same | Same |
+| Card description | `body/xs/regular` (14 / 20px), `text/default`, `spacing/8` above (8px) | Same | Same |
