@@ -40,7 +40,7 @@ A side menu that shows the pages in one section of a site as an expanding outlin
 
 ## Developer spec checklist
 
-Shared rules: The menu has a `background/default` fill and `spacing/24` padding above (24px). The section title is `tag/md/caps` (14 / 18px), `text/brand`, with `spacing/12` (12px) before the first item. Items stack so neighboring borders overlap into one 1px `border/default` line (-1px gap). An open item keeps its top border only; the items in its group have no borders, and the last one closes the group with a 1px bottom border. Selected items have no border of their own. The arrow is a 24px `background/strong` button with a 12px `icon/strong` chevron, pointing down when closed and up when open. Each level indents one spacing step further, so the indents shrink with the spacing tokens on Mobile; everything else stays the same size.
+Shared rules: The menu has a `background/default` fill and `spacing/24` padding above (24px). The section title is `tag/md/caps` (14 / 20px), `text/brand`, with `spacing/12` (12px) before the first item. Items stack so neighboring borders overlap into one 1px `border/default` line (-1px gap). An open item keeps its top border only; the items in its group have no borders, and the last one closes the group with a 1px bottom border. Selected items have no border of their own. The arrow is a 24px `background/strong` button with a 12px `icon/strong` chevron, pointing down when closed and up when open. Each level indents one spacing step further, so the indents shrink with the spacing tokens on Mobile; everything else stays the same size.
 
 | Element | Default | Hover | Selected | Selected hover |
 | --- | --- | --- | --- | --- |

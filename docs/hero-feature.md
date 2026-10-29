@@ -48,7 +48,7 @@ Shared rules: background `background/default`. Primary button is `rvt-button` (T
 | Outer padding | `spacing/40` bottom (40px) | `spacing/40` top and bottom (32px) |
 | Text row padding | `spacing/128` top (128px), `spacing/80` left and right (80px), `spacing/48` bottom (48px) | `spacing/24` left and right on each block (24px) |
 | Text row layout | Text fills the row; buttons sit on the right, aligned to the bottom of the text | Stacked |
-| Metadata | `tag/md/caps` (14 / 18px), `text/brand`; `spacing/12` below (12px) | Same |
+| Metadata | `tag/md/caps` (14 / 20px), `text/brand`; `spacing/12` below (12px) | Same |
 | Headline | `display/xl/caps` (54 / 56px), `text/brand` | `display/xl/caps` (36 / 36px) |
 | Body | `body/base/regular` (18 / 28px), `text/default`; `spacing/24` above (24px) | `body/base/regular` (16 / 24px); `spacing/20` above (20px) |
 | Buttons | Side by side, `spacing/48` above (48px), `spacing/16` gap (16px) | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |

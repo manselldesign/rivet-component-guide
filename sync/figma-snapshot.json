@@ -3,7 +3,7 @@
     "file": "Rivet 3 Components (cleaning)",
     "fileKey": "h8vuH2kAA3FkJlUEitXK9t"
   },
-  "syncedAt": "2026-10-29T13:40Z",
+  "syncedAt": "2026-10-29T15:00Z",
   "note": "Normalized snapshot written by the daily token sync. Values: colors hex (8-digit = alpha), '@name' = alias to another variable, numbers in px. Mode-specific values are objects keyed by mode. Letter spacing of 0% is stored as 0.",
   "variables": {
     "Foundation": {
@@ -784,10 +784,6 @@
         "font/tracking/md": {
           "type": "FLOAT",
           "value": 0.75
-        },
-        "type/line-height/18": {
-          "type": "FLOAT",
-          "value": 18
         }
       }
     },
@@ -2464,7 +2460,7 @@
       "fontFamily": "Roboto Mono",
       "fontStyle": "Regular",
       "fontSize": 16,
-      "lineHeight": 20,
+      "lineHeight": 24,
       "letterSpacing": 2,
       "textCase": "UPPER",
       "textDecoration": "NONE",
@@ -2473,7 +2469,7 @@
         "fontSize": "type/size/16",
         "fontFamily": "font/family/mono",
         "paragraphSpacing": "type/paragraph-spacing/step-01",
-        "lineHeight": "type/line-height/20",
+        "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/350"
       },
       "description": "**Variable adjustments:** tracking: wide"
@@ -2482,7 +2478,7 @@
       "fontFamily": "Roboto Mono",
       "fontStyle": "SemiBold",
       "fontSize": 16,
-      "lineHeight": 20,
+      "lineHeight": 24,
       "letterSpacing": 1,
       "textCase": "ORIGINAL",
       "textDecoration": "NONE",
@@ -2491,7 +2487,7 @@
         "fontSize": "type/size/16",
         "fontFamily": "font/family/mono",
         "paragraphSpacing": "type/paragraph-spacing/step-01",
-        "lineHeight": "type/line-height/20",
+        "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/600"
       },
       "description": "**Variable adjustments:** tracking: normal"
@@ -2500,7 +2496,7 @@
       "fontFamily": "Roboto Mono",
       "fontStyle": "Regular",
       "fontSize": 16,
-      "lineHeight": 20,
+      "lineHeight": 24,
       "letterSpacing": 1,
       "textCase": "ORIGINAL",
       "textDecoration": "NONE",
@@ -2509,7 +2505,7 @@
         "fontSize": "type/size/16",
         "fontFamily": "font/family/mono",
         "paragraphSpacing": "type/paragraph-spacing/step-01",
-        "lineHeight": "type/line-height/20",
+        "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/350"
       },
       "description": "**Variable adjustments:** tracking: normal"
@@ -2518,7 +2514,7 @@
       "fontFamily": "Roboto Mono",
       "fontStyle": "Regular",
       "fontSize": 14,
-      "lineHeight": 18,
+      "lineHeight": 20,
       "letterSpacing": 2,
       "textCase": "UPPER",
       "textDecoration": "NONE",
@@ -2527,7 +2523,7 @@
         "fontSize": "type/size/14",
         "fontFamily": "font/family/mono",
         "paragraphSpacing": "type/paragraph-spacing/step-01",
-        "lineHeight": "type/line-height/18",
+        "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/350"
       },
       "description": "**Variable adjustments:** tracking: wide"
@@ -2536,7 +2532,7 @@
       "fontFamily": "Roboto Mono",
       "fontStyle": "SemiBold",
       "fontSize": 14,
-      "lineHeight": 18,
+      "lineHeight": 20,
       "letterSpacing": 1,
       "textCase": "ORIGINAL",
       "textDecoration": "NONE",
@@ -2545,7 +2541,7 @@
         "fontSize": "type/size/14",
         "fontFamily": "font/family/mono",
         "paragraphSpacing": "type/paragraph-spacing/step-01",
-        "lineHeight": "type/line-height/18",
+        "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/600"
       },
       "description": "**Variable adjustments:** tracking: normal"
@@ -2554,7 +2550,7 @@
       "fontFamily": "Roboto Mono",
       "fontStyle": "Regular",
       "fontSize": 14,
-      "lineHeight": 18,
+      "lineHeight": 20,
       "letterSpacing": 1,
       "textCase": "ORIGINAL",
       "textDecoration": "NONE",
@@ -2563,7 +2559,7 @@
         "fontSize": "type/size/14",
         "fontFamily": "font/family/mono",
         "paragraphSpacing": "type/paragraph-spacing/step-01",
-        "lineHeight": "type/line-height/18",
+        "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/350"
       },
       "description": "**Variable adjustments:** tracking: normal"

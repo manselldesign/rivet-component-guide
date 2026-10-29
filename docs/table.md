@@ -45,7 +45,7 @@ Shared rules: header and body cells in a column share the same left and right pa
 | Element | Desktop Default | Mobile Default | Compact (both devices) |
 | --- | --- | --- | --- |
 | Header cell padding | `spacing/16` (16px) all sides | `spacing/16` (16px) top and bottom, `spacing/12` (12px) left and right | `spacing/8` (8px) all sides |
-| Header label | `tag/md/regular` (14 / 18px) | `tag/md/regular` (14 / 18px) | `tag/sm/regular` (12 / 16px) |
+| Header label | `tag/md/regular` (14 / 20px) | `tag/md/regular` (14 / 20px) | `tag/sm/regular` (12 / 16px) |
 | Body cell padding | `spacing/24` (24px) top and bottom, `spacing/16` (16px) left and right | `spacing/20` (20px) top and bottom, `spacing/12` (12px) left and right | `spacing/8` (8px) all sides |
 | Gap inside a cell | `spacing/12` (12px) | `spacing/12` (12px) | `spacing/12` (12px) |
 | Main item text (first column) | `body/sm/strong` (16 / 24px), `text/strong` | `body/xs/strong` (14 / 20px), `text/strong` | `heading/xs/strong` (14 / 20px), `text/strong` |

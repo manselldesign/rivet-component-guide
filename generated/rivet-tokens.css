@@ -95,7 +95,6 @@
 	--rvt-type-line-height-12: 12px;
 	--rvt-type-line-height-14: 14px;
 	--rvt-type-line-height-16: 16px;
-	--rvt-type-line-height-18: 18px;
 	--rvt-type-line-height-18-20: 20px;
 	--rvt-type-line-height-20: 20px;
 	--rvt-type-line-height-24: 24px;
@@ -694,12 +693,12 @@
 	--rvt-font-action-lg-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans);
 	--rvt-font-action-sm-strong: var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans);
 	--rvt-font-action-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans);
-	--rvt-font-tag-lg-caps: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-20) var(--rvt-font-family-mono);
-	--rvt-font-tag-lg-strong: var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-20) var(--rvt-font-family-mono);
-	--rvt-font-tag-lg-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-20) var(--rvt-font-family-mono);
-	--rvt-font-tag-md-caps: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-18) var(--rvt-font-family-mono);
-	--rvt-font-tag-md-strong: var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-18) var(--rvt-font-family-mono);
-	--rvt-font-tag-md-regular: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-18) var(--rvt-font-family-mono);
+	--rvt-font-tag-lg-caps: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-mono);
+	--rvt-font-tag-lg-strong: var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-mono);
+	--rvt-font-tag-lg-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-mono);
+	--rvt-font-tag-md-caps: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-mono);
+	--rvt-font-tag-md-strong: var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-mono);
+	--rvt-font-tag-md-regular: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-mono);
 	--rvt-font-tag-sm-caps: var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono);
 	--rvt-font-tag-sm-strong: var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono);
 	--rvt-font-tag-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono);

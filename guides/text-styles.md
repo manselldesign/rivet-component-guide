@@ -13,7 +13,8 @@ Rivet uses one size scale for all text. The base is **18px body text** on deskto
 > Sizes like 23 and 29 come from the scale. Don't round them to 24 or 30. If you need a new size, take the next step on the scale rather than picking a round number.
 
 ## Line height
-- Every line height sits on a **4px grid**, so text lines up with the spacing tokens. Tag text is the one exception: `tag/md` uses 18px, on a 2px grid
+- Every line height sits on a **4px grid**, so text lines up with the spacing tokens
+- **One line height per size.** 12px text is always 16, 14px is 20, 16px is 24, 18px is 28, whatever the style group. Tags, actions, body and small headings at the same size all line up
 - **Body text** gets room to breathe: about 1.4–1.55× its size (18/28, 16/24, 14/20)
 - **Headings** are tighter: about 1.2–1.25× (29/36, 20/24)
 - **Display text** is tightest: about 1.05–1.1× (54/56, 48/52), so big lines read as one block
@@ -48,7 +49,7 @@ Sizes 16px and under never change. Larger text shrinks so it fits a narrow scree
 | Heading | 12–36 | Builds the page structure. Bold and slightly wide so headings stay distinct from body text at every size |
 | Body | 12–29 | For reading. Regular, strong and italic share the same size and line height, so adding emphasis never shifts the layout |
 | Action | 14–20 | For buttons and controls. Semibold signals "you can click this." `strong-fixed` has tighter leading for compact controls |
-| Tag | 12–16 | Mono with added letter spacing (1px, 2px for caps) for badges, labels and metadata |
+| Tag | 12–16 | Mono with added letter spacing (1px, 2px for caps) for badges, labels and metadata. Same line heights as body text at each size (12/16, 14/20, 16/24) |
 | Editorial | 23–54 | Serif voice for storytelling: quotes, pull quotes and feature intros |
 | Link | 14–18 | Same size and line height as body text, so inline links sit cleanly inside a paragraph |
 | Component | Varies | One-off styles tied to a single component, like avatar initials, lockups, stat numbers and the required marker. They size to the component, not the scale |

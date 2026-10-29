@@ -36,7 +36,7 @@ On phones, both types stack the stats in one column.
 
 ## Developer spec checklist
 
-Shared rules: The group has a `background/default` fill and a 1px `border/default` border. Stats are separated by 1px `border/default` dividers. Each stat shows an optional 64px sticker, then `spacing/24` (24px) below it the number in `component/number/strong` (42 / 44px) and the description in `tag/lg/regular` (16 / 20px), both `text/brand`, with `spacing/16` (16px) between them. The optional note is `tag/sm/regular` (12 / 16px), `text/accent`, `spacing/16` (16px) below the stats and `spacing/16` (16px) from the bottom edge. Every stat stacks in one column on Mobile.
+Shared rules: The group has a `background/default` fill and a 1px `border/default` border. Stats are separated by 1px `border/default` dividers. Each stat shows an optional 64px sticker, then `spacing/24` (24px) below it the number in `component/number/strong` (42 / 44px) and the description in `tag/lg/regular` (16 / 24px), both `text/brand`, with `spacing/16` (16px) between them. The optional note is `tag/sm/regular` (12 / 16px), `text/accent`, `spacing/16` (16px) below the stats and `spacing/16` (16px) from the bottom edge. Every stat stacks in one column on Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

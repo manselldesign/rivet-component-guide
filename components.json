@@ -36,7 +36,7 @@
       "name": "Billboard",
       "summary": "A large image paired with a short title, description and links that spotlights one important section of your site.",
       "status": "ready-for-dev",
-      "updated": "2026-10-27",
+      "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=2077-13019"
     },
     {
@@ -60,7 +60,7 @@
       "name": "Calendar tile",
       "summary": "A small square that shows a date at a glance, with the month, day and year stacked.",
       "status": "ready-for-dev",
-      "updated": "2026-10-24",
+      "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-8"
     },
     {
@@ -100,7 +100,7 @@
       "name": "Card-feature",
       "summary": "A feature card is a large doorway to a topic, like \"Types of financial aid\" or \"Mental health support\".",
       "status": "ready-for-dev",
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=2077-16743"
     },
     {
@@ -179,14 +179,14 @@
       "name": "Hero – Split",
       "summary": "A large banner at the top of a page with the headline and intro on one side and a photo on the other.",
       "status": "ready-for-dev",
-      "updated": "2026-10-24"
+      "updated": "2026-10-29"
     },
     {
       "slug": "hero-profile",
       "name": "Hero – Profile",
       "summary": "A profile hero opens a person's page with their photo, name, credentials and job title.",
       "status": "ready-for-dev",
-      "updated": "2026-10-27",
+      "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1708-98577"
     },
     {
@@ -210,7 +210,7 @@
       "name": "Hero – Statement",
       "summary": "A statement hero opens a page with a bold headline and one to three large photos.",
       "status": "ready-for-dev",
-      "updated": "2026-10-24",
+      "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=3551-18446"
     },
     {
@@ -298,7 +298,7 @@
       "name": "Series nav",
       "summary": "A pair of links at the end of a page that take readers to the previous or next page in a series.",
       "status": "ready-for-dev",
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-26"
     },
     {
@@ -314,7 +314,7 @@
       "name": "Sidenav – Tree",
       "summary": "A side menu that shows the pages in one section of a site as an expanding outline.",
       "status": "working",
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=11845-53528"
     },
     {
@@ -322,7 +322,7 @@
       "name": "Stat group",
       "summary": "A row or grid of big numbers that each sum up one fact, like enrollment or job placement rates.",
       "status": "ready-for-dev",
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-28"
     },
     {
@@ -346,7 +346,7 @@
       "name": "Table",
       "summary": "A grid of rows and columns that lets readers compare facts side by side, like tuition by program or office hours by department.",
       "status": "ready-for-dev",
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-31"
     },
     {

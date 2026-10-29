@@ -65,7 +65,7 @@ Shared rules: 1px `border/default` border, `background/raised` fill, no radius, 
 | Content padding (Vertical) | `spacing/48` top and sides (48px), `spacing/64` bottom (64px) | `spacing/32` top and sides (24px), `spacing/64` bottom (48px) |
 | Content padding (Horizontal) | `spacing/64` all sides (64px) | Same as Vertical |
 | Top badge | Strong badge, `spacing/16` below | Same |
-| Eyebrow | `tag/md/caps` (14 / 18px), `text/brand`, `spacing/8` below | `tag/sm/caps` (12 / 16px), `spacing/4` below |
+| Eyebrow | `tag/md/caps` (14 / 20px), `text/brand`, `spacing/8` below | `tag/sm/caps` (12 / 16px), `spacing/4` below |
 | Title | `display/xs/strong` (26 / 28px), `text/brand` | `display/xs/strong` (20 / 24px) |
 | Description | `body/base/regular` (18 / 28px), `text/default`, `spacing/24` above | `body/base/regular` (16 / 24px), `spacing/20` above |
 | Arrow box | 48 × 48px in the bottom-right corner, 1px `border/default` on top and left, 16px `rvt-arrow-right` centered | 32 × 32px |
