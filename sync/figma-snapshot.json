@@ -3,8 +3,8 @@
     "file": "Rivet 3 Components (cleaning)",
     "fileKey": "h8vuH2kAA3FkJlUEitXK9t"
   },
-  "syncedAt": "2026-10-29T14:00Z",
-  "note": "Normalized snapshot written by the daily token sync. Values: colors hex (8-digit = alpha), '@name' = alias to another variable, numbers in px. Mode-specific values are objects keyed by mode.",
+  "syncedAt": "2026-10-29T13:40Z",
+  "note": "Normalized snapshot written by the daily token sync. Values: colors hex (8-digit = alpha), '@name' = alias to another variable, numbers in px. Mode-specific values are objects keyed by mode. Letter spacing of 0% is stored as 0.",
   "variables": {
     "Foundation": {
       "modes": [
@@ -2701,7 +2701,7 @@
       "lineHeight": 56,
       "letterSpacing": 0,
       "textCase": "ORIGINAL",
-      "textDecoration": "NONE",
+      "textDecoration": "UNDERLINE",
       "boundVariables": {
         "letterSpacing": "font/tracking/none",
         "fontSize": "type/size/32-52",
@@ -2719,7 +2719,7 @@
       "lineHeight": 28,
       "letterSpacing": 0,
       "textCase": "ORIGINAL",
-      "textDecoration": "NONE",
+      "textDecoration": "UNDERLINE",
       "boundVariables": {
         "letterSpacing": "font/tracking/none",
         "fontSize": "type/size/16-18",
@@ -2736,7 +2736,7 @@
       "lineHeight": 24,
       "letterSpacing": 0,
       "textCase": "ORIGINAL",
-      "textDecoration": "NONE",
+      "textDecoration": "UNDERLINE",
       "boundVariables": {
         "letterSpacing": "font/tracking/none",
         "fontSize": "type/size/16",
@@ -2753,7 +2753,7 @@
       "lineHeight": 20,
       "letterSpacing": 0,
       "textCase": "ORIGINAL",
-      "textDecoration": "NONE",
+      "textDecoration": "UNDERLINE",
       "boundVariables": {
         "letterSpacing": "font/tracking/none",
         "fontSize": "type/size/14",

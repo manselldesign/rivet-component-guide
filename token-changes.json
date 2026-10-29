@@ -193,11 +193,13 @@
       }
     },
     {
-      "component": "Tabs — tabs/tabs.css",
-      "change": "The selected tab label uses its own token, --rvt-component-tabs-selected-text (white on Light, #1f2528 on Dark, #6d0808 on Crimson), on the --rvt-background-brand fill. No other change.",
+      "component": "Tabs",
+      "change": "Tab height is set by tab type and size. Container tabs are 48px (Large, Desktop) and 40px (Small, Mobile). Segmented tabs are 40px (Large) and 32px (Small). Labels stay centered vertically.",
       "use": {
-        "selected tab label color": "--rvt-component-tabs-selected-text",
-        "selected tab fill": "--rvt-background-brand"
+        "Container, Large": "--rvt-component-tabs-container-height-lg",
+        "Container, Small": "--rvt-component-tabs-container-height-sm",
+        "Segmented, Large": "--rvt-component-tabs-segmented-height-lg",
+        "Segmented, Small": "--rvt-component-tabs-segmented-height-sm"
       }
     }
   ],
@@ -3688,11 +3690,16 @@
               "lineHeight": {
                 "desktop": 56,
                 "mobile": 32
-              }
+              },
+              "textDecoration": "underline"
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-32-52)/var(--rvt-type-line-height-36-56) var(--rvt-font-family-serif)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-32-52)/var(--rvt-type-line-height-36-56) var(--rvt-font-family-serif)",
+            "alsoSet": {
+              "text-decoration": "underline"
+            },
+            "figmaChange": "2026-10-29: text style is now underlined in Figma (text-decoration: underline)"
           },
           {
             "name": "link/base/regular",
@@ -3708,14 +3715,19 @@
               "lineHeight": {
                 "desktop": 28,
                 "mobile": 24
-              }
+              },
+              "textDecoration": "underline"
             },
             "codeToday": "--rvt-font-16-fluid",
             "action": "rename + value change",
             "valueChanges": [
               "width 'semi-expanded' vs Figma 100"
             ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans)",
+            "alsoSet": {
+              "text-decoration": "underline"
+            },
+            "figmaChange": "2026-10-29: text style is now underlined in Figma (text-decoration: underline)"
           },
           {
             "name": "link/sm/regular",
@@ -3725,14 +3737,19 @@
               "weight": 350,
               "width": 100,
               "size": 16,
-              "lineHeight": 24
+              "lineHeight": 24,
+              "textDecoration": "underline"
             },
             "codeToday": "--rvt-font-16",
             "action": "rename + value change",
             "valueChanges": [
               "width 'semi-expanded' vs Figma 100"
             ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans)",
+            "alsoSet": {
+              "text-decoration": "underline"
+            },
+            "figmaChange": "2026-10-29: text style is now underlined in Figma (text-decoration: underline)"
           },
           {
             "name": "link/xs/regular",
@@ -3742,14 +3759,19 @@
               "weight": 350,
               "width": 100,
               "size": 14,
-              "lineHeight": 20
+              "lineHeight": 20,
+              "textDecoration": "underline"
             },
             "codeToday": "--rvt-font-14",
             "action": "rename + value change",
             "valueChanges": [
               "width 'semi-expanded' vs Figma 100"
             ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans)",
+            "alsoSet": {
+              "text-decoration": "underline"
+            },
+            "figmaChange": "2026-10-29: text style is now underlined in Figma (text-decoration: underline)"
           },
           {
             "name": "component/lockup/campus-title",
@@ -5065,6 +5087,34 @@
         "name": "component/lockup/type-eyebrow-3line",
         "css": "--rvt-component-lockup-type-eyebrow-3line",
         "value": 11,
+        "codeToday": null,
+        "action": "add"
+      },
+      {
+        "name": "component/tabs/container-height-lg",
+        "css": "--rvt-component-tabs-container-height-lg",
+        "value": 48,
+        "codeToday": null,
+        "action": "add"
+      },
+      {
+        "name": "component/tabs/container-height-sm",
+        "css": "--rvt-component-tabs-container-height-sm",
+        "value": 40,
+        "codeToday": null,
+        "action": "add"
+      },
+      {
+        "name": "component/tabs/segmented-height-lg",
+        "css": "--rvt-component-tabs-segmented-height-lg",
+        "value": 40,
+        "codeToday": null,
+        "action": "add"
+      },
+      {
+        "name": "component/tabs/segmented-height-sm",
+        "css": "--rvt-component-tabs-segmented-height-sm",
+        "value": 32,
         "codeToday": null,
         "action": "add"
       }

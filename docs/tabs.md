@@ -46,8 +46,8 @@ Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab
 | Selected label | `action/lg/strong` or `action/sm/strong`, `component/tabs/selected-text` | Same |
 | Selected fill | `background/brand` | Same |
 | Hover fill | `background/strong` | Same |
-| Height, Large | 48px | 40px |
-| Height, Small | 36px | 32px |
+| Height, Large | `component/tabs/container-height-lg` (48px) | `component/tabs/segmented-height-lg` (40px) |
+| Height, Small | `component/tabs/container-height-sm` (40px) | `component/tabs/segmented-height-sm` (32px) |
 | Border | 1px `border/default`, all sides | None |
 | Corner radius | 0 | 0 |
 

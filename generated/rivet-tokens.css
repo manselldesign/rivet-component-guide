@@ -139,6 +139,10 @@
 	--rvt-component-input-height-sm: 32px;
 	--rvt-component-input-height-md: 40px;
 	--rvt-component-input-height-lg: 48px;
+	--rvt-component-tabs-container-height-lg: 48px;
+	--rvt-component-tabs-container-height-sm: 40px;
+	--rvt-component-tabs-segmented-height-lg: 40px;
+	--rvt-component-tabs-segmented-height-sm: 32px;
 	--rvt-component-avatar-type-48: 20px;
 	--rvt-component-avatar-type-64: 28px;
 	--rvt-component-avatar-type-80: 36px;
@@ -725,7 +729,7 @@
 	--rvt-font-component-avatar-48: var(--rvt-font-weight-600) var(--rvt-component-avatar-type-48)/var(--rvt-component-avatar-type-48) var(--rvt-font-family-sans);
 	--rvt-font-component-avatar-40: var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
 	--rvt-font-component-avatar-32: var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans);
-	/* Text styles with a width or tracking also need the alsoSet properties listed in the guide (font-stretch, letter-spacing, text-transform). */
+	/* Text styles with a width or tracking also need the alsoSet properties listed in the guide (font-stretch, letter-spacing, text-transform, text-decoration). */
 	--rvt-shadow-xs: 0 1px 4px 0px var(--rvt-shadow-color-xs);
 	--rvt-shadow-sm: 0 2px 8px 0px var(--rvt-shadow-color-sm);
 	--rvt-shadow-md: 0 4px 12px 0px var(--rvt-shadow-color-md);
