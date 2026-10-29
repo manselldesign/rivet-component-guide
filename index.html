@@ -354,7 +354,8 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
    Desktop: H2 48px (Heading/extra-large/strong 29/36), H3 40px (Heading/large/strong 23/28), Paragraph 24px (18/28),
    List 16px (18/28, 12px between items), Note/alert 32px. Tables, Do/Don't and code follow Paragraph (24px).
    H3 directly under an H2 (not in the Text Block layout) gets the Paragraph spacing: 24px desktop, 16px mobile.
-   Mobile: H2 24px (23/32), H3 24px (20/24), Paragraph 16px (16/24), List 16px (16/24), Note 16px. */
+   Mobile uses the same spacing tokens; the Breakpoint mode scales them: H2 36px (23/32), H3 32px (20/24), Paragraph 24px (16/24),
+   List 16px (16/24), Note 24px, H3 under H2 24px. */
 .prose>*{margin-top:24px;margin-bottom:0}
 .prose>h2{margin-top:48px}
 .prose>h3{margin-top:40px}
@@ -370,9 +371,12 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
   .prose{font-size:16px;line-height:24px}
   .prose h2{font-size:23px;line-height:32px}
   .prose h3{font-size:20px;line-height:24px}
-  .prose>h2,.prose>h3{margin-top:24px}
-  .prose>p,.prose>ul,.prose>ol,.prose>.alert,.prose>.table-wrap,.prose>.dd,.prose>.ex,.prose>pre,.prose>blockquote{margin-top:16px}
-  .prose>h2+h3{margin-top:16px}
+  .prose>h2{margin-top:36px}
+  .prose>h3{margin-top:32px}
+  .prose>h4,.prose>.alert{margin-top:24px}
+  .prose>p,.prose>.table-wrap,.prose>.dd,.prose>.ex,.prose>pre,.prose>blockquote{margin-top:24px}
+  .prose>ul,.prose>ol{margin-top:16px}
+  .prose>h2+h3{margin-top:24px}
   .prose>:first-child{margin-top:0}
 }
 .load{padding-block:64px;color:var(--text-muted)}
