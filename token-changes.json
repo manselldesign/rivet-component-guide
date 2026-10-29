@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -41,7 +41,7 @@
     "After that, Figma and code match 1:1. New tokens start in Figma; name suggestions go through 'namingSuggestions'."
   ],
   "summary": {
-    "themeColors": 137,
+    "themeColors": 138,
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
     "textStyles": 79,
@@ -190,6 +190,14 @@
       "change": "Lists use square bullets in --rvt-component-list-marker (crimson on Light, #efdfc8 on Dark and Crimson). List text matches the body text size around it.",
       "use": {
         "bullet color": "--rvt-component-list-marker"
+      }
+    },
+    {
+      "component": "Tabs — tabs/tabs.css",
+      "change": "The selected tab label uses its own token, --rvt-component-tabs-selected-text (white on Light, #1f2528 on Dark, #6d0808 on Crimson), on the --rvt-background-brand fill. No other change.",
+      "use": {
+        "selected tab label color": "--rvt-component-tabs-selected-text",
+        "selected tab fill": "--rvt-background-brand"
       }
     }
   ],
@@ -2401,6 +2409,21 @@
             "replaces": null,
             "action": "add (new)",
             "figmaChange": "2026-10-28: added in Figma."
+          },
+          {
+            "name": "component/tabs/selected-text",
+            "css": "--rvt-component-tabs-selected-text",
+            "light": "#ffffff",
+            "dark": "#1f2528",
+            "crimson": "#6d0808",
+            "cssValue": {
+              "light": "--rvt-color-base-ultra-light",
+              "dark": "--rvt-color-base-main",
+              "crimson": "--rvt-color-brand-dark"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-29: added in Figma. Label color of the selected tab, so it stays readable on background/brand in every theme."
           }
         ]
       }

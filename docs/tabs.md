@@ -34,7 +34,7 @@ A row of labels that switches between related sets of content in the same spot. 
 
 ## Developer spec checklist
 
-Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab"` / `role="tabpanel"`, arrow keys move between tabs and Tab moves into the panel. Desktop uses Large tabs, Mobile uses Small tabs.
+Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab"` / `role="tabpanel"`, arrow keys move between tabs and Tab moves into the panel. Desktop uses Large tabs, Mobile uses Small tabs. Tab height is set by Type and Size, with the label centered vertically.
 
 ### Tab item
 
@@ -46,6 +46,8 @@ Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab
 | Selected label | `action/lg/strong` or `action/sm/strong`, `component/tabs/selected-text` | Same |
 | Selected fill | `background/brand` | Same |
 | Hover fill | `background/strong` | Same |
+| Height, Large | 48px | 40px |
+| Height, Small | 36px | 32px |
 | Border | 1px `border/default`, all sides | None |
 | Corner radius | 0 | 0 |
 
@@ -54,14 +56,12 @@ Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab
 | Element | Desktop | Mobile |
 | --- | --- | --- |
 | Container tab row | Horizontal, tabs share the width equally, 1px gap | Tabs stack vertically, full width, 1px gap |
-| Container tab height | 48px | 36px (selected tab is 32px, see TBD) |
 | Container panel padding | `spacing/48` all sides (48px) | `spacing/32` all sides (24px) |
 | Container panel border | 1px `border/default` left, right and bottom; none on top | Same |
 | Container side padding | None | `spacing/24` left and right (24px) |
 | Panel heading | `heading/lg/strong` (23 / 28px), `text/strong` | `heading/lg/strong` (20 / 24px) |
 | Panel body | `body/base/regular` (18 / 28px), `text/default` | `body/base/regular` (16 / 24px) |
-| Panel gap, heading to body to list | `spacing/24` (24px) | `spacing/20` (20px) |
+| Panel gap, heading to body to list | `spacing/24` (24px) | `spacing/24` (24px) |
 | Segmented group padding | `spacing/4` all sides (4px) | Same |
 | Segmented group fill and border | `background/tint`, 1px `border/default` | Same |
-| Segmented tab height | 40px | 32px |
 | Segmented tabs | Hug their label, no gap | Same |
