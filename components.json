@@ -344,9 +344,9 @@
     {
       "slug": "text-essay",
       "name": "Text Essay",
-      "summary": "A text essay is a long block of reading content: a title, short sections with subheadings, body paragraphs, a bulleted list and up to two buttons.",
+      "summary": "A text essay presents a mission, vision or editorial statement: a strong title, a few short sentences of supporting text and up to two buttons.",
       "status": "ready-for-dev",
-      "updated": "2026-10-28",
+      "updated": "2026-10-29",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=8437-1619"
     }
   ]
