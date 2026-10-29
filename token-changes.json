@@ -45,7 +45,7 @@
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
     "textStyles": 79,
-    "textStylesThatAreRenameOnly": 19,
+    "textStylesThatAreRenameOnly": 22,
     "spacing": 16,
     "shadows": 6
   },
@@ -3700,7 +3700,7 @@
             "spec": {
               "font": "Roboto Flex",
               "weight": 350,
-              "width": 100,
+              "width": 110,
               "size": {
                 "desktop": 18,
                 "mobile": 16
@@ -3712,15 +3712,13 @@
               "textDecoration": "underline"
             },
             "codeToday": "--rvt-font-16-fluid",
-            "action": "rename + value change",
-            "valueChanges": [
-              "width 'semi-expanded' vs Figma 100"
-            ],
+            "action": "rename",
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans)",
             "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
               "text-decoration": "underline"
             },
-            "figmaChange": "2026-10-29: text style is now underlined in Figma (text-decoration: underline)"
+            "figmaChange": "2026-10-29: width is now 110% like body text (was 100%), so inline links sit flush with the words around them. Also underlined in Figma (text-decoration: underline)."
           },
           {
             "name": "link/sm/regular",
@@ -3728,21 +3726,19 @@
             "spec": {
               "font": "Roboto Flex",
               "weight": 350,
-              "width": 100,
+              "width": 110,
               "size": 16,
               "lineHeight": 24,
               "textDecoration": "underline"
             },
             "codeToday": "--rvt-font-16",
-            "action": "rename + value change",
-            "valueChanges": [
-              "width 'semi-expanded' vs Figma 100"
-            ],
+            "action": "rename",
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans)",
             "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
               "text-decoration": "underline"
             },
-            "figmaChange": "2026-10-29: text style is now underlined in Figma (text-decoration: underline)"
+            "figmaChange": "2026-10-29: width is now 110% like body text (was 100%), so inline links sit flush with the words around them. Also underlined in Figma (text-decoration: underline)."
           },
           {
             "name": "link/xs/regular",
@@ -3750,21 +3746,19 @@
             "spec": {
               "font": "Roboto Flex",
               "weight": 350,
-              "width": 100,
+              "width": 110,
               "size": 14,
               "lineHeight": 20,
               "textDecoration": "underline"
             },
             "codeToday": "--rvt-font-14",
-            "action": "rename + value change",
-            "valueChanges": [
-              "width 'semi-expanded' vs Figma 100"
-            ],
+            "action": "rename",
             "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans)",
             "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
               "text-decoration": "underline"
             },
-            "figmaChange": "2026-10-29: text style is now underlined in Figma (text-decoration: underline)"
+            "figmaChange": "2026-10-29: width is now 110% like body text (was 100%), so inline links sit flush with the words around them. Also underlined in Figma (text-decoration: underline)."
           },
           {
             "name": "component/lockup/campus-title",

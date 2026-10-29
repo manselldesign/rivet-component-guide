@@ -39,7 +39,7 @@ Sizes 16px and under never change. Larger text shrinks so it fits a narrow scree
 
 ### Weights and width
 - **Weights** are exact numbers: 350 regular, 600 strong, 700 bold (headings and display), 825 extra-heavy (accents and big numbers)
-- **Width 110%** on headings, body and actions makes letters slightly wider and more open, and gives Rivet its look. Display and links stay at 100%
+- **Width 110%** on headings, body, actions and links makes letters slightly wider and more open, and gives Rivet its look. Links match body text so they sit flush inside a paragraph. Display stays at 100%
 - **Headings and display** also use taller ascenders and lowercase letters (`YTAS 720`, `YTLC 530`) so large text reads more clearly
 
 ## Style groups
@@ -51,7 +51,7 @@ Sizes 16px and under never change. Larger text shrinks so it fits a narrow scree
 | Action | 14–20 | For buttons and controls. Semibold signals "you can click this." `strong-fixed` has tighter leading for compact controls |
 | Tag | 12–16 | Mono with added letter spacing (1px, 2px for caps) for badges, labels and metadata. Same line heights as body text at each size (12/16, 14/20, 16/24) |
 | Editorial | 23–54 | Serif voice for storytelling: quotes, pull quotes and feature intros |
-| Link | 14–18 | Same size and line height as body text, so inline links sit cleanly inside a paragraph |
+| Link | 14–18 | Same size, line height and width as body text, so inline links sit cleanly inside a paragraph |
 | Component | Varies | One-off styles tied to a single component, like avatar initials, lockups, stat numbers and the required marker. They size to the component, not the scale |
 
 ## Using these in code

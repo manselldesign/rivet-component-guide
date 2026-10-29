@@ -2723,7 +2723,7 @@
         "lineHeight": "type/line-height/28",
         "fontWeight": "font/weight/350"
       },
-      "description": "Inline link"
+      "description": "Inline link\n**Variable adjustments:** wdth: 110%"
     },
     "link/sm/regular": {
       "fontFamily": "Roboto Flex",
@@ -2740,7 +2740,7 @@
         "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/350"
       },
-      "description": "Inline link"
+      "description": "Inline link\n**Variable adjustments:** wdth: 110%"
     },
     "link/xs/regular": {
       "fontFamily": "Roboto Flex",
@@ -2757,7 +2757,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/350"
       },
-      "description": "Inline link"
+      "description": "Inline link\n**Variable adjustments:** wdth: 110%"
     },
     "component/required/required-field": {
       "fontFamily": "Roboto Flex",

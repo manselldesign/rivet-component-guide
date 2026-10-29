@@ -44,13 +44,11 @@ A larger field where readers type answers that run longer than one line, like a 
 
 Shared rules: No fill and no radius, with a 1px `component/input/border` border on all sides. Value text is `body/sm/regular` (16 / 24px), `component/input/text`. A 16px resize handle sits in the bottom-right corner, `component/input/icon`. Focus adds a 2px `border/accent-strong` ring, 2px outside the field. The label is `heading/xs/strong` (14 / 20px), `text/strong`, with a `text/required` asterisk. Status messages use `rvt-alert` (Inline) and sit between the label and the helper text, `spacing/8` (8px) above and below. Helper text is `body/xs/regular` (14 / 20px), `text/default`, `spacing/4` (4px) above the field. Sizes don't change on Mobile.
 
-| Element | Default | Focus |
-| --- | --- | --- |
-| Field height | 164px, no token | 164px, no token |
-| Field padding, top | `spacing/16` (16px) | `spacing/12` (12px) |
-| Field padding, bottom | `spacing/16` (16px) | `spacing/16` (16px) |
-| Field padding, left and right | `spacing/12` (12px) | `spacing/12` (12px) |
-| Label to helper text, no status message | `spacing/8` (8px) | `spacing/8` (8px) |
+| Element | Value |
+| --- | --- |
+| Field height | 164px, no token |
+| Field padding | `spacing/16` top and bottom (16px), `spacing/12` left and right (12px) |
+| Label to helper text, no status message | `spacing/8` (8px) |
 
 ### Status messages
 
