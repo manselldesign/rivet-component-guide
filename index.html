@@ -105,10 +105,12 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
 .btn.btn-subtle{border-color:transparent;margin-top:16px}
 .hero-card .btn.btn-subtle{padding-left:0;border-left:0}
 .btn.btn-subtle:hover{border-color:transparent;color:#efdfc8}
+/* rvt-card-default sticker slot (Vertical): 80px Crimson contained sticker, spacing/24 below; 64px, spacing/16 below on Mobile */
+.hero-card-sticker{display:block;width:80px;height:80px;margin:0 0 24px}
 .hero-card-msg{margin:8px 0 0;font-size:14px;line-height:20px;color:#ffffff}
 .hero-card-msg:empty{display:none}
 @media (max-width:900px){.hero-inner>.hero-cols{grid-template-columns:1fr;gap:40px}}
-@media (max-width:560px){.hero-card{padding:24px}.hero-card-title{font-size:18px;line-height:24px}.hero-card-desc{font-size:16px;line-height:24px}}
+@media (max-width:560px){.hero-card-sticker{width:64px;height:64px;margin-bottom:16px}.hero-card{padding:24px}.hero-card-title{font-size:18px;line-height:24px}.hero-card-desc{font-size:16px;line-height:24px}}
 /* rvt-button: CTA, Normal, Extra-large (Dark mode). Link type External = rvt-arrow-up-right; In-page = rvt-arrow-down */
 .btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 16px;border:1px solid #fdfaf7;color:#fdfaf7;background:transparent;
   font-family:var(--font-sans);font-size:16px;line-height:24px;font-weight:var(--w-bold);text-decoration:none;white-space:nowrap}
@@ -519,7 +521,13 @@ body:not(.has-rail) #rail-shell{display:none}
   /* ---------- Index ---------- */
   function renderIndex() {
     document.title = 'Rivet 3 Component Guide';
-    app.innerHTML = hero({tag: 'Rivet Design System', title: 'Component Guide', intro: 'Design notes and build specs for each Rivet 3 component.', actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a><a class="btn" href="downloads/rivet-icons-12x12.zip" download="rivet-icons-12x12.zip">Download 12x12 icons${icon('download')}</a>`}) + `
+    app.innerHTML = hero({tag: 'Rivet Design System', title: 'Component Guide', intro: 'Design notes and build specs for each Rivet 3 component.', actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a><a class="btn" href="downloads/rivet-icons-12x12.zip" download="rivet-icons-12x12.zip">Download 12x12 icons${icon('download')}</a>`,
+      aside: `<aside class="hero-card" aria-labelledby="type-card-title">
+        <img class="hero-card-sticker" src="img/sticker-page-code.svg" alt="" width="80" height="80">
+        <h2 class="hero-card-title" id="type-card-title">Text style and font details</h2>
+        <p class="hero-card-desc">The type scale, the math behind each size, and why each group of text styles looks the way it does.</p>
+        <a class="btn btn-subtle" href="#text-styles">View details${icon('arrowRight')}</a>
+      </aside>`}) + `
       <main class="wrap index">
         <div class="prose index-note">
           <div class="alert is-dark" data-k="danger" role="note">
@@ -747,6 +755,27 @@ body:not(.has-rail) #rail-shell{display:none}
     });
   }
 
+  /* ---------- Text style and font details (guides/text-styles.md) ---------- */
+  let typeMd = null;
+  async function renderTextStyles() {
+    document.title = 'Text style and font details · Rivet 3 Component Guide';
+    app.innerHTML = hero({tag: '<a href="#">Components</a>', title: 'Text style and font details', intro: 'The type scale, the math behind each size, and the reasoning for each group of text styles.',
+      actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a>`}) + `
+      <nav class="wrap crumbs" aria-label="Breadcrumb"><ol>
+        <li><a class="home" href="#" aria-label="Components home">${icon('home')}</a></li>
+        <li><a href="#">Components</a></li>
+        <li><span aria-current="page">Text style and font details</span></li>
+      </ol></nav>
+      <main class="wrap detail"><article class="doc"><div class="prose" id="prose"><p class="load">Loading…</p></div></article></main>`;
+    const prose = document.getElementById('prose');
+    try {
+      if (!typeMd) { const r = await fetch('guides/text-styles.md', {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); typeMd = await r.text(); }
+      if (location.hash.slice(1) !== 'text-styles') return;
+      prose.innerHTML = DOMPurify.sanitize(marked.parse(preprocess(typeMd), {gfm: true, breaks: false}));
+      enhance(prose);
+    } catch (e) { prose.innerHTML = '<p>This page could not be loaded. Try reloading the page.</p>'; }
+  }
+
   /* ---------- Component rail ---------- */
   const CHEV = 'M6.263 15.146 12.31 8 6.263.854 4.737 2.146 9.69 8l-4.953 5.854 1.526 1.292Z';
   const MENU = 'M15 4H1V2H15V4ZM15 9H1V7H15V9ZM1 14H15V12H1V14Z';
@@ -805,7 +834,7 @@ body:not(.has-rail) #rail-shell{display:none}
     document.body.classList.toggle('has-rail', onDoc);
     setRailOpen(false);
     markRail(onDoc ? c.slug : null);
-    if (slug === 'token-changes') renderTokens(); else if (c) renderDoc(c); else renderIndex();
+    if (slug === 'token-changes') renderTokens(); else if (slug === 'text-styles') renderTextStyles(); else if (c) renderDoc(c); else renderIndex();
     window.scrollTo(0, 0);
   }
 
