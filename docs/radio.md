@@ -48,7 +48,7 @@ Shared rules: the same specs apply on Desktop and Mobile. Required labels end wi
 
 | Element | Default | Inline |
 | --- | --- | --- |
-| Label | `heading/sm/strong` (16 / 20px), `text/strong` | Same |
+| Label | `heading/xs/strong` (14 / 20px), `text/strong` | Same |
 | Gap between label, status message and options | `spacing/8` (8px) | Same |
 | Gap, helper text to options | `spacing/4` (4px) | Same |
 | Gap between options | `spacing/12` (12px), stacked | `spacing/24` (24px), side by side |

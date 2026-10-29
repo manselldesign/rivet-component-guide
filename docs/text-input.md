@@ -54,7 +54,7 @@ Shared rules: No fill and no radius, with a 1px `component/input/border` border 
 | --- | --- | --- | --- |
 | Field height | `component/input/height-lg` (48px) | `component/input/height-md` (40px) | `component/input/height-sm` (32px) |
 | Field padding | `spacing/12` left and right (12px) | `spacing/12` left and right (12px) | `spacing/8` left and right (8px) |
-| Label | `heading/sm/strong` (16 / 20px) | `heading/sm/strong` (16 / 20px) | `heading/xs/strong` (14 / 20px) |
+| Label | `heading/xs/strong` (14 / 20px) | `heading/xs/strong` (14 / 20px) | `heading/xs/strong` (14 / 20px) |
 | Label to helper text, no status message | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/4` (4px) |
 | Value text | `body/sm/regular` (16 / 24px) | `body/sm/regular` (16 / 24px) | `body/xs/regular` (14 / 20px) |
 | Gap, icon to value to icon | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/8` (8px) |

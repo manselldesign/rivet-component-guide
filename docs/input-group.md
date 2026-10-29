@@ -40,7 +40,7 @@ An input group joins a text field with a button or a fixed label, like a search 
 
 ## Developer spec checklist
 
-Shared rules: 1px `component/input/border` border on all sides, no radius. The button or label shares the field's height and sits flush inside the border. Focus adds a 2px `border/accent-strong` ring outside the field. Field text is `component/input/text`. Label above the field is `heading/sm/strong` (16 / 20px) on Large and Medium and `heading/xs/strong` (14 / 20px) on Small, `text/strong`, `spacing/8` below (8px); helper text sits `spacing/4` above the field (4px). Sizes don't change on Mobile.
+Shared rules: 1px `component/input/border` border on all sides, no radius. The button or label shares the field's height and sits flush inside the border. Focus adds a 2px `border/accent-strong` ring outside the field. Field text is `component/input/text`. Label above the field is `heading/xs/strong` (14 / 20px) at every size, `text/strong`, `spacing/8` below (8px); helper text sits `spacing/4` above the field (4px). Sizes don't change on Mobile.
 
 | Element | Large | Medium | Small |
 | --- | --- | --- | --- |
