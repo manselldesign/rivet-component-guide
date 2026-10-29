@@ -358,6 +358,14 @@
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-33"
     },
     {
+      "slug": "textarea",
+      "name": "Textarea",
+      "summary": "A larger field where readers type answers that run longer than one line, like a comment or a short essay.",
+      "status": "ready-for-dev",
+      "updated": "2026-10-29",
+      "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-34"
+    },
+    {
       "slug": "text-essay",
       "name": "Text Essay",
       "summary": "A text essay presents a mission, vision or editorial statement: a strong title, a few short sentences of supporting text and up to two buttons.",
