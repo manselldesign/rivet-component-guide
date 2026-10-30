@@ -56,3 +56,28 @@ Sizes 16px and under never change. Larger text shrinks so it fits a narrow scree
 
 ## Using these in code
 Each text style is one shorthand token: `--rvt-font-` plus the style name, with `/` turned into `-`. For example, `body/base/regular` becomes `--rvt-font-body-base-regular`. Every style, with its desktop and mobile values, is listed in the [token guide](#token-changes).
+
+## Token details
+The tokens are built in three tiers. Each tier answers a different question, and a token's name tells you which tier it belongs to.
+
+### Tier 1: Foundation (`color/…`, `spacing/…`, `type/…`)
+**What colors and sizes exist?** Raw values with no opinion about use. `color/brand/main` is simply `#990000`. The ramps run ultra-dark to ultra-light for `brand` and `base`, plus the four status families. Nothing in a component points here directly; foundation values only feed the semantic tier.
+
+### Tier 2: Semantic (`text/…`, `icon/…`, `background/…`, `border/…`)
+**What is this thing for?** Each name is a role, and each role has a value for every theme (Light, Dark and Crimson). This is the tier that makes theming work: a component bound to `text/strong` gets the right color in every theme without changing.
+
+| Group | Meaning | Modifiers |
+| --- | --- | --- |
+| `text/…` | Color of words | `default` body copy; `strong` headings and labels; `inverse` on dark or brand fills; `link`, `link-subtle` and `link-strong` the three link weights; `brand` identity crimson (white in the dark themes); `accent` interactive crimson (cream in the dark themes); `required` asterisks; `info`, `success`, `warning`, `danger` status copy |
+| `icon/…` | Same roles as text, for glyphs | Mirrors `text`, so an icon beside a label always matches it |
+| `background/…` | Fills behind content | `default` the page; `tint` grouped areas; `strong` hover fills; `raised` cards with a shadow; `muted` the quiet dark surface; `brand` crimson fill; `inverse` dark on light, light on dark; `<status>-subtle`, `-container` and `-strong` the three strengths of each status fill |
+| `border/…` | Lines and rules | `default` dividers; `strong` inputs and emphasis; `accent` focus rings and interactive outlines; `brand` decorative crimson rules; `on-brand` lines on crimson fills; status borders |
+| `-fixed` | Same value in every theme | Used where a status color must not shift, like badges and step indicators |
+
+Two rules keep this tier honest. A semantic token only ever points at a foundation token, never at a hex value. And `brand` means identity, while `accent` means "you can click this"; they look the same in Light and part ways in Dark and Crimson.
+
+### Tier 3: Component (`component/<name>/…`)
+**What is special about this one component?** Created only when a component needs something the semantic tier cannot say: a value that differs from the generic role per theme (`component/tabs/selected-text`, `component/tabs/hover-text`) or a size that belongs to one component (`component/tabs/segmented-height-lg`, `component/button/height-md`). Component tokens alias semantic tokens, never raw colors. They are the exception, not the habit.
+
+### Reading any token
+Every name is `tier / role / modifier`. `text/link-subtle` reads as "a text color, for links, the quiet version." When a new need comes up: if it can be named with an existing role, it is semantic; if it only makes sense inside one component, it is a component token; if it is a brand-new color, it goes in foundation first and gets a semantic name second. In code every token is `--rvt-` plus the Figma name with `/` turned into `-`, and the full list is in the [token guide](#token-changes).
