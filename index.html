@@ -6,7 +6,7 @@
 <title>Rivet 3 Component Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,300..800&family=Roboto+Mono:wght@100..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,YTAS,YTLC@8..144,-10..0,25..151,100..1000,649..854,416..570&family=Roboto+Mono:wght@100..700&display=swap">
 <!-- Rivet 3 tokens (generated from Figma). Component examples on detail pages are built only from these --rvt- tokens.
      The page theme sets .rvt-theme-light / -dark / -crimson on <html>, so every --rvt- semantic token follows the page theme. -->
 <link rel="stylesheet" href="generated/rivet-tokens.css">
@@ -90,6 +90,14 @@
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);font-weight:var(--w-normal);
   font-size:18px;line-height:28px;-webkit-font-smoothing:antialiased}
+/* ---------- Rivet type standards for the guide's own text (guides/text-styles.md: Variable font settings) ----------
+   Roboto Flex: body, action, link and heading text at width 110%; headings (weight 700) add YTAS 720 / YTLC 530; display text (the hero title) stays at width 100%.
+   Roboto Mono (tags, labels, code) has no width axis: 1px tracking, 2px for uppercase. Line heights sit on the 4px grid: 12/16, 14/20, 16/24, 18/28. */
+body{font-stretch:110%}
+.hero h1,.prose h2,.prose h3,.demo-title,.alert-title{font-variation-settings:"YTAS" 720,"YTLC" 530}
+.hero h1{font-stretch:100%}
+code,pre,.hero .tag,.hero-card-tag,.hub-title,.hub-tag,.doc-foot p,.prose h4,.prose thead th,.sn-label{font-stretch:normal}
+.hero-card-tag,.hub-tag{letter-spacing:1px}
 a{color:var(--text-accent);text-underline-offset:3px;text-decoration-thickness:1px}
 a:hover{text-decoration-thickness:2px}
 :focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
@@ -103,7 +111,8 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
 .hero .tag{font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px;color:#ffffff}
 .hero .tag a{color:inherit;text-decoration:none}
 .hero .tag a:hover{text-decoration:underline}
-.hero h1{font-size:clamp(36px,6vw,48px);line-height:1.0834;font-weight:var(--w-black);margin:0;color:#ffffff;text-wrap:balance;font-variation-settings:"opsz" 144}
+.hero h1{font-size:48px;line-height:52px;font-weight:var(--w-black);margin:0;color:#ffffff;text-wrap:balance}
+@media (max-width:767px){.hero h1{font-size:36px;line-height:40px}}
 .hero .intro{font-size:18px;line-height:28px;margin:20px 0 0;max-width:800px;color:#ffffff}
 .hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:40px}
 .hero :focus-visible{outline-color:#efdfc8}
@@ -255,7 +264,7 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .prose img{border:1px solid var(--border);display:block;margin-block:16px}
 .prose code{font-family:var(--font-mono);font-size:.85em;background:var(--code-bg);padding:1px 5px;color:var(--text-strong);white-space:nowrap}
 .prose pre{background:var(--code-bg);padding:16px;overflow:auto;max-height:75vh;margin:0 0 16px;border:1px solid var(--border)}
-.prose pre code{background:none;padding:0;white-space:pre;font-size:14px;line-height:22px}
+.prose pre code{background:none;padding:0;white-space:pre;font-size:14px;line-height:20px}
 .sw{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px;box-shadow:inset 0 0 0 1px rgba(127,127,127,.5)}
 .prose blockquote{margin:0 0 16px;padding-left:16px;border-left:2px solid var(--border)}
 
@@ -285,7 +294,7 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .table-wrap:focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
 /* Card pages: the row for the card being documented uses the rvt-table Striped row fill (background/tint) */
 .prose tbody tr.is-current th,.prose tbody tr.is-current td{background:var(--row-tint)}
-.prose thead th{background:var(--th-bg);color:var(--th-fg);font-family:var(--font-mono);font-size:14px;line-height:18px;letter-spacing:1px;font-weight:var(--w-normal);
+.prose thead th{background:var(--th-bg);color:var(--th-fg);font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:1px;font-weight:var(--w-normal);
   text-align:left;vertical-align:middle;padding:16px;height:48px;overflow-wrap:normal;word-break:normal;hyphens:none}
 .prose td{padding:24px 16px;vertical-align:middle;font-size:16px;line-height:24px;font-weight:var(--w-normal);color:var(--text);background:var(--bg);overflow-wrap:break-word}
 .prose td:first-child{font-weight:var(--w-bold);line-height:24px;color:var(--text-strong)}
@@ -402,8 +411,9 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .load{padding-block:64px;color:var(--text-muted)}
 /* ---------- Component rail (sidebar-v2-children sidenav, Dark mode) ----------
    Ported from prototype-hub sidebar/sidebar-v2-children: 280px rail, 24px inner pad, full height, 1px rule on the right edge.
-   Persistent title = t-section-heading 14/16 wght 600 wdth 115, accent + underline, 12px below, 1px rule.
-   Rows = sidenav-item: 12px top/bottom, T18 14/20 wght 350 wdth 112.5, 16px rvt-chevron-right, 8px gap, 1px hairline under each row.
+   Persistent title = action/sm/strong 14/20 wght 600, accent + underline, 12px below, 1px rule.
+   Rows = sidenav-item: 12px top/bottom, action/sm/regular 14/20 wght 350, 16px rvt-chevron-right, 8px gap, 1px hairline under each row.
+   Width is the site-wide 110% (body rule above); the prototype's 115 / 112.5 are not Rivet values.
    Current row: accent + underline (from-font), no chevron. Hover/focus: label underlined, label + chevron accent.
    Light prototype colors map to Dark-mode tokens: background/default #1f2528, border/default #000000,
    text/default #ffffff (ink), text/accent #fdfaf7 (crimson), accent-strong #efdfc8 (hover).
@@ -417,12 +427,12 @@ body:not(.has-rail) #rail-shell{display:none}
 #rail li{border-bottom:1px solid var(--rail-rule)}
 #rail li:last-child{border-bottom:0}
 .rail-title{display:flex;width:100%;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--rail-rule);
-  color:var(--rail-accent);text-decoration:none;font-size:14px;line-height:16px;font-weight:600;font-variation-settings:'wdth' 115}
+  color:var(--rail-accent);text-decoration:none;font-size:14px;line-height:20px;font-weight:600}
 .rail-title-label{min-width:0;flex:1;text-decoration:none;text-decoration-thickness:1px;text-underline-offset:3px}
 .rail-title:hover,.rail-title:focus-visible{color:var(--rail-strong);text-decoration:none}
 .rail-title:hover .rail-title-label,.rail-title:focus-visible .rail-title-label{text-decoration:underline}
 .rail-item{display:flex;align-items:center;gap:8px;padding:12px 0;color:var(--rail-text);text-decoration:none;
-  font-size:14px;line-height:20px;font-weight:350;font-variation-settings:'wdth' 112.5}
+  font-size:14px;line-height:20px;font-weight:350}
 .rail-label{min-width:0;flex:1;white-space:normal}
 .rail-chev{display:block;width:16px;height:16px;flex:none}
 .rail-chev svg{width:16px;height:16px;display:block;fill:currentColor}
@@ -453,7 +463,7 @@ body:not(.has-rail) #rail-shell{display:none}
   #rail-shell{position:sticky;top:0;z-index:20}
   .rail-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px;
     padding-inline:clamp(16px,5vw,80px);background:var(--rail-bg);border-bottom:1px solid var(--rail-rule)}
-  .rail-bar-title{color:var(--rail-text);text-decoration:none;font-size:14px;line-height:16px;font-weight:600;font-variation-settings:'wdth' 115}
+  .rail-bar-title{color:var(--rail-text);text-decoration:none;font-size:14px;line-height:20px;font-weight:600}
   .rail-bar-title:hover{color:var(--rail-strong)}
   #rail-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;flex:none;cursor:pointer;
     border:1px solid var(--rail-accent);background:transparent;color:var(--rail-accent);border-radius:0;-webkit-appearance:none;appearance:none}
@@ -480,7 +490,7 @@ body:not(.has-rail) #rail-shell{display:none}
 .sn-item+.sn-item{margin-left:-1px}
 .sn-item:hover{background:var(--row-tint)}
 .sn-item:focus-visible{z-index:1}
-.sn-label{display:flex;align-items:center;gap:4px;font-family:var(--font-mono);font-weight:var(--w-bold);font-size:14px;line-height:18px;letter-spacing:1px;color:var(--text-accent)}
+.sn-label{display:flex;align-items:center;gap:4px;font-family:var(--font-mono);font-weight:var(--w-bold);font-size:14px;line-height:20px;letter-spacing:1px;color:var(--text-accent)}
 .sn-label svg{width:12px;height:12px;flex:none;fill:var(--icon-accent)}
 .sn-prev .sn-label svg{transform:scaleX(-1)}
 .sn-title{font-size:20px;line-height:24px;font-weight:var(--w-bold);color:var(--text);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -496,9 +506,10 @@ body:not(.has-rail) #rail-shell{display:none}
 .demo-note{margin:0 0 var(--rvt-spacing-40);max-width:var(--read)}
 @media (max-width:560px){.demo{margin-bottom:72px}.demo-title{font-size:26px;line-height:28px}.demo-note{margin-bottom:var(--rvt-spacing-32)}}
 /* Same label style as rvt-text-input (.field-label): 16/20 SemiBold, text/strong, spacing/8 above the control */
-.demo-switch-label{display:block;font-size:16px;line-height:20px;font-weight:var(--w-bold);color:var(--text-strong);margin:0 0 var(--rvt-spacing-8)}
+.demo-switch-label{display:block;font-size:16px;line-height:20px;font-weight:var(--w-bold);font-stretch:var(--rvt-font-width-semi-expanded);color:var(--text-strong);margin:0 0 var(--rvt-spacing-8)}
 /* The stage has no border or padding of its own, so the component's own border is the only frame. */
-.demo-stage{margin-top:var(--rvt-spacing-24)}
+/* Each example is capped at its component's Figma Desktop frame width (demos.<slug>.maxWidth), so it never stretches past what was designed. */
+.demo-stage{margin-top:var(--rvt-spacing-24);max-width:var(--demo-max,none)}
 
 /* While a page theme is chosen (data-page-theme on <html>), the hero and the sidebar follow the --rvt- tokens too:
    rvt-hero-callout = background/default, border/default rule, tag + title text/brand, intro text/default, CTA Normal buttons border/accent + text/accent.
@@ -520,20 +531,21 @@ body:not(.has-rail) #rail-shell{display:none}
    Hover (unselected tabs) = component/tabs/hover-background fill + component/tabs/hover-text label. */
 .rvt-tabs--segmented{display:inline-flex;flex-wrap:wrap;padding:var(--rvt-spacing-4);gap:0;margin:0;background:var(--rvt-background-tint);border:1px solid var(--rvt-border-default)}
 .rvt-tabs__tab{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;height:var(--rvt-component-tabs-segmented-height-lg);padding:0 var(--rvt-spacing-16);margin:0;border:0;border-radius:0;
-  background:transparent;color:var(--rvt-text-strong);font:var(--rvt-font-action-lg-regular);letter-spacing:var(--rvt-font-tracking-none);cursor:pointer;-webkit-appearance:none;appearance:none;
+  background:transparent;color:var(--rvt-text-strong);font:var(--rvt-font-action-lg-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);cursor:pointer;-webkit-appearance:none;appearance:none;
   transition:background-color .15s ease-out,color .15s ease-out}
 /* Reserve the bold width so the tab doesn't shift when it becomes selected: an invisible zero-height copy of the label in the strong weight. */
-.rvt-tabs__tab::after{content:attr(data-label);display:block;height:0;overflow:hidden;visibility:hidden;font:var(--rvt-font-action-lg-strong);letter-spacing:var(--rvt-font-tracking-none);pointer-events:none}
+.rvt-tabs__tab::after{content:attr(data-label);display:block;height:0;overflow:hidden;visibility:hidden;font:var(--rvt-font-action-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);pointer-events:none}
 /* Hover applies to unselected tabs only; the selected tab keeps its brand fill and selected-text color. */
 .rvt-tabs__tab:not([aria-selected="true"]):hover{background:var(--rvt-component-tabs-hover-background);color:var(--rvt-component-tabs-hover-text)}
-.rvt-tabs__tab[aria-selected="true"]{background:var(--rvt-background-brand);color:var(--rvt-component-tabs-selected-text);font:var(--rvt-font-action-lg-strong)}
+.rvt-tabs__tab[aria-selected="true"]{background:var(--rvt-background-brand);color:var(--rvt-component-tabs-selected-text);font:var(--rvt-font-action-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);}
 .rvt-tabs__tab:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0;position:relative;z-index:1}
-@media (max-width:767px){.rvt-tabs__tab{height:var(--rvt-component-tabs-segmented-height-sm);font:var(--rvt-font-action-sm-regular)}.rvt-tabs__tab[aria-selected="true"],.rvt-tabs__tab::after{font:var(--rvt-font-action-sm-strong)}}
+@media (max-width:767px){.rvt-tabs__tab{height:var(--rvt-component-tabs-segmented-height-sm);font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);}.rvt-tabs__tab[aria-selected="true"],.rvt-tabs__tab::after{font:var(--rvt-font-action-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);}}
 
 /* ---------- rvt-accordion (Accordion page, Developer spec checklist) ----------
    Item: 1px border/default all sides, one shared 1px rule between items. Whole item fills background/tint on hover, open or closed.
    Trigger: spacing/24 all sides, spacing/16 gap, title action/xl/strong text/strong; icon 16px icon/strong, spacing/4 down to sit on the first line.
    Panel: spacing/24 left, right, bottom; body/base/regular text/default, max-width 811px.
+   Width: every Roboto Flex style here is font/width/semi-expanded (wdth 110%), set as font-stretch AFTER the font shorthand (the shorthand resets it).
    Focus: 2px border/accent-strong outline, 2px offset, on the trigger. Open/close: height + opacity, 220ms ease-out; the icon swaps, it does not spin. */
 .rvt-accordion{margin:0;padding:0;width:100%}
 /* One 1px rule between items: every item has a top, left and right border; only the last adds a bottom. No overlapping borders. */
@@ -542,7 +554,7 @@ body:not(.has-rail) #rail-shell{display:none}
 .rvt-accordion__item:hover{background:var(--rvt-background-tint)}
 .rvt-accordion__heading{margin:0}
 .rvt-accordion__trigger{display:flex;align-items:flex-start;gap:var(--rvt-spacing-16);width:100%;padding:var(--rvt-spacing-24);margin:0;border:0;border-radius:0;background:transparent;
-  color:var(--rvt-text-strong);font:var(--rvt-font-action-xl-strong);letter-spacing:var(--rvt-font-tracking-none);text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none}
+  color:var(--rvt-text-strong);font:var(--rvt-font-action-xl-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none}
 .rvt-accordion__trigger:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px;position:relative;z-index:1}
 .rvt-accordion__title{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
 .rvt-accordion__icon{flex:none;width:16px;height:16px;margin-top:var(--rvt-spacing-4);color:var(--rvt-icon-strong)}
@@ -553,7 +565,7 @@ body:not(.has-rail) #rail-shell{display:none}
 .rvt-accordion__panel{display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden;transition:grid-template-rows .22s ease-out,opacity .22s ease-out,visibility 0s linear .22s}
 .rvt-accordion__panel.is-open{grid-template-rows:1fr;opacity:1;visibility:visible;transition:grid-template-rows .22s ease-out,opacity .22s ease-out,visibility 0s}
 .rvt-accordion__panel>div{min-height:0;overflow:hidden}
-.rvt-accordion__body{padding:0 var(--rvt-spacing-24) var(--rvt-spacing-24);max-width:811px;font:var(--rvt-font-body-base-regular);letter-spacing:var(--rvt-font-tracking-none);color:var(--rvt-text-default)}
+.rvt-accordion__body{padding:0 var(--rvt-spacing-24) var(--rvt-spacing-24);max-width:811px;font:var(--rvt-font-body-base-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);color:var(--rvt-text-default)}
 .rvt-accordion__body>*{margin:0}
 .rvt-accordion__body>*+*{margin-top:var(--rvt-spacing-16)}
 .rvt-accordion__body a{color:var(--rvt-text-link);text-underline-offset:3px;text-decoration-thickness:1px;transition:text-decoration-color .15s ease-out}
@@ -661,6 +673,7 @@ body:not(.has-rail) #rail-shell{display:none}
   ];
   const demos = {
     accordion: {
+      maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
       html: () => `<div class="rvt-accordion" data-rvt-accordion>${ACCORDION_ITEMS.map((it, i) => `
         <div class="rvt-accordion__item">
           <h3 class="rvt-accordion__heading">
@@ -705,7 +718,7 @@ body:not(.has-rail) #rail-shell{display:none}
       <h2 class="demo-title" id="demo-title">Example</h2>
       <p class="demo-note">Shows how I envision the component in all its glory. 🤘</p>
       ${themeTabs()}
-      <div class="demo-stage" id="demo-stage" role="tabpanel" aria-label="${esc(c.name)} example">${d.html()}</div>
+      <div class="demo-stage" id="demo-stage" role="tabpanel" aria-label="${esc(c.name)} example"${d.maxWidth ? ` style="--demo-max:${d.maxWidth}px"` : ''}>${d.html()}</div>
     </section>`;
   };
   function wireDemo(c) {

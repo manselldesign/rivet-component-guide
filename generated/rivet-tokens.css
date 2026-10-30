@@ -132,6 +132,13 @@
 	--rvt-font-width-normal: 100%;
 	--rvt-font-width-semi-expanded: 110%;
 	--rvt-font-width-expanded: 115%;
+	/* Variable-font axes (Roboto Flex), as set in Figma. */
+	--rvt-font-slant-standard: -10;
+	--rvt-font-optical-size-standard: 14;
+	/* Ready-made font-variation-settings values, one per style group that uses extra axes. The 720/530 values are set per
+	   text style in Figma (every heading style and the strong display styles), not as variables, so they are written out here. */
+	--rvt-font-axes-heading: "YTAS" 720, "YTLC" 530;
+	--rvt-font-axes-display-caps: "slnt" var(--rvt-font-slant-standard);
 	--rvt-component-button-height-sm: 24px;
 	--rvt-component-button-height-md: 32px;
 	--rvt-component-button-height-lg: 48px;
@@ -758,7 +765,18 @@
 	--rvt-font-component-avatar-48: var(--rvt-font-weight-600) var(--rvt-component-avatar-type-48)/var(--rvt-component-avatar-type-48) var(--rvt-font-family-sans);
 	--rvt-font-component-avatar-40: var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
 	--rvt-font-component-avatar-32: var(--rvt-font-weight-600) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans);
-	/* Text styles with a width or tracking also need the alsoSet properties listed in the guide (font-stretch, letter-spacing, text-transform, text-decoration). */
+	/* Each --rvt-font-<style> shorthand sets weight, size/line-height and family only. Every Roboto Flex style also sets its width,
+	   and some set extra axes. Declare these AFTER the font shorthand, which resets font-stretch:
+	   display strong        font-stretch: var(--rvt-font-width-normal);        font-variation-settings: var(--rvt-font-axes-heading)
+	   display/xl/caps       font-stretch: var(--rvt-font-width-normal);        font-variation-settings: var(--rvt-font-axes-display-caps); text-transform: uppercase
+	   heading               font-stretch: var(--rvt-font-width-semi-expanded); font-variation-settings: var(--rvt-font-axes-heading)
+	   body, action          font-stretch: var(--rvt-font-width-semi-expanded)
+	   link/base, /sm, /xs   font-stretch: var(--rvt-font-width-semi-expanded); text-decoration: underline
+	   tag caps              letter-spacing: var(--rvt-font-tracking-xl); text-transform: uppercase
+	   tag strong, regular   letter-spacing: var(--rvt-font-tracking-lg)
+	   component avatar      no width (100%)
+	   component number      font-stretch: 150% (no width variable in Figma yet; see the token guide)
+	   component lockup      see the token guide (fixed widths and optical sizes per style) */
 	--rvt-shadow-xs: 0 1px 4px 0px var(--rvt-shadow-color-xs);
 	--rvt-shadow-sm: 0 2px 8px 0px var(--rvt-shadow-color-sm);
 	--rvt-shadow-md: 0 4px 12px 0px var(--rvt-shadow-color-md);

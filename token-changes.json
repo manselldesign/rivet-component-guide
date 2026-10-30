@@ -37,6 +37,7 @@
     "2. Make the changes in 'componentChanges' (15 visual changes, plus badge token names and the CTA hover icon token, which don't change the look).",
     "3. Replace old names with new ones using 'migration' (search and replace; old names keep working through the aliases until you're done).",
     "4. Apply the value changes marked 'value change' (text styles, font weight 700, font width 110%, shadows, mobile spacing).",
+    "4b. Load Roboto Flex with the wght, wdth, slnt, YTAS and YTLC axes (see generated/rivet-tokens.css header comment) and add the 'alsoSet' declarations after each font shorthand. Without the axes loaded, font-variation-settings does nothing.",
     "5. Delete the deprecated aliases and the code-only tokens Jenn approves removing ('codeOnly').",
     "After that, Figma and code match 1:1. New tokens start in Figma; name suggestions go through 'namingSuggestions'."
   ],
@@ -2651,7 +2652,7 @@
     },
     "typography": {
       "textStyles": {
-        "note": "Each Figma text style becomes one --rvt-font-* shorthand (font: weight size/line-height family, plus width). 'rename' = same values as today's code token; 'rename + value change' = closest code token, valueChanges lists what moves to Figma's spec; 'add' = no code token yet.",
+        "note": "Each Figma text style becomes one --rvt-font-* shorthand (font: weight size/line-height family). The shorthand never carries width or extra axes: 'spec' lists every axis the style uses in Figma (width, ytas, ytlc, slant) and 'alsoSet' is exactly what to declare after the shorthand (font-stretch, font-variation-settings, letter-spacing, text-transform, text-decoration). Declare font-stretch after the shorthand, which resets it. 'rename' = same values as today's code token; 'rename + value change' = closest code token, valueChanges lists what moves to Figma's spec; 'add' = no code token yet.",
         "styles": [
           {
             "name": "display/xl/caps",
@@ -2668,7 +2669,8 @@
                 "desktop": 56,
                 "mobile": 36
               },
-              "textTransform": "uppercase"
+              "textTransform": "uppercase",
+              "slant": -10
             },
             "codeToday": "--rvt-font-36-fluid-extra-black",
             "action": "rename + value change",
@@ -2677,6 +2679,8 @@
             ],
             "cssValue": "var(--rvt-font-weight-825) var(--rvt-type-size-36-54)/var(--rvt-type-line-height-40-56) var(--rvt-font-family-sans-display)",
             "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-normal)",
+              "font-variation-settings": "var(--rvt-font-axes-display-caps)",
               "text-transform": "uppercase"
             }
           },
@@ -2694,7 +2698,9 @@
               "lineHeight": {
                 "desktop": 56,
                 "mobile": 36
-              }
+              },
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": "--rvt-font-36-fluid-black",
             "action": "rename + value change",
@@ -2703,7 +2709,11 @@
               "weight 750 vs Figma 700",
               "width 'semi-condensed' vs Figma 100"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-36-54)/var(--rvt-type-line-height-40-56) var(--rvt-font-family-sans-display)"
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-36-54)/var(--rvt-type-line-height-40-56) var(--rvt-font-family-sans-display)",
+            "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-normal)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
+            }
           },
           {
             "name": "display/lg/strong",
@@ -2719,7 +2729,9 @@
               "lineHeight": {
                 "desktop": 52,
                 "mobile": 32
-              }
+              },
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": "--rvt-font-29-fluid-black",
             "action": "rename + value change",
@@ -2727,7 +2739,11 @@
               "weight 750 vs Figma 700",
               "width 'semi-condensed' vs Figma 100"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-29-48)/var(--rvt-type-line-height-32-52) var(--rvt-font-family-sans-display)"
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-29-48)/var(--rvt-type-line-height-32-52) var(--rvt-font-family-sans-display)",
+            "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-normal)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
+            }
           },
           {
             "name": "display/md/strong",
@@ -2743,11 +2759,17 @@
               "lineHeight": {
                 "desktop": 40,
                 "mobile": 28
-              }
+              },
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-26-36)/var(--rvt-type-line-height-28-40) var(--rvt-font-family-sans-display)"
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-26-36)/var(--rvt-type-line-height-28-40) var(--rvt-font-family-sans-display)",
+            "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-normal)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
+            }
           },
           {
             "name": "display/sm/strong",
@@ -2757,14 +2779,20 @@
               "weight": 700,
               "width": 100,
               "size": 29,
-              "lineHeight": 32
+              "lineHeight": 32,
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": "--rvt-font-29-black",
             "action": "rename + value change",
             "valueChanges": [
               "weight 750 vs Figma 700"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-29)/var(--rvt-type-line-height-32) var(--rvt-font-family-sans-display)"
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-29)/var(--rvt-type-line-height-32) var(--rvt-font-family-sans-display)",
+            "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-normal)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
+            }
           },
           {
             "name": "display/xs/strong",
@@ -2780,7 +2808,9 @@
               "lineHeight": {
                 "desktop": 28,
                 "mobile": 24
-              }
+              },
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": "--rvt-font-20-fluid-black",
             "action": "rename + value change",
@@ -2788,7 +2818,11 @@
               "weight 750 vs Figma 700",
               "width 'semi-condensed' vs Figma 100"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans-display)"
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans-display)",
+            "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-normal)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
+            }
           },
           {
             "name": "heading/3xl/strong",
@@ -2804,13 +2838,16 @@
               "lineHeight": {
                 "desktop": 40,
                 "mobile": 28
-              }
+              },
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": null,
             "action": "add",
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-26-36)/var(--rvt-type-line-height-28-40) var(--rvt-font-family-sans-heading)",
             "alsoSet": {
-              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
             }
           },
           {
@@ -2827,13 +2864,16 @@
               "lineHeight": {
                 "desktop": 36,
                 "mobile": 32
-              }
+              },
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": null,
             "action": "add",
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans-heading)",
             "alsoSet": {
-              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
             }
           },
           {
@@ -2850,13 +2890,16 @@
               "lineHeight": {
                 "desktop": 32,
                 "mobile": 28
-              }
+              },
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": null,
             "action": "add",
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-28-32) var(--rvt-font-family-sans-heading)",
             "alsoSet": {
-              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
             }
           },
           {
@@ -2873,13 +2916,16 @@
               "lineHeight": {
                 "desktop": 28,
                 "mobile": 24
-              }
+              },
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": null,
             "action": "add",
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans-heading)",
             "alsoSet": {
-              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
             }
           },
           {
@@ -2890,7 +2936,9 @@
               "weight": 700,
               "width": 110,
               "size": 20,
-              "lineHeight": 24
+              "lineHeight": 24,
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": "--rvt-font-20-black",
             "action": "rename + value change",
@@ -2900,7 +2948,8 @@
             ],
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-20)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans-heading)",
             "alsoSet": {
-              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
             }
           },
           {
@@ -2911,7 +2960,9 @@
               "weight": 700,
               "width": 110,
               "size": 16,
-              "lineHeight": 20
+              "lineHeight": 20,
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": "--rvt-font-16-bold",
             "action": "rename + value change",
@@ -2921,7 +2972,8 @@
             ],
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-16)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans-heading)",
             "alsoSet": {
-              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
             }
           },
           {
@@ -2932,7 +2984,9 @@
               "weight": 700,
               "width": 110,
               "size": 14,
-              "lineHeight": 20
+              "lineHeight": 20,
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": "--rvt-font-14-bold",
             "action": "rename + value change",
@@ -2941,7 +2995,8 @@
             ],
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans-heading)",
             "alsoSet": {
-              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
             }
           },
           {
@@ -2952,7 +3007,9 @@
               "weight": 700,
               "width": 110,
               "size": 12,
-              "lineHeight": 16
+              "lineHeight": 16,
+              "ytas": 720,
+              "ytlc": 530
             },
             "codeToday": "--rvt-font-12-bold",
             "action": "rename + value change",
@@ -2963,7 +3020,8 @@
             ],
             "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans-heading)",
             "alsoSet": {
-              "font-stretch": "var(--rvt-font-width-semi-expanded)"
+              "font-stretch": "var(--rvt-font-width-semi-expanded)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
             }
           },
           {
@@ -4132,11 +4190,16 @@
               "font": "Roboto Flex",
               "weight": 825,
               "size": 42,
-              "lineHeight": 44
+              "lineHeight": 44,
+              "width": 150
             },
             "codeToday": "--rvt-font-42-extra-black",
             "action": "rename",
-            "cssValue": "var(--rvt-font-weight-825) var(--rvt-type-size-42)/var(--rvt-type-line-height-44) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-825) var(--rvt-type-size-42)/var(--rvt-type-line-height-44) var(--rvt-font-family-sans)",
+            "note": "Figma sets width 150% on this style but has no font/width variable for it. Options: add font/width/extra-expanded (150) in Figma, or keep it as a raw value here.",
+            "alsoSet": {
+              "font-stretch": "150%"
+            }
           },
           {
             "name": "component/number/regular",
@@ -4145,14 +4208,19 @@
               "font": "Roboto Flex",
               "weight": 350,
               "size": 42,
-              "lineHeight": 44
+              "lineHeight": 44,
+              "width": 150
             },
             "codeToday": "--rvt-font-42-extra-black",
             "action": "rename + value change",
             "valueChanges": [
               "weight 825 vs Figma 350"
             ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-42)/var(--rvt-type-line-height-44) var(--rvt-font-family-sans)"
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-42)/var(--rvt-type-line-height-44) var(--rvt-font-family-sans)",
+            "note": "Figma sets width 150% on this style but has no font/width variable for it. Options: add font/width/extra-expanded (150) in Figma, or keep it as a raw value here.",
+            "alsoSet": {
+              "font-stretch": "150%"
+            }
           },
           {
             "name": "component/avatar/224",
@@ -4161,7 +4229,8 @@
               "font": "Roboto Flex",
               "weight": 600,
               "size": 108,
-              "lineHeight": 108
+              "lineHeight": 108,
+              "width": 100
             },
             "codeToday": null,
             "action": "add",
@@ -4174,7 +4243,8 @@
               "font": "Roboto Flex",
               "weight": 600,
               "size": 72,
-              "lineHeight": 72
+              "lineHeight": 72,
+              "width": 100
             },
             "codeToday": null,
             "action": "add",
@@ -4187,7 +4257,8 @@
               "font": "Roboto Flex",
               "weight": 600,
               "size": 56,
-              "lineHeight": 56
+              "lineHeight": 56,
+              "width": 100
             },
             "codeToday": null,
             "action": "add",
@@ -4200,7 +4271,8 @@
               "font": "Roboto Flex",
               "weight": 600,
               "size": 48,
-              "lineHeight": 48
+              "lineHeight": 48,
+              "width": 100
             },
             "codeToday": null,
             "action": "add",
@@ -4213,7 +4285,8 @@
               "font": "Roboto Flex",
               "weight": 600,
               "size": 36,
-              "lineHeight": 36
+              "lineHeight": 36,
+              "width": 100
             },
             "codeToday": null,
             "action": "add",
@@ -4226,7 +4299,8 @@
               "font": "Roboto Flex",
               "weight": 600,
               "size": 28,
-              "lineHeight": 28
+              "lineHeight": 28,
+              "width": 100
             },
             "codeToday": null,
             "action": "add",
@@ -4239,7 +4313,8 @@
               "font": "Roboto Flex",
               "weight": 600,
               "size": 20,
-              "lineHeight": 20
+              "lineHeight": 20,
+              "width": 100
             },
             "codeToday": "--rvt-font-20-bold",
             "action": "rename + value change",
@@ -4255,7 +4330,8 @@
               "font": "Roboto Flex",
               "weight": 600,
               "size": 16,
-              "lineHeight": 16
+              "lineHeight": 16,
+              "width": 100
             },
             "codeToday": "--rvt-font-16-bold",
             "action": "rename + value change",
@@ -4271,7 +4347,8 @@
               "font": "Roboto Flex",
               "weight": 600,
               "size": 14,
-              "lineHeight": 14
+              "lineHeight": 14,
+              "width": 100
             },
             "codeToday": "--rvt-font-14-bold",
             "action": "rename + value change",
@@ -4888,14 +4965,32 @@
           "css": "--rvt-font-slant-standard",
           "value": -10,
           "codeToday": "--rvt-font-variation-slant (\"slnt\" -10)",
-          "action": "rename"
+          "action": "rename",
+          "note": "Used by display/xl/caps only. Figma stores it as a string variable."
         },
         {
           "name": "font/optical-size/standard",
           "css": "--rvt-font-optical-size-standard",
           "value": 14,
           "codeToday": null,
-          "action": "add"
+          "action": "add",
+          "note": "Figma's default optical size. Browsers set opsz automatically from the font size (font-optical-sizing: auto), so nothing needs to reference this in code unless a style pins it."
+        },
+        {
+          "name": "(code) font/axes/heading",
+          "css": "--rvt-font-axes-heading",
+          "value": "\"YTAS\" 720, \"YTLC\" 530",
+          "codeToday": null,
+          "action": "add",
+          "note": "Code-side value for font-variation-settings. YTAS 720 and YTLC 530 are set on each heading/* and display/*/strong style in Figma (no axis variables), so the numbers are written out. Same idea as the --rvt-font-<style> shorthands: built from what Figma sets, no Figma counterpart needed."
+        },
+        {
+          "name": "(code) font/axes/display-caps",
+          "css": "--rvt-font-axes-display-caps",
+          "value": "\"slnt\" -10",
+          "codeToday": "--rvt-font-variation-slant",
+          "action": "rename",
+          "note": "Code-side composite of font/slant/standard for font-variation-settings."
         },
         {
           "name": "type/paragraph-spacing/step-01",
