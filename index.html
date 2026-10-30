@@ -239,12 +239,13 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 /* Text stays at the 800px reading width; tables use the full content width so columns have room. */
 .doc{min-width:0}
 .prose>:not(.table-wrap):not(.ex),.doc-foot{max-width:var(--read)}
-.doc-foot{margin-top:48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:16px}
+.doc-foot{margin-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:16px}
 .doc-foot p{margin:0;font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--text-muted)}
 
 /* ---------- Prose ---------- */
 .prose>:first-child{margin-top:0}
-.prose h2{font-size:29px;line-height:36px;font-weight:var(--w-black);color:var(--text-strong);margin:0;text-wrap:balance}
+/* Section titles use the H1 size from the Details Page (heading/3xl/strong: 36/40 desktop, 26/28 mobile). The element stays an h2 so the hero keeps the page's single h1. */
+.prose h2{font-size:36px;line-height:40px;font-weight:var(--w-black);color:var(--text-strong);margin:0;text-wrap:balance}
 .prose h3{font-size:23px;line-height:28px;font-weight:var(--w-black);color:var(--text-strong);margin:0;text-wrap:balance}
 .prose h4{font-family:var(--font-mono);font-size:12px;line-height:16px;letter-spacing:2px;text-transform:uppercase;font-weight:400;color:var(--text-brand);margin:24px 0 8px}
 .prose p{margin:0 0 16px}
@@ -388,7 +389,7 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .prose>:first-child{margin-top:0}
 @media (max-width:560px){
   .prose{font-size:16px;line-height:24px}
-  .prose h2{font-size:23px;line-height:32px}
+  .prose h2{font-size:26px;line-height:28px}
   .prose h3{font-size:20px;line-height:24px}
   .prose>h2{margin-top:72px}
   .prose>h3{margin-top:32px}
@@ -425,7 +426,7 @@ body:not(.has-rail) #rail-shell{display:none}
 .rail-label{min-width:0;flex:1;white-space:normal}
 .rail-chev{display:block;width:16px;height:16px;flex:none}
 .rail-chev svg{width:16px;height:16px;display:block;fill:currentColor}
-.rail-item[aria-current="page"]{color:var(--rail-accent)}
+.rail-item[aria-current="page"]{color:var(--rail-accent);font-weight:var(--w-bold)}
 .rail-item[aria-current="page"] .rail-label{text-decoration:underline;text-underline-position:from-font;text-decoration-thickness:1px}
 .rail-item[aria-current="page"] .rail-chev{color:var(--rail-accent)} /* icon/accent: chevron stays, changes color with the label */
 .rail-item:active,.rail-item:focus-visible{color:var(--rail-strong);text-decoration:none}
@@ -491,9 +492,9 @@ body:not(.has-rail) #rail-shell{display:none}
 :root{--rvt-font-family-sans:var(--font-sans)}
 /* Same rhythm as the Details Page text block: H2 → 24 → paragraph; the next section ("What it is") sits 96 below the example (72 on mobile). */
 .demo{margin:0 0 var(--rvt-spacing-96)}
-.demo-title{font-size:29px;line-height:36px;font-weight:var(--w-black);color:var(--text-strong);margin:0 0 var(--rvt-spacing-24);text-wrap:balance}
+.demo-title{font-size:36px;line-height:40px;font-weight:var(--w-black);color:var(--text-strong);margin:0 0 var(--rvt-spacing-24);text-wrap:balance}
 .demo-note{margin:0 0 var(--rvt-spacing-40);max-width:var(--read)}
-@media (max-width:560px){.demo{margin-bottom:72px}.demo-title{font-size:23px;line-height:32px}.demo-note{margin-bottom:var(--rvt-spacing-32)}}
+@media (max-width:560px){.demo{margin-bottom:72px}.demo-title{font-size:26px;line-height:28px}.demo-note{margin-bottom:var(--rvt-spacing-32)}}
 /* Same label style as rvt-text-input (.field-label): 16/20 SemiBold, text/strong, spacing/8 above the control */
 .demo-switch-label{display:block;font-size:16px;line-height:20px;font-weight:var(--w-bold);color:var(--text-strong);margin:0 0 var(--rvt-spacing-8)}
 /* The stage has no border or padding of its own, so the component's own border is the only frame. */
@@ -892,10 +893,10 @@ body:not(.has-rail) #rail-shell{display:none}
       </ol></nav>
       <main class="wrap detail">
         <article class="doc">${demoSection(c)}<div class="prose" id="prose"><p class="load">Loading…</p></div>
+          ${seriesNav(c)}
           <footer class="doc-foot">
             <p>${c.updated ? 'Last updated ' + fmtDate(c.updated) : ''}</p>
           </footer>
-          ${seriesNav(c)}
         </article>
       </main>`;
     wireDemo(c);
