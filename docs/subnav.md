@@ -16,13 +16,13 @@ A row of links that moves readers between the pages inside one section of a site
 
 ## Variants
 
-### Device
+### Breakpoint
 - **Desktop:** Links sit side by side, each as wide as its text
 - **Mobile:** Links keep their natural width and the row scrolls sideways, so readers can swipe to see more
 
 ### State
 - **Default:** A link at rest
-- **Hover:** The link gets a tinted background when a reader points at it. Desktop only
+- **Hover:** The link gets a darker background when a reader points at it. Desktop only
 - **Selected:** The current page. Shows a thick red line under the link and stronger text. Mark only one link
 
 ## Writing tips

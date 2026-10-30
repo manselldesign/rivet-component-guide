@@ -5,14 +5,14 @@
       "name": "Accordion",
       "summary": "A stacked list of titles that each open to show more content.",
       "status": "ready-for-dev",
-      "updated": "2026-10-14"
+      "updated": "2026-10-30"
     },
     {
       "slug": "badge",
       "name": "Badge",
       "summary": "A small label that shows the status or category of something at a glance.",
       "status": "ready-for-dev",
-      "updated": "2026-10-14",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-4"
     },
     {
@@ -68,7 +68,7 @@
       "name": "Callout",
       "summary": "A highlighted box that draws attention to one thing on a page, with a short title, description, picture and up to two links.",
       "status": "ready-for-dev",
-      "updated": "2026-10-28",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-5"
     },
     {
@@ -76,7 +76,7 @@
       "name": "Card-default",
       "summary": "A clickable box that previews one page, like a resource, service or degree program, and links to it.",
       "status": "ready-for-dev",
-      "updated": "2026-10-28",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-10"
     },
     {
@@ -84,7 +84,7 @@
       "name": "Card-contact",
       "summary": "A card that shows people how to reach an office, team or department, with the address, email, phone, website, hours and social links in one place.",
       "status": "ready-for-dev",
-      "updated": "2026-10-28",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1640-65714"
     },
     {
@@ -148,7 +148,7 @@
       "name": "Dropdown",
       "summary": "A dropdown is a short menu that opens from a button or a header link, like an account menu with \"My profile\" and \"Sign out\".",
       "status": "working",
-      "updated": "2026-10-21",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-13"
     },
     {
@@ -164,7 +164,7 @@
       "name": "File input",
       "summary": "A file input lets people attach a file to a form, like a letter of recommendation, a transcript or a résumé.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-15"
     },
     {
@@ -172,14 +172,14 @@
       "name": "Footer",
       "summary": "The band at the bottom of every page with IU contact details, key links, social media links and required legal links.",
       "status": "ready-for-dev",
-      "updated": "2026-10-22"
+      "updated": "2026-10-30"
     },
     {
       "slug": "hero-split",
       "name": "Hero – Split",
       "summary": "A large banner at the top of a page with the headline and intro on one side and a photo on the other.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29"
+      "updated": "2026-10-30"
     },
     {
       "slug": "hero-profile",
@@ -202,7 +202,7 @@
       "name": "Hero – Callout",
       "summary": "The callout hero is the default hero, the banner at the top of most pages.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=314-3617"
     },
     {
@@ -210,7 +210,7 @@
       "name": "Hero – Statement",
       "summary": "A statement hero opens a page with a bold headline and one to three large photos.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=3551-18446"
     },
     {
@@ -218,7 +218,7 @@
       "name": "Hero – Feature",
       "summary": "A feature hero is the large banner at the top of a page, with a wide headline and intro above a large photo.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=3824-11364"
     },
     {
@@ -258,7 +258,7 @@
       "name": "Pagination",
       "summary": "A row of page numbers and arrows that splits a long list of results into pages.",
       "status": "ready-for-dev",
-      "updated": "2026-10-27",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-22"
     },
     {
@@ -290,7 +290,7 @@
       "name": "Select input",
       "summary": "A field that opens a list of options so readers can pick one.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-25"
     },
     {
@@ -298,7 +298,7 @@
       "name": "Series nav",
       "summary": "A pair of links at the end of a page that take readers to the previous or next page in a series.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-26"
     },
     {
@@ -338,7 +338,7 @@
       "name": "Subnav",
       "summary": "A row of links that moves readers between the pages inside one section of a site.",
       "status": "ready-for-dev",
-      "updated": "2026-10-28",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-30"
     },
     {
@@ -346,7 +346,7 @@
       "name": "Table",
       "summary": "A grid of rows and columns that lets readers compare facts side by side, like tuition by program or office hours by department.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-31"
     },
     {
@@ -354,7 +354,7 @@
       "name": "Text input",
       "summary": "A field where readers type a short answer, like a name, email address or search term.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-33"
     },
     {
@@ -362,7 +362,7 @@
       "name": "Textarea",
       "summary": "A larger field where readers type answers that run longer than one line, like a comment or a short essay.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-34"
     },
     {
@@ -370,7 +370,7 @@
       "name": "Text Essay",
       "summary": "A text essay presents a mission, vision or editorial statement: a strong title, a few short sentences of supporting text and up to two buttons.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-30",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=8437-1619"
     },
     {

@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -34,14 +34,14 @@
   },
   "toDo": [
     "1. Add generated/rivet-tokens.css (download from this guide) after the current token CSS. It defines every token with its Figma name: palette, all three themes, mobile values, text-style shorthands, shadows, and aliases for the old names so nothing breaks.",
-    "2. Make the changes in 'componentChanges' (9 visual changes, plus badge token names and the CTA hover icon token, which don't change the look).",
+    "2. Make the changes in 'componentChanges' (15 visual changes, plus badge token names and the CTA hover icon token, which don't change the look).",
     "3. Replace old names with new ones using 'migration' (search and replace; old names keep working through the aliases until you're done).",
     "4. Apply the value changes marked 'value change' (text styles, font weight 700, font width 110%, shadows, mobile spacing).",
     "5. Delete the deprecated aliases and the code-only tokens Jenn approves removing ('codeOnly').",
     "After that, Figma and code match 1:1. New tokens start in Figma; name suggestions go through 'namingSuggestions'."
   ],
   "summary": {
-    "themeColors": 138,
+    "themeColors": 146,
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
     "textStyles": 79,
@@ -71,7 +71,7 @@
     },
     {
       "component": "Form buttons (.rvt-button default, --strong, --subtle) — button/button.css",
-      "change": "Same logic as inputs. Light looks the same. Dark/Crimson: cream at rest, tan (#efdfc8) on hover. CTA buttons unchanged.",
+      "change": "Same logic as inputs. Light looks the same. Dark/Crimson: cream at rest, tan (#ebd8bc) on hover. CTA buttons unchanged.",
       "use": {
         ".rvt-button": {
           "--color-border": "--rvt-component-button-form-border",
@@ -121,7 +121,7 @@
     },
     {
       "component": "Links and CTA buttons (anything using text/accent, icon/accent, border/accent, text/link)",
-      "change": "Dark and Crimson: interactive items use ultra-light cream (#fdfaf7) at rest instead of #faf6ef. Hover stays tan (#efdfc8), same as before. Light looks the same.",
+      "change": "Dark and Crimson: interactive items use ultra-light cream (#fdfaf7) at rest instead of #faf6ef. Hover stays tan (#ebd8bc), same as before. Light looks the same.",
       "use": {
         "at rest": "--rvt-text-accent / --rvt-icon-accent / --rvt-border-accent / --rvt-text-link (values updated in rivet-tokens.css)",
         "hover": "--rvt-text-brand-strong / --rvt-icon-accent-strong / --rvt-border-accent-strong"
@@ -136,7 +136,7 @@
     },
     {
       "component": "Breadcrumbs — breadcrumbs/breadcrumbs.css",
-      "change": "Hover follows the button hover logic. Dark/Crimson: links and the home icon are ultra-light cream (#fdfaf7) instead of white, tan (#efdfc8) on hover. Light: link hover goes from #990000 to #6d0808. Chevrons never change on hover.",
+      "change": "Hover follows the button hover logic. Dark/Crimson: links and the home icon are ultra-light cream (#fdfaf7) instead of white, tan (#ebd8bc) on hover. Light: link hover goes from #990000 to #6d0808. Chevrons never change on hover.",
       "use": {
         "link": "--rvt-text-link-subtle",
         "link:hover": "--rvt-text-brand-strong + underline",
@@ -187,7 +187,7 @@
     },
     {
       "component": "Text essay — text-essay",
-      "change": "Lists use square bullets in --rvt-component-list-marker (crimson on Light, #efdfc8 on Dark and Crimson). List text matches the body text size around it.",
+      "change": "Lists use square bullets in --rvt-component-list-marker (crimson on Light, #ebd8bc on Dark and Crimson). List text matches the body text size around it.",
       "use": {
         "bullet color": "--rvt-component-list-marker"
       }
@@ -200,6 +200,73 @@
         "Container, Small": "--rvt-component-tabs-container-height-sm",
         "Segmented, Large": "--rvt-component-tabs-segmented-height-lg",
         "Segmented, Small": "--rvt-component-tabs-segmented-height-sm"
+      }
+    },
+    {
+      "component": "Focus ring — every interactive component",
+      "change": "Figma now shows a Focus state on every interactive component. It matches reset.css exactly: 2px outline in border-accent-strong, 2px offset, outside the element. Checkbox and radio ring the control only; cards ring the whole card (:focus-within). No code change needed — keep the global :focus-visible rule and never remove it.",
+      "use": {
+        "outline color": "--rvt-border-accent-strong",
+        "outline": "2px solid, outline-offset 2px"
+      }
+    },
+    {
+      "component": "Hover fills — pagination, accordion, series nav",
+      "change": "Every fill-based hover now uses the same darker-on-base fill as tabs, subnav and table rows. Today these three use background-light; change them to background-strong.",
+      "use": {
+        "hover background": "--rvt-background-strong"
+      }
+    },
+    {
+      "component": "Series nav — series-nav.scss",
+      "change": "On hover the Previous/Next label also underlines (already in the build). Fill per the hover row above.",
+      "use": {
+        "hover background": "--rvt-background-strong",
+        "label": "text-decoration: underline"
+      }
+    },
+    {
+      "component": "Dropdown items and Sidenav tree items — dropdown.css, sidenav.css",
+      "change": "Figma decision (2026-10-30): hover is an UNDERLINE on the text, no background fill — kept for accessibility. The build currently adds a background-strong fill; change it to underline only. Selected dropdown items and the current header/dropdown page are underlined too.",
+      "use": {
+        "hover": "text-decoration: underline; background: none"
+      }
+    },
+    {
+      "component": "Small Normal button — .rvt-button--small",
+      "change": "Figma decision (2026-10-30): keep the Figma styling (same look as the larger Normal button, just smaller). The build gives small buttons a theme-ui border and accent text; match Figma instead.",
+      "use": {
+        "border": "same as .rvt-button (Normal)",
+        "text": "same as .rvt-button (Normal)"
+      }
+    },
+    {
+      "component": "Switch — switch.css",
+      "change": "Squared off: track and knob have no radius (the build uses a pill). Labels use the new switch tokens.",
+      "use": {
+        "border-radius": "0",
+        "On label": "--rvt-component-switch-on-label",
+        "Danger label": "--rvt-component-switch-danger-label",
+        "track (off)": "--rvt-text-strong",
+        "knob": "--rvt-background-default",
+        "knob icon": "--rvt-icon-strong"
+      }
+    },
+    {
+      "component": "Avatar, Calendar tile, Steps, Feature card sticker",
+      "change": "Fixed colors now have their own tokens (no visual change). Swap the hard-coded palette values for these.",
+      "use": {
+        "avatar initials/silhouette": "--rvt-component-avatar-foreground",
+        "calendar tile fill / text": "--rvt-component-calendar-tile-background / --rvt-component-calendar-tile-text",
+        "steps number (filled / warning)": "--rvt-component-steps-indicator-text-fixed / --rvt-component-steps-indicator-text-warning",
+        "feature card sticker container": "--rvt-component-card-sticker-background"
+      }
+    },
+    {
+      "component": "Pagination — current page",
+      "change": "No change. Current page stays the crimson background-brand fill (matches aria-current today).",
+      "use": {
+        "current page": "--rvt-background-brand"
       }
     }
   ],
@@ -245,9 +312,10 @@
         {
           "name": "color/brand/light",
           "css": "--rvt-color-brand-light",
-          "value": "#efdfc8",
+          "value": "#ebd8bc",
           "codeToday": "--rvt-color-brand-light",
-          "action": "none"
+          "action": "value change",
+          "figmaChange": "2026-10-30: #efdfc8 → #ebd8bc. Slightly darker so default borders read more clearly. It flows to border/default (Light), the Dark/Crimson focus ring and button hover, accent-subtle, muted and badge subtle borders."
         },
         {
           "name": "color/brand/extra-light",
@@ -481,8 +549,8 @@
             "name": "background/accent",
             "css": "--rvt-background-accent",
             "light": "#6d0808",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-brand-dark",
               "dark": "--rvt-color-brand-light",
@@ -494,7 +562,7 @@
           {
             "name": "background/accent-subtle",
             "css": "--rvt-background-accent-subtle",
-            "light": "#efdfc8",
+            "light": "#ebd8bc",
             "dark": "#000000",
             "crimson": "#510606",
             "cssValue": {
@@ -536,9 +604,9 @@
           {
             "name": "background/brand-container",
             "css": "--rvt-background-brand-container",
-            "light": "#efdfc8",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "light": "#ebd8bc",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-brand-light",
               "dark": "--rvt-color-brand-light",
@@ -732,7 +800,7 @@
           {
             "name": "background/muted",
             "css": "--rvt-background-muted",
-            "light": "#efdfc8",
+            "light": "#ebd8bc",
             "dark": "#000000",
             "crimson": "#300404",
             "cssValue": {
@@ -916,8 +984,8 @@
             "name": "text/brand-strong",
             "css": "--rvt-text-brand-strong",
             "light": "#6d0808",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-brand-dark",
               "dark": "--rvt-color-brand-light",
@@ -1201,8 +1269,8 @@
             "name": "icon/accent-strong",
             "css": "--rvt-icon-accent-strong",
             "light": "#6d0808",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-brand-dark",
               "dark": "--rvt-color-brand-light",
@@ -1416,8 +1484,8 @@
             "name": "border/accent-strong",
             "css": "--rvt-border-accent-strong",
             "light": "#6d0808",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-brand-dark",
               "dark": "--rvt-color-brand-light",
@@ -1429,9 +1497,9 @@
           {
             "name": "border/brand",
             "css": "--rvt-border-brand",
-            "light": "#efdfc8",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "light": "#ebd8bc",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-brand-light",
               "dark": "--rvt-color-brand-light",
@@ -1485,7 +1553,7 @@
           {
             "name": "border/default",
             "css": "--rvt-border-default",
-            "light": "#efdfc8",
+            "light": "#ebd8bc",
             "dark": "#000000",
             "crimson": "#510606",
             "cssValue": {
@@ -1682,9 +1750,9 @@
           {
             "name": "component/badge/default-subtle-border",
             "css": "--rvt-component-badge-default-subtle-border",
-            "light": "#efdfc8",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "light": "#ebd8bc",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-brand-light",
               "dark": "--rvt-color-brand-light",
@@ -2173,8 +2241,8 @@
             "name": "component/button/form-background-hover",
             "css": "--rvt-component-button-form-background-hover",
             "light": "#000000",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-base-ultra-dark",
               "dark": "--rvt-color-brand-light",
@@ -2201,8 +2269,8 @@
             "name": "component/button/form-border-hover",
             "css": "--rvt-component-button-form-border-hover",
             "light": "#000000",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-base-ultra-dark",
               "dark": "--rvt-color-brand-light",
@@ -2229,8 +2297,8 @@
             "name": "component/button/form-text-hover",
             "css": "--rvt-component-button-form-text-hover",
             "light": "#000000",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-base-ultra-dark",
               "dark": "--rvt-color-brand-light",
@@ -2401,8 +2469,8 @@
             "name": "component/list/marker",
             "css": "--rvt-component-list-marker",
             "light": "#990000",
-            "dark": "#efdfc8",
-            "crimson": "#efdfc8",
+            "dark": "#ebd8bc",
+            "crimson": "#ebd8bc",
             "cssValue": {
               "light": "--rvt-color-brand-main",
               "dark": "--rvt-color-brand-light",
@@ -2426,6 +2494,126 @@
             "replaces": null,
             "action": "add (new)",
             "figmaChange": "2026-10-29: added in Figma. Label color of the selected tab, so it stays readable on background/brand in every theme."
+          },
+          {
+            "name": "component/avatar/foreground",
+            "css": "--rvt-component-avatar-foreground",
+            "light": "#990000",
+            "dark": "#990000",
+            "crimson": "#990000",
+            "cssValue": {
+              "light": "--rvt-color-brand-main",
+              "dark": "--rvt-color-brand-main",
+              "crimson": "--rvt-color-brand-main"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: added in Figma. Initials and silhouette color in Avatar. Same in every theme. Matches the fixed color the build already uses, so nothing changes visually."
+          },
+          {
+            "name": "component/calendar-tile/background",
+            "css": "--rvt-component-calendar-tile-background",
+            "light": "#faf6ef",
+            "dark": "#faf6ef",
+            "crimson": "#faf6ef",
+            "cssValue": {
+              "light": "--rvt-color-brand-extra-light",
+              "dark": "--rvt-color-brand-extra-light",
+              "crimson": "--rvt-color-brand-extra-light"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: added in Figma. Calendar tile fill. Same in every theme. Matches the fixed color the build already uses, so nothing changes visually."
+          },
+          {
+            "name": "component/calendar-tile/text",
+            "css": "--rvt-component-calendar-tile-text",
+            "light": "#990000",
+            "dark": "#990000",
+            "crimson": "#990000",
+            "cssValue": {
+              "light": "--rvt-color-brand-main",
+              "dark": "--rvt-color-brand-main",
+              "crimson": "--rvt-color-brand-main"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: added in Figma. Calendar tile month/day/year text. Same in every theme. Matches the fixed color the build already uses, so nothing changes visually."
+          },
+          {
+            "name": "component/card/sticker-background",
+            "css": "--rvt-component-card-sticker-background",
+            "light": "#faf6ef",
+            "dark": "#faf6ef",
+            "crimson": "#faf6ef",
+            "cssValue": {
+              "light": "--rvt-color-brand-extra-light",
+              "dark": "--rvt-color-brand-extra-light",
+              "crimson": "--rvt-color-brand-extra-light"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: added in Figma. Sticker container behind stickers in Feature cards. Same in every theme. Matches the fixed color the build already uses, so nothing changes visually."
+          },
+          {
+            "name": "component/steps/indicator-text-fixed",
+            "css": "--rvt-component-steps-indicator-text-fixed",
+            "light": "#ffffff",
+            "dark": "#ffffff",
+            "crimson": "#ffffff",
+            "cssValue": {
+              "light": "--rvt-color-base-ultra-light",
+              "dark": "--rvt-color-base-ultra-light",
+              "crimson": "--rvt-color-base-ultra-light"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: added in Figma. Number inside a filled step indicator. Same in every theme. Matches the fixed color the build already uses, so nothing changes visually."
+          },
+          {
+            "name": "component/steps/indicator-text-warning",
+            "css": "--rvt-component-steps-indicator-text-warning",
+            "light": "#1f2528",
+            "dark": "#1f2528",
+            "crimson": "#1f2528",
+            "cssValue": {
+              "light": "--rvt-color-base-main",
+              "dark": "--rvt-color-base-main",
+              "crimson": "--rvt-color-base-main"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: added in Figma. Number inside the warning step indicator. Same in every theme. Matches the fixed color the build already uses, so nothing changes visually."
+          },
+          {
+            "name": "component/switch/on-label",
+            "css": "--rvt-component-switch-on-label",
+            "light": "#f5fff6",
+            "dark": "#f5fff6",
+            "crimson": "#f5fff6",
+            "cssValue": {
+              "light": "--rvt-color-status-success-background",
+              "dark": "--rvt-color-status-success-background",
+              "crimson": "--rvt-color-status-success-background"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: added in Figma. \"On\" label inside the switch track. Same in every theme. Matches the fixed color the build already uses, so nothing changes visually."
+          },
+          {
+            "name": "component/switch/danger-label",
+            "css": "--rvt-component-switch-danger-label",
+            "light": "#ffffff",
+            "dark": "#ffffff",
+            "crimson": "#ffffff",
+            "cssValue": {
+              "light": "--rvt-color-base-ultra-light",
+              "dark": "--rvt-color-base-ultra-light",
+              "crimson": "--rvt-color-base-ultra-light"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: added in Figma. Label inside the danger switch track. Same in every theme. Matches the fixed color the build already uses, so nothing changes visually."
           }
         ]
       }

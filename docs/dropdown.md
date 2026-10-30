@@ -51,6 +51,6 @@ Shared rules: Menus use `background/raised` fill and `shadow/md`, no radius. Hov
 | Menu | `spacing/8` between groups, `spacing/8` bottom padding | `spacing/12` top and bottom, `spacing/16` sides, 1px `border/default` border |
 | Item | 32px tall, `spacing/12` top and bottom, `spacing/16` sides; `action/sm/regular` (14 / 20px), `text/strong`, `background/default` | 32px tall, `spacing/8` sides; `action/sm/regular` (14 / 20px), `text/strong` |
 | Item hover | `action/sm/regular`, `text/strong`, underline | Same |
-| Group title | `_Title Item`: 32px tall, `spacing/16` sides; `body/sm/strong` (16 / 24px), `text/strong` | — |
-| Action item | `_Button Item`: 32px tall, `spacing/16` sides, 16px icon, `spacing/4` gap; `action/sm/regular` (14 / 20px), `text/strong`; hover adds an underline | — |
+| Group title | `_rvt-dropdown-title-item`: 32px tall, `spacing/16` sides; `body/sm/strong` (16 / 24px), `text/strong` | — |
+| Action item | `_rvt-dropdown-button-item`: 32px tall, `spacing/16` sides, 16px icon, `spacing/4` gap; `action/sm/regular` (14 / 20px), `text/strong`; hover adds an underline | — |
 | Profile header | 64px `rvt-avatar`, `spacing/8` gap, name `body/sm/strong` (16 / 24px), `spacing/16` sides | — |

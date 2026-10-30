@@ -542,6 +542,9 @@ body:not(.has-rail) #rail-shell{display:none}
       below: `<a class="hero-compact" href="#text-styles">
         <span class="hero-compact-head"><span class="hero-compact-title">Text style and font details</span><span class="hero-compact-arrow" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span></span>
         <p class="hero-compact-desc">The type scale, the math behind each size, and the reasoning for each group of text styles.</p>
+      </a><a class="hero-compact" href="#interaction-states">
+        <span class="hero-compact-head"><span class="hero-compact-title">Interaction states</span><span class="hero-compact-arrow" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span></span>
+        <p class="hero-compact-desc">Focus, hover, selected and disabled rules for every interactive component, and where the build differs.</p>
       </a>`}) + `
       <main class="wrap index">
         <div class="prose index-note">
@@ -791,6 +794,27 @@ body:not(.has-rail) #rail-shell{display:none}
     } catch (e) { prose.innerHTML = '<p>This page could not be loaded. Try reloading the page.</p>'; }
   }
 
+  /* ---------- Interaction states (guides/interaction-states.md) ---------- */
+  let stateMd = null;
+  async function renderInteractionStates() {
+    document.title = 'Interaction states · Rivet 3 Component Guide';
+    app.innerHTML = hero({tag: '<a href="#">Components</a>', title: 'Interaction states', intro: 'Focus, hover, selected and disabled rules for every interactive component, and where the build differs.',
+      actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a>`}) + `
+      <nav class="wrap crumbs" aria-label="Breadcrumb"><ol>
+        <li><a class="home" href="#" aria-label="Components home">${icon('home')}</a></li>
+        <li><a href="#">Components</a></li>
+        <li><span aria-current="page">Interaction states</span></li>
+      </ol></nav>
+      <main class="wrap detail"><article class="doc"><div class="prose" id="prose"><p class="load">Loading…</p></div></article></main>`;
+    const prose = document.getElementById('prose');
+    try {
+      if (!stateMd) { const r = await fetch('guides/interaction-states.md', {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); stateMd = await r.text(); }
+      if (location.hash.slice(1) !== 'interaction-states') return;
+      prose.innerHTML = DOMPurify.sanitize(marked.parse(preprocess(stateMd), {gfm: true, breaks: false}));
+      enhance(prose);
+    } catch (e) { prose.innerHTML = '<p>This page could not be loaded. Try reloading the page.</p>'; }
+  }
+
   /* ---------- Component rail ---------- */
   const CHEV = 'M6.263 15.146 12.31 8 6.263.854 4.737 2.146 9.69 8l-4.953 5.854 1.526 1.292Z';
   const MENU = 'M15 4H1V2H15V4ZM15 9H1V7H15V9ZM1 14H15V12H1V14Z';
@@ -849,7 +873,7 @@ body:not(.has-rail) #rail-shell{display:none}
     document.body.classList.toggle('has-rail', onDoc);
     setRailOpen(false);
     markRail(onDoc ? c.slug : null);
-    if (slug === 'token-changes') renderTokens(); else if (slug === 'text-styles') renderTextStyles(); else if (c) renderDoc(c); else renderIndex();
+    if (slug === 'token-changes') renderTokens(); else if (slug === 'text-styles') renderTextStyles(); else if (slug === 'interaction-states') renderInteractionStates(); else if (c) renderDoc(c); else renderIndex();
     window.scrollTo(0, 0);
   }
 

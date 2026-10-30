@@ -22,7 +22,7 @@ The callout hero is the default hero, the banner at the top of most pages. It sh
 - **Side by side:** Text on the left, card on the right. Use it in full-width pages
 - **Stacked:** The card sits under the text. Use it in narrower content areas
 
-### Device
+### Breakpoint
 - **Desktop:** Buttons sit side by side
 - **Mobile:** Everything stacks, with full-width buttons and the card last
 

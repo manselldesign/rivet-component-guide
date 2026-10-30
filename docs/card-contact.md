@@ -73,7 +73,7 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 | Social links | `spacing/24` above; label "Social:" `tag/sm/regular` (12 / 16px), `text/default`; `spacing/16` to icons; `rvt-button` Icon 24×24, `spacing/8` between | Same |
 | Buttons | `spacing/24` above; `rvt-button` Form, Normal, Medium (32px), label only, no icon; stacked, `spacing/8` between; label `action/sm/strong` (14 / 20px) | Full width |
 
-### Hours (`_Hours`)
+### Hours (`_rvt-card-contact-hours`)
 
 | Element | Spec |
 | --- | --- |

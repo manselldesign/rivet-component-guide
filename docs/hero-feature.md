@@ -20,7 +20,7 @@ A feature hero is the large banner at the top of a page, with a wide headline an
 - **With list hub:** Adds a short list of links beside the photo, like "On this page". Use it when people need to jump to a few key sections, like Admissions, Tuition and Visit
 - **Without list hub:** The photo runs the full width. Use it when the page has one main path
 
-### Device
+### Breakpoint
 - **Desktop:** Headline and intro on the left, buttons on the right, photo below
 - **Mobile:** Everything stacks: text, buttons, photo, then the list hub
 
@@ -41,7 +41,7 @@ A feature hero is the large banner at the top of a page, with a wide headline an
 
 ## Developer spec checklist
 
-Shared rules: background `background/default`. Primary button is `rvt-button` (Type Link, Style Strong, Size Extra-large); secondary is Style Normal with a `border/accent` border. The Strong button comes first. Photos keep their shape at any width: 2:1 on Desktop, 3:2 on Mobile. Mobile stacks everything in one column with full-width buttons. The list hub is `rvt-list-hub` (Layout Single List Hub, Size Compact, Device matching the hero).
+Shared rules: background `background/default`. Primary button is `rvt-button` (Type Link, Style Strong, Size Extra-large); secondary is Style Normal with a `border/accent` border. The Strong button comes first. Photos keep their shape at any width: 2:1 on Desktop, 3:2 on Mobile. Mobile stacks everything in one column with full-width buttons. The list hub is `rvt-list-hub` (Layout Single List Hub, Size Compact, Breakpoint matching the hero).
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

@@ -18,7 +18,7 @@ A file input lets people attach a file to a form, like a letter of recommendatio
 - **No file yet:** Before a file is picked. The button says {Choose file} and a status badge says {No file selected}
 - **File picked:** After a file is picked. The button says {Change file} and each file shows as a chip with its name and an × to remove it
 
-### Device
+### Breakpoint
 - **Desktop:** Button and status sit side by side
 - **Mobile:** The button goes full width and the status or files sit below it
 

@@ -28,7 +28,7 @@ A highlighted box that draws attention to one thing on a page, like an upcoming 
 - **Left:** Picture beside the text. Use in wide areas of the page
 - **Top:** Picture above the text. Use in narrower columns
 
-### Device
+### Breakpoint
 - **Desktop:** Use on larger screens
 - **Mobile:** Use on phones. Everything stacks and the buttons stretch full width
 

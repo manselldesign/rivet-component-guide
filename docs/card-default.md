@@ -73,7 +73,7 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 - **Default:** Use in most places
 - **Compact:** Tighter spacing and smaller text. Use in sidebars or long lists
 
-### Device
+### Breakpoint
 - **Desktop:** Use on larger screens
 - **Mobile:** Use on phones. Horizontal cards stack like vertical ones
 

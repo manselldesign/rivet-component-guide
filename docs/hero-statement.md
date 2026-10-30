@@ -20,7 +20,7 @@ A statement hero opens a page with a bold headline and one to three large photos
 - **Double image:** Two square photos side by side. Use it to pair two related moments, like a lab and a classroom
 - **Triple image:** Three square photos. Use it to show range, like students, faculty and campus
 
-### Device
+### Breakpoint
 - **Desktop:** Photos sit in a row below the text, and the card overlaps their bottom right corner
 - **Mobile:** Everything stacks, with full-width buttons and the card below the photos
 

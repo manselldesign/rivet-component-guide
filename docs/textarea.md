@@ -52,4 +52,4 @@ Shared rules: No fill and no radius, with a 1px `component/input/border` border 
 
 ### Status messages
 
-Status messages are the same `rvt-alert` (Type Inline, Device Desktop) used in Text input and Select input. See those pages for their colors and spacing.
+Status messages are the same `rvt-alert` (Type Inline, Breakpoint Desktop) used in Text input and Select input. See those pages for their colors and spacing.

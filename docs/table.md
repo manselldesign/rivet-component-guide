@@ -26,7 +26,7 @@ A grid of rows and columns that lets readers compare facts side by side, like tu
 - **Striped:** Use it for wide or long tables so readers can follow a row across. Every other row gets a light tint
 - **Not striped:** Use it for short tables with only a few rows
 
-### Device
+### Breakpoint
 - **Mobile:** On phones the table keeps its full width and scrolls sideways, so keep tables to the columns readers need
 
 ## Writing tips

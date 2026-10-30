@@ -18,7 +18,7 @@ A split hero is the large banner at the top of a page, with the headline and int
 - **With list hub:** Adds a short list of links under the intro, like "On this page". Use it when people need to jump to a few key sections, like Admissions, Tuition and Visit
 - **Without list hub:** Headline, intro and buttons only. Use it when the page has one main path
 
-### Device
+### Breakpoint
 - **Desktop:** Text on the left, photo on the right
 - **Mobile:** Everything stacks: text, buttons, photo, then the list hub
 

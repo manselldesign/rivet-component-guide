@@ -60,7 +60,7 @@ Badges look the same in Light, Dark and Crimson. Every badge has a 1px white out
 | Status | Style | Background | Border | Label and icon |
 | --- | --- | --- | --- | --- |
 | Default | Strong | `component/badge/default-strong-background` (`#1f2528`) | none | `component/badge/default-strong-text` / `-icon` (`#ffffff`) |
-| Default | Subtle | `component/badge/default-subtle-background` (`#faf6ef`) | `component/badge/default-subtle-border` (`#efdfc8`) | `component/badge/default-subtle-text` / `-icon` (`#990000`) |
+| Default | Subtle | `component/badge/default-subtle-background` (`#faf6ef`) | `component/badge/default-subtle-border` (`#ebd8bc`) | `component/badge/default-subtle-text` / `-icon` (`#990000`) |
 | Info | Strong | `component/badge/info-strong-background` (`#004f9e`) | none | `component/badge/info-strong-text` / `-icon` (`#ffffff`) |
 | Info | Subtle | `component/badge/info-subtle-background` (`#f5fcff`) | `component/badge/info-subtle-border` (`#9ed5fd`) | `component/badge/info-subtle-text` / `-icon` (`#004f9e`) |
 | Success | Strong | `component/badge/success-strong-background` (`#13650b`) | none | `component/badge/success-strong-text` / `-icon` (`#ffffff`) |

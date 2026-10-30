@@ -19,7 +19,7 @@ The footer is the band at the bottom of every page with the university's contact
 - **Crimson:** Use it for a stronger brand look, like an admissions or campaign site
 - **Dark:** Use it when the site's header or design is dark
 
-### Device
+### Breakpoint
 - **Desktop:** Link groups sit side by side in columns
 - **Mobile:** Link groups stack in one column
 
