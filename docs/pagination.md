@@ -36,7 +36,7 @@ A row of page numbers and arrows that splits a long list of results into pages. 
 
 ## Developer spec checklist
 
-Shared rules: items have square corners and a 1px `border/default` border. Items sit side by side in one row. Hover adds a `background/strong` fill. Focus adds a 2px `border/accent-strong` ring, 2px outside the item. The current page uses a `background/brand` fill, a 1px `border/accent` border and `text/inverse` text. Arrows and the ellipsis use `icon/strong`.
+Shared rules: items have square corners and a 1px `border/default` border. Items sit side by side in one row. Hover adds a `background/tint` fill. Focus adds a 2px `border/accent-strong` ring, 2px outside the item. The current page uses a `background/brand` fill, a 1px `border/accent` border and `text/inverse` text. Arrows and the ellipsis use `icon/strong`.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

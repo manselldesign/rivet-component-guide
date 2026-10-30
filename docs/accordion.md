@@ -19,7 +19,7 @@ A stacked list of titles that each open to show more content. Readers scan the t
 
 - **Closed:** Shows the title and a plus icon
 - **Open:** Shows the title, a minus icon and the content below
-- **Hover:** The row gets a darker background so readers know it's clickable
+- **Hover:** The row gets a light cream background so readers know it's clickable
 - **Focus:** A 2px ring appears around the header when a reader tabs to it. Never remove it
 
 ## Writing tips
@@ -45,6 +45,6 @@ A stacked list of titles that each open to show more content. Readers scan the t
 | Body padding (open only) | `spacing/24` left, right and bottom (24px); none on top | Same |
 | Body text | `body/base/regular` (18 / 28px, weight 350), `--rvt-text-default` (`#343c42`), max-width 811px | `body/base/regular` (16 / 24px) |
 | Background, default | None | None |
-| Background, hover | `--rvt-background-strong` (`#faf6ef`), applies to whole item, open or closed | Same |
+| Background, hover | `--rvt-background-tint` (`#fdfaf7`), applies to whole item, open or closed | Same |
 | Focus | 2px `--rvt-border-accent-strong` outline, 2px offset, around the header button (global `:focus-visible`) | Same |
 | Whole header is the click target | Yes, rendered as a `button` | Same |

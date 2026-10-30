@@ -211,17 +211,17 @@
       }
     },
     {
-      "component": "Hover fills — pagination, accordion, series nav",
-      "change": "Every fill-based hover now uses the same darker-on-base fill as tabs, subnav and table rows. Today these three use background-light; change them to background-strong.",
+      "component": "Hover fills — pagination, accordion, series nav, tabs, subnav, icon buttons",
+      "change": "Every fill-based hover uses the lightest cream, the same color as table striping (background-tint, #fdfaf7 in Light). Today pagination, accordion and series nav use background-light, and tabs/subnav use background-strong; change them all to background-tint. In Dark and Crimson, tint and strong are the same color, so only Light changes.",
       "use": {
-        "hover background": "--rvt-background-strong"
+        "hover background": "--rvt-background-tint"
       }
     },
     {
       "component": "Series nav — series-nav.scss",
       "change": "On hover the Previous/Next label also underlines (already in the build). Fill per the hover row above.",
       "use": {
-        "hover background": "--rvt-background-strong",
+        "hover background": "--rvt-background-tint",
         "label": "text-decoration: underline"
       }
     },

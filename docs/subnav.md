@@ -22,7 +22,7 @@ A row of links that moves readers between the pages inside one section of a site
 
 ### State
 - **Default:** A link at rest
-- **Hover:** The link gets a darker background when a reader points at it. Desktop only
+- **Hover:** The link gets a light cream background when a reader points at it. Desktop only
 - **Selected:** The current page. Shows a thick red line under the link and stronger text. Mark only one link
 
 ## Writing tips
@@ -35,7 +35,7 @@ A row of links that moves readers between the pages inside one section of a site
 
 ## Developer spec checklist
 
-Shared rules: a 1px `border/default` line runs under the whole row. The selected link has a 4px `border/accent` line at the bottom and `action/sm/strong` (14 / 20px) text in `text/accent`. Other links use `action/sm/regular` (14 / 20px), `text/strong`. Hover fills the link with `background/strong`. Each link hugs its text, so its width comes from the label plus padding. On Mobile the row clips and scrolls horizontally.
+Shared rules: a 1px `border/default` line runs under the whole row. The selected link has a 4px `border/accent` line at the bottom and `action/sm/strong` (14 / 20px) text in `text/accent`. Other links use `action/sm/regular` (14 / 20px), `text/strong`. Hover fills the link with `background/tint`. Each link hugs its text, so its width comes from the label plus padding. On Mobile the row clips and scrolls horizontally.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
