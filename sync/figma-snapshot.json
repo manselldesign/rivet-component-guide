@@ -779,7 +779,7 @@
         },
         "color/brand/ultra-dark": {
           "type": "COLOR",
-          "value": "#300404"
+          "value": "#420505"
         },
         "font/tracking/md": {
           "type": "FLOAT",
