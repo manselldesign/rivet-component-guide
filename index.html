@@ -376,21 +376,21 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
    Mobile uses the same spacing tokens; the Breakpoint mode scales them: H2 36px (23/32), H3 32px (20/24), Paragraph 24px (16/24),
    List 16px (16/24), Note 24px, H3 under H2 24px. */
 .prose>*{margin-top:24px;margin-bottom:0}
-.prose>h2{margin-top:48px}
+.prose>h2{margin-top:96px} /* section-to-section (the Figma H1 section titles): spacing/96 */
 .prose>h3{margin-top:40px}
 .prose>h4{margin-top:32px}
 .prose>p{margin-top:24px}
 .prose>ul,.prose>ol{margin-top:16px}
 .prose>.alert{margin-top:32px;margin-bottom:0}
 .prose>.table-wrap,.prose>.dd,.prose>.ex,.prose>pre,.prose>blockquote{margin-top:24px;margin-bottom:0}
-.prose>hr{margin-top:48px}
+.prose>hr{margin-top:96px}
 .prose>h2+h3{margin-top:24px}
 .prose>:first-child{margin-top:0}
 @media (max-width:560px){
   .prose{font-size:16px;line-height:24px}
   .prose h2{font-size:23px;line-height:32px}
   .prose h3{font-size:20px;line-height:24px}
-  .prose>h2{margin-top:36px}
+  .prose>h2{margin-top:72px}
   .prose>h3{margin-top:32px}
   .prose>h4,.prose>.alert{margin-top:24px}
   .prose>p,.prose>.table-wrap,.prose>.dd,.prose>.ex,.prose>pre,.prose>blockquote{margin-top:24px}
@@ -489,11 +489,11 @@ body:not(.has-rail) #rail-shell{display:none}
    Sits directly below the hero. Everything in here is built from --rvt- tokens only (generated/rivet-tokens.css),
    so the example re-themes when the page theme changes. --rvt-font-family-sans is not in the generated file; it points at the site font. */
 :root{--rvt-font-family-sans:var(--font-sans)}
-/* Same rhythm as the Details Page text block: H2 → 24 → paragraph; the next H2 ("What it is") sits 48 below the example (36 on mobile). */
-.demo{margin:0 0 var(--rvt-spacing-48)}
+/* Same rhythm as the Details Page text block: H2 → 24 → paragraph; the next section ("What it is") sits 96 below the example (72 on mobile). */
+.demo{margin:0 0 var(--rvt-spacing-96)}
 .demo-title{font-size:29px;line-height:36px;font-weight:var(--w-black);color:var(--text-strong);margin:0 0 var(--rvt-spacing-24);text-wrap:balance}
 .demo-note{margin:0 0 var(--rvt-spacing-40);max-width:var(--read)}
-@media (max-width:560px){.demo{margin-bottom:36px}.demo-title{font-size:23px;line-height:32px}.demo-note{margin-bottom:var(--rvt-spacing-32)}}
+@media (max-width:560px){.demo{margin-bottom:72px}.demo-title{font-size:23px;line-height:32px}.demo-note{margin-bottom:var(--rvt-spacing-32)}}
 /* Same label style as rvt-text-input (.field-label): 16/20 SemiBold, text/strong, spacing/8 above the control */
 .demo-switch-label{display:block;font-size:16px;line-height:20px;font-weight:var(--w-bold);color:var(--text-strong);margin:0 0 var(--rvt-spacing-8)}
 /* The stage has no border or padding of its own, so the component's own border is the only frame. */
