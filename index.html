@@ -105,7 +105,8 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
 .wrap{max-width:var(--page);margin-inline:auto;padding-inline:clamp(16px,5vw,80px)}
 
 /* ---------- rvt-hero-callout, Dark mode ---------- */
-.hero{background:#1f2528;color:#ffffff;padding-top:clamp(48px,8vw,96px)}
+.hero{background:#1f2528;color:#ffffff;padding-top:clamp(72px,8vw,96px)}
+.hero>.wrap{position:relative}
 .hero-inner{padding-bottom:clamp(48px,8vw,96px);border-bottom:1px solid #000000}
 .hero-inner>*{max-width:936px}
 .hero .tag{font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px;color:#ffffff}
@@ -447,6 +448,16 @@ body:not(.has-rail) #rail-shell{display:none}
   .rail-item:hover .rail-label{text-decoration:underline;text-decoration-thickness:1px}
 }
 
+/* Trident tab (header logo lockup, Mark-48). Hangs from the top edge of the page header, lined up with the content's left edge.
+   The header's top padding floor is 72px so the tag line clears the 48px tab by spacing/24 on phones.
+   Tab background/brand-strong, trident icon/on-brand-fixed (same in every theme). */
+.trident-tab{display:block;width:41px;height:48px;line-height:0}
+.hero>.wrap>.trident-tab{position:absolute;top:calc(-1 * clamp(72px,8vw,96px))}
+.trident-tab svg{display:block;width:41px;height:48px}
+.trident-tab__bg{fill:var(--rvt-background-brand-strong)}
+.trident-tab__mark{fill:var(--rvt-icon-on-brand-fixed)}
+.trident-tab:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+
 /* Desktop: full-bleed fixed rail from the top of the viewport to the bottom, content offset by the rail width. */
 @media (min-width:1024px){
   .rail-bar{display:none}
@@ -484,17 +495,18 @@ body:not(.has-rail) #rail-shell{display:none}
 /* Series nav (rvt-series-nav): previous/next component at the bottom of each detail page.
    Item: background/default, 1px border/default, hover background/tint. Label tag/md/strong + 12px icon/accent arrow, spacing/4 gap.
    Title action/xl/strong-fixed, text/default, 3 lines max. Desktop padding spacing/24 x spacing/32, label to title spacing/12; Mobile spacing/32 (24px) all sides, spacing/8. */
-.series-nav{max-width:var(--read);margin-top:48px;display:grid;grid-template-columns:1fr 1fr}
+/* Full content width so its outer edges line up with the spec tables. One shared 1px rule between the two items (no overlap). */
+.series-nav{margin-top:48px;display:grid;grid-template-columns:1fr 1fr}
 .series-nav.is-single{grid-template-columns:1fr}
 .sn-item{position:relative;display:flex;flex-direction:column;gap:12px;padding:24px 32px;background:var(--bg);border:1px solid var(--table-border);color:var(--text);text-decoration:none;min-width:0}
-.sn-item+.sn-item{margin-left:-1px}
+.sn-item+.sn-item{border-left:0}
 .sn-item:hover{background:var(--row-tint)}
 .sn-item:focus-visible{z-index:1}
 .sn-label{display:flex;align-items:center;gap:4px;font-family:var(--font-mono);font-weight:var(--w-bold);font-size:14px;line-height:20px;letter-spacing:1px;color:var(--text-accent)}
 .sn-label svg{width:12px;height:12px;flex:none;fill:var(--icon-accent)}
 .sn-prev .sn-label svg{transform:scaleX(-1)}
 .sn-title{font-size:20px;line-height:24px;font-weight:var(--w-bold);color:var(--text);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-@media (max-width:560px){.series-nav{grid-template-columns:1fr}.sn-item{padding:24px;gap:8px}.sn-item+.sn-item{margin-left:0;margin-top:-1px}}
+@media (max-width:560px){.series-nav{grid-template-columns:1fr}.sn-item{padding:24px;gap:8px}.sn-item+.sn-item{border-left:1px solid var(--table-border);border-top:0}}
 
 /* ================= Component example (detail pages) =================
    Sits directly below the hero. Everything in here is built from --rvt- tokens only (generated/rivet-tokens.css),
@@ -584,6 +596,8 @@ body:not(.has-rail) #rail-shell{display:none}
 <script>
 (() => {
   const app = document.getElementById('app');
+  /* IU trident tab, from the header's logo lockup (Mark-48): 41x48 tab, trident 27x34 inset 7px. Tab only, no lockup text. */
+  const TRIDENT_TAB = `<a class="trident-tab" href="#" aria-label="Component Guide home"><svg viewBox="0 0 41 48" width="41" height="48" aria-hidden="true" focusable="false"><path class="trident-tab__bg" d="M41 0H0V48H41V0Z"/><path class="trident-tab__mark" d="M25 11.5V14H27V28.5H23V9.5H25V7H16V9.5H18V28.5H14V14H16V11.5H7V14H9V30.5L12.5 34H18V37.5H16V41H25V37.5H23V34H28.5L32 30.5V14H34V11.5H25Z"/></svg></a>`;
   const STATUS = {
     'draft': 'Draft', 'in-progress': 'In progress', 'in-review': 'In review',
     'ready-for-dev': 'Ready for dev', 'released': 'Released', 'deprecated': 'Deprecated', 'working': 'Working'
@@ -749,7 +763,7 @@ body:not(.has-rail) #rail-shell{display:none}
       ${actions ? `<div class="actions">${actions}</div>` : ''}
       ${below || ''}`;
     return `
-    <header class="hero"><div class="wrap"><div class="hero-inner">
+    <header class="hero"><div class="wrap">${TRIDENT_TAB}<div class="hero-inner">
       ${aside ? `<div class="hero-cols"><div class="hero-main">${main}</div>${aside}</div>` : main}
     </div></div></header>`;
   };
@@ -767,7 +781,7 @@ body:not(.has-rail) #rail-shell{display:none}
     app.innerHTML = hero({tag: 'Rivet Design System', title: 'Component Guide', intro: 'Design notes and build specs for each Rivet 3 component.', actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a><a class="btn" href="downloads/rivet-icons-12x12.zip" download="rivet-icons-12x12.zip">Download 12x12 icons${icon('download')}</a>`,
       below: `<a class="hero-compact" href="#text-styles">
         <span class="hero-compact-head"><span class="hero-compact-title">Text styles and tokens</span><span class="hero-compact-arrow" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span></span>
-        <p class="hero-compact-desc">The type scale, the math behind each size, the reasoning for each group of text styles, and how the tokens are organized: the three tiers, what each group means, and how to read any token name.</p>
+        <p class="hero-compact-desc">How Rivet sets type, and how to read any token name.</p>
       </a>`}) + `
       <main class="wrap index">
         <div class="prose index-note">
