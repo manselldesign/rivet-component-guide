@@ -1,4 +1,4 @@
-# Text style and font details
+# Text styles and tokens
 
 ## The type scale
 Rivet uses one size scale for all text. The base is **18px body text** on desktop.

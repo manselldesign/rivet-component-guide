@@ -489,9 +489,11 @@ body:not(.has-rail) #rail-shell{display:none}
    Sits directly below the hero. Everything in here is built from --rvt- tokens only (generated/rivet-tokens.css),
    so the example re-themes when the page theme changes. --rvt-font-family-sans is not in the generated file; it points at the site font. */
 :root{--rvt-font-family-sans:var(--font-sans)}
+/* Same rhythm as the Details Page text block: H2 → 24 → paragraph; the next H2 ("What it is") sits 48 below the example (36 on mobile). */
 .demo{margin:0 0 var(--rvt-spacing-48)}
-.demo-title{font-size:29px;line-height:36px;font-weight:var(--w-black);color:var(--text-strong);margin:0 0 var(--rvt-spacing-16);text-wrap:balance}
+.demo-title{font-size:29px;line-height:36px;font-weight:var(--w-black);color:var(--text-strong);margin:0 0 var(--rvt-spacing-24);text-wrap:balance}
 .demo-note{margin:0 0 var(--rvt-spacing-40);max-width:var(--read)}
+@media (max-width:560px){.demo{margin-bottom:36px}.demo-title{font-size:23px;line-height:32px}.demo-note{margin-bottom:var(--rvt-spacing-32)}}
 /* Same label style as rvt-text-input (.field-label): 16/20 SemiBold, text/strong, spacing/8 above the control */
 .demo-switch-label{display:block;font-size:16px;line-height:20px;font-weight:var(--w-bold);color:var(--text-strong);margin:0 0 var(--rvt-spacing-8)}
 /* The stage has no border or padding of its own, so the component's own border is the only frame. */
@@ -700,7 +702,7 @@ body:not(.has-rail) #rail-shell{display:none}
     if (!d) return '';
     return `<section class="demo" aria-labelledby="demo-title">
       <h2 class="demo-title" id="demo-title">Example</h2>
-      <p class="demo-note">Shows how I envision the component in all its glory.</p>
+      <p class="demo-note">Shows how I envision the component in all its glory. 🤘</p>
       ${themeTabs()}
       <div class="demo-stage" id="demo-stage" role="tabpanel" aria-label="${esc(c.name)} example">${d.html()}</div>
     </section>`;
@@ -750,11 +752,8 @@ body:not(.has-rail) #rail-shell{display:none}
     document.title = 'Rivet 3 Component Guide';
     app.innerHTML = hero({tag: 'Rivet Design System', title: 'Component Guide', intro: 'Design notes and build specs for each Rivet 3 component.', actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a><a class="btn" href="downloads/rivet-icons-12x12.zip" download="rivet-icons-12x12.zip">Download 12x12 icons${icon('download')}</a>`,
       below: `<a class="hero-compact" href="#text-styles">
-        <span class="hero-compact-head"><span class="hero-compact-title">Text style and font details</span><span class="hero-compact-arrow" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span></span>
-        <p class="hero-compact-desc">The type scale, the math behind each size, and the reasoning for each group of text styles.</p>
-      </a><a class="hero-compact" href="#token-details">
-        <span class="hero-compact-head"><span class="hero-compact-title">Token details</span><span class="hero-compact-arrow" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span></span>
-        <p class="hero-compact-desc">How the tokens are organized: the three tiers, what each group means, and how to read any token name.</p>
+        <span class="hero-compact-head"><span class="hero-compact-title">Text styles and tokens</span><span class="hero-compact-arrow" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span></span>
+        <p class="hero-compact-desc">The type scale, the math behind each size, the reasoning for each group of text styles, and how the tokens are organized: the three tiers, what each group means, and how to read any token name.</p>
       </a>`}) + `
       <main class="wrap index">
         <div class="prose index-note">
@@ -984,16 +983,16 @@ body:not(.has-rail) #rail-shell{display:none}
     });
   }
 
-  /* ---------- Text style and font details (guides/text-styles.md) ---------- */
+  /* ---------- Text styles and tokens (guides/text-styles.md) ---------- */
   let typeMd = null;
   async function renderTextStyles(jumpToTokens = false) {
-    document.title = 'Text style and font details · Rivet 3 Component Guide';
-    app.innerHTML = hero({tag: '<a href="#">Components</a>', title: 'Text style and font details', intro: 'The type scale, the math behind each size, and the reasoning for each group of text styles.',
+    document.title = 'Text styles and tokens · Rivet 3 Component Guide';
+    app.innerHTML = hero({tag: '<a href="#">Components</a>', title: 'Text styles and tokens', intro: 'The type scale, the math behind each size, the reasoning for each group of text styles, and how the tokens are organized.',
       actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a>`}) + `
       <nav class="wrap crumbs" aria-label="Breadcrumb"><ol>
         <li><a class="home" href="#" aria-label="Components home">${icon('home')}</a></li>
         <li><a href="#">Components</a></li>
-        <li><span aria-current="page">Text style and font details</span></li>
+        <li><span aria-current="page">Text styles and tokens</span></li>
       </ol></nav>
       <main class="wrap detail"><article class="doc"><div class="prose" id="prose"><p class="load">Loading…</p></div></article></main>`;
     const prose = document.getElementById('prose');
