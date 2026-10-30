@@ -19,7 +19,7 @@ A stacked list of titles that each open to show more content. Readers scan the t
 
 - **Closed:** Shows the title and a plus icon
 - **Open:** Shows the title, a minus icon and the content below
-- **Hover:** The row gets a light cream background so readers know it's clickable
+- **Hover:** The row gets a subtle tinted background so readers know it's clickable
 - **Focus:** A 2px ring appears around the header when a reader tabs to it. Never remove it
 
 ## Writing tips
@@ -37,7 +37,7 @@ A stacked list of titles that each open to show more content. Readers scan the t
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Item border | 1px `--rvt-border-default` (`#ebd8bc`), all sides, items overlap by 1px (`margin-bottom: -1px`) | Same |
+| Item border | 1px `--rvt-border-default` (`#ebd8bc`), all sides; items share one 1px rule where they meet (no doubled line) | Same |
 | Header padding | `spacing/24` all sides (24px) | `spacing/24` all sides (24px) |
 | Gap, title to icon | `spacing/16` (16px) | `spacing/16` (16px) |
 | Title | `action/xl/strong` (20 / 28px, weight 600), `--rvt-text-strong` (`#1f2528`) | `action/xl/strong` (18 / 24px) |

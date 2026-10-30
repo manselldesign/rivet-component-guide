@@ -7,6 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,300..800&family=Roboto+Mono:wght@100..700&display=swap">
+<!-- Rivet 3 tokens (generated from Figma). Component examples on detail pages are built only from these --rvt- tokens.
+     The page theme sets .rvt-theme-light / -dark / -crimson on <html>, so every --rvt- semantic token follows the page theme. -->
+<link rel="stylesheet" href="generated/rivet-tokens.css">
 <style>
 /* Layout: rvt-hero-callout (Dark mode) on every page, then one reading column.
    Index = rvt-text-input + rvt-list-hub (Single List Hub, Compact). Detail = rvt-breadcrumbs + prose built from
@@ -67,6 +70,22 @@
   --al-success-bg:#000000;--al-success-title:#ffffff;--al-warning-bg:#000000;--al-warning-title:#ffffff;
   --al-danger-bg:#000000;--al-danger-title:#ffffff;
   color-scheme:dark}
+/* Crimson page theme: the site variables map to the Crimson-mode semantic tokens in generated/rivet-tokens.css (no new values). */
+:root[data-theme="crimson"]{
+  --bg:var(--rvt-background-default);--surface:var(--rvt-background-strong);--border:var(--rvt-border-default);
+  --text:var(--rvt-text-default);--text-strong:var(--rvt-text-strong);--text-brand:var(--rvt-text-accent);--text-accent:var(--rvt-text-accent);
+  --text-link-subtle:var(--rvt-text-link);--icon-link-subtle:var(--rvt-icon-accent);
+  --text-brand-strong:var(--rvt-text-brand-strong);--icon-accent-strong:var(--rvt-icon-accent-strong);--border-accent-strong:var(--rvt-border-accent-strong);
+  --icon-brand:var(--rvt-icon-accent);--icon-default:var(--rvt-icon-default);--icon-accent:var(--rvt-icon-accent);
+  --text-muted:var(--rvt-color-brand-light);--code-bg:var(--rvt-background-tint);--th-bg:var(--rvt-background-strong);--th-fg:var(--rvt-text-default);
+  --table-border:var(--rvt-border-default);--row-tint:var(--rvt-background-tint);
+  --input-border:var(--rvt-border-strong);--input-text:var(--rvt-text-default);--input-focus:var(--rvt-border-accent);
+  --badge-bg:var(--rvt-background-inverse);--badge-fg:var(--rvt-text-inverse);
+  --al-default-bg:var(--rvt-background-strong);--al-default-title:var(--rvt-text-default);--al-info-bg:var(--rvt-background-strong);--al-info-title:var(--rvt-text-default);
+  --al-success-bg:var(--rvt-background-strong);--al-success-title:var(--rvt-text-default);--al-warning-bg:var(--rvt-background-strong);--al-warning-title:var(--rvt-text-default);
+  --al-danger-bg:var(--rvt-background-strong);--al-danger-title:var(--rvt-text-default);
+  color-scheme:dark}
+:root[data-theme="crimson"] .prose ul.checklist{padding:0}
 
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);font-weight:var(--w-normal);
@@ -465,6 +484,80 @@ body:not(.has-rail) #rail-shell{display:none}
 .sn-prev .sn-label svg{transform:scaleX(-1)}
 .sn-title{font-size:20px;line-height:24px;font-weight:var(--w-bold);color:var(--text);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 @media (max-width:560px){.series-nav{grid-template-columns:1fr}.sn-item{padding:24px;gap:8px}.sn-item+.sn-item{margin-left:0;margin-top:-1px}}
+
+/* ================= Component example (detail pages) =================
+   Sits directly below the hero. Everything in here is built from --rvt- tokens only (generated/rivet-tokens.css),
+   so the example re-themes when the page theme changes. --rvt-font-family-sans is not in the generated file; it points at the site font. */
+:root{--rvt-font-family-sans:var(--font-sans)}
+.demo{margin:0 0 var(--rvt-spacing-48)}
+.demo-title{font-size:29px;line-height:36px;font-weight:var(--w-black);color:var(--text-strong);margin:0 0 var(--rvt-spacing-16);text-wrap:balance}
+.demo-note{margin:0 0 var(--rvt-spacing-40);max-width:var(--read)}
+/* Same label style as rvt-text-input (.field-label): 16/20 SemiBold, text/strong, spacing/8 above the control */
+.demo-switch-label{display:block;font-size:16px;line-height:20px;font-weight:var(--w-bold);color:var(--text-strong);margin:0 0 var(--rvt-spacing-8)}
+/* The stage has no border or padding of its own, so the component's own border is the only frame. */
+.demo-stage{margin-top:var(--rvt-spacing-24)}
+
+/* While a page theme is chosen (data-page-theme on <html>), the hero and the sidebar follow the --rvt- tokens too:
+   rvt-hero-callout = background/default, border/default rule, tag + title text/brand, intro text/default, CTA Normal buttons border/accent + text/accent.
+   In Dark these resolve to the values the hero and rail use today, so Dark looks unchanged. */
+:root[data-page-theme] .hero{background:var(--rvt-background-default);color:var(--rvt-text-default)}
+:root[data-page-theme] .hero-inner{border-bottom-color:var(--rvt-border-default)}
+:root[data-page-theme] .hero .tag,:root[data-page-theme] .hero h1{color:var(--rvt-text-brand)}
+:root[data-page-theme] .hero .intro{color:var(--rvt-text-default)}
+:root[data-page-theme] .hero :focus-visible{outline-color:var(--rvt-border-accent-strong)}
+:root[data-page-theme] .btn{border-color:var(--rvt-border-accent);color:var(--rvt-text-accent)}
+:root[data-page-theme] .btn:hover{border-color:var(--rvt-border-accent-strong);color:var(--rvt-text-brand-strong)}
+:root[data-page-theme] .btn:focus-visible{outline-color:var(--rvt-border-accent-strong)}
+:root[data-page-theme] #rail-shell{--rail-bg:var(--rvt-background-default);--rail-rule:var(--rvt-border-default);--rail-text:var(--rvt-text-default);--rail-accent:var(--rvt-text-accent);--rail-strong:var(--rvt-text-brand-strong)}
+:root[data-page-theme="light"] #rail-shell{color-scheme:light}
+
+/* ---------- rvt-tabs, Type=Segmented, Size=Large (Small below 768px): page theme switcher ----------
+   Group: spacing/4 padding, background/tint fill, 1px border/default. Tabs hug their label, no gap, 0 radius.
+   Label: spacing/16 sides, action/lg/regular text/strong; selected = action/lg/strong + component/tabs/selected-text on background/brand.
+   Hover (unselected tabs) = component/tabs/hover-background fill + component/tabs/hover-text label. */
+.rvt-tabs--segmented{display:inline-flex;flex-wrap:wrap;padding:var(--rvt-spacing-4);gap:0;margin:0;background:var(--rvt-background-tint);border:1px solid var(--rvt-border-default)}
+.rvt-tabs__tab{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;height:var(--rvt-component-tabs-segmented-height-lg);padding:0 var(--rvt-spacing-16);margin:0;border:0;border-radius:0;
+  background:transparent;color:var(--rvt-text-strong);font:var(--rvt-font-action-lg-regular);letter-spacing:var(--rvt-font-tracking-none);cursor:pointer;-webkit-appearance:none;appearance:none;
+  transition:background-color .15s ease-out,color .15s ease-out}
+/* Reserve the bold width so the tab doesn't shift when it becomes selected: an invisible zero-height copy of the label in the strong weight. */
+.rvt-tabs__tab::after{content:attr(data-label);display:block;height:0;overflow:hidden;visibility:hidden;font:var(--rvt-font-action-lg-strong);letter-spacing:var(--rvt-font-tracking-none);pointer-events:none}
+/* Hover applies to unselected tabs only; the selected tab keeps its brand fill and selected-text color. */
+.rvt-tabs__tab:not([aria-selected="true"]):hover{background:var(--rvt-component-tabs-hover-background);color:var(--rvt-component-tabs-hover-text)}
+.rvt-tabs__tab[aria-selected="true"]{background:var(--rvt-background-brand);color:var(--rvt-component-tabs-selected-text);font:var(--rvt-font-action-lg-strong)}
+.rvt-tabs__tab:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0;position:relative;z-index:1}
+@media (max-width:767px){.rvt-tabs__tab{height:var(--rvt-component-tabs-segmented-height-sm);font:var(--rvt-font-action-sm-regular)}.rvt-tabs__tab[aria-selected="true"],.rvt-tabs__tab::after{font:var(--rvt-font-action-sm-strong)}}
+
+/* ---------- rvt-accordion (Accordion page, Developer spec checklist) ----------
+   Item: 1px border/default all sides, one shared 1px rule between items. Whole item fills background/tint on hover, open or closed.
+   Trigger: spacing/24 all sides, spacing/16 gap, title action/xl/strong text/strong; icon 16px icon/strong, spacing/4 down to sit on the first line.
+   Panel: spacing/24 left, right, bottom; body/base/regular text/default, max-width 811px.
+   Focus: 2px border/accent-strong outline, 2px offset, on the trigger. Open/close: height + opacity, 220ms ease-out; the icon swaps, it does not spin. */
+.rvt-accordion{margin:0;padding:0;width:100%}
+/* One 1px rule between items: every item has a top, left and right border; only the last adds a bottom. No overlapping borders. */
+.rvt-accordion__item{border:1px solid var(--rvt-border-default);border-bottom:0;background:transparent;transition:background-color .15s ease-out}
+.rvt-accordion__item:last-child{border-bottom:1px solid var(--rvt-border-default)}
+.rvt-accordion__item:hover{background:var(--rvt-background-tint)}
+.rvt-accordion__heading{margin:0}
+.rvt-accordion__trigger{display:flex;align-items:flex-start;gap:var(--rvt-spacing-16);width:100%;padding:var(--rvt-spacing-24);margin:0;border:0;border-radius:0;background:transparent;
+  color:var(--rvt-text-strong);font:var(--rvt-font-action-xl-strong);letter-spacing:var(--rvt-font-tracking-none);text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none}
+.rvt-accordion__trigger:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px;position:relative;z-index:1}
+.rvt-accordion__title{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
+.rvt-accordion__icon{flex:none;width:16px;height:16px;margin-top:var(--rvt-spacing-4);color:var(--rvt-icon-strong)}
+.rvt-accordion__icon svg{display:block;width:16px;height:16px;fill:currentColor}
+.rvt-accordion__icon svg path{transition:opacity .15s ease-out}
+.rvt-accordion__trigger[aria-expanded="true"] .rvt-accordion__icon .is-plus{opacity:0}
+.rvt-accordion__trigger[aria-expanded="false"] .rvt-accordion__icon .is-plus{opacity:1}
+.rvt-accordion__panel{display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden;transition:grid-template-rows .22s ease-out,opacity .22s ease-out,visibility 0s linear .22s}
+.rvt-accordion__panel.is-open{grid-template-rows:1fr;opacity:1;visibility:visible;transition:grid-template-rows .22s ease-out,opacity .22s ease-out,visibility 0s}
+.rvt-accordion__panel>div{min-height:0;overflow:hidden}
+.rvt-accordion__body{padding:0 var(--rvt-spacing-24) var(--rvt-spacing-24);max-width:811px;font:var(--rvt-font-body-base-regular);letter-spacing:var(--rvt-font-tracking-none);color:var(--rvt-text-default)}
+.rvt-accordion__body>*{margin:0}
+.rvt-accordion__body>*+*{margin-top:var(--rvt-spacing-16)}
+.rvt-accordion__body a{color:var(--rvt-text-link);text-underline-offset:3px;text-decoration-thickness:1px;transition:text-decoration-color .15s ease-out}
+.rvt-accordion__body a:hover{text-decoration-thickness:2px}
+@media (prefers-reduced-motion:reduce){
+  .rvt-accordion__panel,.rvt-accordion__panel.is-open,.rvt-accordion__item,.rvt-accordion__icon svg path,.rvt-tabs__tab{transition:none}
+}
 </style>
 </head>
 <body>
@@ -502,6 +595,123 @@ body:not(.has-rail) #rail-shell{display:none}
 
   let list = [];
   const cache = {};
+
+  /* ---------- Page theme (Light / Dark / Crimson) ----------
+     One attribute on <html> drives the whole page: data-theme switches the site variables, and the matching
+     .rvt-theme-* class switches every --rvt- semantic token from generated/rivet-tokens.css. Remembered per browser. */
+  /* Tab order and the starting theme for every example page: Dark, then Crimson, then Light. */
+  const THEMES = [{id: 'dark', label: 'Dark'}, {id: 'crimson', label: 'Crimson'}, {id: 'light', label: 'Light'}];
+  const DEFAULT_THEME = 'dark';
+  function getTheme() {
+    return document.documentElement.dataset.theme || DEFAULT_THEME;
+  }
+  /* The chosen theme lives only on the page that has the switcher: route() clears it when you leave. */
+  function setTheme(id) {
+    if (!THEMES.some(t => t.id === id)) id = DEFAULT_THEME;
+    const root = document.documentElement;
+    root.dataset.theme = id;
+    root.dataset.pageTheme = id;
+    THEMES.forEach(t => root.classList.toggle('rvt-theme-' + t.id, t.id === id));
+    document.querySelectorAll('.rvt-tabs--theme .rvt-tabs__tab').forEach(tab => {
+      const on = tab.dataset.theme === id;
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.tabIndex = on ? 0 : -1;
+    });
+  }
+  function clearTheme() {
+    const root = document.documentElement;
+    delete root.dataset.theme;
+    delete root.dataset.pageTheme;
+    THEMES.forEach(t => root.classList.remove('rvt-theme-' + t.id));
+  }
+  /* rvt-tabs, Segmented: one tab per theme. Arrow keys move between tabs, Home/End jump, Enter/Space select. */
+  const themeTabs = () => `<span class="demo-switch-label" id="theme-switch-label">Switch theme</span>
+    <div class="rvt-tabs rvt-tabs--segmented rvt-tabs--theme" role="tablist" aria-labelledby="theme-switch-label">${THEMES.map(t =>
+    `<button class="rvt-tabs__tab" type="button" role="tab" id="theme-tab-${t.id}" data-theme="${t.id}" data-label="${t.label}" aria-selected="${getTheme() === t.id}" aria-controls="demo-stage" tabindex="${getTheme() === t.id ? 0 : -1}">${t.label}</button>`).join('')}</div>`;
+  function wireThemeTabs(root) {
+    const listEl = root.querySelector('.rvt-tabs--theme');
+    if (!listEl) return;
+    const tabs = [...listEl.querySelectorAll('[role="tab"]')];
+    listEl.addEventListener('click', e => {
+      const tab = e.target.closest('[role="tab"]');
+      if (tab) setTheme(tab.dataset.theme);
+    });
+    listEl.addEventListener('keydown', e => {
+      const i = tabs.indexOf(document.activeElement);
+      if (i < 0) return;
+      const next = {ArrowRight: i + 1, ArrowDown: i + 1, ArrowLeft: i - 1, ArrowUp: i - 1, Home: 0, End: tabs.length - 1}[e.key];
+      if (next === undefined) return;
+      e.preventDefault();
+      const t = tabs[(next + tabs.length) % tabs.length];
+      t.focus();
+      setTheme(t.dataset.theme);
+    });
+  }
+
+  /* ---------- Component examples, one builder per slug ----------
+     Each returns the markup for the example stage; wire() adds the behaviour after it is in the page. */
+  const ACCORDION_ITEMS = [
+    {title: 'How do I request an official transcript?', open: true, body: '<p>Order transcripts through One.IU under <a href="#">Student Records</a>. Electronic copies usually arrive within one business day; mailed copies take five to seven.</p>'},
+    {title: 'When is the application deadline?', body: '<p>Early action applications are due November 1. The regular deadline is February 1 for fall admission.</p>'},
+    {title: 'Can I change my major after I enroll?', body: '<p>Yes. Most schools let you declare or change a major through your academic advisor once you have completed your first semester.</p>'},
+    {title: 'What financial aid is available?', body: '<p>File the FAFSA by April 15 to be considered for grants, scholarships, work-study and loans.</p>'}
+  ];
+  const demos = {
+    accordion: {
+      html: () => `<div class="rvt-accordion" data-rvt-accordion>${ACCORDION_ITEMS.map((it, i) => `
+        <div class="rvt-accordion__item">
+          <h3 class="rvt-accordion__heading">
+            <button class="rvt-accordion__trigger" type="button" id="acc-trigger-${i}" aria-expanded="${!!it.open}" aria-controls="acc-panel-${i}">
+              <span class="rvt-accordion__title">${esc(it.title)}</span>
+              <span class="rvt-accordion__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M15 9H1V7H15V9Z"/><path class="is-plus" d="M9 1V7H15V9H9V15H7V9H1V7H7V1H9Z"/></svg></span>
+            </button>
+          </h3>
+          <div class="rvt-accordion__panel${it.open ? ' is-open' : ''}" id="acc-panel-${i}" role="region" aria-labelledby="acc-trigger-${i}"${it.open ? '' : ' aria-hidden="true"'}>
+            <div><div class="rvt-accordion__body">${it.body}</div></div>
+          </div>
+        </div>`).join('')}</div>`,
+      wire: root => {
+        const acc = root.querySelector('[data-rvt-accordion]');
+        if (!acc) return;
+        const triggers = [...acc.querySelectorAll('.rvt-accordion__trigger')];
+        const toggle = (btn, open) => {
+          const panel = document.getElementById(btn.getAttribute('aria-controls'));
+          btn.setAttribute('aria-expanded', String(open));
+          panel.classList.toggle('is-open', open);
+          if (open) panel.removeAttribute('aria-hidden'); else panel.setAttribute('aria-hidden', 'true');
+        };
+        acc.addEventListener('click', e => {
+          const btn = e.target.closest('.rvt-accordion__trigger');
+          if (btn) toggle(btn, btn.getAttribute('aria-expanded') !== 'true');
+        });
+        acc.addEventListener('keydown', e => {
+          const i = triggers.indexOf(document.activeElement);
+          if (i < 0) return;
+          const next = {ArrowDown: i + 1, ArrowUp: i - 1, Home: 0, End: triggers.length - 1}[e.key];
+          if (next === undefined) return;
+          e.preventDefault();
+          triggers[(next + triggers.length) % triggers.length].focus();
+        });
+      }
+    }
+  };
+  const demoSection = c => {
+    const d = demos[c.slug];
+    if (!d) return '';
+    return `<section class="demo" aria-labelledby="demo-title">
+      <h2 class="demo-title" id="demo-title">Example</h2>
+      <p class="demo-note">Shows how I envision the component in all its glory.</p>
+      ${themeTabs()}
+      <div class="demo-stage" id="demo-stage" role="tabpanel" aria-label="${esc(c.name)} example">${d.html()}</div>
+    </section>`;
+  };
+  function wireDemo(c) {
+    const d = demos[c.slug];
+    const sec = document.querySelector('.demo');
+    if (!d || !sec) return;
+    wireThemeTabs(sec);
+    if (d.wire) d.wire(sec);
+  }
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const fmtDate = d => {
     if (!d) return '';
@@ -542,6 +752,9 @@ body:not(.has-rail) #rail-shell{display:none}
       below: `<a class="hero-compact" href="#text-styles">
         <span class="hero-compact-head"><span class="hero-compact-title">Text style and font details</span><span class="hero-compact-arrow" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span></span>
         <p class="hero-compact-desc">The type scale, the math behind each size, and the reasoning for each group of text styles.</p>
+      </a><a class="hero-compact" href="#interaction-states">
+        <span class="hero-compact-head"><span class="hero-compact-title">Interaction states</span><span class="hero-compact-arrow" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z"/></svg></span></span>
+        <p class="hero-compact-desc">Focus, hover, selected and disabled rules for every interactive component, and where the build differs.</p>
       </a>`}) + `
       <main class="wrap index">
         <div class="prose index-note">
@@ -679,13 +892,14 @@ body:not(.has-rail) #rail-shell{display:none}
         <li><span aria-current="page">${esc(c.name)}</span></li>
       </ol></nav>
       <main class="wrap detail">
-        <article class="doc"><div class="prose" id="prose"><p class="load">Loading…</p></div>
+        <article class="doc">${demoSection(c)}<div class="prose" id="prose"><p class="load">Loading…</p></div>
           <footer class="doc-foot">
             <p>${c.updated ? 'Last updated ' + fmtDate(c.updated) : ''}</p>
           </footer>
           ${seriesNav(c)}
         </article>
       </main>`;
+    wireDemo(c);
     const prose = document.getElementById('prose');
     try {
       if (!cache[c.slug]) {
@@ -791,6 +1005,27 @@ body:not(.has-rail) #rail-shell{display:none}
     } catch (e) { prose.innerHTML = '<p>This page could not be loaded. Try reloading the page.</p>'; }
   }
 
+  /* ---------- Interaction states (guides/interaction-states.md) ---------- */
+  let stateMd = null;
+  async function renderInteractionStates() {
+    document.title = 'Interaction states · Rivet 3 Component Guide';
+    app.innerHTML = hero({tag: '<a href="#">Components</a>', title: 'Interaction states', intro: 'Focus, hover, selected and disabled rules for every interactive component, and where the build differs.',
+      actions: `<a class="btn" href="#token-changes">Updated token guide${icon('arrowRight')}</a>`}) + `
+      <nav class="wrap crumbs" aria-label="Breadcrumb"><ol>
+        <li><a class="home" href="#" aria-label="Components home">${icon('home')}</a></li>
+        <li><a href="#">Components</a></li>
+        <li><span aria-current="page">Interaction states</span></li>
+      </ol></nav>
+      <main class="wrap detail"><article class="doc"><div class="prose" id="prose"><p class="load">Loading…</p></div></article></main>`;
+    const prose = document.getElementById('prose');
+    try {
+      if (!stateMd) { const r = await fetch('guides/interaction-states.md', {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); stateMd = await r.text(); }
+      if (location.hash.slice(1) !== 'interaction-states') return;
+      prose.innerHTML = DOMPurify.sanitize(marked.parse(preprocess(stateMd), {gfm: true, breaks: false}));
+      enhance(prose);
+    } catch (e) { prose.innerHTML = '<p>This page could not be loaded. Try reloading the page.</p>'; }
+  }
+
   /* ---------- Component rail ---------- */
   const CHEV = 'M6.263 15.146 12.31 8 6.263.854 4.737 2.146 9.69 8l-4.953 5.854 1.526 1.292Z';
   const MENU = 'M15 4H1V2H15V4ZM15 9H1V7H15V9ZM1 14H15V12H1V14Z';
@@ -846,10 +1081,13 @@ body:not(.has-rail) #rail-shell{display:none}
     const slug = decodeURIComponent(location.hash.slice(1));
     const c = slug && list.find(x => x.slug === slug);
     const onDoc = slug !== 'token-changes' && !!c;
+    /* Page theme switcher: only pages with an example have one. Entering such a page starts on Dark; leaving it clears the choice. */
+    if (c && demos[c.slug]) { if (!document.documentElement.dataset.pageTheme) setTheme(DEFAULT_THEME); }
+    else clearTheme();
     document.body.classList.toggle('has-rail', onDoc);
     setRailOpen(false);
     markRail(onDoc ? c.slug : null);
-    if (slug === 'token-changes') renderTokens(); else if (slug === 'text-styles') renderTextStyles(); else if (c) renderDoc(c); else renderIndex();
+    if (slug === 'token-changes') renderTokens(); else if (slug === 'text-styles') renderTextStyles(); else if (slug === 'interaction-states') renderInteractionStates(); else if (c) renderDoc(c); else renderIndex();
     window.scrollTo(0, 0);
   }
 
