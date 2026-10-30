@@ -45,7 +45,7 @@ Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab
 | Label, Small | `action/sm/regular` (14 / 20px), `text/strong` | Same |
 | Selected label | `action/lg/strong` or `action/sm/strong`, `component/tabs/selected-text` | Same |
 | Selected fill | `background/brand` | Same |
-| Hover fill | `background/tint` | Same |
+| Hover (unselected tab) | Fill `component/tabs/hover-background`, label `component/tabs/hover-text` (crimson label in Light; label unchanged in Dark and Crimson). The selected tab does not change on hover | Same |
 | Height, Large | `component/tabs/container-height-lg` (48px) | `component/tabs/segmented-height-lg` (40px) |
 | Height, Small | `component/tabs/container-height-sm` (40px) | `component/tabs/segmented-height-sm` (32px) |
 | Border | 1px `border/default`, all sides | None |

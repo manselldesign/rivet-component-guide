@@ -279,7 +279,8 @@
           "value": "#420505",
           "codeToday": null,
           "action": "add (new)",
-          "note": "Darkest crimson. Crimson-theme counterpart to color/base/ultra-dark: borders/dividers on brand/dark and brand/extra-dark surfaces."
+          "note": "Darkest crimson. Crimson-theme counterpart to color/base/ultra-dark: borders/dividers on brand/dark and brand/extra-dark surfaces.",
+          "figmaChange": "2026-10-30: value changed from #300404 to #420505 so the Crimson hover fill (background/muted) sits closer to the Dark hover weight."
         },
         {
           "name": "color/brand/extra-dark",
@@ -2494,6 +2495,36 @@
             "replaces": null,
             "action": "add (new)",
             "figmaChange": "2026-10-29: added in Figma. Label color of the selected tab, so it stays readable on background/brand in every theme."
+          },
+          {
+            "name": "component/tabs/hover-background",
+            "css": "--rvt-component-tabs-hover-background",
+            "light": "#faf6ef",
+            "dark": "#000000",
+            "crimson": "#420505",
+            "cssValue": {
+              "light": "--rvt-background-strong",
+              "dark": "--rvt-background-muted",
+              "crimson": "--rvt-background-muted"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: added in Figma. Fill of an unselected tab item on hover. Light uses background/strong; Dark and Crimson use background/muted because background/strong is the same color as the tab group's background/tint there."
+          },
+          {
+            "name": "component/tabs/hover-text",
+            "css": "--rvt-component-tabs-hover-text",
+            "light": "#990000",
+            "dark": "#ffffff",
+            "crimson": "#ffffff",
+            "cssValue": {
+              "light": "--rvt-text-accent",
+              "dark": "--rvt-text-strong",
+              "crimson": "--rvt-text-strong"
+            },
+            "replaces": null,
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: added in Figma. Label color of an unselected tab item on hover: crimson in Light, unchanged (text/strong) in Dark and Crimson."
           },
           {
             "name": "component/avatar/foreground",

@@ -1779,6 +1779,22 @@
             "Crimson": "@color/brand/dark"
           }
         },
+        "component/tabs/hover-background": {
+          "type": "COLOR",
+          "value": {
+            "Light": "@background/strong",
+            "Dark": "@background/muted",
+            "Crimson": "@background/muted"
+          }
+        },
+        "component/tabs/hover-text": {
+          "type": "COLOR",
+          "value": {
+            "Light": "@text/accent",
+            "Dark": "@text/strong",
+            "Crimson": "@text/strong"
+          }
+        },
         "component/list/marker": {
           "type": "COLOR",
           "value": {
