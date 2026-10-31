@@ -606,7 +606,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-alert--danger{--alert-bg:var(--rvt-background-danger-subtle);--alert-border:var(--rvt-border-danger);--alert-badge:var(--rvt-background-danger-strong);--alert-title:var(--rvt-text-danger)}
 .rvt-alert--default{--alert-bg:var(--rvt-background-brand-subtle);--alert-border:var(--rvt-border-brand);--alert-badge:var(--rvt-background-brand-strong);--alert-title:var(--rvt-text-brand)}
 .rvt-alert[hidden]{display:none}
-/* Page notes (every > [!type] callout, and the home page note) use this component in its Light theme; undo the prose list and paragraph styles inside it. */
+/* Page notes (every > [!type] callout, and the home page note) use this component and follow the page theme like everything else; undo the prose list and paragraph styles inside it. */
 .rvt-alert--note{margin:0 0 var(--rvt-spacing-24)}
 .prose .rvt-alert--note p{margin:0}
 .prose .rvt-alert--note .rvt-alert__list{display:flex;margin:0;padding:0 0 0 calc(28px + var(--rvt-spacing-8));gap:var(--rvt-spacing-8)}
@@ -745,13 +745,18 @@ body:not(.has-rail) .site-header__menu{display:none}
       tab.tabIndex = on ? 0 : -1;
     });
   }
+  /* With no page theme chosen, the guide follows the system light/dark setting; the matching .rvt-theme-* class on <html>
+     keeps every --rvt- token (page notes included) in step with it. */
+  const systemDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
   function clearTheme() {
     const root = document.documentElement;
     delete root.dataset.theme;
     delete root.dataset.pageTheme;
-    THEMES.forEach(t => root.classList.remove('rvt-theme-' + t.id));
+    const sys = systemDark && systemDark.matches ? 'dark' : 'light';
+    THEMES.forEach(t => root.classList.toggle('rvt-theme-' + t.id, t.id === sys));
     headerTheme('dark');
   }
+  if (systemDark) systemDark.addEventListener('change', () => { if (!document.documentElement.dataset.pageTheme) clearTheme(); });
   /* The header carries its own .rvt-theme-* class so its tokens resolve to the page theme; with no page theme it matches the guide's dark frame. */
   function headerTheme(id) {
     const h = document.getElementById('site-header');
@@ -981,7 +986,7 @@ body:not(.has-rail) .site-header__menu{display:none}
       </a>`}) + `
       <main class="wrap index">
         <div class="prose index-note">
-          <div class="rvt-alert rvt-alert--danger rvt-alert--note rvt-theme-light" role="note">
+          <div class="rvt-alert rvt-alert--danger rvt-alert--note" role="note">
             <div class="rvt-alert__block"><div class="rvt-alert__head"><span class="rvt-alert__badge" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${P[ALERT_ICON.danger]}"/></svg></span><p class="rvt-alert__title">Some things were optimized</p></div>
             <p class="rvt-alert__desc">While organizing the Figma file, I cleaned up parts of some components and may not have noted every change. When you have time, please go through each component and check the specs section.</p></div>
           </div>
@@ -1066,8 +1071,8 @@ body:not(.has-rail) .site-header__menu{display:none}
       first.innerHTML = first.innerHTML.slice(m[0].length).trim();
       if (!first.innerHTML) first.remove();
       const box = document.createElement('div');
-      /* Every callout renders with the real rvt-alert component in its Light theme (same markup and CSS as the Alert example). */
-      box.className = `rvt-alert rvt-alert--${kind} rvt-alert--note rvt-theme-light`; box.setAttribute('role', 'note');
+      /* Every callout renders with the real rvt-alert component (same markup and CSS as the Alert example) and follows the page theme. */
+      box.className = `rvt-alert rvt-alert--${kind} rvt-alert--note`; box.setAttribute('role', 'note');
       box.innerHTML = `<div class="rvt-alert__block"><div class="rvt-alert__head"><span class="rvt-alert__badge" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${P[ALERT_ICON[kind]]}"/></svg></span><p class="rvt-alert__title">${esc(title)}</p></div></div>`;
       const block = box.firstElementChild;
       [...bq.children].forEach((el, i) => {

@@ -1,10 +1,5 @@
 # Alert
 
-> [!info] Quick note
-> A few parts of this component changed. Please double-check:
->
-> - Container, spacing, icon size and text sizing updated for general optimization
-
 ## What it is
 
 An alert is a colored box that tells readers something important about the page or a task, like a deadline change or a problem with a form. It stands out from the rest of the content so people don't miss it.
