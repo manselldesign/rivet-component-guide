@@ -515,6 +515,15 @@ body:not(.has-rail) .site-header__menu{display:none}
 :root[data-page-theme] .hero-inner{border-bottom-color:var(--rvt-border-default)}
 :root[data-page-theme] .hero .tag,:root[data-page-theme] .hero h1{color:var(--rvt-text-brand)}
 :root[data-page-theme] .hero .intro{color:var(--rvt-text-default)}
+/* Hero cards (rvt-card-default, Style=Raised): background/raised, title text/strong, body text/default; hover title text/accent, arrow icon/accent. */
+:root[data-page-theme] .hero-compact,:root[data-page-theme] .hero-card{background:var(--rvt-background-raised);color:var(--rvt-text-default)}
+:root[data-page-theme] .hero-compact-title,:root[data-page-theme] .hero-card-title{color:var(--rvt-text-strong)}
+:root[data-page-theme] .hero-compact-arrow{color:var(--rvt-icon-strong)}
+:root[data-page-theme] .hero-compact-desc,:root[data-page-theme] .hero-card-tag,:root[data-page-theme] .hero-card-desc,:root[data-page-theme] .hero-card-msg{color:var(--rvt-text-default)}
+:root[data-page-theme] .hero-compact:hover .hero-compact-title,:root[data-page-theme] .hero-card-link{color:var(--rvt-text-accent)}
+:root[data-page-theme] .hero-compact:hover .hero-compact-arrow{color:var(--rvt-icon-accent)}
+:root[data-page-theme] .hero-card-link:hover{color:var(--rvt-text-brand-strong)}
+:root[data-page-theme] .hero-compact:focus-visible{outline-color:var(--rvt-border-accent-strong)}
 :root[data-page-theme] .hero :focus-visible{outline-color:var(--rvt-border-accent-strong)}
 :root[data-page-theme] .btn{border-color:var(--rvt-border-accent);color:var(--rvt-text-accent)}
 :root[data-page-theme] .btn:hover{border-color:var(--rvt-border-accent-strong);color:var(--rvt-text-brand-strong)}
@@ -737,6 +746,7 @@ body:not(.has-rail) .site-header__menu{display:none}
     const root = document.documentElement;
     root.dataset.theme = id;
     root.dataset.pageTheme = id;
+    delete root.dataset.systemTheme;
     THEMES.forEach(t => root.classList.toggle('rvt-theme-' + t.id, t.id === id));
     headerTheme(id);
     document.querySelectorAll('.rvt-tabs--theme .rvt-tabs__tab').forEach(tab => {
@@ -745,18 +755,20 @@ body:not(.has-rail) .site-header__menu{display:none}
       tab.tabIndex = on ? 0 : -1;
     });
   }
-  /* With no page theme chosen, the guide follows the system light/dark setting; the matching .rvt-theme-* class on <html>
-     keeps every --rvt- token (page notes included) in step with it. */
+  /* Pages without a theme switcher follow the system light/dark setting: the same .rvt-theme-* class, data-page-theme and header
+     theme as a chosen theme, so the hero, sidebar, header, notes and every --rvt- token switch with it. data-system-theme marks it as
+     the system's choice, so entering a page with a switcher still starts on Dark. */
   const systemDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
   function clearTheme() {
     const root = document.documentElement;
     delete root.dataset.theme;
-    delete root.dataset.pageTheme;
     const sys = systemDark && systemDark.matches ? 'dark' : 'light';
+    root.dataset.pageTheme = sys;
+    root.dataset.systemTheme = '';
     THEMES.forEach(t => root.classList.toggle('rvt-theme-' + t.id, t.id === sys));
-    headerTheme('dark');
+    headerTheme(sys);
   }
-  if (systemDark) systemDark.addEventListener('change', () => { if (!document.documentElement.dataset.pageTheme) clearTheme(); });
+  if (systemDark) systemDark.addEventListener('change', () => { if ('systemTheme' in document.documentElement.dataset) clearTheme(); });
   /* The header carries its own .rvt-theme-* class so its tokens resolve to the page theme; with no page theme it matches the guide's dark frame. */
   function headerTheme(id) {
     const h = document.getElementById('site-header');
@@ -1289,7 +1301,7 @@ body:not(.has-rail) .site-header__menu{display:none}
     const c = slug && list.find(x => x.slug === slug);
     const onDoc = slug !== 'token-changes' && !!c;
     /* Page theme switcher: only pages with an example have one. Entering such a page starts on Dark; leaving it clears the choice. */
-    if (c && demos[c.slug]) { if (!document.documentElement.dataset.pageTheme) setTheme(DEFAULT_THEME); }
+    if (c && demos[c.slug]) { const ds = document.documentElement.dataset; if (!ds.pageTheme || 'systemTheme' in ds) setTheme(DEFAULT_THEME); }
     else clearTheme();
     document.body.classList.toggle('has-rail', onDoc);
     setRailOpen(false);
