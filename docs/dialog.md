@@ -49,5 +49,5 @@ Shared rules: `background/raised` fill, `shadow/lg`, no radius. Modal adds a ful
 | Title | `heading/md/strong` (20 / 24px); `text/brand`, `text/success`, `text/warning` or `text/danger` | Same |
 | Content | `spacing/40` all sides (40px), `spacing/32` gap (32px) | 32px all sides, 24px gap |
 | Body text | `body/base/regular` (18 / 28px), `text/default` | `body/base/regular` (16 / 24px) |
-| Buttons | Side by side, secondary then primary, `spacing/16` gap, `spacing/8` above | Stacked, primary on top, each button hugs its label, `spacing/8` gap |
+| Buttons | Side by side, secondary then primary, `spacing/16` gap, `spacing/8` above | Stacked full width, primary on top, `spacing/8` gap |
 | Form fields | `rvt-select-input`, `rvt-textarea`, `rvt-checkbox`, `spacing/32` between | `spacing/32` between (24px) |
