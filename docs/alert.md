@@ -1,10 +1,9 @@
 # Alert
 
-> [!info|dark] Quick note
+> [!info|light] Quick note
 > A few parts of this component changed. Please double-check:
 >
-> - Container, spacing and text sizing updated for general optimization
-> - Border now sits inside the box, so it no longer adds to the alert's width or gets cut off in tight containers
+> - Container, spacing, icon size and text sizing updated for general optimization
 
 ## What it is
 
@@ -56,7 +55,7 @@ An alert is a colored box that tells readers something important about the page 
 
 ### Default and CTA
 
-Shared rules: icon and title sit side by side on Desktop and Mobile. Description, list and buttons all start 32px in, lined up with the title text. All spacing is on a 4px grid.
+Shared rules: icon and title sit side by side on Desktop and Mobile. Description, list and buttons all start 36px in (28px icon + 8px gap), flush with the title text. All spacing is on a 4px grid.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
@@ -65,12 +64,12 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 | Background | `background/{status}-subtle` | Same |
 | Border | 1px `border/{status}`, drawn inside the box (`box-sizing: border-box`), so it doesn't add to the width | Same |
 | Title row | Icon and title side by side, `spacing/8` (8px) gap, top-aligned | Same |
-| Status icon | 24px circle, `background/{status}-strong`, 16px glyph centered | Same |
-| Title | `heading/md/strong` (20 / 24px), `text/{status}`, no top padding | Same |
+| Status icon | 28px circle, `background/{status}-strong`, 16px glyph centered | Same |
+| Title | `heading/md/strong` (20 / 24px), `text/{status}`, 2px top padding so the first line centers on the 28px icon | Same |
 | Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/8` (8px) below title row, max width 850px | Same |
-| Description and list indent | `spacing/32` (32px) left, lines up with the title text | 32px left (raw value: `spacing/32` is 24px in Mobile mode) |
+| Description and list indent | 36px left (28px icon + `spacing/8`), flush with the title text | Same |
 | List | `body/sm/regular` (16 / 24px), `text/default`, items `spacing/8` (8px) apart, each item 24px tall, bullet 6px `icon/default` centered in a 24px slot, `spacing/8` (8px) bullet to text, max width 920px | Same |
-| Height with title, description and 3 list items | 208px (264px with buttons) | 240px (296px with buttons) at 327px wide |
+| Height with title, description and 3 list items | 212px (268px with buttons) | 244px (348px with buttons, stacked) at 327px wide |
 | Close button | 16px icon, 16px from top and right (no token). On Info and Success only | Same |
 | Title colors | Info `text/info`, Success `text/success`, Warning `text/warning`, Danger `text/danger`, Default `text/brand` | Same |
 
@@ -78,7 +77,7 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Actions row | `spacing/8` (8px) top padding, `spacing/32` (32px) left indent, `spacing/16` (16px) between buttons | `spacing/8` (8px) top padding, 32px left indent (raw value), `spacing/16` (16px) between buttons |
+| Actions row | `spacing/8` (8px) top padding, 36px left indent (flush with the title text), `spacing/16` (16px) between buttons | `spacing/8` (8px) top padding, 36px left indent, buttons stacked, `spacing/16` (16px) apart |
 | Buttons | `rvt-button` Form, Medium, no style overrides. Primary = Style Strong, Secondary = Style Normal | Same |
 | Button height | 32px (`component/button/height-md`) | Same |
 | Button padding | `spacing/12` (12px) left and right | Same |
@@ -91,9 +90,9 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 | Element | Desktop | Mobile |
 | --- | --- | --- |
 | Container padding | `spacing/4` (4px) top and bottom, `spacing/8` (8px) left and right | `spacing/4` (4px) all sides |
-| Gap | `spacing/4` (4px) icon to text. Icon and text top-aligned | Same |
+| Gap | `spacing/8` (8px) icon to text. Icon and text top-aligned | Same |
 | Background | `background/{status}-subtle` | Same |
 | Border | 1px `border/{status}`, drawn inside the box (`box-sizing: border-box`), so it doesn't add to the width | Same |
-| Icon | 16px circle, `background/{status}-strong`, `border-radius/full`, 12px glyph centered. Top-aligned and centered on the first line of text: it sits in a 16 × 20px slot (height `type/line-height/20`), 2px from the top. Stays on the first line when the message wraps | Same |
-| Message | `body/xs/regular` (14 / 20px), `text/default`, hugs its text, max width 500px | `body/xs/regular` (14 / 20px), fills the width and wraps. With a close button, max width 280px so the text clears the button |
+| Icon | 24px circle, `background/{status}-strong`, `border-radius/full`, 12px glyph centered, in a 24 × 24px slot. Top-aligned; it stays on the first line when the message wraps | Same |
+| Message | `body/xs/regular` (14 / 20px), `text/default`, 2px top padding so the first line centers on the 24px icon, hugs its text, max width 500px | `body/xs/regular` (14 / 20px), fills the width and wraps. With a close button, max width 280px so the text clears the button |
 | Close button | 12px icon, sits inside the message row, 4px from top and right (no token). On Info and Success only | Same |

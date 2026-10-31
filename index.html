@@ -552,6 +552,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 /* The stage has no border or padding of its own, so the component's own border is the only frame. */
 /* Each example is capped at its component's Figma Desktop frame width (demos.<slug>.maxWidth), so it never stretches past what was designed. */
 .demo-stage{margin-top:var(--rvt-spacing-24);max-width:var(--demo-max,none)}
+.demo-stage:focus{outline:none}
 
 /* While a page theme is chosen (data-page-theme on <html>), the hero and the sidebar follow the --rvt- tokens too:
    rvt-hero-callout = background/default, border/default rule, tag + title text/brand, intro text/default, CTA Normal buttons border/accent + text/accent.
@@ -568,10 +569,11 @@ body:not(.has-rail) .site-header__menu{display:none}
 :root[data-page-theme="light"] #rail-shell{color-scheme:light}
 
 /* ---------- rvt-tabs, Type=Segmented, Size=Large (Small below 768px): page theme switcher ----------
-   Group: spacing/4 padding, background/tint fill, 1px border/default. Tabs hug their label, no gap, 0 radius.
+   Group: 40px tall in total on every screen: spacing/4 padding around 32px tabs, background/tint fill, and a 1px component/input/border line drawn inside
+   (inset shadow), so the border doesn't add to the height. Tabs hug their label, no gap, 0 radius.
    Label: spacing/16 sides, action/lg/regular text/strong; selected = action/lg/strong + component/tabs/selected-text on background/brand.
    Hover (unselected tabs) = component/tabs/hover-background fill + component/tabs/hover-text label. */
-.rvt-tabs--segmented{display:inline-flex;flex-wrap:wrap;padding:var(--rvt-spacing-4);gap:0;margin:0;background:var(--rvt-background-tint);border:1px solid var(--rvt-border-default)}
+.rvt-tabs--segmented{display:inline-flex;flex-wrap:wrap;padding:var(--rvt-spacing-4);gap:0;margin:0;background:var(--rvt-background-tint);border:0;box-shadow:inset 0 0 0 1px var(--rvt-component-input-border)}
 .rvt-tabs__tab{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;height:var(--rvt-component-tabs-segmented-height-lg);padding:0 var(--rvt-spacing-16);margin:0;border:0;border-radius:0;
   background:transparent;color:var(--rvt-text-strong);font:var(--rvt-font-action-lg-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);cursor:pointer;-webkit-appearance:none;appearance:none;
   transition:background-color .15s ease-out,color .15s ease-out}
@@ -612,8 +614,102 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-accordion__body>*+*{margin-top:var(--rvt-spacing-16)}
 .rvt-accordion__body a{color:var(--rvt-text-link);text-underline-offset:3px;text-decoration-thickness:1px;transition:text-decoration-color .15s ease-out}
 .rvt-accordion__body a:hover{text-decoration-thickness:2px}
+
+/* ---------- Example controls: "Switch theme" tabs, then "Select variant" for components with more than one variant ----------
+   The two controls sit side by side, bottom-aligned, spacing/24 apart, and wrap under each other on narrow screens.
+   Each has its own label in the input-label style (.demo-switch-label). */
+.demo-controls{display:flex;flex-wrap:wrap;align-items:flex-end;gap:var(--rvt-spacing-24)}
+.demo-control{min-width:0;max-width:100%}
+/* rvt-select-input (no helper text): 1px component/input/border, no fill, no radius, spacing/12 sides, body/sm/regular component/input/text,
+   16px chevron-down in component/input/icon, spacing/8 from the value. Focus = 2px border/accent-strong ring, no offset.
+   Size Medium: component/input/height-md (40px) on every screen, the same height as the Segmented tabs beside it. Width: 300px; it shrinks to fit narrow screens. */
+.rvt-select{position:relative;display:flex;align-items:center;width:300px;max-width:100%}
+.rvt-select__input{width:100%;height:var(--rvt-component-input-height-md);max-width:100%;margin:0;
+  padding:0 calc(var(--rvt-spacing-12) + 16px + var(--rvt-spacing-8)) 0 var(--rvt-spacing-12);
+  border:1px solid var(--rvt-component-input-border);border-radius:0;background:var(--rvt-background-default);color:var(--rvt-component-input-text);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);
+  cursor:pointer;-webkit-appearance:none;appearance:none}
+.rvt-select__input option{background:var(--rvt-background-default);color:var(--rvt-component-input-text)}
+.rvt-select__input:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
+.rvt-select__icon{position:absolute;right:var(--rvt-spacing-12);top:50%;width:16px;height:16px;margin-top:-8px;color:var(--rvt-component-input-icon);pointer-events:none}
+.rvt-select__icon svg{display:block;width:16px;height:16px;fill:currentColor}
+
+/* ---------- rvt-alert (Alert page, Developer spec checklist) ----------
+   Themed like every other component: its tokens follow the page theme (Light, Dark, Crimson), e.g. Info on Dark = background/info-subtle black,
+   text/info white, border/info light blue. Badges keep their status fill in every theme.
+   Default/CTA: spacing/24 padding (spacing/16 on mobile), spacing/16 gap; background/{status}-subtle.
+   The 1px border/{status} is drawn inside the box (inset box-shadow), so it adds nothing to the width or height: 212px / 268px tall (Inline 32px), like the design.
+   Title row: 28px status badge (16px glyph) + heading/md/strong text/{status}, spacing/8 apart; the title sits 2px down so its line centers on the badge.
+   Description, list and actions indent 36px (28px badge + spacing/8), flush with the title text on Desktop and Mobile.
+   Inline: spacing/4 x spacing/8 padding (spacing/4 all sides on mobile), 24px badge with a 12px glyph in a 24 x 24 slot, spacing/8 to the text, body/xs/regular 2px down to center on the badge.
+   Close button on Info and Success only: 16px (12px Inline), 16px (4px Inline) from the top and right outer edges. */
+.rvt-alert-stack{display:flex;flex-direction:column;gap:var(--rvt-spacing-24)}
+.rvt-alert{--alert-bg:var(--rvt-background-info-subtle);--alert-border:var(--rvt-border-info);--alert-badge:var(--rvt-background-info-strong);--alert-badge-border:transparent;--alert-glyph:var(--rvt-color-base-ultra-light);--alert-title:var(--rvt-text-info);
+  position:relative;box-sizing:border-box;display:flex;flex-direction:column;gap:var(--rvt-spacing-16);width:100%;margin:0;padding:var(--rvt-spacing-24);
+  background:var(--alert-bg);border:0;box-shadow:inset 0 0 0 1px var(--alert-border);color:var(--rvt-text-default)}
+.rvt-alert--success{--alert-bg:var(--rvt-background-success-subtle);--alert-border:var(--rvt-border-success);--alert-badge:var(--rvt-background-success-strong);--alert-badge-border:var(--rvt-border-success-fixed);--alert-title:var(--rvt-text-success)}
+.rvt-alert--warning{--alert-bg:var(--rvt-background-warning-subtle);--alert-border:var(--rvt-border-warning);--alert-badge:var(--rvt-background-warning-strong);--alert-glyph:var(--rvt-color-base-main);--alert-title:var(--rvt-text-warning)}
+.rvt-alert--danger{--alert-bg:var(--rvt-background-danger-subtle);--alert-border:var(--rvt-border-danger);--alert-badge:var(--rvt-background-danger-strong);--alert-title:var(--rvt-text-danger)}
+.rvt-alert--default{--alert-bg:var(--rvt-background-brand-subtle);--alert-border:var(--rvt-border-brand);--alert-badge:var(--rvt-background-brand-strong);--alert-title:var(--rvt-text-brand)}
+.rvt-alert[hidden]{display:none}
+/* Page notes ([!type|light] callouts) use this component in its Light theme; undo the prose list and paragraph styles inside it. */
+.prose .rvt-alert--note{margin:0 0 var(--rvt-spacing-24)}
+.prose .rvt-alert--note p{margin:0}
+.prose .rvt-alert--note .rvt-alert__list{display:flex;margin:0;padding:0 0 0 calc(28px + var(--rvt-spacing-8));gap:var(--rvt-spacing-8)}
+.prose .rvt-alert--note .rvt-alert__list>li{padding-left:0}
+.prose .rvt-alert--note .rvt-alert__list>li::before{position:static;width:6px;height:6px;margin-top:9px;background:var(--rvt-icon-default)}
+.prose .rvt-alert--note .rvt-alert__desc,.prose .rvt-alert--note .rvt-alert__list>li{color:var(--rvt-text-default);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-alert:focus{outline:none}
+.rvt-alert__block{display:flex;flex-direction:column;gap:var(--rvt-spacing-8);min-width:0}
+.rvt-alert__head{display:flex;align-items:flex-start;gap:var(--rvt-spacing-8)}
+.rvt-alert__badge{box-sizing:border-box;flex:none;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:var(--rvt-border-radius-full);
+  background:var(--alert-badge);border:1px solid var(--alert-badge-border);color:var(--alert-glyph)}
+.rvt-alert__badge svg{display:block;width:16px;height:16px;fill:currentColor}
+.rvt-alert__title{flex:1 1 auto;min-width:0;margin:0;padding-top:2px;color:var(--alert-title);overflow-wrap:anywhere;
+  font:var(--rvt-font-heading-md-strong);font-stretch:var(--rvt-font-width-semi-expanded);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-alert__desc{margin:0;padding-left:calc(28px + var(--rvt-spacing-8));max-width:calc(850px + calc(28px + var(--rvt-spacing-8)));color:var(--rvt-text-default);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-alert__list{display:flex;flex-direction:column;gap:var(--rvt-spacing-8);margin:0;padding:0 0 0 calc(28px + var(--rvt-spacing-8));list-style:none}
+.rvt-alert__list li{display:flex;align-items:flex-start;gap:var(--rvt-spacing-8);max-width:calc(6px + var(--rvt-spacing-8) + 920px);color:var(--rvt-text-default);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+/* Bullet: 6px icon/default square, centered in a 24px-tall slot so it sits on the first line. */
+.rvt-alert__list li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;background:var(--rvt-icon-default)}
+.rvt-alert__actions{display:flex;flex-wrap:wrap;gap:var(--rvt-spacing-16);padding:var(--rvt-spacing-8) 0 0 calc(28px + var(--rvt-spacing-8))}
+/* rvt-button, Form, Medium: 32px tall, spacing/12 sides, action/sm/strong. Primary = Style Strong, Secondary = Style Normal. */
+.rvt-alert__btn{box-sizing:border-box;display:inline-flex;align-items:center;gap:var(--rvt-spacing-8);height:var(--rvt-component-button-height-md);margin:0;padding:0 var(--rvt-spacing-12);
+  border:1px solid var(--rvt-component-button-form-border);border-radius:0;cursor:pointer;-webkit-appearance:none;appearance:none;white-space:nowrap;
+  font:var(--rvt-font-action-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);
+  transition:background-color .15s ease-out,border-color .15s ease-out,color .15s ease-out}
+.rvt-alert__btn--primary{background:var(--rvt-component-button-form-background);border-color:var(--rvt-component-button-form-background);color:var(--rvt-text-on-brand-alt)}
+.rvt-alert__btn--primary:hover{background:var(--rvt-component-button-form-background-hover);border-color:var(--rvt-component-button-form-background-hover)}
+.rvt-alert__btn--secondary{background:transparent;color:var(--rvt-component-button-form-text)}
+.rvt-alert__btn--secondary:hover{border-color:var(--rvt-component-button-form-border-hover);color:var(--rvt-component-button-form-text-hover)}
+.rvt-alert__btn:focus-visible,.rvt-alert__close:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+/* Close: 16px from the top and right outer edges (no token), icon/strong. The ::before widens the click target without moving the icon. */
+.rvt-alert__close{position:absolute;top:16px;right:16px;display:block;width:16px;height:16px;margin:0;padding:0;border:0;border-radius:0;background:transparent;color:var(--rvt-icon-strong);cursor:pointer;-webkit-appearance:none;appearance:none}
+.rvt-alert__close::before{content:"";position:absolute;inset:-8px}
+.rvt-alert__close svg{display:block;width:100%;height:100%;fill:currentColor}
+/* Inline */
+.rvt-alert--inline{flex-direction:row;align-items:flex-start;gap:var(--rvt-spacing-8);padding:var(--rvt-spacing-4) var(--rvt-spacing-8)}
+.rvt-alert__slot{flex:none;display:flex;align-items:center;justify-content:center;width:24px;height:24px}
+.rvt-alert--inline .rvt-alert__badge{width:24px;height:24px}
+.rvt-alert--inline .rvt-alert__badge svg{width:12px;height:12px}
+.rvt-alert__message{margin:0;padding-top:2px;max-width:500px;min-width:0;color:var(--rvt-text-default);
+  font:var(--rvt-font-body-xs-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-alert--inline .rvt-alert__close{top:4px;right:4px;width:12px;height:12px}
+.rvt-alert--inline .rvt-alert__close::before{inset:-6px}
+@media (max-width:767px){
+  .rvt-alert{padding:var(--rvt-spacing-16)}
+  .rvt-alert__desc{max-width:none}
+  /* Mobile buttons stack, spacing/16 apart, each hugging its label. */
+  .rvt-alert__actions{flex-direction:column;align-items:flex-start}
+  .rvt-alert--inline{padding:var(--rvt-spacing-4)}
+  .rvt-alert--inline .rvt-alert__message{flex:1 1 auto;max-width:none}
+  .rvt-alert--inline.has-close .rvt-alert__message{max-width:280px}
+}
 @media (prefers-reduced-motion:reduce){
-  .rvt-accordion__panel,.rvt-accordion__panel.is-open,.rvt-accordion__item,.rvt-accordion__icon svg path,.rvt-tabs__tab{transition:none}
+  .rvt-alert__btn,.rvt-accordion__panel,.rvt-accordion__panel.is-open,.rvt-accordion__item,.rvt-accordion__icon svg path,.rvt-tabs__tab{transition:none}
 }
 </style>
 </head>
@@ -659,6 +755,7 @@ body:not(.has-rail) .site-header__menu{display:none}
     check: 'M14.9142 4L5.44353 13.4707L1.08997 8.39153L2.60848 7.08995L5.5565 10.5293L13.5 2.58578L14.9142 4Z',
     minus: 'M15 9H1V7H15V9Z',
     exclamation: 'M7 1H9V10.5H7V1Z M9.25 13.75C9.25 14.4404 8.69036 15 8 15C7.30964 15 6.75 14.4404 6.75 13.75C6.75 13.0596 7.30964 12.5 8 12.5C8.69036 12.5 9.25 13.0596 9.25 13.75Z',
+    chevronDown: 'm15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z',
     close: 'M3.50003 2.08578L8.00003 6.58578L12.5 2.08578L13.9142 3.5L9.41424 8L13.9142 12.5L12.5 13.9142L8.00003 9.41421L3.50003 13.9142L2.08582 12.5L6.58582 8L2.08582 3.5L3.50003 2.08578Z',
     bell: 'M10 14L15.5 14L15.5 12L14.118 12L13.7516 11.2672C13.5771 10.918 13.4758 10.5368 13.4542 10.147L13.2203 5.93837C13.0854 3.50893 11.3068 1.54301 9 1.09569V0H7V1.09569C4.69318 1.543 2.91463 3.50892 2.77966 5.93837L2.54585 10.147C2.52419 10.5368 2.42295 10.918 2.24835 11.2672L1.88197 12H0.5V14L6 14C6 15.1046 6.89543 16 8 16C9.10457 16 10 15.1046 10 14ZM11.8857 12L4.11434 12C4.36381 11.4514 4.50928 10.8607 4.54277 10.2579L4.77658 6.04931C4.87162 4.33853 6.28658 3 8 3C9.71341 3 11.1284 4.33853 11.2234 6.04931L11.4572 10.2579C11.4907 10.8607 11.6362 11.4514 11.8857 12Z'
   };
@@ -738,6 +835,60 @@ body:not(.has-rail) .site-header__menu{display:none}
     {title: 'Can I change my major after I enroll?', body: '<p>Yes. Most schools let you declare or change a major through your academic advisor once you have completed your first semester.</p>'},
     {title: 'What financial aid is available?', body: '<p>File the FAFSA by April 15 to be considered for grants, scholarships, work-study and loans.</p>'}
   ];
+
+  /* rvt-alert example. 16px glyphs reuse P; the Inline badge uses the 12px Rivet glyphs. */
+  const P12 = {
+    info: 'M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0M5 4h2v7H5z',
+    check: 'm11.537 2.979-7.47 7.47L.462 6.245 1.98 4.943l2.2 2.565 5.944-5.944z',
+    minus: 'M11 5v2H1V5z',
+    exclamation: 'M7 10a1 1 0 1 1-2 0 1 1 0 0 1 2 0M5 1h2v7H5z',
+    bell: 'M8 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 5a2 2 0 1 0-4 0v1.764c0 .31-.072.617-.21.894L3.617 8h4.764l-.171-.342A2 2 0 0 1 8 6.764zm2 1.764L10.618 8H12v2H0V8h1.382L2 6.764V5a4 4 0 0 1 3-3.874V0h2v1.126c1.725.444 3 2.01 3 3.874z',
+    close: 'M10.854 2.56 7.414 6l3.44 3.44-1.415 1.414L6 7.414l-3.44 3.44-1.414-1.415L4.586 6l-3.44-3.44 1.415-1.414L6 4.586l3.44-3.44z'
+  };
+  const icon12 = name => `<svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="${P12[name]}"/></svg>`;
+  /* Status order follows the component: Info, Success, Warning, Danger, Default. Only Info and Success can be dismissed. */
+  const ALERTS = [
+    {status: 'info', word: 'Info', glyph: 'info', close: true, title: 'New advising hours',
+      desc: 'Advising now meets Monday through Thursday, 9 a.m. to 6 p.m., in Wells Library.',
+      list: ['Walk-ins are welcome until 4 p.m.', 'Virtual appointments are on Fridays', 'Bring your student ID'],
+      actions: ['Book an appointment', 'See all hours'], inline: 'Advising hours changed for fall.'},
+    {status: 'success', word: 'Success', glyph: 'check', close: true, title: 'Application submitted',
+      desc: 'We received your application for fall admission. A confirmation email is on its way.',
+      list: ['Application fee paid', 'Transcript received', 'Essay uploaded'],
+      actions: ['View application status', 'Print summary'], inline: 'Your email address was saved.'},
+    {status: 'warning', word: 'Warning', glyph: 'minus', title: 'Deadline is coming up',
+      desc: 'Early action applications are due November 1. Finish these steps to be considered.',
+      list: ['Send your high school transcript', 'Add one letter of recommendation', 'Pay the application fee'],
+      actions: ['Finish application', 'Review checklist'], inline: 'Your session ends in 5 minutes.'},
+    {status: 'danger', word: 'Error', glyph: 'exclamation', title: 'Payment didn’t go through',
+      desc: 'We couldn’t process your enrollment deposit. Update your payment method to hold your spot.',
+      list: ['Check the card number and expiration date', 'Confirm your billing address', 'Try a different payment method'],
+      actions: ['Update payment', 'Contact the Bursar'], inline: 'Enter a valid IU email address.'},
+    {status: 'default', word: 'Notice', glyph: 'bell', title: 'Offices closed November 26–27',
+      desc: 'IU Bloomington offices close for Thanksgiving. Online services stay open.',
+      list: ['Bursar payments still post online', 'Libraries keep reduced hours', 'Advising reopens November 30'],
+      actions: ['See holiday hours', 'View campus calendar'], inline: 'Offices close at noon on Friday.'}
+  ];
+  const closeBtn = (a, size) => a.close ? `<button class="rvt-alert__close" type="button" aria-label="Dismiss ${esc(a.word.toLowerCase())} alert">${size === 12 ? icon12('close') : `<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${P.close}"/></svg>`}</button>` : '';
+  const alertBlock = (a, cta) => `
+    <div class="rvt-alert rvt-alert--${a.status}" role="region" aria-labelledby="alert-title-${a.status}" tabindex="-1">
+      <div class="rvt-alert__block">
+        <div class="rvt-alert__head">
+          <span class="rvt-alert__badge" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${P[a.glyph]}"/></svg></span>
+          <h3 class="rvt-alert__title" id="alert-title-${a.status}"><span class="sr-only">${esc(a.word)}: </span>${esc(a.title)}</h3>
+        </div>
+        <p class="rvt-alert__desc">${esc(a.desc)}</p>
+      </div>
+      <ul class="rvt-alert__list">${a.list.map(li => `<li>${esc(li)}</li>`).join('')}</ul>
+      ${cta ? `<div class="rvt-alert__actions"><button class="rvt-alert__btn rvt-alert__btn--primary" type="button">${esc(a.actions[0])}</button><button class="rvt-alert__btn rvt-alert__btn--secondary" type="button">${esc(a.actions[1])}</button></div>` : ''}
+      ${closeBtn(a, 16)}
+    </div>`;
+  const alertInline = a => `
+    <div class="rvt-alert rvt-alert--inline rvt-alert--${a.status}${a.close ? ' has-close' : ''}" tabindex="-1">
+      <span class="rvt-alert__slot" aria-hidden="true"><span class="rvt-alert__badge">${icon12(a.glyph)}</span></span>
+      <p class="rvt-alert__message"><span class="sr-only">${esc(a.word)}: </span>${esc(a.inline)}</p>
+      ${closeBtn(a, 12)}
+    </div>`;
   const demos = {
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
@@ -776,24 +927,62 @@ body:not(.has-rail) .site-header__menu{display:none}
           triggers[(next + triggers.length) % triggers.length].focus();
         });
       }
+    },
+    /* Components with more than one variant list them in `variants`; the example adds a "Select variant" dropdown next to the theme tabs.
+       A variant can carry its own maxWidth (its Desktop frame width); html(variantId) builds the stage for that variant. */
+    alert: {
+      maxWidth: 1400, // Figma rvt-alert, Breakpoint=Desktop, Type=Default and CTA frame width
+      variants: [
+        {id: 'default', label: 'Default'},
+        {id: 'cta', label: 'CTA'},
+        {id: 'inline', label: 'Inline', maxWidth: 520} // Figma rvt-alert, Breakpoint=Desktop, Type=Inline frame width
+      ],
+      html: v => `<div class="rvt-alert-stack">${ALERTS.map(a => v === 'inline' ? alertInline(a) : alertBlock(a, v === 'cta')).join('')}</div>`,
+      wire: stage => {
+        stage.querySelectorAll('.rvt-alert__close').forEach(btn => btn.addEventListener('click', () => {
+          const alert = btn.closest('.rvt-alert');
+          alert.hidden = true;
+          /* Move focus to the next alert still showing, or the stage, so keyboard users don't lose their place. */
+          const rest = [...stage.querySelectorAll('.rvt-alert:not([hidden])')];
+          (rest.find(el => alert.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING) || rest[0] || stage).focus();
+        }));
+      }
     }
   };
   const demoSection = c => {
     const d = demos[c.slug];
     if (!d) return '';
+    const v = d.variants ? d.variants[0] : null; // every visit starts on the first variant
+    const max = (v && v.maxWidth) || d.maxWidth;
     return `<section class="demo" aria-labelledby="demo-title">
       <h2 class="demo-title" id="demo-title">Example</h2>
       <p class="demo-note">Shows how I envision the component in all its glory. 🤘</p>
-      ${themeTabs()}
-      <div class="demo-stage" id="demo-stage" role="tabpanel" aria-label="${esc(c.name)} example"${d.maxWidth ? ` style="--demo-max:${d.maxWidth}px"` : ''}>${d.html()}</div>
+      <div class="demo-controls">
+        <div class="demo-control">${themeTabs()}</div>
+        ${v ? `<div class="demo-control">${variantSelect(d, v)}</div>` : ''}
+      </div>
+      <div class="demo-stage" id="demo-stage" role="tabpanel" tabindex="-1" aria-label="${esc(c.name)} example"${max ? ` style="--demo-max:${max}px"` : ''}>${d.html(v && v.id)}</div>
     </section>`;
   };
+  /* rvt-select-input: "Select variant", shown only when a component has more than one variant. A native <select>, so keyboard and screen reader support come for free. */
+  const variantSelect = (d, v) => `<label class="demo-switch-label" for="demo-variant">Select variant</label>
+    <span class="rvt-select"><select class="rvt-select__input" id="demo-variant" aria-controls="demo-stage">${d.variants.map(o =>
+      `<option value="${esc(o.id)}"${o.id === v.id ? ' selected' : ''}>${esc(o.label)}</option>`).join('')}</select><span class="rvt-select__icon" aria-hidden="true">${icon('chevronDown')}</span></span>`;
   function wireDemo(c) {
     const d = demos[c.slug];
     const sec = document.querySelector('.demo');
     if (!d || !sec) return;
     wireThemeTabs(sec);
-    if (d.wire) d.wire(sec);
+    const stage = sec.querySelector('#demo-stage');
+    if (d.wire) d.wire(stage);
+    const sel = sec.querySelector('#demo-variant');
+    if (sel) sel.addEventListener('change', () => {
+      const v = d.variants.find(o => o.id === sel.value) || d.variants[0];
+      const max = v.maxWidth || d.maxWidth;
+      if (max) stage.style.setProperty('--demo-max', max + 'px'); else stage.style.removeProperty('--demo-max');
+      stage.innerHTML = d.html(v.id);
+      if (d.wire) d.wire(stage);
+    });
   }
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const fmtDate = d => {
@@ -923,7 +1112,20 @@ body:not(.has-rail) .site-header__menu{display:none}
       first.innerHTML = first.innerHTML.slice(m[0].length).trim();
       if (!first.innerHTML) first.remove();
       const box = document.createElement('div');
-      box.className = 'alert' + ((m[2] || '').toLowerCase() === 'dark' ? ' is-dark' : ''); box.dataset.k = kind; box.setAttribute('role', 'note');
+      const mod = (m[2] || '').toLowerCase();
+      /* [!type|light]: render with the real rvt-alert component in its Light theme (same markup and CSS as the example). */
+      if (mod === 'light') {
+        box.className = `rvt-alert rvt-alert--${kind} rvt-alert--note rvt-theme-light`; box.setAttribute('role', 'note');
+        box.innerHTML = `<div class="rvt-alert__block"><div class="rvt-alert__head"><span class="rvt-alert__badge" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${P[ALERT_ICON[kind]]}"/></svg></span><p class="rvt-alert__title">${esc(title)}</p></div></div>`;
+        const block = box.firstElementChild;
+        [...bq.children].forEach((el, i) => {
+          if (el.tagName === 'UL') { el.className = 'rvt-alert__list'; box.appendChild(el); }
+          else { el.classList.add('rvt-alert__desc'); (i === 0 && el.tagName === 'P' ? block : box).appendChild(el); }
+        });
+        bq.replaceWith(box);
+        return;
+      }
+      box.className = 'alert' + (mod === 'dark' ? ' is-dark' : ''); box.dataset.k = kind; box.setAttribute('role', 'note');
       box.innerHTML = `<div class="alert-head"><span class="alert-ic">${icon(ALERT_ICON[kind])}</span><p class="alert-title">${esc(title)}</p></div><div class="alert-body"></div>`;
       const body = box.querySelector('.alert-body');
       while (bq.firstChild) body.appendChild(bq.firstChild);

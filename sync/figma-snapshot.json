@@ -58,7 +58,7 @@
         },
         "color/brand/light": {
           "type": "COLOR",
-          "value": "#ebd8bc"
+          "value": "#edddc4"
         },
         "color/brand/extra-light": {
           "type": "COLOR",
@@ -795,7 +795,7 @@
         },
         "component/tabs/segmented-height-lg": {
           "type": "FLOAT",
-          "value": 40
+          "value": 32
         },
         "component/tabs/segmented-height-sm": {
           "type": "FLOAT",
@@ -1016,7 +1016,7 @@
           "value": {
             "Light": "@color/brand/ultra-light",
             "Dark": "@color/base/ultra-dark",
-            "Crimson": "@color/brand/extra-dark"
+            "Crimson": "@color/brand/ultra-dark"
           }
         },
         "background/brand-strong": {
@@ -1044,7 +1044,7 @@
           "value": {
             "Light": "@color/status/info/background",
             "Dark": "@color/base/ultra-dark",
-            "Crimson": "@color/brand/extra-dark"
+            "Crimson": "@color/brand/ultra-dark"
           }
         },
         "background/info-strong": {
@@ -1060,7 +1060,7 @@
           "value": {
             "Light": "@color/status/success/background",
             "Dark": "@color/base/ultra-dark",
-            "Crimson": "@color/brand/extra-dark"
+            "Crimson": "@color/brand/ultra-dark"
           }
         },
         "background/success-strong": {
@@ -1076,7 +1076,7 @@
           "value": {
             "Light": "@color/status/warning/background",
             "Dark": "@color/base/ultra-dark",
-            "Crimson": "@color/brand/extra-dark"
+            "Crimson": "@color/brand/ultra-dark"
           }
         },
         "background/warning-strong": {
@@ -1092,7 +1092,7 @@
           "value": {
             "Light": "@color/status/danger/background",
             "Dark": "@color/base/ultra-dark",
-            "Crimson": "@color/brand/extra-dark"
+            "Crimson": "@color/brand/ultra-dark"
           }
         },
         "background/danger-strong": {

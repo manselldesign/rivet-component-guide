@@ -6,7 +6,7 @@
 	--rvt-color-brand-dark: #6d0808;
 	--rvt-color-brand-main: #990000;
 	--rvt-color-brand-medium: #db6b57;
-	--rvt-color-brand-light: #ebd8bc;
+	--rvt-color-brand-light: #edddc4;
 	--rvt-color-brand-extra-light: #faf6ef;
 	--rvt-color-brand-ultra-light: #fdfaf7;
 	--rvt-color-base-ultra-dark: #000000;
@@ -147,7 +147,7 @@
 	--rvt-component-input-height-lg: 48px;
 	--rvt-component-tabs-container-height-lg: 48px;
 	--rvt-component-tabs-container-height-sm: 40px;
-	--rvt-component-tabs-segmented-height-lg: 40px;
+	--rvt-component-tabs-segmented-height-lg: 32px;
 	--rvt-component-tabs-segmented-height-sm: 32px;
 	--rvt-component-avatar-type-48: 20px;
 	--rvt-component-avatar-type-64: 28px;
@@ -214,7 +214,7 @@
 	}
 }
 
-:is(:root, .rvt-theme-light, .rvt-alert, .rvt-callout--strong) {
+:is(:root, .rvt-theme-light, .rvt-callout--strong) {
 	--rvt-background-accent: var(--rvt-color-brand-dark);
 	--rvt-background-accent-subtle: var(--rvt-color-brand-light);
 	--rvt-background-brand: var(--rvt-color-brand-main);
@@ -535,14 +535,14 @@
 	--rvt-background-brand-alt: var(--rvt-color-base-ultra-light);
 	--rvt-background-brand-container: var(--rvt-color-brand-light);
 	--rvt-background-brand-strong: var(--rvt-color-brand-main);
-	--rvt-background-brand-subtle: var(--rvt-color-brand-extra-dark);
+	--rvt-background-brand-subtle: var(--rvt-color-brand-ultra-dark);
 	--rvt-background-danger-container: var(--rvt-color-status-danger-container);
 	--rvt-background-danger-strong: var(--rvt-color-status-danger-main);
-	--rvt-background-danger-subtle: var(--rvt-color-brand-extra-dark);
+	--rvt-background-danger-subtle: var(--rvt-color-brand-ultra-dark);
 	--rvt-background-default: var(--rvt-color-brand-main);
 	--rvt-background-info-container: var(--rvt-color-status-info-container);
 	--rvt-background-info-strong: var(--rvt-color-status-info-main);
-	--rvt-background-info-subtle: var(--rvt-color-brand-extra-dark);
+	--rvt-background-info-subtle: var(--rvt-color-brand-ultra-dark);
 	--rvt-background-inverse: var(--rvt-color-brand-extra-light);
 	--rvt-background-inverse-alt: var(--rvt-color-base-ultra-light);
 	--rvt-background-inverse-strong: var(--rvt-color-base-ultra-light);
@@ -553,11 +553,11 @@
 	--rvt-background-strong: var(--rvt-color-brand-dark);
 	--rvt-background-success-container: var(--rvt-color-status-success-container);
 	--rvt-background-success-strong: var(--rvt-color-status-success-main);
-	--rvt-background-success-subtle: var(--rvt-color-brand-extra-dark);
+	--rvt-background-success-subtle: var(--rvt-color-brand-ultra-dark);
 	--rvt-background-tint: var(--rvt-color-brand-dark);
 	--rvt-background-warning-container: var(--rvt-color-status-warning-container);
 	--rvt-background-warning-strong: var(--rvt-color-status-warning-main);
-	--rvt-background-warning-subtle: var(--rvt-color-brand-extra-dark);
+	--rvt-background-warning-subtle: var(--rvt-color-brand-ultra-dark);
 	--rvt-text-accent: var(--rvt-color-brand-extra-light);
 	--rvt-text-brand: var(--rvt-color-base-ultra-light);
 	--rvt-text-brand-strong: var(--rvt-color-brand-light);
@@ -827,7 +827,7 @@
 }
 
 /* Old theme names → their closest new name (same values). Use role-specific names in new CSS. */
-:is(:root, .rvt-theme-light, .rvt-theme-dark, .rvt-theme-crimson, .rvt-alert, .rvt-callout--strong) {
+:is(:root, .rvt-theme-light, .rvt-theme-dark, .rvt-theme-crimson, .rvt-callout--strong) {
 	--rvt-color-theme-accent: var(--rvt-background-brand);
 	--rvt-color-theme-accent-strong: var(--rvt-background-accent);
 	--rvt-color-theme-background: var(--rvt-background-default);

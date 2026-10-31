@@ -37,7 +37,7 @@ A stacked list of titles that each open to show more content. Readers scan the t
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Item border | 1px `--rvt-border-default` (`#ebd8bc`), all sides; items share one 1px rule where they meet (no doubled line) | Same |
+| Item border | 1px `--rvt-border-default` (`#edddc4`), all sides; items share one 1px rule where they meet (no doubled line) | Same |
 | Header padding | `spacing/24` all sides (24px) | `spacing/24` all sides (24px) |
 | Gap, title to icon | `spacing/16` (16px) | `spacing/16` (16px) |
 | Title | `action/xl/strong` (20 / 28px, weight 600, width 110% `--rvt-font-width-semi-expanded`), `--rvt-text-strong` (`#1f2528`) | `action/xl/strong` (18 / 24px) |

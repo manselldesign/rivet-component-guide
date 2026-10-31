@@ -46,7 +46,7 @@ Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab
 | Selected label | `action/lg/strong` or `action/sm/strong`, `component/tabs/selected-text` | Same |
 | Selected fill | `background/brand` | Same |
 | Hover (unselected tab) | Fill `component/tabs/hover-background`, label `component/tabs/hover-text` (crimson label in Light; label unchanged in Dark and Crimson). The selected tab does not change on hover | Same |
-| Height, Large | `component/tabs/container-height-lg` (48px) | `component/tabs/segmented-height-lg` (40px) |
+| Height, Large | `component/tabs/container-height-lg` (48px) | `component/tabs/segmented-height-lg` (32px) |
 | Height, Small | `component/tabs/container-height-sm` (40px) | `component/tabs/segmented-height-sm` (32px) |
 | Border | 1px `border/default`, all sides | None |
 | Corner radius | 0 | 0 |
@@ -62,6 +62,7 @@ Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab
 | Panel heading | `heading/lg/strong` (23 / 28px), `text/strong` | `heading/lg/strong` (20 / 24px) |
 | Panel body | `body/base/regular` (18 / 28px), `text/default` | `body/base/regular` (16 / 24px) |
 | Panel gap, heading to body to list | `spacing/24` (24px) | `spacing/24` (24px) |
+| Segmented group height | 40px total (32px tabs + 4px padding top and bottom); the border is drawn inside and doesn't add to it | Same |
 | Segmented group padding | `spacing/4` all sides (4px) | Same |
-| Segmented group fill and border | `background/tint`, 1px `border/default` | Same |
+| Segmented group fill and border | `background/tint`, 1px `component/input/border`, drawn inside | Same |
 | Segmented tabs | Hug their label, no gap | Same |

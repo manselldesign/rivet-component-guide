@@ -314,10 +314,10 @@
         {
           "name": "color/brand/light",
           "css": "--rvt-color-brand-light",
-          "value": "#ebd8bc",
+          "value": "#edddc4",
           "codeToday": "--rvt-color-brand-light",
           "action": "value change",
-          "figmaChange": "2026-10-30: #efdfc8 → #ebd8bc. Slightly darker so default borders read more clearly. It flows to border/default (Light), the Dark/Crimson focus ring and button hover, accent-subtle, muted and badge subtle borders."
+          "figmaChange": "2026-10-30: #efdfc8 → #ebd8bc, then → #edddc4. Lightened so the Dark and Crimson button hover doesn’t feel too heavy; borders still read clearly. It flows to border/default (Light), the Dark/Crimson focus ring and button hover, accent-subtle, muted and badge subtle borders."
         },
         {
           "name": "color/brand/extra-light",
@@ -551,8 +551,8 @@
             "name": "background/accent",
             "css": "--rvt-background-accent",
             "light": "#6d0808",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-brand-dark",
               "dark": "--rvt-color-brand-light",
@@ -564,7 +564,7 @@
           {
             "name": "background/accent-subtle",
             "css": "--rvt-background-accent-subtle",
-            "light": "#ebd8bc",
+            "light": "#edddc4",
             "dark": "#000000",
             "crimson": "#510606",
             "cssValue": {
@@ -606,9 +606,9 @@
           {
             "name": "background/brand-container",
             "css": "--rvt-background-brand-container",
-            "light": "#ebd8bc",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "light": "#edddc4",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-brand-light",
               "dark": "--rvt-color-brand-light",
@@ -636,14 +636,15 @@
             "css": "--rvt-background-brand-subtle",
             "light": "#fdfaf7",
             "dark": "#000000",
-            "crimson": "#510606",
+            "crimson": "#420505",
             "cssValue": {
               "light": "--rvt-color-brand-ultra-light",
               "dark": "--rvt-color-base-ultra-dark",
-              "crimson": "--rvt-color-brand-extra-dark"
+              "crimson": "--rvt-color-brand-ultra-dark"
             },
             "replaces": null,
-            "action": "add (new)"
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: Crimson value changed from color/brand/extra-dark (#510606) to color/brand/ultra-dark (#420505), the darkest crimson, so alerts sit deeper on the Crimson theme."
           },
           {
             "name": "background/danger-container",
@@ -678,14 +679,15 @@
             "css": "--rvt-background-danger-subtle",
             "light": "#fff6f5",
             "dark": "#000000",
-            "crimson": "#510606",
+            "crimson": "#420505",
             "cssValue": {
               "light": "--rvt-color-status-danger-background",
               "dark": "--rvt-color-base-ultra-dark",
-              "crimson": "--rvt-color-brand-extra-dark"
+              "crimson": "--rvt-color-brand-ultra-dark"
             },
             "replaces": null,
-            "action": "add (new)"
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: Crimson value changed from color/brand/extra-dark (#510606) to color/brand/ultra-dark (#420505), the darkest crimson, so alerts sit deeper on the Crimson theme."
           },
           {
             "name": "background/default",
@@ -734,14 +736,15 @@
             "css": "--rvt-background-info-subtle",
             "light": "#f5fcff",
             "dark": "#000000",
-            "crimson": "#510606",
+            "crimson": "#420505",
             "cssValue": {
               "light": "--rvt-color-status-info-background",
               "dark": "--rvt-color-base-ultra-dark",
-              "crimson": "--rvt-color-brand-extra-dark"
+              "crimson": "--rvt-color-brand-ultra-dark"
             },
             "replaces": null,
-            "action": "add (new)"
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: Crimson value changed from color/brand/extra-dark (#510606) to color/brand/ultra-dark (#420505), the darkest crimson, so alerts sit deeper on the Crimson theme."
           },
           {
             "name": "background/inverse",
@@ -802,7 +805,7 @@
           {
             "name": "background/muted",
             "css": "--rvt-background-muted",
-            "light": "#ebd8bc",
+            "light": "#edddc4",
             "dark": "#000000",
             "crimson": "#420505",
             "cssValue": {
@@ -888,14 +891,15 @@
             "css": "--rvt-background-success-subtle",
             "light": "#f5fff6",
             "dark": "#000000",
-            "crimson": "#510606",
+            "crimson": "#420505",
             "cssValue": {
               "light": "--rvt-color-status-success-background",
               "dark": "--rvt-color-base-ultra-dark",
-              "crimson": "--rvt-color-brand-extra-dark"
+              "crimson": "--rvt-color-brand-ultra-dark"
             },
             "replaces": null,
-            "action": "add (new)"
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: Crimson value changed from color/brand/extra-dark (#510606) to color/brand/ultra-dark (#420505), the darkest crimson, so alerts sit deeper on the Crimson theme."
           },
           {
             "name": "background/tint",
@@ -944,14 +948,15 @@
             "css": "--rvt-background-warning-subtle",
             "light": "#fffbf0",
             "dark": "#000000",
-            "crimson": "#510606",
+            "crimson": "#420505",
             "cssValue": {
               "light": "--rvt-color-status-warning-background",
               "dark": "--rvt-color-base-ultra-dark",
-              "crimson": "--rvt-color-brand-extra-dark"
+              "crimson": "--rvt-color-brand-ultra-dark"
             },
             "replaces": null,
-            "action": "add (new)"
+            "action": "add (new)",
+            "figmaChange": "2026-10-30: Crimson value changed from color/brand/extra-dark (#510606) to color/brand/ultra-dark (#420505), the darkest crimson, so alerts sit deeper on the Crimson theme."
           },
           {
             "name": "text/accent",
@@ -986,8 +991,8 @@
             "name": "text/brand-strong",
             "css": "--rvt-text-brand-strong",
             "light": "#6d0808",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-brand-dark",
               "dark": "--rvt-color-brand-light",
@@ -1271,8 +1276,8 @@
             "name": "icon/accent-strong",
             "css": "--rvt-icon-accent-strong",
             "light": "#6d0808",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-brand-dark",
               "dark": "--rvt-color-brand-light",
@@ -1486,8 +1491,8 @@
             "name": "border/accent-strong",
             "css": "--rvt-border-accent-strong",
             "light": "#6d0808",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-brand-dark",
               "dark": "--rvt-color-brand-light",
@@ -1499,9 +1504,9 @@
           {
             "name": "border/brand",
             "css": "--rvt-border-brand",
-            "light": "#ebd8bc",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "light": "#edddc4",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-brand-light",
               "dark": "--rvt-color-brand-light",
@@ -1555,7 +1560,7 @@
           {
             "name": "border/default",
             "css": "--rvt-border-default",
-            "light": "#ebd8bc",
+            "light": "#edddc4",
             "dark": "#000000",
             "crimson": "#510606",
             "cssValue": {
@@ -1752,9 +1757,9 @@
           {
             "name": "component/badge/default-subtle-border",
             "css": "--rvt-component-badge-default-subtle-border",
-            "light": "#ebd8bc",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "light": "#edddc4",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-brand-light",
               "dark": "--rvt-color-brand-light",
@@ -2243,8 +2248,8 @@
             "name": "component/button/form-background-hover",
             "css": "--rvt-component-button-form-background-hover",
             "light": "#000000",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-base-ultra-dark",
               "dark": "--rvt-color-brand-light",
@@ -2271,8 +2276,8 @@
             "name": "component/button/form-border-hover",
             "css": "--rvt-component-button-form-border-hover",
             "light": "#000000",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-base-ultra-dark",
               "dark": "--rvt-color-brand-light",
@@ -2299,8 +2304,8 @@
             "name": "component/button/form-text-hover",
             "css": "--rvt-component-button-form-text-hover",
             "light": "#000000",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-base-ultra-dark",
               "dark": "--rvt-color-brand-light",
@@ -2471,8 +2476,8 @@
             "name": "component/list/marker",
             "css": "--rvt-component-list-marker",
             "light": "#990000",
-            "dark": "#ebd8bc",
-            "crimson": "#ebd8bc",
+            "dark": "#edddc4",
+            "crimson": "#edddc4",
             "cssValue": {
               "light": "--rvt-color-brand-main",
               "dark": "--rvt-color-brand-light",
@@ -5400,9 +5405,10 @@
       {
         "name": "component/tabs/segmented-height-lg",
         "css": "--rvt-component-tabs-segmented-height-lg",
-        "value": 40,
+        "value": 32,
         "codeToday": null,
-        "action": "add"
+        "action": "add",
+        "figmaChange": "2026-10-30: 40 \u2192 32 so the Segmented tab group is 40px tall in total (4px padding around 32px tabs). Large tabs keep their action/lg text."
       },
       {
         "name": "component/tabs/segmented-height-sm",
