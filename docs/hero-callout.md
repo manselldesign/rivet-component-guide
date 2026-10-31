@@ -1,6 +1,6 @@
 # Hero – Callout
 
-> [!info|dark] Quick note
+> [!info] Quick note
 > A part of this hero changed. Please double-check:
 >
 > - **Hero card:** The card is now the smaller, compact card, with tighter spacing and smaller text

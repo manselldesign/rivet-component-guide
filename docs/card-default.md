@@ -1,6 +1,6 @@
 # Card-default
 
-> [!info|dark] Quick note
+> [!info] Quick note
 > A few parts of this card changed. Please double-check:
 >
 > - **Compact version:** A new, smaller card size was added

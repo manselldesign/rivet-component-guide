@@ -1,6 +1,6 @@
 # Header
 
-> [!warning|dark] This may change
+> [!warning] This may change
 > The header is still being worked on as part of the navigation updates. Check back before you build or launch a new site.
 
 ## What it is

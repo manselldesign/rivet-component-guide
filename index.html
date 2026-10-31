@@ -42,12 +42,6 @@
   --badge-fg:#ffffff;      /* text/inverse */
   --input-text:#343c42;   /* component/input/text */
   --input-focus:#990000;   /* border/accent */
-  /* rvt-alert: background/<status>, text/<status> */
-  --al-default-bg:#fdfaf7; --al-default-title:#990000;
-  --al-info-bg:#f5fcff;    --al-info-title:#004f9e;
-  --al-success-bg:#f5fff6; --al-success-title:#13650b;
-  --al-warning-bg:#fffbf0; --al-warning-title:#1f2528;
-  --al-danger-bg:#fff6f5;  --al-danger-title:#cd210a;
 
   --font-sans:"Roboto Flex",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --font-mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
@@ -58,17 +52,11 @@
   --bg:#1f2528;--surface:#14181a;--border:#000000;--text:#ffffff;--text-strong:#ffffff;--text-brand:#ffffff;--text-accent:#fdfaf7;--text-link-subtle:#fdfaf7;--icon-link-subtle:#fdfaf7;--text-brand-strong:#efdfc8;--icon-accent-strong:#efdfc8;--border-accent-strong:#efdfc8;
   --icon-brand:#ffffff;--icon-default:#ffffff;--icon-accent:#fdfaf7;--text-muted:#b9b3ac;--code-bg:#14181a;--th-bg:#000000;--th-fg:#ffffff;--table-border:#000000;--row-tint:#14181a;
   --input-border:#faf6ef;--input-text:#faf6ef;--input-focus:#fdfaf7;--badge-bg:#ffffff;--badge-fg:#1f2528;
-  --al-default-bg:#000000;--al-default-title:#ffffff;--al-info-bg:#000000;--al-info-title:#ffffff;
-  --al-success-bg:#000000;--al-success-title:#ffffff;--al-warning-bg:#000000;--al-warning-title:#ffffff;
-  --al-danger-bg:#000000;--al-danger-title:#ffffff;
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#1f2528;--surface:#14181a;--border:#000000;--text:#ffffff;--text-strong:#ffffff;--text-brand:#ffffff;--text-accent:#fdfaf7;--text-link-subtle:#fdfaf7;--icon-link-subtle:#fdfaf7;--text-brand-strong:#efdfc8;--icon-accent-strong:#efdfc8;--border-accent-strong:#efdfc8;
   --icon-brand:#ffffff;--icon-default:#ffffff;--icon-accent:#fdfaf7;--text-muted:#b9b3ac;--code-bg:#14181a;--th-bg:#000000;--th-fg:#ffffff;--table-border:#000000;--row-tint:#14181a;
   --input-border:#faf6ef;--input-text:#faf6ef;--input-focus:#fdfaf7;--badge-bg:#ffffff;--badge-fg:#1f2528;
-  --al-default-bg:#000000;--al-default-title:#ffffff;--al-info-bg:#000000;--al-info-title:#ffffff;
-  --al-success-bg:#000000;--al-success-title:#ffffff;--al-warning-bg:#000000;--al-warning-title:#ffffff;
-  --al-danger-bg:#000000;--al-danger-title:#ffffff;
   color-scheme:dark}
 /* Crimson page theme: the site variables map to the Crimson-mode semantic tokens in generated/rivet-tokens.css (no new values). */
 :root[data-theme="crimson"]{
@@ -81,9 +69,6 @@
   --table-border:var(--rvt-border-default);--row-tint:var(--rvt-background-tint);
   --input-border:var(--rvt-border-strong);--input-text:var(--rvt-text-default);--input-focus:var(--rvt-border-accent);
   --badge-bg:var(--rvt-background-inverse);--badge-fg:var(--rvt-text-inverse);
-  --al-default-bg:var(--rvt-background-strong);--al-default-title:var(--rvt-text-default);--al-info-bg:var(--rvt-background-strong);--al-info-title:var(--rvt-text-default);
-  --al-success-bg:var(--rvt-background-strong);--al-success-title:var(--rvt-text-default);--al-warning-bg:var(--rvt-background-strong);--al-warning-title:var(--rvt-text-default);
-  --al-danger-bg:var(--rvt-background-strong);--al-danger-title:var(--rvt-text-default);
   color-scheme:dark}
 :root[data-theme="crimson"] .prose ul.checklist{padding:0}
 
@@ -94,7 +79,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    Roboto Flex: body, action, link and heading text at width 110%; headings (weight 700) add YTAS 720 / YTLC 530; display text (the hero title) stays at width 100%.
    Roboto Mono (tags, labels, code) has no width axis: 1px tracking, 2px for uppercase. Line heights sit on the 4px grid: 12/16, 14/20, 16/24, 18/28. */
 body{font-stretch:110%}
-.hero h1,.prose h2,.prose h3,.demo-title,.alert-title{font-variation-settings:"YTAS" 720,"YTLC" 530}
+.hero h1,.prose h2,.prose h3,.demo-title{font-variation-settings:"YTAS" 720,"YTLC" 530}
 .hero h1{font-stretch:100%}
 code,pre,.hero .tag,.hero-card-tag,.hub-title,.hub-tag,.doc-foot p,.prose h4,.prose thead th,.sn-label{font-stretch:normal}
 .hero-card-tag,.hub-tag{letter-spacing:1px}
@@ -321,44 +306,14 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
   .prose td:last-child{padding-right:20px}
 }
 
-/* rvt-alert: Default type */
-.alert{--al-bg:var(--al-info-bg);--al-bd:#9ed5fd;--al-strong:#004f9e;--al-icon:#ffffff;--al-title:var(--al-info-title);
-  background:var(--al-bg);border:1px solid var(--al-bd);padding:24px;margin:0 0 24px;display:grid;gap:16px}
-.alert[data-k="default"]{--al-bg:var(--al-default-bg);--al-bd:#efdfc8;--al-strong:#990000;--al-title:var(--al-default-title)}
-.alert[data-k="success"]{--al-bg:var(--al-success-bg);--al-bd:#acee8b;--al-strong:#13650b;--al-title:var(--al-success-title)}
-.alert[data-k="warning"]{--al-bg:var(--al-warning-bg);--al-bd:#ffd580;--al-strong:#ff9602;--al-icon:#1f2528;--al-title:var(--al-warning-title)}
-.alert[data-k="danger"]{--al-bg:var(--al-danger-bg);--al-bd:#faa094;--al-strong:#cd210a;--al-title:var(--al-danger-title)}
-.alert-head{display:flex;align-items:center;gap:8px}
-.alert-ic{width:24px;height:24px;border-radius:50%;background:var(--al-strong);color:var(--al-icon);display:grid;place-items:center;flex:none}
-.alert-title{font-size:20px;line-height:24px;font-weight:var(--w-black);color:var(--al-title);margin:0}
-.alert-ic svg{width:16px;height:16px}
-.alert-body{padding-left:32px;min-width:0;font-size:16px;line-height:24px}
-.alert-body>:last-child{margin-bottom:0}
-.alert:not(:has(.alert-body>*)) {gap:0}
-/* rvt-alert, Dark theme (forced with [!type|dark]): Info = background/info-subtle #000000, border/info #9ed5fd,
-   background/info-strong icon circle, text/info + text/default #ffffff, list bullets icon/default #ffffff */
-.alert.is-dark{color-scheme:dark;--al-bg:#000000;--al-title:#ffffff;--text:#ffffff;--text-strong:#ffffff;--icon-brand:#ffffff;--icon-default:#ffffff;color:#ffffff}
-.alert.is-dark[data-k="default"],.alert.is-dark[data-k="success"],.alert.is-dark[data-k="warning"],.alert.is-dark[data-k="danger"]{--al-bg:#000000;--al-title:#ffffff}
-.alert.is-dark .alert-body,.alert.is-dark .alert-body li{color:#ffffff}
-.prose .alert-title{margin:0}
 .index-note{margin:0}
-/* rvt-alert Desktop, Type=Default (Figma 1915:434): title row, then description 8px below (title-block gap spacing/8),
-   list 16px below (spacing/16), list items 8px apart (spacing/8), bullet flush with the description's 32px indent (spacing/32: 24px icon + 8px gap), 8px bullet-to-text.
-   No close button on the guide. */
-.prose .alert{position:relative;gap:8px}
-.prose .alert-body>p{margin:0 0 16px}
-.prose .alert-body>:last-child{margin-bottom:0}
-.prose .alert-body ul>li{padding-left:14px}
-.prose .alert-body ul>li::before{left:0;top:9px;background:var(--icon-default)}
-.prose .alert-body p,.prose .alert-body li{font-size:16px;line-height:24px}
-.prose .alert-body ul{gap:8px;max-width:934px}
 
 /* Do / Don't */
 .dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:16px;margin:16px 0 24px}
 .dd-card{border:1px solid var(--border);border-top:4px solid #13650b;padding:24px;min-width:0}
 .dd-card.dont{border-top-color:#cd210a}
 .dd-card h3{margin:0 0 12px;font-size:20px;line-height:24px;display:flex;align-items:center;gap:8px}
-.dd-card h3 .alert-ic{width:24px;height:24px;background:#13650b;color:#ffffff}
+.dd-card h3 .alert-ic{display:grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;background:#13650b;color:#ffffff}
 .dd-card.dont h3 .alert-ic{background:#cd210a}
 .dd-card h3 .alert-ic svg{width:12px;height:12px}
 .dd-card ul,.dd-card ol{margin:0}
@@ -402,7 +357,7 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .prose>h4{margin-top:32px}
 .prose>p{margin-top:24px}
 .prose>ul,.prose>ol{margin-top:16px}
-.prose>.alert{margin-top:32px;margin-bottom:0}
+.prose>.rvt-alert--note{margin-top:32px;margin-bottom:0}
 .prose>.table-wrap,.prose>.dd,.prose>.ex,.prose>pre,.prose>blockquote{margin-top:24px;margin-bottom:0}
 .prose>hr{margin-top:96px}
 .prose>h2+h3{margin-top:24px}
@@ -413,7 +368,7 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
   .prose h3{font-size:20px;line-height:24px}
   .prose>h2{margin-top:72px}
   .prose>h3{margin-top:32px}
-  .prose>h4,.prose>.alert{margin-top:24px}
+  .prose>h4,.prose>.rvt-alert--note{margin-top:24px}
   .prose>p,.prose>.table-wrap,.prose>.dd,.prose>.ex,.prose>pre,.prose>blockquote{margin-top:24px}
   .prose>ul,.prose>ol{margin-top:16px}
   .prose>h2+h3{margin-top:24px}
@@ -521,7 +476,6 @@ body:not(.has-rail) .site-header__menu{display:none}
 }
 @media (prefers-reduced-motion:reduce){#rail{transition:none}}
 
-@media (max-width:560px){ .alert{padding:16px} }
 /* Series nav (rvt-series-nav): previous/next component at the bottom of each detail page.
    Item: background/default, 1px border/default, hover background/tint. Label tag/md/strong + 12px icon/accent arrow, spacing/4 gap.
    Title action/xl/strong-fixed, text/default, 3 lines max. Desktop padding spacing/24 x spacing/32, label to title spacing/12; Mobile spacing/32 (24px) all sides, spacing/8. */
@@ -652,8 +606,8 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-alert--danger{--alert-bg:var(--rvt-background-danger-subtle);--alert-border:var(--rvt-border-danger);--alert-badge:var(--rvt-background-danger-strong);--alert-title:var(--rvt-text-danger)}
 .rvt-alert--default{--alert-bg:var(--rvt-background-brand-subtle);--alert-border:var(--rvt-border-brand);--alert-badge:var(--rvt-background-brand-strong);--alert-title:var(--rvt-text-brand)}
 .rvt-alert[hidden]{display:none}
-/* Page notes ([!type|light] callouts) use this component in its Light theme; undo the prose list and paragraph styles inside it. */
-.prose .rvt-alert--note{margin:0 0 var(--rvt-spacing-24)}
+/* Page notes (every > [!type] callout, and the home page note) use this component in its Light theme; undo the prose list and paragraph styles inside it. */
+.rvt-alert--note{margin:0 0 var(--rvt-spacing-24)}
 .prose .rvt-alert--note p{margin:0}
 .prose .rvt-alert--note .rvt-alert__list{display:flex;margin:0;padding:0 0 0 calc(28px + var(--rvt-spacing-8));gap:var(--rvt-spacing-8)}
 .prose .rvt-alert--note .rvt-alert__list>li{padding-left:0}
@@ -1027,9 +981,9 @@ body:not(.has-rail) .site-header__menu{display:none}
       </a>`}) + `
       <main class="wrap index">
         <div class="prose index-note">
-          <div class="alert is-dark" data-k="danger" role="note">
-            <div class="alert-head"><span class="alert-ic">${icon(ALERT_ICON.danger)}</span><p class="alert-title">Some things were optimized</p></div>
-            <div class="alert-body"><p>While organizing the Figma file, I cleaned up parts of some components and may not have noted every change. When you have time, please go through each component and check the specs section.</p></div>
+          <div class="rvt-alert rvt-alert--danger rvt-alert--note rvt-theme-light" role="note">
+            <div class="rvt-alert__block"><div class="rvt-alert__head"><span class="rvt-alert__badge" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${P[ALERT_ICON.danger]}"/></svg></span><p class="rvt-alert__title">Some things were optimized</p></div>
+            <p class="rvt-alert__desc">While organizing the Figma file, I cleaned up parts of some components and may not have noted every change. When you have time, please go through each component and check the specs section.</p></div>
           </div>
         </div>
         <div class="field">
@@ -1112,24 +1066,14 @@ body:not(.has-rail) .site-header__menu{display:none}
       first.innerHTML = first.innerHTML.slice(m[0].length).trim();
       if (!first.innerHTML) first.remove();
       const box = document.createElement('div');
-      const mod = (m[2] || '').toLowerCase();
-      /* [!type|light]: render with the real rvt-alert component in its Light theme (same markup and CSS as the example). */
-      if (mod === 'light') {
-        box.className = `rvt-alert rvt-alert--${kind} rvt-alert--note rvt-theme-light`; box.setAttribute('role', 'note');
-        box.innerHTML = `<div class="rvt-alert__block"><div class="rvt-alert__head"><span class="rvt-alert__badge" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${P[ALERT_ICON[kind]]}"/></svg></span><p class="rvt-alert__title">${esc(title)}</p></div></div>`;
-        const block = box.firstElementChild;
-        [...bq.children].forEach((el, i) => {
-          if (el.tagName === 'UL') { el.className = 'rvt-alert__list'; box.appendChild(el); }
-          else { el.classList.add('rvt-alert__desc'); (i === 0 && el.tagName === 'P' ? block : box).appendChild(el); }
-        });
-        bq.replaceWith(box);
-        return;
-      }
-      box.className = 'alert' + (mod === 'dark' ? ' is-dark' : ''); box.dataset.k = kind; box.setAttribute('role', 'note');
-      box.innerHTML = `<div class="alert-head"><span class="alert-ic">${icon(ALERT_ICON[kind])}</span><p class="alert-title">${esc(title)}</p></div><div class="alert-body"></div>`;
-      const body = box.querySelector('.alert-body');
-      while (bq.firstChild) body.appendChild(bq.firstChild);
-      if (!body.textContent.trim()) body.remove();
+      /* Every callout renders with the real rvt-alert component in its Light theme (same markup and CSS as the Alert example). */
+      box.className = `rvt-alert rvt-alert--${kind} rvt-alert--note rvt-theme-light`; box.setAttribute('role', 'note');
+      box.innerHTML = `<div class="rvt-alert__block"><div class="rvt-alert__head"><span class="rvt-alert__badge" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${P[ALERT_ICON[kind]]}"/></svg></span><p class="rvt-alert__title">${esc(title)}</p></div></div>`;
+      const block = box.firstElementChild;
+      [...bq.children].forEach((el, i) => {
+        if (el.tagName === 'UL') { el.className = 'rvt-alert__list'; box.appendChild(el); }
+        else { el.classList.add('rvt-alert__desc'); (i === 0 && el.tagName === 'P' ? block : box).appendChild(el); }
+      });
       bq.replaceWith(box);
     });
     // Do / Don't

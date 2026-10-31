@@ -1,6 +1,6 @@
 # Sidenav – Tree
 
-> [!warning|dark] This may change
+> [!warning] This may change
 > The sidenav tree may change based on the navigation work that's in progress.
 
 ## What it is

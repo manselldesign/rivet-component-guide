@@ -1,6 +1,6 @@
 # Dropdown
 
-> [!warning|dark] This may change
+> [!warning] This may change
 > The dropdown may change based on the navigation work that's in progress.
 
 ## What it is

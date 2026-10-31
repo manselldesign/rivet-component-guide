@@ -1,6 +1,6 @@
 # Alert
 
-> [!info|light] Quick note
+> [!info] Quick note
 > A few parts of this component changed. Please double-check:
 >
 > - Container, spacing, icon size and text sizing updated for general optimization
