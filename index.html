@@ -604,7 +604,8 @@ body:not(.has-rail) .site-header__menu{display:none}
    The Subtle 1px border is drawn inside (inset box-shadow) so it adds nothing to the 24px height; every badge also gets the 1px component/badge/ring outside.
    Label: heading/xs/strong (14 / 20px, weight 700, width 110%, heading axes). Badge tokens are the same in Light, Dark and Crimson. */
 .rvt-badge-rows{display:flex;flex-direction:column;align-items:flex-start;gap:var(--rvt-spacing-24)}
-.rvt-badge-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-16);margin:0}
+/* Badges in a row sit spacing/8 apart and wrap on narrow screens. */
+.rvt-badge-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-8);margin:0}
 .rvt-badge{--badge-bg:var(--rvt-component-badge-default-strong-background);--badge-border:transparent;--badge-text:var(--rvt-component-badge-default-strong-text);--badge-icon:var(--rvt-component-badge-default-strong-icon);
   box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:var(--rvt-spacing-4);height:24px;padding:0 var(--rvt-spacing-12);
   border-radius:var(--rvt-border-radius-full);background:var(--badge-bg);color:var(--badge-text);white-space:nowrap;
@@ -834,10 +835,10 @@ body:not(.has-rail) .site-header__menu{display:none}
 
   /* rvt-alert example. 16px glyphs reuse P; the Inline badge uses the 12px Rivet glyphs. */
   const P12 = {
-    info: 'M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0M5 4h2v7H5z',
+    info: 'M7.25 2a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0M5 4.5h2v7H5z',
     check: 'm11.537 2.979-7.47 7.47L.462 6.245 1.98 4.943l2.2 2.565 5.944-5.944z',
     minus: 'M11 5v2H1V5z',
-    exclamation: 'M7 10a1 1 0 1 1-2 0 1 1 0 0 1 2 0M5 1h2v7H5z',
+    exclamation: 'M7.25 10a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0M5 .5h2v7H5z',
     bell: 'M8 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 5a2 2 0 1 0-4 0v1.764c0 .31-.072.617-.21.894L3.617 8h4.764l-.171-.342A2 2 0 0 1 8 6.764zm2 1.764L10.618 8H12v2H0V8h1.382L2 6.764V5a4 4 0 0 1 3-3.874V0h2v1.126c1.725.444 3 2.01 3 3.874z',
     close: 'M10.854 2.56 7.414 6l3.44 3.44-1.415 1.414L6 7.414l-3.44 3.44-1.414-1.415L4.586 6l-3.44-3.44 1.415-1.414L6 4.586l3.44-3.44z'
   };
@@ -960,7 +961,7 @@ body:not(.has-rail) .site-header__menu{display:none}
         }));
       }
     },
-    /* rvt-badge: Style is the variant; each status shows on its own row, Default layout (icon + label) then Icon Only.
+    /* rvt-badge: Style is the variant. Statuses sit inline in one row, like the theme showcase: the Default layout (icon + label) row, then the Icon Only row.
        Badges hug their content, so the cap is the Figma theme showcase row width (the component has no Breakpoint=Desktop frame). */
     badge: {
       maxWidth: 492, // Figma Badge page, theme-showcase "Badges" row width (no Breakpoint=Desktop frame)
@@ -968,7 +969,7 @@ body:not(.has-rail) .site-header__menu{display:none}
         {id: 'strong', label: 'Strong'},
         {id: 'subtle', label: 'Subtle'}
       ],
-      html: v => `<div class="rvt-badge-rows">${BADGES.map(b => `<p class="rvt-badge-row">${badgeEl(b, v, false)}${badgeEl(b, v, true)}</p>`).join('')}</div>`
+      html: v => `<div class="rvt-badge-rows">${[false, true].map(io => `<p class="rvt-badge-row">${BADGES.map(b => badgeEl(b, v, io)).join('')}</p>`).join('')}</div>`
     }
   };
   const demoSection = c => {
