@@ -104,23 +104,34 @@ a:hover{text-decoration-thickness:2px}
 svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
 .wrap{max-width:var(--page);margin-inline:auto;padding-inline:clamp(16px,5vw,80px)}
 
-/* ---------- rvt-hero-callout, Dark mode ---------- */
-.hero{background:#1f2528;color:#ffffff;padding-top:clamp(48px,8vw,96px)}
-.hero-inner{padding-bottom:clamp(48px,8vw,96px);border-bottom:1px solid #000000}
+/* ---------- rvt-hero-callout, Dark mode ----------
+   Spacing from Figma rvt-hero-callout, on spacing tokens (their mobile values switch below 768px):
+   Desktop spacing/96 top and bottom; Mobile spacing/40 top (32px), spacing/48 bottom (36px).
+   Metadata spacing/8 below. Body spacing/20 above (Mobile spacing/24). Buttons spacing/40 above (Mobile 32px), spacing/16 gap,
+   stacked full width on Mobile. Text to card spacing/64 (Mobile spacing/48, 36px). */
+.hero{background:#1f2528;color:#ffffff;padding-top:var(--rvt-spacing-96)}
+.hero-inner{padding-bottom:var(--rvt-spacing-96);border-bottom:1px solid #000000}
 .hero-inner>*{max-width:936px}
-.hero .tag{font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px;color:#ffffff}
+.hero .tag{font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:2px;text-transform:uppercase;margin:0 0 var(--rvt-spacing-8);color:#ffffff}
 .hero .tag a{color:inherit;text-decoration:none}
 .hero .tag a:hover{text-decoration:underline}
-.hero h1{font-size:48px;line-height:52px;font-weight:var(--w-black);margin:0;color:#ffffff;text-wrap:balance}
-@media (max-width:767px){.hero h1{font-size:36px;line-height:40px}}
-.hero .intro{font-size:18px;line-height:28px;margin:20px 0 0;max-width:800px;color:#ffffff}
-.hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:40px}
+/* display/lg/strong: 48/52 desktop, 29/32 mobile */
+.hero h1{font-size:var(--rvt-type-size-29-48);line-height:var(--rvt-type-line-height-32-52);font-weight:var(--w-black);margin:0;color:#ffffff;text-wrap:balance}
+.hero .intro{font-size:18px;line-height:28px;margin:var(--rvt-spacing-20) 0 0;max-width:800px;color:#ffffff}
+.hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-16);margin-top:var(--rvt-spacing-40)}
+@media (max-width:767px){
+  .hero{padding-top:var(--rvt-spacing-40)}
+  .hero-inner{padding-bottom:var(--rvt-spacing-48)}
+  .hero .intro{margin-top:var(--rvt-spacing-24)}
+  .hero .actions{flex-direction:column;align-items:stretch}
+  .hero .actions .btn{justify-content:space-between}
+}
 .hero :focus-visible{outline-color:#efdfc8}
 /* rvt-hero-callout, Column(s)=2: text column + rvt-card-default (Style=Raised), Dark mode.
    Card: background/raised #14181a, shadow/sm Dark (0 2px 6px black 20%), 32px padding.
    Tag: tag/sm/regular mono 12/16, text/brand. Title: action/xl/strong SemiBold 20/28 (18/24 mobile), text/strong.
    Description: body/base/regular 18/28 (16/24 mobile), text/default, 16px above. Columns: 64px gap. */
-.hero-inner>.hero-cols{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:64px;align-items:start}
+.hero-inner>.hero-cols{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:var(--rvt-spacing-64);align-items:start}
 .hero-main>*{max-width:936px}
 .hero-card{background:#14181a;box-shadow:0 2px 6px 0 rgb(0 0 0 / 20%);padding:32px;color:#ffffff}
 .hero-card-tag{font-family:var(--font-mono);font-size:12px;line-height:16px;margin:0;padding:0 0 4px 2px;color:#ffffff}
@@ -139,7 +150,7 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
    spacing/64 below them, 700px wide. Card: background/raised (#14181a on Dark), shadow/sm, spacing/16 padding, no radius; the whole card is the link.
    Tag: tag/sm/regular 12/16 text/brand, spacing/4 below, 2px left. Title row: action/lg/strong 16/24 text/strong + rvt-arrow-right-12 in a 12px slot, spacing/16 gap.
    Body: body/xs/regular 14/20 text/default, spacing/8 above. Hover: title text/accent + underline, arrow icon/accent. */
-.hero-compact{display:block;width:100%;max-width:700px;margin-top:64px;padding:16px;background:#14181a;box-shadow:0 2px 8px 0 rgb(0 0 0 / 24%);color:#ffffff;text-decoration:none}
+.hero-compact{display:block;width:100%;max-width:700px;margin-top:var(--rvt-spacing-64);padding:16px;background:#14181a;box-shadow:0 2px 8px 0 rgb(0 0 0 / 24%);color:#ffffff;text-decoration:none}
 .hero-compact-head{display:flex;align-items:flex-start;gap:16px}
 .hero-compact-title{flex:1 1 auto;min-width:0;margin:0;font-size:16px;line-height:24px;font-weight:var(--w-bold);color:#ffffff}
 .hero-compact-arrow{flex:none;width:12px;height:24px;display:flex;align-items:center;justify-content:center;padding-top:.5px;color:#ffffff}
@@ -148,8 +159,8 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
 .hero-compact:hover .hero-compact-title{color:#fdfaf7;text-decoration:underline;text-underline-offset:3px}
 .hero-compact:hover .hero-compact-arrow{color:#fdfaf7}
 .hero-compact:focus-visible{outline:2px solid #efdfc8;outline-offset:2px}
-@media (max-width:560px){.hero-compact{margin-top:48px}}
-@media (max-width:900px){.hero-inner>.hero-cols{grid-template-columns:1fr;gap:40px}}
+@media (max-width:767px){.hero-compact{margin-top:var(--rvt-spacing-48)}}
+@media (max-width:900px){.hero-inner>.hero-cols{grid-template-columns:1fr;gap:var(--rvt-spacing-64)}}
 @media (max-width:560px){.hero-card{padding:24px}.hero-card-title{font-size:18px;line-height:24px}.hero-card-desc{font-size:16px;line-height:24px}}
 /* rvt-button: CTA, Normal, Extra-large (Dark mode). Link type External = rvt-arrow-up-right; In-page = rvt-arrow-down */
 .btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 16px;border:1px solid #fdfaf7;color:#fdfaf7;background:transparent;
@@ -495,7 +506,7 @@ body:not(.has-rail) .site-header__menu{display:none}
     padding:0 var(--rail-pad) var(--rail-pad);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#5b646b transparent;
     max-height:none!important;visibility:visible}
   /* Title label centers on the hero's tag line (hero top pad minus 2px for the 20px vs 16px line box). */
-  #rail-nav{padding-top:calc(clamp(48px,8vw,96px) - 2px)}
+  #rail-nav{padding-top:calc(var(--rvt-spacing-96) - 2px)}
 }
 
 /* Mobile/tablet: compact sticky bar + in-flow disclosure (prototype's < 1024px sidenav). */

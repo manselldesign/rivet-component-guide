@@ -4,6 +4,7 @@
 > A part of this hero changed. Please double-check:
 >
 > - **Hero card:** The card is now the smaller, compact card, with tighter spacing and smaller text
+> - **Metadata:** The space between the metadata and the headline is now 8px (was 12px)
 
 ## What it is
 The callout hero is the default hero, the banner at the top of most pages. It shows the page title and a short intro, with an optional card that highlights one thing, like a deadline or an upcoming event.
@@ -50,10 +51,10 @@ Shared rules: Background `background/default`, with a 1px `border/default` line 
 | --- | --- | --- | --- |
 | Outer padding | `spacing/96` top (96px), `spacing/80` left and right (80px), `spacing/96` bottom (96px) | `spacing/96` top and left (96px), `spacing/80` right (80px), `spacing/96` bottom (96px) | `spacing/40` top (32px), `spacing/24` left and right (24px), `spacing/48` bottom (36px) |
 | Text to card | `spacing/64` gap (64px); card 440px wide, aligned to the bottom | `spacing/64` above the card (64px); card 700px wide | `spacing/48` above the card (36px); card full width |
-| Metadata | `tag/md/caps` (14 / 20px), `text/brand`; `spacing/12` below (12px) | Same | Same |
+| Metadata | `tag/md/caps` (14 / 20px), `text/brand`; `spacing/8` below (8px) | Same | Same |
 | Headline | `display/lg/strong` (48 / 52px), `text/brand` | Same | `display/lg/strong` (29 / 32px) |
 | Body | `body/base/regular` (18 / 28px), `text/default`; `spacing/20` above (20px) | Same | `body/base/regular` (16 / 24px); `spacing/24` above (24px) |
-| Buttons | Side by side, `spacing/40` above (40px), `spacing/16` gap (16px), `spacing/16` left and right padding (16px) | Same | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |
+| Buttons | Side by side, `spacing/40` above (40px), `spacing/16` gap between buttons and between rows when they wrap (16px), `spacing/16` left and right padding (16px) | Same | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |
 | Card padding | `spacing/16` all sides (16px) | Same | Same |
 | Card eyebrow | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below (4px) | Same | Same |
 | Card title | `action/lg/strong` (16 / 24px), `text/strong`; `rvt-arrow-right-12` icon (12px), `spacing/16` from title | Same | Same |
