@@ -48,4 +48,4 @@ Shared rules: `background/strong` fill, 2px dashed `border/default` border, no r
 | Title | `heading/md/strong` (20 / 24px), `text/strong` | Same |
 | Body | `body/base/regular` (18 / 28px), `text/default`, `spacing/8` below the title | `body/base/regular` (16 / 24px) |
 | File chips | `rvt-badge` with remove icon, 1px `component/button/form-border` border, `spacing/16` above, `spacing/12` gap | Same |
-| Buttons | `rvt-button` Form, Extra-large (48px), side by side, `spacing/16` gap | Stacked full width, `spacing/8` gap |
+| Buttons | `rvt-button` Form, Extra-large (48px), side by side, `spacing/16` gap | Stacked and centered, each button hugs its label, `spacing/8` gap |

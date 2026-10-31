@@ -25,7 +25,7 @@ The callout hero is the default hero, the banner at the top of most pages. It sh
 
 ### Breakpoint
 - **Desktop:** Buttons sit side by side
-- **Mobile:** Everything stacks, with full-width buttons and the card last
+- **Mobile:** Everything stacks, with buttons sized to their labels and the card last
 
 ### Optional parts
 - **Metadata:** A short label above the headline, like the section name
@@ -54,7 +54,7 @@ Shared rules: Background `background/default`, with a 1px `border/default` line 
 | Metadata | `tag/md/caps` (14 / 20px), `text/brand`; `spacing/8` below (8px) | Same | Same |
 | Headline | `display/lg/strong` (48 / 52px), `text/brand` | Same | `display/lg/strong` (29 / 32px) |
 | Body | `body/base/regular` (18 / 28px), `text/default`; `spacing/20` above (20px) | Same | `body/base/regular` (16 / 24px); `spacing/24` above (24px) |
-| Buttons | Side by side, `spacing/40` above (40px), `spacing/16` gap between buttons and between rows when they wrap (16px), `spacing/16` left and right padding (16px) | Same | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |
+| Buttons | Side by side, `spacing/40` above (40px), `spacing/16` gap between buttons and between rows when they wrap (16px), `spacing/16` left and right padding (16px) | Same | Stacked, each button hugs its label, left aligned, `spacing/40` above (32px), `spacing/16` gap (16px) |
 | Card padding | `spacing/16` all sides (16px) | Same | Same |
 | Card eyebrow | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below (4px) | Same | Same |
 | Card title | `action/lg/strong` (16 / 24px), `text/strong`; `rvt-arrow-right-12` icon (12px), `spacing/16` from title | Same | Same |

@@ -41,7 +41,7 @@ A feature hero is the large banner at the top of a page, with a wide headline an
 
 ## Developer spec checklist
 
-Shared rules: background `background/default`. Primary button is `rvt-button` (Type Link, Style Strong, Size Extra-large); secondary is Style Normal with a `border/accent` border. The Strong button comes first. Photos keep their shape at any width: 2:1 on Desktop, 3:2 on Mobile. Mobile stacks everything in one column with full-width buttons. The list hub is `rvt-list-hub` (Layout Single List Hub, Size Compact, Breakpoint matching the hero).
+Shared rules: background `background/default`. Primary button is `rvt-button` (Type Link, Style Strong, Size Extra-large); secondary is Style Normal with a `border/accent` border. The Strong button comes first. Photos keep their shape at any width: 2:1 on Desktop, 3:2 on Mobile. Mobile stacks everything in one column; buttons stack, size to their labels and line up on the left. The list hub is `rvt-list-hub` (Layout Single List Hub, Size Compact, Breakpoint matching the hero).
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
@@ -51,7 +51,7 @@ Shared rules: background `background/default`. Primary button is `rvt-button` (T
 | Metadata | `tag/md/caps` (14 / 20px), `text/brand`; `spacing/12` below (12px) | Same |
 | Headline | `display/xl/caps` (54 / 56px), `text/brand` | `display/xl/caps` (36 / 36px) |
 | Body | `body/base/regular` (18 / 28px), `text/default`; `spacing/24` above (24px) | `body/base/regular` (16 / 24px); `spacing/20` above (20px) |
-| Buttons | Side by side, `spacing/48` above (48px), `spacing/16` gap (16px) | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |
+| Buttons | Side by side, `spacing/48` above (48px), `spacing/16` gap (16px) | Stacked, each button hugs its label, left aligned, `spacing/40` above (32px), `spacing/16` gap (16px) |
 | Photo, without list hub | Full width inside `spacing/80` left and right (80px), 2:1 | `spacing/32` above (24px), full width, 3:2 |
 | Photo, with list hub | Right side, `spacing/80` right (80px), 2:1 | Same as without |
 | List hub | Left of the photo, aligned to its bottom; `spacing/80` left (80px), `spacing/40` right (40px) | Below the photo, `spacing/8` gap plus `spacing/32` top padding (32px total) |

@@ -36,7 +36,7 @@
       "name": "Billboard",
       "summary": "A large image paired with a short title, description and links that spotlights one important section of your site.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=2077-13019"
     },
     {
@@ -52,7 +52,7 @@
       "name": "Button",
       "summary": "A clickable box that lets people take an action, like submitting a form, or move to the next step, like \"Apply now.\"",
       "status": "ready-for-dev",
-      "updated": "2026-10-26",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-7"
     },
     {
@@ -68,7 +68,7 @@
       "name": "Callout",
       "summary": "A highlighted box that draws attention to one thing on a page, with a short title, description, picture and up to two links.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-5"
     },
     {
@@ -84,7 +84,7 @@
       "name": "Card-contact",
       "summary": "A card that shows people how to reach an office, team or department, with the address, email, phone, website, hours and social links in one place.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1640-65714"
     },
     {
@@ -132,7 +132,7 @@
       "name": "Dialog",
       "summary": "A dialog is a small window that opens over the page to ask for a decision or a few details, like confirming a deletion or saving changes before leaving a form.",
       "status": "ready-for-dev",
-      "updated": "2026-10-21",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-21"
     },
     {
@@ -156,7 +156,7 @@
       "name": "Empty state",
       "summary": "An empty state fills a space that has nothing in it yet, like a file upload area before anyone adds a file.",
       "status": "ready-for-dev",
-      "updated": "2026-10-21",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-14"
     },
     {
@@ -164,7 +164,7 @@
       "name": "File input",
       "summary": "A file input lets people attach a file to a form, like a letter of recommendation, a transcript or a résumé.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-15"
     },
     {
@@ -179,14 +179,14 @@
       "name": "Hero – Split",
       "summary": "A large banner at the top of a page with the headline and intro on one side and a photo on the other.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30"
+      "updated": "2026-10-31"
     },
     {
       "slug": "hero-profile",
       "name": "Hero – Profile",
       "summary": "A profile hero opens a person's page with their photo, name, credentials and job title.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1708-98577"
     },
     {
@@ -202,7 +202,7 @@
       "name": "Hero – Callout",
       "summary": "The callout hero is the default hero, the banner at the top of most pages.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=314-3617"
     },
     {
@@ -210,7 +210,7 @@
       "name": "Hero – Statement",
       "summary": "A statement hero opens a page with a bold headline and one to three large photos.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=3551-18446"
     },
     {
@@ -218,7 +218,7 @@
       "name": "Hero – Feature",
       "summary": "A feature hero is the large banner at the top of a page, with a wide headline and intro above a large photo.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30",
+      "updated": "2026-10-31",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=3824-11364"
     },
     {

@@ -20,7 +20,7 @@ A file input lets people attach a file to a form, like a letter of recommendatio
 
 ### Breakpoint
 - **Desktop:** Button and status sit side by side
-- **Mobile:** The button goes full width and the status or files sit below it
+- **Mobile:** The button stays the width of its label and the status or files sit below it
 
 ### Optional parts
 - Add helper text to list accepted file types and size, like "PDF or Word, up to 10 MB"
@@ -43,6 +43,6 @@ Shared rules: Button is `rvt-button` (Type Form, Style Strong, Size Extra-large,
 | Outer padding | None | `spacing/24` left and right (24px) |
 | Label | `heading/xs/strong` (14 / 20px), `text/strong`; asterisk `text/required`; `spacing/8` below (8px) | Same |
 | Helper text | `body/xs/regular` (14 / 20px), `text/default`; `spacing/4` below (4px) | Same |
-| Button and status or files | Side by side, `spacing/16` gap (16px) | Stacked, button full width, `spacing/16` gap (16px) |
+| Button and status or files | Side by side, `spacing/16` gap (16px) | Stacked, button hugs its label, `spacing/16` gap (16px) |
 | File chips | In a row that wraps, `spacing/8` gap (8px) | Same |
 | File chip padding | `spacing/12` left and right (12px), `spacing/8` icon to name (8px), 1px `component/button/form-border` | Same |

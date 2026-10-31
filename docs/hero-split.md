@@ -40,7 +40,7 @@ A split hero is the large banner at the top of a page, with the headline and int
 
 ## Developer spec checklist
 
-Shared rules: Background `background/default`. Desktop is 1600 × 900px. Primary button is `rvt-button` (Type CTA, Style Strong, Size Extra-large); secondary is Style Normal with a `border/accent` border. Buttons put the Strong button first on Desktop (left) and Mobile (top), the marketing exception to the Button order rule. Mobile stacks everything in one column with full-width buttons. The list hub is `rvt-list-hub` (Layout Single List Hub, Size Compact).
+Shared rules: Background `background/default`. Desktop is 1600 × 900px. Primary button is `rvt-button` (Type CTA, Style Strong, Size Extra-large); secondary is Style Normal with a `border/accent` border. Buttons put the Strong button first on Desktop (left) and Mobile (top), the marketing exception to the Button order rule. Mobile stacks everything in one column; buttons stack, size to their labels and line up on the left. The list hub is `rvt-list-hub` (Layout Single List Hub, Size Compact).
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
@@ -49,6 +49,6 @@ Shared rules: Background `background/default`. Desktop is 1600 × 900px. Primary
 | Metadata | `tag/lg/caps` (16 / 24px), `text/brand`; `spacing/12` below (12px) | Same |
 | Headline | `display/xl/caps` (54 / 56px), `text/brand` | `display/xl/caps` (36 / 36px) |
 | Body | `body/base/regular` (18 / 28px), `text/default`; `spacing/24` above (24px) | `body/base/regular` (16 / 24px); `spacing/20` above (20px) |
-| Buttons | Side by side, `spacing/48` above (48px), `spacing/16` gap (16px) | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |
+| Buttons | Side by side, `spacing/48` above (48px), `spacing/16` gap (16px) | Stacked, each button hugs its label, left aligned, `spacing/40` above (32px), `spacing/16` gap (16px) |
 | Photo | `spacing/40` top and bottom (40px), `spacing/80` right (80px), `spacing/64` left (64px) | `spacing/32` above (24px) |
 | List hub | Below the text, `spacing/64` above (64px) | Below the photo, `spacing/8` gap plus `spacing/32` top padding (32px total) |

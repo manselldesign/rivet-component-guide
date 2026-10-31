@@ -93,7 +93,7 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
    Spacing from Figma rvt-hero-callout, on spacing tokens (their mobile values switch below 768px):
    Desktop spacing/96 top and bottom; Mobile spacing/40 top (32px), spacing/48 bottom (36px).
    Metadata spacing/8 below. Body spacing/20 above (Mobile spacing/24). Buttons spacing/40 above (Mobile 32px), spacing/16 gap,
-   stacked full width on Mobile. Text to card spacing/64 (Mobile spacing/48, 36px). */
+   stacked on Mobile, each button hugging its label. Text to card spacing/64 (Mobile spacing/48, 36px). */
 .hero{background:#1f2528;color:#ffffff;padding-top:var(--rvt-spacing-96)}
 .hero-inner{padding-bottom:var(--rvt-spacing-96);border-bottom:1px solid #000000}
 .hero-inner>*{max-width:936px}
@@ -108,8 +108,7 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
   .hero{padding-top:var(--rvt-spacing-40)}
   .hero-inner{padding-bottom:var(--rvt-spacing-48)}
   .hero .intro{margin-top:var(--rvt-spacing-24)}
-  .hero .actions{flex-direction:column;align-items:stretch}
-  .hero .actions .btn{justify-content:space-between}
+  .hero .actions{flex-direction:column;align-items:flex-start}
 }
 .hero :focus-visible{outline-color:#efdfc8}
 /* rvt-hero-callout, Column(s)=2: text column + rvt-card-default (Style=Raised), Dark mode.

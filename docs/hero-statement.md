@@ -22,7 +22,7 @@ A statement hero opens a page with a bold headline and one to three large photos
 
 ### Breakpoint
 - **Desktop:** Photos sit in a row below the text, and the card overlaps their bottom right corner
-- **Mobile:** Everything stacks, with full-width buttons and the card below the photos
+- **Mobile:** Everything stacks, with buttons sized to their labels and the card below the photos
 
 ### Optional parts
 - **Metadata:** A short label above the headline, like the school or campaign name
@@ -51,7 +51,7 @@ Shared rules: Background `background/default`. Desktop is 1600px wide, Mobile 37
 | Metadata | `tag/md/caps` (14 / 20px), `text/brand`; `spacing/16` below (16px) | `tag/md/caps` (14 / 20px); `spacing/12` below (12px) |
 | Headline | `display/xl/caps` (54 / 56px), `text/brand` | `display/xl/caps` (36 / 36px) |
 | Body | `body/md/regular` (20 / 28px), `text/default`; `spacing/24` above (24px) | `body/md/regular` (18 / 24px); `spacing/20` above (20px) |
-| Buttons | Side by side, `spacing/48` above (48px), `spacing/16` gap (16px) | Stacked full width, `spacing/40` above (32px), `spacing/16` gap (16px) |
+| Buttons | Side by side, `spacing/48` above (48px), `spacing/16` gap (16px) | Stacked and centered, each button hugs its label, `spacing/40` above (32px), `spacing/16` gap (16px) |
 | Photos, Single | One 1440 × 720px (2:1) | One 327 × 200px; `spacing/32` above (24px) |
 | Photos, Double | Two 716px squares | Two 160px squares side by side; `spacing/32` above (24px) |
 | Photos, Triple | Three 475px squares | Two 160px squares side by side, then one below; `spacing/32` above (24px) |
