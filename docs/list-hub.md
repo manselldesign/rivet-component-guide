@@ -16,10 +16,10 @@ A section that gathers related links in one place, each with a title and optiona
 ## Variants
 
 ### Layout
-- **Single list:** Use it when the links can speak for themselves, like a department's services. Figma calls it Single List Hub
+- **Single list:** Use it when the links can speak for themselves, like a department's services
 - **Image with links:** Use it when a photo helps set the scene, like a campus life section
 - **Text with links:** Use it when readers need a headline, a short introduction and one main button first, like an admissions overview
-- **Table of contents:** Use it to link to sections on the same page. Figma calls it TOC
+- **Table of contents:** Use it to link to sections on the same page
 
 ### Type
 - **Default:** Use it for links. Each item has an arrow
@@ -73,7 +73,8 @@ Shared rules: items are separated by a 1px `border/default` line below each item
 | Description | `body/base/regular` (18 / 28px) | `body/base/regular` (16 / 24px) | `body/xs/regular` (14 / 20px) |
 | List item lines | 18 / 28px | 16 / 24px | 14 / 20px |
 | Arrow | `rvt-arrow-right` (16px) | `rvt-arrow-right` (16px) | `rvt-arrow-right-12` (12px) |
-| Gap, arrow to title | `spacing/16` (16px) | `spacing/16` (16px) | `spacing/16` (16px) |
+| Gap, arrow to title | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/4` (4px) |
+| Arrow text indent | `spacing/24` (24px), left | `spacing/24` (24px), left | `spacing/20` (20px), left |
 | Gap, metadata to title | `spacing/4` (4px), below | `spacing/4` (4px), below | `spacing/4` (4px), below |
 | Gap, title to description | `spacing/12` (12px), above | `spacing/8` (8px), above | `spacing/4` (4px), above |
 | Gap, description to list items | `spacing/12` (12px), above | `spacing/12` (12px), above | `spacing/8` (8px), above |
@@ -81,6 +82,6 @@ Shared rules: items are separated by a 1px `border/default` line below each item
 | Gap, above badge | `spacing/16` (16px) | `spacing/16` (16px) | `spacing/16` (16px) |
 | Checklist marker | 32px circle, `background/brand-alt`, 16px check icon | 24px circle, `background/brand-alt`, 12px check icon | 24px circle, `background/brand-alt`, 12px check icon |
 | X marker | 32px circle, `background/inverse-alt`, 16px close icon | 24px circle, `background/inverse-alt`, 12px close icon | 24px circle, `background/inverse-alt`, 12px close icon |
-| Gap, marker to title | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/8` (8px) |
+| Gap, marker to title | `spacing/12` (12px) | `spacing/8` (8px) | `spacing/8` (8px) |
 | Icon alignment (arrow, check, X) | Top-aligned to the first line of the title (`align-items: flex-start`), never centered on the whole title. The arrow sits in a 24px-tall box (the title's line height), centered. The 32px marker is taller than the 24px line, so the title gets `spacing/4` (4px) top padding to center line one on the marker | Top-aligned to the first line of the title. Arrow and 24px marker sit in a 24px-tall box (the title's line height), centered | Top-aligned to the first line of the title. Arrow and 24px marker sit in a 24px-tall box (the title's line height), centered |
-| Checklist text indent | `spacing/40` (40px), left | `spacing/40` (32px), left | `spacing/40` (40px Desktop, 32px Mobile), left |
+| Checklist text indent | 44px (32px marker + 12px gap), left | `spacing/40` (32px), left | `spacing/32` (32px) Desktop, `spacing/40` (32px) Mobile, left |
