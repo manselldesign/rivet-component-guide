@@ -79,7 +79,8 @@ Shared rules: items are separated by a 1px `border/default` line below each item
 | Gap, description to list items | `spacing/12` (12px), above | `spacing/12` (12px), above | `spacing/8` (8px), above |
 | Gap between list item lines | `spacing/4` (4px) | `spacing/4` (4px) | `spacing/4` (4px) |
 | Gap, above badge | `spacing/16` (16px) | `spacing/16` (16px) | `spacing/16` (16px) |
-| Checklist marker | 24px circle, `background/brand-alt`, 12px check icon | Same | Same |
-| X marker | 24px circle, `background/inverse-alt`, 12px close icon | Same | Same |
+| Checklist marker | 32px circle, `background/brand-alt`, 16px check icon | 24px circle, `background/brand-alt`, 12px check icon | 24px circle, `background/brand-alt`, 12px check icon |
+| X marker | 32px circle, `background/inverse-alt`, 16px close icon | 24px circle, `background/inverse-alt`, 12px close icon | 24px circle, `background/inverse-alt`, 12px close icon |
 | Gap, marker to title | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/8` (8px) |
+| Icon alignment (arrow, check, X) | Top-aligned to the first line of the title (`align-items: flex-start`), never centered on the whole title. The arrow sits in a 24px-tall box (the title's line height), centered. The 32px marker is taller than the 24px line, so the title gets `spacing/4` (4px) top padding to center line one on the marker | Top-aligned to the first line of the title. Arrow and 24px marker sit in a 24px-tall box (the title's line height), centered | Top-aligned to the first line of the title. Arrow and 24px marker sit in a 24px-tall box (the title's line height), centered |
 | Checklist text indent | `spacing/40` (40px), left | `spacing/40` (32px), left | `spacing/40` (40px Desktop, 32px Mobile), left |

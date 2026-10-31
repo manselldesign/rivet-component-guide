@@ -326,10 +326,11 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
    Panel background/default (Dark) #1f2528; 12px top/bottom per item, border/default (Dark) #000000 dividers;
    Compact = smaller icon + container: 24px circle: Check = component/list-hub/check-background and X = component/list-hub/x-background,
    both Dark → color/base/ultra-dark #000000; 12px glyph (rvt-check-12 / rvt-close-12) component/list-hub/icon #ffffff;
-   spacing/8 gap; title action/lg/strong SemiBold 16/24 text/strong (Dark → #ffffff). */
+   spacing/8 gap; title action/lg/strong SemiBold 16/24 text/strong (Dark → #ffffff).
+   Marker is top-aligned to the first line of the title (24px marker = 24px line), so wrapped titles keep it on line one. */
 .prose ul.checklist{list-style:none;margin:0;padding:12px 24px;display:block;background:#1f2528;color-scheme:dark;
   --ck-border:#000000;--ck-text:#ffffff;--ck-icon:#ffffff}
-.prose ul.checklist>li{display:flex;align-items:center;gap:8px;padding:12px 0;margin:0;border-top:1px solid var(--ck-border);
+.prose ul.checklist>li{display:flex;align-items:flex-start;gap:8px;padding:12px 0;margin:0;border-top:1px solid var(--ck-border);
   font-size:16px;line-height:24px;font-weight:var(--w-bold);color:var(--ck-text)}
 .prose ul.checklist>li:last-child{border-bottom:1px solid var(--ck-border)}
 .prose ul.checklist>li::before{content:"";position:static;flex:none;width:24px;height:24px;border-radius:50%;
@@ -597,6 +598,30 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-select__icon{position:absolute;right:var(--rvt-spacing-12);top:50%;width:16px;height:16px;margin-top:-8px;color:var(--rvt-component-input-icon);pointer-events:none}
 .rvt-select__icon svg{display:block;width:16px;height:16px;fill:currentColor}
 
+/* ---------- rvt-badge (Badge page example, Developer spec checklist) ----------
+   Status: Default, Info, Success, Warning, Danger. Style: Strong (solid fill) or Subtle (tint + 1px border). Layout: Default (icon + label) or Icon Only.
+   24px tall, border-radius/full. Default layout hugs its label: spacing/12 sides, spacing/4 icon-to-label gap. Icon Only is a fixed 24 x 24 circle, 12px icon centered.
+   The Subtle 1px border is drawn inside (inset box-shadow) so it adds nothing to the 24px height; every badge also gets the 1px component/badge/ring outside.
+   Label: heading/xs/strong (14 / 20px, weight 700, width 110%, heading axes). Badge tokens are the same in Light, Dark and Crimson. */
+.rvt-badge-rows{display:flex;flex-direction:column;align-items:flex-start;gap:var(--rvt-spacing-24)}
+.rvt-badge-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-16);margin:0}
+.rvt-badge{--badge-bg:var(--rvt-component-badge-default-strong-background);--badge-border:transparent;--badge-text:var(--rvt-component-badge-default-strong-text);--badge-icon:var(--rvt-component-badge-default-strong-icon);
+  box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:var(--rvt-spacing-4);height:24px;padding:0 var(--rvt-spacing-12);
+  border-radius:var(--rvt-border-radius-full);background:var(--badge-bg);color:var(--badge-text);white-space:nowrap;
+  box-shadow:inset 0 0 0 1px var(--badge-border),0 0 0 1px var(--rvt-component-badge-ring);
+  font:var(--rvt-font-heading-xs-strong);font-stretch:var(--rvt-font-width-semi-expanded);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-badge svg{display:block;flex:none;width:12px;height:12px;fill:var(--badge-icon)}
+.rvt-badge--icon-only{width:24px;padding:0}
+.rvt-badge--info{--badge-bg:var(--rvt-component-badge-info-strong-background);--badge-text:var(--rvt-component-badge-info-strong-text);--badge-icon:var(--rvt-component-badge-info-strong-icon)}
+.rvt-badge--success{--badge-bg:var(--rvt-component-badge-success-strong-background);--badge-text:var(--rvt-component-badge-success-strong-text);--badge-icon:var(--rvt-component-badge-success-strong-icon)}
+.rvt-badge--warning{--badge-bg:var(--rvt-component-badge-warning-strong-background);--badge-text:var(--rvt-component-badge-warning-strong-text);--badge-icon:var(--rvt-component-badge-warning-strong-icon)}
+.rvt-badge--danger{--badge-bg:var(--rvt-component-badge-danger-strong-background);--badge-text:var(--rvt-component-badge-danger-strong-text);--badge-icon:var(--rvt-component-badge-danger-strong-icon)}
+.rvt-badge--subtle{--badge-bg:var(--rvt-component-badge-default-subtle-background);--badge-border:var(--rvt-component-badge-default-subtle-border);--badge-text:var(--rvt-component-badge-default-subtle-text);--badge-icon:var(--rvt-component-badge-default-subtle-icon)}
+.rvt-badge--subtle.rvt-badge--info{--badge-bg:var(--rvt-component-badge-info-subtle-background);--badge-border:var(--rvt-component-badge-info-subtle-border);--badge-text:var(--rvt-component-badge-info-subtle-text);--badge-icon:var(--rvt-component-badge-info-subtle-icon)}
+.rvt-badge--subtle.rvt-badge--success{--badge-bg:var(--rvt-component-badge-success-subtle-background);--badge-border:var(--rvt-component-badge-success-subtle-border);--badge-text:var(--rvt-component-badge-success-subtle-text);--badge-icon:var(--rvt-component-badge-success-subtle-icon)}
+.rvt-badge--subtle.rvt-badge--warning{--badge-bg:var(--rvt-component-badge-warning-subtle-background);--badge-border:var(--rvt-component-badge-warning-subtle-border);--badge-text:var(--rvt-component-badge-warning-subtle-text);--badge-icon:var(--rvt-component-badge-warning-subtle-icon)}
+.rvt-badge--subtle.rvt-badge--danger{--badge-bg:var(--rvt-component-badge-danger-subtle-background);--badge-border:var(--rvt-component-badge-danger-subtle-border);--badge-text:var(--rvt-component-badge-danger-subtle-text);--badge-icon:var(--rvt-component-badge-danger-subtle-icon)}
+
 /* ---------- rvt-alert (Alert page, Developer spec checklist) ----------
    Themed like every other component: its tokens follow the page theme (Light, Dark, Crimson), e.g. Info on Dark = background/info-subtle black,
    text/info white, border/info light blue. Badges keep their status fill in every theme.
@@ -860,6 +885,22 @@ body:not(.has-rail) .site-header__menu{display:none}
       <p class="rvt-alert__message"><span class="sr-only">${esc(a.word)}: </span>${esc(a.inline)}</p>
       ${closeBtn(a, 12)}
     </div>`;
+  /* rvt-badge example. Status order follows the component: Default, Info, Success, Warning, Danger.
+     Default uses rvt-star-12 (swappable); the others reuse the 12px Rivet glyphs in P12. Icon Only badges carry their label for screen readers. */
+  P12.star = 'm7.7 4.113 4.319.204L8.821 7.41l1.024 4.029L6 9.459l-3.845 1.979 1.023-4.029-3.197-3.092 4.32-.204L6 .563zM5.846 5.517l-.258.539-.888.042.704.68-.144.562-.074.289.356-.183L6 7.211l.813.418-.073-.29-.144-.56.418-.404.286-.277-.888-.042L6 5.194z';
+  const BADGES = [
+    {status: 'default', glyph: 'star', label: 'Online'},
+    {status: 'info', glyph: 'info', label: 'New'},
+    {status: 'success', glyph: 'check', label: 'Open'},
+    {status: 'warning', glyph: 'minus', label: 'Closing soon'},
+    {status: 'danger', glyph: 'exclamation', label: 'Full'}
+  ];
+  const badgeEl = (b, style, iconOnly) => {
+    const cls = `rvt-badge rvt-badge--${b.status}${style === 'subtle' ? ' rvt-badge--subtle' : ''}${iconOnly ? ' rvt-badge--icon-only' : ''}`;
+    return iconOnly
+      ? `<span class="${cls}">${icon12(b.glyph)}<span class="sr-only">${esc(b.label)}</span></span>`
+      : `<span class="${cls}">${icon12(b.glyph)}${esc(b.label)}</span>`;
+  };
   const demos = {
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
@@ -918,6 +959,16 @@ body:not(.has-rail) .site-header__menu{display:none}
           (rest.find(el => alert.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING) || rest[0] || stage).focus();
         }));
       }
+    },
+    /* rvt-badge: Style is the variant; each status shows on its own row, Default layout (icon + label) then Icon Only.
+       Badges hug their content, so the cap is the Figma theme showcase row width (the component has no Breakpoint=Desktop frame). */
+    badge: {
+      maxWidth: 492, // Figma Badge page, theme-showcase "Badges" row width (no Breakpoint=Desktop frame)
+      variants: [
+        {id: 'strong', label: 'Strong'},
+        {id: 'subtle', label: 'Subtle'}
+      ],
+      html: v => `<div class="rvt-badge-rows">${BADGES.map(b => `<p class="rvt-badge-row">${badgeEl(b, v, false)}${badgeEl(b, v, true)}</p>`).join('')}</div>`
     }
   };
   const demoSection = c => {
