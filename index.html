@@ -450,8 +450,10 @@ body:not(.has-rail) #rail-shell{display:none}
 
 
 /* ---------- Site header: rvt-header, Type=Default, without nav items ----------
-   Bar: background/default of its theme (Light = white, Dark = charcoal, Crimson = crimson), spacing/24 top and bottom,
-   spacing/80 sides (spacing/20 on mobile), 48px lockup, so 96px tall. Full width; the component sidebar starts below it.
+   Bar: background/default of its theme (Light = white, Dark = charcoal, Crimson = crimson), full width, spacing/24 top and bottom,
+   48px lockup, so 96px tall. The component sidebar starts below it. The lockup lines up with the page content's left edge:
+   the same container as the page (.wrap: max width and side padding) on the home page and on phones, and the sidebar's
+   spacing/24 inset on desktop detail pages, where the sidebar is the leftmost content. The title is not a hover target.
    Logo lockup (Campus): Mark-48 tab 41x48, 6px to the title (Figma value, no spacing token), title component/lockup/campus-title
    (16/16, weight 600, uppercase, width 40%, opsz 16), text/strong. Light uses the Default lockup (crimson tab, white trident);
    Dark and Crimson use the Inverse lockup (white tab, crimson trident).
@@ -460,7 +462,8 @@ body:not(.has-rail) #rail-shell{display:none}
 .site-header.rvt-theme-light{color-scheme:light}
 .site-header.rvt-theme-dark,.site-header.rvt-theme-crimson{color-scheme:dark}
 .site-header__bar{display:flex;align-items:center;justify-content:space-between;gap:var(--rvt-spacing-16);
-  padding:var(--rvt-spacing-24) var(--rvt-spacing-80)}
+  max-width:var(--page);margin-inline:auto;padding:var(--rvt-spacing-24) clamp(16px,5vw,80px)}
+@media (min-width:1024px){body.has-rail .site-header__bar{max-width:none;padding-inline:var(--rvt-spacing-24)}}
 .rvt-lockup{display:inline-flex;align-items:center;gap:6px;color:var(--rvt-text-strong);text-decoration:none;min-width:0}
 .rvt-lockup__mark{display:block;flex:none;width:41px;height:48px}
 .rvt-lockup__tab{fill:var(--rvt-icon-on-brand-fixed)}
@@ -469,7 +472,6 @@ body:not(.has-rail) #rail-shell{display:none}
 .site-header.rvt-theme-light .rvt-lockup__trident{fill:var(--rvt-icon-on-brand-fixed)}
 .rvt-lockup__title{font:var(--rvt-font-component-lockup-campus-title);font-stretch:40%;font-variation-settings:"opsz" 16;
   letter-spacing:var(--rvt-font-tracking-none);text-transform:uppercase;white-space:nowrap}
-.rvt-lockup:hover .rvt-lockup__title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .site-header :focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
 .site-header__menu{display:flex;align-items:center;justify-content:center;flex:none;width:32px;height:32px;padding:0;margin:0;cursor:pointer;
   border:1px solid var(--rvt-component-button-form-border);border-radius:0;background:transparent;color:var(--rvt-component-button-form-text);
@@ -481,7 +483,6 @@ body:not(.has-rail) .site-header__menu{display:none}
 .site-header__menu .rail-ic-close{display:none}
 .site-header__menu[aria-expanded="true"] .rail-ic-menu{display:none}
 .site-header__menu[aria-expanded="true"] .rail-ic-close{display:block}
-@media (max-width:767px){.site-header__bar{padding-inline:var(--rvt-spacing-20)}}
 @media (min-width:1024px){.site-header__menu{display:none!important}}
 @media (prefers-reduced-motion:reduce){.site-header__menu{transition:none}}
 
