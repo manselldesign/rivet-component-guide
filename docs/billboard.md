@@ -13,7 +13,7 @@ A large block that pairs a big image with a short title, a sentence or two, and 
 - Don't stack several (more than 3) billboards in a row. They compete and lose impact
 - Don't use it without a meaningful image
 
-## Example
+## Writing guidance
 
 <div class="ex">
 <figure class="ex-item">
