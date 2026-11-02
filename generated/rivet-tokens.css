@@ -99,6 +99,7 @@
 	--rvt-type-line-height-20: 20px;
 	--rvt-type-line-height-24: 24px;
 	--rvt-type-line-height-24-28: 28px;
+	--rvt-type-line-height-24-32: 32px;
 	--rvt-type-line-height-28: 28px;
 	--rvt-type-line-height-28-32: 32px;
 	--rvt-type-line-height-28-36: 36px;
@@ -194,6 +195,7 @@
 		--rvt-type-size-64-72: 64px;
 		--rvt-type-line-height-18-20: 18px;
 		--rvt-type-line-height-24-28: 24px;
+		--rvt-type-line-height-24-32: 24px;
 		--rvt-type-line-height-28: 24px;
 		--rvt-type-line-height-28-32: 28px;
 		--rvt-type-line-height-28-36: 28px;
@@ -691,7 +693,7 @@
 	--rvt-font-display-lg-strong: var(--rvt-font-weight-700) var(--rvt-type-size-29-48)/var(--rvt-type-line-height-32-52) var(--rvt-font-family-sans-display);
 	--rvt-font-display-md-strong: var(--rvt-font-weight-700) var(--rvt-type-size-26-36)/var(--rvt-type-line-height-28-40) var(--rvt-font-family-sans-display);
 	--rvt-font-display-sm-strong: var(--rvt-font-weight-700) var(--rvt-type-size-29)/var(--rvt-type-line-height-36) var(--rvt-font-family-sans-display);
-	--rvt-font-display-xs-strong: var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-32) var(--rvt-font-family-sans-display);
+	--rvt-font-display-xs-strong: var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-24-32) var(--rvt-font-family-sans-display);
 	--rvt-font-heading-3xl-strong: var(--rvt-font-weight-700) var(--rvt-type-size-26-36)/var(--rvt-type-line-height-28-40) var(--rvt-font-family-sans-heading);
 	--rvt-font-heading-2xl-strong: var(--rvt-font-weight-700) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans-heading);
 	--rvt-font-heading-xl-strong: var(--rvt-font-weight-700) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-28-32) var(--rvt-font-family-sans-heading);

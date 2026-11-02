@@ -2811,7 +2811,10 @@
                 "desktop": 26,
                 "mobile": 20
               },
-              "lineHeight": 32,
+              "lineHeight": {
+                "desktop": 32,
+                "mobile": 24
+              },
               "ytas": 720,
               "ytlc": 530
             },
@@ -2821,7 +2824,7 @@
               "weight 750 vs Figma 700",
               "width 'semi-condensed' vs Figma 100"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-32) var(--rvt-font-family-sans-display)",
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-24-32) var(--rvt-font-family-sans-display)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-normal)",
               "font-variation-settings": "var(--rvt-font-axes-heading)"
@@ -4673,6 +4676,14 @@
           "mobile": 28,
           "codeToday": "--rvt-size-28-40",
           "action": "rename"
+        },
+        {
+          "name": "type/line-height/24-32",
+          "css": "--rvt-type-line-height-24-32",
+          "desktop": 32,
+          "mobile": 24,
+          "codeToday": null,
+          "action": "add"
         },
         {
           "name": "type/line-height/32",
