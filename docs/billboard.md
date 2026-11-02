@@ -13,6 +13,12 @@ A large block that pairs a big image with a short title, a sentence or two, and 
 - Don't stack several (more than 3) billboards in a row. They compete and lose impact
 - Don't use it without a meaningful image
 
+## The image
+- Upload one landscape photo. You don't crop it yourself
+- Beside the text (wide layouts) it shows as a square. Above the text (narrow layouts) it shows as a 3:2 banner, the same shape the feature card uses
+- The crop is automatic and keeps the top-middle of the photo, which is where faces usually are. Pick photos with the subject near the top-middle and a little room around it
+- Avoid photos where the subject sits at the far left or right, or text and logos near the edges. They can get trimmed in the square
+
 ## Writing guidance
 
 <div class="ex">
@@ -59,15 +65,21 @@ A large block that pairs a big image with a short title, a sentence or two, and 
 
 ## Developer spec checklist
 
-| Element | Desktop | Mobile |
+Shared rules: a billboard has **either** one button **or** a list of links, never both. Pick one per billboard. The eyebrow and description are optional; the image, title and link are not. One image serves both layouts: the slot changes shape (1:1 beside the text, 3:2 above it) and the photo is cropped to fit automatically.
+
+Breakpoint: the billboard switches between its two layouts on its own width, not the screen's. Side by side at 800px wide or more; stacked under 800px. The stacked layout always uses the Mobile token values (the Mobile column below), even on a wide screen.
+
+| Element | Side by side (800px and up) | Stacked (under 800px) |
 | --- | --- | --- |
-| Layout | Two columns, image and content, `spacing/64` (64px) between | Stacked, image above content |
+| Layout | Two columns, image and content, `spacing/64` (64px) between; `spacing/32` (32px) under 1100px wide | Stacked, image above content |
+| Columns | Image column 66% of the width; content takes the rest and never goes under 280px (the image gives way) | Full width |
 | Background | `background/strong` | `background/strong` |
-| Image | 1:1, `spacing/24` (24px) top, bottom and outer side | 1:1, `spacing/20` (20px) top, left, right |
-| Content padding | `spacing/64` (64px) outer side and bottom, content bottom-aligned | `spacing/32` (24px) all sides |
+| Image | 1:1, `spacing/24` (24px) top, bottom and outer side | Full width, 3:2, `spacing/20` (20px) top, left, right |
+| Image crop | `object-fit: cover`, anchored at `--rvt-image-focus` (default `50% 25%`, top third centre). Authors never crop by hand; a page can move the focal point per image | Same |
+| Content padding | `spacing/64` (64px) outer side and bottom, content bottom-aligned; `spacing/32` (32px) under 1100px wide | `spacing/32` (24px) all sides |
 | Eyebrow | `tag/md/caps` (14 / 20px), `text/brand`, `spacing/8` below | Same |
-| Title | `display/sm/strong` (29 / 32px), `text/brand` | Same |
+| Title | `display/xs/strong` (26 / 28px), `text/brand` | `display/xs/strong` (20 / 24px) |
 | Description | `body/base/regular` (18 / 28px), `text/default`, `spacing/24` above | (16 / 24px), `spacing/20` above |
 | Single link | `rvt-button` CTA, Extra-large, `component/button/height-lg` (48px), `spacing/32` above | Hugs its label, left aligned, `spacing/32` (24px) sides, `spacing/40` (32px) below |
-| Multiple links | `rvt-list-hub` Desktop, Compact, `spacing/32` above | `rvt-list-hub` Mobile, Compact, full width, `spacing/32` (24px) sides, `spacing/40` (32px) below |
+| Multiple links | `rvt-list-hub` Compact, `spacing/32` above; no line below the last item and no padding under it | `rvt-list-hub` Compact, full width, `spacing/32` (24px) sides, `spacing/40` (32px) below; no line below the last item |
 | Reversed | Image column moves to the right | No change (stacked) |

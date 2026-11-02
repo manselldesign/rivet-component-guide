@@ -425,6 +425,10 @@ body:not(.has-rail) #rail-shell{display:none}
    Dark and Crimson use the Inverse lockup (white tab, crimson trident).
    Menu (below 1024px, detail pages): rvt-button Icon-only Medium, 32x32, 1px component/button/form-border, icon component/button/form-text. */
 .site-header{background:var(--rvt-background-default);color:var(--rvt-text-strong);position:relative;z-index:30}
+/* Scrolled: once the page moves under the sticky bar, a small shadow (shadow/sm, 0 2px 6px black 20%) separates it from the content. */
+.site-header{transition:box-shadow 200ms cubic-bezier(0.4,0,0.2,1)}
+.site-header.is-scrolled{box-shadow:0 2px 6px 0 rgb(0 0 0 / 20%)}
+@media (prefers-reduced-motion:reduce){.site-header{transition:none}}
 .site-header.rvt-theme-light{color-scheme:light}
 .site-header.rvt-theme-dark,.site-header.rvt-theme-crimson{color-scheme:dark}
 .site-header__bar{display:flex;align-items:center;justify-content:space-between;gap:var(--rvt-spacing-16);
@@ -494,8 +498,8 @@ body:not(.has-rail) .site-header__menu{display:none}
 
 /* ================= Component example (detail pages) =================
    Sits directly below the hero. Everything in here is built from --rvt- tokens only (generated/rivet-tokens.css),
-   so the example re-themes when the page theme changes. --rvt-font-family-sans is not in the generated file; it points at the site font. */
-:root{--rvt-font-family-sans:var(--font-sans)}
+   so the example re-themes when the page theme changes. --rvt-font-family-sans and --rvt-font-family-mono are not in the generated file; they point at the site fonts. */
+:root{--rvt-font-family-sans:var(--font-sans);--rvt-font-family-mono:var(--font-mono)}
 /* Same rhythm as the Details Page text block: H2 → 24 → paragraph; the next section ("What it is") sits 96 below the example (72 on mobile). */
 .demo{margin:0 0 var(--rvt-spacing-96)}
 .demo-title{font-size:36px;line-height:40px;font-weight:var(--w-black);color:var(--text-strong);margin:0 0 var(--rvt-spacing-24);text-wrap:balance}
@@ -696,6 +700,96 @@ body:not(.has-rail) .site-header__menu{display:none}
   .rvt-alert--inline .rvt-alert__message{flex:1 1 auto;max-width:none}
   .rvt-alert--inline.has-close .rvt-alert__message{max-width:280px}
 }
+/* ---------- Example option: radio group beside "Select variant" (e.g. Billboard "Links: One button / Multiple links") ----------
+   rvt-radio, Type=Inline: options side by side, spacing/24 apart; option text action/lg/regular text/strong, spacing/8 from the circle.
+   Circle 20px: unchecked 1px border/strong ring, no fill; checked 1px border/accent ring with a background/brand dot.
+   Focus: 2px border/accent-strong ring around the circle (24px). The label sits spacing/8 above the options, as on the other two controls; the group
+   reserves the same 40px as the tabs and dropdown beside it so the three labels line up, with the options at the top of that space. */
+.rvt-radio-group{display:flex;flex-wrap:wrap;align-items:flex-start;column-gap:var(--rvt-spacing-24);row-gap:var(--rvt-spacing-8);min-height:var(--rvt-component-input-height-md)}
+.rvt-radio{display:inline-flex;align-items:flex-start;gap:var(--rvt-spacing-8);cursor:pointer;color:var(--rvt-text-strong);
+  font:var(--rvt-font-action-lg-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-radio__input{box-sizing:border-box;flex:none;position:relative;width:20px;height:20px;margin:3px 0 0;border:1px solid var(--rvt-border-strong);border-radius:var(--rvt-border-radius-full);
+  background:transparent;cursor:pointer;-webkit-appearance:none;appearance:none}
+.rvt-radio__input:checked{border-color:var(--rvt-border-accent)}
+.rvt-radio__input:checked::after{content:"";position:absolute;inset:4px;border-radius:var(--rvt-border-radius-full);background:var(--rvt-background-brand)}
+.rvt-radio__input:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:1px}
+
+/* ---------- rvt-billboard (Billboard page, Developer spec checklist) ----------
+   Side by side (the billboard is 800px wide or more, like the Rivet build's 50rem container query): two columns on background/strong, content bottom-aligned.
+     Image column 66% of the billboard (924px of the 1400px Desktop frame), image 1:1 with spacing/24 top, bottom and outer side; the content column takes the rest.
+     Content: spacing/64 from the image and on its outer side and bottom (348px of text at 1400px). Between 800px and 1100px wide the gaps drop to spacing/32, and the content column never goes under 280px (the image gives way), so the text keeps room.
+   Reversed: the image column moves to the right.
+   Stacked (under 800px wide): image above content, full width at 3:2, spacing/20 top and sides; text spacing/32 all sides; links spacing/32 sides, spacing/40 below. Reversed has no effect.
+   Stacked always uses the Mobile token values (see the container block below), so the type and spacing scale down with the component, not just with the screen.
+   Eyebrow tag/md/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/28, 20/24 in Mobile mode, like the feature card). Description body/base/regular text/default, spacing/24 above (spacing/20 stacked).
+   Single link: rvt-button Link, Normal, Extra-large, spacing/32 above. Multiple links: rvt-list-hub Compact, full width, spacing/32 above. */
+.rvt-billboard-wrap{container-type:inline-size}
+.rvt-billboard{display:grid;grid-template-columns:minmax(0,66%) minmax(280px,1fr);column-gap:var(--rvt-spacing-64);align-items:end;background:var(--rvt-background-strong)}
+.rvt-billboard__media{padding:var(--rvt-spacing-24) 0 var(--rvt-spacing-24) var(--rvt-spacing-24)}
+/* Auto crop: the photo is never resized by hand. The slot sets the shape (1:1 beside the text, 3:2 above it) and object-fit: cover fills it,
+   trimming the long sides. The crop is anchored at --rvt-image-focus, which defaults to the centre of the top third (50% 25%), where faces usually are,
+   so one landscape photo works in both shapes. A page can move the focal point per image with style="--rvt-image-focus: 30% 50%" when a photo needs it. */
+.rvt-billboard__media img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:var(--rvt-image-focus,50% 25%)}
+.rvt-billboard__content{min-width:0;padding:0 var(--rvt-spacing-64) var(--rvt-spacing-64) 0;overflow-wrap:break-word}
+.rvt-billboard--reversed{grid-template-columns:minmax(280px,1fr) minmax(0,66%)}
+.rvt-billboard--reversed .rvt-billboard__media{order:2;padding:var(--rvt-spacing-24) var(--rvt-spacing-24) var(--rvt-spacing-24) 0}
+.rvt-billboard--reversed .rvt-billboard__content{padding:0 0 var(--rvt-spacing-64) var(--rvt-spacing-64)}
+.rvt-billboard__eyebrow{margin:0;padding:0 0 var(--rvt-spacing-8) 2px;color:var(--rvt-text-brand);
+  font:var(--rvt-font-tag-md-caps);letter-spacing:var(--rvt-font-tracking-xl);text-transform:uppercase}
+.rvt-billboard__title{margin:0;color:var(--rvt-text-brand);overflow-wrap:break-word;
+  font:var(--rvt-font-display-xs-strong);font-stretch:var(--rvt-font-width-normal);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-billboard__desc{margin:0;padding-top:var(--rvt-spacing-24);color:var(--rvt-text-default);
+  font:var(--rvt-font-body-base-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-billboard__actions{padding-top:var(--rvt-spacing-32)}
+/* rvt-button, Link, Normal, Extra-large: component/button/height-lg, spacing/16 sides, spacing/8 to the 16px arrow; 1px border/accent drawn inside.
+   Hover: border/accent-strong, text/brand-strong, icon/accent-strong (150ms). Focus: 2px border/accent-strong, 2px offset. */
+.rvt-billboard__button{box-sizing:border-box;display:inline-flex;align-items:center;gap:var(--rvt-spacing-8);height:var(--rvt-component-button-height-lg);padding:0 var(--rvt-spacing-16);
+  box-shadow:inset 0 0 0 1px var(--rvt-border-accent);color:var(--rvt-text-accent);text-decoration:none;white-space:nowrap;
+  font:var(--rvt-font-action-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);
+  transition:box-shadow .15s ease-out,color .15s ease-out}
+.rvt-billboard__button svg{display:block;width:16px;height:16px;fill:var(--rvt-icon-accent);transition:fill .15s ease-out}
+.rvt-billboard__button:hover{box-shadow:inset 0 0 0 1px var(--rvt-border-accent-strong);color:var(--rvt-text-brand-strong)}
+.rvt-billboard__button:hover svg{fill:var(--rvt-icon-accent-strong)}
+.rvt-billboard__button:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+/* rvt-list-hub, Compact, title only: one 1px border/default rule above the first item and between items (never doubled); the last item has no rule below it.
+   Item spacing/12 top and bottom, the last item spacing/12 top only; rvt-arrow-right-12 (icon/strong) in a 16 x 24 slot, spacing/4 to the title; title action/lg/strong text/strong.
+   Hover: title text/accent + underline, arrow icon/accent (150ms). */
+.rvt-billboard__links{margin:0;padding:0;list-style:none;border-top:1px solid var(--rvt-border-default)}
+.rvt-billboard__links li{border-bottom:1px solid var(--rvt-border-default)}
+.rvt-billboard__links li:last-child{border-bottom:0}
+.rvt-billboard__links li:last-child .rvt-billboard__link{padding-bottom:0}
+.rvt-billboard__link{display:flex;align-items:flex-start;gap:var(--rvt-spacing-4);padding:var(--rvt-spacing-12) 0;color:var(--rvt-text-strong);text-decoration:none;
+  font:var(--rvt-font-action-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);
+  text-underline-offset:3px;transition:color .15s ease-out}
+.rvt-billboard__arrow{flex:none;display:flex;align-items:center;justify-content:center;width:16px;height:24px}
+.rvt-billboard__arrow svg{display:block;width:12px;height:12px;fill:var(--rvt-icon-strong);transition:fill .15s ease-out}
+.rvt-billboard__link-text{flex:1 1 auto;min-width:0}
+.rvt-billboard__link:hover{color:var(--rvt-text-accent)}
+.rvt-billboard__link:hover .rvt-billboard__link-text{text-decoration:underline}
+.rvt-billboard__link:hover svg{fill:var(--rvt-icon-accent)}
+.rvt-billboard__link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+@container (max-width:1099px){
+  .rvt-billboard,.rvt-billboard--reversed{column-gap:var(--rvt-spacing-32)}
+  .rvt-billboard__content{padding:0 var(--rvt-spacing-32) var(--rvt-spacing-32) 0}
+  .rvt-billboard--reversed .rvt-billboard__content{padding:0 0 var(--rvt-spacing-32) var(--rvt-spacing-32)}
+}
+@container (max-width:799px){
+  /* Stacked = the component's Mobile mode, whatever the screen size: the tokens that have a Mobile value in Figma (spacing/32, /40, /64, type size 26 and the 16-18 / 28 type pair)
+     take that value here, the same values generated/rivet-tokens.css gives them below 768px. So a billboard squeezed into a narrow column on a wide screen still gets Mobile type and spacing. */
+  .rvt-billboard,.rvt-billboard--reversed{display:flex;flex-direction:column;align-items:stretch;
+    --rvt-spacing-32:24px;--rvt-spacing-40:32px;--rvt-spacing-64:48px;--rvt-type-size-26:20px;--rvt-type-size-16-18:16px;--rvt-type-line-height-28:24px}
+  .rvt-billboard__media,.rvt-billboard--reversed .rvt-billboard__media{order:0;padding:var(--rvt-spacing-20) var(--rvt-spacing-20) 0}
+  /* Stacked image: full width at 3:2, the shape the feature card and the Mobile feature hero use, so a tablet-width column gets a banner instead of a giant square. */
+  .rvt-billboard__media img{aspect-ratio:3/2}
+  .rvt-billboard__content,.rvt-billboard--reversed .rvt-billboard__content{padding:0}
+  .rvt-billboard__text{padding:var(--rvt-spacing-32)}
+  /* body/base/regular re-read from the component's own 16-18 / 28 values (the --rvt-font- shorthand resolves them at the root, so it is restated here). */
+  .rvt-billboard__title{font-size:var(--rvt-type-size-26);line-height:var(--rvt-type-line-height-28)}
+  .rvt-billboard__desc{padding-top:var(--rvt-spacing-20);font-size:var(--rvt-type-size-16-18);line-height:var(--rvt-type-line-height-28)}
+  .rvt-billboard__actions{padding:0 var(--rvt-spacing-32) var(--rvt-spacing-40)}
+}
+@media (prefers-reduced-motion:reduce){.rvt-billboard__button,.rvt-billboard__button svg,.rvt-billboard__link,.rvt-billboard__arrow svg{transition:none}}
+
 @media (prefers-reduced-motion:reduce){
   .rvt-alert__btn,.rvt-accordion__panel,.rvt-accordion__panel.is-open,.rvt-accordion__item,.rvt-accordion__icon svg path,.rvt-tabs__tab{transition:none}
 }
@@ -834,6 +928,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 
   /* rvt-alert example. 16px glyphs reuse P; the Inline badge uses the 12px Rivet glyphs. */
   const P12 = {
+    arrowRight: 'M11.6768 6L6.65039 11.585L5.34961 10.415L8.53516 6.875H0.625V5.125H8.53516L5.34961 1.58496L6.65039 0.415039L11.6768 6Z', // rvt-arrow-right-12
     info: 'M7.25 2a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0M5 4.5h2v7H5z',
     check: 'm11.537 2.979-7.47 7.47L.462 6.245 1.98 4.943l2.2 2.565 5.944-5.944z',
     minus: 'M11 5v2H1V5z',
@@ -901,6 +996,20 @@ body:not(.has-rail) .site-header__menu{display:none}
       ? `<span class="${cls}">${icon12(b.glyph)}<span class="sr-only">${esc(b.label)}</span></span>`
       : `<span class="${cls}">${icon12(b.glyph)}${esc(b.label)}</span>`;
   };
+  const BILLBOARD_LINKS = ['Student tickets', 'Single-game tickets', 'Season tickets', 'Parking and game day guide'];
+  const billboardEl = (reversed, multiple) => `<div class="rvt-billboard-wrap"><div class="rvt-billboard${reversed ? ' rvt-billboard--reversed' : ''}">
+      <div class="rvt-billboard__media"><img src="img/billboard-example.jpg" width="900" height="900" alt="An Indiana football player in a crimson number 80 jersey points ahead during a game."></div>
+      <div class="rvt-billboard__content">
+        <div class="rvt-billboard__text">
+          <p class="rvt-billboard__eyebrow">Athletics</p>
+          <h3 class="rvt-billboard__title">Game day starts at Memorial Stadium</h3>
+          <p class="rvt-billboard__desc">Join thousands of Hoosier fans this fall. Student, single-game, and season tickets are on sale now.</p>
+        </div>
+        <div class="rvt-billboard__actions">${multiple
+          ? `<ul class="rvt-billboard__links">${BILLBOARD_LINKS.map(t => `<li><a class="rvt-billboard__link" href="#billboard"><span class="rvt-billboard__arrow" aria-hidden="true">${icon12('arrowRight')}</span><span class="rvt-billboard__link-text">${esc(t)}</span></a></li>`).join('')}</ul>`
+          : `<a class="rvt-billboard__button" href="#billboard">Get tickets<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${P.arrowRight}"/></svg></a>`}</div>
+      </div>
+    </div></div>`;
   const demos = {
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
@@ -969,12 +1078,29 @@ body:not(.has-rail) .site-header__menu{display:none}
         {id: 'subtle', label: 'Subtle'}
       ],
       html: v => `<div class="rvt-badge-rows">${[false, true].map(io => `<p class="rvt-badge-row">${BADGES.map(b => badgeEl(b, v, io)).join('')}</p>`).join('')}</div>`
+    },
+    /* rvt-billboard: one billboard. Variant = Default or Reversed (image on the right); the "Links" radio switches between one button and multiple links.
+       Every Desktop frame (Links Single/Multiple x Reversed False/True) is 1400px wide. */
+    billboard: {
+      maxWidth: 1400, // Figma rvt-billboard, Breakpoint=Desktop frame width (all four Desktop variants)
+      variants: [
+        {id: 'default', label: 'Default'},
+        {id: 'reversed', label: 'Reversed'}
+      ],
+      option: {id: 'links', label: 'Links', choices: [
+        {id: 'single', label: 'One button'},
+        {id: 'multiple', label: 'Multiple links'}
+      ]},
+      html: (v, links) => billboardEl(v === 'reversed', links === 'multiple'),
+      /* Sample links stay on the page. */
+      wire: stage => stage.querySelectorAll('.rvt-billboard a').forEach(a => a.addEventListener('click', e => e.preventDefault()))
     }
   };
   const demoSection = c => {
     const d = demos[c.slug];
     if (!d) return '';
     const v = d.variants ? d.variants[0] : null; // every visit starts on the first variant
+    const o = d.option ? d.option.choices[0] : null; // and on the first option
     const max = (v && v.maxWidth) || d.maxWidth;
     return `<section class="demo" aria-labelledby="demo-title">
       <h2 class="demo-title" id="demo-title">Example</h2>
@@ -982,14 +1108,19 @@ body:not(.has-rail) .site-header__menu{display:none}
       <div class="demo-controls">
         <div class="demo-control">${themeTabs()}</div>
         ${v ? `<div class="demo-control">${variantSelect(d, v)}</div>` : ''}
+        ${o ? `<div class="demo-control">${optionRadios(d, o)}</div>` : ''}
       </div>
-      <div class="demo-stage" id="demo-stage" role="tabpanel" tabindex="-1" aria-label="${esc(c.name)} example"${max ? ` style="--demo-max:${max}px"` : ''}>${d.html(v && v.id)}</div>
+      <div class="demo-stage" id="demo-stage" role="tabpanel" tabindex="-1" aria-label="${esc(c.name)} example"${max ? ` style="--demo-max:${max}px"` : ''}>${d.html(v && v.id, o && o.id)}</div>
     </section>`;
   };
   /* rvt-select-input: "Select variant", shown only when a component has more than one variant. A native <select>, so keyboard and screen reader support come for free. */
   const variantSelect = (d, v) => `<label class="demo-switch-label" for="demo-variant">Select variant</label>
     <span class="rvt-select"><select class="rvt-select__input" id="demo-variant" aria-controls="demo-stage">${d.variants.map(o =>
       `<option value="${esc(o.id)}"${o.id === v.id ? ' selected' : ''}>${esc(o.label)}</option>`).join('')}</select><span class="rvt-select__icon" aria-hidden="true">${icon('chevronDown')}</span></span>`;
+  /* rvt-radio, Inline: an optional second control (demos.<slug>.option) beside "Select variant". Native radios, so arrow keys move between options. */
+  const optionRadios = (d, o) => `<p class="demo-switch-label" id="demo-option-label">${esc(d.option.label)}</p>
+    <div class="rvt-radio-group" role="radiogroup" aria-labelledby="demo-option-label">${d.option.choices.map(ch =>
+      `<label class="rvt-radio"><input class="rvt-radio__input" type="radio" name="demo-option" value="${esc(ch.id)}" aria-controls="demo-stage"${ch.id === o.id ? ' checked' : ''}><span>${esc(ch.label)}</span></label>`).join('')}</div>`;
   function wireDemo(c) {
     const d = demos[c.slug];
     const sec = document.querySelector('.demo');
@@ -998,13 +1129,16 @@ body:not(.has-rail) .site-header__menu{display:none}
     const stage = sec.querySelector('#demo-stage');
     if (d.wire) d.wire(stage);
     const sel = sec.querySelector('#demo-variant');
-    if (sel) sel.addEventListener('change', () => {
-      const v = d.variants.find(o => o.id === sel.value) || d.variants[0];
+    const opt = () => { const r = sec.querySelector('input[name="demo-option"]:checked'); return r ? r.value : undefined; };
+    const rerender = () => {
+      const v = d.variants ? (d.variants.find(o => o.id === (sel && sel.value)) || d.variants[0]) : {};
       const max = v.maxWidth || d.maxWidth;
       if (max) stage.style.setProperty('--demo-max', max + 'px'); else stage.style.removeProperty('--demo-max');
-      stage.innerHTML = d.html(v.id);
+      stage.innerHTML = d.html(v.id, opt());
       if (d.wire) d.wire(stage);
-    });
+    };
+    if (sel) sel.addEventListener('change', rerender);
+    sec.querySelectorAll('input[name="demo-option"]').forEach(r => r.addEventListener('change', rerender));
   }
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const fmtDate = d => {
@@ -1360,6 +1494,12 @@ body:not(.has-rail) .site-header__menu{display:none}
     if (slug === 'token-changes') renderTokens(); else if (slug === 'text-styles' || slug === 'token-details') renderTextStyles(slug === 'token-details'); else if (c) renderDoc(c); else renderIndex();
     window.scrollTo(0, 0);
   }
+
+  // Header shadow: on while the page is scrolled away from the top.
+  const siteHeader = document.getElementById('site-header');
+  const syncHeaderShadow = () => siteHeader.classList.toggle('is-scrolled', window.scrollY > 0);
+  window.addEventListener('scroll', syncHeaderShadow, {passive: true});
+  syncHeaderShadow();
 
   loadManifest().then(() => { buildRail(); route(); window.addEventListener('hashchange', route); })
     .catch(() => { app.innerHTML = '<div class="wrap load">The component list could not be loaded. Try reloading the page.</div>'; });
