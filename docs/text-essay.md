@@ -48,7 +48,7 @@ Shared rules: Background `background/default`. Sticker, eyebrow, title and subhe
 | Sticker | 96px, `spacing/32` below (32px) | 80px, `spacing/24` below (24px) | 64px, `spacing/20` below (20px) | 64px, `spacing/20` below (20px) |
 | Eyebrow | `tag/md/caps` (14 / 20px), `spacing/12` below (12px) | `tag/md/caps` (14 / 20px), `spacing/12` below (12px) | `tag/md/caps` (14 / 20px), `spacing/12` below (12px) | `tag/md/caps` (14 / 20px), `spacing/12` below (12px) |
 | Title | `display/lg/strong` (48 / 52px), `spacing/48` below (48px) | `display/lg/strong` (48 / 52px), `spacing/40` below (40px) | `display/lg/strong` (29 / 32px), `spacing/40` below (32px) | `display/lg/strong` (29 / 32px), `spacing/40` below (32px) |
-| Subheading | `heading/2xl/strong` (29 / 36px), `spacing/24` below (24px) | `display/xs/strong` (26 / 28px), `spacing/16` below (16px) | `heading/lg/strong` (20 / 24px), `spacing/24` below (24px) | `heading/md/strong` (20 / 24px), `spacing/16` below (16px) |
+| Subheading | `heading/2xl/strong` (29 / 36px), `spacing/24` below (24px) | `display/xs/strong` (26 / 32px), `spacing/16` below (16px) | `heading/lg/strong` (20 / 24px), `spacing/24` below (24px) | `heading/md/strong` (20 / 24px), `spacing/16` below (16px) |
 | Body text | `body/xl/regular` (26 / 36px) | `body/base/regular` (18 / 28px) | `body/xl/regular` (23 / 32px) | `body/base/regular` (16 / 24px) |
 | Space above list | `spacing/32` (32px) | `spacing/24` (24px) | `spacing/32` (24px) | `spacing/24` (24px) |
 | List item text | `body/xl/regular` (26 / 36px) | `body/base/regular` (18 / 28px) | `body/xl/regular` (23 / 32px) | `body/base/regular` (16 / 24px) |

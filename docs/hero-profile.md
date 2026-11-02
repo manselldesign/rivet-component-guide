@@ -50,7 +50,7 @@ Shared rules: Background `background/default`. Text color `text/brand` for the t
 | Download icon | 32px circle on the photo, `background/default` with a 1px `border/default` border, 16px `rvt-download` icon | 28px circle, 12px icon |
 | Tag | `tag/md/caps` (14 / 20px), `text/brand`; `spacing/8` below (8px) | Same |
 | Name | `display/lg/strong` (48 / 52px) | `display/lg/strong` (29 / 32px) |
-| Credentials | `display/xs/strong` (26 / 28px), `spacing/4` above (4px) | `heading/md/strong` (20 / 24px), no space above |
+| Credentials | `display/xs/strong` (26 / 32px), `spacing/4` above (4px) | `heading/md/strong` (20 / 24px), no space above |
 | Job title | `body/md/regular` (20 / 28px), `spacing/8` above (8px) | `body/md/regular` (18 / 24px), `spacing/4` above (4px) |
 | Buttons | Side by side, `spacing/40` above (40px), `spacing/16` gap (16px), 48px tall | Stacked, each button hugs its label, left aligned, `spacing/40` above (32px), `spacing/16` gap (16px) |
 | Details grid (Contact) | `_rvt-factoid`, two columns. Single 1px `color/brand/light` lines around and between cells, never doubled. Both cells in a row stretch to the taller one, so the divider always runs the full row height | One column, `spacing/48` above (36px). Single 1px line above each item and around the grid |

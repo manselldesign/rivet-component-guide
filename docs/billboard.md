@@ -78,7 +78,7 @@ Breakpoint: the billboard switches between its two layouts on its own width, not
 | Image crop | `object-fit: cover`, anchored at `--rvt-image-focus` (default `50% 25%`, top third centre). Authors never crop by hand; a page can move the focal point per image | Same |
 | Content padding | `spacing/64` (64px) outer side, `spacing/48` (48px) bottom, content bottom-aligned; both `spacing/32` (32px) under 1100px wide | `spacing/32` (24px) all sides, so the text block and the links sit inside the same 24px frame |
 | Eyebrow | `tag/sm/caps` (12 / 16px), `text/brand`, `spacing/8` below | Same |
-| Title | `display/xs/strong` (26 / 28px), `text/brand` | `display/xs/strong` (20 / 24px) |
+| Title | `display/xs/strong` (26 / 32px), `text/brand` | `display/xs/strong` (20 / 32px) |
 | Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/24` above | Same style, `spacing/20` above |
 | Single link | `rvt-button` CTA, Extra-large, `component/button/height-lg` (48px), `spacing/32` above | Hugs its label, left aligned, `spacing/32` (24px) sides and below |
 | Multiple links | `rvt-list-hub` Compact, `spacing/32` above; no line below the last item and no padding under it | `rvt-list-hub` Compact, full width, `spacing/32` (24px) sides and below; no line below the last item |

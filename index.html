@@ -721,7 +721,7 @@ body:not(.has-rail) .site-header__menu{display:none}
    Reversed: the image column moves to the right.
    Stacked (under 800px wide): image above content, full width at 3:2, spacing/20 top and sides; text spacing/32 all sides; links spacing/32 sides and below, so everything sits inside one even 24px frame. Reversed has no effect.
    Stacked always uses the Mobile token values (see the container block below), so the type and spacing scale down with the component, not just with the screen.
-   Eyebrow tag/sm/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/28, 20/24 in Mobile mode, like the feature card). Description body/sm/regular text/default, spacing/24 above (spacing/20 stacked).
+   Eyebrow tag/sm/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/32, 20/32 in Mobile mode, like the feature card). Description body/sm/regular text/default, spacing/24 above (spacing/20 stacked).
    Single link: rvt-button Link, Normal, Extra-large, spacing/32 above. Multiple links: rvt-list-hub Compact, full width, spacing/32 above. */
 .rvt-billboard-wrap{container-type:inline-size}
 .rvt-billboard{display:grid;grid-template-columns:minmax(0,66%) minmax(280px,1fr);column-gap:var(--rvt-spacing-64);align-items:end;background:var(--rvt-background-strong)}
@@ -774,16 +774,16 @@ body:not(.has-rail) .site-header__menu{display:none}
   .rvt-billboard--reversed .rvt-billboard__content{padding:0 0 var(--rvt-spacing-32) var(--rvt-spacing-32)}
 }
 @container (max-width:799px){
-  /* Stacked = the component's Mobile mode, whatever the screen size: the tokens that have a Mobile value in Figma (spacing/32, /64, type size 26 and the 28px line height)
+  /* Stacked = the component's Mobile mode, whatever the screen size: the tokens that have a Mobile value in Figma (spacing/32, /64 and type size 26)
      take that value here, the same values generated/rivet-tokens.css gives them below 768px. So a billboard squeezed into a narrow column on a wide screen still gets Mobile type and spacing. */
   .rvt-billboard,.rvt-billboard--reversed{display:flex;flex-direction:column;align-items:stretch;
-    --rvt-spacing-32:24px;--rvt-spacing-64:48px;--rvt-type-size-26:20px;--rvt-type-line-height-28:24px}
+    --rvt-spacing-32:24px;--rvt-spacing-64:48px;--rvt-type-size-26:20px}
   .rvt-billboard__media,.rvt-billboard--reversed .rvt-billboard__media{order:0;padding:var(--rvt-spacing-20) var(--rvt-spacing-20) 0}
   /* Stacked image: full width at 3:2, the shape the feature card and the Mobile feature hero use, so a tablet-width column gets a banner instead of a giant square. */
   .rvt-billboard__media img{aspect-ratio:3/2}
   .rvt-billboard__content,.rvt-billboard--reversed .rvt-billboard__content{padding:0}
   .rvt-billboard__text{padding:var(--rvt-spacing-32)}
-  .rvt-billboard__title{font-size:var(--rvt-type-size-26);line-height:var(--rvt-type-line-height-28)}
+  .rvt-billboard__title{font-size:var(--rvt-type-size-26)}
   .rvt-billboard__desc{padding-top:var(--rvt-spacing-20)}
   .rvt-billboard__actions{padding:0 var(--rvt-spacing-32) var(--rvt-spacing-32)}
 }

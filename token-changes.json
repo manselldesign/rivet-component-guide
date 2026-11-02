@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-10-30",
+  "updated": "2026-11-02",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -2784,7 +2784,7 @@
               "weight": 700,
               "width": 100,
               "size": 29,
-              "lineHeight": 32,
+              "lineHeight": 36,
               "ytas": 720,
               "ytlc": 530
             },
@@ -2793,11 +2793,12 @@
             "valueChanges": [
               "weight 750 vs Figma 700"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-29)/var(--rvt-type-line-height-32) var(--rvt-font-family-sans-display)",
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-29)/var(--rvt-type-line-height-36) var(--rvt-font-family-sans-display)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-normal)",
               "font-variation-settings": "var(--rvt-font-axes-heading)"
-            }
+            },
+            "figmaChange": "2026-11-02: line height 32 → 36 (now bound to type/line-height/36)."
           },
           {
             "name": "display/xs/strong",
@@ -2810,10 +2811,7 @@
                 "desktop": 26,
                 "mobile": 20
               },
-              "lineHeight": {
-                "desktop": 28,
-                "mobile": 24
-              },
+              "lineHeight": 32,
               "ytas": 720,
               "ytlc": 530
             },
@@ -2823,11 +2821,12 @@
               "weight 750 vs Figma 700",
               "width 'semi-condensed' vs Figma 100"
             ],
-            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans-display)",
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-32) var(--rvt-font-family-sans-display)",
             "alsoSet": {
               "font-stretch": "var(--rvt-font-width-normal)",
               "font-variation-settings": "var(--rvt-font-axes-heading)"
-            }
+            },
+            "figmaChange": "2026-11-02: line height 28 (24 on mobile) → 32 on all screens (now bound to type/line-height/32)."
           },
           {
             "name": "heading/3xl/strong",
@@ -5408,7 +5407,7 @@
         "value": 32,
         "codeToday": null,
         "action": "add",
-        "figmaChange": "2026-10-30: 40 \u2192 32 so the Segmented tab group is 40px tall in total (4px padding around 32px tabs). Large tabs keep their action/lg text."
+        "figmaChange": "2026-10-30: 40 → 32 so the Segmented tab group is 40px tall in total (4px padding around 32px tabs). Large tabs keep their action/lg text."
       },
       {
         "name": "component/tabs/segmented-height-sm",
