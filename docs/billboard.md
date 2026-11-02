@@ -77,7 +77,7 @@ Breakpoint: the billboard switches between its two layouts on its own width, not
 | Image | 1:1, `spacing/24` (24px) top, bottom and outer side | Full width, 3:2, `spacing/20` (20px) top, left, right |
 | Image crop | `object-fit: cover`, anchored at `--rvt-image-focus` (default `50% 25%`, top third centre). Authors never crop by hand; a page can move the focal point per image | Same |
 | Content padding | `spacing/64` (64px) outer side and bottom, content bottom-aligned; `spacing/32` (32px) under 1100px wide | `spacing/32` (24px) all sides |
-| Eyebrow | `tag/md/caps` (14 / 20px), `text/brand`, `spacing/8` below | Same |
+| Eyebrow | `tag/sm/caps` (12 / 16px), `text/brand`, `spacing/8` below | Same |
 | Title | `display/xs/strong` (26 / 28px), `text/brand` | `display/xs/strong` (20 / 24px) |
 | Description | `body/base/regular` (18 / 28px), `text/default`, `spacing/24` above | (16 / 24px), `spacing/20` above |
 | Single link | `rvt-button` CTA, Extra-large, `component/button/height-lg` (48px), `spacing/32` above | Hugs its label, left aligned, `spacing/32` (24px) sides, `spacing/40` (32px) below |
