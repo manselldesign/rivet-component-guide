@@ -360,6 +360,7 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .prose>.rvt-alert--note{margin-top:32px;margin-bottom:0}
 .prose>.table-wrap,.prose>.dd,.prose>.ex,.prose>pre,.prose>blockquote{margin-top:24px;margin-bottom:0}
 .prose>hr{margin-top:96px}
+.prose>hr+h2{margin-top:0} /* the invisible hr before "Developer spec checklist" already carries the 96px section gap; do not stack the h2 gap on top of it */
 .prose>h2+h3{margin-top:24px}
 .prose>:first-child{margin-top:0}
 @media (max-width:560px){
