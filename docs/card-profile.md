@@ -69,10 +69,10 @@ Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Rais
 | Top metadata | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below | Same |
 | Name | `action/xl/strong` (20 / 28px), `text/strong` | `action/xl/strong` (18 / 24px) |
 | Arrow icon | 16px `rvt-arrow-right`, `spacing/16` gap from name | Same |
-| Job title | `body/base/regular` (18 / 28px), `text/default`, `spacing/4` above | `body/base/regular` (16 / 24px) |
+| Job title | `body/sm/regular` (16 / 24px), `text/default`, `spacing/4` above | Same |
 | Details group | `collapse-guard` 12px + `spacing/12` gap (24px above), `spacing/12` between rows | Guard 8px + `spacing/12` (20px above) |
-| Detail row | 16px icon (envelope, phone, device), `spacing/8` gap; link `body/base/regular` (18 / 28px), `text/accent`, underline | Link 16 / 24px |
-| Pronouns row | 16px `rvt-user`, `spacing/4` gap; label `body/sm/strong` (16 / 24px), value `body/base/regular`, `text/default` | Same |
+| Detail row | 16px icon (envelope, phone, device), `spacing/8` gap; link `body/sm/regular` (16 / 24px), `text/accent`, underline | Same |
+| Pronouns row | 16px `rvt-user`, `spacing/4` gap; label `body/sm/strong` (16 / 24px), value `body/sm/regular` (16 / 24px), `text/default` | Same |
 | Bottom group | Label and tags show and hide together. `spacing/24` above, `spacing/16` gap | Same |
 | Bottom label | "Area(s) of expertise:" `tag/sm/regular` (12 / 16px), `text/default` | Same |
 | Tags row | Subtle badges, `spacing/8` gap, wraps | Same |

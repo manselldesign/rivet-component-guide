@@ -70,8 +70,8 @@ Shared rules: items are separated by a 1px `border/default` line below each item
 | --- | --- | --- | --- |
 | Item padding | `spacing/20` (20px) top and bottom, `spacing/16` (16px) sides | `spacing/16` (16px) top and bottom, 0 sides | `spacing/12` (12px) top and bottom, 0 sides |
 | Title | `action/xl/strong-fixed` (20 / 24px), `text/strong` | `action/xl/strong-fixed` (20 / 24px), `text/strong` | `action/lg/strong` (16 / 24px), `text/strong` |
-| Description | `body/base/regular` (18 / 28px) | `body/base/regular` (16 / 24px) | `body/xs/regular` (14 / 20px) |
-| List item lines | 18 / 28px | 16 / 24px | 14 / 20px |
+| Description | `body/sm/regular` (16 / 24px) | `body/sm/regular` (16 / 24px) | `body/xs/regular` (14 / 20px) |
+| List item lines | Label `body/sm/strong`, value `body/sm/regular` (16 / 24px) | Label `body/sm/strong`, value `body/sm/regular` (16 / 24px) | 14 / 20px |
 | Arrow | `rvt-arrow-right` (16px) | `rvt-arrow-right` (16px) | `rvt-arrow-right-12` (12px) |
 | Gap, arrow to title | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/4` (4px) |
 | Arrow text indent | `spacing/24` (24px), left | `spacing/24` (24px), left | `spacing/20` (20px), left |
