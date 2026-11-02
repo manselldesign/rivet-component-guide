@@ -3,7 +3,7 @@
     "file": "Rivet 3 Components (cleaning)",
     "fileKey": "h8vuH2kAA3FkJlUEitXK9t"
   },
-  "syncedAt": "2026-10-30T14:00Z",
+  "syncedAt": "2026-11-02T15:45Z",
   "note": "Normalized snapshot written by the daily token sync. Values: colors hex (8-digit = alpha), '@name' = alias to another variable, numbers in px. Mode-specific values are objects keyed by mode. Letter spacing of 0% is stored as 0.",
   "variables": {
     "Foundation": {
@@ -1802,6 +1802,38 @@
             "Dark": "@color/brand/light",
             "Crimson": "@color/brand/light"
           }
+        },
+        "component/avatar/foreground": {
+          "type": "COLOR",
+          "value": "@color/brand/main"
+        },
+        "component/calendar-tile/background": {
+          "type": "COLOR",
+          "value": "@color/brand/extra-light"
+        },
+        "component/calendar-tile/text": {
+          "type": "COLOR",
+          "value": "@color/brand/main"
+        },
+        "component/steps/indicator-text-fixed": {
+          "type": "COLOR",
+          "value": "@color/base/ultra-light"
+        },
+        "component/steps/indicator-text-warning": {
+          "type": "COLOR",
+          "value": "@color/base/main"
+        },
+        "component/card/sticker-background": {
+          "type": "COLOR",
+          "value": "@color/brand/extra-light"
+        },
+        "component/switch/on-label": {
+          "type": "COLOR",
+          "value": "@color/status/success/background"
+        },
+        "component/switch/danger-label": {
+          "type": "COLOR",
+          "value": "@color/base/ultra-light"
         }
       }
     }
@@ -1841,7 +1873,7 @@
         "lineHeight": "type/line-height/40-56",
         "fontWeight": "font/weight/700"
       },
-      "description": "**Variable adjustments:** &quot;YTAS&quot; 720, &quot;YTLC&quot; 530"
+      "description": "**Variable adjustments:** wght: 700, wdth: 100%, YTAS: 720, YTLC: 530"
     },
     "display/lg/strong": {
       "fontFamily": "Roboto Flex",
@@ -1859,7 +1891,7 @@
         "lineHeight": "type/line-height/32-52",
         "fontWeight": "font/weight/700"
       },
-      "description": "**Variable adjustments:** &quot;YTAS&quot; 720, &quot;YTLC&quot; 530"
+      "description": "**Variable adjustments:** wght: 700, wdth: 100%, YTAS: 720, YTLC: 530"
     },
     "display/md/strong": {
       "fontFamily": "Roboto Flex",
@@ -1877,13 +1909,13 @@
         "lineHeight": "type/line-height/28-40",
         "fontWeight": "font/weight/700"
       },
-      "description": "**Variable adjustments:** &quot;YTAS&quot; 720, &quot;YTLC&quot; 530"
+      "description": "**Variable adjustments:** wght: 700, wdth: 100%, YTAS: 720, YTLC: 530"
     },
     "display/sm/strong": {
       "fontFamily": "Roboto Flex",
       "fontStyle": "Bold",
       "fontSize": 29,
-      "lineHeight": 32,
+      "lineHeight": 36,
       "letterSpacing": 0,
       "textCase": "ORIGINAL",
       "textDecoration": "NONE",
@@ -1892,16 +1924,16 @@
         "fontSize": "type/size/29",
         "fontFamily": "font/family/sans-display",
         "paragraphSpacing": "type/paragraph-spacing/step-03",
-        "lineHeight": "type/line-height/32",
+        "lineHeight": "type/line-height/36",
         "fontWeight": "font/weight/700"
       },
-      "description": "**Variable adjustments:** &quot;YTAS&quot; 720, &quot;YTLC&quot; 530"
+      "description": "**Variable adjustments:** wght: 700, wdth: 100%, YTAS: 720, YTLC: 530"
     },
     "display/xs/strong": {
       "fontFamily": "Roboto Flex",
       "fontStyle": "Bold",
       "fontSize": 26,
-      "lineHeight": 28,
+      "lineHeight": 32,
       "letterSpacing": 0,
       "textCase": "ORIGINAL",
       "textDecoration": "NONE",
@@ -1910,10 +1942,10 @@
         "fontSize": "type/size/26",
         "fontFamily": "font/family/sans-display",
         "paragraphSpacing": "type/paragraph-spacing/step-02",
-        "lineHeight": "type/line-height/28",
+        "lineHeight": "type/line-height/32",
         "fontWeight": "font/weight/700"
       },
-      "description": "**Variable adjustments:** &quot;YTAS&quot; 720, &quot;YTLC&quot; 530"
+      "description": "**Variable adjustments:** wght: 700, wdth: 100%, YTAS: 720, YTLC: 530"
     },
     "heading/3xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -1931,7 +1963,7 @@
         "lineHeight": "type/line-height/28-40",
         "fontWeight": "font/weight/700"
       },
-      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530 wdth: 110%"
+      "description": "**Variable adjustments:** wght: 700, wdth: 110%, YTAS: 720, YTLC: 530"
     },
     "heading/2xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -1949,7 +1981,7 @@
         "lineHeight": "type/line-height/32-36",
         "fontWeight": "font/weight/700"
       },
-      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
+      "description": "**Variable adjustments:** wght: 700, wdth: 110%, YTAS: 720, YTLC: 530"
     },
     "heading/xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -1967,7 +1999,7 @@
         "lineHeight": "type/line-height/28-32",
         "fontWeight": "font/weight/700"
       },
-      "description": "YTAS&amp;quot; 720, &amp;quot;YTLC&amp;quot; 530\nwdth: 110%"
+      "description": "**Variable adjustments:** wght: 700, wdth: 110%, YTAS: 720, YTLC: 530"
     },
     "heading/lg/strong": {
       "fontFamily": "Roboto Flex",
@@ -1985,7 +2017,7 @@
         "lineHeight": "type/line-height/24-28",
         "fontWeight": "font/weight/700"
       },
-      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
+      "description": "**Variable adjustments:** wght: 700, wdth: 110%, YTAS: 720, YTLC: 530"
     },
     "heading/md/strong": {
       "fontFamily": "Roboto Flex",
@@ -2003,7 +2035,7 @@
         "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/700"
       },
-      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
+      "description": "**Variable adjustments:** wght: 700, wdth: 110%, YTAS: 720, YTLC: 530"
     },
     "heading/sm/strong": {
       "fontFamily": "Roboto Flex",
@@ -2021,7 +2053,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/700"
       },
-      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
+      "description": "**Variable adjustments:** wght: 700, wdth: 110%, YTAS: 720, YTLC: 530"
     },
     "heading/xs/strong": {
       "fontFamily": "Roboto Flex",
@@ -2039,7 +2071,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/700"
       },
-      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
+      "description": "**Variable adjustments:** wght: 700, wdth: 110%, YTAS: 720, YTLC: 530"
     },
     "heading/2xs/strong": {
       "fontFamily": "Roboto Flex",
@@ -2057,7 +2089,7 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/700"
       },
-      "description": "YTAS&quot; 720, &quot;YTLC&quot; 530\nwdth: 110%"
+      "description": "**Variable adjustments:** wght: 700, wdth: 110%, YTAS: 720, YTLC: 530"
     },
     "body/2xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -2075,7 +2107,7 @@
         "lineHeight": "type/line-height/36-40",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "body/2xl/regular": {
       "fontFamily": "Roboto Flex",
@@ -2093,7 +2125,7 @@
         "lineHeight": "type/line-height/36-40",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/xl/strong": {
       "fontFamily": "Roboto Flex",
@@ -2111,7 +2143,7 @@
         "lineHeight": "type/line-height/32-36",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "body/xl/regular": {
       "fontFamily": "Roboto Flex",
@@ -2129,7 +2161,7 @@
         "lineHeight": "type/line-height/32-36",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/xl/italic": {
       "fontFamily": "Roboto Flex",
@@ -2147,7 +2179,7 @@
         "lineHeight": "type/line-height/32-36",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/lg/strong": {
       "fontFamily": "Roboto Flex",
@@ -2165,7 +2197,7 @@
         "lineHeight": "type/line-height/28-32",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "body/md/strong": {
       "fontFamily": "Roboto Flex",
@@ -2183,7 +2215,7 @@
         "lineHeight": "type/line-height/28",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "body/md/regular": {
       "fontFamily": "Roboto Flex",
@@ -2201,7 +2233,7 @@
         "lineHeight": "type/line-height/28",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/base/strong": {
       "fontFamily": "Roboto Flex",
@@ -2219,7 +2251,7 @@
         "lineHeight": "type/line-height/28",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "body/base/regular": {
       "fontFamily": "Roboto Flex",
@@ -2237,7 +2269,7 @@
         "lineHeight": "type/line-height/28",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/base/italic": {
       "fontFamily": "Roboto Flex",
@@ -2255,7 +2287,7 @@
         "lineHeight": "type/line-height/28",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/sm/strong": {
       "fontFamily": "Roboto Flex",
@@ -2273,7 +2305,7 @@
         "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "body/sm/regular": {
       "fontFamily": "Roboto Flex",
@@ -2291,7 +2323,7 @@
         "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/xs/strong": {
       "fontFamily": "Roboto Flex",
@@ -2309,7 +2341,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "body/xs/regular": {
       "fontFamily": "Roboto Flex",
@@ -2327,7 +2359,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/2xs/strong": {
       "fontFamily": "Roboto Flex",
@@ -2345,7 +2377,7 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "body/2xs/regular": {
       "fontFamily": "Roboto Flex",
@@ -2363,7 +2395,7 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/2xs/italic": {
       "fontFamily": "Roboto Flex",
@@ -2381,7 +2413,7 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "action/xl/strong-fixed": {
       "fontFamily": "Roboto Flex",
@@ -2452,7 +2484,7 @@
         "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "action/sm/strong": {
       "fontFamily": "Roboto Flex",
@@ -2469,7 +2501,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** wght: 600, wdth: 110"
+      "description": "**Variable adjustments:** wght: 600, wdth: 110%"
     },
     "action/sm/regular": {
       "fontFamily": "Roboto Flex",
@@ -2486,7 +2518,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "tag/lg/caps": {
       "fontFamily": "Roboto Mono",
@@ -2504,7 +2536,7 @@
         "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** tracking: wide"
+      "description": "**Variable adjustments:** wght: 350, tracking: wide (2px)"
     },
     "tag/lg/strong": {
       "fontFamily": "Roboto Mono",
@@ -2522,7 +2554,7 @@
         "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** tracking: normal"
+      "description": "**Variable adjustments:** wght: 600, tracking: normal (1px)"
     },
     "tag/lg/regular": {
       "fontFamily": "Roboto Mono",
@@ -2540,7 +2572,7 @@
         "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** tracking: normal"
+      "description": "**Variable adjustments:** wght: 350, tracking: normal (1px)"
     },
     "tag/md/caps": {
       "fontFamily": "Roboto Mono",
@@ -2558,7 +2590,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** tracking: wide"
+      "description": "**Variable adjustments:** wght: 350, tracking: wide (2px)"
     },
     "tag/md/strong": {
       "fontFamily": "Roboto Mono",
@@ -2576,7 +2608,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** tracking: normal"
+      "description": "**Variable adjustments:** wght: 600, tracking: normal (1px)"
     },
     "tag/md/regular": {
       "fontFamily": "Roboto Mono",
@@ -2594,7 +2626,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** tracking: normal"
+      "description": "**Variable adjustments:** wght: 350, tracking: normal (1px)"
     },
     "tag/sm/caps": {
       "fontFamily": "Roboto Mono",
@@ -2612,7 +2644,7 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** tracking: wide"
+      "description": "**Variable adjustments:** wght: 350, tracking: wide (2px)"
     },
     "tag/sm/strong": {
       "fontFamily": "Roboto Mono",
@@ -2630,7 +2662,7 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/600"
       },
-      "description": "**Variable adjustments:** tracking: normal"
+      "description": "**Variable adjustments:** wght: 600, tracking: normal (1px)"
     },
     "tag/sm/regular": {
       "fontFamily": "Roboto Mono",
@@ -2648,7 +2680,7 @@
         "lineHeight": "type/line-height/16",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** tracking: normal"
+      "description": "**Variable adjustments:** wght: 350, tracking: normal (1px)"
     },
     "editorial/xl/regular": {
       "fontFamily": "Crimson Pro",
@@ -2666,7 +2698,7 @@
         "lineHeight": "type/line-height/40-56",
         "fontWeight": "font/weight/350"
       },
-      "description": ""
+      "description": "**Variable adjustments:** none (Crimson Pro is a static font)"
     },
     "editorial/lg/regular": {
       "fontFamily": "Crimson Pro",
@@ -2684,7 +2716,7 @@
         "lineHeight": "type/line-height/36-56",
         "fontWeight": "font/weight/350"
       },
-      "description": ""
+      "description": "**Variable adjustments:** none (Crimson Pro is a static font)"
     },
     "editorial/md/regular": {
       "fontFamily": "Crimson Pro",
@@ -2702,7 +2734,7 @@
         "lineHeight": "type/line-height/36",
         "fontWeight": "font/weight/350"
       },
-      "description": ""
+      "description": "**Variable adjustments:** none (Crimson Pro is a static font)"
     },
     "editorial/sm/regular": {
       "fontFamily": "Crimson Pro",
@@ -2720,7 +2752,7 @@
         "lineHeight": "type/line-height/24-28",
         "fontWeight": "font/weight/350"
       },
-      "description": ""
+      "description": "**Variable adjustments:** none (Crimson Pro is a static font)"
     },
     "link/serif-xl/strong": {
       "fontFamily": "Crimson Pro",
@@ -2738,7 +2770,7 @@
         "lineHeight": "type/line-height/36-56",
         "fontWeight": "font/weight/600"
       },
-      "description": ""
+      "description": "**Variable adjustments:** none (Crimson Pro is a static font)"
     },
     "link/base/regular": {
       "fontFamily": "Roboto Flex",
@@ -2755,7 +2787,7 @@
         "lineHeight": "type/line-height/28",
         "fontWeight": "font/weight/350"
       },
-      "description": "Inline link\n**Variable adjustments:** wdth: 110%"
+      "description": "Inline link\n**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "link/sm/regular": {
       "fontFamily": "Roboto Flex",
@@ -2772,7 +2804,7 @@
         "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/350"
       },
-      "description": "Inline link\n**Variable adjustments:** wdth: 110%"
+      "description": "Inline link\n**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "link/xs/regular": {
       "fontFamily": "Roboto Flex",
@@ -2789,7 +2821,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/350"
       },
-      "description": "Inline link\n**Variable adjustments:** wdth: 110%"
+      "description": "Inline link\n**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "component/required/required-field": {
       "fontFamily": "Roboto Flex",
@@ -2930,7 +2962,7 @@
         "lineHeight": "type/line-height/36-40",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/lg/regular": {
       "fontFamily": "Roboto Flex",
@@ -2948,7 +2980,7 @@
         "lineHeight": "type/line-height/28-32",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/lg/italic": {
       "fontFamily": "Roboto Flex",
@@ -2966,7 +2998,7 @@
         "lineHeight": "type/line-height/28-32",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/md/italic": {
       "fontFamily": "Roboto Flex",
@@ -2984,7 +3016,7 @@
         "lineHeight": "type/line-height/28",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/sm/italic": {
       "fontFamily": "Roboto Flex",
@@ -3002,7 +3034,7 @@
         "lineHeight": "type/line-height/24",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "body/xs/italic": {
       "fontFamily": "Roboto Flex",
@@ -3020,7 +3052,7 @@
         "lineHeight": "type/line-height/20",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Variable adjustments:** wdth: 110%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 110%"
     },
     "component/number/strong": {
       "fontFamily": "Roboto Flex",
@@ -3038,7 +3070,7 @@
         "lineHeight": "type/line-height/44",
         "fontWeight": "font/weight/825"
       },
-      "description": "**Maps to:** --rvt-font-42-extra-black.\n\n**Variable adjustments:** wght: 825, wdth: 150%"
+      "description": "**Variable adjustments:** wght: 825, wdth: 150%"
     },
     "component/number/regular": {
       "fontFamily": "Roboto Flex",
@@ -3056,7 +3088,7 @@
         "lineHeight": "type/line-height/44",
         "fontWeight": "font/weight/350"
       },
-      "description": "**Maps to:** --rvt-font-42-extra-black.\n\n**Variable adjustments:** wght: 825, wdth: 150%"
+      "description": "**Variable adjustments:** wght: 350, wdth: 150%"
     },
     "component/avatar/224": {
       "fontFamily": "Roboto Flex",

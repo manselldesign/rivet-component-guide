@@ -36,7 +36,7 @@
       "name": "Billboard",
       "summary": "A large image paired with a short title, description and links that spotlights one important section of your site.",
       "status": "ready-for-dev",
-      "updated": "2026-10-31",
+      "updated": "2026-11-02",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=2077-13019"
     },
     {
@@ -68,7 +68,7 @@
       "name": "Callout",
       "summary": "A highlighted box that draws attention to one thing on a page, with a short title, description, picture and up to two links.",
       "status": "ready-for-dev",
-      "updated": "2026-10-31",
+      "updated": "2026-11-02",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-5"
     },
     {
@@ -100,7 +100,7 @@
       "name": "Card-feature",
       "summary": "A feature card is a large doorway to a topic, like \"Types of financial aid\" or \"Mental health support\".",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-11-02",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=2077-16743"
     },
     {
@@ -186,7 +186,7 @@
       "name": "Hero – Profile",
       "summary": "A profile hero opens a person's page with their photo, name, credentials and job title.",
       "status": "ready-for-dev",
-      "updated": "2026-10-31",
+      "updated": "2026-11-02",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1708-98577"
     },
     {
@@ -370,7 +370,7 @@
       "name": "Text Essay",
       "summary": "A text essay presents a mission, vision or editorial statement: a strong title, a few short sentences of supporting text and up to two buttons.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30",
+      "updated": "2026-11-02",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=8437-1619"
     },
     {
