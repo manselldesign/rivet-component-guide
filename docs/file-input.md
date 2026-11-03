@@ -36,7 +36,7 @@ A file input lets people attach a file to a form, like a letter of recommendatio
 
 ## Developer spec checklist
 
-Shared rules: Button is `rvt-button` (Type Form, Style Strong, Size Extra-large, 48px tall). Status is `rvt-badge` (Status Warning, Style Subtle). Each file chip is `rvt-button` (Type Form, Style Normal, Size Small) with a close icon that removes the file. Helper text is off by default. Label, helper text and spacing match every other form field.
+Shared rules: Button is `rvt-button` (Type Form, Style Strong, Size Large: `spacing/40`, 40px tall on Desktop and 32px on Mobile). Status is `rvt-badge` (Status Warning, Style Subtle). Each file chip is `rvt-button` (Type Form, Style Normal, Size Small) with a close icon that removes the file. Helper text is off by default. Label, helper text and spacing match every other form field.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

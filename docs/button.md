@@ -31,7 +31,7 @@ A button lets people take an action or move to the next step. There are two main
 
 ### Size
 - **Extra-large (48px):** Use where one action is the focus, like a login page, site search or a single sign-up field
-- **Large (40px):** Use on standard pages and forms, like settings pages, multi-step applications or "Create new event" forms
+- **Large (40px):** Use on standard pages and forms, like settings pages, multi-step applications or "Create new event" forms. It's also the size for buttons built into app components, like alerts with actions, dialogs, file inputs and empty states
 - **Medium (32px):** Use in busy, information-heavy areas, like tables, sidebars and filter bars
 - **Small (24px):** Use in the tightest spots, like inside a table row or next to a short list item
 
@@ -57,6 +57,8 @@ An icon is optional. Use one at most, on the left or the right.
 ---
 
 ## Developer spec checklist
+
+Buttons inside app components (Alert CTA, Dialog, File input, Empty state) are always Large (`spacing/40`: 40px on Desktop, 32px on Mobile), never Extra-large.
 
 Button groups: Desktop places buttons side by side with the Strong button last (right), `spacing/16` gap. Mobile stacks them with the Strong button first (top), `spacing/8` gap; each button hugs its label. Exception: Dialog buttons stack full width.
 
