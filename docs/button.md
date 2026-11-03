@@ -22,7 +22,7 @@ A button lets people take an action or move to the next step. There are two main
 - **Action:** Use when the click does something on the page, like "Submit" or "Filter events"
 - **Link:** Use when the click takes people somewhere. The arrow shows where: down for this page, right for another IU page, angled for an outside site
 - **Icon only:** Use for small, familiar actions, like "Add" or "Close"
-- **Social:** Use to link to IU's social media accounts
+- **Social:** Use to link to IU's social media accounts. Styled like a Normal Link button: a small outlined square with the platform icon inside
 
 ### Style
 - **Strong:** Use for the single most important action in a section
@@ -62,18 +62,21 @@ Button groups: Desktop places buttons side by side with the Strong button last (
 
 Marketing components (heroes, billboards): Strong button first on Desktop and Mobile.
 
+Focus (all types and styles): 2px `border/accent-strong` ring, 2px outside the button's box, square corners. Subtle buttons keep the same box as Normal buttons (same height and padding, border transparent), so the ring has the same breathing room on every style.
+
 ### Size (Action, Link, Icon only)
 
 | Element | Extra-large | Large | Medium | Small |
 | --- | --- | --- | --- | --- |
 | Height | `component/button/height-lg` (48px) | `spacing/40` (40px; 32px on Mobile) | `component/button/height-md` (32px) | TBD (24px, no token) |
 | Padding left/right (Strong, Normal) | `spacing/16` | `spacing/16` | `spacing/12` | `spacing/8` |
-| Padding (Subtle) | 0, hugs text | 0, fixed 40px height | 0, hugs text | 0, hugs text |
+| Padding (Subtle) | Same as Normal: the box is identical, the border is just invisible | same | same | same |
 | Icon-to-text gap | `spacing/8` | `spacing/8` | `spacing/8` | `spacing/4` |
 | Label | `action/lg/strong` (16 / 24px) | `action/lg/strong` (16 / 24px) | `action/sm/strong` (14 / 20px) | `action/sm/strong` (14 / 20px) |
 | Action icon, left or right | 16px | 16px | 12px | 12px |
-| Link arrow icon | 16px, after label | 16px, after label | 16px, after label | 16px, after label |
+| Link arrow icon | 16px, after label | 16px, after label | 12px, after label (`rvt-arrow-*-12`) | 12px, after label (`rvt-arrow-*-12`) |
 | Icon only (square) | `component/button/height-lg` (48 × 48px) | `spacing/40` (40 × 40px; 32px on Mobile) | `component/button/height-md` (32 × 32px) | TBD (24 × 24px) |
+| Icon only, icon size | 16px, centered | 16px, centered | 16px, centered | 12px, centered |
 | Corner radius | 0 | 0 | 0 | 0 |
 
 ### Color by style (Action and Icon only)
@@ -96,7 +99,7 @@ Marketing components (heroes, billboards): Strong button first on Desktop and Mo
 | --- | --- | --- | --- |
 | Background | `background/brand` | none | none |
 | Background, hover | `background/accent` | none | none |
-| Border | none | `border/accent` (1px inside) | `border/on-brand-alt` (1px) |
+| Border | none | `border/accent` (1px inside) | none (transparent 1px border in code so the box matches Normal) |
 | Border, hover | none | `border/accent-strong` | none |
 | Text | `text/on-brand-alt` | `text/accent` | `text/accent` |
 | Text, hover | `text/on-brand-alt` | `text/brand-strong` | `text/brand-strong` |
@@ -108,11 +111,17 @@ Marketing components (heroes, billboards): Strong button first on Desktop and Mo
 
 ### Social
 
+Social buttons use the Normal Link button's colors and states. There is no Pressed state.
+
 | Element | Spec |
 | --- | --- |
-| Size | 24 × 24px |
-| Shape | `border-radius/full` |
-| Background | `background/strong` |
-| Border | `border/default` (1px) |
-| Icon | 12px platform icon |
+| Size | 24 × 24px square, 0 padding |
+| Corner radius | 0 |
+| Background | none (all states) |
+| Border | `border/accent` (1px inside) |
+| Border, hover | `border/accent-strong` |
+| Icon | 12px platform icon, centered, `icon/accent` |
+| Icon, hover | `icon/accent-strong` |
+| Focus | Same focus ring as every button: 2px `border/accent-strong`, 2px outside the box, square corners |
+| States | Default, Hover, Focus |
 | Platforms | Email, Facebook, Instagram, LinkedIn, X, YouTube, Bluesky, Link |
