@@ -1,4 +1,4 @@
-# Card-default
+# Card
 
 > [!info] Quick note
 > A few parts of this card changed. Please double-check:
