@@ -71,7 +71,7 @@ Breakpoint: the billboard switches between its two layouts on its own width, not
 
 | Element | Side by side (800px and up) | Stacked (under 800px) |
 | --- | --- | --- |
-| Layout | Two columns, image and content, `spacing/64` (64px) between; `spacing/32` (32px) under 1100px wide | Stacked, image above content |
+| Layout | Two columns, image and content, `spacing/40` (40px) between; `spacing/32` (32px) under 1100px wide | Stacked, image above content |
 | Columns | Image column 66% of the width; content takes the rest and never goes under 280px (the image gives way) | Full width |
 | Background | `background/strong` | `background/strong` |
 | Image | 1:1, `spacing/24` (24px) top, bottom and outer side | Full width, 3:2, `spacing/20` (20px) top, left, right |
