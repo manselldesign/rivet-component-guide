@@ -25,6 +25,28 @@ In general, link buttons are styled **crimson**. They look like buttons, but the
 * **Subtle:** Used for low-priority or passive actions that shouldn't distract the user or compete for visual attention.
   * *Example:* A "Close" button on a dropdown menu, or an "Undo" action link.
 
+## Icons on Buttons
+An icon is a small picture inside the button, like a magnifying glass or a trash can. Icons are optional. Most buttons only need words.
+
+### Left icon
+* **What it is:** A small picture placed before the words, like a magnifying glass before "Search."
+* **Why use it:** It helps people recognize the button at a glance, before they even read it.
+* **When to use:** Only for common actions people already know by sight, like Search, Delete, Edit, or Favorite.
+* **Rule:** Use one icon at most. Never put an icon on both sides.
+
+### Right icon
+* **What it is:** A small downward-pointing arrow (a "chevron") placed after the words.
+* **Why use it:** It tells people that clicking will open more choices, like a menu.
+* **When to use:** Only when the button opens a menu or a list of options.
+* **Rule:** Don't use other arrows here. Straight arrows (→) are saved for link buttons only.
+
+### Icon only
+* **What it is:** A square button with just a picture and no words, like an "X" to close something.
+* **When to use:** Only for very small, very familiar actions, like Close or Add, and only when space is tight.
+* **When not to use:** If there's any chance someone won't know what the picture means, add words instead.
+* **Link buttons can be icon only too:** Just the arrow in a square, in the crimson link colors. Use it in tight spots, like a table row or the bottom of a card.
+* **Rule:** Every icon-only button needs a hidden text label so people using screen readers know what it does (for example, "Close").
+
 ## Button Sizes: Which size to use?
 Consistency is key to a good user experience across all of our digital products. **Large (L)** is our default size for most everyday scenarios, but sizes should adapt based on how dense or spacious the layout is.
 
@@ -42,6 +64,12 @@ An application section might use every button size:
 * **Large (L) - *Default*:** Our standard default size across all forms, questionnaires, and primary page content.
 * **Medium (M):** Ideal for secondary navigation, filter sidebars, or compact headers where space is somewhat constrained.
 * **Small (S):** Best for dense data displays, table row actions, or complex analytics dashboards where screen real estate is limited.
+
+## Writing Tips
+* **Start with an action word:** Begin with what the person will do, like "Apply now" or "Download the guide."
+* **Keep it short:** Use one to four words.
+* **Be specific:** Say exactly what will happen. "Download the guide" is clear; "Click here" and "Learn more" are not.
+* **Match the next step:** If the button says "Save," the click should save. Don't surprise people.
 
 ---
 
