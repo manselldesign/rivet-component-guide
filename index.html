@@ -653,7 +653,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 /* ---------- rvt-alert (Alert page, Developer spec checklist) ----------
    Themed like every other component: its tokens follow the page theme (Light, Dark, Crimson), e.g. Info on Dark = background/info-subtle black,
    text/info white, border/info light blue. Badges keep their status fill in every theme.
-   Default/CTA: spacing/24 padding (spacing/16 on mobile), spacing/16 gap; background/{status}-subtle.
+   Default/Buttons: spacing/24 padding (spacing/16 on mobile), spacing/16 gap; background/{status}-subtle.
    The 1px border/{status} is drawn inside the box (inset box-shadow), so it adds nothing to the width or height: 212px / 268px tall (Inline 32px), like the design.
    Title row: 28px status badge (16px glyph) + heading/md/strong text/{status}, spacing/8 apart; the title sits 2px down so its line centers on the badge.
    Description, list and actions indent 36px (28px badge + spacing/8), flush with the title text on Desktop and Mobile.
@@ -1105,13 +1105,13 @@ body:not(.has-rail) .site-header__menu{display:none}
     /* Components with more than one variant list them in `variants`; the example adds a "Select variant" dropdown next to the theme tabs.
        A variant can carry its own maxWidth (its Desktop frame width); html(variantId) builds the stage for that variant. */
     alert: {
-      maxWidth: 1400, // Figma rvt-alert, Breakpoint=Desktop, Type=Default and CTA frame width
+      maxWidth: 1400, // Figma rvt-alert, Breakpoint=Desktop, Type=Default and Buttons frame width
       variants: [
         {id: 'default', label: 'Default'},
-        {id: 'cta', label: 'CTA'},
+        {id: 'buttons', label: 'Buttons'},
         {id: 'inline', label: 'Inline', maxWidth: 520} // Figma rvt-alert, Breakpoint=Desktop, Type=Inline frame width
       ],
-      html: v => `<div class="rvt-alert-stack">${ALERTS.map(a => v === 'inline' ? alertInline(a) : alertBlock(a, v === 'cta')).join('')}</div>`,
+      html: v => `<div class="rvt-alert-stack">${ALERTS.map(a => v === 'inline' ? alertInline(a) : alertBlock(a, v === 'buttons')).join('')}</div>`,
       wire: stage => {
         stage.querySelectorAll('.rvt-alert__close').forEach(btn => btn.addEventListener('click', () => {
           const alert = btn.closest('.rvt-alert');

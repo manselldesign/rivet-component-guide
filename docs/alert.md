@@ -30,7 +30,7 @@ An alert is a colored box that tells readers something important about the page 
 ### Type
 
 - **Default:** A title, a short message, and an optional bulleted list
-- **CTA:** Adds one or two buttons when you want people to act, like "Register now"
+- **Buttons:** Adds one or two buttons when you want people to act, like "Register now"
 - **Inline:** One short line with no title. Use it next to a form field or section it's about
 
 ### Optional parts
@@ -48,7 +48,7 @@ An alert is a colored box that tells readers something important about the page 
 
 ## Developer spec checklist
 
-### Default and CTA
+### Default and Buttons
 
 Shared rules: icon and title sit side by side on Desktop and Mobile. Description, list and buttons all start 36px in (28px icon + 8px gap), flush with the title text. All spacing is on a 4px grid.
 
@@ -68,7 +68,7 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 | Close button | 16px icon, 16px from top and right (no token). On Info and Success only | Same |
 | Title colors | Info `text/info`, Success `text/success`, Warning `text/warning`, Danger `text/danger`, Default `text/brand` | Same |
 
-### CTA actions row
+### Buttons actions row
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

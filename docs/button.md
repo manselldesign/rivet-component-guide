@@ -75,7 +75,7 @@ An application section might use every button size:
 
 ## Developer spec checklist
 
-Buttons inside app components (Alert CTA, Dialog, File input, Empty state) are always Large (`component/button/height-lg`, 40px), never Extra-large.
+Buttons inside app components (Alert buttons, Dialog, File input, Empty state) are always Large (`component/button/height-lg`, 40px), never Extra-large.
 
 Buttons keep the same height on Desktop and Mobile: every size uses its own fixed `component/button/height-*` token, so nothing shrinks on phones.
 
