@@ -38,13 +38,13 @@ The color is the signal. People learn that black means "do something" and crimso
 ## Icons on Buttons
 An icon is a small picture inside the button, like a magnifying glass or a trash can. Icons are optional. Most buttons only need words.
 
-### Left icon
+### Leading icon
 * **What it is:** A small picture placed before the words, like a magnifying glass before "Search."
 * **Why use it:** It helps people recognize the button at a glance, before they even read it.
 * **When to use:** Only for common actions people already know by sight, like Search, Delete, Edit, or Favorite.
 * **Rule:** Use one icon at most. Never put an icon on both sides.
 
-### Right icon
+### Trailing icon
 * **What it is:** A small downward-pointing arrow (a "chevron") placed after the words.
 * **Why use it:** It tells people that clicking will open more choices, like a menu.
 * **When to use:** Only when the button opens a menu or a list of options.
@@ -103,7 +103,7 @@ Links styled as buttons are a separate component, `rvt-button-link`. See the But
 | Padding (Subtle) | Same as Normal: the box is identical, the border is just invisible | same | same | same |
 | Icon-to-text gap | `spacing/8` | `spacing/8` | `spacing/8` | `spacing/4` |
 | Label | `action/lg/strong` (16 / 24px) | `action/lg/strong` (16 / 24px) | `action/sm/strong` (14 / 20px) | `action/sm/strong` (14 / 20px) |
-| Left or right icon | 16px | 16px | 12px | 12px |
+| Leading or trailing icon | 16px | 16px | 12px | 12px |
 | Icon only (square) | `component/button/height-xl` (48 × 48px) | `component/button/height-lg` (40 × 40px) | `component/button/height-md` (32 × 32px) | `component/button/height-sm` (24 × 24px) |
 | Icon only, icon size | 16px, centered | 16px, centered | 16px, centered | 12px, centered |
 | Corner radius | 0 | 0 | 0 | 0 |
@@ -114,10 +114,10 @@ Links styled as buttons are a separate component, `rvt-button-link`. See the But
 | --- | --- | --- | --- |
 | Background | `component/button/form-background` | none | none |
 | Background, hover | `component/button/form-background-hover` | none | none |
-| Background, pressed | `component/button/form-background-hover` | `background/strong` | `background/strong` |
+| Background, active (pressed) | `component/button/form-background-hover` | `background/strong` | `background/strong` |
 | Border | none | `component/button/form-border` (1px inside) | none |
 | Border, hover | none | `component/button/form-border-hover` | none |
 | Text and icon | `text/on-brand-alt` | `component/button/form-text` | `component/button/form-text-subtle` |
 | Text and icon, hover | `text/on-brand-alt` | `component/button/form-text-hover` | `component/button/form-text-hover` |
-| Pressed ring | 2px `border/on-brand-alt` outer, 2px `component/button/form-border-hover` inner | same | same |
+| Active (pressed) ring | 2px `border/on-brand-alt` outer, 2px `component/button/form-border-hover` inner | same | same |
 | Disabled | Default colors at 40% opacity | same | same |

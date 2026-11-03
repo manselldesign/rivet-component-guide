@@ -90,7 +90,7 @@ Marketing components (heroes, billboards): Strong button first on Desktop and Mo
 
 Focus (all styles): 2px `border/accent-strong` ring, 2px outside the button's box, square corners. Subtle buttons keep the same box as Normal buttons (same height and padding, border transparent), so the ring has the same breathing room on every style.
 
-There is no Pressed state on any Button-link.
+There is no Active (pressed) state on any Button-link.
 
 Buttons that act on the current page are a separate component, `rvt-button`. See the Button page.
 
