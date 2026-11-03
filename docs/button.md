@@ -48,7 +48,7 @@ An icon is a small picture inside the button, like a magnifying glass or a trash
 * **What it is:** A small downward-pointing arrow (a "chevron") placed after the words.
 * **Why use it:** It tells people that clicking will open more choices, like a menu.
 * **When to use:** Only when the button opens a menu or a list of options.
-* **Rule:** Don't use other arrows here. Straight arrows (→) belong to Button-links only.
+* **Rule:** Don't use other arrows here. Straight arrows ({{icon:arrow-right}}) belong to Button-links only.
 
 ### Icon only
 * **What it is:** A square button with just a picture and no words, like an "X" to close something.

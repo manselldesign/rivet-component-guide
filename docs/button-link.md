@@ -3,7 +3,7 @@
 ## Overview
 A Button-link looks like a button but works like a web link: clicking it takes people to a different page, a different part of the website, or another site. "Read more," "Go to your dashboard," and "Apply now" are all jobs for a Button-link.
 
-Button-links are styled **crimson** and always end in an arrow. The color and the arrow are a signal: they tell people the click will take them somewhere else, not change anything on this page.
+Button-links are styled **crimson**. That color is a signal: it tells people the click will take them somewhere else, not change anything on this page. Button-links with words also end in an arrow that shows what kind of trip it is.
 
 There is a second component, Button, for doing something on the current page.
 
@@ -28,12 +28,12 @@ The color is the signal. People learn that crimson means "go somewhere" and blac
 
 **Rule of thumb:** If clicking it takes the user to a new destination or URL, it is a Button-link. If it triggers a process, changes data, or opens a popup, it is a Button.
 
-## Link Types: The arrow tells people where they are going
-Every Button-link ends in an arrow. The arrow is not decoration. It tells people what kind of trip they are about to take, so use the right one.
+## Link Types
+A Button-link with words ends in an arrow. The arrow is not decoration. It tells people what kind of trip they are about to take, so use the right one.
 
-* **Internal (→):** The click opens another page on your own site. This is the most common type. *Example:* "Apply now," "View all events."
-* **In-page (↓):** The click scrolls down to a section further along on the same page. *Example:* "See the schedule," "Jump to FAQs."
-* **External (↗):** The click opens a different website, which may open in a new tab. *Example:* "Register on Eventbrite," "Read the IU Today story."
+* **Internal ({{icon:arrow-right}}):** The click opens another page on your own site. This is the most common type. *Example:* "Apply now," "View all events."
+* **In-page ({{icon:arrow-down}}):** The click scrolls down to a section further along on the same page. *Example:* "See the schedule," "Jump to FAQs."
+* **External ({{icon:arrow-up-right}}):** The click opens a different website, which may open in a new tab. *Example:* "Register on Eventbrite," "Read the IU Today story."
 
 ## Button-link Styles
 
@@ -43,9 +43,9 @@ Every Button-link ends in an arrow. The arrow is not decoration. It tells people
   * *Example:* A "Back to all news" link at the end of a story.
 
 ## Icon only
-* **What it is:** A square button with just the arrow and no words, in the crimson link colors.
+* **What it is:** A square button with just an icon and no words, in the crimson link colors. Usually it's the arrow, but it can be another icon that says where the click goes, like a download icon for a PDF.
 * **When to use:** Only in tight spots where the destination is already obvious from the words next to it, like the end of a table row or the bottom of a card.
-* **When not to use:** If the arrow on its own doesn't make the destination clear, use words.
+* **When not to use:** If the icon on its own doesn't make the destination clear, use words.
 * **Rule:** Every icon-only button needs a hidden text label so people using screen readers know where it goes (for example, "View program details").
 
 ## Social
@@ -105,7 +105,7 @@ Buttons that act on the current page are a separate component, `rvt-button`. See
 | Label | `action/lg/strong` (16 / 24px) | `action/lg/strong` (16 / 24px) | `action/sm/strong` (14 / 20px) | `action/sm/strong` (14 / 20px) |
 | Arrow icon | 16px, after label | 16px, after label | 12px, after label (`rvt-arrow-*-12`) | 12px, after label (`rvt-arrow-*-12`) |
 | Icon only (square) | `component/button/height-xl` (48 × 48px) | `component/button/height-lg` (40 × 40px) | `component/button/height-md` (32 × 32px) | `component/button/height-sm` (24 × 24px) |
-| Icon only, arrow size | 16px, centered | 16px, centered | 16px, centered | 12px, centered |
+| Icon only, icon size | 16px, centered | 16px, centered | 16px, centered | 12px, centered |
 | Corner radius | 0 | 0 | 0 | 0 |
 
 ### Color by style

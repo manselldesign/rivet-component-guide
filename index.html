@@ -257,6 +257,8 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .prose mark{background:#fffbf0;color:#1f2528;box-shadow:inset 0 -2px 0 #ffd580;padding-inline:2px}
 .prose hr{border:0;height:0;margin:0}
 .prose img{border:1px solid var(--border);display:block;margin-block:16px}
+/* {{icon:arrow-right}} etc. in a doc renders the matching 16px Rivet icon inline, at text size and color, so arrows in prose match the buttons. */
+.prose .prose-icon{width:1em;height:1em;vertical-align:-.125em;fill:currentColor;display:inline-block}
 .prose code{font-family:var(--font-mono);font-size:.85em;background:var(--code-bg);padding:1px 5px;color:var(--text-strong);white-space:nowrap}
 .prose pre{background:var(--code-bg);padding:16px;overflow:auto;max-height:75vh;margin:0 0 16px;border:1px solid var(--border)}
 .prose pre code{background:none;padding:0;white-space:pre;font-size:14px;line-height:20px}
@@ -1303,6 +1305,7 @@ body:not(.has-rail) .site-header__menu{display:none}
     md = md.replace(/^#\s+.*\n+/, '');
     md = md.replace(/%%[\s\S]*?%%/g, '');
     md = md.replace(/==([^=\n]+)==/g, '<mark>$1</mark>');
+    md = md.replace(/\{\{icon:([a-z-]+)\}\}/g, (m, n) => { const k = n.replace(/-([a-z])/g, (_, c) => c.toUpperCase()); return P[k] ? `<svg class="prose-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${P[k]}"/></svg>` : m; });
     md = md.replace(/!\[\[([^\]]+)\]\]/g, '');
     md = md.replace(/\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|([^\]]+))?\]\]/g, (m, target, alias) => {
       const t = target.trim();
