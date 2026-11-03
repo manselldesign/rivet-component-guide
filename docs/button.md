@@ -15,6 +15,9 @@ Ask one question: **What happens when someone clicks it?**
 
 The color is the signal. People learn that black means "do something" and crimson means "go somewhere," so keep that rule across every page.
 
+> [!default] On Dark and Crimson themes
+> Black vs. crimson only applies on light pages. On Dark and Crimson themes, Buttons and Button-links both switch to the theme's colors and can look alike, so the color stops being the signal. There, the words do the work: start with a verb that says what happens ("Save," "Apply filters"), and remember that only Button-links end in a straight arrow.
+
 ### Use a Button when
 - The click submits a form, like "Submit application" or "Save & continue"
 - The click changes something on the screen, like "Apply filters," "Delete row," or "Add to calendar"

@@ -15,6 +15,9 @@ Ask one question: **What happens when someone clicks it?**
 
 The color is the signal. People learn that crimson means "go somewhere" and black means "do something," so keep that rule across every page.
 
+> [!default] On Dark and Crimson themes
+> Black vs. crimson only applies on light pages. On Dark and Crimson themes, Buttons and Button-links both switch to the theme's colors and can look alike, so the color stops being the signal. There, the arrow and the words tell people the click goes somewhere. That's one more reason every Button-link with words keeps its arrow.
+
 ### Use a Button-link when
 - The click opens another page on your site, like "Apply now" going to the application page
 - The click jumps to a different spot on the same page, like "See deadlines" scrolling down to the deadlines section
@@ -92,6 +95,10 @@ Marketing components (heroes, billboards): Strong button first on Desktop and Mo
 Focus (all styles): 2px `border/accent-strong` ring, 2px outside the button's box, square corners. Subtle buttons keep the same box as Normal buttons (same height and padding, border transparent), so the ring has the same breathing room on every style.
 
 There is no Active (pressed) state on any Button-link.
+
+The arrow is set by the link type, never chosen separately: Internal `rvt-arrow-right`, In-page `rvt-arrow-down`, External `rvt-arrow-up-right`. This applies to Button-links with words and to Icon only. There is no icon option; other icons are not allowed.
+
+Every link type (Internal, In-page, External) comes in every style, size and state (Default, Hover, Disabled, Focus), with words and as Icon only.
 
 Buttons that act on the current page are a separate component, `rvt-button`. See the Button page.
 
