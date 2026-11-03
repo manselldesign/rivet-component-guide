@@ -58,7 +58,7 @@
     {
       "slug": "button-link",
       "name": "Button-link",
-      "summary": "A link that looks like a button and takes people somewhere else, like \"Apply now\" going to the application page. Styled crimson, always with an arrow.",
+      "summary": "A link that looks like a button and takes people somewhere else, like \"Apply now\" going to the application page.",
       "status": "ready-for-dev",
       "updated": "2026-11-03",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=14428-444"
