@@ -21,7 +21,7 @@ A button lets people take an action or move to the next step. There are two main
 ### Type
 - **Action:** Use when the click does something on the page, like "Submit" or "Filter events"
 - **Link:** Use when the click takes people somewhere. The arrow shows where: down for this page, right for another IU page, angled for an outside site
-- **Icon only:** Use for small, familiar actions, like "Add" or "Close"
+- **Icon only:** Use for small, familiar actions, like "Add" or "Close". A Link button can also be icon only: just the arrow in a square, in the Link colors, for tight spots like a table row or a card footer
 - **Social:** Use to link to IU's social media accounts. Styled like a Normal Link button: a small outlined square with the platform icon inside
 
 ### Style
@@ -77,6 +77,7 @@ Focus (all types and styles): 2px `border/accent-strong` ring, 2px outside the b
 | Link arrow icon | 16px, after label | 16px, after label | 12px, after label (`rvt-arrow-*-12`) | 12px, after label (`rvt-arrow-*-12`) |
 | Icon only (square) | `component/button/height-lg` (48 × 48px) | `spacing/40` (40 × 40px; 32px on Mobile) | `component/button/height-md` (32 × 32px) | TBD (24 × 24px) |
 | Icon only, icon size | 16px, centered | 16px, centered | 16px, centered | 12px, centered |
+| Link, icon only | Same square sizes and icon sizes as Icon only; arrow by link type; Link colors and states (no Pressed) |  |  |  |
 | Corner radius | 0 | 0 | 0 | 0 |
 
 ### Color by style (Action and Icon only)
