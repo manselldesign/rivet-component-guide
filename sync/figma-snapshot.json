@@ -3,7 +3,7 @@
     "file": "Rivet 3 Components (cleaning)",
     "fileKey": "h8vuH2kAA3FkJlUEitXK9t"
   },
-  "syncedAt": "2026-11-02T15:45Z",
+  "syncedAt": "2026-11-03T14:40Z",
   "note": "Normalized snapshot written by the daily token sync. Values: colors hex (8-digit = alpha), '@name' = alias to another variable, numbers in px. Mode-specific values are objects keyed by mode. Letter spacing of 0% is stored as 0.",
   "variables": {
     "Foundation": {
@@ -800,6 +800,13 @@
         "component/tabs/segmented-height-sm": {
           "type": "FLOAT",
           "value": 32
+        },
+        "type/line-height/24-32": {
+          "type": "FLOAT",
+          "value": {
+            "Desktop": 32,
+            "Mobile": 24
+          }
         }
       }
     },
@@ -1942,7 +1949,7 @@
         "fontSize": "type/size/26",
         "fontFamily": "font/family/sans-display",
         "paragraphSpacing": "type/paragraph-spacing/step-02",
-        "lineHeight": "type/line-height/32",
+        "lineHeight": "type/line-height/24-32",
         "fontWeight": "font/weight/700"
       },
       "description": "**Variable adjustments:** wght: 700, wdth: 100%, YTAS: 720, YTLC: 530"
