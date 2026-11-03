@@ -55,6 +55,6 @@ Shared rules: Full width. Every theme has the same two borders: a 1px top border
 | Group title (Title) | `heading/sm/strong` (16 / 20px), `color/base/main` on Light | Same |
 | Links and contact text (Secondary) | `action/sm/regular` (14 / 20px), `color/base/body` on Light | Same |
 | Social row | `spacing/16` top and bottom (16px); icons `spacing/8` gap (8px) | Inside the bottom bar, `spacing/8` top and bottom (8px); icons `spacing/12` gap (12px) |
-| Social icon | `rvt-button` Type Icon, Size Icon (24 × 24px), 1px `border/default` | Same |
+| Social icon | `rvt-button-link` Social (24 × 24px), 1px `border/default` | Same |
 | Bottom bar | `spacing/16` top and bottom (16px); trident 22 × 28px `color/brand/main`, then legal links in a row, `spacing/24` gap (24px) | `spacing/24` top and bottom (24px), `spacing/20` gap (20px); social and legal links stacked `spacing/8` apart (8px), trident below |
 | Legal links (Tertiary) | `action/sm/regular` (14 / 20px), `spacing/16` gap (16px) | Stacked, `spacing/8` gap (8px) |

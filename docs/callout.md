@@ -58,7 +58,7 @@ A highlighted box that draws attention to one thing on a page, like an upcoming 
 | Title | `display/sm/strong` (29 / 36px) | Same |
 | Description | `body/base/regular` (18 / 28px), `spacing/16` above | `body/base/regular` (16 / 24px), `spacing/24` above |
 | Button row | `spacing/32` (32px) above | `spacing/32` (24px on Mobile) above |
-| Buttons | `rvt-button` CTA, Normal, Extra-large, side by side, `spacing/16` gap | Stacked, each button hugs its label, left aligned, `spacing/16` gap |
+| Buttons | `rvt-button-link` Normal, Extra-large, side by side, `spacing/16` gap | Stacked, each button hugs its label, left aligned, `spacing/16` gap |
 | Optional parts | Eyebrow, description, primary and secondary button can each be hidden | Same |
 
 ### Color by tone

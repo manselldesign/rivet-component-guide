@@ -42,7 +42,7 @@ A statement hero opens a page with a bold headline and one to three large photos
 
 ## Developer spec checklist
 
-Shared rules: Background `background/default`. Desktop is 1600px wide, Mobile 375px. Primary button is `rvt-button` with `background/brand`; secondary has a 1px `border/accent` border. The card is `rvt-card-hero` (`component/hero/background`, `shadow/sm`). Photos are fixed-aspect image slots with `spacing/8` between them (8px).
+Shared rules: Background `background/default`. Desktop is 1600px wide, Mobile 375px. Primary button is `rvt-button-link` (Style Strong) with `background/brand`; secondary has a 1px `border/accent` border. The card is `rvt-card-hero` (`component/hero/background`, `shadow/sm`). Photos are fixed-aspect image slots with `spacing/8` between them (8px).
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

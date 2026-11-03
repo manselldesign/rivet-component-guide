@@ -48,7 +48,7 @@ A section that gathers related links in one place, each with a title and optiona
 
 ## Developer spec checklist
 
-Shared rules: items are separated by a 1px `border/default` line below each item (not in TOC). Item titles turn `text/accent` and underline on hover. Metadata uses `tag/sm/regular` (12 / 16px) in `text/brand`. The eyebrow uses `tag/sm/caps` (12 / 16px) in `text/brand`. On Mobile, the introduction or image stacks above the list. Badges use `rvt-badge`, the main button uses `rvt-button` (Link, Normal, Extra-large) and images use `Fixed-aspect-ratio-spacer` at 3:2.
+Shared rules: items are separated by a 1px `border/default` line below each item (not in TOC). Item titles turn `text/accent` and underline on hover. Metadata uses `tag/sm/regular` (12 / 16px) in `text/brand`. The eyebrow uses `tag/sm/caps` (12 / 16px) in `text/brand`. On Mobile, the introduction or image stacks above the list. Badges use `rvt-badge`, the main button uses `rvt-button-link` (Normal, Extra-large) and images use `Fixed-aspect-ratio-spacer` at 3:2.
 
 ### Hub
 

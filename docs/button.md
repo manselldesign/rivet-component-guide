@@ -1,22 +1,30 @@
-# Button Component Guide
+# Button
 
 ## Overview
-Buttons allow users to take actions, make choices, and navigate through our websites, apps, and marketing pages with a single click. 
+Buttons let people take an action on the page they are already on, with a single click. Submitting a form, saving settings, opening a menu, or deleting an item are all jobs for a Button.
 
-## Button Types: Action vs. Link
-It is important to know the difference between triggering an action and navigating to a new page. To help users quickly understand what will happen when they click, we generally separate these by color: **black** for actions, and **crimson** for links.
+There is a second component, Button-link, for taking people to another page. The two look alike on purpose, so this page starts with how to tell them apart.
 
-### Action Buttons
-In general, action buttons are styled **black**. They are used to make something happen on your current screen.
-* **When to use:** Use an action button when the user is interacting with the page's data or interface without leaving the page.
-* **Common actions:** Submitting a form, saving settings, downloading an image, or deleting an item.
-* **Rule of thumb:** If clicking it triggers a process, changes data, or opens a popup, it is an action button.
+## Button or Button-link?
+Ask one question: **What happens when someone clicks it?**
 
-### Link Buttons
-In general, link buttons are styled **crimson**. They look like buttons, but they act like standard web links. 
-* **When to use:** Use a link button when the user is navigating to a completely new page or a different part of the website.
-* **Common actions:** "Read more," "Go to your dashboard," or "Return to home."
-* **Rule of thumb:** If clicking it takes the user to a new destination or URL, it is a link button.
+- **Something happens right here, on this page.** Use a Button. In general, Buttons are styled **black**.
+- **The person is taken somewhere else.** Use a Button-link. In general, Button-links are styled **crimson**.
+
+The color is the signal. People learn that black means "do something" and crimson means "go somewhere," so keep that rule across every page.
+
+### Use a Button when
+- The click submits a form, like "Submit application" or "Save & continue"
+- The click changes something on the screen, like "Apply filters," "Delete row," or "Add to calendar"
+- The click opens something on the same page, like a dialog, a dropdown menu, or a file picker
+- The click starts a process, like "Export" or "Download image"
+
+### Do not use a Button when
+- The click takes people to a new page or website. Use a Button-link
+- The link sits inside a sentence. Use a regular text link
+- You just want text to stand out. Use a heading or a callout
+
+**Rule of thumb:** If clicking it triggers a process, changes data, or opens a popup, it is a Button. If it takes the person to a new destination or URL, it is a Button-link.
 
 ## Button Styles
 
@@ -38,13 +46,12 @@ An icon is a small picture inside the button, like a magnifying glass or a trash
 * **What it is:** A small downward-pointing arrow (a "chevron") placed after the words.
 * **Why use it:** It tells people that clicking will open more choices, like a menu.
 * **When to use:** Only when the button opens a menu or a list of options.
-* **Rule:** Don't use other arrows here. Straight arrows (→) are saved for link buttons only.
+* **Rule:** Don't use other arrows here. Straight arrows (→) belong to Button-links only.
 
 ### Icon only
 * **What it is:** A square button with just a picture and no words, like an "X" to close something.
 * **When to use:** Only for very small, very familiar actions, like Close or Add, and only when space is tight.
 * **When not to use:** If there's any chance someone won't know what the picture means, add words instead.
-* **Link buttons can be icon only too:** Just the arrow in a square, in the crimson link colors. Use it in tight spots, like a table row or the bottom of a card.
 * **Rule:** Every icon-only button needs a hidden text label so people using screen readers know what it does (for example, "Close").
 
 ## Button Sizes: Which size to use?
@@ -66,9 +73,9 @@ An application section might use every button size:
 * **Small (S):** Best for dense data displays, table row actions, or complex analytics dashboards where screen real estate is limited.
 
 ## Writing Tips
-* **Start with an action word:** Begin with what the person will do, like "Apply now" or "Download the guide."
+* **Start with an action word:** Begin with what the person will do, like "Save changes" or "Apply filters."
 * **Keep it short:** Use one to four words.
-* **Be specific:** Say exactly what will happen. "Download the guide" is clear; "Click here" and "Learn more" are not.
+* **Be specific:** Say exactly what will happen. "Delete row" is clear; "Click here" and "OK" are not.
 * **Match the next step:** If the button says "Save," the click should save. Don't surprise people.
 
 ---
@@ -81,11 +88,11 @@ Buttons keep the same height on Desktop and Mobile: every size uses its own fixe
 
 Button groups: Desktop places buttons side by side with the Strong button last (right), `spacing/16` gap. Mobile stacks them with the Strong button first (top), `spacing/8` gap; each button hugs its label. Exception: Dialog buttons stack full width.
 
-Marketing components (heroes, billboards): Strong button first on Desktop and Mobile.
+Focus (all styles): 2px `border/accent-strong` ring, 2px outside the button's box, square corners. Subtle buttons keep the same box as Normal buttons (same height and padding, border transparent), so the ring has the same breathing room on every style.
 
-Focus (all types and styles): 2px `border/accent-strong` ring, 2px outside the button's box, square corners. Subtle buttons keep the same box as Normal buttons (same height and padding, border transparent), so the ring has the same breathing room on every style.
+Links styled as buttons are a separate component, `rvt-button-link`. See the Button-link page.
 
-### Size (Action, Link, Icon only)
+### Size (Default and Icon only)
 
 | Element | Extra-large | Large | Medium | Small |
 | --- | --- | --- | --- | --- |
@@ -94,14 +101,12 @@ Focus (all types and styles): 2px `border/accent-strong` ring, 2px outside the b
 | Padding (Subtle) | Same as Normal: the box is identical, the border is just invisible | same | same | same |
 | Icon-to-text gap | `spacing/8` | `spacing/8` | `spacing/8` | `spacing/4` |
 | Label | `action/lg/strong` (16 / 24px) | `action/lg/strong` (16 / 24px) | `action/sm/strong` (14 / 20px) | `action/sm/strong` (14 / 20px) |
-| Action icon, left or right | 16px | 16px | 12px | 12px |
-| Link arrow icon | 16px, after label | 16px, after label | 12px, after label (`rvt-arrow-*-12`) | 12px, after label (`rvt-arrow-*-12`) |
+| Left or right icon | 16px | 16px | 12px | 12px |
 | Icon only (square) | `component/button/height-xl` (48 × 48px) | `component/button/height-lg` (40 × 40px) | `component/button/height-md` (32 × 32px) | `component/button/height-sm` (24 × 24px) |
 | Icon only, icon size | 16px, centered | 16px, centered | 16px, centered | 12px, centered |
-| Link, icon only | Same square sizes and icon sizes as Icon only; arrow by link type; Link colors and states (no Pressed) |  |  |  |
 | Corner radius | 0 | 0 | 0 | 0 |
 
-### Color by style (Action and Icon only)
+### Color by style
 
 | Element | Strong | Normal | Subtle |
 | --- | --- | --- | --- |
@@ -114,36 +119,3 @@ Focus (all types and styles): 2px `border/accent-strong` ring, 2px outside the b
 | Text and icon, hover | `text/on-brand-alt` | `component/button/form-text-hover` | `component/button/form-text-hover` |
 | Pressed ring | 2px `border/on-brand-alt` outer, 2px `component/button/form-border-hover` inner | same | same |
 | Disabled | Default colors at 40% opacity | same | same |
-
-### Color by style (Link)
-
-| Element | Strong | Normal | Subtle |
-| --- | --- | --- | --- |
-| Background | `background/brand` | none | none |
-| Background, hover | `background/accent` | none | none |
-| Border | none | `border/accent` (1px inside) | none (transparent 1px border in code so the box matches Normal) |
-| Border, hover | none | `border/accent-strong` | none |
-| Text | `text/on-brand-alt` | `text/accent` | `text/accent` |
-| Text, hover | `text/on-brand-alt` | `text/brand-strong` | `text/brand-strong` |
-| Arrow icon | `icon/on-brand-alt` | `icon/accent` | `icon/accent` |
-| Arrow icon, hover | `icon/on-brand-alt` | `icon/accent-strong` | `icon/accent-strong` |
-| Arrow by link type | In-page `rvt-arrow-down`, Internal `rvt-arrow-right`, External `rvt-arrow-up-right` | same | same |
-| Disabled | Internal arrow, default colors at 40% opacity | same | same |
-| Pressed | No pressed state | same | same |
-
-### Social
-
-Social buttons use the Normal Link button's colors and states. There is no Pressed state.
-
-| Element | Spec |
-| --- | --- |
-| Size | 24 × 24px square, 0 padding |
-| Corner radius | 0 |
-| Background | none (all states) |
-| Border | `border/accent` (1px inside) |
-| Border, hover | `border/accent-strong` |
-| Icon | 12px platform icon, centered, `icon/accent` |
-| Icon, hover | `icon/accent-strong` |
-| Focus | Same focus ring as every button: 2px `border/accent-strong`, 2px outside the box, square corners |
-| States | Default, Hover, Focus |
-| Platforms | Email, Facebook, Instagram, LinkedIn, X, YouTube, Bluesky, Link |
