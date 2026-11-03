@@ -3,6 +3,8 @@
 ## Overview
 Buttons let people take an action on the page they are already on, with a single click. Submitting a form, saving settings, opening a menu, or deleting an item are all jobs for a Button.
 
+In general, Buttons are styled **black**. That color is a signal: it tells people the click will do something right here, not take them somewhere else.
+
 There is a second component, Button-link, for taking people to another page. The two look alike on purpose, so this page starts with how to tell them apart.
 
 ## Button or Button-link?
