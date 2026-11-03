@@ -26,7 +26,8 @@ The color is the signal. People learn that black means "do something" and crimso
 - The link sits inside a sentence. Use a regular text link
 - You just want text to stand out. Use a heading or a callout
 
-**Rule of thumb:** If clicking it triggers a process, changes data, or opens a popup, it is a Button. If it takes the person to a new destination or URL, it is a Button-link.
+> [!default] Rule of thumb
+> If clicking it triggers a process, changes data, or opens a popup, it is a Button. If it takes the person to a new destination or URL, it is a Button-link.
 
 ## Button Styles
 

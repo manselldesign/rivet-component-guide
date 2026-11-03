@@ -26,7 +26,8 @@ The color is the signal. People learn that crimson means "go somewhere" and blac
 - The link sits inside a sentence. Use a regular text link
 - You have more than two next steps in a row. Use a list of links instead
 
-**Rule of thumb:** If clicking it takes the user to a new destination or URL, it is a Button-link. If it triggers a process, changes data, or opens a popup, it is a Button.
+> [!default] Rule of thumb
+> If clicking it takes the user to a new destination or URL, it is a Button-link. If it triggers a process, changes data, or opens a popup, it is a Button.
 
 ## Link Types
 A Button-link with words ends in an arrow. The arrow is not decoration. It tells people what kind of trip they are about to take, so use the right one.
