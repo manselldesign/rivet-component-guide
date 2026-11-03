@@ -67,5 +67,5 @@ Shared rules: 1px `border/default` border, `background/raised` fill, no radius, 
 | Top badge | Strong badge, `spacing/16` below | Same |
 | Eyebrow | `tag/sm/caps` (12 / 16px), `text/brand`, `spacing/8` below | `tag/sm/caps` (12 / 16px), `spacing/4` below |
 | Title | `display/xs/strong` (26 / 32px), `text/brand` | `display/xs/strong` (20 / 24px) |
-| Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/24` above | Same style, `spacing/20` above |
+| Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/20` above | Same as Desktop |
 | Arrow box | 48 × 48px in the bottom-right corner, 1px `border/default` on top and left, 16px `rvt-arrow-right` centered | 32 × 32px |

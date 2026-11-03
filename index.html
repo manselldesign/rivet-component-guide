@@ -745,7 +745,7 @@ body:not(.has-rail) .site-header__menu{display:none}
    Reversed: the image column moves to the right.
    Stacked (under 800px wide): image above content, full width at 3:2, spacing/20 top and sides; text spacing/32 all sides; links spacing/32 sides and below, so everything sits inside one even 24px frame. Reversed has no effect.
    Stacked always uses the Mobile token values (see the container block below), so the type and spacing scale down with the component, not just with the screen.
-   Eyebrow tag/sm/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/32, 20/24 in Mobile mode, like the feature card). Description body/sm/regular text/default, spacing/24 above (spacing/20 stacked).
+   Eyebrow tag/sm/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/32, 20/24 in Mobile mode, like the feature card). Description body/sm/regular text/default, spacing/20 above.
    Single link: rvt-button Link, Normal, Extra-large, spacing/32 above. Multiple links: rvt-list-hub Compact, full width, spacing/32 above. */
 .rvt-billboard-wrap{container-type:inline-size}
 .rvt-billboard{display:grid;grid-template-columns:minmax(0,66%) minmax(280px,1fr);column-gap:var(--rvt-spacing-40);align-items:end;background:var(--rvt-background-strong)}
@@ -762,7 +762,7 @@ body:not(.has-rail) .site-header__menu{display:none}
   font:var(--rvt-font-tag-sm-caps);letter-spacing:var(--rvt-font-tracking-xl);text-transform:uppercase}
 .rvt-billboard__title{margin:0;color:var(--rvt-text-brand);overflow-wrap:break-word;
   font:var(--rvt-font-display-xs-strong);font-stretch:var(--rvt-font-width-normal);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
-.rvt-billboard__desc{margin:0;padding-top:var(--rvt-spacing-24);color:var(--rvt-text-default);
+.rvt-billboard__desc{margin:0;padding-top:var(--rvt-spacing-20);color:var(--rvt-text-default);
   font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
 .rvt-billboard__actions{padding-top:var(--rvt-spacing-32)}
 /* rvt-button, Link, Normal, Extra-large: component/button/height-xl, spacing/16 sides, spacing/8 to the 16px arrow; 1px border/accent drawn inside.
@@ -808,7 +808,6 @@ body:not(.has-rail) .site-header__menu{display:none}
   .rvt-billboard__content,.rvt-billboard--reversed .rvt-billboard__content{padding:0}
   .rvt-billboard__text{padding:var(--rvt-spacing-32)}
   .rvt-billboard__title{font-size:var(--rvt-type-size-26);line-height:var(--rvt-type-line-height-24-32)}
-  .rvt-billboard__desc{padding-top:var(--rvt-spacing-20)}
   .rvt-billboard__actions{padding:0 var(--rvt-spacing-32) var(--rvt-spacing-32)}
 }
 @media (prefers-reduced-motion:reduce){.rvt-billboard__button,.rvt-billboard__button svg,.rvt-billboard__link,.rvt-billboard__arrow svg{transition:none}}
