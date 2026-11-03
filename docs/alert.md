@@ -64,7 +64,7 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 | Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/8` (8px) below title row, max width 850px | Same |
 | Description and list indent | 36px left (28px icon + `spacing/8`), flush with the title text | Same |
 | List | `body/sm/regular` (16 / 24px), `text/default`, items `spacing/8` (8px) apart, each item 24px tall, bullet 6px `icon/default` centered in a 24px slot, `spacing/8` (8px) bullet to text, max width 920px | Same |
-| Height with title, description and 3 list items | 212px (276px with buttons) | 244px (348px with buttons, stacked) at 327px wide |
+| Height with title, description and 3 list items | 212px (276px with buttons) | 244px (364px with buttons, stacked) at 327px wide |
 | Close button | 16px icon, 16px from top and right (no token). On Info and Success only | Same |
 | Title colors | Info `text/info`, Success `text/success`, Warning `text/warning`, Danger `text/danger`, Default `text/brand` | Same |
 
@@ -74,7 +74,7 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 | --- | --- | --- |
 | Actions row | `spacing/8` (8px) top padding, 36px left indent (flush with the title text), `spacing/16` (16px) between buttons | `spacing/8` (8px) top padding, 36px left indent, buttons stacked, `spacing/16` (16px) apart |
 | Buttons | `rvt-button` Form, Large, no style overrides. Primary = Style Strong, Secondary = Style Normal | Same |
-| Button height | `spacing/40` (40px) | `spacing/40` (32px) |
+| Button height | `component/button/height-lg` (40px) | Same |
 | Button padding | `spacing/16` (16px) left and right | Same |
 | Button label | `action/lg/strong` (16 / 24px) | Same |
 | Primary button | `component/button/form-background` (`#1f2528`), label `text/on-brand-alt` | Same |

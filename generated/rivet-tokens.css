@@ -142,7 +142,8 @@
 	--rvt-font-axes-display-caps: "slnt" var(--rvt-font-slant-standard);
 	--rvt-component-button-height-sm: 24px;
 	--rvt-component-button-height-md: 32px;
-	--rvt-component-button-height-lg: 48px;
+	--rvt-component-button-height-lg: 40px;
+	--rvt-component-button-height-xl: 48px;
 	--rvt-component-input-height-sm: 32px;
 	--rvt-component-input-height-md: 40px;
 	--rvt-component-input-height-lg: 48px;

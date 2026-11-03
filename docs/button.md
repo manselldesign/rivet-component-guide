@@ -58,7 +58,9 @@ An icon is optional. Use one at most, on the left or the right.
 
 ## Developer spec checklist
 
-Buttons inside app components (Alert CTA, Dialog, File input, Empty state) are always Large (`spacing/40`: 40px on Desktop, 32px on Mobile), never Extra-large.
+Buttons inside app components (Alert CTA, Dialog, File input, Empty state) are always Large (`component/button/height-lg`, 40px), never Extra-large.
+
+Buttons keep the same height on Desktop and Mobile: every size uses its own fixed `component/button/height-*` token, so nothing shrinks on phones.
 
 Button groups: Desktop places buttons side by side with the Strong button last (right), `spacing/16` gap. Mobile stacks them with the Strong button first (top), `spacing/8` gap; each button hugs its label. Exception: Dialog buttons stack full width.
 
@@ -70,14 +72,14 @@ Focus (all types and styles): 2px `border/accent-strong` ring, 2px outside the b
 
 | Element | Extra-large | Large | Medium | Small |
 | --- | --- | --- | --- | --- |
-| Height | `component/button/height-lg` (48px) | `spacing/40` (40px; 32px on Mobile) | `component/button/height-md` (32px) | TBD (24px, no token) |
+| Height | `component/button/height-xl` (48px) | `component/button/height-lg` (40px) | `component/button/height-md` (32px) | `component/button/height-sm` (24px) |
 | Padding left/right (Strong, Normal) | `spacing/16` | `spacing/16` | `spacing/12` | `spacing/8` |
 | Padding (Subtle) | Same as Normal: the box is identical, the border is just invisible | same | same | same |
 | Icon-to-text gap | `spacing/8` | `spacing/8` | `spacing/8` | `spacing/4` |
 | Label | `action/lg/strong` (16 / 24px) | `action/lg/strong` (16 / 24px) | `action/sm/strong` (14 / 20px) | `action/sm/strong` (14 / 20px) |
 | Action icon, left or right | 16px | 16px | 12px | 12px |
 | Link arrow icon | 16px, after label | 16px, after label | 12px, after label (`rvt-arrow-*-12`) | 12px, after label (`rvt-arrow-*-12`) |
-| Icon only (square) | `component/button/height-lg` (48 × 48px) | `spacing/40` (40 × 40px; 32px on Mobile) | `component/button/height-md` (32 × 32px) | TBD (24 × 24px) |
+| Icon only (square) | `component/button/height-xl` (48 × 48px) | `component/button/height-lg` (40 × 40px) | `component/button/height-md` (32 × 32px) | `component/button/height-sm` (24 × 24px) |
 | Icon only, icon size | 16px, centered | 16px, centered | 16px, centered | 12px, centered |
 | Link, icon only | Same square sizes and icon sizes as Icon only; arrow by link type; Link colors and states (no Pressed) |  |  |  |
 | Corner radius | 0 | 0 | 0 | 0 |

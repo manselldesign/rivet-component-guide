@@ -5317,6 +5317,13 @@
       {
         "name": "component/button/height-lg",
         "css": "--rvt-component-button-height-lg",
+        "value": 40,
+        "codeToday": null,
+        "action": "add"
+      },
+      {
+        "name": "component/button/height-xl",
+        "css": "--rvt-component-button-height-xl",
         "value": 48,
         "codeToday": null,
         "action": "add"
@@ -6522,7 +6529,7 @@
       },
       {
         "before": "button/height/large",
-        "after": "component/button/height-lg"
+        "after": "component/button/height-xl"
       },
       {
         "before": "input/height/small",

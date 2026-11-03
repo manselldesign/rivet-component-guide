@@ -702,6 +702,10 @@
         },
         "component/button/height-lg": {
           "type": "FLOAT",
+          "value": 40
+        },
+        "component/button/height-xl": {
+          "type": "FLOAT",
           "value": 48
         },
         "type/line-height/18-20": {
