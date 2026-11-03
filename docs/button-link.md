@@ -3,9 +3,9 @@
 ## Overview
 A Button-link looks like a button but works like a web link: clicking it takes people to a different page, a different part of the website, or another site. "Read more," "Go to your dashboard," and "Apply now" are all jobs for a Button-link.
 
-Button-links are styled **crimson**. That color is a signal: it tells people the click will take them somewhere else, not change anything on this page. Button-links with words also end in an arrow that shows what kind of trip it is.
+Button-links are styled **crimson**. That color is a signal: it tells people the click will take them somewhere else, not change anything on this page.
 
-There is a second component, Button, for doing something on the current page.
+There is a second component, Button, for doing something or taking an action on the current page.
 
 ## Button-link or Button?
 Ask one question: **What happens when someone clicks it?**
