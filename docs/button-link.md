@@ -57,18 +57,18 @@ A Button-link with words ends in an arrow. The arrow is not decoration. It tells
 ## Button-link Sizes: Which size to use?
 Consistency is key to a good user experience across all of our digital products. **Large (L)** is our default size for most everyday scenarios, but sizes should adapt based on how dense or spacious the layout is.
 
-A program section might use every size:
+An admissions section might use every size:
 
 | On this page | You show | Use |
 | :--- | :--- | :--- |
 | Hero / Splash page | Main "Apply now" or "Request info" call to action | Extra Large |
-| Program page | "View degree requirements" or "Meet the faculty" | Large |
+| Contact cards in a grid | "Schedule an appointment" on each advisor's card | Large |
 | Search results page | "View program" on each result | Medium |
 | Course table | "Details" link in each table row | Small |
 
 ### Size Reference Summary
 * **Extra Large (XL):** Reserved for spacious layouts, marketing websites, splash screens, and hero banners.
-* **Large (L) - *Default*:** Our standard default size across all primary page content.
+* **Large (L) - *Default*:** Our standard default size across all primary page content. On marketing sites, where Extra Large is the norm, use Large inside cards, sidebars and text blocks, where Extra Large would overwhelm the space.
 * **Medium (M):** Ideal for secondary navigation, sidebars, or compact headers where space is somewhat constrained.
 * **Small (S):** Best for dense data displays, table rows, or anywhere screen real estate is limited.
 
