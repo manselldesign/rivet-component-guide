@@ -53,7 +53,6 @@ A Button-link with words ends in an arrow. The arrow is not decoration. It tells
 * **What it is:** A small outlined square with a social media logo inside, like Facebook or Instagram.
 * **When to use:** Only to link to IU's official accounts, usually in a footer or a contact card.
 * **Available logos:** Email, Facebook, Instagram, LinkedIn, X, YouTube, Bluesky, and a generic link icon for anything else.
-* **Rule:** Every social button needs a hidden text label naming the platform (for example, "IU on Instagram").
 
 ## Button-link Sizes: Which size to use?
 Consistency is key to a good user experience across all of our digital products. **Large (L)** is our default size for most everyday scenarios, but sizes should adapt based on how dense or spacious the layout is.
