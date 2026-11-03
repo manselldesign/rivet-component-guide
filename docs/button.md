@@ -1,58 +1,47 @@
-# Button
+# Button Component Guide
 
-## What it is
-A button lets people take an action or move to the next step. There are two main kinds, and the difference is what happens after the click:
+## Overview
+Buttons allow users to take actions, make choices, and navigate through our websites, apps, and marketing pages with a single click. 
 
-- **Action buttons** do something right here, on this page, like submitting a form, saving a change or filtering a list of events
-- **Link buttons** take people somewhere else, like "Apply now" going to the application page. They always show an arrow that tells people where they're headed
+## Button Types: Action vs. Link
+It is important to know the difference between triggering an action and navigating to a new page. To help users quickly understand what will happen when they click, we generally separate these by color: **black** for actions, and **crimson** for links.
 
-## When to use it
-- Use it for the main action on a page, like "Register for orientation"
-- Use it to submit or save information in a form
-- Use it to point readers to a key next step, like a program's application page
+### Action Buttons
+In general, action buttons are styled **black**. They are used to make something happen on your current screen.
+* **When to use:** Use an action button when the user is interacting with the page's data or interface without leaving the page.
+* **Common actions:** Submitting a form, saving settings, downloading an image, or deleting an item.
+* **Rule of thumb:** If clicking it triggers a process, changes data, or opens a popup, it is an action button.
 
-## When not to use it
-- Don't use it for links inside a sentence. Use a regular text link instead
-- Don't put more than one Strong button in the same section
-- Don't use a button just to make text stand out
+### Link Buttons
+In general, link buttons are styled **crimson**. They look like buttons, but they act like standard web links. 
+* **When to use:** Use a link button when the user is navigating to a completely new page or a different part of the website.
+* **Common actions:** "Read more," "Go to your dashboard," or "Return to home."
+* **Rule of thumb:** If clicking it takes the user to a new destination or URL, it is a link button.
 
-## Variants
+## Button Styles
 
-### Type
-- **Action:** Use when the click does something on the page, like "Submit" or "Filter events"
-- **Link:** Use when the click takes people somewhere. The arrow shows where: down for this page, right for another IU page, angled for an outside site
-- **Icon only:** Use for small, familiar actions, like "Add" or "Close". A Link button can also be icon only: just the arrow in a square, in the Link colors, for tight spots like a table row or a card footer
-- **Social:** Use to link to IU's social media accounts. Styled like a Normal Link button: a small outlined square with the platform icon inside
+* **Strong:** Used for the primary or highest-priority action on a screen. Use these sparingly (ideally one main strong button per section) so the user instantly knows the most important next step.
+* **Normal:** Used for standard, secondary, or alternative actions. While frequently paired side-by-side with a strong button (like a "Cancel" button next to "Save"), they can also stand on their own when an action is routine but not the primary focus of the page.
+* **Subtle:** Used for low-priority or passive actions that shouldn't distract the user or compete for visual attention.
+  * *Example:* A "Close" button on a dropdown menu, or an "Undo" action link.
 
-### Style
-- **Strong:** Use for the single most important action in a section
-- **Normal:** Use for secondary actions, like "View all events"
-- **Subtle:** Use for low-priority actions, like "Cancel"
+## Button Sizes: Which size to use?
+Consistency is key to a good user experience across all of our digital products. **Large (L)** is our default size for most everyday scenarios, but sizes should adapt based on how dense or spacious the layout is.
 
-### Size
-- **Extra-large (48px):** Use where one action is the focus, like a login page, site search or a single sign-up field
-- **Large (40px):** Use on standard pages and forms, like settings pages, multi-step applications or "Create new event" forms. It's also the size for buttons built into app components, like alerts with actions, dialogs, file inputs and empty states
-- **Medium (32px):** Use in busy, information-heavy areas, like tables, sidebars and filter bars
-- **Small (24px):** Use in the tightest spots, like inside a table row or next to a short list item
+An application section might use every button size:
 
-### Icons on action buttons
-An icon is optional. Use one at most, on the left or the right.
-- **Left icon:** Shows what the button does, so people spot it before they read. Use it for familiar actions, like Search, Delete, Edit or Favorite
-- **Right icon:** Shows that something opens next, like a menu or more options. Use the down chevron. Arrows are only for Link buttons
+| On this page | You show | Use |
+| :--- | :--- | :--- |
+| Landing / Splash page | Main "Log In" or "Get Started" call to action | Extra Large |
+| Questionnaire / Form | "Submit application" or "Save & continue" actions | Large |
+| Search results page | "Apply filters" button in the filter sidebar | Medium |
+| Analytics dashboard | Quick "Export" or "Delete row" table actions | Small |
 
-## Button order
-- Use one Strong button per group. It's the main action
-- On wider screens, put the main button last, on the right. Put the secondary button to its left
-- On phones, stack the buttons with the main button on top. Each button stays the width of its label; don't stretch it across the screen. Dialogs are the exception: their buttons go full width
-- Keep this order everywhere, in dialogs, forms and empty states, so people always know where to look
-- Put a cancel or back button on the left, next to the main button, not on its own
-- **Marketing components:** In heroes, billboards and other marketing sections, put the Strong button first on Desktop (left) and Mobile (top) so the main call to action is seen first
-
-## Writing tips
-- Start with a verb: "Apply now," "Download the guide"
-- Keep it to one to four words
-- Say exactly what happens. Avoid "Click here" or "Learn more"
-- Icon-only buttons need a hidden text label for screen readers
+### Size Reference Summary
+* **Extra Large (XL):** Reserved for spacious layouts, marketing websites, splash screens, and hero banners.
+* **Large (L) - *Default*:** Our standard default size across all forms, questionnaires, and primary page content.
+* **Medium (M):** Ideal for secondary navigation, filter sidebars, or compact headers where space is somewhat constrained.
+* **Small (S):** Best for dense data displays, table row actions, or complex analytics dashboards where screen real estate is limited.
 
 ---
 
