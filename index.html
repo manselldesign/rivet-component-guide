@@ -305,6 +305,10 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
   .prose td{padding:16px 12px;font-size:14px;line-height:20px}
   .prose td:first-child{padding-left:20px}
   .prose td:last-child{padding-right:20px}
+  /* First column stays put while the rest of the table scrolls sideways, so readers always see what each row is.
+     Narrower than the 243px data cells so the comparison columns still have room; a 1px divider (box-shadow, since collapsed borders don't travel with sticky cells) marks the edge. */
+  .prose th:first-child,.prose td:first-child{position:sticky;left:0;z-index:1;width:140px;min-width:140px;max-width:140px;box-shadow:inset -1px 0 0 var(--table-border)}
+  .prose thead th:first-child{z-index:2;background:var(--th-bg)}
 }
 
 .index-note{margin:0}

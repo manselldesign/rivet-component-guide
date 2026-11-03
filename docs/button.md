@@ -10,8 +10,8 @@ There is a second component, Button-link, for taking people to another page.
 ## Button or Button-link?
 Ask one question: **What happens when someone clicks it?**
 
-- **Something happens right here, on this page.** Use a Button. Buttons are styled **black**.
-- **The person is taken somewhere else.** Use a Button-link. Button-links are styled **crimson**.
+- **Something gets done and the person doesn't go anywhere.** Use a Button. Buttons are styled **black**.
+- **The person goes somewhere:** another page, another website, or a different spot on this page. Use a Button-link. Button-links are styled **crimson**.
 
 The color is the signal. People learn that black means "do something" and crimson means "go somewhere," so keep that rule across every page.
 

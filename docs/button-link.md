@@ -10,8 +10,8 @@ There is a second component, Button, for doing something or taking an action on 
 ## Button-link or Button?
 Ask one question: **What happens when someone clicks it?**
 
-- **The person is taken somewhere else.** Use a Button-link. Button-links are styled **crimson**.
-- **Something happens right here, on this page.** Use a Button. Buttons are styled **black**.
+- **The person goes somewhere:** another page, another website, or a different spot on this page. Use a Button-link. Button-links are styled **crimson**.
+- **Something gets done and the person doesn't go anywhere.** Use a Button. Buttons are styled **black**.
 
 The color is the signal. People learn that crimson means "go somewhere" and black means "do something," so keep that rule across every page.
 
@@ -44,9 +44,10 @@ A Button-link with words ends in an arrow. The arrow is not decoration. It tells
   * *Example:* A "Back to all news" link at the end of a story.
 
 ## Icon only
-* **What it is:** A square button with just an icon and no words, in the crimson link colors. Usually it's the arrow, but it can be another icon that says where the click goes, like a download icon for a PDF.
+* **What it is:** A square button with just the arrow and no words, in the crimson link colors. Use the same arrow you'd use with words (Internal, In-page, or External) so the link type is still clear.
+* **Only arrows:** Don't swap in other icons. A different icon breaks the "arrow means go somewhere" signal. For a file like a PDF, use a Button-link with words, like "Download the guide."
 * **When to use:** Only in tight spots where the destination is already obvious from the words next to it, like the end of a table row or the bottom of a card.
-* **When not to use:** If the icon on its own doesn't make the destination clear, use words.
+* **When not to use:** If the arrow on its own doesn't make the destination clear, use words.
 * **Rule:** Every icon-only button needs a hidden text label so people using screen readers know where it goes (for example, "View program details").
 
 ## Social
