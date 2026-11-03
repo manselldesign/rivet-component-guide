@@ -627,6 +627,29 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-badge--subtle.rvt-badge--warning{--badge-bg:var(--rvt-component-badge-warning-subtle-background);--badge-border:var(--rvt-component-badge-warning-subtle-border);--badge-text:var(--rvt-component-badge-warning-subtle-text);--badge-icon:var(--rvt-component-badge-warning-subtle-icon)}
 .rvt-badge--subtle.rvt-badge--danger{--badge-bg:var(--rvt-component-badge-danger-subtle-background);--badge-border:var(--rvt-component-badge-danger-subtle-border);--badge-text:var(--rvt-component-badge-danger-subtle-text);--badge-icon:var(--rvt-component-badge-danger-subtle-icon)}
 
+/* ---------- rvt-avatar (Avatar page example, Developer spec checklist) ----------
+   Layout: Image, No Image (IU trident) or Initials. Sizes 32, 40, 48, 64, 80, 96, 128, 160, 224px, shown inline in one row, smallest first,
+   spacing/12 apart and centered on each other; the row wraps on narrow screens. Fixed sizes, the same on Desktop and Mobile.
+   Circle (border-radius/full) on background/brand-container; the photo covers the circle. Initials and trident use component/avatar/foreground.
+   Initials: component avatar style for the size (weight 600, line height = size, width 100%, no axis adjustments). Trident: half the avatar's height.
+   Avatar tokens are the same in Light, Dark and Crimson. */
+.rvt-avatar-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-12);margin:0}
+.rvt-avatar{box-sizing:border-box;flex:none;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;
+  width:var(--avatar-size);height:var(--avatar-size);border-radius:var(--rvt-border-radius-full);
+  background:var(--rvt-background-brand-container);color:var(--rvt-component-avatar-foreground)}
+.rvt-avatar img{display:block;width:100%;height:100%;object-fit:cover}
+.rvt-avatar svg{display:block;height:50%;width:auto;fill:currentColor}
+.rvt-avatar__initials{font-stretch:var(--rvt-font-width-normal);font-variation-settings:normal;letter-spacing:var(--rvt-font-tracking-none);text-align:center}
+.rvt-avatar--32{--avatar-size:32px}.rvt-avatar--32 .rvt-avatar__initials{font:var(--rvt-font-component-avatar-32);font-stretch:var(--rvt-font-width-normal)}
+.rvt-avatar--40{--avatar-size:40px}.rvt-avatar--40 .rvt-avatar__initials{font:var(--rvt-font-component-avatar-40);font-stretch:var(--rvt-font-width-normal)}
+.rvt-avatar--48{--avatar-size:48px}.rvt-avatar--48 .rvt-avatar__initials{font:var(--rvt-font-component-avatar-48);font-stretch:var(--rvt-font-width-normal)}
+.rvt-avatar--64{--avatar-size:64px}.rvt-avatar--64 .rvt-avatar__initials{font:var(--rvt-font-component-avatar-64);font-stretch:var(--rvt-font-width-normal)}
+.rvt-avatar--80{--avatar-size:80px}.rvt-avatar--80 .rvt-avatar__initials{font:var(--rvt-font-component-avatar-80);font-stretch:var(--rvt-font-width-normal)}
+.rvt-avatar--96{--avatar-size:96px}.rvt-avatar--96 .rvt-avatar__initials{font:var(--rvt-font-component-avatar-96);font-stretch:var(--rvt-font-width-normal)}
+.rvt-avatar--128{--avatar-size:128px}.rvt-avatar--128 .rvt-avatar__initials{font:var(--rvt-font-component-avatar-128);font-stretch:var(--rvt-font-width-normal)}
+.rvt-avatar--160{--avatar-size:160px}.rvt-avatar--160 .rvt-avatar__initials{font:var(--rvt-font-component-avatar-160);font-stretch:var(--rvt-font-width-normal)}
+.rvt-avatar--224{--avatar-size:224px}.rvt-avatar--224 .rvt-avatar__initials{font:var(--rvt-font-component-avatar-224);font-stretch:var(--rvt-font-width-normal)}
+
 /* ---------- rvt-alert (Alert page, Developer spec checklist) ----------
    Themed like every other component: its tokens follow the page theme (Light, Dark, Crimson), e.g. Info on Dark = background/info-subtle black,
    text/info white, border/info light blue. Badges keep their status fill in every theme.
@@ -980,6 +1003,15 @@ body:not(.has-rail) .site-header__menu{display:none}
       <p class="rvt-alert__message"><span class="sr-only">${esc(a.word)}: </span>${esc(a.inline)}</p>
       ${closeBtn(a, 12)}
     </div>`;
+  /* rvt-avatar example. The IU trident is the lockup mark's trident path, cropped to its own 27 x 34 box. */
+  const AVATAR_SIZES = [32, 40, 48, 64, 80, 96, 128, 160, 224];
+  const TRIDENT = 'M25 11.5V14H27V28.5H23V9.5H25V7H16V9.5H18V28.5H14V14H16V11.5H7V14H9V30.5L12.5 34H18V37.5H16V41H25V37.5H23V34H28.5L32 30.5V14H34V11.5H25Z';
+  const avatarEl = (layout, n) => {
+    const cls = `rvt-avatar rvt-avatar--${n}`;
+    if (layout === 'initials') return `<span class="${cls}" role="img" aria-label="Jordan Morgan"><span class="rvt-avatar__initials" aria-hidden="true">JM</span></span>`;
+    if (layout === 'no-image') return `<span class="${cls}" role="img" aria-label="No profile photo"><svg viewBox="7 7 27 34" aria-hidden="true" focusable="false"><path d="${TRIDENT}"/></svg></span>`;
+    return `<span class="${cls}"><img src="img/avatar-example.jpg" width="600" height="600" alt="Jordan Morgan"></span>`;
+  };
   /* rvt-badge example. Status order follows the component: Default, Info, Success, Warning, Danger.
      Default uses rvt-star-12 (swappable); the others reuse the 12px Rivet glyphs in P12. Icon Only badges carry their label for screen readers. */
   P12.star = 'm7.7 4.113 4.319.204L8.821 7.41l1.024 4.029L6 9.459l-3.845 1.979 1.023-4.029-3.197-3.092 4.32-.204L6 .563zM5.846 5.517l-.258.539-.888.042.704.68-.144.562-.074.289.356-.183L6 7.211l.813.418-.073-.29-.144-.56.418-.404.286-.277-.888-.042L6 5.194z';
@@ -1068,6 +1100,17 @@ body:not(.has-rail) .site-header__menu{display:none}
           (rest.find(el => alert.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING) || rest[0] || stage).focus();
         }));
       }
+    },
+    /* rvt-avatar: Layout is the variant (Image, No Image, Initials, in Figma order). Every size sits inline in one row, smallest first.
+       The row (32 + 40 + 48 + 64 + 80 + 96 + 128 + 160 + 224px with spacing/12 between) is 968px, so all nine fit the dochub content column (no Breakpoint=Desktop frame). */
+    avatar: {
+      maxWidth: 968, // all nine sizes in one row, spacing/12 apart (avatars have no Breakpoint=Desktop frame)
+      variants: [
+        {id: 'image', label: 'Image'},
+        {id: 'no-image', label: 'No Image'},
+        {id: 'initials', label: 'Initials'}
+      ],
+      html: v => `<p class="rvt-avatar-row">${AVATAR_SIZES.map(n => avatarEl(v, n)).join('')}</p>`
     },
     /* rvt-badge: Style is the variant. Statuses sit inline in one row, like the theme showcase: the Default layout (icon + label) row, then the Icon Only row.
        Badges hug their content, so the cap is the Figma theme showcase row width (the component has no Breakpoint=Desktop frame). */
