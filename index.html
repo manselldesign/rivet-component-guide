@@ -282,10 +282,12 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
    First column = Main Item (body/sm/strong SemiBold 16/24, text/strong); others = Default (body/sm/regular 16/24, text/default); 24/16 padding.
    Mobile: cells fixed 243px (table scrolls), 16/12 padding, Main Item body/xs/strong SemiBold 14/20, Default body/xs/regular 14/20. */
 .table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--table-border);background:var(--bg)}
-.prose table{border-collapse:collapse;width:100%;table-layout:fixed}
-.prose thead tr{background:var(--th-bg);border-bottom:1px solid var(--table-border)}
-.prose tbody tr{border-bottom:1px solid var(--table-border)}
-.prose tbody tr:last-child{border-bottom:0}
+/* Separate borders (not collapsed) so the sticky first column on mobile carries its own borders and fill while scrolling: no seams or gaps in the header color. Row lines sit on the cells. */
+.prose table{border-collapse:separate;border-spacing:0;width:100%;table-layout:fixed}
+.prose thead tr{background:var(--th-bg)}
+.prose thead th{border-bottom:1px solid var(--table-border)}
+.prose tbody th,.prose tbody td{border-bottom:1px solid var(--table-border)}
+.prose tbody tr:last-child th,.prose tbody tr:last-child td{border-bottom:0}
 .prose tbody code{white-space:normal;overflow-wrap:normal;word-break:normal}
 .prose tbody th{text-align:left;padding:24px 16px 24px 24px;vertical-align:middle;font-size:16px;line-height:24px;font-weight:var(--w-bold);color:var(--text-strong);background:var(--bg);overflow-wrap:break-word}
 .table-wrap:focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
@@ -298,17 +300,18 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .prose th:first-child,.prose td:first-child{padding-left:24px}
 .prose th:last-child,.prose td:last-child{padding-right:24px}
 @media (max-width:560px){
-  .prose table{width:auto;table-layout:auto}
-  .prose th,.prose td{width:243px;min-width:243px;max-width:243px}
+  /* Fill the width; only scroll sideways when the columns can't fit at their minimum width. */
+  .prose table{width:100%;table-layout:auto}
+  .prose th,.prose td{min-width:180px}
   .prose thead th{height:44px}
   .prose tbody th{padding:16px 12px 16px 20px;font-size:14px;line-height:20px}
   .prose td{padding:16px 12px;font-size:14px;line-height:20px}
   .prose td:first-child{padding-left:20px}
   .prose td:last-child{padding-right:20px}
   /* First column stays put while the rest of the table scrolls sideways, so readers always see what each row is.
-     Narrower than the 243px data cells so the comparison columns still have room; a 1px divider (box-shadow, since collapsed borders don't travel with sticky cells) marks the edge. */
+     140px so the comparison columns still have room; a 1px divider marks its edge. */
   .prose th:first-child,.prose td:first-child{position:sticky;left:0;z-index:1;width:140px;min-width:140px;max-width:140px;box-shadow:inset -1px 0 0 var(--table-border)}
-  .prose thead th:first-child{z-index:2;background:var(--th-bg)}
+  .prose thead th:first-child{z-index:2;background:var(--th-bg);box-shadow:none}
 }
 
 .index-note{margin:0}
