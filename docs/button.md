@@ -8,29 +8,18 @@ Buttons are styled **black**. That color is a signal: it tells people the click 
 There is a second component, Button-link, for taking people to another page.
 
 ## Button or Button-link?
-Ask one question: **What happens when someone clicks it?**
+Ask one question: **What happens when someone clicks it?** The color is the signal. People learn that black means "do something" and crimson means "go somewhere," so keep that rule across every page.
 
-- **Something gets done and the person doesn't go anywhere.** Use a Button. Buttons are styled **black**.
-- **The person goes somewhere:** another page, another website, or a different spot on this page. Use a Button-link. Button-links are styled **crimson**.
-
-The color is the signal. People learn that black means "do something" and crimson means "go somewhere," so keep that rule across every page.
+| What happens when someone clicks it | Examples | Use |
+| :--- | :--- | :--- |
+| The click submits a form | "Submit application," "Save & continue" | Button (black) |
+| The click changes something on the screen | "Apply filters," "Delete row," "Add to calendar" | Button (black) |
+| The click opens something on the same page | A dialog, a dropdown menu, a file picker | Button (black) |
+| The click starts a process | "Export," "Download image" | Button (black) |
+| The person goes somewhere: another page, another website, or a different spot on this page | "Apply now," "See deadlines," "Visit the Bursar" | Button-link (crimson) |
 
 > [!default] On Dark and Crimson themes
 > Black vs. crimson only applies on light pages. On Dark and Crimson themes, Buttons and Button-links both switch to the theme's colors and can look alike, so the color stops being the signal. There, the words do the work: start with a verb that says what happens ("Save," "Apply filters"), and remember that only Button-links end in a straight arrow.
-
-### Use a Button when
-- The click submits a form, like "Submit application" or "Save & continue"
-- The click changes something on the screen, like "Apply filters," "Delete row," or "Add to calendar"
-- The click opens something on the same page, like a dialog, a dropdown menu, or a file picker
-- The click starts a process, like "Export" or "Download image"
-
-### Do not use a Button when
-- The click takes people to a new page or website. Use a Button-link
-- The link sits inside a sentence. Use a regular text link
-- You just want text to stand out. Use a heading or a callout
-
-> [!default] Rule of thumb
-> If clicking it triggers a process, changes data, or opens a popup, it is a Button. If it takes the person to a new destination or URL, it is a Button-link.
 
 ## Button Styles
 
