@@ -3,23 +3,25 @@
 ## Overview
 Buttons let people take an action on the page they are already on, with a single click. Submitting a form, saving settings, opening a menu, or deleting an item are all jobs for a Button.
 
-Buttons are styled **black**. That color is a signal: it tells people the click will do something right here, not take them somewhere else.
+Buttons never end in an arrow, and on light pages they are styled **black**. Both are signals: they tell people the click will do something right here, not take them somewhere else.
 
 There is a second component, Button-link, for taking people to another page.
 
 ## Button or Button-link?
-Ask one question: **What happens when someone clicks it?** The color is the signal. People learn that black means "do something" and crimson means "go somewhere," so keep that rule across every page.
+Ask one question: **What happens when someone clicks it?** If something happens right here on the page, it is a Button. If the person goes somewhere, it is a Button-link.
 
-| What happens when someone clicks it | Examples | Use |
+Two things tell people which one they are looking at. The **arrow** is the main signal: every Button-link with words ends in an arrow, and a Button never does. **Color** backs it up on light pages: Buttons are black, Button-links are crimson.
+
+| On click | Examples | Use |
 | :--- | :--- | :--- |
-| The click submits a form | "Submit application," "Save & continue" | Button (black) |
-| The click changes something on the screen | "Apply filters," "Delete row," "Add to calendar" | Button (black) |
-| The click opens something on the same page | A dialog, a dropdown menu, a file picker | Button (black) |
-| The click starts a process | "Export," "Download image" | Button (black) |
-| The person goes somewhere: another page, another website, or a different spot on this page | "Apply now," "See deadlines," "Visit the Bursar" | Button-link (crimson) |
+| Submits a form | "Submit application," "Save & continue" | Button (black, no arrow) |
+| Changes something on the screen | "Apply filters," "Delete row," "Add to calendar" | Button (black, no arrow) |
+| Opens something on the same page | A dialog, a dropdown menu, a file picker | Button (black, no arrow) |
+| Starts a process | "Export," "Download image" | Button (black, no arrow) |
+| Takes the person somewhere: another page, another website, or a different spot on this page | "Apply now," "See deadlines," "Visit the Bursar" | Button-link (crimson, with arrow) |
 
 > [!default] On Dark and Crimson themes
-> Black vs. crimson only applies on light pages. On Dark and Crimson themes, Buttons and Button-links both switch to the theme's colors and can look alike, so the color stops being the signal. There, the words do the work: start with a verb that says what happens ("Save," "Apply filters"), and remember that only Button-links end in a straight arrow.
+> Color only helps on light pages. On Dark and Crimson themes, Buttons and Button-links both switch to the theme's colors and can look alike. The arrow still works everywhere, which is why it matters more: no arrow means "do something," an arrow means "go somewhere." Keep Button labels clear too: start with a verb that says what happens ("Save," "Apply filters").
 
 ## Button Styles
 

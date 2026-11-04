@@ -3,23 +3,25 @@
 ## Overview
 A Button-link looks like a button but works like a web link: clicking it takes people to a different page, a different part of the website, or another site. "Read more," "Go to your dashboard," and "Apply now" are all jobs for a Button-link.
 
-Button-links are styled **crimson**. That color is a signal: it tells people the click will take them somewhere else, not change anything on this page.
+Button-links with words always end in an arrow, and on light pages they are styled **crimson**. Both are signals: they tell people the click will take them somewhere else, not change anything on this page.
 
 There is a second component, Button, for doing something or taking an action on the current page.
 
 ## Button-link or Button?
-Ask one question: **What happens when someone clicks it?** The color is the signal. People learn that crimson means "go somewhere" and black means "do something," so keep that rule across every page.
+Ask one question: **What happens when someone clicks it?** If the person goes somewhere, it is a Button-link. If something happens right here on the page, it is a Button.
 
-| What happens when someone clicks it | Examples | Use |
+Two things tell people which one they are looking at. The **arrow** is the main signal: every Button-link with words ends in an arrow, and a Button never does. **Color** backs it up on light pages: Button-links are crimson, Buttons are black.
+
+| On click | Examples | Use |
 | :--- | :--- | :--- |
-| The click opens another page on your site | "Apply now" going to the application page | Button-link (crimson) |
-| The click jumps to a different spot on the same page | "See deadlines" scrolling down to the deadlines section | Button-link (crimson) |
-| The click opens a different website | "Visit the Bursar" going to another IU site | Button-link (crimson) |
-| You want a key next step to stand out more than a plain text link would | "Go to your dashboard" | Button-link (crimson) |
-| Something gets done and the person doesn't go anywhere: submit, save, delete, filter, or open a menu or popup | "Submit application," "Apply filters," "Delete row" | Button (black) |
+| Opens another page on your site | "Apply now" going to the application page | Button-link (crimson, with arrow) |
+| Jumps to a different spot on the same page | "See deadlines" scrolling down to the deadlines section | Button-link (crimson, with arrow) |
+| Opens a different website | "Visit the Bursar" going to another IU site | Button-link (crimson, with arrow) |
+| Makes a key next step stand out more than a plain text link would | "Go to your dashboard" | Button-link (crimson, with arrow) |
+| Does something right here: submits, saves, deletes, filters, or opens a menu or popup | "Submit application," "Apply filters," "Delete row" | Button (black, no arrow) |
 
 > [!default] On Dark and Crimson themes
-> Black vs. crimson only applies on light pages. On Dark and Crimson themes, Buttons and Button-links both switch to the theme's colors and can look alike, so the color stops being the signal. There, the arrow and the words tell people the click goes somewhere. That's one more reason every Button-link with words keeps its arrow.
+> Color only helps on light pages. On Dark and Crimson themes, Buttons and Button-links both switch to the theme's colors and can look alike. The arrow still works everywhere, which is why it matters more: an arrow means "go somewhere," no arrow means "do something." That is also why every Button-link with words keeps its arrow.
 
 ## Link Types
 A Button-link with words ends in an arrow. The arrow is not decoration. It tells people what kind of trip they are about to take, so use the right one.
