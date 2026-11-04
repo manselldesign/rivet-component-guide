@@ -563,7 +563,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-tabs__tab:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0;position:relative;z-index:1}
 @media (max-width:767px){.rvt-tabs__tab{height:var(--rvt-component-tabs-segmented-height-sm);font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);}.rvt-tabs__tab[aria-selected="true"],.rvt-tabs__tab::after{font:var(--rvt-font-action-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);}}
 
-/* ---------- rvt-tabs, Type=Container (Tabs page, Developer spec checklist) ----------
+/* ---------- rvt-tabs, Type=Contained (Tabs page, Developer spec checklist) ----------
    Tab row: tabs share the width equally; one shared 1px border/default rule between tabs (the second tab on drops its touching border).
    Tab: component/tabs/container-height-lg (48px), spacing/32 sides, action/lg/regular text/strong, label centered.
    Selected: background/brand fill inside the border, action/lg/strong component/tabs/selected-text. Hover (unselected): background/tint fill, label unchanged.
@@ -572,8 +572,8 @@ body:not(.has-rail) .site-header__menu{display:none}
    Panel heading heading/lg/strong text/strong, body body/base/regular text/default, list body/sm/regular, spacing/24 between them.
    Below 768px: tabs stack full width (container-height-sm, 40px; action/sm), the component gets spacing/24 sides, panel padding spacing/32 (24px).
    Width: every Roboto Flex style here is font/width/semi-expanded (110%), set AFTER each font shorthand; the heading adds the heading axes. */
-.rvt-tabs--container{display:flex;flex-direction:column;width:100%}
-.rvt-tabs--container .rvt-tabs__list{display:flex;margin:0;padding:0}
+.rvt-tabs--contained{display:flex;flex-direction:column;width:100%}
+.rvt-tabs--contained .rvt-tabs__list{display:flex;margin:0;padding:0}
 .rvt-tabs__item{flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;height:var(--rvt-component-tabs-container-height-lg);padding:0 var(--rvt-spacing-32);margin:0;
   border:1px solid var(--rvt-border-default);border-radius:0;background:transparent;color:var(--rvt-text-strong);
   font:var(--rvt-font-action-lg-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);white-space:nowrap;text-align:center;
@@ -597,8 +597,8 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-tabs__list-items ul li{padding-left:calc(var(--rvt-spacing-40) + 6px + var(--rvt-spacing-8))}
 .rvt-tabs__list-items ul li::before{left:var(--rvt-spacing-40);background:transparent;box-shadow:inset 0 0 0 1px var(--rvt-icon-brand)}
 @media (max-width:767px){
-  .rvt-tabs--container{padding:0 var(--rvt-spacing-24)}
-  .rvt-tabs--container .rvt-tabs__list{flex-direction:column}
+  .rvt-tabs--contained{padding:0 var(--rvt-spacing-24)}
+  .rvt-tabs--contained .rvt-tabs__list{flex-direction:column}
   .rvt-tabs__item{flex:none;width:100%;height:var(--rvt-component-tabs-container-height-sm);font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
   .rvt-tabs__item+.rvt-tabs__item{border-left:1px solid var(--rvt-border-default);border-top:0}
   .rvt-tabs__item[aria-selected="true"]{font:var(--rvt-font-action-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
@@ -1193,7 +1193,7 @@ body:not(.has-rail) .site-header__menu{display:none}
     {tag: 'Icon', label: 'Add to schedule', lead: 'plus', iconOnly: true},
     {tag: 'Disabled', label: 'Save & continue', disabled: true}
   ];
-  /* rvt-tabs example content. Container: four admissions paths, the first selected (readers start with the tab most of them need); International shows the optional list.
+  /* rvt-tabs example content. Contained: four admissions paths, the first selected (readers start with the tab most of them need); International shows the optional list.
      Segmented: an events filter. */
   const TABS_CONTAINER = [
     {id: 'first-year', label: 'First-year', selected: true, title: 'Apply as a first-year student',
@@ -1364,12 +1364,12 @@ body:not(.has-rail) .site-header__menu{display:none}
       ]},
       html: (size, style) => `<ul class="rvt-button-row">${BUTTON_ROW.map(b => `<li class="rvt-button-item">${buttonEl(style || 'strong', size, b)}<span class="rvt-button-item__label" aria-hidden="true">${esc(b.tag)}</span></li>`).join('')}</ul>`
     },
-    /* rvt-tabs: Type is the variant (Container, Segmented), each capped at its own Breakpoint=Desktop frame width. */
+    /* rvt-tabs: Type is the variant (Contained, Segmented), each capped at its own Breakpoint=Desktop frame width. */
     tabs: {
-      maxWidth: 1024, // Figma rvt-tabs, Breakpoint=Desktop, Type=Container frame width
+      maxWidth: 1024, // Figma rvt-tabs, Breakpoint=Desktop, Type=Contained frame width
       variantLabel: 'Select type', // the dropdown picks the Type
       variants: [
-        {id: 'container', label: 'Container'},
+        {id: 'contained', label: 'Contained'},
         {id: 'segmented', label: 'Segmented', maxWidth: 375} // Figma rvt-tabs, Breakpoint=Desktop, Type=Segmented frame width
       ],
       html: type => type === 'segmented'
@@ -1378,7 +1378,7 @@ body:not(.has-rail) .site-header__menu{display:none}
               `<button class="rvt-tabs__tab" type="button" role="tab" id="seg-tab-${t.id}" data-label="${esc(t.label)}" aria-selected="${i === 0}" aria-controls="seg-panel-${t.id}" tabindex="${i === 0 ? 0 : -1}">${esc(t.label)}</button>`).join('')}</div>
             ${TABS_SEGMENTED.map((t, i) => `<div class="rvt-tabs__seg-panel" role="tabpanel" id="seg-panel-${t.id}" aria-labelledby="seg-tab-${t.id}" tabindex="0"${i === 0 ? '' : ' hidden'}><p>${esc(t.body)}</p></div>`).join('')}
           </div>`
-        : `<div class="rvt-tabs rvt-tabs--container" data-rvt-tabs>
+        : `<div class="rvt-tabs rvt-tabs--contained" data-rvt-tabs>
             <div class="rvt-tabs__list" role="tablist" aria-label="How to apply">${TABS_CONTAINER.map(t =>
               `<button class="rvt-tabs__item" type="button" role="tab" id="tab-${t.id}" aria-selected="${!!t.selected}" aria-controls="tab-panel-${t.id}" tabindex="${t.selected ? 0 : -1}">${esc(t.label)}</button>`).join('')}</div>
             ${TABS_CONTAINER.map(t => `<div class="rvt-tabs__panel" role="tabpanel" id="tab-panel-${t.id}" aria-labelledby="tab-${t.id}" tabindex="0"${t.selected ? '' : ' hidden'}>

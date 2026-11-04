@@ -15,24 +15,24 @@ A row of labels that switches between related sets of content in the same spot. 
 - Don't use it for content everyone must read, like an application deadline
 - Don't use it for more than about five groups. Use an accordion instead
 
-## Container or Segmented?
-Ask one question: **Is each tab a full section of content, or a quick switch for one view?** If each tab opens its own section, use Container. If the tabs change what one list or view shows, use Segmented.
+## Contained or Segmented?
+Ask one question: **Is each tab a full section of content, or a quick switch for one view?** If each tab opens its own section, use Contained. If the tabs change what one list or view shows, use Segmented.
 
 | Behind the tabs | Examples | Use |
 | :--- | :--- | :--- |
-| A full section with a heading, text and sometimes a list | Admission requirements for First-year, Transfer, Graduate and International students | Container |
-| Parallel groups of the same information | Tuition for in-state and out-of-state students | Container |
-| Content long enough that showing it all would bury the page | Course plans for each year of a degree | Container |
+| A full section with a heading, text and sometimes a list | Admission requirements for First-year, Transfer, Graduate and International students | Contained |
+| Parallel groups of the same information | Tuition for in-state and out-of-state students | Contained |
+| Content long enough that showing it all would bury the page | Course plans for each year of a degree | Contained |
 | A filter on one list | Events for Today, This week and This month | Segmented |
 | A different view of the same content | A class schedule by Day or by Week | Segmented |
 | A small switch beside other controls, like a search box or sort menu | Showing news from All schools or My school | Segmented |
 
 ## Types
-- **Container:** Use it when each tab opens a full panel of content, like a heading, text and a list. Tabs share the full width and stack on phones
+- **Contained:** Use it when each tab opens a full panel of content, like a heading, text and a list. Tabs share the full width and stack on phones
 - **Segmented:** Use it as a compact switch above content that changes, like filtering an event listing by Today, This week and This month. Tabs hug their labels and stay in one row
 
 ## Optional parts
-- **List:** Add a list to a Container panel only when it has items worth listing, like required documents
+- **List:** Add a list to the panel of Contained tabs only when it has items worth listing, like required documents
 
 ## Writing tips
 - Keep labels to one or two words, like "Overview" or "Costs"
@@ -48,7 +48,7 @@ Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab
 
 ### Tab item
 
-| Element | Container | Segmented |
+| Element | Contained | Segmented |
 | --- | --- | --- |
 | Label padding | `spacing/32` left and right (32px Desktop, 24px Mobile) | `spacing/16` left and right (16px) |
 | Label, Large | `action/lg/regular` (16 / 24px), `text/strong` | Same |
@@ -66,10 +66,10 @@ Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Container tab row | Horizontal, tabs share the width equally, 1px gap | Tabs stack vertically, full width, 1px gap |
-| Container panel padding | `spacing/48` all sides (48px) | `spacing/32` all sides (24px) |
-| Container panel border | 1px `border/default` left, right and bottom; none on top | Same |
-| Container side padding | None | `spacing/24` left and right (24px) |
+| Contained tab row | Horizontal, tabs share the width equally, 1px gap | Tabs stack vertically, full width, 1px gap |
+| Contained panel padding | `spacing/48` all sides (48px) | `spacing/32` all sides (24px) |
+| Contained panel border | 1px `border/default` left, right and bottom; none on top | Same |
+| Contained side padding | None | `spacing/24` left and right (24px) |
 | Panel heading | `heading/lg/strong` (23 / 28px), `text/strong` | `heading/lg/strong` (20 / 24px) |
 | Panel body | `body/base/regular` (18 / 28px), `text/default` | `body/base/regular` (16 / 24px) |
 | Panel gap, heading to body to list | `spacing/24` (24px) | `spacing/24` (24px) |
