@@ -84,7 +84,7 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Container padding | `spacing/4` (4px) top and bottom, `spacing/8` (8px) left and right | `spacing/4` (4px) all sides |
+| Container padding | `spacing/4` (4px) all sides, so the space left of the icon matches the space above and below it | Same |
 | Gap | `spacing/8` (8px) icon to text. Icon and text top-aligned | Same |
 | Background | `background/{status}-subtle` | Same |
 | Border | 1px `border/{status}`, drawn inside the box (`box-sizing: border-box`), so it doesn't add to the width | Same |
