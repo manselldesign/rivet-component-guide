@@ -711,10 +711,11 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-alert__btn--secondary{background:transparent;color:var(--rvt-component-button-form-text)}
 .rvt-alert__btn--secondary:hover{border-color:var(--rvt-component-button-form-border-hover);color:var(--rvt-component-button-form-text-hover)}
 .rvt-alert__btn:focus-visible,.rvt-alert__close:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
-/* Close: 16px from the top and right outer edges (no token), icon/strong. The ::before widens the click target without moving the icon. */
+/* Close: 16px from the top and right outer edges (no token), icon/strong; hover component/button/form-text-hover, same as buttons. The ::before widens the click target without moving the icon. */
 .rvt-alert__close{position:absolute;top:16px;right:16px;display:block;width:16px;height:16px;margin:0;padding:0;border:0;border-radius:0;background:transparent;color:var(--rvt-icon-strong);cursor:pointer;-webkit-appearance:none;appearance:none}
 .rvt-alert__close::before{content:"";position:absolute;inset:-8px}
 .rvt-alert__close svg{display:block;width:100%;height:100%;fill:currentColor}
+.rvt-alert__close:hover{color:var(--rvt-component-button-form-text-hover)}
 /* Inline */
 .rvt-alert--inline{flex-direction:row;align-items:flex-start;gap:var(--rvt-spacing-8);padding:var(--rvt-spacing-4)}
 .rvt-alert__slot{flex:none;display:flex;align-items:center;justify-content:center;width:24px;height:24px}

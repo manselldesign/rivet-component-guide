@@ -69,4 +69,4 @@ Shared rules: The status message is an `rvt-alert` (Type Inline, Breakpoint Desk
 | Border | 1px `border/info` | 1px `border/success` | 1px `border/warning` | 1px `border/danger` |
 | Icon badge | `background/info-strong` | `background/success-strong`, `border/success-fixed` outline | `background/warning-strong` | `background/danger-strong` |
 | Icon glyph | `color/base/ultra-light` | `color/base/ultra-light` | `color/base/main` | `color/base/ultra-light` |
-| Close button | 12px, `icon/strong` | 12px, `icon/strong` | None | None |
+| Close button | 12px, `icon/strong`, hover `component/button/form-text-hover` | 12px, `icon/strong`, hover `component/button/form-text-hover` | None | None |

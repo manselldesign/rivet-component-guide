@@ -65,7 +65,7 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 | Description and list indent | 36px left (28px icon + `spacing/8`), flush with the title text | Same |
 | List | `body/sm/regular` (16 / 24px), `text/default`, items `spacing/8` (8px) apart, each item 24px tall, bullet 6px `icon/default` centered in a 24px slot, `spacing/8` (8px) bullet to text, max width 920px | Same |
 | Height with title, description and 3 list items | 212px (276px with buttons) | 244px (364px with buttons, stacked) at 327px wide |
-| Close button | 16px icon, 16px from top and right (no token). On Info and Success only | Same |
+| Close button | 16px icon, `icon/strong`, 16px from top and right (no token). Hover `component/button/form-text-hover`, the same hover color as buttons. On Info and Success only | Same |
 | Title colors | Info `text/info`, Success `text/success`, Warning `text/warning`, Danger `text/danger`, Default `text/brand` | Same |
 
 ### Buttons actions row
@@ -90,4 +90,4 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 | Border | 1px `border/{status}`, drawn inside the box (`box-sizing: border-box`), so it doesn't add to the width | Same |
 | Icon | 24px circle, `background/{status}-strong`, `border-radius/full`, 12px glyph centered, in a 24 × 24px slot. Top-aligned; it stays on the first line when the message wraps | Same |
 | Message | `body/xs/regular` (14 / 20px), `text/default`, 2px top padding so the first line centers on the 24px icon, hugs its text, max width 500px | `body/xs/regular` (14 / 20px), fills the width and wraps. With a close button, max width 280px so the text clears the button |
-| Close button | 12px icon, sits inside the message row, 4px from top and right (no token). On Info and Success only | Same |
+| Close button | 12px icon, `icon/strong`, sits inside the message row, 4px from top and right (no token). Hover `component/button/form-text-hover`, the same hover color as buttons. On Info and Success only | Same |
