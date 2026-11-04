@@ -563,6 +563,54 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-tabs__tab:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0;position:relative;z-index:1}
 @media (max-width:767px){.rvt-tabs__tab{height:var(--rvt-component-tabs-segmented-height-sm);font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);}.rvt-tabs__tab[aria-selected="true"],.rvt-tabs__tab::after{font:var(--rvt-font-action-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);}}
 
+/* ---------- rvt-tabs, Type=Container (Tabs page, Developer spec checklist) ----------
+   Tab row: tabs share the width equally; one shared 1px border/default rule between tabs (the second tab on drops its touching border).
+   Tab: component/tabs/container-height-lg (48px), spacing/32 sides, action/lg/regular text/strong, label centered.
+   Selected: background/brand fill inside the border, action/lg/strong component/tabs/selected-text. Hover (unselected): background/tint fill, label unchanged.
+   Focus: 2px border/accent-strong outline outside the tab, no offset.
+   Panel: spacing/48 padding, 1px border/default left, right and bottom drawn inside (inset shadow), so it doesn't add to the size.
+   Panel heading heading/lg/strong text/strong, body body/base/regular text/default, list body/sm/regular, spacing/24 between them.
+   Below 768px: tabs stack full width (container-height-sm, 40px; action/sm), the component gets spacing/24 sides, panel padding spacing/32 (24px).
+   Width: every Roboto Flex style here is font/width/semi-expanded (110%), set AFTER each font shorthand; the heading adds the heading axes. */
+.rvt-tabs--container{display:flex;flex-direction:column;width:100%}
+.rvt-tabs--container .rvt-tabs__list{display:flex;margin:0;padding:0}
+.rvt-tabs__item{flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;height:var(--rvt-component-tabs-container-height-lg);padding:0 var(--rvt-spacing-32);margin:0;
+  border:1px solid var(--rvt-border-default);border-radius:0;background:transparent;color:var(--rvt-text-strong);
+  font:var(--rvt-font-action-lg-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);white-space:nowrap;text-align:center;
+  cursor:pointer;-webkit-appearance:none;appearance:none;transition:background-color .15s ease-out,color .15s ease-out}
+.rvt-tabs__item+.rvt-tabs__item{border-left:0}
+.rvt-tabs__item:not([aria-selected="true"]):hover{background:var(--rvt-background-tint)}
+.rvt-tabs__item[aria-selected="true"]{background:var(--rvt-background-brand);color:var(--rvt-component-tabs-selected-text);font:var(--rvt-font-action-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-tabs__item:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0;position:relative;z-index:1}
+.rvt-tabs__panel{display:flex;flex-direction:column;gap:var(--rvt-spacing-24);padding:var(--rvt-spacing-48);
+  box-shadow:inset 1px 0 0 var(--rvt-border-default),inset -1px 0 0 var(--rvt-border-default),inset 0 -1px 0 var(--rvt-border-default)}
+.rvt-tabs__panel[hidden]{display:none}
+.rvt-tabs__panel:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
+.rvt-tabs__title{margin:0;color:var(--rvt-text-strong);font:var(--rvt-font-heading-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-tabs__body{margin:0;color:var(--rvt-text-default);font:var(--rvt-font-body-base-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+/* rvt-list, Unordered: 6px square icon/brand bullet at spacing/24, spacing/8 to the text; nested items at spacing/40 with a 1px outline bullet; spacing/24 between items. */
+.rvt-tabs__list-items,.rvt-tabs__list-items ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--rvt-spacing-24)}
+.rvt-tabs__list-items li{position:relative;padding-left:calc(var(--rvt-spacing-24) + 6px + var(--rvt-spacing-8));color:var(--rvt-text-default);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-tabs__list-items li::before{content:"";position:absolute;left:var(--rvt-spacing-24);top:9px;width:6px;height:6px;background:var(--rvt-icon-brand)}
+.rvt-tabs__list-items ul{margin:var(--rvt-spacing-24) 0 0 calc(-1 * (var(--rvt-spacing-24) + 6px + var(--rvt-spacing-8)))}
+.rvt-tabs__list-items ul li{padding-left:calc(var(--rvt-spacing-40) + 6px + var(--rvt-spacing-8))}
+.rvt-tabs__list-items ul li::before{left:var(--rvt-spacing-40);background:transparent;box-shadow:inset 0 0 0 1px var(--rvt-icon-brand)}
+@media (max-width:767px){
+  .rvt-tabs--container{padding:0 var(--rvt-spacing-24)}
+  .rvt-tabs--container .rvt-tabs__list{flex-direction:column}
+  .rvt-tabs__item{flex:none;width:100%;height:var(--rvt-component-tabs-container-height-sm);font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+  .rvt-tabs__item+.rvt-tabs__item{border-left:1px solid var(--rvt-border-default);border-top:0}
+  .rvt-tabs__item[aria-selected="true"]{font:var(--rvt-font-action-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+  .rvt-tabs__panel{padding:var(--rvt-spacing-32)}
+}
+/* rvt-tabs, Type=Segmented example: the same Segmented group as the theme switcher, with its panel spacing/16 below. */
+.rvt-tabs__seg-panel{margin-top:var(--rvt-spacing-16);color:var(--rvt-text-default);font:var(--rvt-font-body-base-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-tabs__seg-panel[hidden]{display:none}
+.rvt-tabs__seg-panel:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+.rvt-tabs__seg-panel p{margin:0}
+@media (prefers-reduced-motion:reduce){.rvt-tabs__item{transition:none}}
+
 /* ---------- rvt-accordion (Accordion page, Developer spec checklist) ----------
    Item: 1px border/default all sides, one shared 1px rule between items. Whole item fills background/tint on hover, open or closed.
    Trigger: spacing/24 all sides, spacing/16 gap, title action/xl/strong text/strong; icon 16px icon/strong, spacing/4 down to sit on the first line.
@@ -1145,6 +1193,46 @@ body:not(.has-rail) .site-header__menu{display:none}
     {tag: 'Icon', label: 'Add to schedule', lead: 'plus', iconOnly: true},
     {tag: 'Disabled', label: 'Save & continue', disabled: true}
   ];
+  /* rvt-tabs example content. Container: four admissions paths, the first selected (readers start with the tab most of them need); International shows the optional list.
+     Segmented: an events filter. */
+  const TABS_CONTAINER = [
+    {id: 'first-year', label: 'First-year', selected: true, title: 'Apply as a first-year student',
+      body: 'Apply with the Common App by November 1 for early action or by February 1 for regular decision. Send your high school transcript and a short essay; test scores are optional.'},
+    {id: 'transfer', label: 'Transfer', title: 'Transfer from another college',
+      body: 'Apply once you have finished at least 12 credit hours at another school. Send official transcripts from every college you have attended so we can show you which credits carry over.'},
+    {id: 'graduate', label: 'Graduate', title: 'Apply to a graduate program',
+      body: 'Each graduate program sets its own deadlines and requirements, so start on your program’s page. Most programs ask for a statement of purpose, transcripts and two or three letters of recommendation.'},
+    {id: 'international', label: 'International', title: 'Apply from outside the United States',
+      body: 'International students follow the same deadlines as everyone else and send a few extra documents with their application.',
+      list: [{t: 'Academic records, translated into English'}, {t: 'Proof of English proficiency', sub: ['TOEFL or IELTS score', 'Duolingo English Test score']}, {t: 'Proof that you can cover your costs for the first year'}]}
+  ];
+  const TABS_SEGMENTED = [
+    {id: 'today', label: 'Today', body: 'Campus tour at 10 a.m. and an admissions info session at 2 p.m., both starting at the Welcome Center.'},
+    {id: 'week', label: 'This week', body: 'Five campus tours, two info sessions and a financial aid workshop on Thursday evening.'},
+    {id: 'month', label: 'This month', body: 'Daily campus tours, weekly info sessions and the Fall Open House on the last Saturday of the month.'}
+  ];
+  const tabsList = items => `<ul class="rvt-tabs__list-items">${items.map(it => `<li>${esc(it.t)}${it.sub ? `<ul>${it.sub.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ul>`;
+  /* Shared tab behaviour for both types: click selects; Left/Right (and Up/Down when stacked) move focus, Home/End jump, Enter/Space select;
+     Tab moves into the selected panel. One tab is always selected. */
+  const wireTabs = stage => stage.querySelectorAll('[data-rvt-tabs]').forEach(root => {
+    const tabs = [...root.querySelectorAll('[role="tab"]')];
+    const select = tab => tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    tabs.forEach(t => t.addEventListener('click', () => select(t)));
+    root.querySelector('[role="tablist"]').addEventListener('keydown', e => {
+      const i = tabs.indexOf(document.activeElement);
+      if (i < 0) return;
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(tabs[i]); return; }
+      const next = {ArrowRight: i + 1, ArrowDown: i + 1, ArrowLeft: i - 1, ArrowUp: i - 1, Home: 0, End: tabs.length - 1}[e.key];
+      if (next === undefined) return;
+      e.preventDefault();
+      tabs[(next + tabs.length) % tabs.length].focus();
+    });
+  });
   const demos = {
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
@@ -1275,6 +1363,30 @@ body:not(.has-rail) .site-header__menu{display:none}
         {id: 'subtle', label: 'Subtle'}
       ]},
       html: (size, style) => `<ul class="rvt-button-row">${BUTTON_ROW.map(b => `<li class="rvt-button-item">${buttonEl(style || 'strong', size, b)}<span class="rvt-button-item__label" aria-hidden="true">${esc(b.tag)}</span></li>`).join('')}</ul>`
+    },
+    /* rvt-tabs: Type is the variant (Container, Segmented), each capped at its own Breakpoint=Desktop frame width. */
+    tabs: {
+      maxWidth: 1024, // Figma rvt-tabs, Breakpoint=Desktop, Type=Container frame width
+      variantLabel: 'Select type', // the dropdown picks the Type
+      variants: [
+        {id: 'container', label: 'Container'},
+        {id: 'segmented', label: 'Segmented', maxWidth: 375} // Figma rvt-tabs, Breakpoint=Desktop, Type=Segmented frame width
+      ],
+      html: type => type === 'segmented'
+        ? `<div class="rvt-tabs rvt-tabs--seg-example" data-rvt-tabs>
+            <div class="rvt-tabs--segmented" role="tablist" aria-label="Admissions events">${TABS_SEGMENTED.map((t, i) =>
+              `<button class="rvt-tabs__tab" type="button" role="tab" id="seg-tab-${t.id}" data-label="${esc(t.label)}" aria-selected="${i === 0}" aria-controls="seg-panel-${t.id}" tabindex="${i === 0 ? 0 : -1}">${esc(t.label)}</button>`).join('')}</div>
+            ${TABS_SEGMENTED.map((t, i) => `<div class="rvt-tabs__seg-panel" role="tabpanel" id="seg-panel-${t.id}" aria-labelledby="seg-tab-${t.id}" tabindex="0"${i === 0 ? '' : ' hidden'}><p>${esc(t.body)}</p></div>`).join('')}
+          </div>`
+        : `<div class="rvt-tabs rvt-tabs--container" data-rvt-tabs>
+            <div class="rvt-tabs__list" role="tablist" aria-label="How to apply">${TABS_CONTAINER.map(t =>
+              `<button class="rvt-tabs__item" type="button" role="tab" id="tab-${t.id}" aria-selected="${!!t.selected}" aria-controls="tab-panel-${t.id}" tabindex="${t.selected ? 0 : -1}">${esc(t.label)}</button>`).join('')}</div>
+            ${TABS_CONTAINER.map(t => `<div class="rvt-tabs__panel" role="tabpanel" id="tab-panel-${t.id}" aria-labelledby="tab-${t.id}" tabindex="0"${t.selected ? '' : ' hidden'}>
+              <h3 class="rvt-tabs__title">${esc(t.title)}</h3>
+              <p class="rvt-tabs__body">${esc(t.body)}</p>${t.list ? tabsList(t.list) : ''}
+            </div>`).join('')}
+          </div>`,
+      wire: wireTabs
     }
   };
   const demoSection = c => {
