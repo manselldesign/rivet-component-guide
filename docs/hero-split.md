@@ -40,7 +40,7 @@ A split hero is the large banner at the top of a page, with the headline and int
 
 ## Developer spec checklist
 
-Shared rules: Background `background/default`. Desktop is 1600 × 900px. Primary button is `rvt-button-link` (Style Strong, Size Extra-large); secondary is Style Normal with a `border/accent` border. Buttons put the Strong button first on Desktop (left) and Mobile (top), the marketing exception to the Button order rule. Mobile stacks everything in one column; buttons stack, size to their labels and line up on the left. The list hub is `rvt-list-hub` (Layout Single List Hub, Size Compact).
+Shared rules: Background `background/default`. Desktop is 1600 × 900px. Primary button is `rvt-link` (Style Strong, Size Extra-large); secondary is Style Normal with a `border/accent` border. Buttons put the Strong button first on Desktop (left) and Mobile (top), the marketing exception to the Button order rule. Mobile stacks everything in one column; buttons stack, size to their labels and line up on the left. The list hub is `rvt-list-hub` (Layout Single List Hub, Size Compact).
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

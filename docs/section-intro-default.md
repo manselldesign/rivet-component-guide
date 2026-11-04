@@ -43,7 +43,7 @@ A heading block that opens a section of a page, with an optional tag, short intr
 
 ## Developer spec checklist
 
-Shared rules: the section uses a `background/default` fill. On Mobile, everything stacks and the button sits below the text. Cards use `rvt-card-feature`, `rvt-card-event` and `rvt-card-news`. Images use `rvt-media-hub`. The button is `rvt-button-link`, sized to its label on Desktop and Mobile.
+Shared rules: the section uses a `background/default` fill. On Mobile, everything stacks and the button sits below the text. Cards use `rvt-card-feature`, `rvt-card-event` and `rvt-card-news`. Images use `rvt-media-hub`. The button is `rvt-link`, sized to its label on Desktop and Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

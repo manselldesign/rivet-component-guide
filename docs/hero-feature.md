@@ -41,7 +41,7 @@ A feature hero is the large banner at the top of a page, with a wide headline an
 
 ## Developer spec checklist
 
-Shared rules: background `background/default`. Primary button is `rvt-button-link` (Style Strong, Size Extra-large); secondary is Style Normal with a `border/accent` border. The Strong button comes first. Photos keep their shape at any width: 2:1 on Desktop, 3:2 on Mobile. Mobile stacks everything in one column; buttons stack, size to their labels and line up on the left. The list hub is `rvt-list-hub` (Layout Single List Hub, Size Compact, Breakpoint matching the hero).
+Shared rules: background `background/default`. Primary button is `rvt-link` (Style Strong, Size Extra-large); secondary is Style Normal with a `border/accent` border. The Strong button comes first. Photos keep their shape at any width: 2:1 on Desktop, 3:2 on Mobile. Mobile stacks everything in one column; buttons stack, size to their labels and line up on the left. The list hub is `rvt-list-hub` (Layout Single List Hub, Size Compact, Breakpoint matching the hero).
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

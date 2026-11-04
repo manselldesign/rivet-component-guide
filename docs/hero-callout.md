@@ -45,7 +45,7 @@ The callout hero is the default hero, the banner at the top of most pages. It sh
 
 ## Developer spec checklist
 
-Shared rules: Background `background/default`, with a 1px `border/default` line along the bottom of the content. Side by side is 1600px wide, Stacked 1200px, Mobile 375px. Primary button is `rvt-button-link` (Style Strong) with `background/brand`; secondary has a 1px `border/accent` border. The card is `rvt-card`, Compact size, Raised style (`background/raised`, `shadow/sm`); see Card for its full spec. Headline max width 920px; body max width 800px.
+Shared rules: Background `background/default`, with a 1px `border/default` line along the bottom of the content. Side by side is 1600px wide, Stacked 1200px, Mobile 375px. Primary button is `rvt-link` (Style Strong) with `background/brand`; secondary has a 1px `border/accent` border. The card is `rvt-card`, Compact size, Raised style (`background/raised`, `shadow/sm`); see Card for its full spec. Headline max width 920px; body max width 800px.
 
 | Element | Side by side | Stacked | Mobile |
 | --- | --- | --- | --- |

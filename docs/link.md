@@ -1,36 +1,36 @@
-# Button-link
+# Link
 
 ## Overview
-A Button-link looks like a button but works like a web link: clicking it takes people to a different page, a different part of the website, or another site. "Read more," "Go to your dashboard," and "Apply now" are all jobs for a Button-link.
+A Link looks like a button but works like a web link: clicking it takes people to a different page, a different part of the website, or another site. "Read more," "Go to your dashboard," and "Apply now" are all jobs for a Link.
 
-Button-links with words always end in an arrow, and on light pages they are styled **crimson**. Both are signals: they tell people the click will take them somewhere else, not change anything on this page.
+Links with words always end in an arrow, and on light pages they are styled **crimson**. Both are signals: they tell people the click will take them somewhere else, not change anything on this page.
 
 There is a second component, Button, for doing something or taking an action on the current page.
 
-## Button-link or Button?
-Ask one question: **What happens when someone clicks it?** If the person goes somewhere, it is a Button-link. If something happens right here on the page, it is a Button.
+## Link or Button?
+Ask one question: **What happens when someone clicks it?** If the person goes somewhere, it is a Link. If something happens right here on the page, it is a Button.
 
-Two things tell people which one they are looking at. The **arrow** is the main signal: every Button-link with words ends in an arrow, and a Button never does. **Color** backs it up on light pages: Button-links are crimson, Buttons are black.
+Two things tell people which one they are looking at. The **arrow** is the main signal: every Link with words ends in an arrow, and a Button never does. **Color** backs it up on light pages: Links are crimson, Buttons are black.
 
 | On click | Examples | Use |
 | :--- | :--- | :--- |
-| Opens another page on your site | "Apply now" going to the application page | Button-link (crimson, with arrow) |
-| Jumps to a different spot on the same page | "See deadlines" scrolling down to the deadlines section | Button-link (crimson, with arrow) |
-| Opens a different website | "Visit the Bursar" going to another IU site | Button-link (crimson, with arrow) |
-| Makes a key next step stand out more than a plain text link would | "Go to your dashboard" | Button-link (crimson, with arrow) |
+| Opens another page on your site | "Apply now" going to the application page | Link (crimson, with arrow) |
+| Jumps to a different spot on the same page | "See deadlines" scrolling down to the deadlines section | Link (crimson, with arrow) |
+| Opens a different website | "Visit the Bursar" going to another IU site | Link (crimson, with arrow) |
+| Makes a key next step stand out more than a plain text link would | "Go to your dashboard" | Link (crimson, with arrow) |
 | Does something right here: submits, saves, deletes, filters, or opens a menu or popup | "Submit application," "Apply filters," "Delete row" | Button (black, no arrow) |
 
 > [!default] On Dark and Crimson themes
-> Color only helps on light pages. On Dark and Crimson themes, Buttons and Button-links both switch to the theme's colors and can look alike. The arrow still works everywhere, which is why it matters more: an arrow means "go somewhere," no arrow means "do something." That is also why every Button-link with words keeps its arrow.
+> Color only helps on light pages. On Dark and Crimson themes, Buttons and Links both switch to the theme's colors and can look alike. The arrow still works everywhere, which is why it matters more: an arrow means "go somewhere," no arrow means "do something." That is also why every Link with words keeps its arrow.
 
 ## Link Types
-A Button-link with words ends in an arrow. The arrow is not decoration. It tells people what kind of trip they are about to take, so use the right one.
+A Link with words ends in an arrow. The arrow is not decoration. It tells people what kind of trip they are about to take, so use the right one.
 
 * **Internal ({{icon:arrow-right}}):** The click opens another page on your own site. This is the most common type. *Example:* "Apply now," "View all events."
 * **In-page ({{icon:arrow-down}}):** The click scrolls down to a section further along on the same page. *Example:* "See the schedule," "Jump to FAQs."
 * **External ({{icon:arrow-up-right}}):** The click opens a different website, which may open in a new tab. *Example:* "Register on Eventbrite," "Read the IU Today story."
 
-## Button-link Styles
+## Link Styles
 
 * **Strong:** Used for the primary or highest-priority destination on a screen. Use these sparingly (ideally one main strong button per section) so the user instantly knows the most important next step.
 * **Normal:** Used for standard, secondary, or alternative destinations. Often paired next to a strong button (like "View all programs" next to "Apply now"), but they can also stand on their own.
@@ -39,7 +39,7 @@ A Button-link with words ends in an arrow. The arrow is not decoration. It tells
 
 ## Icon only
 * **What it is:** A square button with just the arrow and no words, in the crimson link colors. Use the same arrow you'd use with words (Internal, In-page, or External) so the link type is still clear.
-* **Only arrows:** Don't swap in other icons. A different icon breaks the "arrow means go somewhere" signal. For a file like a PDF, use a Button-link with words, like "Download the guide."
+* **Only arrows:** Don't swap in other icons. A different icon breaks the "arrow means go somewhere" signal. For a file like a PDF, use a Link with words, like "Download the guide."
 * **When to use:** Only in tight spots where the destination is already obvious from the words next to it, like the end of a table row or the bottom of a card.
 * **When not to use:** If the arrow on its own doesn't make the destination clear, use words.
 * **Rule:** Every icon-only button needs a hidden text label so people using screen readers know where it goes (for example, "View program details").
@@ -49,7 +49,7 @@ A Button-link with words ends in an arrow. The arrow is not decoration. It tells
 * **When to use:** Only to link to IU's official accounts, usually in a footer or a contact card.
 * **Available logos:** Email, Facebook, Instagram, LinkedIn, X, YouTube, Bluesky, and a generic link icon for anything else.
 
-## Button-link Sizes: Which size to use?
+## Link Sizes: Which size to use?
 Consistency is key to a good user experience across all of our digital products. **Large (L)** is our default size for most everyday scenarios, but sizes should adapt based on how dense or spacious the layout is.
 
 An admissions section might use every size:
@@ -77,17 +77,17 @@ An admissions section might use every size:
 
 ## Developer spec checklist
 
-Button-links keep the same height on Desktop and Mobile: every size uses its own fixed `component/button/height-*` token, so nothing shrinks on phones.
+Links keep the same height on Desktop and Mobile: every size uses its own fixed `component/button/height-*` token, so nothing shrinks on phones.
 
-Button-link groups: Desktop places buttons side by side with the Strong button last (right), `spacing/16` gap. Mobile stacks them with the Strong button first (top), `spacing/8` gap; each button hugs its label.
+Link groups: Desktop places buttons side by side with the Strong button last (right), `spacing/16` gap. Mobile stacks them with the Strong button first (top), `spacing/8` gap; each button hugs its label.
 
 Marketing components (heroes, billboards): Strong button first on Desktop and Mobile.
 
 Focus (all styles): 2px `border/accent-strong` ring, 2px outside the button's box, square corners. Subtle buttons keep the same box as Normal buttons (same height and padding, border transparent), so the ring has the same breathing room on every style.
 
-There is no Active (pressed) state on any Button-link.
+There is no Active (pressed) state on any Link.
 
-The arrow is set by the link type, never chosen separately: Internal `rvt-arrow-right`, In-page `rvt-arrow-down`, External `rvt-arrow-up-right`. This applies to Button-links with words and to Icon only. There is no icon option; other icons are not allowed.
+The arrow is set by the link type, never chosen separately: Internal `rvt-arrow-right`, In-page `rvt-arrow-down`, External `rvt-arrow-up-right`. This applies to Links with words and to Icon only. There is no icon option; other icons are not allowed.
 
 Every link type (Internal, In-page, External) comes in every style, size and state (Default, Hover, Disabled, Focus), with words and as Icon only.
 

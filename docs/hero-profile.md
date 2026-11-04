@@ -40,7 +40,7 @@ A profile hero opens a person's page with their photo, name, credentials and job
 
 ## Developer spec checklist
 
-Shared rules: Background `background/default`. Text color `text/brand` for the tag, name and credentials; `text/default` for the job title. Primary button is `rvt-button-link` (Style Strong) with `background/brand`; secondary button has a 1px `border/accent` border. Mobile stacks everything in one column; buttons stack, size to their labels and line up on the left.
+Shared rules: Background `background/default`. Text color `text/brand` for the tag, name and credentials; `text/default` for the job title. Primary button is `rvt-link` (Style Strong) with `background/brand`; secondary button has a 1px `border/accent` border. Mobile stacks everything in one column; buttons stack, size to their labels and line up on the left.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

@@ -40,7 +40,7 @@ A large, centered marketing statement that sums up why a page matters. It gives 
 
 ## Developer spec checklist
 
-Shared rules: everything is centered and stacked, on a `background/default` fill. Title, tag and body text use `text/brand`. The button is `rvt-button-link`, sized to its label. Images use `rvt-media-hub` and sit below the text.
+Shared rules: everything is centered and stacked, on a `background/default` fill. Title, tag and body text use `text/brand`. The button is `rvt-link`, sized to its label. Images use `rvt-media-hub` and sit below the text.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
