@@ -4,14 +4,14 @@
 A contact card shows people how to reach an office, team or department. It puts the name, address, email, phone, website, hours and social links in one place.
 
 ## When to use it
-- Use it on a department or office page so people can find contact details fast
-- Use it on a "Contact us" page to list several offices side by side
-- Use it to give a named contact for a program, like an advisor or coordinator
+- Contact details on an office page
+- Several offices on a “Contact us” page
+- A named contact, like an advisor
 
 ## When not to use it
-- Don't use it for a full staff bio. Use the Profile card instead
-- Don't use it for events or news. Use the Event or News card instead
-- Don't use it to list dozens of people. Use a table or directory instead
+- A full staff bio: use the Profile card
+- Events or news: use the Event or News card
+- Dozens of people: use a table or directory
 
 ## Variants
 

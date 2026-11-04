@@ -4,14 +4,14 @@
 A larger field where readers type answers that run longer than one line, like a comment or a short essay. Readers can drag the corner to make it taller.
 
 ## When to use it
-- Use it for answers of a sentence or more, like "Tell us about your research interests"
-- Use it for open feedback, like comments on an event or a course survey
-- Use it when you can't predict how long the answer will be
+- Answers of a sentence or more
+- Open feedback, like survey comments
+- Answers of unknown length
 
 ## When not to use it
-- Don't use it for short answers, like a name or email. Use a text input instead
-- Don't use it when readers pick from set choices. Use a select input, radio buttons or checkboxes instead
-- Don't use it to collect long formatted documents, like a full personal statement. Use a file input instead
+- Short answers, like a name: use a text input
+- Picking from set choices: use a select input, radios or checkboxes
+- Long formatted documents: use a file input
 
 ## Variants
 

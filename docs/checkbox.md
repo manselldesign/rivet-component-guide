@@ -4,14 +4,14 @@
 A checkbox lets people pick one or more options from a list, like the programs they're interested in or the topics they want emails about. Each box works on its own.
 
 ## When to use it
-- Use it when people can pick any number of options, including none
-- Use it for a single yes-or-no choice, like "Email me event updates"
-- Use it in forms, like a request-for-information or event registration form
+- People can pick any number of options
+- A single yes-or-no choice
+- Forms, like event registration
 
 ## When not to use it
-- Don't use it when people must pick exactly one option. Use radio buttons instead
-- Don't use it for a setting that changes something right away. Use a switch instead
-- Don't use it for a very long list, like every degree program. Use a searchable list instead
+- Exactly one option: use radio buttons
+- Settings that change right away: use a switch
+- Very long lists: use a searchable list
 
 ## Variants
 

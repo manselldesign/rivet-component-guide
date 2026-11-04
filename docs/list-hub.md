@@ -4,14 +4,14 @@
 A section that gathers related links in one place, each with a title and optional details, so readers can scan and pick where to go next. It can open with a short introduction, an image or an "On this page" heading.
 
 ## When to use it
-- Use it to point readers to several related pages, like all the resources for new students
-- Use it for a requirements or eligibility list, like what you need before you apply
-- Use it at the top of a long page to jump to its sections, like a degree program page
+- Several related pages, like resources for new students
+- Requirements or eligibility lists
+- Jumping to sections of a long page
 
 ## When not to use it
-- Don't use it for plain bullet points with no links. Use List instead
-- Don't use it for one or two links. Use a button or a text link instead
-- Don't use it for content readers need to compare in detail. Use a table instead
+- Plain bullets with no links: use List
+- One or two links: use a button or text link
+- Content to compare in detail: use a table
 
 ## Variants
 

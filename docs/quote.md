@@ -4,14 +4,14 @@
 A quote pulls out a short statement from a real person, with their name and title underneath. It adds a human voice to a page and backs up your message with someone's own words.
 
 ## When to use it
-- Use it to share a student, alum or faculty voice on a program page, like a graduate describing their internship
-- Use it to break up a long news story or feature with one memorable line
-- Use it when the person agreed to be quoted and you can name them
+- A student, alum or faculty voice
+- One memorable line in a long story
+- A named person who agreed to be quoted
 
 ## When not to use it
-- Don't use it to highlight your own message or a key fact. Use a callout instead
-- Don't use it for anonymous or made-up quotes
-- Don't stack several quotes in a row. Pick the strongest one
+- Your own message or a key fact: use a callout
+- Anonymous or made-up quotes
+- Several quotes in a row
 
 ## Variants
 

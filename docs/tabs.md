@@ -4,16 +4,16 @@
 A row of labels that switches between related sets of content in the same spot. Readers see one set at a time and pick the next without leaving the page.
 
 ## When to use it
-- Use it when content splits into a few parallel groups, like requirements for Undergraduate, Graduate and Online programs
-- Use it when readers usually need only one group, like tuition for in-state or out-of-state students
-- Use it to keep a long program page short without hiding the main point
+- Content splits into a few parallel groups
+- Readers need only one group at a time
+- A long page needs to stay short
 
 ## When not to use it
-- Don't use it when readers need to compare groups side by side. Use a table instead
-- Don't use it for steps that happen in order. Use steps instead
-- Don't use it to send readers to other pages. Use a subnav instead
-- Don't use it for content everyone must read, like an application deadline
-- Don't use it for more than about five groups. Use an accordion instead
+- Comparing groups side by side: use a table
+- Steps that happen in order: use steps
+- Links to other pages: use a subnav
+- Content everyone must read, like a deadline
+- More than five groups: use an accordion
 
 ## Contained or Segmented?
 Ask one question: **Is each tab a full section of content, or a quick switch for one view?** If each tab opens its own section, use Contained. If the tabs change what one list or view shows, use Segmented.

@@ -4,14 +4,14 @@
 A heading block that opens a section of a page, with an optional tag, short introduction and button. It can also introduce an image or a grid of cards that sits below it.
 
 ## When to use it
-- Use it to start a new topic on a long page, like "Student life" on a campus home page
-- Use it to introduce a group of cards, like upcoming events or recent news
-- Use it to point readers to a page with more, like "See all programs"
+- Starting a new topic on a long page
+- Introducing a group of cards
+- Pointing to a page with more, like “See all programs”
 
 ## When not to use it
-- Don't use it at the top of a page. Use a hero instead
-- Don't use it for a small heading inside text. Use a regular heading instead
-- Don't stack two section intros with nothing between them
+- Top of a page: use a hero
+- Small headings inside text: use a regular heading
+- Two section intros in a row
 
 ## Variants
 

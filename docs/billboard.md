@@ -4,14 +4,14 @@
 A large block that pairs a big image with a short title, a sentence or two, and one or more links. It draws attention to one important section or piece of content on your site.
 
 ## When to use it
-- Use it to spotlight one key destination, like an admissions deadline or a featured program
-- Use it to break up a long page with a strong visual moment
-- Use it when you have a good image that supports the message
+- Spotlighting one key destination
+- A strong visual break on a long page
+- A good image supports the message
 
 ## When not to use it
-- Don't use it for routine news or event lists. Use a card or list instead
-- Don't stack several (more than 3) billboards in a row. They compete and lose impact
-- Don't use it without a meaningful image
+- Routine news or event lists: use cards or a list
+- More than three in a row
+- No meaningful image
 
 ## The image
 - Upload one landscape photo. You don't crop it yourself

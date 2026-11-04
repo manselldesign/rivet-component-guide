@@ -4,14 +4,14 @@
 A group of related items shown with bullets, numbers or no markers, so readers can scan them quickly.
 
 ## When to use it
-- Use it when you have three or more related items, like what to bring to orientation
-- Use a numbered list when order matters, like the steps to apply for housing
-- Use a definition list for terms and their meanings, like a glossary on a degree program page
+- Three or more related items
+- Steps in order: use a numbered list
+- Terms and meanings: use a definition list
 
 ## When not to use it
-- Don't use it for one or two items. Write a sentence instead
-- Don't use it to compare items across several details. Use a table instead
-- Don't use it for long paragraphs. Break them into sections with headings
+- One or two items: write a sentence
+- Comparing items across details: use a table
+- Long paragraphs: use sections with headings
 
 ## Variants
 

@@ -4,13 +4,13 @@
 A grid of rows and columns that lets readers compare facts side by side, like tuition by program or office hours by department. Each row is one item and each column is one detail about it.
 
 ## When to use it
-- Use it when readers need to compare the same details across several items, like credit hours, format and start date for each degree
-- Use it in staff tools where people review and act on records, like a list of applications to approve
+- Comparing the same details across items
+- Staff tools for reviewing records
 
 ## When not to use it
-- Don't use it for page layout or to line up text and images. Use cards or a grid instead
-- Don't use it for one item's details. Use a list instead
-- Don't use it for content readers read top to bottom, like steps or a news story
+- Page layout: use cards or a grid
+- One item's details: use a list
+- Content read top to bottom, like steps
 
 ## Variants
 

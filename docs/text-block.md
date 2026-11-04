@@ -4,15 +4,15 @@
 A text block is the main content area of a details page: headings, paragraphs, lists and buttons, with room for a photo, quote, note, table, accordion, stats or list hub between them. You build it row by row, and the spacing between rows takes care of itself.
 
 ## When to use it
-- Use it for the body of a details page, like a policy, a program overview or a how-to guide
-- Use it when you need a mix of text and other content, like a research story with a photo, a quote and key numbers
-- Use it for long reading that benefits from clear sections, like admissions steps or a department's history
+- The body of a details page
+- Text mixed with photos, quotes and numbers
+- Long reading with clear sections
 
 ## When not to use it
-- Don't use it to introduce a section in one or two lines. Use a section intro instead
-- Don't use it for a mission or values statement. Use a text essay instead
-- Don't use it to link to a group of pages on its own. Use a list hub instead
-- Don't use it for a home page or section index. Those pages use cards and heroes
+- One- or two-line section intros: use a section intro
+- Mission or values statements: use a text essay
+- A group of page links: use a list hub
+- Home or section index pages: use cards and heroes
 
 ## Variants
 

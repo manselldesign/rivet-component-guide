@@ -4,13 +4,13 @@
 A vertical line of steps or events in order, so readers can see what happens first, next and last. Each step is a card with a short label, a title and optional details, dates and links.
 
 ## When to use it
-- Use it for steps in a process, like applying to a graduate program
-- Use it for milestones, like the phases of a campus building project
-- Use it for a chronology, like the history of a school or program
+- Steps in a process
+- Milestones, like a building project
+- A chronology, like a school's history
 
 ## When not to use it
-- Don't use it for topics or resources with no order. Use a list hub or cards instead
-- Don't use it for one or two items. A short paragraph is enough
+- Topics with no order: use a list hub or cards
+- One or two items: write a short paragraph
 
 ## Variants
 

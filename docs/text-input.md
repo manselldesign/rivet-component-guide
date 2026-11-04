@@ -4,14 +4,14 @@
 A field where readers type a short answer, like a name, email address or search term. It's the most common part of any form.
 
 ## When to use it
-- Use it for short answers that fit on one line, like a first name or student ID
-- Use it for search, like finding a course or a department contact
-- Use it when the answer can't be picked from a list, like a phone number
+- Short, one-line answers, like a name
+- Search, like finding a course
+- Answers that can't come from a list
 
 ## When not to use it
-- Don't use it for long answers, like a personal statement. Use a textarea instead
-- Don't use it when readers pick from a set list. Use a select input, radio buttons or checkboxes instead
-- Don't use it to upload documents, like transcripts. Use a file input instead
+- Long answers: use a textarea
+- Picking from a set list: use a select input, radios or checkboxes
+- Uploading documents: use a file input
 
 ## Variants
 

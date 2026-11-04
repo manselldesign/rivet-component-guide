@@ -4,13 +4,13 @@
 The footer is the band at the bottom of every page with the university's contact details, key links, social media links and required legal links. It helps people find what they need when they reach the end of a page.
 
 ## When to use it
-- Use it on every page of an IU site
-- Use the same footer, with the same links, across the whole site
+- Every page of an IU site
+- The same links across the whole site
 
 ## When not to use it
-- Don't use it for page-specific calls to action, like "Apply now". Put a button or callout near the content instead
-- Don't use it as the main navigation. Keep the main links in the header
-- Don't list every page of the site. Link to a site map page instead
+- Page-specific calls to action: use a button or callout
+- Main navigation: keep it in the header
+- Every page of the site: link to a site map
 
 ## Variants
 

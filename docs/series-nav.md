@@ -4,15 +4,15 @@
 A pair of links at the end of a page that take readers to the previous or next page in a series. Each link shows the direction and the title of the page it leads to.
 
 ## When to use it
-- Use it on pages that belong to an ordered set, like the chapters of an online orientation guide
-- Use it for a news story told in several parts
-- Place it at the bottom of the page, after the main content
+- Pages in an ordered set, like guide chapters
+- A news story told in parts
+- Bottom of the page, after the content
 
 ## When not to use it
-- Don't use it to move through search results or a long list. Use pagination instead
-- Don't use it to suggest related pages, like other stories from the same department. Use cards instead
-- Don't use it as the main way around a site. Use the header or breadcrumbs instead
-- Don't use it for steps in a form. Use the form's own buttons instead
+- Search results or long lists: use pagination
+- Related pages: use cards
+- Main navigation: use the header or breadcrumbs
+- Steps in a form: use the form's buttons
 
 ## Variants
 

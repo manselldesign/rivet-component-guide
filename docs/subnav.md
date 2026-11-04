@@ -4,15 +4,15 @@
 A row of links that moves readers between the pages inside one section of a site. The page they're on is underlined so they always know where they are.
 
 ## When to use it
-- Use it for a section with a handful of related pages, like a school's About, Faculty, Programs and Contact pages
-- Use it below a section header so readers can jump between pages without going back to the main menu
-- Use it when every page in the section is equally important
+- A section with a handful of related pages
+- Jumping between section pages without the main menu
+- Every page in the section matters equally
 
 ## When not to use it
-- Don't use it for the whole site. Use the header instead
-- Don't use it for deep sections with many levels. Use the side navigation instead
-- Don't use it to switch views of the same content on one page. Use tabs instead
-- Don't use it for steps in a process. Use steps instead
+- The whole site: use the header
+- Deep sections with many levels: use side navigation
+- Switching views on one page: use tabs
+- Steps in a process: use steps
 
 ## Variants
 

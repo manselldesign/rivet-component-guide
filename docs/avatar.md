@@ -4,12 +4,12 @@
 A small circle that shows who a person is. It holds their photo, their initials, or the IU trident when you have neither.
 
 ## When to use it
-- Use it next to a person's name, for example on a faculty profile, a staff contact card or a news story byline
-- Use it when a face or initials help people recognize someone quickly
+- Next to a person's name, like a profile or byline
+- A face or initials help people recognize someone
 
 ## When not to use it
-- Don't use it for departments, schools or programs. Use an image or the IU logo instead
-- Don't use it as decoration or for photos of places and events. Use an image instead
+- Departments, schools or programs: use an image or the IU logo
+- Decoration or photos of places: use an image
 
 ## Variants
 

@@ -7,14 +7,14 @@
 A side menu that shows the pages in one section of a site, one level at a time. A back link at the top returns readers to the parent section, and items with an arrow open their own set of pages.
 
 ## When to use it
-- Use it on sites with several levels of pages, like an admissions site with sections for applying, visiting and paying for school
-- Use it to show readers where they are inside a section
-- Use it next to the page content, not in place of it
+- Sites with several levels of pages
+- Showing where readers are in a section
+- Beside the page content, not instead of it
 
 ## When not to use it
-- Don't use it on a small site with only a few pages. Use the header links instead
-- Don't use it for pages that must be read in order. Use series nav instead
-- Don't use it to jump between headings on one long page. Use links to those headings instead
+- Small sites with a few pages: use header links
+- Pages read in order: use series nav
+- Headings on one long page: link to the headings
 
 ## Variants
 

@@ -5,17 +5,15 @@
 An alert is a colored box that tells readers something important about the page or a task, like a deadline change or a problem with a form. It stands out from the rest of the content so people don't miss it.
 
 ## When to use it
-
-- Use it to share time-sensitive news, like a closed office or an extended application deadline
-- Use it to confirm something worked, like "Your registration was submitted"
-- Use it to warn people before they make a mistake or miss a step
-- Use it to explain an error and how to fix it
+- Time-sensitive news, like a closed office
+- Confirming something worked
+- Warning before a mistake or missed step
+- Explaining an error and how to fix it
 
 ## When not to use it
-
-- Don't use it for general page content or marketing. Use regular text or a callout instead
-- Don't stack several alerts on one page. Combine them or pick the most important one
-- Don't use it for messages that never change. If it's always there, it's just content
+- General page content or marketing: use a callout
+- Several alerts on one page: pick the most important
+- Messages that never change
 
 ## Variants
 
