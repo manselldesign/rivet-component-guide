@@ -47,7 +47,7 @@
     "paletteColors": 38,
     "textStyles": 79,
     "textStylesThatAreRenameOnly": 22,
-    "spacing": 16,
+    "spacing": 19,
     "shadows": 6
   },
   "componentChanges": [
@@ -5065,28 +5065,12 @@
           "action": "add"
         },
         {
-          "name": "spacing/2",
-          "css": "--rvt-spacing-2",
-          "desktop": 2,
-          "mobile": 2,
-          "codeToday": null,
-          "action": "add"
-        },
-        {
           "name": "spacing/4",
           "css": "--rvt-spacing-4",
           "desktop": 4,
           "mobile": 4,
           "codeToday": "--rvt-spacing-xxs",
           "action": "rename"
-        },
-        {
-          "name": "spacing/6",
-          "css": "--rvt-spacing-6",
-          "desktop": 6,
-          "mobile": 6,
-          "codeToday": null,
-          "action": "add"
         },
         {
           "name": "spacing/8",
