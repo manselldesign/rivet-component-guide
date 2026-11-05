@@ -277,9 +277,9 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 
 /* rvt-table: Type=Default, Striped=False, Size=Default (local Table page spec)
    Table: background/default fill, 1px border/default outline. Rows: 0 8px inset, 1px border/default bottom.
-   Header row/cells: component/table-header/background; label tag/md/regular = Roboto Mono Regular (wght 350) 14/18, 1px tracking (desktop + mobile), component/table-header/text; 16px padding (48px row desktop, 44px mobile).
-   First column = Main Item (body/sm/strong SemiBold 16/24, text/strong); others = Default (body/sm/regular 16/24, text/default); 24/16 padding.
-   Mobile: cells fixed 243px (table scrolls), 16/12 padding, Main Item body/xs/strong SemiBold 14/20, Default body/xs/regular 14/20. */
+   Header row/cells: component/table-header/background; label tag/md/regular = Roboto Mono Regular (wght 350) 14/18, 1px tracking (desktop + mobile), component/table-header/text; 16px top/bottom, spacing/20 left/right (48px row desktop, 44px mobile).
+   First column = Main Item (body/sm/strong SemiBold 16/24, text/strong); others = Default (body/sm/regular 16/24, text/default); 24px top/bottom, spacing/20 left/right (Compact size: spacing/12).
+   Row inset spacing/8 adds to the first and last cell, so the outer edge is 28px. Mobile: 16/20 padding, Main Item body/xs/strong SemiBold 14/20, Default body/xs/regular 14/20. */
 .table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--table-border);background:var(--bg)}
 /* Separate borders (not collapsed) so the sticky first column on mobile carries its own borders and fill while scrolling: no seams or gaps in the header color. Row lines sit on the cells. */
 .prose table{border-collapse:separate;border-spacing:0;width:100%;table-layout:fixed}
@@ -288,25 +288,25 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .prose tbody th,.prose tbody td{border-bottom:1px solid var(--table-border)}
 .prose tbody tr:last-child th,.prose tbody tr:last-child td{border-bottom:0}
 .prose tbody code{white-space:normal;overflow-wrap:normal;word-break:normal}
-.prose tbody th{text-align:left;padding:24px 16px 24px 24px;vertical-align:middle;font-size:16px;line-height:24px;font-weight:var(--w-bold);color:var(--text-strong);background:var(--bg);overflow-wrap:break-word}
+.prose tbody th{text-align:left;padding:24px 20px 24px 28px;vertical-align:middle;font-size:16px;line-height:24px;font-weight:var(--w-bold);color:var(--text-strong);background:var(--bg);overflow-wrap:break-word}
 .table-wrap:focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
 /* Card pages: the row for the card being documented uses the rvt-table Striped row fill (background/tint) */
 .prose tbody tr.is-current th,.prose tbody tr.is-current td{background:var(--row-tint)}
 .prose thead th{background:var(--th-bg);color:var(--th-fg);font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:1px;font-weight:var(--w-normal);
-  text-align:left;vertical-align:middle;padding:16px;height:48px;overflow-wrap:normal;word-break:normal;hyphens:none}
-.prose td{padding:24px 16px;vertical-align:middle;font-size:16px;line-height:24px;font-weight:var(--w-normal);color:var(--text);background:var(--bg);overflow-wrap:break-word}
+  text-align:left;vertical-align:middle;padding:16px 20px;height:48px;overflow-wrap:normal;word-break:normal;hyphens:none}
+.prose td{padding:24px 20px;vertical-align:middle;font-size:16px;line-height:24px;font-weight:var(--w-normal);color:var(--text);background:var(--bg);overflow-wrap:break-word}
 .prose td:first-child{font-weight:var(--w-bold);line-height:24px;color:var(--text-strong)}
-.prose th:first-child,.prose td:first-child{padding-left:24px}
-.prose th:last-child,.prose td:last-child{padding-right:24px}
+.prose th:first-child,.prose td:first-child{padding-left:28px}
+.prose th:last-child,.prose td:last-child{padding-right:28px}
 @media (max-width:560px){
   /* Fill the width; only scroll sideways when the columns can't fit at their minimum width. */
   .prose table{width:100%;table-layout:auto}
   .prose th,.prose td{min-width:180px}
   .prose thead th{height:44px}
-  .prose tbody th{padding:16px 12px 16px 20px;font-size:14px;line-height:20px}
-  .prose td{padding:16px 12px;font-size:14px;line-height:20px}
-  .prose td:first-child{padding-left:20px}
-  .prose td:last-child{padding-right:20px}
+  .prose tbody th{padding:16px 20px 16px 28px;font-size:14px;line-height:20px}
+  .prose td{padding:16px 20px;font-size:14px;line-height:20px}
+  .prose td:first-child{padding-left:28px}
+  .prose td:last-child{padding-right:28px}
   /* First column stays put while the rest of the table scrolls sideways, so readers always see what each row is.
      140px so the comparison columns still have room; a 1px divider marks its edge. */
   .prose th:first-child,.prose td:first-child{position:sticky;left:0;z-index:1;width:140px;min-width:140px;max-width:140px;box-shadow:inset -1px 0 0 var(--table-border)}
