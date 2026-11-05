@@ -344,6 +344,9 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 .rvt-list-hub__marker svg{display:block;width:12px;height:12px;fill:currentColor}
 .rvt-list-hub__title{flex:1 1 auto;min-width:0}
 .prose ul.rvt-list-hub--examples{margin-top:var(--rvt-spacing-32)}
+/* Examples list: no rule above the first item or below the last; those items drop their outer padding so the 32px above and the section gap below stay true. */
+.prose ul.rvt-list-hub--examples>li:first-child{border-top:0;padding-top:0}
+.prose ul.rvt-list-hub--examples>li:last-child{border-bottom:0;padding-bottom:0}
 @media (max-width:900px){.ex{grid-template-columns:1fr;gap:40px}}
 @media (max-width:560px){.prose .ex-item h3{font-size:18px;line-height:24px;margin-top:16px}}
 /* rvt-text-block rhythm (Text Block page, _Text Block Item): no dividers; space ABOVE each element.
