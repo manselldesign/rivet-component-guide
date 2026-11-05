@@ -3,14 +3,19 @@
 ## What it is
 A file input lets people attach a file to a form, like a letter of recommendation, a transcript or a résumé. It shows a button to pick a file, then lists what they picked.
 
+- Application documents, like transcripts
+- Letters of recommendation
+- Scholarship or award requests
+- Résumés on a job or internship form
+
 ## When to use it
-- Sending a document with a form
-- A few files from a device
+- Use it when people need to send a document with a form, like an application or a scholarship request
+- Use it for a small number of files picked from their device
 
 ## When not to use it
-- Info a text field could collect
-- Large batches or drag and drop: use an empty state upload
-- Sharing a link: use a text input
+- Don't use it when you can ask for the information in a text field instead
+- Don't use it for large batches or drag-and-drop uploads. Use an empty state upload area instead
+- Don't use it to share a link. Use a text input instead
 
 ## Variants
 

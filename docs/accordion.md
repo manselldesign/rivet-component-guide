@@ -2,16 +2,23 @@
 
 A stacked list of titles that each open to show more content. Readers scan the titles and open only the ones they need.
 
+- FAQs on an admissions or financial aid page
+- Course requirements broken out by year
+- Office policies grouped by topic
+- Long program details that need to stay short on mobile
+
 ## When to use it
-- Readers need only some of the content, like FAQs
-- Several sections too long to show at once
-- Long pages on mobile
+
+- Use it when readers only need some of the information on the page, like FAQs on an admissions page
+- Use it when you have several related sections that are each too long to show at once, like course requirements by year
+- Use it to shorten long pages on mobile, where scrolling past everything is tiring
 
 ## When not to use it
-- Content everyone must read: put it on the page
-- Just one item: show the content
-- Switching views of the same content: use tabs
-- Content readers compare side by side
+
+- Don't use it for content everyone needs to read, like an application deadline. Put it on the page
+- Don't use it for just one item. Show the content instead
+- Don't use it to move between separate views of the same content. Use tabs instead
+- Don't hide content readers will want to compare side by side
 
 ## States
 

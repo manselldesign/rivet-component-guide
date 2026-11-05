@@ -3,15 +3,20 @@
 ## What it is
 A profile hero opens a person's page with their photo, name, credentials and job title. It tells visitors right away whose page they're on and how to reach them.
 
+- Faculty profile pages
+- Staff and advisor profile pages
+- Dean or department chair pages
+- Researcher or lab lead pages
+
 ## When to use it
-- Top of a faculty, staff or advisor profile
-- A leader's page, like a dean
-- People come to learn about or contact one person
+- Use it at the top of a faculty, staff or advisor profile page
+- Use it on a leader's page, like a dean or department chair
+- Use it when people come to the page to learn about or contact one person
 
 ## When not to use it
-- An office or department: use the Contact card
-- Several people: use Profile cards
-- A news story about a person: use the article layout
+- Don't use it for an office or department. Use the Contact card instead
+- Don't use it to list several people. Use Profile cards instead
+- Don't use it for a news story about a person. Use the article layout instead
 
 ## Variants
 

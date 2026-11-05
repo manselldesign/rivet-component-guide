@@ -3,15 +3,20 @@
 ## What it is
 A row of page numbers and arrows that splits a long list of results into pages. Readers can see where they are and jump to the next page or a specific one.
 
+- News archives
+- Event listings
+- Search results
+- Course or people directories
+
 ## When to use it
-- Lists too long for one page, like news archives
-- Search results, like a course directory
-- Readers may return to a specific page
+- Use it when a list is too long for one page, like news archives or event listings
+- Use it for search results, like a course or people directory
+- Use it when readers may want to return to a specific page
 
 ## When not to use it
-- Fewer than about 10 items: show them all
-- Steps in a form: use Back and Next buttons
-- Small spaces like cards or sidebars
+- Don't use it for fewer than about 10 items. Show them all on one page
+- Don't use it to move through steps in a form. Use Back and Next buttons instead
+- Don't use it inside small spaces like cards or sidebars
 
 ## Variants
 

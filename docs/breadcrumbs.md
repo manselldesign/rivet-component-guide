@@ -3,14 +3,19 @@
 ## What it is
 A short trail of links at the top of a page that shows where the page sits in your site. People can click any step to go back up a level.
 
+- Program pages inside a school or college site
+- Policy pages deep in an office site
+- Course or research pages several levels down
+- Pages people often reach straight from search
+
 ## When to use it
-- Pages two or more levels deep
-- People often land on the page from search
+- Use it on pages that sit two or more levels deep, like a program page inside a school inside a college site
+- Use it when people often land on a page from search and need to find their way to related pages
 
 ## When not to use it
-- Home or top-level pages
-- Steps in a process: use steps
-- Main navigation: keep the header or side navigation
+- Don't use it on your homepage or on top-level pages
+- Don't use it to show steps in a process, like an application form. Use steps instead
+- Don't use it as the main navigation. Keep your header or side navigation
 
 ## Variants
 

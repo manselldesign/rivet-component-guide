@@ -3,15 +3,20 @@
 ## What it is
 A small label that shows the status or category of something at a glance, like "Open", "Full" or "New".
 
+- Event status, like "Sold out" or "Free"
+- Course format, like "Online" or "Hybrid"
+- Application status in a student portal
+- New or updated items on a policy page
+
 ## When to use it
-- Showing status, like “Sold out”
-- Tagging list items, like “Online”
-- Pointing out something new, like “Updated”
+- Use it to show status, like an event that's "Sold out" or an application that's "Submitted"
+- Use it to tag items in a list, like "Online" or "Hybrid" on course listings
+- Use it to point out something new or changed, like "Updated" on a policy page
 
 ## When not to use it
-- Anything people click: use a button or link
-- More than a couple of words: use an alert
-- Several badges on one item
+- Don't use it for anything people need to click. Use a button or link instead
+- Don't use it for messages longer than a couple of words. Use an alert instead
+- Don't put several badges on one item. Pick the one that matters most
 
 ## Variants
 

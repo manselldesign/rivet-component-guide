@@ -3,15 +3,20 @@
 ## What it is
 An empty state fills a space that has nothing in it yet, like a file upload area before anyone adds a file. It says what's missing and gives people a clear next step.
 
+- A file upload area before anything is added
+- Saved programs or favorites with nothing saved yet
+- An appointments list with nothing scheduled
+- Search results that come back empty
+
 ## When to use it
-- Where people upload files
-- Confirming what's been added before submitting
-- Lists that fill up later, like saved programs
+- Use it where people upload files, like transcripts on an application
+- Use it to confirm what's been added before people submit, like "You've added 2 files"
+- Use it where a list will fill up later, like saved programs or upcoming appointments
 
 ## When not to use it
-- Errors, like a failed upload: use an alert
-- Pages still loading: show a loading state
-- Long instructions: link to them
+- Don't use it for an error, like a failed upload. Use an alert instead
+- Don't use it for a page that's still loading. Show a loading state instead
+- Don't fill it with long instructions. Link to them instead
 
 ## Variants
 

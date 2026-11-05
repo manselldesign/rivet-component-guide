@@ -3,16 +3,21 @@
 ## What it is
 An event card previews one event, like a lecture, open house or performance. It shows the title, date, time and place, and links to the full event page. People click anywhere on the card to open it.
 
+- Upcoming events on a department home page
+- Event listings and calendar pages
+- Lecture series or performance seasons
+- Related events at the end of a news story
+
 ## When to use it
-- Upcoming events on a department or calendar page
-- Each event has its own page
-- People need the date, time and place at a glance
+- Use it to list upcoming events, like on a department or calendar page
+- Use it when each event has its own page with full details
+- Use it when people need the date, time and place at a glance
 
 ## When not to use it
-- Resources, services or programs: use the Default card
-- News about a past event: use the News card
-- A deadline with no time or place
-- Extra links or buttons inside the card
+- Don't use it for a resource, service or program. Use the Default card instead
+- Don't use it for a news story about an event that already happened. Use the News card instead
+- Don't use it for a deadline with no time or place, like an application due date
+- Don't add extra links or buttons inside a card. The whole card is already the link
 
 ## Variants
 

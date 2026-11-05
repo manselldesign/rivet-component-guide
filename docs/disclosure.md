@@ -3,15 +3,20 @@
 ## What it is
 A disclosure is a single link that opens to show a short piece of extra information, like fine print, a definition or eligibility details. It keeps the page short for people who don't need the detail.
 
+- Definitions on a financial aid page
+- Fine print under a registration form
+- Eligibility details on a scholarship page
+- Optional help text next to a form question
+
 ## When to use it
-- One optional detail
-- Fine print, like refund terms
-- Detail most people can skip
+- Use it for one optional detail, like "What counts as a dependent?" on a financial aid page
+- Use it for fine print, like refund terms under a registration form
+- Use it when most people can skip the detail and still finish their task
 
 ## When not to use it
-- Several related sections: use an accordion
-- Information everyone needs: show it on the page
-- Long content, forms or images
+- Don't use it for several related sections, like a list of FAQs. Use an accordion instead
+- Don't hide information everyone needs, like an application deadline. Show it on the page
+- Don't put long content, forms or images inside it. Give that content its own section
 
 ## Variants
 

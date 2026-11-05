@@ -6,14 +6,19 @@
 ## What it is
 The header is the bar at the top of every page. It shows the IU logo with your site's name, the main links of your site and a search button, so people always know where they are and how to get around.
 
+- Every page of an IU website
+- Every page of an IU web app
+- Main sections of a school or department site
+- Site-wide search
+
 ## When to use it
-- Top of every page of a site or app
-- The 5 to 8 most important sections
-- Search from anywhere on the site
+- Use it at the top of every page of a website or web app
+- Use it to show the 5 to 8 most important sections of your site
+- Use it to give people search from anywhere on the site
 
 ## When not to use it
-- Inside a page or card
-- More than 8 main links: use dropdowns or the footer
+- Don't use it inside a page or a card. It belongs only at the very top
+- Don't put more than 8 links in the main navigation. Group the rest under dropdowns or in the footer
 
 ## Variants
 

@@ -3,16 +3,21 @@
 ## What it is
 A large, centered marketing statement that sums up why a page matters. It gives one big message room to breathe, with an optional tag, introduction, button and image.
 
+- "Why IU" on an admissions page
+- A program's main value statement
+- A campaign or big announcement
+- A school's mission on its home page
+
 ## When to use it
-- The page's one key marketing message
-- A bold promise or value statement
-- Leading into a campaign or big announcement
+- Use it for the page's one key marketing message, like "Why IU" on an admissions page
+- Use it to make a bold promise or value statement, like what makes a program different
+- Use it to lead into a campaign or big announcement, like a new school opening
 
 ## When not to use it
-- More than once on a page
-- Everyday sections: use Section intro – Default
-- Instructions or facts, like deadlines
-- Top of a page: use a hero
+- Don't use it more than once on a page. A second one competes with the first
+- Don't use it for everyday sections or to switch topics. Use Section intro – Default instead
+- Don't use it for instructions or facts, like deadlines. Keep it to a marketing message
+- Don't use it at the very top of a page. Use a hero instead
 
 ## Variants
 

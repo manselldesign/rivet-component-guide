@@ -9,13 +9,18 @@
 ## What it is
 The callout hero is the default hero, the banner at the top of most pages. It shows the page title and a short intro, with an optional card that highlights one thing, like a deadline or an upcoming event.
 
+- Details pages across a site
+- Office and service pages
+- Program pages with a timely deadline
+- Event or campaign pages with one next step
+
 ## When to use it
-- Top of most pages, like a details page
-- One timely next step, like a deadline
+- Use it at the top of most pages, like a details page
+- Use the card to point people to one timely next step, like "Applications close March 1"
 
 ## When not to use it
-- Introducing a person: use Hero – Profile
-- More than one hero on a page
+- Don't use it to introduce a person. Use Hero – Profile instead
+- Don't use more than one hero on a page
 
 ## Variants
 

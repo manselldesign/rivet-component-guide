@@ -3,16 +3,21 @@
 ## What it is
 A field that opens a list of options so readers can pick one. It saves space when there are too many choices to show at once.
 
+- Pick a state or country
+- Choose a college or school
+- Filters on an event listing
+- Choose a term or semester
+
 ## When to use it
-- One option from a long list, like a state
-- Tight spaces, like a filter bar
-- Readers already know the answer
+- Use it when readers pick one option from a long list, like a state or country
+- Use it when space is tight, like a filter bar on an event listing
+- Use it when most readers know the answer, like their college or school
 
 ## When not to use it
-- Two to six options: use radio buttons
-- More than one choice: use checkboxes
-- Actions, like “Share”: use a button or dropdown menu
-- Readers type their own answer: use a text input
+- Don't use it for two to six options. Use radio buttons so every choice is visible
+- Don't use it when readers can pick more than one. Use checkboxes instead
+- Don't use it for actions, like "Download" or "Share". Use a button or dropdown menu instead
+- Don't use it when readers need to type their own answer. Use a text input instead
 
 ## Variants
 

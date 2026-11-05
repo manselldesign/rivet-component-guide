@@ -3,16 +3,21 @@
 ## What it is
 A feature hero is the large banner at the top of a page, with a wide headline and intro above a large photo. It sets the tone for the page and points people to their next step.
 
+- Campus or school home pages
+- Campaign landing pages
+- Campus visit pages
+- Major initiative or announcement pages
+
 ## When to use it
-- Top of a major landing page
-- The photo matters as much as the message
-- A wide photo that crops well
+- Use it at the top of a major landing page, like a campus, school or campaign home page
+- Use it when the photo is as important as the message, like a campus scene for a visit page
+- Use it when you have a wide photo that still reads well when cropped
 
 ## When not to use it
-- More than once on a page
-- Detail pages, like a news story: use a simple page title
-- A small or supporting photo: use Hero – Split
-- No strong photo: use a hero without an image
+- Don't use it more than once on a page
+- Don't use it on detail pages, like a news story or event. Start with a simple page title instead
+- Don't use it when the photo is small or only supporting. Use Hero – Split instead
+- Don't use it without a strong photo. Use a hero without an image instead
 
 ## Variants
 

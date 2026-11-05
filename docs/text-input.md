@@ -3,15 +3,20 @@
 ## What it is
 A field where readers type a short answer, like a name, email address or search term. It's the most common part of any form.
 
+- Names and email addresses on a form
+- Student ID or phone number
+- Search for a course or person
+- Short answers that don't fit a list
+
 ## When to use it
-- Short, one-line answers, like a name
-- Search, like finding a course
-- Answers that can't come from a list
+- Use it for short answers that fit on one line, like a first name or student ID
+- Use it for search, like finding a course or a department contact
+- Use it when the answer can't be picked from a list, like a phone number
 
 ## When not to use it
-- Long answers: use a textarea
-- Picking from a set list: use a select input, radios or checkboxes
-- Uploading documents: use a file input
+- Don't use it for long answers, like a personal statement. Use a textarea instead
+- Don't use it when readers pick from a set list. Use a select input, radio buttons or checkboxes instead
+- Don't use it to upload documents, like transcripts. Use a file input instead
 
 ## Variants
 

@@ -3,14 +3,19 @@
 ## What it is
 One photo, or a group of three, that shows what a place, program or event feels like. It can open with a short statement and end with a caption.
 
+- Campus life overviews
+- Residence hall or facility pages
+- Research lab or studio pages
+- Event recaps
+
 ## When to use it
-- Setting the scene on a landing page
-- Several photos tell the story better than one
-- A short statement that links onward
+- Use it to set the scene on a landing page, like a school or campus life overview
+- Use it when several photos together tell the story better than one, like a residence hall or a research lab
+- Use it with a short statement that links readers onward, like "Learn more about student organizations"
 
 ## When not to use it
-- Large photo galleries or event albums
-- Photos that carry key info, like dates: use text
+- Don't use it for a large photo gallery or event album
+- Don't use photos that carry key information, like dates or deadlines. Put that in text
 
 ## Variants
 

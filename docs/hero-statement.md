@@ -3,15 +3,20 @@
 ## What it is
 A statement hero opens a page with a bold headline and one to three large photos. It sets the tone with a strong visual first impression, and can add a card that highlights one thing, like an upcoming deadline.
 
+- School or college home pages
+- Campaign or brand pages
+- Admissions landing pages
+- Anniversary or milestone pages
+
 ## When to use it
-- Landing pages that need a strong visual opening
-- Great photos of the people and places behind the message
+- Use it at the top of landing pages that need a strong visual opening, like a school home page or a campaign page
+- Use it when you have great photos that show the people and places behind the message
 
 ## When not to use it
-- Everyday pages: use Hero – Callout
-- Introducing a person: use Hero – Profile
-- No strong photos
-- More than one hero on a page
+- Don't use it on most everyday pages. Use Hero – Callout instead
+- Don't use it to introduce a person. Use Hero – Profile instead
+- Don't use it without strong photos
+- Don't use more than one hero on a page
 
 ## Variants
 

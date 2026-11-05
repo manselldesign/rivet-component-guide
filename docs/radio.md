@@ -3,15 +3,20 @@
 ## What it is
 A group of options where readers can pick only one. Every choice stays visible, so readers can compare them before they decide.
 
+- Pick a campus on an application
+- Preferred contact method
+- Enrollment status, like full- or part-time
+- Choose one session time for an event
+
 ## When to use it
-- Readers must choose exactly one option
-- About two to six options
-- Seeing every option at once helps
+- Use it when readers must choose exactly one option, like a campus for an application
+- Use it when there are about two to six options, like a preferred contact method
+- Use it when readers benefit from seeing every option at once, like enrollment status
 
 ## When not to use it
-- More than one choice: use checkboxes
-- Long lists, like countries: use a select input
-- A single yes or no: use one checkbox
+- Don't use it when readers can pick more than one. Use checkboxes instead
+- Don't use it for a long list, like every country. Use a dropdown instead
+- Don't use it for a single yes or no setting. Use one checkbox instead
 
 ## Variants
 

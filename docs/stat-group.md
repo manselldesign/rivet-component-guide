@@ -3,15 +3,20 @@
 ## What it is
 A row or grid of big numbers that each sum up one fact, like enrollment or job placement rates. It helps readers take in key figures at a glance.
 
+- Enrollment figures on an About IU page
+- Job placement or graduation rates on a program page
+- Research funding on a research page
+- Key facts in a campaign or annual report
+
 ## When to use it
-- A few standout figures, like “40,000 students”
-- Program outcomes, like job placement rates
-- Scannable facts on a long page
+- Use it to highlight a few standout figures, like "40,000 students" on an About IU page
+- Use it on program pages to show outcomes, like graduation or job placement rates
+- Use it to break up a long page with facts readers can scan
 
 ## When not to use it
-- Detailed data to compare: use a table
-- One number: use the text or a callout
-- Numbers that need explaining: write them into the copy
+- Don't use it for detailed data readers need to compare. Use a table instead
+- Don't use it for one number. Put it in the text or use a callout instead
+- Don't use it for numbers that need a lot of explaining. Write them into the page copy instead
 
 ## Variants
 

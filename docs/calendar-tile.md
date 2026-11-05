@@ -3,15 +3,20 @@
 ## What it is
 A small square that shows a date at a glance, with the month, day and year stacked. It helps readers spot when something happens before they read the details.
 
+- Event lists on a department or calendar page
+- Key dates, like the start of a term
+- Application or registration deadlines
+- News cards where the date matters
+
 ## When to use it
-- Next to an event in a list
-- Showing a key date, like a deadline
-- News or announcements where the date matters
+- Use it next to an event in a list, like a lecture series or campus events page
+- Use it to show a key date, like an application deadline or the start of a term
+- Use it on news or announcement cards when the date matters, like a closing date
 
 ## When not to use it
-- Date ranges over several days: write the range in text
-- Times: put them in the event details
-- Publish dates: use plain text
+- Don't use it for date ranges that span several days. Write the range in text instead
+- Don't use it for times. Put the time in the event details
+- Don't use it just to show when a page was published. Use plain text for that
 
 ## Variants
 

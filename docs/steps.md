@@ -3,16 +3,21 @@
 ## What it is
 A numbered row of steps that shows readers where they are in a longer process and what comes next. Each step has a short label, and the current step stands out.
 
+- An online application with several sections
+- A scholarship or financial aid form
+- Event or course registration
+- Account setup in a web app
+
 ## When to use it
-- A process with a clear order
-- Readers want to know how much is left
-- Showing the status of each step
+- Use it for a process with a clear order, like an online application with four sections
+- Use it when readers benefit from knowing how much is left, like a scholarship form
+- Use it to show the status of each step, like which parts of a registration are complete
 
 ## When not to use it
-- Content read in any order: use tabs or headings
-- More than about seven steps: group or split them
-- A series of articles: use series nav
-- One or two steps: use headings
+- Don't use it for content readers can read in any order. Use tabs or headings instead
+- Don't use it for more than about seven steps. Group them or split the process
+- Don't use it for pages in a series of articles. Use series nav instead
+- Don't use it for one or two steps. Plain headings are enough
 
 ## Variants
 

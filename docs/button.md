@@ -3,6 +3,11 @@
 ## Overview
 Buttons let people take an action on the page they are already on, with a single click. Submitting a form, saving settings, opening a menu, or deleting an item are all jobs for a Button.
 
+- Submit or save a form
+- Open a dialog, menu or file picker
+- Apply filters to a list of results
+- Start a download or export
+
 Buttons never end in an arrow, and on light pages they are styled **black**. Both are signals: they tell people the click will do something right here, not take them somewhere else.
 
 There is a second component, Link, for taking people to another page.

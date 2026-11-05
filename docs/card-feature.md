@@ -3,15 +3,20 @@
 ## What it is
 A feature card is a large doorway to a topic, like "Types of financial aid" or "Mental health support". Clicking it opens a page with more cards about that topic.
 
+- Top-level topics on a landing page
+- Student support areas, like health and wellness
+- Types of financial aid or scholarships
+- Colleges or schools on a campus home page
+
 ## When to use it
-- Main topics on a landing page
-- Each topic leads to its own page of options
-- A few key topics that need more weight
+- Use it on a landing page to show the main topics in a section
+- Use it when each topic leads to its own page of options
+- Use it to give a few key topics more weight than a list of links
 
 ## When not to use it
-- One item, like a single service: use the Default card
-- Events, news, people or offices: use their own cards
-- Mixing Feature and Default cards in one row
+- Don't use it for one item, like a single scholarship or service. Use the Default card instead
+- Don't use it for events, news, people or offices. Use the Event, News, Profile or Contact card instead
+- Don't mix Feature and Default cards in the same row. They sit on different levels
 
 ## Variants
 

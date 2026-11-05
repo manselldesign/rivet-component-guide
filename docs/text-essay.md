@@ -3,16 +3,21 @@
 ## What it is
 A text essay presents a mission, vision or editorial statement: a strong title, a few short sentences of supporting text and up to two buttons. It gives an index page a clear message in your own words.
 
+- A mission or vision statement
+- A school's values on its home page
+- An intro to a research center
+- A short message with one or two next steps
+
 ## When to use it
-- A mission, vision or values statement
-- Introducing a section with some context
-- A short statement with one or two next steps
+- Use it for a mission, vision or values statement, like a school's commitment to student success
+- Use it to introduce a section with some context, like what a research center does and why it matters
+- Use it to pair a short statement with one or two next steps, like "Explore programs" and "Plan a visit"
 
 ## When not to use it
-- Someone else's words: use a quote
-- A single deadline or key fact: use a callout
-- A group of page links: use a list hub
-- One-line section intros: use a section intro
+- Don't use it for someone else's words. Use a quote instead
+- Don't use it to call out a single deadline or key fact. Use a callout instead
+- Don't use it to link to a group of pages. Use a list hub instead
+- Don't use it for a one-line section introduction. Use a section intro instead
 
 ## Variants
 

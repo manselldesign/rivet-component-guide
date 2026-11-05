@@ -9,6 +9,11 @@
 ## What it is
 A clickable box that previews one page, like a resource, service or degree program, and links to it. People click anywhere on the card to open it. For events and news stories, use the Event or News card instead.
 
+- Degree programs inside a topic
+- Resources and services on a landing page
+- Related pages at the end of an article
+- Student tools or forms people choose from
+
 ## Which card should I use?
 
 Start with one question: what does the card lead to?
@@ -43,15 +48,15 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 - When an item has a date, a person or contact details, use the matching card. That information then shows in the same place every time, so people can scan a list quickly
 
 ## When to use it
-- Several items people choose from
-- Previews of stories on a landing page
-- Related pages at the end of an article
+- Use it to list several items people can choose from, like upcoming events or program options
+- Use it to preview news stories or blog posts on a landing page
+- Use it to point to related pages at the end of an article
 
 ## When not to use it
-- A topic that leads to more cards: use a Feature card
-- One important message: use a callout
-- Extra links or buttons inside the card
-- Mixed card layouts or styles in one row
+- Don't use it for a topic that leads to more cards. Use a Feature card instead
+- Don't use it for one important message. Use a callout instead
+- Don't add extra links or buttons inside a card. The whole card is already the link
+- Don't mix card layouts or styles in the same row
 
 ## Variants
 

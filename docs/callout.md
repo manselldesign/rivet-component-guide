@@ -3,15 +3,20 @@
 ## What it is
 A highlighted box that draws attention to one thing on a page, like an upcoming deadline, a featured program or a person to contact. It pairs a short title and description with a picture and up to two links.
 
+- Point to one next step, like registering for orientation
+- Feature a person, like a department contact
+- Highlight an upcoming deadline
+- Break up a long page with one key message
+
 ## When to use it
-- Pointing to one important next step
-- Featuring a person, like a faculty spotlight
-- One key message on a long page
+- Use it to point readers to one important next step, like registering for orientation
+- Use it to feature a person, like a department contact or a faculty spotlight
+- Use it to break up a long page with one key message
 
 ## When not to use it
-- Urgent warnings or errors: use an alert
-- Several callouts in a row
-- A list of items: use cards or a list
+- Don't use it for urgent warnings or errors. Use an alert instead
+- Don't stack several callouts in a row. Pick the one that matters most
+- Don't use it for a list of items. Use cards or a list instead
 
 ## Variants
 

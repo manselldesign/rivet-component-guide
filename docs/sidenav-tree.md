@@ -6,15 +6,20 @@
 ## What it is
 A side menu that shows the pages in one section of a site as an expanding outline. Readers open a page's group to see the pages under it, so they can see the whole path to the page they're on.
 
+- Graduate school sites with programs and courses
+- Documentation or handbook sites
+- Policy sites with nested sections
+- Research center sites with projects
+
 ## When to use it
-- Showing where a page sits in the bigger picture
-- Showing where readers are in a section
-- Beside the page content, not instead of it
+- Use it when readers benefit from seeing where a page sits in the bigger picture, like a graduate school site with programs, then requirements, then courses
+- Use it to show readers where they are inside a section
+- Use it next to the page content, not in place of it
 
 ## When not to use it
-- Small sites with a few pages: use header links
-- Long, hard-to-scan outlines: use sidenav drilldown
-- Pages read in order: use series nav
+- Don't use it on a small site with only a few pages. Use the header links instead
+- Don't use it when the outline would get long and hard to scan. Use sidenav drilldown to show one level at a time instead
+- Don't use it for pages that must be read in order. Use series nav instead
 
 ## Variants
 

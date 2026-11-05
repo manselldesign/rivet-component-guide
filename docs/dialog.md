@@ -3,15 +3,20 @@
 ## What it is
 A dialog is a small window that opens over the page to ask for a decision or a few details, like confirming a deletion or saving changes before leaving a form. People respond to it before going back to the page.
 
+- Confirm deleting a saved application
+- Warn about unsaved changes before leaving a form
+- Collect a short note, like a room booking detail
+- Confirm signing out of a web app
+
 ## When to use it
-- Confirming an action that's hard to undo
-- Warning about unsaved changes
-- A few quick details without leaving the page
+- Use it to confirm an action that's hard to undo, like deleting a saved application
+- Use it to warn about unsaved changes before someone leaves a form
+- Use it to collect a few quick details without leaving the page, like a room booking note
 
 ## When not to use it
-- Messages people read and move past: use an alert
-- Long forms or content: give it its own page
-- Pop-ups people didn't ask for
+- Don't use it for a message people can read and move past. Use an alert instead
+- Don't use it for long forms or long content. Give it its own page instead
+- Don't open a dialog people didn't ask for, like a newsletter pop-up
 
 ## Variants
 

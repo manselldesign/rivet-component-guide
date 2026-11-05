@@ -3,6 +3,11 @@
 ## Overview
 A Link looks like a button but works like a web link: clicking it takes people to a different page, a different part of the website, or another site. "Read more," "Go to your dashboard," and "Apply now" are all jobs for a Link.
 
+- "Apply now" or "Learn more" on a landing page
+- Next steps at the end of a section
+- Links to another IU site
+- A jump to a section further down the page
+
 Links with words always end in an arrow, and on light pages they are styled **crimson**. Both are signals: they tell people the click will take them somewhere else, not change anything on this page.
 
 There is a second component, Button, for doing something or taking an action on the current page.

@@ -3,13 +3,18 @@
 ## What it is
 An input group joins a text field with a button or a fixed label, like a search box with a "Search" button or an email field that ends in "@iu.edu". It keeps the field and its action or context together, so people know exactly what to type and what happens next.
 
+- Site search in a header or page
+- Newsletter sign-up
+- IU email fields that end in "@iu.edu"
+- Web address fields that start with "https://"
+
 ## When to use it
-- A single-field action, like search or sign-up
-- Part of the answer is fixed, like an email domain
+- Use it for a single-field action, like site search or a newsletter sign-up
+- Use it when part of the answer is fixed, like an IU email domain or a "https://" web address
 
 ## When not to use it
-- Forms with several fields: use text inputs and a submit button
-- Hiding instructions: use the label or helper text
+- Don't use it for forms with several fields. Use text inputs with a submit button below instead
+- Don't use it to hide instructions. Put those in the label or helper text
 
 ## Variants
 

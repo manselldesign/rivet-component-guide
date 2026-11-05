@@ -6,15 +6,20 @@
 ## What it is
 A dropdown is a short menu that opens from a button or a header link, like an account menu with "My profile" and "Sign out". It keeps a few related links or actions out of the way until people need them.
 
+- An account menu in a student portal
+- A "Resources" menu in a site header
+- Row actions in a staff tool
+- Sharing or export options in a web app
+
 ## When to use it
-- A few related links under one button
-- Account or settings menus in a web app
-- Links or actions, not form answers
+- Use it to group a few related links under one button, like "Resources" in a department header
+- Use it for an account or settings menu in a web app, like a student portal
+- Use it when the options are links or actions, not form answers
 
 ## When not to use it
-- Picking a form answer: use a select input or radios
-- Hiding the main way around your site
-- More than about 10 items: split into groups
+- Don't use it to pick an answer in a form. Use a select input or radio buttons instead
+- Don't hide the main way around your site in it. Show important links on the page
+- Don't put more than about 10 items in one menu. Split them into groups or a separate page
 
 ## Variants
 

@@ -3,15 +3,20 @@
 ## What it is
 A profile card introduces one person, like a faculty member, advisor or staff contact. It shows their name, title and ways to reach them, and links to their full profile. People click anywhere on the card to open it.
 
+- Faculty and staff directories
+- Program, lab or office leadership
+- Speakers on an event page
+- Advisors on a degree program page
+
 ## When to use it
-- A faculty or staff directory
-- Who leads a program, lab or office
-- Speakers or advisors on a program page
+- Use it in a faculty or staff directory
+- Use it to show who leads a program, lab or office
+- Use it to list speakers or advisors on a program page
 
 ## When not to use it
-- An office or department: use the Contact card
-- A story about a person: use the News card
-- Extra links or buttons inside the card
+- Don't use it for an office or department. Use the Contact card instead
+- Don't use it for a story about a person. Use the News card instead
+- Don't add extra links or buttons inside a card. The whole card is already the link
 
 ## Variants
 

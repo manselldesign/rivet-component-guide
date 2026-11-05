@@ -3,14 +3,19 @@
 ## What it is
 A split hero is the large banner at the top of a page, with the headline and intro on one side and a photo on the other. It tells people right away what the page is about and where to go next.
 
+- School or department home pages
+- Degree program landing pages
+- Office or service landing pages
+- Research center home pages
+
 ## When to use it
-- Top of a landing page, like a school home page
-- A strong photo supports the main message
+- Use it at the top of a landing page, like a school, department or program home page
+- Use it when you have a strong photo that supports the page's main message
 
 ## When not to use it
-- More than once on a page
-- Detail pages, like a news story: use a simple page title
-- No good photo: use a hero without an image
+- Don't use it more than once on a page
+- Don't use it on detail pages, like a news story or event. Start with a simple page title instead
+- Don't use it without a good photo. Use a hero without an image instead
 
 ## Variants
 

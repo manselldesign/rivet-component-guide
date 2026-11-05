@@ -3,15 +3,20 @@
 ## What it is
 A news card previews one story, like a research discovery, a faculty award or a campus update. It shows the headline and a category, and links to the full story. People click anywhere on the card to open it.
 
-## When to use it
-- Recent stories on a home page
-- A news feed or “In the news” section
+- Recent stories on a school or department home page
+- A news feed or "In the news" section
 - Related stories at the end of an article
+- Research highlights on a lab or center page
+
+## When to use it
+- Use it to list recent stories on a school or department home page
+- Use it in a news feed or an "In the news" section
+- Use it to point to related stories at the end of an article
 
 ## When not to use it
-- Upcoming events: use the Event card
-- Resources, services or programs: use the Default card
-- Extra links or buttons inside the card
+- Don't use it for an upcoming event. Use the Event card instead
+- Don't use it for a resource, service or program. Use the Default card instead
+- Don't add extra links or buttons inside a card. The whole card is already the link
 
 ## Variants
 
