@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-11-03",
+  "updated": "2026-11-05",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -5065,12 +5065,28 @@
           "action": "add"
         },
         {
+          "name": "spacing/2",
+          "css": "--rvt-spacing-2",
+          "desktop": 2,
+          "mobile": 2,
+          "codeToday": null,
+          "action": "add"
+        },
+        {
           "name": "spacing/4",
           "css": "--rvt-spacing-4",
           "desktop": 4,
           "mobile": 4,
           "codeToday": "--rvt-spacing-xxs",
           "action": "rename"
+        },
+        {
+          "name": "spacing/6",
+          "css": "--rvt-spacing-6",
+          "desktop": 6,
+          "mobile": 6,
+          "codeToday": null,
+          "action": "add"
         },
         {
           "name": "spacing/8",
@@ -5113,12 +5129,28 @@
           "action": "rename"
         },
         {
+          "name": "spacing/28",
+          "css": "--rvt-spacing-28",
+          "desktop": 28,
+          "mobile": 24,
+          "codeToday": null,
+          "action": "add (with mobile value)"
+        },
+        {
           "name": "spacing/32",
           "css": "--rvt-spacing-32",
           "desktop": 32,
           "mobile": 24,
           "codeToday": "--rvt-spacing-lg",
           "action": "rename + add mobile value"
+        },
+        {
+          "name": "spacing/36",
+          "css": "--rvt-spacing-36",
+          "desktop": 36,
+          "mobile": 28,
+          "codeToday": null,
+          "action": "add (with mobile value)"
         },
         {
           "name": "spacing/40",
@@ -5133,6 +5165,14 @@
           "css": "--rvt-spacing-48",
           "desktop": 48,
           "mobile": 36,
+          "codeToday": null,
+          "action": "add (with mobile value)"
+        },
+        {
+          "name": "spacing/56",
+          "css": "--rvt-spacing-56",
+          "desktop": 56,
+          "mobile": 44,
           "codeToday": null,
           "action": "add (with mobile value)"
         },

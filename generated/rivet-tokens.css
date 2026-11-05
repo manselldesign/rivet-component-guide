@@ -40,15 +40,20 @@
 	--rvt-color-status-danger-deep: #ab0723;
 	--rvt-color-status-danger-hover: #760518;
 	--rvt-spacing-0: 0px;
+	--rvt-spacing-2: 2px;
 	--rvt-spacing-4: 4px;
+	--rvt-spacing-6: 6px;
 	--rvt-spacing-8: 8px;
 	--rvt-spacing-12: 12px;
 	--rvt-spacing-16: 16px;
 	--rvt-spacing-20: 20px;
 	--rvt-spacing-24: 24px;
+	--rvt-spacing-28: 28px;
 	--rvt-spacing-32: 32px;
+	--rvt-spacing-36: 36px;
 	--rvt-spacing-40: 40px;
 	--rvt-spacing-48: 48px;
+	--rvt-spacing-56: 56px;
 	--rvt-spacing-64: 64px;
 	--rvt-spacing-80: 80px;
 	--rvt-spacing-96: 96px;
@@ -164,9 +169,12 @@
 /* Mobile values (Figma "Mobile" mode). Adjust the breakpoint to your --rvt-breakpoint for small screens. */
 @media (max-width: 767px) {
 	:root {
+		--rvt-spacing-28: 24px;
 		--rvt-spacing-32: 24px;
+		--rvt-spacing-36: 28px;
 		--rvt-spacing-40: 32px;
 		--rvt-spacing-48: 36px;
+		--rvt-spacing-56: 44px;
 		--rvt-spacing-64: 48px;
 		--rvt-spacing-80: 60px;
 		--rvt-spacing-96: 72px;
