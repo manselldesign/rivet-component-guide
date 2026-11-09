@@ -380,23 +380,31 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
   .prose>:first-child{margin-top:0}
 }
 .load{padding-block:64px;color:var(--text-muted)}
-/* ---------- Component rail (sidebar-v2-children sidenav, Dark mode) ----------
-   Ported from prototype-hub sidebar/sidebar-v2-children: 280px rail, 24px inner pad, full height, 1px rule on the right edge.
-   Persistent title = action/sm/strong 14/20 wght 600, accent + underline, 12px below, 1px rule.
-   Rows = sidenav-item: 12px top/bottom, action/sm/regular 14/20 wght 350, 16px rvt-chevron-right, 8px gap, 1px hairline under each row.
+/* ---------- Component rail (Prototype v1.1 sidebar-v2-children sidenav, Dark mode) ----------
+   Ported from prototype-hub v1.1/sidebar-v2-children: 260px rail, 24px inner pad, full height, 1px rule on the right edge.
+   Back (v1.1): 14px rvt-arrow-left + action/sm/strong 14/20 wght 600, 8px gap, 12px under the header; title sits 28px below it (20px on mobile).
+   Persistent title = action/sm/strong 14/20 wght 600, accent, 12px below, 1px rule.
+   Rows = sidenav-item on a 44px pitch: 12px top/bottom, action/sm/regular 14/20 wght 350, 12px rvt-chevron-right, 8px gap,
+   1px hairline under every row (the last one too; not on mobile).
    Width is the site-wide 110% (body rule above); the prototype's 115 / 112.5 are not Rivet values.
-   Current row: accent + underline (from-font), no chevron. Hover/focus: label underlined, label + chevron accent.
+   Current row: accent + underline (from-font), regular weight. Hover/focus: label underlined, label + chevron accent.
    Light prototype colors map to Dark-mode tokens: background/default #1f2528, border/default #000000,
    text/default #ffffff (ink), text/accent #fdfaf7 (crimson), accent-strong #efdfc8 (hover).
    Always dark, in both page themes, like the hero. Below 1024px the rail becomes the prototype's
    in-flow disclosure under a compact bar (400ms max-height ease, content pushes down). */
 #rail-shell{--rail-pad:24px;--rail-bg:#1f2528;--rail-rule:#000000;--rail-text:#ffffff;--rail-accent:#faf6ef;--rail-strong:#efdfc8;color-scheme:dark}
-:root{--rail-w:280px}
+:root{--rail-w:260px}
 body:not(.has-rail) #rail-shell{display:none}
 #rail{background:var(--rail-bg);color:var(--rail-text)}
 #rail ul{list-style:none;margin:0;padding:0}
 #rail li{border-bottom:1px solid var(--rail-rule)}
-#rail li:last-child{border-bottom:0}
+@media (max-width:1023.98px){#rail li:last-child{border-bottom:0}}
+.rail-back{display:flex;width:max-content;align-items:center;gap:8px;height:24px;color:var(--rail-text);text-decoration:none;
+  font-size:14px;line-height:20px;font-weight:600}
+.rail-back svg{width:14px;height:14px;display:block;flex:none;fill:currentColor}
+.rail-back:hover,.rail-back:focus-visible{color:var(--rail-strong);text-decoration:none}
+.rail-after-back{padding-top:20px}
+@media (min-width:1024px){.rail-after-back{padding-top:28px}}
 .rail-title{display:flex;width:100%;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--rail-rule);
   color:var(--rail-accent);text-decoration:none;font-size:14px;line-height:20px;font-weight:600}
 .rail-title-label{min-width:0;flex:1;text-decoration:none;text-decoration-thickness:1px;text-underline-offset:3px}
@@ -405,9 +413,9 @@ body:not(.has-rail) #rail-shell{display:none}
 .rail-item{display:flex;align-items:center;gap:8px;padding:12px 0;color:var(--rail-text);text-decoration:none;
   font-size:14px;line-height:20px;font-weight:350}
 .rail-label{min-width:0;flex:1;white-space:normal}
-.rail-chev{display:block;width:16px;height:16px;flex:none}
-.rail-chev svg{width:16px;height:16px;display:block;fill:currentColor}
-.rail-item[aria-current="page"]{color:var(--rail-accent);font-weight:var(--w-bold)}
+.rail-chev{display:block;width:12px;height:12px;flex:none}
+.rail-chev svg{width:12px;height:12px;display:block;fill:currentColor}
+.rail-item[aria-current="page"]{color:var(--rail-accent)}
 .rail-item[aria-current="page"] .rail-label{text-decoration:underline;text-underline-position:from-font;text-decoration-thickness:1px}
 .rail-item[aria-current="page"] .rail-chev{color:var(--rail-accent)} /* icon/accent: chevron stays, changes color with the label */
 .rail-item:active,.rail-item:focus-visible{color:var(--rail-strong);text-decoration:none}
@@ -469,8 +477,8 @@ body:not(.has-rail) .site-header__menu{display:none}
   #rail{position:sticky;top:0;height:100vh;height:100dvh;width:var(--rail-w);border-right:1px solid var(--rail-rule);
     padding:0 var(--rail-pad) var(--rail-pad);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#5b646b transparent;
     max-height:none!important;visibility:visible}
-  /* Title label centers on the hero's tag line (hero top pad minus 2px for the 20px vs 16px line box). */
-  #rail-nav{padding-top:calc(var(--rvt-spacing-96) - 2px)}
+  /* v1.1: Back sits 12px under the header. */
+  #rail-nav{padding-top:12px}
 }
 
 /* Mobile/tablet: compact sticky bar + in-flow disclosure (prototype's < 1024px sidenav). */
@@ -2110,6 +2118,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 
   /* ---------- Component rail ---------- */
   const CHEV = 'M6.263 15.146 12.31 8 6.263.854 4.737 2.146 9.69 8l-4.953 5.854 1.526 1.292Z';
+  const BACK = 'M15 7H4.156l4.107-4.854L6.737.854.69 8l6.047 7.146 1.526-1.292L4.156 9H15V7Z';
   const MENU = 'M15 4H1V2H15V4ZM15 9H1V7H15V9ZM1 14H15V12H1V14Z';
   let railToggle, railPanel, railNav;
   const desktop = window.matchMedia('(min-width: 1024px)');
@@ -2118,9 +2127,10 @@ body:not(.has-rail) .site-header__menu{display:none}
     shell.id = 'rail-shell';
     shell.innerHTML = `
       <nav id="rail" aria-label="All components"><div id="rail-nav">
-        <a class="rail-title" href="#"><span class="rail-title-label">Components</span></a>
-        <ul>${list.map(c => `<li><a class="rail-item" href="#${esc(c.slug)}" data-slug="${esc(c.slug)}"><span class="rail-label">${esc(c.name)}</span><span class="rail-chev" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="${CHEV}"/></svg></span></a></li>`).join('')}</ul>
-      </div></nav>`;
+        <a class="rail-back" href="#"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="${BACK}"/></svg><span>Home</span></a>
+        <div class="rail-after-back"><a class="rail-title" href="#"><span class="rail-title-label">Components</span></a>
+        <ul>${list.map(c => `<li><a class="rail-item" href="#${esc(c.slug)}" data-slug="${esc(c.slug)}"><span class="rail-label">${esc(c.name)}</span><span class="rail-chev" aria-hidden="true"><svg viewBox="-3.69 0 16 16"><path d="${CHEV}"/></svg></span></a></li>`).join('')}</ul>
+      </div></div></nav>`;
     app.parentNode.insertBefore(shell, app);
     document.getElementById('rail-toggle').hidden = false;
     railToggle = document.getElementById('rail-toggle');
