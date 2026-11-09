@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-11-05",
+  "updated": "2026-11-09",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -42,7 +42,7 @@
     "After that, Figma and code match 1:1. New tokens start in Figma; name suggestions go through 'namingSuggestions'."
   ],
   "summary": {
-    "themeColors": 146,
+    "themeColors": 147,
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
     "textStyles": 79,
@@ -1172,6 +1172,21 @@
             },
             "replaces": "--rvt-color-theme-background",
             "action": "add (replaces --rvt-color-theme-background)"
+          },
+          {
+            "name": "text/on-brand-fixed",
+            "css": "--rvt-text-on-brand-fixed",
+            "light": "#ffffff",
+            "dark": "#ffffff",
+            "crimson": "#ffffff",
+            "cssValue": {
+              "light": "--rvt-color-base-ultra-light",
+              "dark": "--rvt-color-base-ultra-light",
+              "crimson": "--rvt-color-base-ultra-light"
+            },
+            "codeToday": null,
+            "action": "add",
+            "note": "Always white in every theme. For text on a fixed crimson background (pairs with icon/on-brand-fixed). Added in Figma 2026-11-09."
           },
           {
             "name": "text/required",
