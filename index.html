@@ -384,8 +384,9 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
    Ported from prototype-hub v1.1/sidebar-v2-children: 260px rail, 24px inner pad, full height, 1px rule on the right edge.
    Back (v1.1): 14px rvt-arrow-left + action/sm/strong 14/20 wght 600, 8px gap, 12px under the header; title sits 28px below it (20px on mobile).
    Persistent title = action/sm/strong 14/20 wght 600, accent, 12px below, 1px rule.
-   Rows = sidenav-item on a 44px pitch: 12px top/bottom, action/sm/regular 14/20 wght 350, 12px rvt-chevron-right, 8px gap,
+   Rows = sidenav-item on a 44px pitch: 12px top/bottom, action/sm/regular 14/20 wght 350,
    1px hairline under every row (the last one too; not on mobile).
+   No chevrons: in the prototype a chevron marks an item with sub-pages, and components have none.
    Width is the site-wide 110% (body rule above); the prototype's 115 / 112.5 are not Rivet values.
    Current row: accent + underline (from-font), regular weight. Hover/focus: label underlined, label + chevron accent.
    Light prototype colors map to Dark-mode tokens: background/default #1f2528, border/default #000000,
@@ -2129,7 +2130,7 @@ body:not(.has-rail) .site-header__menu{display:none}
       <nav id="rail" aria-label="All components"><div id="rail-nav">
         <a class="rail-back" href="#"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="${BACK}"/></svg><span>Home</span></a>
         <div class="rail-after-back"><a class="rail-title" href="#"><span class="rail-title-label">Components</span></a>
-        <ul>${list.map(c => `<li><a class="rail-item" href="#${esc(c.slug)}" data-slug="${esc(c.slug)}"><span class="rail-label">${esc(c.name)}</span><span class="rail-chev" aria-hidden="true"><svg viewBox="-3.69 0 16 16"><path d="${CHEV}"/></svg></span></a></li>`).join('')}</ul>
+        <ul>${list.map(c => `<li><a class="rail-item" href="#${esc(c.slug)}" data-slug="${esc(c.slug)}"><span class="rail-label">${esc(c.name)}</span></a></li>`).join('')}</ul>
       </div></div></nav>`;
     app.parentNode.insertBefore(shell, app);
     document.getElementById('rail-toggle').hidden = false;
