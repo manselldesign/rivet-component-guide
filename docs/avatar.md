@@ -16,7 +16,7 @@ A small circle that shows who a person is. It holds their photo, their initials,
 - Don't use it for departments, schools or programs. Use an image or the IU logo instead
 - Don't use it as decoration or for photos of places and events. Use an image instead
 
-## Variants
+## Types
 
 ### Layout
 - **Image:** Use when you have a clear, current photo of the person

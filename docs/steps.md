@@ -19,7 +19,7 @@ A numbered row of steps that shows readers where they are in a longer process an
 - Don't use it for pages in a series of articles. Use series nav instead
 - Don't use it for one or two steps. Plain headings are enough
 
-## Variants
+## Types
 
 ### Type
 - **Default:** Use it for most processes. Steps sit in a row with a line between them

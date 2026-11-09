@@ -21,7 +21,7 @@ A dropdown is a short menu that opens from a button or a header link, like an ac
 - Don't hide the main way around your site in it. Show important links on the page
 - Don't put more than about 10 items in one menu. Split them into groups or a separate page
 
-## Variants
+## Types
 
 ### Type
 - **App:** Comes with its own button. Use it in web apps and tools, like an account menu

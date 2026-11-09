@@ -18,13 +18,13 @@ A dialog is a small window that opens over the page to ask for a decision or a f
 - Don't use it for long forms or long content. Give it its own page instead
 - Don't open a dialog people didn't ask for, like a newsletter pop-up
 
-## Variants
+## Types
 
 ### Type
 - **Default:** The dialog by itself
 - **Modal:** The same dialog over a dimmed page. People can't use the page until they respond
 
-### Variant
+### Purpose
 - **Default:** A title, a short message and buttons. Use it for general questions
 - **Success Confirmation:** Confirms something worked, like "Changes saved"
 - **Warning Confirmation:** Asks people to stop and check, like unsaved changes

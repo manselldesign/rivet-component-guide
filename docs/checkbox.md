@@ -18,7 +18,7 @@ A checkbox lets people pick one or more options from a list, like the programs t
 - Don't use it for a setting that changes something right away. Use a switch instead
 - Don't use it for a very long list, like every degree program. Use a searchable list instead
 
-## Variants
+## Types
 
 ### Type
 - **Default:** Options stacked in a column. Use it in most forms

@@ -17,7 +17,7 @@ A short trail of links at the top of a page that shows where the page sits in yo
 - Don't use it to show steps in a process, like an application form. Use steps instead
 - Don't use it as the main navigation. Keep your header or side navigation
 
-## Variants
+## Types
 
 ### Parts of the trail
 - **Home:** The house icon. Always the first link and takes people to your site's homepage

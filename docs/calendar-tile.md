@@ -18,7 +18,7 @@ A small square that shows a date at a glance, with the month, day and year stack
 - Don't use it for times. Put the time in the event details
 - Don't use it just to show when a page was published. Use plain text for that
 
-## Variants
+## Types
 
 ### Parts
 - **Month:** Short month name, like "JUN", in capital letters. Always shown

@@ -20,7 +20,7 @@ The header is the bar at the top of every page. It shows the IU logo with your s
 - Don't use it inside a page or a card. It belongs only at the very top
 - Don't put more than 8 links in the main navigation. Group the rest under dropdowns or in the footer
 
-## Variants
+## Types
 
 ### Type
 - **Default:** Use it for websites, like a school, department or program site

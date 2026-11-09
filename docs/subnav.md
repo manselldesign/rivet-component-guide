@@ -19,7 +19,7 @@ A row of links that moves readers between the pages inside one section of a site
 - Don't use it to switch views of the same content on one page. Use tabs instead
 - Don't use it for steps in a process. Use steps instead
 
-## Variants
+## Types
 
 ### Breakpoint
 - **Desktop:** Links sit side by side, each as wide as its text

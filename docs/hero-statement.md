@@ -18,7 +18,7 @@ A statement hero opens a page with a bold headline and one to three large photos
 - Don't use it without strong photos
 - Don't use more than one hero on a page
 
-## Variants
+## Types
 
 ### Layout
 - **Single image:** One wide photo. Use it when one image tells the story, like a campus landmark

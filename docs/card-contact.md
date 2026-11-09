@@ -18,7 +18,7 @@ A contact card shows people how to reach an office, team or department. It puts 
 - Don't use it for events or news. Use the Event or News card instead
 - Don't use it to list dozens of people. Use a table or directory instead
 
-## Variants
+## Types
 
 ### Layout
 - **Default:** Use it for an office or team. Shows a sticker

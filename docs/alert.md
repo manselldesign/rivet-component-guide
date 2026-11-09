@@ -22,7 +22,7 @@ An alert is a colored box that tells readers something important about the page 
 - Don't stack several alerts on one page. Combine them or pick the most important one
 - Don't use it for messages that never change. If it's always there, it's just content
 
-## Variants
+## Types
 
 ### Status
 

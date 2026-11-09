@@ -18,7 +18,7 @@ A feature card is a large doorway to a topic, like "Types of financial aid" or "
 - Don't use it for events, news, people or offices. Use the Event, News, Profile or Contact card instead
 - Don't mix Feature and Default cards in the same row. They sit on different levels
 
-## Variants
+## Types
 
 ### Layout
 - **Image:** Use it when a photo helps people recognize the topic, like a residence hall for housing

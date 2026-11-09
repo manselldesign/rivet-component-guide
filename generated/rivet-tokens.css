@@ -223,7 +223,7 @@
 	}
 }
 
-:is(:root, .rvt-theme-light, .rvt-callout--strong) {
+:is(:root, .rvt-theme-light) {
 	--rvt-background-accent: var(--rvt-color-brand-dark);
 	--rvt-background-accent-subtle: var(--rvt-color-brand-light);
 	--rvt-background-brand: var(--rvt-color-brand-main);
@@ -839,7 +839,7 @@
 }
 
 /* Old theme names → their closest new name (same values). Use role-specific names in new CSS. */
-:is(:root, .rvt-theme-light, .rvt-theme-dark, .rvt-theme-crimson, .rvt-callout--strong) {
+:is(:root, .rvt-theme-light, .rvt-theme-dark, .rvt-theme-crimson) {
 	--rvt-color-theme-accent: var(--rvt-background-brand);
 	--rvt-color-theme-accent-strong: var(--rvt-background-accent);
 	--rvt-color-theme-background: var(--rvt-background-default);

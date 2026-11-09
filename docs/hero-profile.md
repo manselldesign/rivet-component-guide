@@ -18,7 +18,7 @@ A profile hero opens a person's page with their photo, name, credentials and job
 - Don't use it to list several people. Use Profile cards instead
 - Don't use it for a news story about a person. Use the article layout instead
 
-## Variants
+## Types
 
 ### Layout
 - **Default:** Photo, name, title and buttons. Use it when contact details appear further down the page

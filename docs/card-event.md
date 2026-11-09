@@ -19,7 +19,7 @@ An event card previews one event, like a lecture, open house or performance. It 
 - Don't use it for a deadline with no time or place, like an application due date
 - Don't add extra links or buttons inside a card. The whole card is already the link
 
-## Variants
+## Types
 
 ### Layout
 - **Image:** Use it when you have a good photo of the event, speaker or venue

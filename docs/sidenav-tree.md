@@ -21,7 +21,7 @@ A side menu that shows the pages in one section of a site as an expanding outlin
 - Don't use it when the outline would get long and hard to scan. Use sidenav drilldown to show one level at a time instead
 - Don't use it for pages that must be read in order. Use series nav instead
 
-## Variants
+## Types
 
 ### Levels
 - **One to Five:** Shows how many levels are open. Open only the path to the current page, and keep the rest closed

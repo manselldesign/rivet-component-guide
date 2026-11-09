@@ -19,7 +19,7 @@ A text block is the main content area of a details page: headings, paragraphs, l
 - Don't use it to link to a group of pages on its own. Use a list hub instead
 - Don't use it for a home page or section index. Those pages use cards and heroes
 
-## Variants
+## Types
 
 ### Row type
 Each row is one kind of content. Pick the type that fits, and add, remove or reorder rows as you need.
@@ -68,4 +68,4 @@ Shared rules: no background, border or shadow on the block or its rows. Rows sta
 | CTA Group | `spacing/24` above (24px); buttons in a wrapping row, `spacing/16` gap (16px); button Link, Subtle, Extra-large | Same, `spacing/16` gap (16px) |
 | Image Hub, Quote, Note, List Hub, Accordion, Stats | `spacing/32` above (32px) | `spacing/32` above (24px) |
 | Table | `spacing/24` above (24px) | `spacing/24` above (24px) |
-| Nested variants | Image hub Single; quote Default, Compact; alert Default; list hub Compact, Single; table Crimson, Default, not striped; stat Grid | Same, Mobile breakpoint |
+| Nested types | Image hub Single; quote Default, Compact; alert Default; list hub Compact, Single; table Crimson, Default, not striped; stat Grid | Same, Mobile breakpoint |

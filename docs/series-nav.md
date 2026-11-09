@@ -19,7 +19,7 @@ A pair of links at the end of a page that take readers to the previous or next p
 - Don't use it as the main way around a site. Use the header or breadcrumbs instead
 - Don't use it for steps in a form. Use the form's own buttons instead
 
-## Variants
+## Types
 
 ### Breakpoint
 - **Desktop:** Previous and Next sit side by side

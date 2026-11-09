@@ -18,7 +18,7 @@ A row of page numbers and arrows that splits a long list of results into pages. 
 - Don't use it to move through steps in a form. Use Back and Next buttons instead
 - Don't use it inside small spaces like cards or sidebars
 
-## Variants
+## Types
 
 ### Breakpoint
 - **Desktop:** Use it on larger screens

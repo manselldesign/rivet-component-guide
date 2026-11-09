@@ -655,7 +655,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-accordion__body a{color:var(--rvt-text-link);text-underline-offset:3px;text-decoration-thickness:1px;transition:text-decoration-color .15s ease-out}
 .rvt-accordion__body a:hover{text-decoration-thickness:2px}
 
-/* ---------- Example controls: "Switch theme" tabs, then "Select variant" for components with more than one variant ----------
+/* ---------- Example controls: "Switch theme" tabs, then "Select type" for components with more than one type ----------
    The two controls sit side by side, bottom-aligned, spacing/24 apart, and wrap under each other on narrow screens.
    Each has its own label in the input-label style (.demo-switch-label). */
 .demo-controls{display:flex;flex-wrap:wrap;align-items:flex-end;gap:var(--rvt-spacing-24)}
@@ -857,7 +857,7 @@ body:not(.has-rail) .site-header__menu{display:none}
   .rvt-alert--inline .rvt-alert__message{flex:1 1 auto;max-width:none}
   .rvt-alert--inline.has-close .rvt-alert__message{max-width:280px}
 }
-/* ---------- Example option: radio group beside "Select variant" (e.g. Billboard "Links: One button / Multiple links") ----------
+/* ---------- Example option: radio group beside "Select type" (e.g. Billboard "Links: One button / Multiple links") ----------
    rvt-radio, Type=Inline: options side by side, spacing/24 apart; option text action/lg/regular text/strong, spacing/8 from the circle.
    Circle 20px: unchecked 1px border/strong ring, no fill; checked 1px border/accent ring with a background/brand dot.
    Focus: 2px border/accent-strong ring around the circle (24px). The label sits spacing/8 above the options, as on the other two controls; the group
@@ -962,6 +962,63 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-breadcrumbs__current{font:var(--rvt-font-action-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);color:var(--rvt-text-strong);white-space:nowrap}
 .rvt-breadcrumbs__home:focus-visible,.rvt-breadcrumbs__link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){.rvt-breadcrumbs__home,.rvt-breadcrumbs__link{transition:none}}
+
+/* ---------- rvt-callout (Callout page example, Developer spec checklist) ----------
+   One box: picture (sticker or avatar) plus text column (eyebrow, title, description, up to two links).
+   Tone Strong: background/strong, no border; description text/brand. Tone Normal: background/default with a 1px border/default drawn inside (so it doesn't add to the size); description text/default.
+   Desktop: spacing/80 padding all sides. Left: picture beside the text, items top-aligned and centered as a group, text column max 850px with spacing/8 above.
+     Gap spacing/32. Top: picture above the text, gap spacing/24.
+   Sticker and avatar: the same size, 80px on Desktop and 64px on Mobile. Sticker: Crimson, with container (color/brand-light circle, color/brand-main art, white fill); the same in every theme.
+   Avatar: rvt-avatar (photo).
+   Text block matches the billboard and feature card: eyebrow tag/sm/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/32, 20/24 on Mobile).
+   Description body/sm/regular (16/24), spacing/20 above.
+   Links: rvt-button Link, Normal, Extra-large, side by side spacing/16 apart, spacing/32 above. */
+.rvt-callout-wrap{container-type:inline-size}
+.rvt-callout{box-sizing:border-box;display:flex;align-items:flex-start;justify-content:center;gap:var(--callout-gap);padding:var(--rvt-spacing-80);
+  --callout-gap:var(--rvt-spacing-32);--callout-desc:var(--rvt-text-default);--callout-media:80px;
+  background:var(--rvt-background-default);box-shadow:inset 0 0 0 1px var(--rvt-border-default)}
+.rvt-callout--strong{--callout-desc:var(--rvt-text-brand);background:var(--rvt-background-strong);box-shadow:none}
+.rvt-callout--top{flex-direction:column;justify-content:flex-start;--callout-gap:var(--rvt-spacing-24)}
+.rvt-callout__media{flex:none;display:flex}
+.rvt-callout .rvt-avatar{--avatar-size:var(--callout-media)}
+.rvt-callout__sticker{display:block;width:var(--callout-media);height:var(--callout-media);border-radius:var(--rvt-border-radius-full);background:var(--rvt-color-brand-light);color:var(--rvt-color-brand-main)}
+.rvt-callout__sticker svg{display:block;width:100%;height:100%}
+.rvt-callout__sticker .fill{fill:var(--rvt-color-base-ultra-light)}
+.rvt-callout__sticker .art{fill:currentColor}
+.rvt-callout__body{flex:1 1 0;min-width:0;max-width:850px;padding-top:var(--rvt-spacing-8);overflow-wrap:break-word}
+.rvt-callout--top .rvt-callout__body{flex:none;width:100%;padding-top:0}
+.rvt-callout__eyebrow{margin:0;padding:0 0 var(--rvt-spacing-8) 2px;color:var(--rvt-text-brand);
+  font:var(--rvt-font-tag-sm-caps);letter-spacing:var(--rvt-font-tracking-xl);text-transform:uppercase}
+.rvt-callout__title{margin:0;color:var(--rvt-text-brand);
+  font:var(--rvt-font-display-xs-strong);font-stretch:var(--rvt-font-width-normal);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-callout__desc{margin:0;padding-top:var(--rvt-spacing-20);color:var(--callout-desc);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-callout__actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-16);padding-top:var(--rvt-spacing-32)}
+/* rvt-button, Link, Normal, Extra-large (same as the billboard's single link): component/button/height-xl, spacing/16 sides, spacing/8 to the 16px arrow; 1px border/accent drawn inside.
+   Hover: border/accent-strong, text/brand-strong, icon/accent-strong (150ms). Focus: 2px border/accent-strong, 2px offset. */
+.rvt-callout__button{box-sizing:border-box;display:inline-flex;align-items:center;gap:var(--rvt-spacing-8);height:var(--rvt-component-button-height-xl);padding:0 var(--rvt-spacing-16);
+  box-shadow:inset 0 0 0 1px var(--rvt-border-accent);color:var(--rvt-text-accent);text-decoration:none;white-space:nowrap;
+  font:var(--rvt-font-action-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);
+  transition:box-shadow .15s ease-out,color .15s ease-out}
+.rvt-callout__button svg{display:block;flex:none;width:16px;height:16px;fill:var(--rvt-icon-accent);transition:fill .15s ease-out}
+.rvt-callout__button:hover{box-shadow:inset 0 0 0 1px var(--rvt-border-accent-strong);color:var(--rvt-text-brand-strong)}
+.rvt-callout__button:hover svg{fill:var(--rvt-icon-accent-strong)}
+.rvt-callout__button:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+@container (max-width:799px){
+  /* Stacked = the component's Mobile mode, whatever the screen size (like the billboard): the tokens with a Mobile value take it here,
+     the same values generated/rivet-tokens.css gives them below 768px. Everything stacks, whatever the orientation.
+     Padding spacing/32 (24px) top and sides, spacing/40 (32px) bottom. Gap spacing/20.
+     Sticker and avatar 64px. Title 20/24. Description unchanged (16/24, spacing/20 above). Links stacked, each hugging its label, spacing/16 apart. */
+  .rvt-callout{--rvt-spacing-32:24px;--rvt-spacing-40:32px;--rvt-type-size-26:20px;--rvt-type-line-height-24-32:24px;
+    flex-direction:column;align-items:stretch;justify-content:flex-start;--callout-gap:var(--rvt-spacing-20);
+    padding:var(--rvt-spacing-32) var(--rvt-spacing-32) var(--rvt-spacing-40);--callout-media:64px}
+  .rvt-callout--top{--callout-gap:var(--rvt-spacing-20)}
+  .rvt-callout__media{align-self:flex-start}
+  .rvt-callout__body,.rvt-callout--top .rvt-callout__body{flex:none;width:100%;padding-top:0}
+  .rvt-callout__actions{flex-direction:column;align-items:flex-start}
+  .rvt-callout__title{font-size:var(--rvt-type-size-26);line-height:var(--rvt-type-line-height-24-32)}
+}
+@media (prefers-reduced-motion:reduce){.rvt-callout__button,.rvt-callout__button svg{transition:none}}
 
 @media (prefers-reduced-motion:reduce){
   .rvt-alert__btn,.rvt-accordion__panel,.rvt-accordion__panel.is-open,.rvt-accordion__item,.rvt-accordion__icon svg path,.rvt-tabs__tab,.rvt-tabs--segmented.is-animated :is(.rvt-tabs__indicator,.rvt-tabs__indicator-edge,.rvt-tabs__indicator-fill){transition:none}
@@ -1332,6 +1389,37 @@ body:not(.has-rail) .site-header__menu{display:none}
     {tag: 'Default', iso: '2027-01-12', full: 'January 12, 2027', month: 'Jan', day: '12', year: '2027'},
     {tag: 'No year', iso: '2026-12-01', full: 'December 1', month: 'Dec', day: '1'}
   ];
+  /* rvt-callout example. One callout per Layout, each with IU admissions or student-life copy. Sticker = megaphone (rivet-stickers),
+     Avatar reuses the avatar example photo; it sits beside text that already names the person, so its alt text is empty. */
+  const MEGAPHONE = {
+    fill: 'M52 19h6v8.252c3.026 2.177 5 5.732 5 9.748 0 4.016-1.974 7.57-5 9.748V55h-6v-1.774l-18-5.87v5.463l1.923 5.128c.735 1.96-.714 4.053-2.809 4.053h-4.807L25 53.181V46h-3a3 3 0 0 1-3-3v-.1a5.002 5.002 0 0 1-4-4.9v-2a5.002 5.002 0 0 1 4-4.9V31a3 3 0 0 1 3-3h7.841L52 20.774V19Z',
+    art: 'M52 19h6v8.252c3.026 2.177 5 5.732 5 9.748 0 4.016-1.974 7.57-5 9.748V55h-6v-1.774l-18-5.87v5.463l1.923 5.128c.735 1.96-.714 4.053-2.809 4.053h-4.807L25 53.181V46h-3a3 3 0 0 1-3-3v-.1a5.002 5.002 0 0 1-4-4.9v-2a5.002 5.002 0 0 1 4-4.9V31a3 3 0 0 1 3-3h7.841L52 20.774V19Zm2 2v32h2V21h-2Zm-2 1.878-21 6.848v14.548l21 6.848V22.878ZM29 44V30h-7a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h7Zm.841 2H27v6.819L29.693 60h3.421a1 1 0 0 0 .936-1.351L32 53.18v-6.477L29.841 46ZM19 33.17A3.001 3.001 0 0 0 17 36v2c0 1.306.835 2.417 2 2.83v-7.66Zm39 10.971A9.968 9.968 0 0 0 61 37a9.969 9.969 0 0 0-3-7.142v14.283ZM27 34h-4v-2h4v2Zm0 4h-4v-2h4v2Zm0 4h-4v-2h4v2Z'
+  };
+  const CALLOUTS = {
+    sticker: {eyebrow: 'Admissions', title: 'Fall 2027 applications are open',
+      desc: 'Apply by November 1 for early action and the best chance at merit scholarships. Most students finish the application in about an hour.',
+      links: ['Start your application', 'See deadlines']},
+    avatar: {eyebrow: 'Advising', title: 'Meet your admissions counselor',
+      desc: 'Jordan Morgan works with students from central Indiana. Ask about campus visits, deadlines or what to send with your application.',
+      links: ['Book a meeting', 'Email Jordan']}
+  };
+  const calloutMedia = layout => {
+    if (layout === 'avatar') return `<span class="rvt-avatar rvt-avatar--80"><img src="img/avatar-example.jpg" width="600" height="600" alt=""></span>`;
+    return `<span class="rvt-callout__sticker"><svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><path class="fill" d="${MEGAPHONE.fill}"/><path class="art" d="${MEGAPHONE.art}"/></svg></span>`;
+  };
+  const calloutEl = (variant, tone) => {
+    const [orientation, layout] = variant.split('-');
+    const c = CALLOUTS[layout];
+    return `<div class="rvt-callout-wrap"><div class="rvt-callout rvt-callout--${tone} rvt-callout--${orientation} rvt-callout--${layout}">
+      <div class="rvt-callout__media">${calloutMedia(layout)}</div>
+      <div class="rvt-callout__body">
+        <p class="rvt-callout__eyebrow">${esc(c.eyebrow)}</p>
+        <h3 class="rvt-callout__title">${esc(c.title)}</h3>
+        <p class="rvt-callout__desc">${esc(c.desc)}</p>
+        <div class="rvt-callout__actions">${c.links.map(t => `<a class="rvt-callout__button" href="#callout">${esc(t)}<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${P.arrowRight}"/></svg></a>`).join('')}</div>
+      </div>
+    </div></div>`;
+  };
   const demos = {
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
@@ -1371,7 +1459,7 @@ body:not(.has-rail) .site-header__menu{display:none}
         });
       }
     },
-    /* Components with more than one variant list them in `variants`; the example adds a "Select variant" dropdown next to the theme tabs.
+    /* Components with more than one variant list them in `variants`; the example adds a "Select type" dropdown next to the theme tabs.
        A variant can carry its own maxWidth (its Desktop frame width); html(variantId) builds the stage for that variant. */
     alert: {
       maxWidth: 1400, // Figma rvt-alert, Breakpoint=Desktop, Type=Default and Buttons frame width
@@ -1449,7 +1537,7 @@ body:not(.has-rail) .site-header__menu{display:none}
        so each size is capped at its own row width (measured, rounded up to the next 10px); the row wraps on narrow screens. */
     button: {
       maxWidth: 830, // Extra-large row (822px measured)
-      variantLabel: 'Select size', // the dropdown picks the size, so it says so (default label is "Select variant")
+      variantLabel: 'Select size', // the dropdown picks the size, so it says so (default label is "Select type")
       variants: [
         {id: 'xl', label: 'Extra-large'},
         {id: 'lg', label: 'Large', maxWidth: 820}, // 814px measured
@@ -1475,6 +1563,24 @@ body:not(.has-rail) .site-header__menu{display:none}
           <span class="rvt-calendar-tile__day" aria-hidden="true">${esc(t.day)}</span>
           ${t.year ? `<span class="rvt-calendar-tile__year" aria-hidden="true">${esc(t.year)}</span>` : ''}
         </time><span class="rvt-calendar-tile-item__label" aria-hidden="true">${esc(t.tag)}</span></li>`).join('')}</ul>`
+    },
+    /* rvt-callout: Orientation and Layout share the type dropdown (Figma order: Left Sticker, Left Avatar, Top Sticker, Top Avatar); Tone (Strong, Normal) is the radio, like Style.
+       Each type is capped at its Breakpoint=Desktop frame width: Left 1400px, Top 950px. Under 800px wide the callout switches to its Mobile (stacked) layout. */
+    callout: {
+      maxWidth: 1400, // Figma rvt-callout, Breakpoint=Desktop, Orientation=Left frame width
+      variants: [
+        {id: 'left-sticker', label: 'Left, Sticker'},
+        {id: 'left-avatar', label: 'Left, Avatar'},
+        {id: 'top-sticker', label: 'Top, Sticker', maxWidth: 950}, // Figma rvt-callout, Breakpoint=Desktop, Orientation=Top frame width
+        {id: 'top-avatar', label: 'Top, Avatar', maxWidth: 950}
+      ],
+      option: {id: 'tone', label: 'Tone', choices: [
+        {id: 'strong', label: 'Strong'},
+        {id: 'normal', label: 'Normal'}
+      ]},
+      html: (v, tone) => calloutEl(v || 'left-sticker', tone || 'strong'),
+      /* Sample links stay on the page. */
+      wire: stage => stage.querySelectorAll('.rvt-callout a').forEach(a => a.addEventListener('click', e => e.preventDefault()))
     },
     /* rvt-tabs: Type is the variant (Contained, Segmented), each capped at its own Breakpoint=Desktop frame width. */
     tabs: {
@@ -1517,11 +1623,11 @@ body:not(.has-rail) .site-header__menu{display:none}
       <div class="demo-stage" id="demo-stage" role="tabpanel" tabindex="-1" aria-label="${esc(c.name)} example"${max ? ` style="--demo-max:${max}px"` : ''}>${d.html(v && v.id, o && o.id)}</div>
     </section>`;
   };
-  /* rvt-select-input: "Select variant", shown only when a component has more than one variant. A native <select>, so keyboard and screen reader support come for free. */
-  const variantSelect = (d, v) => `<label class="demo-switch-label" for="demo-variant">${esc(d.variantLabel || 'Select variant')}</label>
+  /* rvt-select-input: "Select type", shown only when a component has more than one type. A native <select>, so keyboard and screen reader support come for free. */
+  const variantSelect = (d, v) => `<label class="demo-switch-label" for="demo-variant">${esc(d.variantLabel || 'Select type')}</label>
     <span class="rvt-select"><select class="rvt-select__input" id="demo-variant" aria-controls="demo-stage">${d.variants.map(o =>
       `<option value="${esc(o.id)}"${o.id === v.id ? ' selected' : ''}>${esc(o.label)}</option>`).join('')}</select><span class="rvt-select__icon" aria-hidden="true">${icon('chevronDown')}</span></span>`;
-  /* rvt-radio, Inline: an optional second control (demos.<slug>.option) beside "Select variant". Native radios, so arrow keys move between options. */
+  /* rvt-radio, Inline: an optional second control (demos.<slug>.option) beside "Select type". Native radios, so arrow keys move between options. */
   const optionRadios = (d, o) => `<p class="demo-switch-label" id="demo-option-label">${esc(d.option.label)}</p>
     <div class="rvt-radio-group" role="radiogroup" aria-labelledby="demo-option-label">${d.option.choices.map(ch =>
       `<label class="rvt-radio"><input class="rvt-radio__input" type="radio" name="demo-option" value="${esc(ch.id)}" aria-controls="demo-stage"${ch.id === o.id ? ' checked' : ''}><span>${esc(ch.label)}</span></label>`).join('')}</div>`;

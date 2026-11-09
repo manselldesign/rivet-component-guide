@@ -18,7 +18,7 @@ A field where readers type a short answer, like a name, email address or search 
 - Don't use it when readers pick from a set list. Use a select input, radio buttons or checkboxes instead
 - Don't use it to upload documents, like transcripts. Use a file input instead
 
-## Variants
+## Types
 
 ### Size
 - **Large:** Use it for main forms and single-field screens, like login or a site search bar
@@ -66,7 +66,7 @@ Shared rules: No fill and no radius, with a 1px `component/input/border` border 
 
 ### Status messages
 
-Shared rules: The status message is an `rvt-alert` (Type Inline, Breakpoint Desktop) in every status variant except Default. It spans the field's full width and is the same at every size. Padding is `spacing/4` top and bottom (4px) and `spacing/8` left and right (8px), with a `spacing/8` gap (8px) between the icon and message. The message is `body/xs/regular` (14 / 20px), `text/default`. Links are `link/xs/regular` (14 / 20px), underlined. The status icon is a 24px badge with a 12px glyph.
+Shared rules: The status message is an `rvt-alert` (Type Inline, Breakpoint Desktop) in every status except Default. It spans the field's full width and is the same at every size. Padding is `spacing/4` top and bottom (4px) and `spacing/8` left and right (8px), with a `spacing/8` gap (8px) between the icon and message. The message is `body/xs/regular` (14 / 20px), `text/default`. Links are `link/xs/regular` (14 / 20px), underlined. The status icon is a 24px badge with a 12px glyph.
 
 | Element | Info | Success | Warning | Danger |
 | --- | --- | --- | --- | --- |

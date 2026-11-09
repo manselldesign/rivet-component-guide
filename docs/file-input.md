@@ -17,7 +17,7 @@ A file input lets people attach a file to a form, like a letter of recommendatio
 - Don't use it for large batches or drag-and-drop uploads. Use an empty state upload area instead
 - Don't use it to share a link. Use a text input instead
 
-## Variants
+## Types
 
 ### Before and after a file is picked
 - **No file yet:** Before a file is picked. The button says {Choose file} and a status badge says {No file selected}

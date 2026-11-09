@@ -17,7 +17,7 @@ The footer is the band at the bottom of every page with the university's contact
 - Don't use it as the main navigation. Keep the main links in the header
 - Don't list every page of the site. Link to a site map page instead
 
-## Variants
+## Types
 
 ### Color
 - **Light:** Use it on most sites

@@ -17,7 +17,7 @@ A split hero is the large banner at the top of a page, with the headline and int
 - Don't use it on detail pages, like a news story or event. Start with a simple page title instead
 - Don't use it without a good photo. Use a hero without an image instead
 
-## Variants
+## Types
 
 ### List hub
 - **With list hub:** Adds a short list of links under the intro, like "On this page". Use it when people need to jump to a few key sections, like Admissions, Tuition and Visit

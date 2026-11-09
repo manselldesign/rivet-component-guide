@@ -18,7 +18,7 @@ An empty state fills a space that has nothing in it yet, like a file upload area
 - Don't use it for a page that's still loading. Show a loading state instead
 - Don't fill it with long instructions. Link to them instead
 
-## Variants
+## Types
 
 ### Before and after files are added
 - **Empty:** Nothing has been added yet. It explains what goes here and offers a way to add it

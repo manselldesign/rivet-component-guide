@@ -18,7 +18,7 @@ A row or grid of big numbers that each sum up one fact, like enrollment or job p
 - Don't use it for one number. Put it in the text or use a callout instead
 - Don't use it for numbers that need a lot of explaining. Write them into the page copy instead
 
-## Variants
+## Types
 
 ### Type
 - **Default:** Four stats side by side. Use it for a quick overview across a wide page

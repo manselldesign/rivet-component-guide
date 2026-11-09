@@ -1,7 +1,7 @@
 # Callout
 
 ## What it is
-A highlighted box that draws attention to one thing on a page, like an upcoming deadline, a featured program or a person to contact. It pairs a short title and description with a picture and up to two links.
+A highlighted box that draws attention to one thing on a page, like an upcoming deadline, a featured program or a person to contact. It pairs a short title and description with a sticker or a person's photo and up to two links.
 
 - Point to one next step, like registering for orientation
 - Feature a person, like a department contact
@@ -18,7 +18,7 @@ A highlighted box that draws attention to one thing on a page, like an upcoming 
 - Don't stack several callouts in a row. Pick the one that matters most
 - Don't use it for a list of items. Use cards or a list instead
 
-## Variants
+## Types
 
 ### Tone
 - **Strong:** Filled cream background. Use for the most important message on the page
@@ -27,7 +27,6 @@ A highlighted box that draws attention to one thing on a page, like an upcoming 
 ### Layout
 - **Sticker:** An illustration. Use for general messages, like "Applications are open"
 - **Avatar:** A person's photo. Use when the message is about someone, like "Meet your advisor"
-- **Image:** A photo. Use when it adds meaning, like a campus building for a tour
 
 ### Orientation
 - **Left:** Picture beside the text. Use in wide areas of the page
@@ -53,15 +52,13 @@ A highlighted box that draws attention to one thing on a page, like an upcoming 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
 | Container padding | `spacing/80` (80px) all sides | `spacing/32` (24px) top and sides, `spacing/40` (32px) bottom |
-| Media-to-text gap, Sticker and Avatar | Left: `spacing/32` (32px). Top: `spacing/24` (24px) | `spacing/20` (20px) |
-| Media-to-text gap, Image | Left: `spacing/40` (40px). Top: `spacing/32` (32px) | `spacing/32` (24px on Mobile) |
+| Media-to-text gap | Left: `spacing/32` (32px). Top: `spacing/24` (24px) | `spacing/20` (20px) |
 | Text column offset (Left only) | `spacing/8` above | None |
-| Sticker | 80px, Crimson, with container | 80px, Crimson, with container |
-| Avatar | `rvt-avatar` 96px (Left), 80px (Top) | `rvt-avatar` 64px |
-| Image | 3:2 ratio (350 × 233px) | 3:2 ratio, full width (279 × 186px) |
+| Sticker | 80px, Crimson, with container | 64px, Crimson, with container |
+| Avatar | `rvt-avatar` 80px, same size as the sticker | `rvt-avatar` 64px, same size as the sticker |
 | Eyebrow (tag) | `tag/sm/caps` (12 / 16px), `font/tracking/xl` (2px), `spacing/8` below | Same |
-| Title | `display/sm/strong` (29 / 36px) | Same |
-| Description | `body/base/regular` (18 / 28px), `spacing/16` above | `body/base/regular` (16 / 24px), `spacing/24` above |
+| Title | `display/xs/strong` (26 / 32px, weight 700, width 100% `--rvt-font-width-normal`) | `display/xs/strong` (20 / 24px) |
+| Description | `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `spacing/20` above | Same |
 | Button row | `spacing/32` (32px) above | `spacing/32` (24px on Mobile) above |
 | Buttons | `rvt-link` Normal, Extra-large, side by side, `spacing/16` gap | Stacked, each button hugs its label, left aligned, `spacing/16` gap |
 | Optional parts | Eyebrow, description, primary and secondary button can each be hidden | Same |

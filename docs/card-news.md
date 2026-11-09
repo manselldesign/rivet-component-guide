@@ -18,7 +18,7 @@ A news card previews one story, like a research discovery, a faculty award or a 
 - Don't use it for a resource, service or program. Use the Default card instead
 - Don't add extra links or buttons inside a card. The whole card is already the link
 
-## Variants
+## Types
 
 ### Layout
 - **Image:** Use it when the story has a strong photo

@@ -19,7 +19,7 @@ A large, centered marketing statement that sums up why a page matters. It gives 
 - Don't use it for instructions or facts, like deadlines. Keep it to a marketing message
 - Don't use it at the very top of a page. Use a hero instead
 
-## Variants
+## Types
 
 ### Layout
 - **Plain:** Use it when the words carry the message on their own

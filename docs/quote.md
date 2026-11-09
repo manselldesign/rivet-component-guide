@@ -18,7 +18,7 @@ A quote pulls out a short statement from a real person, with their name and titl
 - Don't use it for anonymous or made-up quotes
 - Don't stack several quotes in a row. Pick the strongest one
 
-## Variants
+## Types
 
 ### Size
 - **Impact:** Large type with lots of space around it. Use it as a standalone moment between sections

@@ -18,7 +18,7 @@ A profile card introduces one person, like a faculty member, advisor or staff co
 - Don't use it for a story about a person. Use the News card instead
 - Don't add extra links or buttons inside a card. The whole card is already the link
 
-## Variants
+## Types
 
 ### Layout
 - **Image:** Use it when you have a current headshot

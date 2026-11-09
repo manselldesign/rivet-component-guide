@@ -58,7 +58,7 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 - Don't add extra links or buttons inside a card. The whole card is already the link
 - Don't mix card layouts or styles in the same row
 
-## Variants
+## Types
 
 ### Layout
 - **Image:** A photo on top or to the side. Use when a picture helps people choose, like an event or a building

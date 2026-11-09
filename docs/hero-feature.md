@@ -19,7 +19,7 @@ A feature hero is the large banner at the top of a page, with a wide headline an
 - Don't use it when the photo is small or only supporting. Use Hero – Split instead
 - Don't use it without a strong photo. Use a hero without an image instead
 
-## Variants
+## Types
 
 ### List hub
 - **With list hub:** Adds a short list of links beside the photo, like "On this page". Use it when people need to jump to a few key sections, like Admissions, Tuition and Visit

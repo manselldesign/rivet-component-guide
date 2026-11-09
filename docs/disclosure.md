@@ -18,7 +18,7 @@ A disclosure is a single link that opens to show a short piece of extra informat
 - Don't hide information everyone needs, like an application deadline. Show it on the page
 - Don't put long content, forms or images inside it. Give that content its own section
 
-## Variants
+## Types
 
 ### Open
 - **Closed:** Only the title shows, with an arrow pointing right. Use it as the starting state

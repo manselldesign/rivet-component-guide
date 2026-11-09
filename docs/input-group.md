@@ -16,7 +16,7 @@ An input group joins a text field with a button or a fixed label, like a search 
 - Don't use it for forms with several fields. Use text inputs with a submit button below instead
 - Don't use it to hide instructions. Put those in the label or helper text
 
-## Variants
+## Types
 
 ### Type
 - **Button:** The field ends or starts with an action button, like "Search" or "Subscribe"

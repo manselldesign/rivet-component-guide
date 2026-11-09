@@ -21,7 +21,7 @@ A side menu that shows the pages in one section of a site, one level at a time. 
 - Don't use it for pages that must be read in order. Use series nav instead
 - Don't use it to jump between headings on one long page. Use links to those headings instead
 
-## Variants
+## Types
 
 ### Levels
 - **One:** Shows one level of pages under a back link. It's the only option for now

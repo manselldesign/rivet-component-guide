@@ -18,7 +18,7 @@ A section that gathers related links in one place, each with a title and optiona
 - Don't use it for one or two links. Use a button or a text link instead
 - Don't use it for content readers need to compare in detail. Use a table instead
 
-## Variants
+## Types
 
 ### Layout
 - **Single list:** Use it when the links can speak for themselves, like a department's services

@@ -18,7 +18,7 @@ A heading block that opens a section of a page, with an optional tag, short intr
 - Don't use it for a small heading inside text. Use a regular heading instead
 - Don't stack two section intros with nothing between them
 
-## Variants
+## Types
 
 ### Layout
 - **Plain:** Use it when the heading and introduction are enough, like a short section on a department page

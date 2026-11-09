@@ -18,7 +18,7 @@ A larger field where readers type answers that run longer than one line, like a 
 - Don't use it when readers pick from set choices. Use a select input, radio buttons or checkboxes instead
 - Don't use it to collect long formatted documents, like a full personal statement. Use a file input instead
 
-## Variants
+## Types
 
 ### Status
 - **Default:** Use it before the reader has answered, or when there's nothing to report

@@ -18,7 +18,7 @@ A small label that shows the status or category of something at a glance, like "
 - Don't use it for messages longer than a couple of words. Use an alert instead
 - Don't put several badges on one item. Pick the one that matters most
 
-## Variants
+## Types
 
 ### Status
 - **Default:** Use for neutral tags, like a category or format

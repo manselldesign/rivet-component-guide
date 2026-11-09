@@ -17,7 +17,7 @@ A vertical line of steps or events in order, so readers can see what happens fir
 - Don't use it for topics or resources with no order. Use a list hub or cards instead
 - Don't use it for one or two items. A short paragraph is enough
 
-## Variants
+## Types
 
 ### Type
 - **Default:** Use it for most timelines. Cards sit to one side of the line

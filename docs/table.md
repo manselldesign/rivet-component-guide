@@ -17,7 +17,7 @@ A grid of rows and columns that lets readers compare facts side by side, like tu
 - Don't use it for one item's details. Use a list instead
 - Don't use it for content readers read top to bottom, like steps or a news story
 
-## Variants
+## Types
 
 ### Type
 - **Default:** Use it for plain text data on public pages, like a fee schedule

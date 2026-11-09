@@ -18,7 +18,7 @@ A group of related items shown with bullets, numbers or no markers, so readers c
 - Don't use it to compare items across several details. Use a table instead
 - Don't use it for long paragraphs. Break them into sections with headings
 
-## Variants
+## Types
 
 ### List type
 - **Unordered:** Use it when order doesn't matter, like campus dining options
@@ -37,7 +37,7 @@ A group of related items shown with bullets, numbers or no markers, so readers c
 - **Alert:** Use it inside an alert message. Bullets and numbers match the text color
 
 ### Nested items
-- **Nested item:** Use it for an item that belongs under the one above, like sub-steps. Figma calls this Variant=Secondary
+- **Nested item:** Use it for an item that belongs under the one above, like sub-steps
 - Keep nesting to one level
 
 ## Writing tips

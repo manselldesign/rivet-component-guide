@@ -18,7 +18,7 @@ A group of options where readers can pick only one. Every choice stays visible, 
 - Don't use it for a long list, like every country. Use a dropdown instead
 - Don't use it for a single yes or no setting. Use one checkbox instead
 
-## Variants
+## Types
 
 ### Type
 - **Default:** Use it for most forms. Options stack one per line, so they're easy to scan

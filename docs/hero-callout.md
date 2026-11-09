@@ -22,7 +22,7 @@ The callout hero is the default hero, the banner at the top of most pages. It sh
 - Don't use it to introduce a person. Use Hero – Profile instead
 - Don't use more than one hero on a page
 
-## Variants
+## Types
 
 ### Layout
 - **Side by side:** Text on the left, card on the right. Use it in full-width pages

@@ -19,7 +19,7 @@ A text essay presents a mission, vision or editorial statement: a strong title, 
 - Don't use it to link to a group of pages. Use a list hub instead
 - Don't use it for a one-line section introduction. Use a section intro instead
 
-## Variants
+## Types
 
 ### Layout
 - **Centered:** One focused column in the middle of the page. Use it for a short statement you want people to stop and read

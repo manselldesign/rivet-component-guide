@@ -17,7 +17,7 @@ One photo, or a group of three, that shows what a place, program or event feels 
 - Don't use it for a large photo gallery or event album
 - Don't use photos that carry key information, like dates or deadlines. Put that in text
 
-## Variants
+## Types
 
 ### Layout
 - **Landscape:** Use it when the main photo is wide, like a campus view or a crowd at an event
