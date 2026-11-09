@@ -21,7 +21,7 @@ A small square that shows a date at a glance, with the month, day and year stack
 ## Variants
 
 ### Parts
-- **Month:** Short month name, like "JUN". Always shown in capital letters
+- **Month:** Short month name, like "JUN", in capital letters. Always shown
 - **Day:** The day of the month, in large type. Always shown
 - **Year:** Show it when the date isn't in the current year or could be unclear. Hide it in a list of upcoming events
 
@@ -40,11 +40,11 @@ A small square that shows a date at a glance, with the month, day and year stack
 | --- | --- |
 | Tile size | 128 × 128px, fixed |
 | Tile padding | `spacing/16` all sides |
-| Background | `color/brand/extra-light` (#FAF6EF), no theme change |
+| Background | `component/calendar-tile/background` (`color/brand/extra-light`, #FAF6EF), the same in every theme |
 | Corner radius | 0 |
 | Content alignment | Centered, stacked vertically |
 | Gap between month, day and year | `spacing/12` |
-| Month | `tag/lg/caps` (16 / 24px), Roboto Mono, uppercase, `font/tracking/xl` (2px), `color/brand/main` |
-| Day | `component/number/strong` (42 / 44px), Roboto Flex, `font/weight/825`, `color/brand/main` |
-| Year | `tag/lg/caps` (16 / 24px), Roboto Mono, `font/tracking/xl` (2px), `color/brand/main` |
-| Optional parts | Month and Year can each be hidden. Day is always shown |
+| Month | `tag/lg/caps` (16 / 24px, weight 350, Roboto Mono, `font/tracking/xl` 2px), uppercase, `component/calendar-tile/text` (`color/brand/main`) |
+| Day | `component/number/strong` (42 / 44px, weight 825, width 150%, Roboto Flex, no tracking), trimmed to cap height, `component/calendar-tile/text` (`color/brand/main`) |
+| Year | `tag/lg/caps` (16 / 24px, weight 350, Roboto Mono, `font/tracking/xl` 2px), `component/calendar-tile/text` (`color/brand/main`) |
+| Optional parts | Year can be hidden. Month and Day are always shown |

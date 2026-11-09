@@ -742,6 +742,24 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-button:disabled{opacity:.4;cursor:not-allowed}
 @media (prefers-reduced-motion:reduce){.rvt-button{transition:none}}
 
+/* ---------- rvt-calendar-tile (Calendar tile page example, Developer spec checklist) ----------
+   128 x 128px fixed, spacing/16 padding, square corners, content centered and stacked spacing/12 apart.
+   Colors are component/calendar-tile/background and /text, fixed across themes (the same tile on Light, Dark and Crimson).
+   Month and Year: tag/lg/caps (16 / 24px, weight 350, Roboto Mono, 2px tracking, uppercase).
+   Day: component/number/strong (42 / 44px, weight 825, Roboto Flex, width 150% (no width variable yet), no tracking), trimmed to cap height.
+   The example row shows two tiles spacing/24 apart, each with a tag/sm/regular label under it that never widens its slot. */
+.rvt-calendar-tile-row{display:flex;flex-wrap:wrap;align-items:flex-start;gap:var(--rvt-spacing-24);margin:0;padding:0;list-style:none}
+.rvt-calendar-tile-item{display:flex;flex-direction:column;align-items:flex-start;gap:var(--rvt-spacing-8);margin:0}
+.rvt-calendar-tile-item__label{display:block;align-self:stretch;contain:inline-size;margin:0;color:var(--rvt-text-default);
+  font:var(--rvt-font-tag-sm-regular);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-lg)}
+.rvt-calendar-tile{box-sizing:border-box;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:var(--rvt-spacing-12);width:128px;height:128px;padding:var(--rvt-spacing-16);overflow:hidden;border-radius:0;
+  background:var(--rvt-component-calendar-tile-background);color:var(--rvt-component-calendar-tile-text);text-align:center}
+.rvt-calendar-tile__month,.rvt-calendar-tile__year{display:block;align-self:stretch;margin:0;
+  font:var(--rvt-font-tag-lg-caps);letter-spacing:var(--rvt-font-tracking-xl);text-transform:uppercase}
+.rvt-calendar-tile__day{display:block;margin:0;white-space:nowrap;
+  font:var(--rvt-font-component-number-strong);font-stretch:150%;letter-spacing:var(--rvt-font-tracking-none);
+  text-box:trim-both cap alphabetic}
 /* ---------- rvt-alert (Alert page, Developer spec checklist) ----------
    Themed like every other component: its tokens follow the page theme (Light, Dark, Crimson), e.g. Info on Dark = background/info-subtle black,
    text/info white, border/info light blue. Badges keep their status fill in every theme.
@@ -1225,6 +1243,11 @@ body:not(.has-rail) .site-header__menu{display:none}
       tabs[(next + tabs.length) % tabs.length].focus();
     });
   });
+  /* Calendar tile example: IU dates (spring classes begin, a scholarship deadline). Full date (Default) and no year (a date later this year). Month and Day are always shown. Screen readers get the full date. */
+  const CALENDAR_TILES = [
+    {tag: 'Default', iso: '2027-01-12', full: 'January 12, 2027', month: 'Jan', day: '12', year: '2027'},
+    {tag: 'No year', iso: '2026-12-01', full: 'December 1', month: 'Dec', day: '1'}
+  ];
   const demos = {
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
@@ -1355,6 +1378,19 @@ body:not(.has-rail) .site-header__menu{display:none}
         {id: 'subtle', label: 'Subtle'}
       ]},
       html: (size, style) => `<ul class="rvt-button-row">${BUTTON_ROW.map(b => `<li class="rvt-button-item">${buttonEl(style || 'strong', size, b)}<span class="rvt-button-item__label" aria-hidden="true">${esc(b.tag)}</span></li>`).join('')}</ul>`
+    },
+    /* rvt-calendar-tile: one variant (no dropdown, no Style). Year is the only optional part (Month and Day are always shown),
+       so the row shows the full date and the date without the year, each labelled underneath.
+       Tiles are 128px fixed and the component has no Breakpoint=Desktop frame, so the cap is the measured row width
+       (2 x 128px + spacing/24 = 280px). */
+    'calendar-tile': {
+      maxWidth: 280, // two tiles spacing/24 apart, 280px measured (no Breakpoint=Desktop frame)
+      html: () => `<ul class="rvt-calendar-tile-row">${CALENDAR_TILES.map(t => `<li class="rvt-calendar-tile-item">
+        <time class="rvt-calendar-tile" datetime="${t.iso}"><span class="sr-only">${esc(t.full)}</span>
+          ${t.month ? `<span class="rvt-calendar-tile__month" aria-hidden="true">${esc(t.month)}</span>` : ''}
+          <span class="rvt-calendar-tile__day" aria-hidden="true">${esc(t.day)}</span>
+          ${t.year ? `<span class="rvt-calendar-tile__year" aria-hidden="true">${esc(t.year)}</span>` : ''}
+        </time><span class="rvt-calendar-tile-item__label" aria-hidden="true">${esc(t.tag)}</span></li>`).join('')}</ul>`
     },
     /* rvt-tabs: Type is the variant (Contained, Segmented), each capped at its own Breakpoint=Desktop frame width. */
     tabs: {
