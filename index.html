@@ -561,9 +561,8 @@ body:not(.has-rail) .site-header__menu{display:none}
    top of the tabs and is cropped to the selected tab. The crop is three nested boxes that only ever move (transform), never repaint:
    the outer box sets the left/top edge, the middle box the right/bottom edge, and the inner box moves back by the same amount so the
    fill and labels stay still. Moving only with transform lets the browser run the slide on the GPU, so it stays smooth even while the
-   page is busy swapping theme colors. Switching slides that crop window to the new tab on a spring
-   (stiffness 280, damping 25, mass 0.8: a quick, fluid glide that settles with a barely-there overshoot), written as a CSS linear() curve
-   over 450ms. Browsers without linear() get 450ms cubic-bezier(0.22,1,0.36,1). The labels underneath never change color, so the label color flips exactly at the moving edge and nothing
+   page is busy swapping theme colors. Switching slides that crop window to the new tab with an even ease-in-out
+   (400ms, cubic-bezier(0.45,0,0.2,1): starts gently, glides, and lands softly with no overshoot or bounce). The labels underneath never change color, so the label color flips exactly at the moving edge and nothing
    fades out of step. The layer is sized to the tab's exact box, so it always lines up with the tab edge.
    Hover: when the selection changes, every tab drops its hover fill at once and hover stays off until the slide ends and the pointer
    moves again. Theme colors swap at once with the rest of the page (no fade).
@@ -578,8 +577,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 /* Under the layer every label stays regular, so outside the moving fill no label ever looks selected. */
 .rvt-tabs--segmented.has-indicator .rvt-tabs__tab[aria-selected="true"]{font:var(--rvt-font-action-lg-regular);font-stretch:var(--rvt-font-width-semi-expanded)}
 @media (max-width:767px){.rvt-tabs--segmented.has-indicator .rvt-tabs__tab[aria-selected="true"]{font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded)}}
-.rvt-tabs--segmented.is-animated :is(.rvt-tabs__indicator,.rvt-tabs__indicator-edge,.rvt-tabs__indicator-fill){transition:transform .45s cubic-bezier(0.22,1,0.36,1)}
-@supports (transition-timing-function:linear(0, 1)){.rvt-tabs--segmented.is-animated :is(.rvt-tabs__indicator,.rvt-tabs__indicator-edge,.rvt-tabs__indicator-fill){transition-timing-function:linear(0, 0.02, 0.07, 0.14, 0.221, 0.308, 0.394, 0.477, 0.555, 0.627, 0.691, 0.748, 0.797, 0.839, 0.875, 0.905, 0.929, 0.949, 0.965, 0.977, 0.987, 0.994, 1, 1.003, 1.006, 1.007, 1.008, 1.009, 1.008, 1.008, 1.007, 1.007, 1.006, 1.005, 1.005, 1.004, 1.003, 1.003, 1.002, 1.002, 1)}}
+.rvt-tabs--segmented.is-animated :is(.rvt-tabs__indicator,.rvt-tabs__indicator-edge,.rvt-tabs__indicator-fill){transition:transform .4s cubic-bezier(0.45,0,0.2,1)}
 .rvt-tabs--segmented .rvt-tabs__tab:focus-visible{z-index:3}
 @media (max-width:767px){.rvt-tabs__tab{height:var(--rvt-component-tabs-segmented-height-sm);font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);}.rvt-tabs__tab[aria-selected="true"],.rvt-tabs__tab::after,.rvt-tabs__indicator-label{font:var(--rvt-font-action-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);}}
 
