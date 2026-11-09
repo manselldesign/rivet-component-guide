@@ -103,6 +103,7 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 | Image (Horizontal, Desktop) | 3:2 (240 × 160px), `spacing/32` to text | Same |
 | Sticker (Vertical) | 80px, `spacing/24` below (24px); 64px, `spacing/16` below (16px) on Mobile | 48px, `spacing/8` below (8px) |
 | Sticker (Horizontal, Desktop) | 80px, `spacing/24` to text (24px) | 48px, `spacing/8` to text (8px) |
+| Sticker colors | Circle `color/brand/light`, art `color/brand/main`, fill `color/base/ultra-light` (same in every theme) | Same |
 | Featured badge | `rvt-badge` Default, Strong, `spacing/12` below | Same |
 | Eyebrow (tag) | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below | Same |
 | Title | `action/xl/strong` (20 / 28px; 18 / 24px on Mobile), `text/strong` | `action/lg/strong` (16 / 24px), `text/strong` |
@@ -122,3 +123,5 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 | Shadow | None | `shadow/sm` |
 | Corner radius | 0 | 0 |
 | Title, hover | `text/accent`, underlined | `text/accent`, underlined |
+| Arrow, hover | `icon/accent` | `icon/accent` |
+| Focus | 2px `border/accent-strong` ring, 1px outside the card | Same |

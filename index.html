@@ -1023,6 +1023,86 @@ body:not(.has-rail) .site-header__menu{display:none}
 @media (prefers-reduced-motion:reduce){
   .rvt-alert__btn,.rvt-accordion__panel,.rvt-accordion__panel.is-open,.rvt-accordion__item,.rvt-accordion__icon svg path,.rvt-tabs__tab,.rvt-tabs--segmented.is-animated :is(.rvt-tabs__indicator,.rvt-tabs__indicator-edge,.rvt-tabs__indicator-fill){transition:none}
 }
+
+/* ---------- rvt-card (Card page example, Developer spec checklist) ----------
+   Types: Orientation (Vertical 440px, Horizontal 1200px Desktop frames) x Layout (Image, Sticker, Plain). Style radio: Outlined (1px border/default, drawn inside)
+   or Raised (shadow/sm, no border). Each type shows both sizes, Default then Compact, labelled underneath: side by side for Vertical, stacked for Horizontal.
+   Default: spacing/32 padding; Image 3:2 spacing/32 below (Horizontal 240 x 160, spacing/32 to text); Sticker 80px spacing/24 below / to text;
+     title action/xl/strong with the 16px arrow; description and list body/sm/regular, spacing/16 above; footer spacing/24 above.
+   Compact: spacing/16 padding; Image spacing/24 below; Sticker 48px spacing/8 below / to text; title action/lg/strong with the 12px arrow;
+     description and list body/xs/regular, spacing/8 above; footer spacing/16 above.
+   The whole card is the link (the title link's ::after covers the card). Hover: title text/accent + underline, arrow icon/accent; the border stays.
+   Focus: 2px border/accent-strong ring 1px outside the card. Mobile (under 768px): spacing/24 padding, Image spacing/24 below, Sticker 64px spacing/16 below
+   (Compact unchanged), and Horizontal cards stack like Vertical ones. Sticker colors are the Rivet sticker colors, the same in every theme. */
+.rvt-card-set{display:flex;align-items:flex-start;gap:var(--rvt-spacing-24) var(--rvt-spacing-32);margin:0;padding:0;list-style:none}
+.rvt-card-set--vertical{flex-wrap:wrap}
+.rvt-card-set--horizontal{flex-direction:column;align-items:stretch;gap:var(--rvt-spacing-24)}
+.rvt-card-set__item{display:flex;flex-direction:column;gap:var(--rvt-spacing-8);min-width:0}
+.rvt-card-set--vertical .rvt-card-set__item{flex:1 1 300px;max-width:440px} /* Figma Breakpoint=Desktop, Orientation=Vertical frame width */
+.rvt-card-set__label{contain:inline-size;color:var(--rvt-text-default);
+  font:var(--rvt-font-tag-sm-regular);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-lg)}
+.rvt-card{--card-pad:var(--rvt-spacing-32);--card-media-gap:var(--rvt-spacing-32);--card-sticker:80px;--card-sticker-gap:var(--rvt-spacing-24);
+  --card-text-gap:var(--rvt-spacing-16);--card-foot-gap:var(--rvt-spacing-24);
+  box-sizing:border-box;position:relative;display:flex;flex-direction:column;width:100%;padding:var(--card-pad);
+  background:var(--rvt-background-raised);box-shadow:inset 0 0 0 1px var(--rvt-border-default);border-radius:0}
+.rvt-card--raised{box-shadow:var(--rvt-shadow-sm)}
+.rvt-card--compact{--card-pad:var(--rvt-spacing-16);--card-media-gap:var(--rvt-spacing-24);--card-sticker:48px;--card-sticker-gap:var(--rvt-spacing-8);
+  --card-text-gap:var(--rvt-spacing-8);--card-foot-gap:var(--rvt-spacing-16)}
+.rvt-card:has(.rvt-card__link:focus-visible){outline:2px solid var(--rvt-border-accent-strong);outline-offset:1px}
+.rvt-card__media{flex:none;margin:0 0 var(--card-media-gap)}
+.rvt-card__image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.rvt-card--sticker .rvt-card__media{margin-bottom:var(--card-sticker-gap)}
+.rvt-card__sticker{display:block;width:var(--card-sticker);height:var(--card-sticker);border-radius:var(--rvt-border-radius-full);background:var(--rvt-color-brand-light);color:var(--rvt-color-brand-main)}
+.rvt-card__sticker svg{display:block;width:100%;height:100%}
+.rvt-card__sticker .fill{fill:var(--rvt-color-base-ultra-light)}
+.rvt-card__sticker .art{fill:currentColor}
+.rvt-card__body{display:flex;flex-direction:column;min-width:0}
+.rvt-card__featured{align-self:flex-start;margin:0 0 var(--rvt-spacing-12)}
+.rvt-card__eyebrow{margin:0;padding:0 0 var(--rvt-spacing-4) 2px;color:var(--rvt-text-brand);
+  font:var(--rvt-font-tag-sm-regular);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-lg)}
+.rvt-card__head{display:flex;align-items:flex-start;gap:var(--rvt-spacing-16)}
+.rvt-card__title{flex:1 1 auto;min-width:0;margin:0;color:var(--rvt-text-strong);
+  font:var(--rvt-font-action-xl-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-card__link{color:inherit;text-decoration:underline;text-decoration-color:transparent;text-underline-position:from-font;transition:color .15s ease-out,text-decoration-color .15s ease-out}
+.rvt-card__link::after{content:"";position:absolute;inset:0;z-index:1}
+.rvt-card__link:focus-visible{outline:none}
+.rvt-card__arrow{flex:none;display:flex;padding-top:6px;color:var(--rvt-icon-strong);transition:color .15s ease-out}
+.rvt-card__arrow svg{display:block;width:16px;height:16px;fill:currentColor}
+.rvt-card:hover .rvt-card__link{color:var(--rvt-text-accent);text-decoration-color:currentColor}
+.rvt-card:hover .rvt-card__arrow{color:var(--rvt-icon-accent)}
+.rvt-card__desc{margin:0;padding-top:var(--card-text-gap);color:var(--rvt-text-default);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+/* rvt-list, Medium (Compact: Small): square icon/brand bullet, spacing/8 to the text, spacing/8 between items. */
+.rvt-card__list{display:flex;flex-direction:column;gap:var(--rvt-spacing-8);margin:0;padding:var(--card-text-gap) 0 0;list-style:none}
+.rvt-card__list li{display:flex;align-items:flex-start;gap:var(--rvt-spacing-8);color:var(--rvt-text-default);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-card__list li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;background:var(--rvt-icon-brand)}
+.rvt-card__foot{display:flex;flex-direction:column;gap:var(--rvt-spacing-16);padding-top:var(--card-foot-gap)}
+.rvt-card__meta{margin:0;color:var(--rvt-text-default);
+  font:var(--rvt-font-tag-sm-regular);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-lg)}
+.rvt-card__tags{display:flex;flex-wrap:wrap;gap:var(--rvt-spacing-8);margin:0;padding:0;list-style:none}
+/* Compact: action/lg/strong title with the 12px arrow in a 24px box (0.5px top padding), body/xs/regular text, 5px bullets. */
+.rvt-card--compact .rvt-card__title{font:var(--rvt-font-action-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-card--compact .rvt-card__arrow{align-items:center;height:24px;padding-top:.5px;box-sizing:border-box}
+.rvt-card--compact .rvt-card__arrow svg{width:12px;height:12px}
+.rvt-card--compact .rvt-card__desc,.rvt-card--compact .rvt-card__list li{font:var(--rvt-font-body-xs-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-card--compact .rvt-card__list li::before{width:5px;height:5px;margin-top:8px}
+/* Horizontal (Desktop): media beside the text; text column starts spacing/4 down, title and description up to 750px wide. */
+@media (min-width:768px){
+  .rvt-card--horizontal{flex-direction:row;align-items:flex-start;gap:var(--card-media-gap)}
+  .rvt-card--horizontal .rvt-card__media{margin:0}
+  .rvt-card--horizontal.rvt-card--image{--card-media-gap:var(--rvt-spacing-32)}
+  .rvt-card--horizontal.rvt-card--sticker{gap:var(--card-sticker-gap)}
+  .rvt-card--horizontal .rvt-card__image{width:240px;height:160px;aspect-ratio:auto}
+  .rvt-card--horizontal .rvt-card__body{flex:1 1 auto;padding-top:var(--rvt-spacing-4)}
+  .rvt-card--horizontal:not(.rvt-card--compact) .rvt-card__title{padding-top:1px}
+  .rvt-card--horizontal:not(.rvt-card--compact) .rvt-card__arrow{padding-top:7px}
+  .rvt-card--horizontal .rvt-card__title,.rvt-card--horizontal .rvt-card__desc{max-width:750px}
+}
+@media (max-width:767px){
+  .rvt-card:not(.rvt-card--compact){--card-pad:var(--rvt-spacing-24);--card-media-gap:var(--rvt-spacing-24);--card-sticker:64px;--card-sticker-gap:var(--rvt-spacing-16)}
+}
+@media (prefers-reduced-motion:reduce){.rvt-card__link,.rvt-card__arrow{transition:none}}
 </style>
 </head>
 <body>
@@ -1420,6 +1500,50 @@ body:not(.has-rail) .site-header__menu{display:none}
       </div>
     </div></div>`;
   };
+  /* rvt-card example: one card per Layout, each with IU student-services copy (Image = student football tickets, reusing the billboard photo;
+     Sticker = bike registration with the rivet-stickers bike; Plain = the FAFSA priority date). Every part is shown: Featured badge, eyebrow, description,
+     list, metadata and tags. The photo sits beside a title that already says what it shows, so its alt text is empty. */
+  const BIKE = {fill: 'M54.5 19a4.5 4.5 0 0 1 0 9H53v-2h1.5a2.5 2.5 0 0 0 0-5H43.496l7.623 18.421A9.997 9.997 0 0 1 54 39c5.523 0 10 4.477 10 10s-4.477 10-10 10-10-4.477-10-10a9.998 9.998 0 0 1 5.27-8.813l-2.997-7.246-12.067 10.342A9.954 9.954 0 0 1 36 49c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10c1.481 0 2.888.322 4.152.9L24.4 26H21v-2h10.303l3.252 2.168-1.11 1.664L30.697 26h-4.132l6.475 15.648 12.428-10.652L40.504 19H54.5Z', art: 'M54.5 19H40.504l4.964 11.996L33.04 41.648 26.565 26h4.132l2.748 1.832 1.11-1.664L31.303 24H21v2h3.4l5.752 13.9A9.964 9.964 0 0 0 26 39c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10a9.954 9.954 0 0 0-1.794-5.717l12.067-10.342 2.998 7.246A9.998 9.998 0 0 0 44 49c0 5.523 4.477 10 10 10s10-4.477 10-10-4.477-10-10-10a9.997 9.997 0 0 0-2.881.421L43.496 21H54.5a2.5 2.5 0 0 1 0 5H53v2h1.5a4.5 4.5 0 0 0 0-9Zm-4.46 23.047 3.036 7.335 1.848-.764-3.035-7.336a8 8 0 1 1-1.848.765Zm-18.664 1.028-6.027 5.166 1.302 1.518 6.027-5.166a8 8 0 1 1-1.302-1.518Z'};
+  const CARDS = {
+    image: {eyebrow: 'Athletics', title: 'Get your student season tickets for football',
+      desc: 'Full-time Bloomington students can buy one pass that covers every home game. Passes go on sale in early summer.',
+      list: ['All home games at Memorial Stadium', 'Seats in the student section', 'Tickets on your phone'],
+      meta: 'On sale Jun 2 · Online', tags: ['Athletics', 'Students', 'Tickets']},
+    sticker: {eyebrow: 'Transportation', title: 'Register your bike before you bring it to campus',
+      desc: 'Registration is free and helps campus police return a lost or stolen bike. It takes about five minutes online.',
+      list: ['Free for students and staff', 'Get a permit sticker for your frame', 'Update it if you sell your bike'],
+      meta: 'Any time · Online', tags: ['Transportation', 'Students', 'Free']},
+    plain: {eyebrow: 'Financial aid', title: 'File your FAFSA by the April 15 priority date',
+      desc: 'Students who file by the priority date are considered for the most grants and scholarships. You can update it later.',
+      list: ['Have your tax information ready', 'Add IU to your list of schools', 'Watch your IU email for next steps'],
+      meta: 'Due Apr 15 · Online', tags: ['Financial aid', 'Deadlines']}
+  };
+  const cardMedia = layout => layout === 'image'
+    ? `<div class="rvt-card__media"><img class="rvt-card__image" src="img/billboard-example.jpg" width="900" height="900" alt=""></div>`
+    : layout === 'sticker'
+      ? `<div class="rvt-card__media"><span class="rvt-card__sticker"><svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><path class="fill" d="${BIKE.fill}"/><path class="art" d="${BIKE.art}"/></svg></span></div>`
+      : '';
+  const cardEl = (orientation, layout, size, style) => {
+    const c = CARDS[layout];
+    const compact = size === 'compact';
+    return `<article class="rvt-card rvt-card--${orientation} rvt-card--${layout} rvt-card--${style}${compact ? ' rvt-card--compact' : ''}">
+      ${cardMedia(layout)}
+      <div class="rvt-card__body">
+        <span class="rvt-badge rvt-card__featured">Featured</span>
+        <p class="rvt-card__eyebrow">${esc(c.eyebrow)}</p>
+        <div class="rvt-card__head">
+          <h3 class="rvt-card__title"><a class="rvt-card__link" href="#card">${esc(c.title)}</a></h3>
+          <span class="rvt-card__arrow" aria-hidden="true">${compact ? icon12('arrowRight') : `<svg viewBox="0 0 16 16" focusable="false"><path d="${P.arrowRight}"/></svg>`}</span>
+        </div>
+        <p class="rvt-card__desc">${esc(c.desc)}</p>
+        <ul class="rvt-card__list">${c.list.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+        <div class="rvt-card__foot">
+          <p class="rvt-card__meta">${esc(c.meta)}</p>
+          <ul class="rvt-card__tags" aria-label="Tags">${c.tags.map(t => `<li class="rvt-badge rvt-badge--subtle">${esc(t)}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </article>`;
+  };
   const demos = {
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
@@ -1581,6 +1705,30 @@ body:not(.has-rail) .site-header__menu{display:none}
       html: (v, tone) => calloutEl(v || 'left-sticker', tone || 'strong'),
       /* Sample links stay on the page. */
       wire: stage => stage.querySelectorAll('.rvt-callout a').forEach(a => a.addEventListener('click', e => e.preventDefault()))
+    },
+    /* rvt-card: Orientation and Layout share the type dropdown (Figma order: Vertical then Horizontal; Image, Sticker, Plain); Style (Outlined, Raised) is the radio.
+       Every type shows both sizes, Default then Compact, labelled underneath. Vertical cards sit side by side: two 440px Breakpoint=Desktop frames, spacing/32 apart (912px).
+       Horizontal cards stack, each capped at its 1200px Breakpoint=Desktop frame. */
+    card: {
+      maxWidth: 912, // two Figma rvt-card, Breakpoint=Desktop, Orientation=Vertical frames (440px) spacing/32 apart
+      variants: [
+        {id: 'vertical-image', label: 'Vertical, Image'},
+        {id: 'vertical-sticker', label: 'Vertical, Sticker'},
+        {id: 'vertical-plain', label: 'Vertical, Plain'},
+        {id: 'horizontal-image', label: 'Horizontal, Image', maxWidth: 1200}, // Figma rvt-card, Breakpoint=Desktop, Orientation=Horizontal frame width
+        {id: 'horizontal-sticker', label: 'Horizontal, Sticker', maxWidth: 1200},
+        {id: 'horizontal-plain', label: 'Horizontal, Plain', maxWidth: 1200}
+      ],
+      option: {id: 'style', label: 'Style', choices: [
+        {id: 'outlined', label: 'Outlined'},
+        {id: 'raised', label: 'Raised'}
+      ]},
+      html: (v, style) => {
+        const [orientation, layout] = (v || 'vertical-image').split('-');
+        return `<ul class="rvt-card-set rvt-card-set--${orientation}">${['default', 'compact'].map(size => `<li class="rvt-card-set__item">${cardEl(orientation, layout, size, style || 'outlined')}<span class="rvt-card-set__label" aria-hidden="true">${size === 'compact' ? 'Compact' : 'Default'}</span></li>`).join('')}</ul>`;
+      },
+      /* Sample links stay on the page. */
+      wire: stage => stage.querySelectorAll('.rvt-card__link').forEach(a => a.addEventListener('click', e => e.preventDefault()))
     },
     /* rvt-tabs: Type is the variant (Contained, Segmented), each capped at its own Breakpoint=Desktop frame width. */
     tabs: {
