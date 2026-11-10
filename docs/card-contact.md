@@ -94,7 +94,7 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 
 | Element | Spec |
 | --- | --- |
-| Closed | "Hours" toggle button, 16px clock and chevron in `icon/accent`, `action/lg/strong` (16 / 24px, weight 600, width 110%), `text/accent`, `spacing/8` between; focus 2px `border/accent-strong`, no offset |
+| Closed | "Hours" toggle button, 16px clock in `icon/strong` (like the other contact icons) and chevron in `icon/accent`, `action/lg/strong` (16 / 24px, weight 600, width 110%), `text/accent`, `spacing/8` between; focus 2px `border/accent-strong`, no offset |
 | Opening | `spacing/8` below the toggle; the list opens with height and opacity, 220ms ease-out (none with reduced motion); the chevron swaps to chevron-up (no rotation) |
 | Open: list | `spacing/8` left indent, each row `spacing/4` top, `spacing/16` left |
 | Open: day | `heading/xs/strong` (14 / 20px), `text/strong` |

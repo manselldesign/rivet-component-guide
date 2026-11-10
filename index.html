@@ -1121,7 +1121,7 @@ body:not(.has-rail) .site-header__menu{display:none}
    Details: spacing/24 above (Vertical); Horizontal puts them in a right column with a 1px border/default divider and spacing/24 padding either side.
    Rows spacing/12 apart: 16px icon (envelope, phone, device icon/strong; user icon/default), spacing/8 to the link (action/lg/regular text/accent, 1px underline 3px below;
    hover text/brand-strong and the underline thickens to 2px). Pronouns: spacing/4 + spacing/4 to the heading/sm/strong text/strong label, body/sm/regular value.
-   Hours: a button (clock and chevron icon/accent, action/lg/strong text/accent, spacing/8 apart) that opens the week, spacing/8 below.
+   Hours: a button (clock icon/strong like the other row icons, chevron icon/accent, action/lg/strong text/accent, spacing/8 apart) that opens the week, spacing/8 below.
      Closed shows chevron-down, open swaps it for chevron-up (a swap, no rotation). Rows: spacing/8 + spacing/16 in, spacing/4 top and bottom, day heading/xs/strong text/strong, times body/xs/regular.
      Holiday note body/xs/italic, slanted with the font's slnt axis (-10, font/slant/standard), with a body/xs/strong text/required asterisk. 289px wide in the Horizontal column, full width in Vertical.
    Social: spacing/24 above, "Social:" tag/sm/regular text/default, spacing/16 to the icons. rvt-link Social, Small: 24px square, 1px border/accent drawn inside,
@@ -1165,6 +1165,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-card-contact__hours-toggle{display:inline-flex;align-items:center;gap:var(--rvt-spacing-8);align-self:flex-start;margin:0;padding:0;border:0;background:none;cursor:pointer;
   color:var(--rvt-text-accent);font:var(--rvt-font-action-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
 .rvt-card-contact__hours-toggle svg{display:block;flex:none;width:16px;height:16px;fill:var(--rvt-icon-accent)}
+.rvt-card-contact__hours-toggle .is-clock{fill:var(--rvt-icon-strong)}
 .rvt-card-contact__hours-toggle .is-up,.rvt-card-contact__hours-toggle[aria-expanded="true"] .is-down{display:none}
 .rvt-card-contact__hours-toggle[aria-expanded="true"] .is-up{display:block}
 .rvt-card-contact__hours-toggle:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
@@ -1714,7 +1715,7 @@ body:not(.has-rail) .site-header__menu{display:none}
             ${c.pronouns ? `<li class="rvt-card-contact__row rvt-card-contact__row--pronouns">${ccIcon('user')}<span class="rvt-card-contact__label">Pronouns:</span><span class="rvt-card-contact__value">${esc(c.pronouns)}</span></li>` : ''}
             <li class="rvt-card-contact__hours">
               <button class="rvt-card-contact__hours-toggle" type="button" aria-expanded="false" aria-controls="cc-hours">
-                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${CC_ICON.clock}"/></svg>Hours<svg class="is-down" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${P.chevronDown}"/></svg><svg class="is-up" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${CC_ICON.chevronUp}"/></svg>
+                <svg class="is-clock" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${CC_ICON.clock}"/></svg>Hours<svg class="is-down" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${P.chevronDown}"/></svg><svg class="is-up" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${CC_ICON.chevronUp}"/></svg>
               </button>
               <div class="rvt-card-contact__hours-panel" id="cc-hours" aria-hidden="true"><div><div class="rvt-card-contact__week-wrap">
                 <dl class="rvt-card-contact__week">${c.hours.map(([d, t]) => `<div class="rvt-card-contact__day"><dt>${esc(d)}</dt><dd>${esc(t)}</dd></div>`).join('')}</dl>
