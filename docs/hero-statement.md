@@ -47,7 +47,7 @@ A statement hero opens a page with a bold headline and one to three large photos
 
 ## Developer spec checklist
 
-Shared rules: Background `background/default`. Desktop is 1600px wide, Mobile 375px. Primary button is `rvt-link` (Style Strong) with `background/brand`; secondary has a 1px `border/accent` border. The card is `rvt-card-hero` (`component/hero/background`, `shadow/sm`). Photos are fixed-aspect image slots with `spacing/8` between them (8px).
+Shared rules: Background `background/default`. Desktop is 1600px wide, Mobile 375px. Primary button is `rvt-link` (Style Strong) with `background/brand`; secondary has a 1px `border/accent` border. The card is `rvt-card-hero` (`component/hero/background`, `shadow/sm`). It uses the same text and sticker sizes and spacing as the Compact card, with the hero colors. Photos are fixed-aspect image slots with `spacing/8` between them (8px).
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
@@ -60,4 +60,8 @@ Shared rules: Background `background/default`. Desktop is 1600px wide, Mobile 37
 | Photos, Single | One 1440 × 720px (2:1) | One 327 × 200px; `spacing/32` above (24px) |
 | Photos, Double | Two 716px squares | Two 160px squares side by side; `spacing/32` above (24px) |
 | Photos, Triple | Three 475px squares | Two 160px squares side by side, then one below; `spacing/32` above (24px) |
-| Card | 1200px wide, overlapping the photos, lined up with their right and bottom edges; `spacing/32` padding all sides (32px) | Full width below the photos, `spacing/8` above (8px); `spacing/32` padding all sides (24px) |
+| Card | 1200px wide, overlapping the photos, lined up with their right and bottom edges; `spacing/16` padding all sides (16px) | Full width below the photos, `spacing/8` above (8px); `spacing/16` padding all sides (16px) |
+| Card sticker | 48px, to the left of the text; `spacing/8` gap (8px) | 48px, above the text; `spacing/8` below (8px) |
+| Card tag | `tag/sm/regular` (12 / 16px), `color/base/ultra-light`; `spacing/4` below (4px) | Same |
+| Card title | `action/lg/strong` (16 / 24px), `color/base/ultra-light`, up to 3 lines; underlined on hover | Same |
+| Card arrow | 12px, to the right of the title; `spacing/16` gap (16px) | Same |
