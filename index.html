@@ -888,14 +888,14 @@ body:not(.has-rail) .site-header__menu{display:none}
 /* ---------- rvt-billboard (Billboard page, Developer spec checklist) ----------
    Side by side (the billboard is 800px wide or more, like the Rivet build's 50rem container query): two columns on background/strong, content bottom-aligned.
      Image column 66% of the billboard (924px of the 1400px Desktop frame), image 1:1 with spacing/24 top, bottom and outer side; the content column takes the rest.
-     Content: spacing/40 from the image, spacing/64 on its outer side, spacing/48 at the bottom (372px of text at 1400px). Between 800px and 1100px wide the gaps drop to spacing/32, and the content column never goes under 280px (the image gives way), so the text keeps room.
+     Content: spacing/32 from the image, spacing/64 on its outer side, spacing/48 at the bottom (380px of text at 1400px). Between 800px and 1100px wide the outer side and bottom drop to spacing/32, and the content column never goes under 280px (the image gives way), so the text keeps room.
    Reversed: the image column moves to the right.
    Stacked (under 800px wide): image above content, full width at 3:2, spacing/20 top and sides; text spacing/32 all sides; links spacing/32 sides and below, so everything sits inside one even 24px frame. Reversed has no effect.
    Stacked always uses the Mobile token values (see the container block below), so the type and spacing scale down with the component, not just with the screen.
    Eyebrow tag/sm/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/32, 20/24 in Mobile mode, like the feature card). Description body/sm/regular text/default, spacing/20 above.
    Single link: rvt-button Link, Normal, Extra-large, spacing/32 above. Multiple links: rvt-list-hub Compact, full width, spacing/32 above. */
 .rvt-billboard-wrap{container-type:inline-size}
-.rvt-billboard{display:grid;grid-template-columns:minmax(0,66%) minmax(280px,1fr);column-gap:var(--rvt-spacing-40);align-items:end;background:var(--rvt-background-strong)}
+.rvt-billboard{display:grid;grid-template-columns:minmax(0,66%) minmax(280px,1fr);column-gap:var(--rvt-spacing-32);align-items:end;background:var(--rvt-background-strong)}
 .rvt-billboard__media{padding:var(--rvt-spacing-24) 0 var(--rvt-spacing-24) var(--rvt-spacing-24)}
 /* Auto crop: the photo is never resized by hand. The slot sets the shape (1:1 beside the text, 3:2 above it) and object-fit: cover fills it,
    trimming the long sides. The crop is anchored at --rvt-image-focus, which defaults to the top centre (50% 0%), so a face near the top of a photo sits lower in the crop with the whole head in view,
@@ -940,7 +940,6 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-billboard__link:hover svg{fill:var(--rvt-icon-accent)}
 .rvt-billboard__link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
 @container (max-width:1099px){
-  .rvt-billboard,.rvt-billboard--reversed{column-gap:var(--rvt-spacing-32)}
   .rvt-billboard__content{padding:0 var(--rvt-spacing-32) var(--rvt-spacing-32) 0}
   .rvt-billboard--reversed .rvt-billboard__content{padding:0 0 var(--rvt-spacing-32) var(--rvt-spacing-32)}
 }
