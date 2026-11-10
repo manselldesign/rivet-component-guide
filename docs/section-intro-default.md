@@ -55,7 +55,7 @@ Shared rules: the section uses a `background/default` fill. On Mobile, everythin
 | Section padding, top | `spacing/160` (160px) | `spacing/64` (48px) |
 | Section padding, bottom | `spacing/160` (160px). Image layout: `spacing/80` (80px) | `spacing/64` (48px). Image layout: `spacing/32` (24px) |
 | Section padding, sides | `spacing/80` (80px) | `spacing/24` (24px) |
-| Gap, intro to image or cards | `spacing/48` (48px) | `spacing/32` (24px) |
+| Gap, intro to image or cards | `spacing/40` (40px) | `spacing/32` (24px) |
 | Gap, text to button | Left: `spacing/64` (64px), side by side. Centered: `spacing/40` (40px), stacked | `spacing/32` (24px), stacked |
 | Meta | `tag/sm/caps` (12 / 16px), `text/brand`, `spacing/12` (12px) below | Same |
 | Title | `display/md/strong` (36 / 40px), `text/brand` | `display/md/strong` (23 / 28px), `text/brand` |
