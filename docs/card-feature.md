@@ -59,18 +59,20 @@ Program sections work the same way. "Health sciences" is a Feature card, and eac
 
 ## Developer spec checklist
 
-Shared rules: 1px `border/default` border, `background/raised` fill, no radius, no shadow. The whole card is the link. Hover, only when the pointer is on the title text: title turns `text/accent` with the browser's default underline, instantly (no transition). Horizontal cards stack like Vertical on Mobile. Images and sticker blocks run edge to edge, outside the content padding.
+Shared rules: 1px `border/default` border drawn inside, on top of the picture, `background/raised` fill, no radius, no shadow. The whole card is one link. Horizontal cards stack like Vertical on Mobile. Images and sticker blocks run edge to edge, outside the content padding.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
 | Image (Vertical) | Full width, 3:2, at the top | Same |
-| Image (Horizontal) | 650 × 467px, on the left | Stacks like Vertical |
-| Sticker block (Vertical) | Full width, 3:2, `color/brand/extra-light`, 148px sticker centered | Same, 118px sticker |
-| Sticker block (Horizontal) | 466 × 311px, `color/brand/extra-light`, 154px sticker centered | Stacks like Vertical |
-| Content padding (Vertical) | `spacing/48` top and sides (48px), `spacing/64` bottom (64px) | `spacing/32` top and sides (24px), `spacing/64` bottom (48px) |
-| Content padding (Horizontal) | `spacing/64` all sides (64px) | Same as Vertical |
-| Top badge | Strong badge, `spacing/16` below | Same |
-| Eyebrow | `tag/sm/caps` (12 / 16px), `text/brand`, `spacing/8` below | `tag/sm/caps` (12 / 16px), `spacing/4` below |
-| Title | `display/xs/strong` (26 / 32px), `text/brand` | `display/xs/strong` (20 / 24px) |
-| Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/20` above | Same as Desktop |
-| Arrow box | 48 × 48px in the bottom-right corner, 1px `border/default` on top and left, 16px `rvt-arrow-right` centered | 32 × 32px |
+| Image (Horizontal) | 650 × 467px, on the left, text column centered beside it | Stacks like Vertical |
+| Sticker block (Vertical) | Full width, 3:2, `component/card/sticker-background`, 148px sticker in `color/brand/main` centered. Same in every theme | Same, 118px sticker |
+| Sticker block (Horizontal) | 466 × 311px, as tall as the card, `component/card/sticker-background`, 154px sticker centered | Stacks like Vertical |
+| Content padding | `spacing/40` all sides (40px), Vertical and Horizontal | `spacing/32` top and sides (24px), `spacing/64` bottom (48px) |
+| Top badge | Strong badge, `heading/xs/strong` (14 / 20px), `spacing/16` below | Same |
+| Eyebrow | `tag/sm/caps` (12 / 16px, weight 350, uppercase, 2px tracking `--rvt-font-tracking-xl`), `text/brand`, `spacing/8` below | `tag/sm/caps` (12 / 16px), `spacing/4` below |
+| Title | `display/xs/strong` (26 / 32px, weight 700, width 100% `--rvt-font-width-normal`), `text/brand` | `display/xs/strong` (20 / 24px) |
+| Description | `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`, `spacing/20` above | Same as Desktop |
+| Description (Horizontal) | Up to 750px wide | Stacks like Vertical |
+| Arrow box | 48 × 48px in the bottom-right corner, outside the text flow, 1px `border/default` on top and left, 16px `rvt-arrow-right` in `icon/brand` centered. Decorative | 32 × 32px |
+| Hover | Only when the pointer is on the title text or the arrow box: title turns `text/accent` with the browser's default underline and the arrow box fills with `background/tint` on Light, `background/default` on Dark and Crimson (the two fills the accordion uses). Instant, no transition. The arrow color and the borders stay as they are | Same |
+| Focus | 2px `border/accent-strong` ring right outside the card, no gap | Same |

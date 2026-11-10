@@ -898,9 +898,9 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-billboard{display:grid;grid-template-columns:minmax(0,66%) minmax(280px,1fr);column-gap:var(--rvt-spacing-40);align-items:end;background:var(--rvt-background-strong)}
 .rvt-billboard__media{padding:var(--rvt-spacing-24) 0 var(--rvt-spacing-24) var(--rvt-spacing-24)}
 /* Auto crop: the photo is never resized by hand. The slot sets the shape (1:1 beside the text, 3:2 above it) and object-fit: cover fills it,
-   trimming the long sides. The crop is anchored at --rvt-image-focus, which defaults to the centre of the top third (50% 25%), where faces usually are,
+   trimming the long sides. The crop is anchored at --rvt-image-focus, which defaults to the top centre (50% 0%), so a face near the top of a photo sits lower in the crop with the whole head in view,
    so one landscape photo works in both shapes. A page can move the focal point per image with style="--rvt-image-focus: 30% 50%" when a photo needs it. */
-.rvt-billboard__media img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:var(--rvt-image-focus,50% 25%)}
+.rvt-billboard__media img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:var(--rvt-image-focus,50% 0%)}
 .rvt-billboard__content{min-width:0;padding:0 var(--rvt-spacing-64) var(--rvt-spacing-48) 0;overflow-wrap:break-word}
 .rvt-billboard--reversed{grid-template-columns:minmax(280px,1fr) minmax(0,66%)}
 .rvt-billboard--reversed .rvt-billboard__media{order:2;padding:var(--rvt-spacing-24) var(--rvt-spacing-24) var(--rvt-spacing-24) 0}
@@ -1065,7 +1065,7 @@ body:not(.has-rail) .site-header__menu{display:none}
   --card-text-gap:var(--rvt-spacing-8);--card-foot-gap:var(--rvt-spacing-16)}
 .rvt-card:has(.rvt-card__link:focus-visible){outline:2px solid var(--rvt-border-accent-strong);outline-offset:1px}
 .rvt-card__media{flex:none;margin:0 0 var(--card-media-gap)}
-.rvt-card__image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.rvt-card__image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:var(--rvt-image-focus,50% 0%)}
 .rvt-card--sticker .rvt-card__media{margin-bottom:var(--card-sticker-gap)}
 .rvt-card__sticker{display:block;width:var(--card-sticker);height:var(--card-sticker);border-radius:var(--rvt-border-radius-full);background:var(--rvt-color-brand-light);color:var(--rvt-color-brand-main)}
 .rvt-card__sticker svg{display:block;width:100%;height:100%}
@@ -1136,7 +1136,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-card-event--raised{box-shadow:var(--rvt-shadow-sm)}
 .rvt-card-event:has(.rvt-card-event__link:focus-visible){outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
 .rvt-card-event__media{flex:none;margin:0 0 var(--ce-media-gap)}
-.rvt-card-event__image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.rvt-card-event__image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:var(--rvt-image-focus,50% 0%)}
 .rvt-card-event__date{display:flex;align-items:center;justify-content:center;aspect-ratio:3/2;background:var(--rvt-component-calendar-tile-background)}
 /* On the 3:2 block (Vertical, and Horizontal once it stacks) the tile's content is shown at 150% so it fills the space: month and year 24 / 36px, day 63 / 66px, spacing/12 gaps become 18px. */
 .rvt-card-event__date .rvt-calendar-tile{zoom:1.5}
@@ -1179,6 +1179,65 @@ body:not(.has-rail) .site-header__menu{display:none}
 }
 @media (max-width:767px){
   .rvt-card-event{--ce-pad:var(--rvt-spacing-24);--ce-media-gap:var(--rvt-spacing-24)}
+}
+/* ---------- rvt-card-feature (Card-feature page example, Developer spec checklist) ----------
+   Types: Orientation (Vertical 444px, Horizontal 1400px Desktop frames) x Layout (Image, Sticker, Plain). No Style axis.
+   Surface: background/raised, 1px border/default drawn inside and on top of the picture (so it adds nothing to the size), no radius, no shadow.
+   Picture runs edge to edge, outside the text padding. Image: 3:2 (Horizontal: 650 x 467 beside the text, the text centered next to it).
+   Sticker: bare 148px sticker in color/brand/main centered on a 3:2 component/card/sticker-background block (Horizontal: 466 x 311 block, 154px sticker,
+   as tall as the card). The block and sticker are the same in every theme. Plain: no picture.
+   Text padding: spacing/40 all sides on every type above phones (Vertical and Horizontal).
+   Strong badge spacing/16 below; eyebrow tag/sm/caps text/brand, 2px in, spacing/8 below; title display/xs/strong text/brand;
+   description body/sm/regular text/default spacing/20 above (Horizontal: up to 750px wide).
+   Arrow box: 48 x 48 pinned to the bottom-right corner, outside the text flow, 1px border/default on its top and left (drawn inside), 16px arrow in icon/brand. Decorative.
+   The whole card is the link (the title link's ::after covers the card). Hover on the title text only: title text/accent + the browser's default underline,
+   and the arrow box fills (background/tint on Light, background/default on Dark and Crimson), instantly (no transition); the arrow color and the borders stay as they are.
+   The same hover shows when the pointer is on the arrow box. Focus: 2px border/accent-strong ring right outside the card.
+   Mobile (under 768px): padding spacing/32 top and sides (24px) and spacing/64 bottom (48px, room for the arrow box), eyebrow spacing/4 below, 118px sticker, 32px arrow box (spacing/40),
+   and Horizontal cards stack like Vertical ones. In the dochub column a Horizontal card is narrower than its 1400px frame, so its picture keeps the frame's share of the width. */
+.rvt-card-feature{--cf-pad:var(--rvt-spacing-40);--cf-arrow:48px;--cf-sticker:148px;--cf-eyebrow-gap:var(--rvt-spacing-8);
+  box-sizing:border-box;position:relative;display:flex;flex-direction:column;width:100%;background:var(--rvt-background-raised);border-radius:0}
+.rvt-card-feature::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;box-shadow:inset 0 0 0 1px var(--rvt-border-default)}
+.rvt-card-feature:has(.rvt-card-feature__link:focus-visible){outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
+.rvt-card-feature__media{position:relative;flex:none;margin:0;aspect-ratio:3/2}
+.rvt-card-feature__image{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:var(--rvt-image-focus,50% 0%)}
+.rvt-card-feature__sticker{display:flex;align-items:center;justify-content:center;background:var(--rvt-component-card-sticker-background);color:var(--rvt-color-brand-main)}
+.rvt-card-feature__sticker svg{display:block;flex:none;width:var(--cf-sticker);height:var(--cf-sticker);fill:currentColor}
+.rvt-card-feature__body{box-sizing:border-box;display:flex;flex-direction:column;min-width:0;padding:var(--cf-pad)}
+.rvt-card-feature__badge{align-self:flex-start;margin:0 0 var(--rvt-spacing-16)}
+.rvt-card-feature__eyebrow{margin:0;padding:0 0 var(--cf-eyebrow-gap) 2px;color:var(--rvt-text-brand);
+  font:var(--rvt-font-tag-sm-caps);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-xl);text-transform:uppercase}
+.rvt-card-feature__title{margin:0;color:var(--rvt-text-brand);
+  font:var(--rvt-font-display-xs-strong);font-stretch:var(--rvt-font-width-normal);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-card-feature__link{color:inherit;text-decoration:none}
+/* The title text sits above the card-wide link area so only the text itself triggers the hover (as in the coded Rivet card). No transition: the change is instant. */
+.rvt-card-feature__link-text{position:relative;z-index:2}
+.rvt-card-feature__link::after{content:"";position:absolute;inset:0;z-index:1}
+.rvt-card-feature__link:focus-visible{outline:none}
+/* Hover on the title text or on the arrow box: both the underline and the arrow box fill show together. */
+.rvt-card-feature__link:has(.rvt-card-feature__link-text:hover,.rvt-card-feature__arrow:hover) .rvt-card-feature__link-text{color:var(--rvt-text-accent);text-decoration:underline}
+.rvt-card-feature__desc{margin:0;padding-top:var(--rvt-spacing-20);color:var(--rvt-text-default);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-card-feature__arrow{position:absolute;right:0;bottom:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:var(--cf-arrow);height:var(--cf-arrow);
+  z-index:2;box-shadow:inset 1px 1px 0 0 var(--rvt-border-default);color:var(--rvt-icon-brand)}
+.rvt-card-feature__arrow svg{display:block;width:16px;height:16px;fill:currentColor}
+/* The arrow box fill uses the accordion's two theme tokens: background/tint (its hover fill) and background/default (the page fill it rests on).
+   Light: the card is white, so the box fills with background/tint (cream), exactly like the accordion row. Dark and Crimson: the card's background/raised is already
+   the same color as background/tint, so the box fills with background/default, the other color of the pair. The box's top and left lines stay. Instant, like the underline.
+   The arrow box sits inside the title link (above its card-wide area) so it can be hovered and is still part of the one card link. */
+.rvt-card-feature__link:has(.rvt-card-feature__link-text:hover,.rvt-card-feature__arrow:hover) .rvt-card-feature__arrow{background:var(--rvt-background-tint)}
+:is(.rvt-theme-dark,.rvt-theme-crimson) .rvt-card-feature__link:has(.rvt-card-feature__link-text:hover,.rvt-card-feature__arrow:hover) .rvt-card-feature__arrow{background:var(--rvt-background-default)}
+/* Horizontal (Desktop): picture beside the text. Image 650 of 1400 wide at 650:467; Sticker block 466 of 1400 wide, at least 466:311, stretching to the card's height. */
+@media (min-width:768px){
+  .rvt-card-feature--horizontal{flex-direction:row;align-items:flex-start}
+  .rvt-card-feature--horizontal.rvt-card-feature--image{align-items:center}
+  .rvt-card-feature--horizontal .rvt-card-feature__media{align-self:stretch;flex:0 0 46.4286%;max-width:650px;aspect-ratio:650/467}
+  .rvt-card-feature--horizontal .rvt-card-feature__sticker{flex-basis:33.2857%;max-width:466px;aspect-ratio:466/311;--cf-sticker:154px}
+  .rvt-card-feature--horizontal .rvt-card-feature__body{flex:1 1 0}
+  .rvt-card-feature--horizontal .rvt-card-feature__desc{max-width:750px}
+}
+@media (max-width:767px){
+  .rvt-card-feature{--cf-pad:var(--rvt-spacing-32) var(--rvt-spacing-32) var(--rvt-spacing-64);--cf-arrow:var(--rvt-spacing-40);--cf-sticker:118px;--cf-eyebrow-gap:var(--rvt-spacing-4)}
 }
 /* ---------- rvt-card-contact (Card-contact page example, Developer spec checklist) ----------
    Types: Orientation (Vertical 440px, Horizontal 960px Desktop frames) x Layout (Default = sticker, Avatar = photo). No Style axis.
@@ -1847,6 +1906,34 @@ body:not(.has-rail) .site-header__menu{display:none}
       </div>
     </article>`;
   };
+  /* rvt-card-feature example: one topic per Layout. Image reuses the football photo (decorative beside the title, so its alt text is empty);
+     Sticker shows the bare pencil-ruler sticker (rivet-stickers, art only); Plain has no picture. The arrow box is decorative. */
+  const PENCIL_RULER = 'm30 19.113 6 9.6V61a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3V28.713l6-9.6ZM26 31.38V57h3V31.713a3.667 3.667 0 0 1-1.008.185A3.654 3.654 0 0 1 26 31.38Zm5 .333V57h3V31.38a3.654 3.654 0 0 1-1.992.518A3.667 3.667 0 0 1 31 31.713Zm2.796-2.753L30 22.887l-3.796 6.073c.187.218.429.454.712.636.313.202.645.317.999.303.347-.013.83-.154 1.445-.667l.64-.534.64.534c.616.513 1.098.654 1.445.667.355.014.686-.101 1-.303.282-.181.524-.418.71-.636ZM34 59h-8v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2Zm8-43h14v48H42V16Zm2 2v3h10v-3H44Zm10 5H44v34h10v-4h-6v-2h6v-4h-6v-2h6v-4h-6v-2h6v-4h-6v-2h6v-3h-6v-2h6v-5Zm0 36H44v3h10v-3Z';
+  const FEATURES = {
+    image: {eyebrow: 'Athletics', title: 'Tickets and game days',
+      desc: 'Find student passes, single-game tickets and what to know before you head to the stadium.'},
+    sticker: {eyebrow: 'Academics', title: 'Majors and degrees',
+      desc: 'Browse undergraduate majors, minors and certificates by interest, school or campus.'},
+    plain: {eyebrow: 'Paying for college', title: 'Types of financial aid',
+      desc: 'See how scholarships, grants, loans and work-study fit together, and which ones you apply for.'}
+  };
+  const cardFeatureEl = (orientation, layout) => {
+    const f = FEATURES[layout];
+    const media = layout === 'image'
+      ? `<div class="rvt-card-feature__media"><img class="rvt-card-feature__image" src="img/billboard-example.jpg" width="900" height="900" alt=""></div>`
+      : layout === 'sticker'
+        ? `<div class="rvt-card-feature__media rvt-card-feature__sticker" aria-hidden="true"><svg viewBox="0 0 80 80" focusable="false"><path d="${PENCIL_RULER}"/></svg></div>`
+        : '';
+    return `<article class="rvt-card-feature rvt-card-feature--${orientation} rvt-card-feature--${layout}">
+      ${media}
+      <div class="rvt-card-feature__body">
+        <span class="rvt-badge rvt-card-feature__badge">Featured</span>
+        <p class="rvt-card-feature__eyebrow">${esc(f.eyebrow)}</p>
+        <h3 class="rvt-card-feature__title"><a class="rvt-card-feature__link" href="#card-feature"><span class="rvt-card-feature__link-text">${esc(f.title)}</span><span class="rvt-card-feature__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${P.arrowRight}"/></svg></span></a></h3>
+        <p class="rvt-card-feature__desc">${esc(f.desc)}</p>
+      </div>
+    </article>`;
+  };
   const demos = {
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
@@ -2080,6 +2167,25 @@ body:not(.has-rail) .site-header__menu{display:none}
       },
       /* Sample link stays on the page. */
       wire: stage => stage.querySelectorAll('.rvt-card-event__link').forEach(a => a.addEventListener('click', e => e.preventDefault()))
+    },
+    /* rvt-card-feature: Orientation and Layout share the type dropdown (Figma order: Image, Sticker, Plain for Vertical, then for Horizontal). No Style axis, so no radio.
+       Each type is capped at its Breakpoint=Desktop frame width: Vertical 444px, Horizontal 1400px. Under 768px Horizontal stacks like Vertical. */
+    'card-feature': {
+      maxWidth: 444, // Figma rvt-card-feature, Breakpoint=Desktop, Orientation=Vertical frame width
+      variants: [
+        {id: 'vertical-image', label: 'Vertical, Image'},
+        {id: 'vertical-sticker', label: 'Vertical, Sticker'},
+        {id: 'vertical-plain', label: 'Vertical, Plain'},
+        {id: 'horizontal-image', label: 'Horizontal, Image', maxWidth: 1400}, // Figma rvt-card-feature, Breakpoint=Desktop, Orientation=Horizontal frame width
+        {id: 'horizontal-sticker', label: 'Horizontal, Sticker', maxWidth: 1400},
+        {id: 'horizontal-plain', label: 'Horizontal, Plain', maxWidth: 1400}
+      ],
+      html: v => {
+        const [orientation, layout] = (v || 'vertical-image').split('-');
+        return cardFeatureEl(orientation, layout);
+      },
+      /* Sample link stays on the page. */
+      wire: stage => stage.querySelectorAll('.rvt-card-feature__link').forEach(a => a.addEventListener('click', e => e.preventDefault()))
     },
     /* rvt-tabs: Type is the variant (Contained, Segmented), each capped at its own Breakpoint=Desktop frame width. */
     tabs: {
