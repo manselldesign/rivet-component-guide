@@ -59,7 +59,7 @@ Program sections work the same way. "Health sciences" is a Feature card, and eac
 
 ## Developer spec checklist
 
-Shared rules: 1px `border/default` border, `background/raised` fill, no radius, no shadow. The whole card is the link. Hover: title turns `text/accent` with underline. Horizontal cards stack like Vertical on Mobile. Images and sticker blocks run edge to edge, outside the content padding.
+Shared rules: 1px `border/default` border, `background/raised` fill, no radius, no shadow. The whole card is the link. Hover, only when the pointer is on the title text: title turns `text/accent` with the browser's default underline, instantly (no transition). Horizontal cards stack like Vertical on Mobile. Images and sticker blocks run edge to edge, outside the content padding.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |

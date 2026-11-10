@@ -122,6 +122,6 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 | Border | `border/default` (1px) | None |
 | Shadow | None | `shadow/sm` |
 | Corner radius | 0 | 0 |
-| Title, hover | `text/accent`, underlined | `text/accent`, underlined |
-| Arrow, hover | `icon/accent` | `icon/accent` |
+| Title, hover | Only when the pointer is on the title text: `text/accent` with the browser's default underline. Instant, no transition | Same |
+| Arrow, hover | `icon/accent`, together with the title | Same |
 | Focus | 2px `border/accent-strong` ring, 1px outside the card | Same |

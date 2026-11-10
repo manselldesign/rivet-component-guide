@@ -1045,7 +1045,8 @@ body:not(.has-rail) .site-header__menu{display:none}
      title action/xl/strong with the 16px arrow; description and list body/sm/regular, spacing/16 above; footer spacing/24 above.
    Compact: spacing/16 padding; Image spacing/24 below; Sticker 48px spacing/8 below / to text; title action/lg/strong with the 12px arrow;
      description and list body/xs/regular, spacing/8 above; footer spacing/16 above.
-   The whole card is the link (the title link's ::after covers the card). Hover: title text/accent + underline, arrow icon/accent; the border stays.
+   The whole card is the link (the title link's ::after covers the card). Hover on the title text only: title text/accent + the browser's default underline,
+   arrow icon/accent, instantly (no transition); the border stays.
    Focus: 2px border/accent-strong ring 1px outside the card. Mobile (under 768px): spacing/24 padding, Image spacing/24 below, Sticker 64px spacing/16 below
    (Compact unchanged), and Horizontal cards stack like Vertical ones. Sticker colors are the Rivet sticker colors, the same in every theme. */
 .rvt-card-set{display:flex;align-items:flex-start;gap:var(--rvt-spacing-24) var(--rvt-spacing-32);margin:0;padding:0;list-style:none}
@@ -1077,13 +1078,15 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-card__head{display:flex;align-items:flex-start;gap:var(--rvt-spacing-16)}
 .rvt-card__title{flex:1 1 auto;min-width:0;margin:0;color:var(--rvt-text-strong);
   font:var(--rvt-font-action-xl-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
-.rvt-card__link{color:inherit;text-decoration:underline;text-decoration-color:transparent;text-underline-position:from-font;transition:color .15s ease-out,text-decoration-color .15s ease-out}
+.rvt-card__link{color:inherit;text-decoration:none}
+/* The title text sits above the card-wide link area so only the text itself triggers the hover (as in the coded Rivet card). No transition: the change is instant. */
+.rvt-card__link-text{position:relative;z-index:2}
 .rvt-card__link::after{content:"";position:absolute;inset:0;z-index:1}
 .rvt-card__link:focus-visible{outline:none}
-.rvt-card__arrow{flex:none;display:flex;padding-top:6px;color:var(--rvt-icon-strong);transition:color .15s ease-out}
+.rvt-card__arrow{flex:none;display:flex;padding-top:6px;color:var(--rvt-icon-strong)}
 .rvt-card__arrow svg{display:block;width:16px;height:16px;fill:currentColor}
-.rvt-card:hover .rvt-card__link{color:var(--rvt-text-accent);text-decoration-color:currentColor}
-.rvt-card:hover .rvt-card__arrow{color:var(--rvt-icon-accent)}
+.rvt-card__link-text:hover{color:var(--rvt-text-accent);text-decoration:underline}
+.rvt-card__head:has(.rvt-card__link-text:hover) .rvt-card__arrow{color:var(--rvt-icon-accent)}
 .rvt-card__desc{margin:0;padding-top:var(--card-text-gap);color:var(--rvt-text-default);
   font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
 /* rvt-list, Medium (Compact: Small): square icon/brand bullet, spacing/8 to the text, spacing/8 between items. */
@@ -1116,7 +1119,67 @@ body:not(.has-rail) .site-header__menu{display:none}
 @media (max-width:767px){
   .rvt-card:not(.rvt-card--compact){--card-pad:var(--rvt-spacing-24);--card-media-gap:var(--rvt-spacing-24);--card-sticker:64px;--card-sticker-gap:var(--rvt-spacing-16)}
 }
-@media (prefers-reduced-motion:reduce){.rvt-card__link,.rvt-card__arrow{transition:none}}
+/* ---------- rvt-card-event (Card-event page example, Developer spec checklist) ----------
+   Types: Orientation (Vertical 440px, Horizontal 1200px Desktop frames) x Layout (Image, Date, Plain). Style radio: Outlined (1px border/default, drawn inside)
+   or Raised (shadow/sm, no border). background/raised fill, no radius, spacing/32 padding.
+   Image: 3:2, spacing/32 below (Horizontal 180 x 180, spacing/32 to the text). Date: rvt-calendar-tile at 150% centered on a 3:2 block in the tile's own background,
+   spacing/32 below (Horizontal: the 128px tile alone, spacing/24 to the text). Plain: no media.
+   Strong badge spacing/12 below; top metadata tag/sm/regular text/brand spacing/4 below; title action/xl/strong text/strong, cut off after three lines
+   (Horizontal: up to 800px wide), with the 16px arrow spacing/16 to its right. Details: 24px above (spacing/12 + spacing/12), rows spacing/12 apart,
+   16px icon/default glyph centered on the first text line, spacing/8 to body/sm/regular text/default. Footer: spacing/24 above, "Tags:" label, subtle badges.
+   The whole card is the link (the title link's ::after covers the card). Hover on the title text only: title text/accent + the browser's default underline,
+   arrow icon/accent, instantly (no transition); the border or shadow stays.
+   Focus: 2px border/accent-strong ring right outside the card. Mobile (under 768px): spacing/24 padding and media gap, and Horizontal cards stack like Vertical ones. */
+.rvt-card-event{--ce-pad:var(--rvt-spacing-32);--ce-media-gap:var(--rvt-spacing-32);
+  box-sizing:border-box;position:relative;display:flex;flex-direction:column;width:100%;padding:var(--ce-pad);
+  background:var(--rvt-background-raised);box-shadow:inset 0 0 0 1px var(--rvt-border-default);border-radius:0}
+.rvt-card-event--raised{box-shadow:var(--rvt-shadow-sm)}
+.rvt-card-event:has(.rvt-card-event__link:focus-visible){outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
+.rvt-card-event__media{flex:none;margin:0 0 var(--ce-media-gap)}
+.rvt-card-event__image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.rvt-card-event__date{display:flex;align-items:center;justify-content:center;aspect-ratio:3/2;background:var(--rvt-component-calendar-tile-background)}
+/* On the 3:2 block (Vertical, and Horizontal once it stacks) the tile's content is shown at 150% so it fills the space: month and year 24 / 36px, day 63 / 66px, spacing/12 gaps become 18px. */
+.rvt-card-event__date .rvt-calendar-tile{zoom:1.5}
+.rvt-card-event__body{display:flex;flex-direction:column;min-width:0}
+.rvt-card-event__featured{align-self:flex-start;margin:0 0 var(--rvt-spacing-12)}
+.rvt-card-event__tag{margin:0;padding:0 0 var(--rvt-spacing-4) 2px;color:var(--rvt-text-brand);
+  font:var(--rvt-font-tag-sm-regular);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-lg)}
+.rvt-card-event__head{display:flex;align-items:flex-start;gap:var(--rvt-spacing-16)}
+.rvt-card-event__title{flex:1 1 auto;min-width:0;margin:0;color:var(--rvt-text-strong);
+  font:var(--rvt-font-action-xl-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-card-event__link{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden;
+  color:inherit;text-decoration:none}
+.rvt-card-event__link-text{position:relative;z-index:2}
+.rvt-card-event__link::after{content:"";position:absolute;inset:0;z-index:1}
+.rvt-card-event__link:focus-visible{outline:none}
+.rvt-card-event__arrow{flex:none;display:flex;padding-top:6px;color:var(--rvt-icon-strong)}
+.rvt-card-event__arrow svg{display:block;width:16px;height:16px;fill:currentColor}
+.rvt-card-event__link-text:hover{color:var(--rvt-text-accent);text-decoration:underline}
+.rvt-card-event__head:has(.rvt-card-event__link-text:hover) .rvt-card-event__arrow{color:var(--rvt-icon-accent)}
+.rvt-card-event__details{display:flex;flex-direction:column;gap:var(--rvt-spacing-12);margin:0;padding:calc(var(--rvt-spacing-12) + var(--rvt-spacing-12)) 0 0;list-style:none}
+.rvt-card-event__detail{display:flex;align-items:flex-start;gap:var(--rvt-spacing-8);min-width:0;color:var(--rvt-text-default);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-card-event__icon{flex:none;display:flex;align-items:center;height:var(--rvt-type-line-height-24)}
+.rvt-card-event__icon svg{display:block;width:16px;height:16px;fill:var(--rvt-icon-default)}
+.rvt-card-event__text{flex:1 1 auto;min-width:0;overflow-wrap:break-word}
+.rvt-card-event__foot{display:flex;flex-direction:column;gap:var(--rvt-spacing-16);padding-top:var(--rvt-spacing-24)}
+.rvt-card-event__label{margin:0;color:var(--rvt-text-default);
+  font:var(--rvt-font-tag-sm-regular);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-lg)}
+.rvt-card-event__tags{display:flex;flex-wrap:wrap;gap:var(--rvt-spacing-8);margin:0;padding:0;list-style:none}
+/* Horizontal (Desktop): media beside the text; the text column starts spacing/4 down and the title is up to 800px wide. */
+@media (min-width:768px){
+  .rvt-card-event--horizontal{flex-direction:row;align-items:flex-start;gap:var(--rvt-spacing-32)}
+  .rvt-card-event--horizontal.rvt-card-event--date{gap:var(--rvt-spacing-24)}
+  .rvt-card-event--horizontal .rvt-card-event__media{margin:0}
+  .rvt-card-event--horizontal .rvt-card-event__image{width:180px;height:180px;aspect-ratio:auto}
+  .rvt-card-event--horizontal .rvt-card-event__date{aspect-ratio:auto;background:none}
+  .rvt-card-event--horizontal .rvt-card-event__date .rvt-calendar-tile{zoom:1}
+  .rvt-card-event--horizontal .rvt-card-event__body{flex:1 1 auto;padding-top:var(--rvt-spacing-4)}
+  .rvt-card-event--horizontal .rvt-card-event__link{max-width:800px}
+}
+@media (max-width:767px){
+  .rvt-card-event{--ce-pad:var(--rvt-spacing-24);--ce-media-gap:var(--rvt-spacing-24)}
+}
 /* ---------- rvt-card-contact (Card-contact page example, Developer spec checklist) ----------
    Types: Orientation (Vertical 440px, Horizontal 960px Desktop frames) x Layout (Default = sticker, Avatar = photo). No Style axis.
    Surface: background/raised, shadow/md, no border, no radius; spacing/32 padding (the token is 24px on phones).
@@ -1650,7 +1713,7 @@ body:not(.has-rail) .site-header__menu{display:none}
         <span class="rvt-badge rvt-card__featured">Featured</span>
         <p class="rvt-card__eyebrow">${esc(c.eyebrow)}</p>
         <div class="rvt-card__head">
-          <h3 class="rvt-card__title"><a class="rvt-card__link" href="#card">${esc(c.title)}</a></h3>
+          <h3 class="rvt-card__title"><a class="rvt-card__link" href="#card"><span class="rvt-card__link-text">${esc(c.title)}</span></a></h3>
           <span class="rvt-card__arrow" aria-hidden="true">${compact ? icon12('arrowRight') : `<svg viewBox="0 0 16 16" focusable="false"><path d="${P.arrowRight}"/></svg>`}</span>
         </div>
         <p class="rvt-card__desc">${esc(c.desc)}</p>
@@ -1732,6 +1795,54 @@ body:not(.has-rail) .site-header__menu{display:none}
             <ul class="rvt-card-contact__social-list" aria-labelledby="cc-social">${CC_SOCIAL.map(s => `<li><a class="rvt-card-contact__social-link" href="#card-contact" aria-label="${esc(c.title)} on ${esc(s.name)}"><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path${s.evenodd ? ' fill-rule="evenodd"' : ''} d="${s.d}"/></svg></a></li>`).join('')}</ul>
           </div>
           <div class="rvt-card-contact__actions">${c.buttons.map(b => `<a class="rvt-card-contact__button" href="#card-contact">${esc(b.label)}${b.external ? '<span class="sr-only"> (opens a map)</span>' : ''}<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${b.external ? P.arrowUpRight : P.arrowRight}"/></svg></a>`).join('')}</div>
+        </div>
+      </div>
+    </article>`;
+  };
+  /* rvt-card-event example: one event per Layout. Image reuses the football photo (decorative beside the title, so its alt text is empty);
+     Date shows the calendar tile (hidden from screen readers; the date row below says the same thing); Plain has no media.
+     16px glyphs from rivet-icons (calendar, clock, map-pin). */
+  const CE_ICON = {
+    calendar: 'M7 9.5v2H5v-2h2Zm4 2v-2H9v2h2Z M5 0a1 1 0 0 1 1 1v1h4V1a1 1 0 1 1 2 0v1h3v13H1V2h3V1a1 1 0 0 1 1-1ZM3 4v2h10V4H3Zm10 4H3v5h10V8Z',
+    clock: 'M9 7.586V4H7v4.414l2.5 2.5L10.914 9.5 9 7.586Z M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2 8a6 6 0 1 1 12 0A6 6 0 0 1 2 8Z',
+    mapPin: 'M10 6.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z M7.193 15.162a18.223 18.223 0 0 1-2.666-2.283C3.1 11.386 1.5 9.145 1.5 6.5 1.5 3.245 4.141 0 8 0s6.5 3.245 6.5 6.5c0 2.645-1.6 4.886-3.027 6.379a18.22 18.22 0 0 1-2.666 2.283c-.263.183-.536.351-.807.523-.27-.172-.544-.34-.807-.523ZM8 2C5.359 2 3.5 4.232 3.5 6.5c0 1.855 1.15 3.614 2.473 4.996A16.217 16.217 0 0 0 8 13.28a16.22 16.22 0 0 0 2.027-1.783C11.35 10.114 12.5 8.356 12.5 6.5 12.5 4.232 10.641 2 8 2Z'
+  };
+  const EVENTS = {
+    image: {tag: 'Athletics', title: 'Spring football game and fan fest at Memorial Stadium',
+      iso: '2027-04-17', date: 'Apr 17, 2027', month: 'Apr', day: '17', year: '2027', time: '1:00 PM – 4:00 PM', place: 'Memorial Stadium, Bloomington',
+      tags: ['Athletics', 'Students', 'Free']},
+    date: {tag: 'Bloomington', title: 'Admitted student day for incoming fall freshmen and their families',
+      iso: '2027-03-27', date: 'Mar 27, 2027', month: 'Mar', day: '27', year: '2027', time: '9:00 AM – 3:00 PM', place: 'Indiana Memorial Union',
+      tags: ['Admissions', 'Families', 'Campus visit']},
+    plain: {tag: 'Indianapolis', title: 'FAFSA filing workshop with financial aid advisors',
+      iso: '2027-01-21', date: 'Jan 21, 2027', month: 'Jan', day: '21', year: '2027', time: '4:00 PM – 6:00 PM', place: 'Indianapolis Campus Center',
+      tags: ['Financial aid', 'Workshop', 'Free']}
+  };
+  const ceIcon = name => `<span class="rvt-card-event__icon" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${CE_ICON[name]}"/></svg></span>`;
+  const cardEventEl = (orientation, layout, style) => {
+    const e = EVENTS[layout];
+    const media = layout === 'image'
+      ? `<div class="rvt-card-event__media"><img class="rvt-card-event__image" src="img/billboard-example.jpg" width="900" height="900" alt=""></div>`
+      : layout === 'date'
+        ? `<div class="rvt-card-event__media rvt-card-event__date" aria-hidden="true"><span class="rvt-calendar-tile"><span class="rvt-calendar-tile__month">${esc(e.month)}</span><span class="rvt-calendar-tile__day">${esc(e.day)}</span><span class="rvt-calendar-tile__year">${esc(e.year)}</span></span></div>`
+        : '';
+    return `<article class="rvt-card-event rvt-card-event--${orientation} rvt-card-event--${layout} rvt-card-event--${style}">
+      ${media}
+      <div class="rvt-card-event__body">
+        <span class="rvt-badge rvt-card-event__featured">Featured</span>
+        <p class="rvt-card-event__tag">${esc(e.tag)}</p>
+        <div class="rvt-card-event__head">
+          <h3 class="rvt-card-event__title"><a class="rvt-card-event__link" href="#card-event"><span class="rvt-card-event__link-text">${esc(e.title)}</span></a></h3>
+          <span class="rvt-card-event__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${P.arrowRight}"/></svg></span>
+        </div>
+        <ul class="rvt-card-event__details">
+          <li class="rvt-card-event__detail">${ceIcon('calendar')}<span class="rvt-card-event__text"><span class="sr-only">Date: </span><time datetime="${e.iso}">${esc(e.date)}</time></span></li>
+          <li class="rvt-card-event__detail">${ceIcon('clock')}<span class="rvt-card-event__text"><span class="sr-only">Time: </span>${esc(e.time)}</span></li>
+          <li class="rvt-card-event__detail">${ceIcon('mapPin')}<span class="rvt-card-event__text"><span class="sr-only">Location: </span>${esc(e.place)}</span></li>
+        </ul>
+        <div class="rvt-card-event__foot">
+          <p class="rvt-card-event__label" id="ce-tags">Tags:</p>
+          <ul class="rvt-card-event__tags" aria-labelledby="ce-tags">${e.tags.map(t => `<li class="rvt-badge rvt-badge--subtle">${esc(t)}</li>`).join('')}</ul>
         </div>
       </div>
     </article>`;
@@ -1946,6 +2057,29 @@ body:not(.has-rail) .site-header__menu{display:none}
           if (open) panel.removeAttribute('aria-hidden'); else panel.setAttribute('aria-hidden', 'true');
         });
       }
+    },
+    /* rvt-card-event: Orientation and Layout share the type dropdown (Figma order: Image, Date, Plain for Vertical, then for Horizontal); Style is the radio.
+       Each type is capped at its Breakpoint=Desktop frame width: Vertical 440px, Horizontal 1200px. Under 768px Horizontal stacks like Vertical. */
+    'card-event': {
+      maxWidth: 440, // Figma rvt-card-event, Breakpoint=Desktop, Orientation=Vertical frame width
+      variants: [
+        {id: 'vertical-image', label: 'Vertical, Image'},
+        {id: 'vertical-date', label: 'Vertical, Date'},
+        {id: 'vertical-plain', label: 'Vertical, Plain'},
+        {id: 'horizontal-image', label: 'Horizontal, Image', maxWidth: 1200}, // Figma rvt-card-event, Breakpoint=Desktop, Orientation=Horizontal frame width
+        {id: 'horizontal-date', label: 'Horizontal, Date', maxWidth: 1200},
+        {id: 'horizontal-plain', label: 'Horizontal, Plain', maxWidth: 1200}
+      ],
+      option: {id: 'style', label: 'Style', choices: [
+        {id: 'outlined', label: 'Outlined'},
+        {id: 'raised', label: 'Raised'}
+      ]},
+      html: (v, style) => {
+        const [orientation, layout] = (v || 'vertical-image').split('-');
+        return cardEventEl(orientation, layout, style || 'outlined');
+      },
+      /* Sample link stays on the page. */
+      wire: stage => stage.querySelectorAll('.rvt-card-event__link').forEach(a => a.addEventListener('click', e => e.preventDefault()))
     },
     /* rvt-tabs: Type is the variant (Contained, Segmented), each capped at its own Breakpoint=Desktop frame width. */
     tabs: {

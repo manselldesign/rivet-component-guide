@@ -19,6 +19,18 @@ An event card previews one event, like a lecture, open house or performance. It 
 - Don't use it for a deadline with no time or place, like an application due date
 - Don't add extra links or buttons inside a card. The whole card is already the link
 
+## Image, Date or Plain?
+**What do you have to show for the event?**
+
+| Behind the card | Examples | Use |
+| --- | --- | --- |
+| A good photo of the event itself | The spring football game, a theater performance | Image |
+| A photo of the speaker or venue | A guest lecture, an open house at the welcome center | Image |
+| No photo, and the date is what people plan around | Admitted student day, commencement | Date |
+| A one-time session people need to save the date for | New student orientation, a registration info night | Date |
+| A long list of similar events | Weekly FAFSA workshops, daily campus tours | Plain |
+| A few events in a tight space | Related events beside a news story | Plain |
+
 ## Types
 
 ### Layout
@@ -65,22 +77,25 @@ An events calendar page works the same way. It lists Event cards, often in Horiz
 
 ## Developer spec checklist
 
-Shared rules: Outlined = 1px `border/default` border, no radius. Raised = `shadow/sm`, no border. Both use `background/raised` fill. Hover: title turns `text/accent` with underline. Title truncates with an ellipsis. Horizontal cards stack like Vertical on Mobile.
+Shared rules: Outlined = 1px `border/default` border, no radius. Raised = `shadow/sm`, no border. Both use `background/raised` fill. The whole card is one link. Title cuts off with an ellipsis after three lines. Horizontal cards stack like Vertical on Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
 | Card padding | `spacing/32` all sides (32px) | `spacing/24` all sides (24px) |
 | Image (Vertical) | Full width, 3:2, `spacing/32` below | Full width, 3:2, `spacing/24` below |
 | Image (Horizontal) | 180 × 180px, `spacing/32` gap to text column | Stacks like Vertical |
-| Date tile (Vertical) | `rvt-calendar-tile` centered on a 3:2 `color/brand/extra-light` block, `spacing/32` below | Same, `spacing/24` below |
+| Date tile (Vertical) | `rvt-calendar-tile` content at 150% (month and year 24 / 36px, day 63 / 66px), centered on a 3:2 `color/brand/extra-light` block, `spacing/32` below | Same, `spacing/24` below |
 | Date tile (Horizontal) | `rvt-calendar-tile` 128 × 128px, `spacing/24` gap to text column | Stacks like Vertical |
 | Text column (Horizontal) | `spacing/4` top | — |
 | Top badge | Strong badge, `heading/xs/strong` (14 / 20px), `spacing/12` below | Same |
 | Top metadata | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below | Same |
-| Title | `action/xl/strong` (20 / 28px), `text/strong` | `action/xl/strong` (18 / 24px) |
-| Arrow icon | 16px `rvt-arrow-right`, `spacing/16` gap from title | Same |
+| Title | `action/xl/strong` (20 / 28px, weight 600, width 110% `--rvt-font-width-semi-expanded`), `text/strong` | `action/xl/strong` (18 / 24px) |
+| Title (Horizontal) | Up to 800px wide | Stacks like Vertical |
+| Arrow icon | 16px `rvt-arrow-right`, `icon/strong`, `spacing/16` gap from title | Same |
 | Details group | 24px above (`spacing/12` + `spacing/12`), `spacing/12` between rows | Same |
-| Detail row | 16px icon (calendar, clock, map pin) centered in a box as tall as one text line (`type/line-height/24`, 24px), `spacing/8` gap; text `body/sm/regular` (16 / 24px), `text/default` | Same |
+| Detail row | 16px icon (calendar, clock, map pin) centered in a box as tall as one text line (`type/line-height/24`, 24px), `spacing/8` gap; icons `icon/default`; text `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default` | Same |
 | Bottom group | Label and tags show and hide together. `spacing/24` above, `spacing/16` gap | Same |
 | Bottom label | "Tags:" `tag/sm/regular` (12 / 16px), `text/default` | Same |
 | Tags row | Subtle badges, `spacing/8` gap, wraps | Same |
+| Hover | Only when the pointer is on the title text: title turns `text/accent` with the browser's default underline and the arrow turns `icon/accent`. Instant, no transition. The border or shadow stays | Same |
+| Focus | 2px `border/accent-strong` ring right outside the card, no gap | Same |

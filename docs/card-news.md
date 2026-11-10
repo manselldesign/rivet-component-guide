@@ -64,7 +64,7 @@ A school news page works the same way. It lists News cards, newest first.
 
 ## Developer spec checklist
 
-Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Raised = `shadow/sm`, no border. Both use `background/raised` fill. Hover: title turns `text/accent` with underline. Horizontal cards stack like Vertical on Mobile.
+Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Raised = `shadow/sm`, no border. Both use `background/raised` fill. Hover, only when the pointer is on the title text: title turns `text/accent` with the browser's default underline, instantly (no transition). Horizontal cards stack like Vertical on Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
