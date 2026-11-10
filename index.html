@@ -1236,6 +1236,15 @@ body:not(.has-rail) .site-header__menu{display:none}
   .rvt-card-feature--horizontal .rvt-card-feature__sticker{flex-basis:33.2857%;max-width:466px;aspect-ratio:466/311;--cf-sticker:154px}
   .rvt-card-feature--horizontal .rvt-card-feature__body{flex:1 1 0}
   .rvt-card-feature--horizontal .rvt-card-feature__desc{max-width:750px}
+  /* Tablet: the Horizontal title is fluid. It follows the card's own width (a container query unit), so it also shrinks beside a sidebar:
+     display/xs/strong's Desktop size (26 / 32px) when the card is 1024px or wider, down to its Mobile size (20 / 24px) at 640px, in a straight line between.
+     The size is rounded to a whole pixel and the line height to the nearest 4px step (20/24, 21/24, 22/28, 23/28, 24/28, 25/32, 26/32).
+     Vertical cards keep 26 / 32px: their 444px frame is already the Desktop design. Browsers without round() keep 26 / 32px. */
+  .rvt-card-feature--horizontal{container-type:inline-size}
+  @supports (font-size:round(nearest,1px,1px)){
+    .rvt-card-feature--horizontal .rvt-card-feature__title{--cf-title:round(nearest,clamp(var(--rvt-type-size-20),calc(var(--rvt-type-size-20) + (100cqi - 640px) * 0.015625),var(--rvt-type-size-26)),1px);
+      font-size:var(--cf-title);line-height:round(nearest,calc(var(--cf-title) * 1.23),4px)}
+  }
   /* Keep text clear of the arrow box: the last text block stops spacing/8 before the box (48 - 40 + 8 = 16px in from the padding edge). Padding itself is unchanged. */
   .rvt-card-feature__body>:last-child{padding-right:calc(var(--cf-arrow) - var(--rvt-spacing-40) + var(--rvt-spacing-8))}
 }
