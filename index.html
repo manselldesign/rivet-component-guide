@@ -888,7 +888,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 /* ---------- rvt-billboard (Billboard page, Developer spec checklist) ----------
    Side by side (the billboard is 800px wide or more, like the Rivet build's 50rem container query): two columns on background/strong, content bottom-aligned.
      Image column 66% of the billboard (924px of the 1400px Desktop frame), image 1:1 with spacing/24 top, bottom and outer side; the content column takes the rest.
-     Content: spacing/32 from the image, spacing/64 on its outer side, spacing/48 at the bottom (380px of text at 1400px). Between 800px and 1100px wide the outer side and bottom drop to spacing/32, and the content column never goes under 280px (the image gives way), so the text keeps room.
+     Content: spacing/32 from the image, spacing/48 on its outer side and at the bottom (396px of text at 1400px). Between 800px and 1100px wide the outer side and bottom drop to spacing/32, and the content column never goes under 280px (the image gives way), so the text keeps room.
    Reversed: the image column moves to the right.
    Stacked (under 800px wide): image above content, full width at 3:2, spacing/20 top and sides; text spacing/32 all sides; links spacing/32 sides and below, so everything sits inside one even 24px frame. Reversed has no effect.
    Stacked always uses the Mobile token values (see the container block below), so the type and spacing scale down with the component, not just with the screen.
@@ -901,10 +901,10 @@ body:not(.has-rail) .site-header__menu{display:none}
    trimming the long sides. The crop is anchored at --rvt-image-focus, which defaults to the top centre (50% 0%), so a face near the top of a photo sits lower in the crop with the whole head in view,
    so one landscape photo works in both shapes. A page can move the focal point per image with style="--rvt-image-focus: 30% 50%" when a photo needs it. */
 .rvt-billboard__media img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:var(--rvt-image-focus,50% 0%)}
-.rvt-billboard__content{min-width:0;padding:0 var(--rvt-spacing-64) var(--rvt-spacing-48) 0;overflow-wrap:break-word}
+.rvt-billboard__content{min-width:0;padding:0 var(--rvt-spacing-48) var(--rvt-spacing-48) 0;overflow-wrap:break-word}
 .rvt-billboard--reversed{grid-template-columns:minmax(280px,1fr) minmax(0,66%)}
 .rvt-billboard--reversed .rvt-billboard__media{order:2;padding:var(--rvt-spacing-24) var(--rvt-spacing-24) var(--rvt-spacing-24) 0}
-.rvt-billboard--reversed .rvt-billboard__content{padding:0 0 var(--rvt-spacing-48) var(--rvt-spacing-64)}
+.rvt-billboard--reversed .rvt-billboard__content{padding:0 0 var(--rvt-spacing-48) var(--rvt-spacing-48)}
 .rvt-billboard__eyebrow{margin:0;padding:0 0 var(--rvt-spacing-8) 2px;color:var(--rvt-text-brand);
   font:var(--rvt-font-tag-sm-caps);letter-spacing:var(--rvt-font-tracking-xl);text-transform:uppercase}
 .rvt-billboard__title{margin:0;color:var(--rvt-text-brand);overflow-wrap:break-word;
