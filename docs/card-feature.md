@@ -74,5 +74,6 @@ Shared rules: 1px `border/default` border drawn inside, on top of the picture, `
 | Description | `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`, `spacing/20` above | Same as Desktop |
 | Description (Horizontal) | Up to 750px wide | Stacks like Vertical |
 | Arrow box | 48 × 48px in the bottom-right corner, outside the text flow, 1px `border/default` on top and left, 16px `rvt-arrow-right` in `icon/brand` centered. Decorative | 32 × 32px |
+| Arrow box clearance | The last text block (description, or the title if there is none) stops `spacing/8` before the arrow box: 16px in from the right padding edge. Long words wrap. Content padding stays `spacing/40` | Not needed: the bottom padding is taller than the arrow box |
 | Hover | Only when the pointer is on the title text or the arrow box: title turns `text/accent` with the browser's default underline and the arrow box fills with `background/tint` on Light, `background/default` on Dark and Crimson (the two fills the accordion uses). Instant, no transition. The arrow color and the borders stay as they are | Same |
 | Focus | 2px `border/accent-strong` ring right outside the card, no gap | Same |

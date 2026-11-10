@@ -1189,6 +1189,7 @@ body:not(.has-rail) .site-header__menu{display:none}
    Text padding: spacing/40 all sides on every type above phones (Vertical and Horizontal).
    Strong badge spacing/16 below; eyebrow tag/sm/caps text/brand, 2px in, spacing/8 below; title display/xs/strong text/brand;
    description body/sm/regular text/default spacing/20 above (Horizontal: up to 750px wide).
+   Arrow box clearance (above phones): the last text block stops spacing/8 short of the arrow box (16px in from the right padding edge), so text never touches it.
    Arrow box: 48 x 48 pinned to the bottom-right corner, outside the text flow, 1px border/default on its top and left (drawn inside), 16px arrow in icon/brand. Decorative.
    The whole card is the link (the title link's ::after covers the card). Hover on the title text only: title text/accent + the browser's default underline,
    and the arrow box fills (background/tint on Light, background/default on Dark and Crimson), instantly (no transition); the arrow color and the borders stay as they are.
@@ -1216,7 +1217,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-card-feature__link:focus-visible{outline:none}
 /* Hover on the title text or on the arrow box: both the underline and the arrow box fill show together. */
 .rvt-card-feature__link:has(.rvt-card-feature__link-text:hover,.rvt-card-feature__arrow:hover) .rvt-card-feature__link-text{color:var(--rvt-text-accent);text-decoration:underline}
-.rvt-card-feature__desc{margin:0;padding-top:var(--rvt-spacing-20);color:var(--rvt-text-default);
+.rvt-card-feature__desc{margin:0;overflow-wrap:break-word;padding-top:var(--rvt-spacing-20);color:var(--rvt-text-default);
   font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
 .rvt-card-feature__arrow{position:absolute;right:0;bottom:0;box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:var(--cf-arrow);height:var(--cf-arrow);
   z-index:2;box-shadow:inset 1px 1px 0 0 var(--rvt-border-default);color:var(--rvt-icon-brand)}
@@ -1235,6 +1236,8 @@ body:not(.has-rail) .site-header__menu{display:none}
   .rvt-card-feature--horizontal .rvt-card-feature__sticker{flex-basis:33.2857%;max-width:466px;aspect-ratio:466/311;--cf-sticker:154px}
   .rvt-card-feature--horizontal .rvt-card-feature__body{flex:1 1 0}
   .rvt-card-feature--horizontal .rvt-card-feature__desc{max-width:750px}
+  /* Keep text clear of the arrow box: the last text block stops spacing/8 before the box (48 - 40 + 8 = 16px in from the padding edge). Padding itself is unchanged. */
+  .rvt-card-feature__body>:last-child{padding-right:calc(var(--cf-arrow) - var(--rvt-spacing-40) + var(--rvt-spacing-8))}
 }
 @media (max-width:767px){
   .rvt-card-feature{--cf-pad:var(--rvt-spacing-32) var(--rvt-spacing-32) var(--rvt-spacing-64);--cf-arrow:var(--rvt-spacing-40);--cf-sticker:118px;--cf-eyebrow-gap:var(--rvt-spacing-4)}
