@@ -18,6 +18,18 @@ A contact card shows people how to reach an office, team or department. It puts 
 - Don't use it for events or news. Use the Event or News card instead
 - Don't use it to list dozens of people. Use a table or directory instead
 
+## Default or Avatar?
+**Is the contact an office or a person?**
+
+| Behind the card | Examples | Use |
+| --- | --- | --- |
+| An office people call or visit | Office of Admissions, Office of the Bursar | Default |
+| A department's main office | Department of Biology main office | Default |
+| A help desk or support line | UITS Support Center | Default |
+| A named person people meet with | An admissions counselor for central Indiana | Avatar |
+| A program's advisor or coordinator | The Informatics undergraduate advisor | Avatar |
+| A small team with a group photo | The New Student Orientation team | Avatar |
+
 ## Types
 
 ### Layout
@@ -73,17 +85,18 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 | Title | `heading/md/strong` (20 / 24px), `text/default` | Same |
 | Address | `body/sm/regular` (16 / 24px), `text/default`, `spacing/4` above (4px) | Same |
 | Contact info group | `spacing/24` above, `spacing/12` between rows | Same |
-| Contact info row | 16px icon, `spacing/8` gap; link `action/lg/regular` (16 / 24px), `text/accent`, underlined | Same |
-| Pronouns row | `rvt-user` 16px, `spacing/4` gap; label `heading/sm/strong` (16 / 20px), `text/strong`; value `body/sm/regular` (16 / 24px) | Same |
-| Social links | `spacing/24` above; label "Social:" `tag/sm/regular` (12 / 16px), `text/default`; `spacing/16` to icons; `rvt-link` Social 24×24, `spacing/8` between | Same |
-| Buttons | `spacing/24` above; `rvt-link` Normal, Large (`component/button/height-lg`, 40px), arrow by link type (Internal for a scheduling page, External for a map); stacked, `spacing/8` between; label `action/lg/strong` (16 / 24px) | Same: each button hugs its label, left aligned |
+| Contact info row | 16px icon (`icon/strong`), `spacing/8` gap; link `action/lg/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/accent`, 1px underline, 3px below the text; hover `text/brand-strong` and the underline thickens to 2px; focus 2px `border/accent-strong`, no offset | Same |
+| Pronouns row | `rvt-user` 16px (`icon/default`), `spacing/4` gap; label `heading/sm/strong` (16 / 20px), `text/strong`; value `body/sm/regular` (16 / 24px) | Same |
+| Social links | `spacing/24` above; label "Social:" `tag/sm/regular` (12 / 16px), `text/default`; `spacing/16` to icons; `rvt-link` Social, Small: 24×24, 1px `border/accent` drawn inside, 12px `icon/accent` glyph, `spacing/8` between; hover `border/accent-strong` + `icon/accent-strong`; focus 2px `border/accent-strong`, no offset | Same |
+| Buttons | `spacing/24` above; `rvt-link` Normal, Large (`component/button/height-lg`, 40px), arrow by link type (Internal for a scheduling page, External for a map); stacked, `spacing/8` between, each hugging its label; label `action/lg/strong` (16 / 24px, weight 600, width 110%); hover `border/accent-strong`, `text/brand-strong`, `icon/accent-strong`; focus 2px `border/accent-strong`, no offset | Same: each button hugs its label, left aligned |
 
 ### Hours (`_rvt-card-contact-hours`)
 
 | Element | Spec |
 | --- | --- |
-| Closed | "Hours" toggle, `action/lg/strong` (16 / 24px), `text/accent`, `spacing/8` to chevron |
+| Closed | "Hours" toggle button, 16px clock and chevron in `icon/accent`, `action/lg/strong` (16 / 24px, weight 600, width 110%), `text/accent`, `spacing/8` between; focus 2px `border/accent-strong`, no offset |
+| Opening | `spacing/8` below the toggle; the list opens with height and opacity, 220ms ease-out (none with reduced motion); the chevron swaps to chevron-up (no rotation) |
 | Open: list | `spacing/8` left indent, each row `spacing/4` top, `spacing/16` left |
 | Open: day | `heading/xs/strong` (14 / 20px), `text/strong` |
 | Open: times | `body/xs/regular` (14 / 20px), `text/default` |
-| Holiday note | `body/xs/italic` (14 / 20px), `text/default`; asterisk `body/xs/strong`, `text/required` |
+| Holiday note | `body/xs/italic` (14 / 20px, weight 350, width 110%), `text/default`, slanted with the font's `slnt` axis: `font-style: oblique 10deg` plus `font-variation-settings: "slnt" var(--rvt-font-slant-standard)` (-10), not the browser's own italic; asterisk `body/xs/strong`, `text/required` |
