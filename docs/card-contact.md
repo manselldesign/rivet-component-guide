@@ -86,7 +86,7 @@ Department pages work the same way. Each one ends with a Contact card for its ma
 | Address | `body/sm/regular` (16 / 24px), `text/default`, `spacing/4` above (4px) | Same |
 | Contact info group | `spacing/24` above, `spacing/12` between rows | Same |
 | Contact info row | 16px icon (`icon/strong`), `spacing/8` gap; link `action/lg/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/accent`, 1px underline, 3px below the text; hover `text/brand-strong` and the underline thickens to 2px; focus 2px `border/accent-strong`, no offset | Same |
-| Pronouns row | `rvt-user` 16px (`icon/default`), `spacing/4` gap; label `heading/sm/strong` (16 / 20px), `text/strong`; value `body/sm/regular` (16 / 24px) | Same |
+| Pronouns row | `rvt-user` 16px (`icon/strong`, like the other contact icons), `spacing/4` gap; label `heading/sm/strong` (16 / 20px), `text/strong`; value `body/sm/regular` (16 / 24px) | Same |
 | Social links | `spacing/24` above; label "Social:" `tag/sm/regular` (12 / 16px), `text/default`; `spacing/16` to icons; `rvt-link` Social, Small: 24×24, 1px `border/accent` drawn inside, 12px `icon/accent` glyph, `spacing/8` between; hover `border/accent-strong` + `icon/accent-strong`; focus 2px `border/accent-strong`, no offset | Same |
 | Buttons | `spacing/24` above; `rvt-link` Normal, Large (`component/button/height-lg`, 40px), arrow by link type (Internal for a scheduling page, External for a map); stacked, `spacing/8` between, each hugging its label; label `action/lg/strong` (16 / 24px, weight 600, width 110%); hover `border/accent-strong`, `text/brand-strong`, `icon/accent-strong`; focus 2px `border/accent-strong`, no offset | Same: each button hugs its label, left aligned |
 

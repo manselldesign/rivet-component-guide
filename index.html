@@ -82,6 +82,11 @@ body{font-stretch:110%}
 .hero h1{font-stretch:100%}
 code,pre,.hero .tag,.hero-card-tag,.hub-title,.hub-tag,.doc-foot p,.prose h4,.prose thead th,.sn-label{font-stretch:normal}
 .hero-card-tag,.hub-tag{letter-spacing:1px}
+/* No orphans or widows anywhere in the guide: headings, table cells, labels and list titles balance their lines (text-wrap: balance);
+   running text and list items avoid a single word alone on the last line (text-wrap: pretty). A small script (noOrphans) backs this up
+   by joining the last two short words. Browsers without support simply wrap as before. */
+h1,h2,h3,h4,h5,h6,td,th,dt,dd,caption,label,.hub-link{text-wrap:balance}
+p,li,figcaption,blockquote,address{text-wrap:pretty}
 a{color:var(--text-accent);text-underline-offset:3px;text-decoration-thickness:1px}
 a:hover{text-decoration-thickness:2px}
 :focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
@@ -1155,7 +1160,6 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-card-contact__link:hover{color:var(--rvt-text-brand-strong);text-decoration-thickness:2px}
 .rvt-card-contact__link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
 .rvt-card-contact__row--pronouns{gap:var(--rvt-spacing-4)}
-.rvt-card-contact__row--pronouns .rvt-card-contact__icon{fill:var(--rvt-icon-default)}
 .rvt-card-contact__label{flex:none;padding-left:var(--rvt-spacing-4);color:var(--rvt-text-strong);
   font:var(--rvt-font-heading-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
 .rvt-card-contact__value{flex:1 1 auto;min-width:0;color:var(--rvt-text-default);
@@ -2382,6 +2386,40 @@ body:not(.has-rail) .site-header__menu{display:none}
     if (slug === 'token-changes') renderTokens(); else if (slug === 'text-styles' || slug === 'token-details') renderTextStyles(slug === 'token-details'); else if (c) renderDoc(c); else renderIndex();
     window.scrollTo(0, 0);
   }
+
+  /* No orphans or widows: in every text block the last two words are joined with a non-breaking space, so a line never ends with one word on its own.
+     Runs on whatever the page renders (pages, examples, the filtered home list) through a MutationObserver. Code is left alone. */
+  const NO_ORPHAN = 'p,li,td,th,figcaption,blockquote,address,.hub-link';
+  const glued = new WeakSet();
+  const noOrphans = root => {
+    if (!root || !root.querySelectorAll) return;
+    root.querySelectorAll(NO_ORPHAN).forEach(el => {
+      if (glued.has(el) || el.closest('pre,code,select,textarea,svg')) return;
+      glued.add(el);
+      const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {acceptNode: n => n.parentElement.closest('pre,.sr-only,svg') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT});
+      const map = []; let text = '', n;
+      while ((n = walk.nextNode())) { for (let j = 0; j < n.data.length; j++) map.push([n, j]); text += n.data; }
+      const end = text.replace(/\s+$/, '').length;
+      if (text.slice(0, end).includes(' ') && / \S*$/.test(text.slice(0, end))) return; // already joined
+      const sp = text.slice(0, end).search(/\s(?=\S+$)/); // the space before the last word
+      if (sp <= 0) return;
+      const lastWord = text.slice(sp + 1, end);
+      const prev = text.slice(0, sp).match(/(\S+)$/);
+      if (!prev || text.slice(0, end).split(/\s+/).length < 3) return;
+      /* A dash (Section intro – Default) can break after itself, so join the word before it too and hold the dash to the last word. */
+      const isDash = /^[–—-]$/.test(prev[1]);
+      if ((isDash ? 0 : prev[1].length) + lastWord.length > (el.closest('table') ? 12 : 16)) return; // long pairs would overflow narrow columns
+      const put = (i, ch) => { const [node, j] = map[i]; if (node.parentElement.closest('code')) return; node.data = node.data.slice(0, j) + ch + node.data.slice(j + 1); };
+      put(sp, isDash ? '⁠ ' : ' ');
+      if (isDash) { const sp2 = sp - prev[1].length - 1; if (sp2 > 0 && /\s/.test(text[sp2])) put(sp2, ' '); }
+    });
+  };
+  let orphanQueued = false;
+  new MutationObserver(muts => {
+    if (orphanQueued) return;
+    orphanQueued = true;
+    requestAnimationFrame(() => { orphanQueued = false; noOrphans(document.body); });
+  }).observe(document.body, {childList: true, subtree: true});
 
   // Header shadow: on while the page is scrolled away from the top.
   const siteHeader = document.getElementById('site-header');
