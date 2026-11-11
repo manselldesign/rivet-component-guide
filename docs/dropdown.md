@@ -48,7 +48,7 @@ A dropdown is a short menu that opens from a button or a header link, like an ac
 
 ## Developer spec checklist
 
-Shared rules: Menus use `background/raised` fill and `shadow/md`, no radius. Hover, in every menu: `action/sm/regular`, `text/strong`, underline. Selected item: `action/sm/strong`, `text/accent`, underline, sized so the bold doesn't shift the item. The same values apply on Desktop and Mobile.
+Shared rules: Menus use `background/raised` fill and `shadow/md`, no radius. Hover, in every menu: `action/sm/regular`, `text/strong`, underline. Selected item: `action/sm/strong`, `text/accent`, underline, sized so the bold doesn't shift the item. Only the selected item is bold; every other item (default, hover and focus) stays regular. The same values apply on Desktop and Mobile.
 
 | Element | App | Header |
 | --- | --- | --- |
