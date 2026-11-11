@@ -63,7 +63,7 @@ Weight, width, slant and optical size are variables (`font/weight/*`, `font/widt
 ## Style groups
 | Group | Sizes | Rationale |
 | --- | --- | --- |
-| Display | 26–54 | For hero and marketing moments. Tight leading so big lines hold together. `caps` is a slanted, extra-heavy accent |
+| Display | 23–54 | For hero and marketing moments. Sizes run `xl`, `lg`, `md`, `sm`, `xs`, `2xs` (23 / 28px, the smallest, for card titles). Tight leading so big lines hold together. `caps` is a slanted, extra-heavy accent |
 | Heading | 12–36 | Builds the page structure. Bold and slightly wide so headings stay distinct from body text at every size |
 | Body | 12–29 | For reading. Regular, strong and italic share the same size and line height, so adding emphasis never shifts the layout |
 | Action | 14–20 | For buttons and controls. Semibold signals "you can click this." `strong-fixed` has tighter leading for compact controls |

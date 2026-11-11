@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-11-09",
+  "updated": "2026-11-11",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -45,7 +45,7 @@
     "themeColors": 147,
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
-    "textStyles": 79,
+    "textStyles": 80,
     "textStylesThatAreRenameOnly": 22,
     "spacing": 19,
     "shadows": 6
@@ -2845,6 +2845,33 @@
               "font-variation-settings": "var(--rvt-font-axes-heading)"
             },
             "figmaChange": "2026-11-02: line height now 32 on desktop, 24 on mobile (bound to the new type/line-height/24-32)."
+          },
+          {
+            "name": "display/2xs/strong",
+            "css": "--rvt-font-display-2xs-strong",
+            "spec": {
+              "font": "Roboto Flex",
+              "weight": 700,
+              "width": 100,
+              "size": {
+                "desktop": 23,
+                "mobile": 20
+              },
+              "lineHeight": {
+                "desktop": 28,
+                "mobile": 24
+              },
+              "ytas": 720,
+              "ytlc": 530
+            },
+            "codeToday": null,
+            "action": "add",
+            "cssValue": "var(--rvt-font-weight-700) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans-display)",
+            "alsoSet": {
+              "font-stretch": "var(--rvt-font-width-normal)",
+              "font-variation-settings": "var(--rvt-font-axes-heading)"
+            },
+            "figmaChange": "2026-11-11: new style, one step under display/xs/strong (bound to type/size/20-23 and type/line-height/24-28). Used for the feature card title."
           },
           {
             "name": "heading/3xl/strong",

@@ -1983,6 +1983,24 @@
       },
       "description": "**Variable adjustments:** wght: 700, wdth: 100%, YTAS: 720, YTLC: 530"
     },
+    "display/2xs/strong": {
+      "fontFamily": "Roboto Flex",
+      "fontStyle": "Bold",
+      "fontSize": 23,
+      "lineHeight": 28,
+      "letterSpacing": 0,
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "boundVariables": {
+        "letterSpacing": "font/tracking/none",
+        "fontSize": "type/size/20-23",
+        "fontFamily": "font/family/sans-display",
+        "paragraphSpacing": "type/paragraph-spacing/step-02",
+        "lineHeight": "type/line-height/24-28",
+        "fontWeight": "font/weight/700"
+      },
+      "description": "**Variable adjustments:** wght: 700, wdth: 100%, YTAS: 720, YTLC: 530"
+    },
     "heading/3xl/strong": {
       "fontFamily": "Roboto Flex",
       "fontStyle": "Bold",

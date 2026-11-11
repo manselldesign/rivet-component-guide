@@ -704,6 +704,7 @@
 	--rvt-font-display-md-strong: var(--rvt-font-weight-700) var(--rvt-type-size-26-36)/var(--rvt-type-line-height-28-40) var(--rvt-font-family-sans-display);
 	--rvt-font-display-sm-strong: var(--rvt-font-weight-700) var(--rvt-type-size-29)/var(--rvt-type-line-height-36) var(--rvt-font-family-sans-display);
 	--rvt-font-display-xs-strong: var(--rvt-font-weight-700) var(--rvt-type-size-26)/var(--rvt-type-line-height-24-32) var(--rvt-font-family-sans-display);
+	--rvt-font-display-2xs-strong: var(--rvt-font-weight-700) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-sans-display);
 	--rvt-font-heading-3xl-strong: var(--rvt-font-weight-700) var(--rvt-type-size-26-36)/var(--rvt-type-line-height-28-40) var(--rvt-font-family-sans-heading);
 	--rvt-font-heading-2xl-strong: var(--rvt-font-weight-700) var(--rvt-type-size-23-29)/var(--rvt-type-line-height-32-36) var(--rvt-font-family-sans-heading);
 	--rvt-font-heading-xl-strong: var(--rvt-font-weight-700) var(--rvt-type-size-23-26)/var(--rvt-type-line-height-28-32) var(--rvt-font-family-sans-heading);

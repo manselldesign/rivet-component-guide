@@ -893,7 +893,7 @@ body:not(.has-rail) .site-header__menu{display:none}
    Reversed: the image column moves to the right.
    Stacked (under 800px wide): image above content, full width at 3:2, spacing/20 top and sides; text spacing/32 all sides; links spacing/32 sides and below, so everything sits inside one even 24px frame. Reversed has no effect.
    Stacked always uses the Mobile token values (see the container block below), so the type and spacing scale down with the component, not just with the screen.
-   Eyebrow tag/sm/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/32, 20/24 in Mobile mode, like the feature card). Description body/sm/regular text/default, spacing/16 above.
+   Eyebrow tag/sm/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/32, 20/24 in Mobile mode). Description body/sm/regular text/default, spacing/16 above.
    Single link: rvt-button Link, Normal, Extra-large, spacing/32 above. Multiple links: rvt-list-hub Compact, full width, spacing/32 above. */
 .rvt-billboard-wrap{container-type:inline-size}
 .rvt-billboard{display:grid;grid-template-columns:minmax(0,824fr) minmax(280px,544fr);column-gap:var(--rvt-spacing-32);align-items:end;background:var(--rvt-background-strong)}
@@ -984,7 +984,7 @@ body:not(.has-rail) .site-header__menu{display:none}
      Gap spacing/32. Top: picture above the text, gap spacing/24.
    Sticker and avatar: the same size, 80px on Desktop and 64px on Mobile. Sticker: Crimson, with container (color/brand-light circle, color/brand-main art, white fill); the same in every theme.
    Avatar: rvt-avatar (photo).
-   Text block matches the billboard and feature card: eyebrow tag/sm/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/32, 20/24 on Mobile).
+   Text block matches the billboard: eyebrow tag/sm/caps text/brand, spacing/8 below, 2px in. Title display/xs/strong text/brand (26/32, 20/24 on Mobile).
    Description body/sm/regular (16/24), spacing/16 above.
    Links: rvt-button Link, Normal, Extra-large, side by side spacing/16 apart, spacing/32 above. */
 .rvt-callout-wrap{container-type:inline-size}
@@ -1187,7 +1187,7 @@ body:not(.has-rail) .site-header__menu{display:none}
    Sticker: bare 148px sticker in color/brand/main centered on a 3:2 component/card/sticker-background block (Horizontal: 466 x 311 block, 154px sticker,
    as tall as the card). The block and sticker are the same in every theme. Plain: no picture.
    Text padding: spacing/32 all sides (32px) on every type above phones (Vertical and Horizontal).
-   Strong badge spacing/16 below; eyebrow tag/sm/caps text/brand, 2px in, spacing/8 below; title display/xs/strong text/brand;
+   Strong badge spacing/16 below; eyebrow tag/sm/caps text/brand, 2px in, spacing/8 below; title display/2xs/strong text/brand (23/28, 20/24 on Mobile);
    description body/sm/regular text/default spacing/16 above (Horizontal: up to 750px wide).
    Arrow box clearance (above phones): the last text block stops spacing/8 short of the arrow box (16px in from the right padding edge), so text never touches it.
    Arrow box: spacing/40 (40 x 40) pinned to the bottom-right corner, outside the text flow, 1px border/default on its top and left (drawn inside), 16px arrow in icon/brand. Decorative.
@@ -1209,7 +1209,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-card-feature__eyebrow{margin:0;padding:0 0 var(--cf-eyebrow-gap) 2px;color:var(--rvt-text-brand);
   font:var(--rvt-font-tag-sm-caps);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-xl);text-transform:uppercase}
 .rvt-card-feature__title{margin:0;color:var(--rvt-text-brand);
-  font:var(--rvt-font-display-xs-strong);font-stretch:var(--rvt-font-width-normal);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+  font:var(--rvt-font-display-2xs-strong);font-stretch:var(--rvt-font-width-normal);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
 .rvt-card-feature__link{color:inherit;text-decoration:none}
 /* The title text sits above the card-wide link area so only the text itself triggers the hover (as in the coded Rivet card). No transition: the change is instant. */
 .rvt-card-feature__link-text{position:relative;z-index:2}
@@ -1237,12 +1237,12 @@ body:not(.has-rail) .site-header__menu{display:none}
   .rvt-card-feature--horizontal .rvt-card-feature__body{flex:1 1 0}
   .rvt-card-feature--horizontal .rvt-card-feature__desc{max-width:750px}
   /* Tablet: the Horizontal title is fluid. It follows the card's own width (a container query unit), so it also shrinks beside a sidebar:
-     display/xs/strong's Desktop size (26 / 32px) when the card is 1024px or wider, down to its Mobile size (20 / 24px) at 640px, in a straight line between.
-     The size is rounded to a whole pixel and the line height to the nearest 4px step (20/24, 21/24, 22/28, 23/28, 24/28, 25/32, 26/32).
-     Vertical cards keep 26 / 32px: their 444px frame is already the Desktop design. Browsers without round() keep 26 / 32px. */
+     display/2xs/strong's Desktop size (23 / 28px) when the card is 832px or wider, down to its Mobile size (20 / 24px) at 640px, in a straight line between.
+     The size is rounded to a whole pixel and the line height to the nearest 4px step (20/24, 21/24, 22/28, 23/28).
+     Vertical cards keep 23 / 28px: their 444px frame is already the Desktop design. Browsers without round() keep 23 / 28px. */
   .rvt-card-feature--horizontal{container-type:inline-size}
   @supports (font-size:round(nearest,1px,1px)){
-    .rvt-card-feature--horizontal .rvt-card-feature__title{--cf-title:round(nearest,clamp(var(--rvt-type-size-20),calc(var(--rvt-type-size-20) + (100cqi - 640px) * 0.015625),var(--rvt-type-size-26)),1px);
+    .rvt-card-feature--horizontal .rvt-card-feature__title{--cf-title:round(nearest,clamp(var(--rvt-type-size-20),calc(var(--rvt-type-size-20) + (100cqi - 640px) * 0.015625),var(--rvt-type-size-23)),1px);
       font-size:var(--cf-title);line-height:round(nearest,calc(var(--cf-title) * 1.23),4px)}
   }
   /* Keep text clear of the arrow box: the last text block stops spacing/8 before the box (40 - 32 + 8 = 16px in from the padding edge). */

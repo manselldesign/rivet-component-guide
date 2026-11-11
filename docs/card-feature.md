@@ -70,8 +70,8 @@ Shared rules: 1px `border/default` border drawn inside, on top of the picture, `
 | Content padding | `spacing/32` all sides (32px), Vertical and Horizontal | `spacing/32` top and sides (24px), `spacing/64` bottom (48px) |
 | Top badge | Strong badge, `heading/xs/strong` (14 / 20px), `spacing/16` below | Same |
 | Eyebrow | `tag/sm/caps` (12 / 16px, weight 350, uppercase, 2px tracking `--rvt-font-tracking-xl`), `text/brand`, `spacing/8` below | `tag/sm/caps` (12 / 16px), `spacing/4` below |
-| Title | `display/xs/strong` (26 / 32px, weight 700, width 100% `--rvt-font-width-normal`), `text/brand` | `display/xs/strong` (20 / 24px) |
-| Title (Horizontal, tablet) | Fluid, following the card's own width: 26 / 32px when the card is 1024px or wider, shrinking in a straight line to 20 / 24px at 640px. Size is always a whole pixel; line height moves in 4px steps (24, 28, 32px) | Stacks like Vertical |
+| Title | `display/2xs/strong` (23 / 28px, weight 700, width 100% `--rvt-font-width-normal`), `text/brand` | `display/2xs/strong` (20 / 24px) |
+| Title (Horizontal, tablet) | Fluid, following the card's own width: 23 / 28px when the card is 832px or wider, shrinking in a straight line to 20 / 24px at 640px. Size is always a whole pixel; line height moves in 4px steps (24, 28px) | Stacks like Vertical |
 | Description | `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`, `spacing/16` (16px) above | Same as Desktop |
 | Description (Horizontal) | Up to 750px wide | Stacks like Vertical |
 | Arrow box | `spacing/40` (40 × 40px) in the bottom-right corner, outside the text flow, 1px `border/default` on top and left, 16px `rvt-arrow-right` in `icon/brand` centered. Decorative | 32 × 32px |
