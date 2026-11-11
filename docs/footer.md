@@ -48,7 +48,7 @@ The footer is the band at the bottom of every page with the university's contact
 
 ## Developer spec checklist
 
-Shared rules: Full width. Every theme has the same two borders: a 1px top border on the footer and a 1px top border on the bottom bar. Both run the full width of the footer, edge to edge; only the content is inset. Border color: Light `border/brand`, Crimson `border/on-brand` (`color/brand/extra-dark`, #510606), Dark `color/base/dark`. Background: Light `color/base/ultra-light`, Crimson `background/brand-strong`, Dark `color/base/main`. Text on Crimson and Dark is `color/base/ultra-light`. Link hover: underline, `color/brand/main` on Light, `color/brand/extra-light` on Crimson and Dark. Mobile stacks every section in one column.
+Shared rules: Full width. Every theme has the same two borders: a 1px top border on the footer and a 1px border above the social row (on Mobile, the top of the bottom bar, which holds the social row). Both run the full width of the footer, edge to edge; only the content is inset. Border color: `border/default` in every theme, which gives cream on Light (`color/brand/light`), `border/on-brand` on Crimson (`color/brand/extra-dark`, #510606) and black on Dark (`color/base/ultra-dark`, #000000). Background: Light `color/base/ultra-light`, Crimson `background/brand-strong`, Dark `color/base/main`. Text on Crimson and Dark is `color/base/ultra-light`. Link hover: underline, `color/brand/main` on Light, `color/brand/extra-light` on Crimson and Dark. Mobile stacks every section in one column.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
@@ -59,7 +59,7 @@ Shared rules: Full width. Every theme has the same two borders: a 1px top border
 | Link group | `spacing/20` title to links (20px), `spacing/8` between links (8px) | `spacing/16` title to links (16px), `spacing/12` between links (12px) |
 | Group title (Title) | `heading/sm/strong` (16 / 20px), `color/base/main` on Light | Same |
 | Links and contact text (Secondary) | `action/sm/regular` (14 / 20px), `color/base/body` on Light | Same |
-| Social row | `spacing/16` top and bottom (16px); icons `spacing/8` gap (8px) | Inside the bottom bar, `spacing/8` top and bottom (8px); icons `spacing/12` gap (12px) |
+| Social row | 1px `border/default` on top; `spacing/16` top and bottom (16px); icons `spacing/8` gap (8px) | Inside the bottom bar, `spacing/8` top and bottom (8px); icons `spacing/12` gap (12px) |
 | Social icon | `rvt-link` Social (24 × 24px), 1px `border/default` | Same |
-| Bottom bar | `spacing/16` top and bottom (16px); trident 22 × 28px `color/brand/main`, then legal links in a row, `spacing/24` gap (24px) | `spacing/24` top and bottom (24px), `spacing/20` gap (20px); social and legal links stacked `spacing/8` apart (8px), trident below |
+| Bottom bar | No border and no top padding, `spacing/16` bottom (16px); trident 22 × 28px `color/brand/main`, then legal links in a row, `spacing/24` gap (24px) | 1px `border/default` on top; `spacing/16` top and bottom (16px), `spacing/20` gap (20px); social and legal links stacked `spacing/8` apart (8px), trident below |
 | Legal links (Tertiary) | `action/sm/regular` (14 / 20px), `spacing/16` gap (16px) | Stacked, `spacing/8` gap (8px) |
