@@ -77,11 +77,11 @@ Breakpoint: the billboard switches between its two layouts on its own width, not
 | Element | Side by side (800px and up) | Stacked (under 800px) |
 | --- | --- | --- |
 | Layout | Two columns, image and content, `spacing/32` (32px) between | Stacked, image above content |
-| Columns | Image column 66% of the width; content takes the rest and never goes under 280px (the image gives way) | Full width |
+| Columns | Image column and content split 824 : 544 (824px and 544px at 1400px wide, an 800px image); content never goes under 280px (the image gives way) | Full width |
 | Background | `background/strong` | `background/strong` |
 | Image | 1:1, `spacing/24` (24px) top, bottom and outer side | Full width, 3:2, `spacing/20` (20px) top, left, right |
 | Image crop | `object-fit: cover`, anchored at `--rvt-image-focus` (default `50% 25%`, top third centre). Authors never crop by hand; a page can move the focal point per image | Same |
-| Content padding | `spacing/48` (48px) outer side and bottom, content bottom-aligned; both `spacing/32` (32px) under 1100px wide | `spacing/32` (24px) all sides, so the text block and the links sit inside the same 24px frame |
+| Content padding | `spacing/48` (48px) top, outer side and bottom, content bottom-aligned; all `spacing/32` (32px) under 1100px wide. No fixed height: the billboard grows to fit whichever column is taller, so the text never runs past the top edge | `spacing/32` (24px) all sides, so the text block and the links sit inside the same 24px frame |
 | Eyebrow | `tag/sm/caps` (12 / 16px), `text/brand`, `spacing/8` below | Same |
 | Title | `display/xs/strong` (26 / 32px), `text/brand` | `display/xs/strong` (20 / 24px) |
 | Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/16` (16px) above | Same as Desktop |
