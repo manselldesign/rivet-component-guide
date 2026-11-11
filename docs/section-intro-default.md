@@ -23,8 +23,8 @@ A heading block that opens a section of a page, with an optional tag, short intr
 ### Layout
 - **Plain:** Use it when the heading and introduction are enough, like a short section on a department page
 - **Image:** Use it when one large image or video sets the scene, like a campus tour
-- **Featured card grid:** Use it to show three highlights side by side, like featured programs. Figma calls it Featured (Card) Grid
-- **Default card grid:** Use it for one main event plus recent news, like a college news section. Figma calls it Default (Card) Grid
+- **Featured card grid:** Use it to show three highlights side by side, like featured programs.
+- **Default card grid:** Use it for one main event plus recent news, like a college news section.
 
 ### Alignment
 - **Left:** Use it for most sections. The button sits to the right of the text on desktop
@@ -48,7 +48,7 @@ A heading block that opens a section of a page, with an optional tag, short intr
 
 ## Developer spec checklist
 
-Shared rules: the section uses a `background/default` fill. On Mobile, everything stacks and the button sits below the text. Cards use `rvt-card-feature`, `rvt-card-event` and `rvt-card-news`. Images use `rvt-media-hub`. The button is `rvt-link`, sized to its label on Desktop and Mobile.
+Shared rules: the section uses a `background/default` fill. On Mobile, everything stacks and the button sits below the text. Cards use `rvt-card-feature`, `rvt-card-event` and `rvt-card-news`. Images use `rvt-image-hub`. The button is `rvt-link`, sized to its label on Desktop and Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
@@ -59,6 +59,7 @@ Shared rules: the section uses a `background/default` fill. On Mobile, everythin
 | Gap, text to button | Left: `spacing/64` (64px), side by side. Centered: `spacing/40` (40px), stacked | `spacing/32` (24px), stacked |
 | Meta | `tag/sm/caps` (12 / 16px), `text/brand`, `spacing/12` (12px) below | Same |
 | Title | `display/md/strong` (36 / 40px), `text/brand` | `display/md/strong` (23 / 28px), `text/brand` |
-| Body | `body/md/regular` (20 / 28px), `text/default`, `spacing/24` (24px) above | `body/md/regular` (18 / 24px), `text/default`, `spacing/20` (20px) above |
+| Body | `body/base/regular` (18 / 28px), `text/default`, `spacing/16` (16px) above | `body/base/regular` (16 / 24px), `text/default`, `spacing/16` (16px) above |
+| Text width | Title and body up to 920px wide | Full width |
 | Gap between cards, default grid | `spacing/40` (40px) | `spacing/24` (24px) |
 | Gap between cards, featured grid | `spacing/40` (40px) | `spacing/16` (16px) |
