@@ -54,7 +54,7 @@ Shared rules: Full width. Every theme has the same two borders: a 1px top border
 | --- | --- | --- |
 | Side padding | `spacing/80` left and right (80px) on each row inside the footer, not on the footer itself, so the borders stay full width | `spacing/24` left and right (24px) on each row, same reason |
 | Between sections | None | `spacing/24` gap (24px) |
-| Resource links area | `spacing/40` top and bottom (40px); groups in a row, `spacing/64` gap (64px) | `spacing/40` top (32px); groups stacked, `spacing/40` gap (32px) |
+| Resource links area | `spacing/32` top and bottom (32px); groups in a row, `spacing/64` gap (64px) | `spacing/40` top (32px); groups stacked, `spacing/40` gap (32px) |
 | Contact group | `spacing/16` name to details (16px), `spacing/8` between lines (8px) | `spacing/8` gap plus `spacing/8` top padding on the details (16px total), `spacing/8` between lines (8px) |
 | Link group | `spacing/20` title to links (20px), `spacing/8` between links (8px) | `spacing/16` title to links (16px), `spacing/12` between links (12px) |
 | Group title (Title) | `heading/sm/strong` (16 / 20px), `color/base/main` on Light | Same |
