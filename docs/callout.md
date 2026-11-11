@@ -58,7 +58,7 @@ A highlighted box that draws attention to one thing on a page, like an upcoming 
 | Avatar | `rvt-avatar` 80px, same size as the sticker | `rvt-avatar` 64px, same size as the sticker |
 | Eyebrow (tag) | `tag/sm/caps` (12 / 16px), `font/tracking/xl` (2px), `spacing/8` below | Same |
 | Title | `display/xs/strong` (26 / 32px, weight 700, width 100% `--rvt-font-width-normal`) | `display/xs/strong` (20 / 24px) |
-| Description | `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `spacing/20` above | Same |
+| Description | `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `spacing/16` (16px) above | Same |
 | Button row | `spacing/32` (32px) above | `spacing/32` (24px on Mobile) above |
 | Buttons | `rvt-link` Normal, Extra-large, side by side, `spacing/16` gap | Stacked, each button hugs its label, left aligned, `spacing/16` gap |
 | Optional parts | Eyebrow, description, primary and secondary button can each be hidden | Same |
