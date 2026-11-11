@@ -72,7 +72,7 @@ Shared rules: 1px `border/default` border drawn inside, on top of the picture, `
 | Eyebrow | `tag/sm/caps` (12 / 16px, weight 350, uppercase, 2px tracking `--rvt-font-tracking-xl`), `text/brand`, `spacing/8` below | `tag/sm/caps` (12 / 16px), `spacing/4` below |
 | Title | `display/xs/strong` (26 / 32px, weight 700, width 100% `--rvt-font-width-normal`), `text/brand` | `display/xs/strong` (20 / 24px) |
 | Title (Horizontal, tablet) | Fluid, following the card's own width: 26 / 32px when the card is 1024px or wider, shrinking in a straight line to 20 / 24px at 640px. Size is always a whole pixel; line height moves in 4px steps (24, 28, 32px) | Stacks like Vertical |
-| Description | `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`, `spacing/20` above | Same as Desktop |
+| Description | `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`, `spacing/16` (16px) above | Same as Desktop |
 | Description (Horizontal) | Up to 750px wide | Stacks like Vertical |
 | Arrow box | `spacing/40` (40 × 40px) in the bottom-right corner, outside the text flow, 1px `border/default` on top and left, 16px `rvt-arrow-right` in `icon/brand` centered. Decorative | 32 × 32px |
 | Arrow box clearance | The last text block (description, or the title if there is none) stops `spacing/8` before the arrow box: 16px in from the right padding edge. Long words wrap | Not needed: the bottom padding is taller than the arrow box |

@@ -84,7 +84,7 @@ Breakpoint: the billboard switches between its two layouts on its own width, not
 | Content padding | `spacing/48` (48px) outer side and bottom, content bottom-aligned; both `spacing/32` (32px) under 1100px wide | `spacing/32` (24px) all sides, so the text block and the links sit inside the same 24px frame |
 | Eyebrow | `tag/sm/caps` (12 / 16px), `text/brand`, `spacing/8` below | Same |
 | Title | `display/xs/strong` (26 / 32px), `text/brand` | `display/xs/strong` (20 / 24px) |
-| Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/20` above | Same as Desktop |
+| Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/16` (16px) above | Same as Desktop |
 | Single link | `rvt-link` Extra-large, `component/button/height-xl` (48px), `spacing/32` above | Hugs its label, left aligned, `spacing/32` (24px) sides and below |
 | Multiple links | `rvt-list-hub` Compact, `spacing/32` above; no line below the last item and no padding under it | `rvt-list-hub` Compact, full width, `spacing/32` (24px) sides and below; no line below the last item |
 | Reversed | Image column moves to the right | No change (stacked) |
