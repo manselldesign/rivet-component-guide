@@ -3,7 +3,7 @@
     "file": "Rivet 3 Components (cleaning)",
     "fileKey": "h8vuH2kAA3FkJlUEitXK9t"
   },
-  "syncedAt": "2026-11-09T14:00Z",
+  "syncedAt": "2026-11-12T14:10Z",
   "note": "Normalized snapshot written by the daily token sync. Values: colors hex (8-digit = alpha), '@name' = alias to another variable, numbers in px. Mode-specific values are objects keyed by mode. Letter spacing of 0% is stored as 0.",
   "variables": {
     "Foundation": {
@@ -2736,9 +2736,9 @@
       },
       "description": "**Variable adjustments:** wght: 350, tracking: normal (1px)"
     },
-    "editorial/xl/regular": {
+    "editorial/xl/strong": {
       "fontFamily": "Crimson Pro",
-      "fontStyle": "Regular",
+      "fontStyle": "SemiBold",
       "fontSize": 54,
       "lineHeight": 56,
       "letterSpacing": 0,
@@ -2750,13 +2750,13 @@
         "fontFamily": "font/family/serif",
         "paragraphSpacing": "type/paragraph-spacing/step-03",
         "lineHeight": "type/line-height/40-56",
-        "fontWeight": "font/weight/350"
+        "fontWeight": "font/weight/600"
       },
       "description": "**Variable adjustments:** none (Crimson Pro is a static font)"
     },
-    "editorial/lg/regular": {
+    "editorial/lg/strong": {
       "fontFamily": "Crimson Pro",
-      "fontStyle": "Regular",
+      "fontStyle": "SemiBold",
       "fontSize": 48,
       "lineHeight": 56,
       "letterSpacing": 0,
@@ -2768,13 +2768,13 @@
         "fontFamily": "font/family/serif",
         "paragraphSpacing": "type/paragraph-spacing/step-03",
         "lineHeight": "type/line-height/36-56",
-        "fontWeight": "font/weight/350"
+        "fontWeight": "font/weight/600"
       },
       "description": "**Variable adjustments:** none (Crimson Pro is a static font)"
     },
-    "editorial/md/regular": {
+    "editorial/md/strong": {
       "fontFamily": "Crimson Pro",
-      "fontStyle": "Regular",
+      "fontStyle": "SemiBold",
       "fontSize": 29,
       "lineHeight": 36,
       "letterSpacing": 0,
@@ -2786,13 +2786,13 @@
         "fontFamily": "font/family/serif",
         "paragraphSpacing": "type/paragraph-spacing/step-03",
         "lineHeight": "type/line-height/36",
-        "fontWeight": "font/weight/350"
+        "fontWeight": "font/weight/600"
       },
       "description": "**Variable adjustments:** none (Crimson Pro is a static font)"
     },
-    "editorial/sm/regular": {
+    "editorial/sm/strong": {
       "fontFamily": "Crimson Pro",
-      "fontStyle": "Regular",
+      "fontStyle": "SemiBold",
       "fontSize": 23,
       "lineHeight": 28,
       "letterSpacing": 0,
@@ -2804,7 +2804,7 @@
         "fontFamily": "font/family/serif",
         "paragraphSpacing": "type/paragraph-spacing/step-02",
         "lineHeight": "type/line-height/24-28",
-        "fontWeight": "font/weight/350"
+        "fontWeight": "font/weight/600"
       },
       "description": "**Variable adjustments:** none (Crimson Pro is a static font)"
     },

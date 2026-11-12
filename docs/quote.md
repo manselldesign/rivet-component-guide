@@ -46,6 +46,6 @@ Shared rules: Background `background/default`. Quote, name and title use `text/b
 | Gap between icon or avatar, quote and name | `spacing/32` (32px) | `spacing/24` (24px) | `spacing/32` (24px) | `spacing/24` (24px) |
 | Quote icon | 85 × 64px | 75 × 56px | 53 × 40px | 53 × 40px |
 | Avatar | 128px | 80px | 64px | 64px |
-| Quote | `editorial/xl/regular` (54 / 56px) | `editorial/md/regular` (29 / 36px) | `editorial/xl/regular` (36 / 36px) | `editorial/md/regular` (29 / 36px) |
+| Quote | `editorial/xl/strong` (54 / 56px) | `editorial/md/strong` (29 / 36px) | `editorial/xl/strong` (36 / 36px) | `editorial/md/strong` (29 / 36px) |
 | Name | `body/sm/strong` (16 / 24px) | `body/sm/strong` (16 / 24px) | `body/sm/strong` (16 / 24px) | `body/sm/strong` (16 / 24px) |
 | Title or school | `body/base/regular` (18 / 28px) | `body/base/regular` (18 / 28px) | `body/base/regular` (16 / 24px) | `body/base/regular` (16 / 24px) |

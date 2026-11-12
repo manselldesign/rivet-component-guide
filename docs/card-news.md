@@ -76,7 +76,7 @@ Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Rais
 | Text column (Horizontal) | `spacing/4` top | — |
 | Top badge | Strong badge, `spacing/12` below | Same |
 | Top metadata | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below | Same |
-| Title | `editorial/sm/regular` (23 / 28px), `text/strong` | `editorial/sm/regular` (20 / 24px) |
+| Title | `editorial/sm/strong` (23 / 28px), `text/strong` | `editorial/sm/strong` (20 / 24px) |
 | Arrow icon | 16px `rvt-arrow-right`, `spacing/16` gap from title, 7px from top | Same |
 | Bottom group | Own toggle. `spacing/24` above, `spacing/16` gap | Same |
 | Bottom metadata | `tag/sm/regular` (12 / 16px), `text/default` | Same |

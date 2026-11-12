@@ -752,10 +752,10 @@
 	--rvt-font-tag-sm-caps: var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono);
 	--rvt-font-tag-sm-strong: var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono);
 	--rvt-font-tag-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-16) var(--rvt-font-family-mono);
-	--rvt-font-editorial-xl-regular: var(--rvt-font-weight-350) var(--rvt-type-size-36-54)/var(--rvt-type-line-height-40-56) var(--rvt-font-family-serif);
-	--rvt-font-editorial-lg-regular: var(--rvt-font-weight-350) var(--rvt-type-size-29-48)/var(--rvt-type-line-height-36-56) var(--rvt-font-family-serif);
-	--rvt-font-editorial-md-regular: var(--rvt-font-weight-350) var(--rvt-type-size-29)/var(--rvt-type-line-height-36) var(--rvt-font-family-serif);
-	--rvt-font-editorial-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-serif);
+	--rvt-font-editorial-xl-strong: var(--rvt-font-weight-600) var(--rvt-type-size-36-54)/var(--rvt-type-line-height-40-56) var(--rvt-font-family-serif);
+	--rvt-font-editorial-lg-strong: var(--rvt-font-weight-600) var(--rvt-type-size-29-48)/var(--rvt-type-line-height-36-56) var(--rvt-font-family-serif);
+	--rvt-font-editorial-md-strong: var(--rvt-font-weight-600) var(--rvt-type-size-29)/var(--rvt-type-line-height-36) var(--rvt-font-family-serif);
+	--rvt-font-editorial-sm-strong: var(--rvt-font-weight-600) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-serif);
 	--rvt-font-link-serif-xl-strong: var(--rvt-font-weight-600) var(--rvt-type-size-32-52)/var(--rvt-type-line-height-36-56) var(--rvt-font-family-serif);
 	--rvt-font-link-base-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16-18)/var(--rvt-type-line-height-28) var(--rvt-font-family-sans);
 	--rvt-font-link-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans);
@@ -837,6 +837,10 @@
 	--rvt-font-body-lead-regular: var(--rvt-font-body-xl-regular); /* body/lead/regular was removed from Figma 2026-10-21; closest is body/xl/regular */
 	--rvt-font-component-lockup-eyebrow-2line: var(--rvt-font-component-lockup-campus-name); /* renamed in Figma 2026-10-23 to component/lockup/campus-name (tracking now none) */
 	--rvt-font-component-lockup-eyebrow-3line: var(--rvt-font-component-lockup-campus-title-2line); /* removed from Figma 2026-10-23; closest is component/lockup/campus-title-2line (12/12, weight 600) */
+	--rvt-font-editorial-xl-regular: var(--rvt-font-editorial-xl-strong); /* renamed in Figma 2026-11-12 to editorial/xl/strong (weight now 600 SemiBold, was 350) */
+	--rvt-font-editorial-lg-regular: var(--rvt-font-editorial-lg-strong); /* renamed in Figma 2026-11-12 to editorial/lg/strong (weight now 600 SemiBold, was 350) */
+	--rvt-font-editorial-md-regular: var(--rvt-font-editorial-md-strong); /* renamed in Figma 2026-11-12 to editorial/md/strong (weight now 600 SemiBold, was 350) */
+	--rvt-font-editorial-sm-regular: var(--rvt-font-editorial-sm-strong); /* renamed in Figma 2026-11-12 to editorial/sm/strong (weight now 600 SemiBold, was 350) */
 }
 
 /* Old theme names → their closest new name (same values). Use role-specific names in new CSS. */

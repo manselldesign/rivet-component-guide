@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -46,7 +46,7 @@
     "themeColorsReplacingAnExistingCodeName": 36,
     "paletteColors": 38,
     "textStyles": 80,
-    "textStylesThatAreRenameOnly": 22,
+    "textStylesThatAreRenameOnly": 21,
     "spacing": 19,
     "shadows": 6
   },
@@ -3920,11 +3920,11 @@
             "figmaChange": "2026-10-24: 12/16 (unchanged on 2026-10-29)"
           },
           {
-            "name": "editorial/xl/regular",
-            "css": "--rvt-font-editorial-xl-regular",
+            "name": "editorial/xl/strong",
+            "css": "--rvt-font-editorial-xl-strong",
             "spec": {
               "font": "Crimson Pro",
-              "weight": 350,
+              "weight": 600,
               "size": {
                 "desktop": 54,
                 "mobile": 36
@@ -3937,16 +3937,18 @@
             "codeToday": "--rvt-font-36-fluid-serif",
             "action": "rename + value change",
             "valueChanges": [
-              "line-height 56/40 vs Figma 56/36"
+              "line-height 56/40 vs Figma 56/36",
+              "weight: code today is lighter; Figma is now 600 (SemiBold)"
             ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-36-54)/var(--rvt-type-line-height-40-56) var(--rvt-font-family-serif)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-36-54)/var(--rvt-type-line-height-40-56) var(--rvt-font-family-serif)",
+            "figmaChange": "2026-11-12: renamed from editorial/xl/regular; weight 350 (Regular) → 600 (SemiBold)"
           },
           {
-            "name": "editorial/lg/regular",
-            "css": "--rvt-font-editorial-lg-regular",
+            "name": "editorial/lg/strong",
+            "css": "--rvt-font-editorial-lg-strong",
             "spec": {
               "font": "Crimson Pro",
-              "weight": 350,
+              "weight": 600,
               "size": {
                 "desktop": 48,
                 "mobile": 29
@@ -3959,29 +3961,35 @@
             "codeToday": "--rvt-font-29-fluid-serif",
             "action": "rename + value change",
             "valueChanges": [
-              "line-height 56/36 vs Figma 56/32"
+              "line-height 56/36 vs Figma 56/32",
+              "weight: code today is lighter; Figma is now 600 (SemiBold)"
             ],
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-29-48)/var(--rvt-type-line-height-36-56) var(--rvt-font-family-serif)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-29-48)/var(--rvt-type-line-height-36-56) var(--rvt-font-family-serif)",
+            "figmaChange": "2026-11-12: renamed from editorial/lg/regular; weight 350 (Regular) → 600 (SemiBold)"
           },
           {
-            "name": "editorial/md/regular",
-            "css": "--rvt-font-editorial-md-regular",
+            "name": "editorial/md/strong",
+            "css": "--rvt-font-editorial-md-strong",
             "spec": {
               "font": "Crimson Pro",
-              "weight": 350,
+              "weight": 600,
               "size": 29,
               "lineHeight": 36
             },
             "codeToday": "--rvt-font-29-serif",
-            "action": "rename",
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-29)/var(--rvt-type-line-height-36) var(--rvt-font-family-serif)"
+            "action": "rename + value change",
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-29)/var(--rvt-type-line-height-36) var(--rvt-font-family-serif)",
+            "figmaChange": "2026-11-12: renamed from editorial/md/regular; weight 350 (Regular) → 600 (SemiBold)",
+            "valueChanges": [
+              "weight: code today is lighter; Figma is now 600 (SemiBold)"
+            ]
           },
           {
-            "name": "editorial/sm/regular",
-            "css": "--rvt-font-editorial-sm-regular",
+            "name": "editorial/sm/strong",
+            "css": "--rvt-font-editorial-sm-strong",
             "spec": {
               "font": "Crimson Pro",
-              "weight": 350,
+              "weight": 600,
               "size": {
                 "desktop": 23,
                 "mobile": 20
@@ -3993,7 +4001,8 @@
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-serif)"
+            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-20-23)/var(--rvt-type-line-height-24-28) var(--rvt-font-family-serif)",
+            "figmaChange": "2026-11-12: renamed from editorial/sm/regular; weight 350 (Regular) → 600 (SemiBold)"
           },
           {
             "name": "link/serif-xl/strong",
@@ -5800,14 +5809,15 @@
         },
         {
           "old": "--rvt-font-29-serif",
-          "new": "--rvt-font-editorial-md-regular",
-          "valueChange": false
+          "new": "--rvt-font-editorial-md-strong",
+          "valueChange": true,
+          "note": "Figma weight changed to 600 (SemiBold) on 2026-11-12."
         },
         {
           "old": "--rvt-font-29-fluid-serif",
-          "new": "--rvt-font-editorial-lg-regular",
+          "new": "--rvt-font-editorial-lg-strong",
           "valueChange": true,
-          "note": "Closest Figma style; see typography.textStyles for the exact differences."
+          "note": "Closest Figma style; see typography.textStyles for the exact differences. Figma weight changed to 600 (SemiBold) on 2026-11-12."
         },
         {
           "old": "--rvt-font-32-fluid-black",
@@ -5829,9 +5839,9 @@
         },
         {
           "old": "--rvt-font-36-fluid-serif",
-          "new": "--rvt-font-editorial-xl-regular",
+          "new": "--rvt-font-editorial-xl-strong",
           "valueChange": true,
-          "note": "Closest Figma style; see typography.textStyles for the exact differences."
+          "note": "Closest Figma style; see typography.textStyles for the exact differences. Figma weight changed to 600 (SemiBold) on 2026-11-12."
         },
         {
           "old": "--rvt-font-42-extra-black",
@@ -6363,6 +6373,30 @@
         "before": "component/lockup/eyebrow-3line",
         "after": "component/lockup/campus-title-2line",
         "change": "removed 2026-10-23; closest match, kept as a CSS alias"
+      },
+      {
+        "before": "editorial/xl/regular",
+        "after": "editorial/xl/strong",
+        "date": "2026-11-12",
+        "why": "Editorial styles changed from Regular (350) to SemiBold (600) and were renamed to match."
+      },
+      {
+        "before": "editorial/lg/regular",
+        "after": "editorial/lg/strong",
+        "date": "2026-11-12",
+        "why": "Editorial styles changed from Regular (350) to SemiBold (600) and were renamed to match."
+      },
+      {
+        "before": "editorial/md/regular",
+        "after": "editorial/md/strong",
+        "date": "2026-11-12",
+        "why": "Editorial styles changed from Regular (350) to SemiBold (600) and were renamed to match."
+      },
+      {
+        "before": "editorial/sm/regular",
+        "after": "editorial/sm/strong",
+        "date": "2026-11-12",
+        "why": "Editorial styles changed from Regular (350) to SemiBold (600) and were renamed to match."
       }
     ],
     "themeColors": [

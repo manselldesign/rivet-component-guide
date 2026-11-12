@@ -49,7 +49,7 @@ Shared rules: built as a `figure` with the intro paragraph first, then the image
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Intro text | `editorial/xl/regular` (54 / 56px), `text/brand` | `editorial/xl/regular` (36 / 36px), `text/brand` |
+| Intro text | `editorial/xl/strong` (54 / 56px), `text/brand` | `editorial/xl/strong` (36 / 36px), `text/brand` |
 | Intro links | `link/serif-xl/strong` (52 / 56px), `text/accent`, underlined | `link/serif-xl/strong` (32 / 32px), `text/accent`, underlined |
 | Gap, intro to images | `spacing/64` (64px), below intro | `spacing/64` (48px), below intro |
 | Gap between images | `spacing/8` (8px), rows and columns | `spacing/8` (8px), rows and columns |
