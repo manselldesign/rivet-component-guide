@@ -560,6 +560,8 @@ body:not(.has-rail) .site-header__menu{display:none}
    (inset shadow), so the border doesn't add to the height. Tabs hug their label, no gap, 0 radius.
    Label: spacing/16 sides, action/lg/regular text/strong; selected = action/lg/strong + component/tabs/selected-text on background/brand.
    Hover (unselected tabs) = component/tabs/hover-background fill + component/tabs/hover-text label. */
+/* rvt-tabs, Segmented: optional field label, same as rvt-text-input: heading/xs/strong (14/20), text/strong, spacing/8 above the tab group */
+.rvt-tabs__label{display:block;margin:0 0 var(--rvt-spacing-8);font:var(--rvt-font-heading-xs-strong);font-stretch:var(--rvt-font-width-semi-expanded);color:var(--rvt-text-strong)}
 .rvt-tabs--segmented{position:relative;isolation:isolate;display:inline-flex;flex-wrap:wrap;padding:var(--rvt-spacing-4);gap:0;margin:0;background:var(--rvt-background-tint);border:0;box-shadow:inset 0 0 0 1px var(--rvt-component-input-border)}
 .rvt-tabs__tab{position:relative;z-index:1;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;height:var(--rvt-component-tabs-segmented-height-lg);padding:0 var(--rvt-spacing-16);margin:0;border:0;border-radius:0;
   background:transparent;color:var(--rvt-text-strong);font:var(--rvt-font-action-lg-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);cursor:pointer;-webkit-appearance:none;appearance:none;
@@ -2209,7 +2211,8 @@ body:not(.has-rail) .site-header__menu{display:none}
       ],
       html: type => type === 'segmented'
         ? `<div class="rvt-tabs rvt-tabs--seg-example" data-rvt-tabs>
-            <div class="rvt-tabs--segmented" role="tablist" aria-label="Admissions events">${TABS_SEGMENTED.map((t, i) =>
+            <span class="rvt-tabs__label" id="seg-tabs-label">Admissions events</span>
+            <div class="rvt-tabs--segmented" role="tablist" aria-labelledby="seg-tabs-label">${TABS_SEGMENTED.map((t, i) =>
               `<button class="rvt-tabs__tab" type="button" role="tab" id="seg-tab-${t.id}" data-label="${esc(t.label)}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(t.label)}</button>`).join('')}</div>
           </div>`
         : `<div class="rvt-tabs rvt-tabs--contained" data-rvt-tabs>

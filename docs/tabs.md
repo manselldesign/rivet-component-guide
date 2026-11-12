@@ -38,6 +38,7 @@ Ask one question: **Is each tab a full section of content, or a quick switch for
 
 ## Optional parts
 - **List:** Add a list to the panel of Contained tabs only when it has items worth listing, like required documents
+- **Label:** Segmented tabs can have a label above them, like the label on a text input. Use it when the tabs filter or switch something nearby, like "Admissions events" above Today, This week and This month. Leave it off only when a heading right above already says what the tabs switch
 
 ## Writing tips
 - Keep labels to one or two words, like "Overview" or "Costs"
@@ -85,3 +86,4 @@ Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab
 | Segmented group padding | `spacing/4` all sides (4px) | Same |
 | Segmented group fill and border | `background/tint`, 1px `component/input/border`, drawn inside | Same |
 | Segmented tabs | Hug their label, no gap | Same |
+| Segmented label (optional) | `heading/xs/strong` (14 / 20px), `text/strong`, `spacing/8` (8px) above the tab group. Same as the text input label. Give it an `id` and point the tablist's `aria-labelledby` at it. With no visible label, use `aria-label` on the tablist instead | Same |
