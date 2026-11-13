@@ -15,7 +15,7 @@
 	--rvt-color-base-body: #343c42;
 	--rvt-color-base-medium: #b9c1c6;
 	--rvt-color-base-light: #e0e0e0;
-	--rvt-color-base-extra-light: #eeeef0;
+	--rvt-color-base-extra-light: #f7f7f8;
 	--rvt-color-base-ultra-light: #ffffff;
 	--rvt-color-status-info-background: #f5fcff;
 	--rvt-color-status-info-container: #d9eefc;
@@ -761,7 +761,7 @@
 	--rvt-font-link-sm-regular: var(--rvt-font-weight-350) var(--rvt-type-size-16)/var(--rvt-type-line-height-24) var(--rvt-font-family-sans);
 	--rvt-font-link-xs-regular: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-20) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-campus-title: var(--rvt-font-weight-600) var(--rvt-type-size-16)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
-	--rvt-font-component-lockup-campus-title-2line: var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-sans);
+	--rvt-font-component-lockup-campus-title-2line: var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-campus-name: var(--rvt-font-weight-350) var(--rvt-type-size-14)/var(--rvt-type-line-height-14) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-title-2line: var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
 	--rvt-font-component-lockup-title-3line: var(--rvt-font-weight-700) var(--rvt-type-size-14)/var(--rvt-type-line-height-16) var(--rvt-font-family-sans);
@@ -789,7 +789,8 @@
 	   tag strong, regular   letter-spacing: var(--rvt-font-tracking-lg)
 	   component avatar      no width (100%)
 	   component number      font-stretch: 150% (no width variable in Figma yet; see the token guide)
-	   component lockup      see the token guide (fixed widths and optical sizes per style) */
+	   component lockup      see the token guide (fixed widths and optical sizes per style)
+	   lockup campus-title, campus-title-2line   letter-spacing: var(--rvt-font-tracking-xs) */
 	--rvt-shadow-xs: 0 1px 4px 0px var(--rvt-shadow-color-xs);
 	--rvt-shadow-sm: 0 2px 8px 0px var(--rvt-shadow-color-sm);
 	--rvt-shadow-md: 0 4px 12px 0px var(--rvt-shadow-color-md);
@@ -836,7 +837,7 @@
 	--rvt-shadow-heavy: var(--rvt-shadow-lg);
 	--rvt-font-body-lead-regular: var(--rvt-font-body-xl-regular); /* body/lead/regular was removed from Figma 2026-10-21; closest is body/xl/regular */
 	--rvt-font-component-lockup-eyebrow-2line: var(--rvt-font-component-lockup-campus-name); /* renamed in Figma 2026-10-23 to component/lockup/campus-name (tracking now none) */
-	--rvt-font-component-lockup-eyebrow-3line: var(--rvt-font-component-lockup-campus-title-2line); /* removed from Figma 2026-10-23; closest is component/lockup/campus-title-2line (12/12, weight 600) */
+	--rvt-font-component-lockup-eyebrow-3line: var(--rvt-font-component-lockup-campus-title-2line); /* removed from Figma 2026-10-23; closest is component/lockup/campus-title-2line (12/12, weight 350) */
 	--rvt-font-editorial-xl-regular: var(--rvt-font-editorial-xl-strong); /* renamed in Figma 2026-11-12 to editorial/xl/strong (weight now 600 SemiBold, was 350) */
 	--rvt-font-editorial-lg-regular: var(--rvt-font-editorial-lg-strong); /* renamed in Figma 2026-11-12 to editorial/lg/strong (weight now 600 SemiBold, was 350) */
 	--rvt-font-editorial-md-regular: var(--rvt-font-editorial-md-strong); /* renamed in Figma 2026-11-12 to editorial/md/strong (weight now 600 SemiBold, was 350) */

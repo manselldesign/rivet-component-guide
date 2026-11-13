@@ -1,6 +1,6 @@
 {
   "title": "Rivet 3: Figma to code token guide",
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "source": {
     "figma": "Rivet 3 Components (cleaning) — https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t",
     "code": "indiana-university/rivet-source, v3-main (3cf566b)"
@@ -378,9 +378,10 @@
         {
           "name": "color/base/extra-light",
           "css": "--rvt-color-base-extra-light",
-          "value": "#eeeef0",
+          "value": "#f7f7f8",
           "codeToday": "--rvt-color-base-extra-light",
-          "action": "none"
+          "action": "none",
+          "figmaChange": "2026-11-13: value now #f7f7f8 (was #eeeef0)."
         },
         {
           "name": "color/base/ultra-light",
@@ -4114,29 +4115,31 @@
             "alsoSet": {
               "text-transform": "uppercase",
               "font-stretch": "40%",
-              "font-variation-settings": "\"opsz\" 16"
+              "font-variation-settings": "\"opsz\" 16",
+              "letter-spacing": "var(--rvt-font-tracking-xs)"
             },
-            "figmaChange": "2026-10-23: weight now 600 (was 700) and tracking now font/tracking/none (was font/tracking/xs). 2026-10-28: width (wdth) 40 and optical size (opsz) 16 set the same on Desktop and Mobile."
+            "figmaChange": "2026-10-23: weight now 600 (was 700) and tracking now font/tracking/none (was font/tracking/xs). 2026-10-28: width (wdth) 40 and optical size (opsz) 16 set the same on Desktop and Mobile. 2026-11-13: tracking now font/tracking/xs (0.25px, was font/tracking/none)."
           },
           {
             "name": "component/lockup/campus-title-2line",
             "css": "--rvt-font-component-lockup-campus-title-2line",
             "spec": {
               "font": "Roboto Flex",
-              "weight": 600,
+              "weight": 350,
               "size": 12,
               "lineHeight": 12,
               "textTransform": "uppercase"
             },
             "codeToday": null,
             "action": "add",
-            "cssValue": "var(--rvt-font-weight-600) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-sans)",
+            "cssValue": "var(--rvt-font-weight-350) var(--rvt-type-size-12)/var(--rvt-type-line-height-12) var(--rvt-font-family-sans)",
             "alsoSet": {
               "text-transform": "uppercase",
               "font-stretch": "40%",
-              "font-variation-settings": "\"opsz\" 14"
+              "font-variation-settings": "\"opsz\" 14",
+              "letter-spacing": "var(--rvt-font-tracking-xs)"
             },
-            "figmaChange": "2026-10-23: new in Figma. Replaces component/lockup/eyebrow-3line (removed), which is kept in CSS as an alias to this style. 2026-10-28: width (wdth) 40 and optical size (opsz) 14 set the same on Desktop and Mobile."
+            "figmaChange": "2026-10-23: new in Figma. Replaces component/lockup/eyebrow-3line (removed), which is kept in CSS as an alias to this style. 2026-10-28: width (wdth) 40 and optical size (opsz) 14 set the same on Desktop and Mobile. 2026-11-13: weight now font/weight/350 (was 600) and tracking now font/tracking/xs (0.25px, was none). Note: the Figma style still lists its font style as SemiBold."
           },
           {
             "name": "component/lockup/campus-name",

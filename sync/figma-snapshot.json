@@ -3,7 +3,7 @@
     "file": "Rivet 3 Components (cleaning)",
     "fileKey": "h8vuH2kAA3FkJlUEitXK9t"
   },
-  "syncedAt": "2026-11-12T14:10Z",
+  "syncedAt": "2026-11-13T15:30Z",
   "note": "Normalized snapshot written by the daily token sync. Values: colors hex (8-digit = alpha), '@name' = alias to another variable, numbers in px. Mode-specific values are objects keyed by mode. Letter spacing of 0% is stored as 0.",
   "variables": {
     "Foundation": {
@@ -38,7 +38,7 @@
         },
         "color/base/extra-light": {
           "type": "COLOR",
-          "value": "#eeeef0"
+          "value": "#f7f7f8"
         },
         "color/base/ultra-light": {
           "type": "COLOR",
@@ -2897,11 +2897,11 @@
       "fontStyle": "Bold",
       "fontSize": 16,
       "lineHeight": 16,
-      "letterSpacing": 0,
+      "letterSpacing": 0.25,
       "textCase": "UPPER",
       "textDecoration": "NONE",
       "boundVariables": {
-        "letterSpacing": "font/tracking/none",
+        "letterSpacing": "font/tracking/xs",
         "fontSize": "type/size/16",
         "fontFamily": "font/family/sans",
         "paragraphSpacing": "type/paragraph-spacing/step-02",
@@ -2933,16 +2933,16 @@
       "fontStyle": "SemiBold",
       "fontSize": 12,
       "lineHeight": 12,
-      "letterSpacing": 0,
+      "letterSpacing": 0.25,
       "textCase": "UPPER",
       "textDecoration": "NONE",
       "boundVariables": {
-        "letterSpacing": "font/tracking/none",
+        "letterSpacing": "font/tracking/xs",
         "fontSize": "type/size/12",
         "fontFamily": "font/family/sans",
         "paragraphSpacing": "type/paragraph-spacing/step-01",
         "lineHeight": "type/line-height/12",
-        "fontWeight": "font/weight/600"
+        "fontWeight": "font/weight/350"
       },
       "description": ""
     },

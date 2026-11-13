@@ -87,13 +87,13 @@ Shared rules: Height 96px (Desktop and Mobile): the 48px logo plus `spacing/24` 
 
 ### Lockup type settings
 
-Roboto Flex is a variable font. Set these axes exactly; `wdth` is width (narrower below 100) and `opsz` is optical size. All lines use `font/tracking/none` (0), and the settings are the same on Desktop and Mobile. In CSS, `wdth` is `font-stretch` (for example 40%) and `opsz` is `font-variation-settings: "opsz" 16`.
+Roboto Flex is a variable font. Set these axes exactly; `wdth` is width (narrower below 100) and `opsz` is optical size. The two "Indiana University" lines (`campus-title` and `campus-title-2line`) use `font/tracking/xs` (0.25px); all other lines use `font/tracking/none` (0). The settings are the same on Desktop and Mobile. In CSS, `wdth` is `font-stretch` (for example 40%) and `opsz` is `font-variation-settings: "opsz" 16`.
 
 | Layout | Line | Text style | Size / line height | Weight (`wght`) | Width (`wdth`) | Optical size (`opsz`) | Case |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Campus | "Indiana University" | `component/lockup/campus-title` | `type/size/16` / `type/line-height/16` (16 / 16px) | `font/weight/600` (600) | 40 | 16 | Uppercase |
 | Campus | Campus name | `component/lockup/campus-name` | `type/size/14` / `type/line-height/14` (14 / 14px) | `font/weight/350` (350) | 40 | 20 | Uppercase |
-| 2-line | "Indiana University" | `component/lockup/campus-title-2line` | `type/size/12` / `type/line-height/12` (12 / 12px) | `font/weight/600` (600) | 40 | 14 | Uppercase |
+| 2-line | "Indiana University" | `component/lockup/campus-title-2line` | `type/size/12` / `type/line-height/12` (12 / 12px) | `font/weight/350` (350) | 40 | 14 | Uppercase |
 | 2-line | School or department | `component/lockup/title-2line` | `type/size/14` / `type/line-height/16` (14 / 16px) | `font/weight/700` (700) | 90 | 14 | As typed |
 | 3-line | Name | `component/lockup/title-3line` | `type/size/14` / `type/line-height/16` (14 / 16px) | `font/weight/700` (700) | 90 | 14 | As typed |
 | 4-line | Name | `component/lockup/title-4line` | `type/size/12` / `type/line-height/14` (12 / 14px) | `font/weight/700` (700) | 90 | 12 | As typed |
