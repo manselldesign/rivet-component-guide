@@ -68,7 +68,7 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 ### Style
 - Use Outlined as the main style. Save Raised for cards that need to stand out
 - **Outlined:** A thin border. Use it for most cards, in grids and lists
-- **Raised:** A soft shadow. Use it for a featured item, or to lift a card off a colored or busy background
+- **Raised:** A soft shadow that deepens slightly on hover. Use it for a featured item, or to lift a card off a colored or busy background
 
 ### Orientation
 - **Vertical:** Picture above the text. Use in grids of two to four cards
@@ -121,6 +121,7 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 | --- | --- | --- |
 | Border | `border/default` (1px) | None |
 | Shadow | None | `shadow/sm` |
+| Card, hover | No change | Shadow deepens one step to `shadow/md` while the pointer is anywhere on the card. Fades over 150ms; instant when the user has reduced motion on |
 | Corner radius | 0 | 0 |
 | Title, hover | Only when the pointer is on the title text: `text/accent` with the browser's default underline. Instant, no transition | Same |
 | Arrow, hover | `icon/accent`, together with the title | Same |

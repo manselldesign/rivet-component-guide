@@ -77,7 +77,7 @@ An events calendar page works the same way. It lists Event cards, often in Horiz
 
 ## Developer spec checklist
 
-Shared rules: Outlined = 1px `border/default` border, no radius. Raised = `shadow/sm`, no border. Both use `background/raised` fill. The whole card is one link. Title cuts off with an ellipsis after three lines. Horizontal cards stack like Vertical on Mobile.
+Shared rules: Outlined = 1px `border/default` border, no radius. Raised = `shadow/sm`, no border. On hover anywhere on a Raised card the shadow deepens one step to `shadow/md` (150ms fade; instant with reduced motion). Both use `background/raised` fill. The whole card is one link. Title cuts off with an ellipsis after three lines. Horizontal cards stack like Vertical on Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
