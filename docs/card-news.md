@@ -74,10 +74,13 @@ Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Rais
 | Sticker (Vertical) | 80px sticker, `spacing/24` below (24px) | 64px sticker, `spacing/16` below (16px) |
 | Sticker (Horizontal) | 80px sticker, `spacing/24` gap to text column | Stacks like Vertical |
 | Text column (Horizontal) | `spacing/4` top | — |
-| Top badge | Strong badge, `spacing/12` below | Same |
-| Top metadata | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below | Same |
-| Title | `editorial/sm/strong` (23 / 28px), `text/strong` | `editorial/sm/strong` (20 / 24px) |
-| Arrow icon | 16px `rvt-arrow-right`, `spacing/16` gap from title, 7px from top | Same |
+| Top badge | Strong badge, `heading/xs/strong` (14 / 20px), `spacing/12` below | Same |
+| Top metadata | `tag/sm/regular` (12 / 16px), `text/brand`, 2px in from the left, `spacing/4` below | Same |
+| Title | `editorial/sm/strong` (23 / 28px, weight 600, Crimson Pro, no width or axis settings), `text/strong` | `editorial/sm/strong` (20 / 24px) |
+| Title (Horizontal) | Up to 750px wide | Stacks like Vertical |
+| Arrow icon | 16px `rvt-arrow-right`, `icon/strong`, `spacing/16` gap from title, centered on the first title line (6px from top; 7px on Horizontal) | Same, 4px from top |
 | Bottom group | Own toggle. `spacing/24` above, `spacing/16` gap | Same |
 | Bottom metadata | `tag/sm/regular` (12 / 16px), `text/default` | Same |
 | Tags row | Own toggle. Subtle badges, `spacing/8` gap, wraps | Same |
+| Hover | Only when the pointer is on the title text: title turns `text/accent` with the browser's default underline and the arrow turns `icon/accent`. Instant, no transition. The border stays | Same |
+| Focus | 2px `border/accent-strong` ring right outside the card, no gap | Same |

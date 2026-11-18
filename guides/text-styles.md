@@ -49,7 +49,7 @@ Roboto Flex is a variable font, so each style sets a few axes explicitly. These 
 | Action | 350 regular, 600 strong | 110% | none | none | as written |
 | Link (sans) | 350 | 110% | none | none | as written, underlined |
 | Tag (Roboto Mono) | 350 regular, 600 strong | n/a | none | 1px; 2px for caps | caps styles uppercase |
-| Editorial (Crimson Pro) | 350 | n/a | none | none | as written |
+| Editorial (Crimson Pro) | 600 | n/a | none | none | as written |
 | Component: avatar | 600 | 100% | none | none | as written |
 | Component: number | 825 strong, 350 regular | 150% | none | none | as written |
 

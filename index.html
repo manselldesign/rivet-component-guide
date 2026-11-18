@@ -6,7 +6,7 @@
 <title>Rivet 3 Component Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,YTAS,YTLC@8..144,-10..0,25..151,100..1000,649..854,416..570&family=Roboto+Mono:wght@100..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,YTAS,YTLC@8..144,-10..0,25..151,100..1000,649..854,416..570&family=Roboto+Mono:wght@100..700&family=Crimson+Pro:wght@200..900&display=swap">
 <!-- Rivet 3 tokens (generated from Figma). Component examples on detail pages are built only from these --rvt- tokens.
      The page theme sets .rvt-theme-light / -dark / -crimson on <html>, so every --rvt- semantic token follows the page theme. -->
 <link rel="stylesheet" href="generated/rivet-tokens.css">
@@ -517,8 +517,9 @@ body:not(.has-rail) .site-header__menu{display:none}
 
 /* ================= Component example (detail pages) =================
    Sits directly below the hero. Everything in here is built from --rvt- tokens only (generated/rivet-tokens.css),
-   so the example re-themes when the page theme changes. --rvt-font-family-sans and --rvt-font-family-mono are not in the generated file; they point at the site fonts. */
-:root{--rvt-font-family-sans:var(--font-sans);--rvt-font-family-mono:var(--font-mono)}
+   so the example re-themes when the page theme changes. --rvt-font-family-sans, --rvt-font-family-mono and --rvt-font-family-serif are not in the generated file;
+   sans and mono point at the site fonts, serif at Crimson Pro (the editorial styles, loaded with the other Google Fonts). */
+:root{--rvt-font-family-sans:var(--font-sans);--rvt-font-family-mono:var(--font-mono);--rvt-font-family-serif:'Crimson Pro',Georgia,serif}
 /* Same rhythm as the Details Page text block: H2 → 24 → paragraph; the next section ("What it is") sits 96 below the example (72 on mobile). */
 .demo{margin:0 0 var(--rvt-spacing-96)}
 .demo-title{font-size:36px;line-height:40px;font-weight:var(--w-black);color:var(--text-strong);margin:0 0 var(--rvt-spacing-24);text-wrap:balance}
@@ -1185,6 +1186,65 @@ body:not(.has-rail) .site-header__menu{display:none}
 }
 @media (max-width:767px){
   .rvt-card-event{--ce-pad:var(--rvt-spacing-24);--ce-media-gap:var(--rvt-spacing-24)}
+}
+/* ---------- rvt-card-news (Card-news page example, Developer spec checklist) ----------
+   Types: Orientation (Vertical 440px, Horizontal 1200px Desktop frames) x Layout (Image, Sticker, Plain). Style radio: Outlined (1px border/default, drawn inside)
+   or Raised (shadow/sm, no border; deepens to shadow/md on hover anywhere on the card, 150ms). background/raised fill, no radius, spacing/32 padding.
+   Image: 3:2, spacing/32 below (Horizontal 180 x 180, spacing/32 to the text). Sticker: 80px contained sticker, spacing/24 below (Horizontal: spacing/24 to the text).
+   Plain: no media. Strong badge spacing/12 below; top metadata tag/sm/regular text/brand, 2px in, spacing/4 below; title editorial/sm/strong (Crimson Pro 23/28,
+   20/24 on Mobile) text/strong (Horizontal: up to 750px wide), with the 16px arrow icon/strong spacing/16 to its right, centered on the first title line.
+   Bottom group: spacing/24 above, spacing/16 gap; bottom metadata tag/sm/regular text/default; subtle badges spacing/8 apart, wrapping.
+   The whole card is the link (the title link's ::after covers the card). Hover on the title text only: title text/accent + the browser's default underline,
+   arrow icon/accent, instantly (no transition); the border stays. Focus: 2px border/accent-strong ring right outside the card.
+   Mobile (under 768px): spacing/24 padding and image gap, 64px sticker spacing/16 below, and Horizontal cards stack like Vertical ones. */
+.rvt-card-news{--cn-pad:var(--rvt-spacing-32);--cn-media-gap:var(--rvt-spacing-32);--cn-sticker:80px;--cn-sticker-gap:var(--rvt-spacing-24);
+  box-sizing:border-box;position:relative;display:flex;flex-direction:column;width:100%;padding:var(--cn-pad);
+  background:var(--rvt-background-raised);box-shadow:inset 0 0 0 1px var(--rvt-border-default);border-radius:0}
+.rvt-card-news--raised{box-shadow:var(--rvt-shadow-sm);transition:box-shadow 150ms ease}
+.rvt-card-news--raised:hover{box-shadow:var(--rvt-shadow-md)}
+@media (prefers-reduced-motion:reduce){.rvt-card-news--raised{transition:none}}
+.rvt-card-news:has(.rvt-card-news__link:focus-visible){outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
+.rvt-card-news__media{flex:none;margin:0 0 var(--cn-media-gap)}
+.rvt-card-news--sticker .rvt-card-news__media{margin-bottom:var(--cn-sticker-gap)}
+.rvt-card-news__image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:var(--rvt-image-focus,50% 0%)}
+.rvt-card-news__sticker{display:block;width:var(--cn-sticker);height:var(--cn-sticker);border-radius:var(--rvt-border-radius-full);background:var(--rvt-color-brand-light);color:var(--rvt-color-brand-main)}
+.rvt-card-news__sticker svg{display:block;width:100%;height:100%}
+.rvt-card-news__sticker .fill{fill:var(--rvt-color-base-ultra-light)}
+.rvt-card-news__sticker .art{fill:currentColor}
+.rvt-card-news__body{display:flex;flex-direction:column;min-width:0}
+.rvt-card-news__featured{align-self:flex-start;margin:0 0 var(--rvt-spacing-12)}
+.rvt-card-news__tag{margin:0;padding:0 0 var(--rvt-spacing-4) 2px;color:var(--rvt-text-brand);
+  font:var(--rvt-font-tag-sm-regular);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-lg)}
+.rvt-card-news__head{display:flex;align-items:flex-start;gap:var(--rvt-spacing-16)}
+/* Editorial (Crimson Pro): no width or axis settings, no tracking. */
+.rvt-card-news__title{flex:1 1 auto;min-width:0;margin:0;color:var(--rvt-text-strong);
+  font:var(--rvt-font-editorial-sm-strong);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-card-news__link{color:inherit;text-decoration:none}
+.rvt-card-news__link-text{position:relative;z-index:2}
+.rvt-card-news__link::after{content:"";position:absolute;inset:0;z-index:1}
+.rvt-card-news__link:focus-visible{outline:none}
+/* Arrow centered on the first title line: 6px down on Desktop (28px line), 4px on Mobile (24px line). */
+.rvt-card-news__arrow{flex:none;display:flex;padding-top:calc((var(--rvt-type-line-height-24-28) - 16px) / 2);color:var(--rvt-icon-strong)}
+.rvt-card-news__arrow svg{display:block;width:16px;height:16px;fill:currentColor}
+.rvt-card-news__link-text:hover{color:var(--rvt-text-accent);text-decoration:underline}
+.rvt-card-news__head:has(.rvt-card-news__link-text:hover) .rvt-card-news__arrow{color:var(--rvt-icon-accent)}
+.rvt-card-news__foot{display:flex;flex-direction:column;gap:var(--rvt-spacing-16);padding-top:var(--rvt-spacing-24)}
+.rvt-card-news__meta{margin:0;color:var(--rvt-text-default);
+  font:var(--rvt-font-tag-sm-regular);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-lg)}
+.rvt-card-news__tags{display:flex;flex-wrap:wrap;gap:var(--rvt-spacing-8);margin:0;padding:0;list-style:none}
+/* Horizontal (Desktop): media beside the text; the text column starts spacing/4 down, the title 1px further, and is up to 750px wide. */
+@media (min-width:768px){
+  .rvt-card-news--horizontal{flex-direction:row;align-items:flex-start;gap:var(--cn-media-gap)}
+  .rvt-card-news--horizontal.rvt-card-news--sticker{gap:var(--cn-sticker-gap)}
+  .rvt-card-news--horizontal .rvt-card-news__media{margin:0}
+  .rvt-card-news--horizontal .rvt-card-news__image{width:180px;height:180px;aspect-ratio:auto}
+  .rvt-card-news--horizontal .rvt-card-news__body{flex:1 1 auto;padding-top:var(--rvt-spacing-4)}
+  .rvt-card-news--horizontal .rvt-card-news__title{padding-top:1px}
+  .rvt-card-news--horizontal .rvt-card-news__link{display:block;max-width:750px}
+  .rvt-card-news--horizontal .rvt-card-news__arrow{padding-top:calc((var(--rvt-type-line-height-24-28) - 16px) / 2 + 1px)}
+}
+@media (max-width:767px){
+  .rvt-card-news{--cn-pad:var(--rvt-spacing-24);--cn-media-gap:var(--rvt-spacing-24);--cn-sticker:64px;--cn-sticker-gap:var(--rvt-spacing-16)}
 }
 /* ---------- rvt-card-feature (Card-feature page example, Developer spec checklist) ----------
    Types: Orientation (Vertical 444px, Horizontal 1400px Desktop frames) x Layout (Image, Sticker, Plain). No Style axis.
@@ -1924,6 +1984,39 @@ body:not(.has-rail) .site-header__menu{display:none}
       </div>
     </article>`;
   };
+  /* rvt-card-news example: one story per Layout. Image reuses the football photo (decorative beside the title, so its alt text is empty);
+     Sticker reuses the rivet-stickers bike (contained); Plain has no media. Every optional part is shown: Featured badge, top category, arrow, date and tags. */
+  const NEWS = {
+    image: {tag: 'Athletics', title: 'Students set a record for season ticket sales ahead of the home opener',
+      iso: '2026-08-28', date: 'Aug 28, 2026', tags: ['Athletics', 'Students', 'Campus life']},
+    sticker: {tag: 'Transportation', title: 'Campus adds 300 bike racks near residence halls and the library',
+      iso: '2026-10-14', date: 'Oct 14, 2026', tags: ['Transportation', 'Sustainability', 'Students']},
+    plain: {tag: 'Financial aid', title: 'New scholarship helps first-generation students cover housing costs',
+      iso: '2026-11-05', date: 'Nov 5, 2026', tags: ['Financial aid', 'Scholarships', 'First-gen']}
+  };
+  const cardNewsEl = (orientation, layout, style) => {
+    const n = NEWS[layout];
+    const media = layout === 'image'
+      ? `<div class="rvt-card-news__media"><img class="rvt-card-news__image" src="img/billboard-example.jpg" width="900" height="900" alt=""></div>`
+      : layout === 'sticker'
+        ? `<div class="rvt-card-news__media"><span class="rvt-card-news__sticker"><svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><path class="fill" d="${BIKE.fill}"/><path class="art" d="${BIKE.art}"/></svg></span></div>`
+        : '';
+    return `<article class="rvt-card-news rvt-card-news--${orientation} rvt-card-news--${layout} rvt-card-news--${style}">
+      ${media}
+      <div class="rvt-card-news__body">
+        <span class="rvt-badge rvt-card-news__featured">Featured</span>
+        <p class="rvt-card-news__tag">${esc(n.tag)}</p>
+        <div class="rvt-card-news__head">
+          <h3 class="rvt-card-news__title"><a class="rvt-card-news__link" href="#card-news"><span class="rvt-card-news__link-text">${esc(n.title)}</span></a></h3>
+          <span class="rvt-card-news__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="${P.arrowRight}"/></svg></span>
+        </div>
+        <div class="rvt-card-news__foot">
+          <p class="rvt-card-news__meta"><time datetime="${n.iso}">${esc(n.date)}</time></p>
+          <ul class="rvt-card-news__tags" aria-label="Tags">${n.tags.map(t => `<li class="rvt-badge rvt-badge--subtle">${esc(t)}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </article>`;
+  };
   /* rvt-card-feature example: one topic per Layout. Image reuses the football photo (decorative beside the title, so its alt text is empty);
      Sticker shows the bare pencil-ruler sticker (rivet-stickers, art only); Plain has no picture. The arrow box is decorative. */
   const PENCIL_RULER = 'm30 19.113 6 9.6V61a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3V28.713l6-9.6ZM26 31.38V57h3V31.713a3.667 3.667 0 0 1-1.008.185A3.654 3.654 0 0 1 26 31.38Zm5 .333V57h3V31.38a3.654 3.654 0 0 1-1.992.518A3.667 3.667 0 0 1 31 31.713Zm2.796-2.753L30 22.887l-3.796 6.073c.187.218.429.454.712.636.313.202.645.317.999.303.347-.013.83-.154 1.445-.667l.64-.534.64.534c.616.513 1.098.654 1.445.667.355.014.686-.101 1-.303.282-.181.524-.418.71-.636ZM34 59h-8v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2Zm8-43h14v48H42V16Zm2 2v3h10v-3H44Zm10 5H44v34h10v-4h-6v-2h6v-4h-6v-2h6v-4h-6v-2h6v-4h-6v-2h6v-3h-6v-2h6v-5Zm0 36H44v3h10v-3Z';
@@ -2185,6 +2278,29 @@ body:not(.has-rail) .site-header__menu{display:none}
       },
       /* Sample link stays on the page. */
       wire: stage => stage.querySelectorAll('.rvt-card-event__link').forEach(a => a.addEventListener('click', e => e.preventDefault()))
+    },
+    /* rvt-card-news: Orientation and Layout share the type dropdown (Figma order: Image, Sticker, Plain for Vertical, then for Horizontal); Style is the radio.
+       Each type is capped at its Breakpoint=Desktop frame width: Vertical 440px, Horizontal 1200px. Under 768px Horizontal stacks like Vertical. */
+    'card-news': {
+      maxWidth: 440, // Figma rvt-card-news, Breakpoint=Desktop, Orientation=Vertical frame width
+      variants: [
+        {id: 'vertical-image', label: 'Vertical, Image'},
+        {id: 'vertical-sticker', label: 'Vertical, Sticker'},
+        {id: 'vertical-plain', label: 'Vertical, Plain'},
+        {id: 'horizontal-image', label: 'Horizontal, Image', maxWidth: 1200}, // Figma rvt-card-news, Breakpoint=Desktop, Orientation=Horizontal frame width
+        {id: 'horizontal-sticker', label: 'Horizontal, Sticker', maxWidth: 1200},
+        {id: 'horizontal-plain', label: 'Horizontal, Plain', maxWidth: 1200}
+      ],
+      option: {id: 'style', label: 'Style', choices: [
+        {id: 'outlined', label: 'Outlined'},
+        {id: 'raised', label: 'Raised'}
+      ]},
+      html: (v, style) => {
+        const [orientation, layout] = (v || 'vertical-image').split('-');
+        return cardNewsEl(orientation, layout, style || 'outlined');
+      },
+      /* Sample link stays on the page. */
+      wire: stage => stage.querySelectorAll('.rvt-card-news__link').forEach(a => a.addEventListener('click', e => e.preventDefault()))
     },
     /* rvt-card-feature: Orientation and Layout share the type dropdown (Figma order: Image, Sticker, Plain for Vertical, then for Horizontal). No Style axis, so no radio.
        Each type is capped at its Breakpoint=Desktop frame width: Vertical 444px, Horizontal 1400px. Under 768px Horizontal stacks like Vertical. */
