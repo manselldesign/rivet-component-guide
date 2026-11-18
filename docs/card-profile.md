@@ -72,12 +72,15 @@ Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Rais
 | Avatar (Vertical) | `rvt-avatar` 96px, `spacing/24` below (24px) | 64px, `spacing/16` below (16px) |
 | Avatar (Horizontal) | `rvt-avatar` 128px; gap to text `spacing/32` (Image) or `spacing/24` (No Image) | Stacks like Vertical |
 | Top metadata | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below | Same |
-| Name | `action/xl/strong` (20 / 28px), `text/strong` | `action/xl/strong` (18 / 24px) |
-| Arrow icon | 16px `rvt-arrow-right`, `spacing/16` gap from name | Same |
+| Name | `action/xl/strong` (20 / 28px, weight 600, width 110% `--rvt-font-width-semi-expanded`), `text/strong` | `action/xl/strong` (18 / 24px) |
+| Name (Horizontal) | Up to 800px wide | Stacks like Vertical |
+| Arrow icon | 16px `rvt-arrow-right`, `icon/strong`, `spacing/16` gap from name, centered on the first name line (6px from top) | Same, 4px from top |
 | Job title | `body/sm/regular` (16 / 24px), `text/default`, `spacing/4` above | Same |
 | Details group | `collapse-guard` 12px + `spacing/12` gap (24px above), `spacing/12` between rows | Guard 8px + `spacing/12` (20px above) |
-| Detail row | 16px icon (envelope, phone, device), `spacing/8` gap; link `body/sm/regular` (16 / 24px), `text/accent`, underline | Same |
-| Pronouns row | 16px `rvt-user`, `spacing/4` gap; label `body/sm/strong` (16 / 24px), value `body/sm/regular` (16 / 24px), `text/default` | Same |
+| Detail row | 16px icon (envelope, phone, device), `icon/default`, `spacing/4` from the top, `spacing/8` gap; link `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/accent`, underline. Each detail is its own link and sits above the card link | Same |
+| Pronouns row | 16px `rvt-user`, `icon/default`; label `body/sm/strong` (16 / 24px, weight 600, width 110%) `spacing/8` from the icon; value `body/sm/regular` (16 / 24px) `spacing/4` after the label; both `text/default` | Same |
 | Bottom group | Label and tags show and hide together. `spacing/24` above, `spacing/16` gap | Same |
 | Bottom label | "Area(s) of expertise:" `tag/sm/regular` (12 / 16px), `text/default` | Same |
 | Tags row | Subtle badges, `spacing/8` gap, wraps | Same |
+| Hover | Only when the pointer is on the name text: name turns `text/accent` with the browser's default underline and the arrow turns `icon/accent`. Instant, no transition. The border stays | Same |
+| Focus | 2px `border/accent-strong` ring right outside the card, no gap. Detail links get the same ring on their own | Same |
