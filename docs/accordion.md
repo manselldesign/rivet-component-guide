@@ -35,6 +35,17 @@ A stacked list of titles that each open to show more content. Readers scan the t
 - Don't put key information only inside a closed item. Some readers never open them
 - Order items by what readers need most, not alphabetically by default
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** Open and closed show a different icon, not only a color
+- **Content:** Each title makes sense on its own
+- **Content:** Nothing everyone needs is hidden in a closed item
+- **Developer:** The whole title row opens and closes with Enter or Space
+- **Developer:** Screen readers hear whether an item is open or closed
+- **Developer:** Nothing animates when readers ask for less motion
+
 ## Developer spec checklist
 
 ### Accordion item

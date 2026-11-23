@@ -40,6 +40,17 @@ A dialog is a small window that opens over the page to ask for a decision or a f
 - Label buttons with the action, like "Delete project" and "Keep editing", not "Yes" and "No"
 - Say what happens next, like "This can't be undone"
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Content:** The title and buttons say exactly what will happen
+- **Content:** Readers are told what happens to unsaved work
+- **Developer:** Focus moves into the dialog and returns to where readers were
+- **Developer:** Tab stays inside the dialog while it's open
+- **Developer:** Escape closes it, unless readers must choose
+- **Developer:** It never closes on its own. Readers decide when
+
 ---
 
 ## Developer spec checklist

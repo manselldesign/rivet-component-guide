@@ -46,6 +46,17 @@ Ask one question: **Is each tab a full section of content, or a quick switch for
 - Open the tab most readers need first
 - Don't hide key information in a tab other than the first. Many readers never click the others
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** The selected tab stands out without relying on color
+- **Content:** Labels are short, plain and parallel
+- **Content:** Nothing everyone needs is hidden in a later tab
+- **Developer:** Arrow keys move between tabs
+- **Developer:** Screen readers hear which tab is selected
+- **Developer:** Switching tabs never clears what readers typed
+
 ---
 
 ## Developer spec checklist

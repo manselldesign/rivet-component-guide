@@ -5,7 +5,7 @@
       "name": "Accordion",
       "summary": "A stacked list of titles that each open to show more content.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30"
+      "updated": "2026-11-23"
     },
     {
       "slug": "badge",
@@ -20,7 +20,7 @@
       "name": "Alert",
       "summary": "A colored box that tells readers something important about the page or a task.",
       "status": "ready-for-dev",
-      "updated": "2026-11-04",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-2"
     },
     {
@@ -132,7 +132,7 @@
       "name": "Checkbox",
       "summary": "A checkbox lets people pick one or more options from a list, like the programs they're interested in or the topics they want emails about.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-11"
     },
     {
@@ -140,7 +140,7 @@
       "name": "Dialog",
       "summary": "A dialog is a small window that opens over the page to ask for a decision or a few details, like confirming a deletion or saving changes before leaving a form.",
       "status": "ready-for-dev",
-      "updated": "2026-10-31",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-21"
     },
     {
@@ -156,7 +156,7 @@
       "name": "Dropdown",
       "summary": "A dropdown is a short menu that opens from a button or a header link, like an account menu with \"My profile\" and \"Sign out\".",
       "status": "working",
-      "updated": "2026-10-30",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-13"
     },
     {
@@ -164,7 +164,7 @@
       "name": "Empty state",
       "summary": "An empty state fills a space that has nothing in it yet, like a file upload area before anyone adds a file.",
       "status": "ready-for-dev",
-      "updated": "2026-10-31",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-14"
     },
     {
@@ -172,7 +172,7 @@
       "name": "File input",
       "summary": "A file input lets people attach a file to a form, like a letter of recommendation, a transcript or a résumé.",
       "status": "ready-for-dev",
-      "updated": "2026-10-31",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-15"
     },
     {
@@ -242,7 +242,7 @@
       "name": "Input group",
       "summary": "An input group joins a text field with a button or a fixed label, like a search box with a \"Search\" button or an email field that ends in \"@iu.edu\".",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-19"
     },
     {
@@ -266,7 +266,7 @@
       "name": "Pagination",
       "summary": "A row of page numbers and arrows that splits a long list of results into pages.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-22"
     },
     {
@@ -274,7 +274,7 @@
       "name": "Radio",
       "summary": "A group of options where readers can pick only one.",
       "status": "ready-for-dev",
-      "updated": "2026-10-29",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-24"
     },
     {
@@ -298,7 +298,7 @@
       "name": "Select input",
       "summary": "A field that opens a list of options so readers can pick one.",
       "status": "ready-for-dev",
-      "updated": "2026-11-04",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-25"
     },
     {
@@ -338,7 +338,7 @@
       "name": "Steps",
       "summary": "A numbered row of steps that shows readers where they are in a longer process and what comes next.",
       "status": "ready-for-dev",
-      "updated": "2026-10-28",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-29"
     },
     {
@@ -354,7 +354,7 @@
       "name": "Table",
       "summary": "A grid of rows and columns that lets readers compare facts side by side, like tuition by program or office hours by department.",
       "status": "ready-for-dev",
-      "updated": "2026-11-05",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-31"
     },
     {
@@ -362,7 +362,7 @@
       "name": "Text input",
       "summary": "A field where readers type a short answer, like a name, email address or search term.",
       "status": "ready-for-dev",
-      "updated": "2026-11-04",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-33"
     },
     {
@@ -370,7 +370,7 @@
       "name": "Textarea",
       "summary": "A larger field where readers type answers that run longer than one line, like a comment or a short essay.",
       "status": "ready-for-dev",
-      "updated": "2026-10-30",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-34"
     },
     {
@@ -386,7 +386,7 @@
       "name": "Tabs",
       "summary": "A row of labels that switches between related sets of content in the same spot.",
       "status": "ready-for-dev",
-      "updated": "2026-11-12",
+      "updated": "2026-11-23",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-32"
     },
     {

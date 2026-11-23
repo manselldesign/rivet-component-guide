@@ -44,6 +44,17 @@ A numbered row of steps that shows readers where they are in a longer process an
 - Don't rely on color alone. Pair status colors with an icon so everyone can tell them apart
 - Tell screen reader users which step they're on, like "Step 2 of 5, current"
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** The current step and each status are clear without color
+- **Content:** Readers know what they need before they start
+- **Content:** Labels say what each step asks for
+- **Developer:** Screen readers hear the step number, total and status
+- **Developer:** Going back a step never clears what readers entered
+- **Developer:** Readers are warned before time runs out and can ask for more
+
 ---
 
 ## Developer spec checklist

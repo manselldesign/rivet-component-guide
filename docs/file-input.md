@@ -37,6 +37,17 @@ A file input lets people attach a file to a form, like a letter of recommendatio
 - State file limits in the helper text before people pick a file, not only in an error
 - Show the full file name with its extension, like "transcript-2026.pdf", so people can check they picked the right one
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Content:** Helper text lists file types and size before readers choose
+- **Content:** Readers know which documents they need before they start
+- **Content:** Errors name the file and say how to fix it
+- **Developer:** Readers can choose, change and remove a file with only a keyboard
+- **Developer:** Screen readers hear when a file is added or removed
+- **Developer:** Chosen files stay attached after an error elsewhere in the form
+
 ---
 
 ## Developer spec checklist

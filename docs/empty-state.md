@@ -39,6 +39,17 @@ An empty state fills a space that has nothing in it yet, like a file upload area
 - Label buttons with the action, like "Browse files" or "Upload files", not "OK" or "More info"
 - Tell people about limits before they hit them, like file types and sizes
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** The sticker is decoration. The words carry the message
+- **Content:** The title says what's happening in plain words
+- **Content:** There's always a clear next step
+- **Content:** Limits are stated before readers hit them
+- **Developer:** Readers can add and remove files with only a keyboard
+- **Developer:** Screen readers skip the sticker and hear when files are added
+
 ---
 
 ## Developer spec checklist

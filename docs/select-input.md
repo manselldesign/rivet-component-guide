@@ -50,6 +50,18 @@ A field that opens a list of options so readers can pick one. It saves space whe
 - Keep option text short so it fits without cutting off
 - Put the most important detail first in each option
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** Every status has an icon and a message, not only a color
+- **Content:** The label says what to choose and stays visible
+- **Content:** Options use plain words readers already know
+- **Content:** Errors say what went wrong and how to fix it
+- **Developer:** Readers can open the list and choose with only a keyboard
+- **Developer:** Screen readers hear the label, the choice and any error
+- **Developer:** The reader's choice stays selected after an error
+
 ---
 
 ## Developer spec checklist

@@ -47,6 +47,18 @@ A checkbox lets people pick one or more options from a list, like the programs t
 - Start each label with a capital letter and skip the period
 - In an error, say how to fix it, not just what went wrong
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** Checked and unchecked look different without relying on color
+- **Content:** The group label asks one clear question
+- **Content:** Errors say how to fix it, like "Pick at least one program"
+- **Developer:** Clicking the label checks the box, not only the small square
+- **Developer:** Readers can check and uncheck options with only a keyboard
+- **Developer:** Screen readers hear the group label with each option
+- **Developer:** Choices stay checked after an error
+
 ---
 
 ## Developer spec checklist

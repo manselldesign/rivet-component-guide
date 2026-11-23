@@ -49,6 +49,18 @@ A field where readers type a short answer, like a name, email address or search 
 - Mark required fields with an asterisk and say so at the top of the form
 - In error messages, say what to fix, like "Enter an email ending in iu.edu"
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** Every status has an icon and a message, not only a color
+- **Content:** The label stays visible while readers type
+- **Content:** Helper text gives the format before readers type
+- **Content:** Errors say what went wrong and how to fix it
+- **Developer:** Readers can use the field with only a keyboard
+- **Developer:** Screen readers hear the label, helper text and error
+- **Developer:** What readers typed stays in the field after an error
+
 ---
 
 ## Developer spec checklist

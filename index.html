@@ -352,6 +352,9 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
 /* Examples list: no rule above the first item or below the last; those items drop their outer padding so the 32px above and the section gap below stay true. */
 .prose ul.rvt-list-hub--examples>li:first-child{border-top:0;padding-top:0}
 .prose ul.rvt-list-hub--examples>li:last-child{border-bottom:0;padding-bottom:0}
+/* Accessibility checklist (the list under "## Accessibility checklist" on a component page): rvt-list-hub, Type=Check, Size=Compact, title only,
+   plus an rvt-badge (Subtle, Default) at the end of each item naming who owns that check: Design, Content or Developer. */
+.prose ul.rvt-list-hub--a11y .rvt-badge{flex:none}
 @media (max-width:900px){.ex{grid-template-columns:1fr;gap:40px}}
 @media (max-width:560px){.prose .ex-item h3{font-size:18px;line-height:24px;margin-top:16px}}
 /* rvt-text-block rhythm (Text Block page, _Text Block Item): no dividers; space ABOVE each element.
@@ -2650,6 +2653,22 @@ body:not(.has-rail) .site-header__menu{display:none}
       [...ul.children].forEach(li => {
         li.innerHTML = `<span class="rvt-list-hub__marker" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="${P12[kind === 'check' ? 'check' : 'close']}"/></svg></span><span class="rvt-list-hub__title">${li.innerHTML}</span>`;
       });
+    });
+    // "Accessibility checklist": every list in that section -> rvt-list-hub Compact (Check). "- **Design:** text" puts the owner in an rvt-badge at the end.
+    root.querySelectorAll('h2').forEach(h => {
+      if (h.textContent.trim().toLowerCase() !== 'accessibility checklist') return;
+      for (let n = h.nextElementSibling; n && n.tagName !== 'H2' && n.tagName !== 'HR'; n = n.nextElementSibling) {
+        if (n.tagName !== 'UL') continue;
+        n.className = 'rvt-list-hub rvt-list-hub--check rvt-list-hub--a11y';
+        n.setAttribute('aria-label', 'Accessibility checklist');
+        [...n.children].forEach(li => {
+          const s = li.firstElementChild;
+          let owner = '';
+          if (s && s.tagName === 'STRONG' && li.firstChild === s && /:$/.test(s.textContent.trim())) { owner = s.textContent.trim().slice(0, -1); s.remove(); }
+          li.innerHTML = `<span class="rvt-list-hub__marker" aria-hidden="true"><svg viewBox="0 0 12 12" focusable="false"><path d="${P12.check}"/></svg></span><span class="rvt-list-hub__title">${li.innerHTML.trim()}</span>` +
+            (owner ? `<span class="rvt-badge rvt-badge--subtle"><span class="sr-only">Owner: </span>${esc(owner)}</span>` : '');
+        });
+      }
     });
     // Obsidian callouts -> rvt-alert
     root.querySelectorAll('blockquote').forEach(bq => {

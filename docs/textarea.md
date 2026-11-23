@@ -43,6 +43,18 @@ A larger field where readers type answers that run longer than one line, like a 
 - Don't use the field's placeholder text for instructions. It disappears when readers type
 - In error messages, say what to fix, like "Enter at least 50 characters"
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** Every status has an icon and a message, not only a color
+- **Content:** The label stays visible while readers type
+- **Content:** Helper text gives the length limit before readers type
+- **Content:** Errors say what went wrong and how to fix it
+- **Developer:** Readers can use the field with only a keyboard
+- **Developer:** Screen readers hear the label, helper text and error
+- **Developer:** What readers typed stays in the field after an error
+
 ---
 
 ## Developer spec checklist

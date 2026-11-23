@@ -51,6 +51,17 @@ An alert is a colored box that tells readers something important about the page 
 - Button labels should start with a verb ("Update payment"), not "Click here"
 - Don't rely on color alone. Say "Error" or "Warning" in the words too
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** Every status has an icon, not only a color
+- **Content:** The message says what happened and what to do next
+- **Content:** The words are plain, with no codes or jargon
+- **Developer:** Screen readers hear a new alert without losing their place
+- **Developer:** Alerts stay until readers close them. They never vanish on a timer
+- **Developer:** Readers can reach the buttons and close it with only a keyboard
+
 ## Developer spec checklist
 
 ### Default and Buttons

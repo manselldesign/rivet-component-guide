@@ -44,6 +44,17 @@ A dropdown is a short menu that opens from a button or a header link, like an ac
 - Put the most-used items first
 - Put actions like "Sign out" last, in their own group
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Content:** The button names what's inside, not "Menu"
+- **Content:** Items stay in the same order on every page
+- **Developer:** It opens on click or keyboard, never only on hover
+- **Developer:** Arrow keys move through items and Escape closes it
+- **Developer:** Screen readers hear whether the menu is open or closed
+- **Developer:** Focus returns to the button when the menu closes
+
 ---
 
 ## Developer spec checklist

@@ -45,6 +45,19 @@ A group of options where readers can pick only one. Every choice stays visible, 
 - Don't preselect an option unless most readers would choose it
 - Tell readers why an option is disabled, in helper text or the description
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** Selected and unselected look different without relying on color
+- **Content:** The label asks one clear question
+- **Content:** Options cover every case, so no reader gets stuck
+- **Content:** Errors say what went wrong and how to fix it
+- **Developer:** Clicking the label selects the option
+- **Developer:** Arrow keys move between options
+- **Developer:** Screen readers hear the question with each option
+- **Developer:** The reader's choice stays selected after an error
+
 ---
 
 ## Developer spec checklist

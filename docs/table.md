@@ -43,6 +43,16 @@ A grid of rows and columns that lets readers compare facts side by side, like tu
 - Use the same format down a column, like "Aug. 24, 2026" for every date
 - Give action icons a text label for screen readers, like "Edit application"
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson, striped rows too
+- **Design:** Status badges use words, not only a color
+- **Content:** Column headers are short and name the detail
+- **Developer:** Screen readers hear the column and row header with each cell
+- **Developer:** Readers can scroll sideways with only a keyboard
+- **Developer:** Action icons have a text label for screen readers
+
 ---
 
 ## Developer spec checklist

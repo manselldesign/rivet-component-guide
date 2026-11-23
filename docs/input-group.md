@@ -41,6 +41,17 @@ An input group joins a text field with a button or a fixed label, like a search 
 - Keep button and label text to one or two words
 - Use placeholder text only as an example, never as the label
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Content:** The field has a label, even if only screen readers hear it
+- **Content:** The button says what it does, like "Search"
+- **Content:** Errors say what went wrong and how to fix it
+- **Developer:** Readers can type and send with only a keyboard
+- **Developer:** Screen readers hear the fixed text, like "@iu.edu", with the field
+- **Developer:** What readers typed stays in the field after an error
+
 ---
 
 ## Developer spec checklist

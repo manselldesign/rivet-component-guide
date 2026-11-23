@@ -37,6 +37,17 @@ A row of page numbers and arrows that splits a long list of results into pages. 
 - Keep the current page number visible so readers know where they are
 - Give the arrow buttons labels like "Next page" for screen readers
 
+## Accessibility checklist
+Check these before the page goes live. Each one names who owns it.
+
+- **Design:** Text and borders pass contrast in Light, Dark and Crimson
+- **Design:** The current page stands out without relying on color
+- **Design:** Buttons are large enough to tap on a phone
+- **Content:** Readers see how many results there are
+- **Developer:** Arrow buttons have a label for screen readers, like "Next page"
+- **Developer:** Screen readers hear which page is current
+- **Developer:** Readers can move through pages with only a keyboard
+
 ---
 
 ## Developer spec checklist
