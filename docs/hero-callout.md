@@ -55,10 +55,10 @@ Shared rules: Background `background/default`, with a 1px `border/default` line 
 | Element | Side by side | Stacked | Mobile |
 | --- | --- | --- | --- |
 | Outer padding | `spacing/96` top (96px), `spacing/80` left and right (80px), `spacing/96` bottom (96px) | `spacing/96` top and left (96px), `spacing/80` right (80px), `spacing/96` bottom (96px) | `spacing/40` top (32px), `spacing/24` left and right (24px), `spacing/48` bottom (36px) |
-| Text to card | `spacing/64` gap (64px); card 440px wide, aligned to the bottom. With less than 1200px of room the card wraps under the text, `spacing/64` above it, still 440px wide | `spacing/64` above the card (64px); card 440px wide | `spacing/48` above the card (36px); card full width |
+| Text to card | `spacing/64` gap (64px); card 440px wide, aligned to the bottom. With less than 1200px of room the card wraps under the text, `spacing/64` above it, still 440px wide | `spacing/64` above the card (64px); card 440px wide | `spacing/48` above the card (36px); card up to 440px wide, full width when there is less room |
 | Metadata | `tag/md/caps` (14 / 20px), `text/brand`; `spacing/8` below (8px) | Same | Same |
-| Headline | `display/lg/strong` (48 / 52px), `text/brand` | Same | `display/lg/strong` (29 / 32px) |
-| Body | `body/base/regular` (18 / 28px), `text/default`; `spacing/20` above (20px) | Same | `body/base/regular` (16 / 24px); `spacing/24` above (24px) |
+| Headline | `display/lg/strong` (48 / 52px), `text/brand`. Fluid: the size follows the hero's width in a straight line, from 29px at 375px to 48px at 1024px or wider, always a whole pixel; line height is 1.1 times the size, snapped to the 4px grid | Same | `display/lg/strong` (29 / 32px) at 375px |
+| Body | `body/sm/regular` (16 / 24px), `text/default`; `spacing/16` above (16px) | Same | Same |
 | Buttons | Side by side, `spacing/40` above (40px), `spacing/16` gap between buttons and between rows when they wrap (16px), `spacing/16` left and right padding (16px) | Same | Stacked, each button hugs its label, left aligned, `spacing/40` above (32px), `spacing/16` gap (16px) |
 | Card padding | `spacing/16` all sides (16px) | Same | Same |
 | Card eyebrow | `tag/sm/regular` (12 / 16px), `text/brand`, `spacing/4` below (4px) | Same | Same |

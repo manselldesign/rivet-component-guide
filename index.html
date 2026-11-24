@@ -99,7 +99,7 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
 /* ---------- rvt-hero-callout, Dark mode ----------
    Spacing from Figma rvt-hero-callout, on spacing tokens (their mobile values switch below 768px):
    Desktop spacing/96 top and bottom; Mobile spacing/40 top (32px), spacing/48 bottom (36px).
-   Metadata spacing/8 below. Body spacing/20 above (Mobile spacing/24). Buttons spacing/40 above (Mobile 32px), spacing/16 gap,
+   Metadata spacing/8 below. Body spacing/16 above. Buttons spacing/40 above (Mobile 32px), spacing/16 gap,
    stacked on Mobile, each button hugging its label. Text to card spacing/64 (Mobile spacing/48, 36px). */
 .hero{background:#1f2528;color:#ffffff;padding-top:var(--rvt-spacing-96)}
 .hero{overflow-x:clip}
@@ -111,14 +111,19 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
 .hero .tag{font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:2px;text-transform:uppercase;margin:0 0 var(--rvt-spacing-8);color:#ffffff}
 .hero .tag a{color:inherit;text-decoration:none}
 .hero .tag a:hover{text-decoration:underline}
-/* display/lg/strong: 48/52 desktop, 29/32 mobile */
+/* display/lg/strong: 48/52 desktop, 29/32 mobile. Fluid in between (below): 29px on a 375px screen up to 48px at 1200px,
+   always a whole pixel, line height snapped to the 4px grid. Browsers without round() keep the two fixed sizes. */
 .hero h1{font-size:var(--rvt-type-size-29-48);line-height:var(--rvt-type-line-height-32-52);font-weight:var(--w-black);margin:0;color:#ffffff;text-wrap:balance}
-.hero .intro{font-size:18px;line-height:28px;margin:var(--rvt-spacing-20) 0 0;max-width:800px;color:#ffffff}
+@supports (font-size:round(nearest,1px,1px)){
+  .hero h1{--hero-title:round(nearest,clamp(29px,calc(29px + (100vw - 375px) * 0.0230303),48px),1px);
+    font-size:var(--hero-title);line-height:round(nearest,calc(var(--hero-title) * 1.1),4px)}
+}
+/* Intro: body/sm/regular 16/24 at every size, spacing/16 above. */
+.hero .intro{font-size:16px;line-height:24px;margin:var(--rvt-spacing-16) 0 0;max-width:800px;color:#ffffff}
 .hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-16);margin-top:var(--rvt-spacing-40)}
 @media (max-width:767px){
   .hero{padding-top:var(--rvt-spacing-40)}
   .hero-inner{padding-bottom:var(--rvt-spacing-48)}
-  .hero .intro{margin-top:var(--rvt-spacing-24)}
   .hero .actions{flex-direction:column;align-items:flex-start}
 }
 .hero :focus-visible{outline-color:#efdfc8}
@@ -1084,7 +1089,7 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
    Background background/default; 1px border/default rule along the bottom (the last thing in the hero), starting flush with the content on the left and running past the right padding to the page edge.
    Side by side: spacing/96 top, spacing/80 sides (the page gutter: flush with the main content); text and card in a row, spacing/64 apart, card 440px wide, aligned to the bottom.
    Stacked: spacing/96 top; card under the text, spacing/64 above it, 700px wide.
-   Metadata tag/md/caps text/brand, spacing/8 below. Headline display/lg/strong text/brand, up to 920px. Body body/base/regular text/default, spacing/20 above, up to 800px.
+   Metadata tag/md/caps text/brand, spacing/8 below. Headline display/lg/strong text/brand, up to 920px, fluid between its Mobile and Desktop sizes. Body body/sm/regular text/default, spacing/16 above, up to 800px.
    Buttons: rvt-link Extra-large, Strong first then Normal, spacing/40 above, spacing/16 apart (also between wrapped rows).
    Card: rvt-card Compact, Plain, Raised (the Card example's own classes). */
 .rvt-hero-callout-wrap{container-type:inline-size}
@@ -1103,8 +1108,8 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
   font:var(--rvt-font-tag-md-caps);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-xl);text-transform:uppercase}
 .rvt-hero-callout__title{max-width:920px;margin:0;color:var(--rvt-text-brand);
   font:var(--rvt-font-display-lg-strong);font-stretch:var(--rvt-font-width-normal);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
-.rvt-hero-callout__body{max-width:800px;margin:0;padding-top:var(--rvt-spacing-20);color:var(--rvt-text-default);
-  font:var(--rvt-font-body-base-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-hero-callout__body{max-width:800px;margin:0;padding-top:var(--rvt-spacing-16);color:var(--rvt-text-default);
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
 .rvt-hero-callout__actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-16);padding-top:var(--rvt-spacing-40)}
 /* rvt-link, Extra-large: component/button/height-xl, spacing/16 sides, spacing/8 to the 16px arrow. Focus: 2px border/accent-strong, 2px outside, square corners.
    Strong: background/brand, text and arrow on-brand-alt; hover background/accent. Normal: 1px border/accent drawn inside, text/accent, icon/accent;
@@ -1120,7 +1125,7 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
 .rvt-hero-callout__button--strong svg,.rvt-hero-callout__button--strong:hover svg{fill:var(--rvt-icon-on-brand-alt)}
 .rvt-hero-callout__button--strong:hover{background:var(--rvt-background-accent)}
 .rvt-hero-callout__button:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
-/* The card is 440px wide, beside the text or on its own line (Stacked, or Side by side once it wraps), so its arrow stays close to the title. Full width on Mobile. */
+/* The card is never wider than 440px, beside the text or on its own line, in Mobile mode too, so its arrow stays close to the title. With less room than that it fills the width. */
 .rvt-hero-callout__card{flex:none;width:440px;max-width:100%}
 /* Side by side needs about 1200px of room (text column at least ~700px beside the 440px card and the spacing/64 gap); with less, the card wraps under the text, as in Stacked. */
 @container (max-width:1199px){
@@ -1129,15 +1134,19 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
 }
 @container (max-width:767px){
   /* Mobile mode, whatever the screen size (like the billboard): the tokens with a Mobile value take it here, the same values generated/rivet-tokens.css gives them below 768px.
-     Padding spacing/40 top (32px), spacing/24 sides; spacing/48 (36px) below the content and above the card. Body spacing/24 above.
-     Buttons stacked, each hugging its label, spacing/16 apart. Card full width. */
+     Padding spacing/40 top (32px), spacing/24 sides; spacing/48 (36px) below the content and above the card.
+     Buttons stacked, each hugging its label, spacing/16 apart. Card up to 440px wide. */
   .rvt-hero-callout,.rvt-hero-callout--stacked{--rvt-spacing-40:32px;--rvt-spacing-48:36px;--rvt-type-size-29-48:29px;--rvt-type-line-height-32-52:32px;--rvt-type-size-16-18:16px;--rvt-type-line-height-28:24px;
     padding:var(--rvt-spacing-40) 0 0}
   .rvt-hero-callout__inner{gap:var(--rvt-spacing-48);padding-bottom:var(--rvt-spacing-48)}
   .rvt-hero-callout__title{font-size:var(--rvt-type-size-29-48);line-height:var(--rvt-type-line-height-32-52)}
-  .rvt-hero-callout__body{padding-top:var(--rvt-spacing-24);font-size:var(--rvt-type-size-16-18);line-height:var(--rvt-type-line-height-28)}
   .rvt-hero-callout__actions{flex-direction:column;align-items:flex-start}
-  .rvt-hero-callout__card,.rvt-hero-callout--stacked .rvt-hero-callout__card{width:100%}
+}
+/* Headline, fluid: 29px when the hero has 375px of room up to 48px at 1024px or more, in a straight line between, always a whole pixel.
+   Line height snaps to the 4px grid (29/32 ... 48/52). It follows the hero's own width, not the screen. Browsers without round() keep the two fixed sizes. */
+@supports (font-size:round(nearest,1px,1px)){
+  .rvt-hero-callout__title{--hc-title:round(nearest,clamp(29px,calc(29px + (100cqi - 375px) * 0.0292758),48px),1px);
+    font-size:var(--hc-title);line-height:round(nearest,calc(var(--hc-title) * 1.1),4px)}
 }
 @media (prefers-reduced-motion:reduce){.rvt-hero-callout__button,.rvt-hero-callout__button svg{transition:none}}
 /* ---------- rvt-breadcrumbs (Breadcrumbs page example, Developer spec checklist) ----------
