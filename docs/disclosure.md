@@ -24,6 +24,8 @@ A disclosure is a single link that opens to show a short piece of extra informat
 - **Closed:** Only the title shows, with an arrow pointing right. Use it as the starting state
 - **Open:** The arrow points down and the extra text shows below the title
 
+When you point at the title, it underlines so people know they can click it.
+
 ## Writing tips
 - Write the title as a question or a clear label, like "Who is eligible?"
 - Keep the hidden text to two or three sentences
@@ -34,11 +36,12 @@ A disclosure is a single link that opens to show a short piece of extra informat
 
 ## Developer spec checklist
 
-Shared rules: 1px `border/default` border, no fill, no radius. Clicking the title opens and closes it. The same values apply on Desktop and Mobile.
+Shared rules: 1px `border/default` border drawn inside (it doesn't add to the size: closed 56px, open 112px), no fill, no radius. The title row is a real button with `aria-expanded` and `aria-controls`; clicking it, or pressing Enter or Space, opens and closes it. The text slides open and closed (height and fade, 220ms ease-out, off for reduced motion); the arrow swaps, it doesn't spin. Keyboard focus shows a 2px `border/accent-strong` outline, 2px outside the title row. The same values apply on Desktop and Mobile.
 
 | Element | Closed | Open |
 | --- | --- | --- |
 | Padding | `spacing/16` all sides (16px) | Same |
-| Arrow | 16px `rvt-chevron-right`, `spacing/4` top offset, `spacing/8` gap to title | 16px `rvt-chevron-down` |
-| Title | `action/lg/strong` (16 / 24px), `text/accent` | Same |
-| Body text | — | `body/xs/regular` (14 / 20px), `text/default`, `spacing/8` below the title, 24px left indent (`spacing/8` + `spacing/16`) to line up with the title, `spacing/8` below |
+| Arrow | 16px `rvt-chevron-right`, `icon/accent`, `spacing/4` top offset, `spacing/8` gap to title | 16px `rvt-chevron-down` |
+| Title | `action/lg/strong` (16 / 24px, weight 600, width 110% `--rvt-font-width-semi-expanded`), `text/accent` | Same |
+| Hover | Title underlined in `text/accent` (default thickness), 150ms ease-out; no fill change | Same |
+| Body text | — | `body/xs/regular` (14 / 20px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`, max width 800px, `spacing/8` below the title, 24px left indent (`spacing/8` + `spacing/16`) to line up with the title, `spacing/8` below |

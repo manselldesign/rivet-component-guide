@@ -675,6 +675,29 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-accordion__body a{color:var(--rvt-text-link);text-underline-offset:3px;text-decoration-thickness:1px;transition:text-decoration-color .15s ease-out}
 .rvt-accordion__body a:hover{text-decoration-thickness:2px}
 
+/* ---------- rvt-disclosure (Disclosure page, Developer spec checklist) ----------
+   Box: 1px border/default drawn inside (box-shadow inset, so closed = 56px and open = 112px, like the Figma symbols), no fill, no radius, spacing/16 all sides.
+   Toggle: real <button>, arrow 16px icon/accent, spacing/4 down to sit on the title line, spacing/8 gap; title action/lg/strong text/accent.
+   Panel: spacing/8 below the title, 24px left indent (spacing/8 + spacing/16) to line up with the title, spacing/8 bottom; body/xs/regular text/default, max-width 800px.
+   Width: every Roboto Flex style here is font/width/semi-expanded (110%), set AFTER the font shorthand (the shorthand resets it).
+   Hover: the title underlines (text/accent, default thickness), 150ms ease-out. Focus: 2px border/accent-strong outline, 2px offset, on the toggle. Open/close: height + opacity, 220ms ease-out; the arrow swaps (right to down), it does not spin. */
+.rvt-disclosure{box-shadow:inset 0 0 0 1px var(--rvt-border-default);padding:var(--rvt-spacing-16);background:transparent;border-radius:0}
+.rvt-disclosure+.rvt-disclosure{margin-top:var(--rvt-spacing-24)}
+.rvt-disclosure__toggle{display:flex;align-items:flex-start;gap:var(--rvt-spacing-8);width:100%;margin:0;padding:0;border:0;border-radius:0;background:transparent;
+  color:var(--rvt-text-accent);font:var(--rvt-font-action-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none}
+.rvt-disclosure__toggle:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+.rvt-disclosure__title{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;text-decoration:underline;text-decoration-color:transparent;transition:text-decoration-color .15s ease-out}
+.rvt-disclosure__toggle:hover .rvt-disclosure__title{text-decoration-color:currentColor}
+.rvt-disclosure__icon{flex:none;width:16px;height:16px;margin-top:var(--rvt-spacing-4);color:var(--rvt-icon-accent)}
+.rvt-disclosure__icon svg{display:block;width:16px;height:16px;fill:currentColor}
+.rvt-disclosure__toggle[aria-expanded="true"] .is-right,.rvt-disclosure__toggle[aria-expanded="false"] .is-down{display:none}
+.rvt-disclosure__panel{display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden;transition:grid-template-rows .22s ease-out,opacity .22s ease-out,visibility 0s linear .22s}
+.rvt-disclosure__panel.is-open{grid-template-rows:1fr;opacity:1;visibility:visible;transition:grid-template-rows .22s ease-out,opacity .22s ease-out,visibility 0s}
+.rvt-disclosure__panel>div{min-height:0;overflow:hidden}
+.rvt-disclosure__body{max-width:800px;margin:0;padding:var(--rvt-spacing-8) 0 var(--rvt-spacing-8) calc(var(--rvt-spacing-8) + var(--rvt-spacing-16));
+  font:var(--rvt-font-body-xs-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);color:var(--rvt-text-default)}
+@media (prefers-reduced-motion:reduce){.rvt-disclosure__panel,.rvt-disclosure__panel.is-open,.rvt-disclosure__title{transition:none}}
+
 /* ---------- Example controls: "Switch theme" tabs, then "Select type" for components with more than one type ----------
    The two controls sit side by side, bottom-aligned, spacing/24 apart, and wrap under each other on narrow screens.
    Each has its own label in the input-label style (.demo-switch-label). */
@@ -1787,6 +1810,14 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
 
   /* ---------- Component examples, one builder per slug ----------
      Each returns the markup for the example stage; wire() adds the behaviour after it is in the page. */
+  // rvt-disclosure example: one optional detail each, short IU financial aid copy. The first starts open to show both states.
+  const DISCLOSURE_ITEMS = [
+    {title: 'What counts as a dependent?', open: true,
+     body: 'A dependent is usually a child or other person who lives with you and gets more than half of their support from you. If you aren\'t sure, contact Student Financial Aid before you submit.'},
+    {title: 'What happens to my aid if I drop a class?',
+     body: 'Dropping below 12 credit hours can lower your aid. Talk with Student Financial Aid before you drop so you know how your award will change.'}
+  ];
+  const DIS_CHEVRON_RIGHT = 'M6.263 15.146 12.31 8 6.263.854 4.737 2.146 9.69 8l-4.953 5.854 1.526 1.292Z'; // rvt-chevron-right (16px), from rivet-icons
   const ACCORDION_ITEMS = [
     {title: 'How do I request an official transcript?', open: true, body: '<p>Order transcripts through One.IU under <a href="#">Student Records</a>. Electronic copies usually arrive within one business day; mailed copies take five to seven.</p>'},
     {title: 'When is the application deadline?', body: '<p>Early action applications are due November 1. The regular deadline is February 1 for fall admission.</p>'},
@@ -2398,6 +2429,30 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
     });
   };
   const demos = {
+    disclosure: {
+      maxWidth: 811, // Figma rvt-disclosure symbol width (Open=False / Open=True, 811px; no Breakpoint frame, same on Desktop and Mobile)
+      html: () => DISCLOSURE_ITEMS.map((it, i) => `<div class="rvt-disclosure" data-rvt-disclosure>
+          <button class="rvt-disclosure__toggle" type="button" id="dis-toggle-${i}" aria-expanded="${!!it.open}" aria-controls="dis-panel-${i}">
+            <span class="rvt-disclosure__icon" aria-hidden="true"><svg class="is-right" viewBox="0 0 16 16" focusable="false"><path d="${DIS_CHEVRON_RIGHT}"/></svg><svg class="is-down" viewBox="0 0 16 16" focusable="false"><path d="${P.chevronDown}"/></svg></span>
+            <span class="rvt-disclosure__title">${esc(it.title)}</span>
+          </button>
+          <div class="rvt-disclosure__panel${it.open ? ' is-open' : ''}" id="dis-panel-${i}"${it.open ? '' : ' aria-hidden="true"'}>
+            <div><p class="rvt-disclosure__body">${esc(it.body)}</p></div>
+          </div>
+        </div>`).join(''),
+      wire: root => {
+        root.querySelectorAll('[data-rvt-disclosure]').forEach(d => {
+          const btn = d.querySelector('.rvt-disclosure__toggle');
+          const panel = d.querySelector('.rvt-disclosure__panel');
+          btn.addEventListener('click', () => {
+            const open = btn.getAttribute('aria-expanded') !== 'true';
+            btn.setAttribute('aria-expanded', String(open));
+            panel.classList.toggle('is-open', open);
+            if (open) panel.removeAttribute('aria-hidden'); else panel.setAttribute('aria-hidden', 'true');
+          });
+        });
+      }
+    },
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
       html: () => `<div class="rvt-accordion" data-rvt-accordion>${ACCORDION_ITEMS.map((it, i) => `
