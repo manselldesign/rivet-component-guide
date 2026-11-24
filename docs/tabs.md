@@ -97,4 +97,4 @@ Shared rules: one tab is always selected. Tabs use `role="tablist"` / `role="tab
 | Segmented group padding | `spacing/4` all sides (4px) | Same |
 | Segmented group fill and border | `background/tint`, 1px `component/input/border`, drawn inside | Same |
 | Segmented tabs | Hug their label, no gap | Same |
-| Segmented label (optional) | `heading/xs/strong` (14 / 20px), `text/strong`, `spacing/8` (8px) above the tab group. Same as the text input label. Give it an `id` and point the tablist's `aria-labelledby` at it. With no visible label, use `aria-label` on the tablist instead | Same |
+| Segmented label (optional) | `heading/sm/strong` (16 / 20px, weight 700, width 110% `--rvt-font-width-semi-expanded`), `text/strong`, `spacing/8` (8px) above the tab group. Same as the text input label. Give it an `id` and point the tablist's `aria-labelledby` at it. With no visible label, use `aria-label` on the tablist instead | Same |
