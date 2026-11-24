@@ -103,10 +103,10 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
    stacked on Mobile, each button hugging its label. Text to card spacing/64 (Mobile spacing/48, 36px). */
 .hero{background:#1f2528;color:#ffffff;padding-top:var(--rvt-spacing-96)}
 .hero{overflow-x:clip}
-/* The bottom rule runs past the page padding to both edges of the hero (it scales infinitely), so it touches the sidenav; the content stays in the page column.
-   Drawn in the border's own 1px space, stretched 100vw each way and clipped by .hero. */
+/* The bottom rule starts flush with the page content on the left and runs past the page padding to the right edge (only the right end scales infinitely).
+   Drawn in the border's own 1px space, stretched 100vw to the right and clipped by .hero. */
 .hero-inner{--hero-rule:#000000;position:relative;padding-bottom:var(--rvt-spacing-96);border-bottom:1px solid transparent}
-.hero-inner::after{content:"";position:absolute;left:-100vw;right:-100vw;bottom:-1px;height:1px;background:var(--hero-rule);pointer-events:none}
+.hero-inner::after{content:"";position:absolute;left:0;right:-100vw;bottom:-1px;height:1px;background:var(--hero-rule);pointer-events:none}
 .hero-inner>*{max-width:936px}
 .hero .tag{font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:2px;text-transform:uppercase;margin:0 0 var(--rvt-spacing-8);color:#ffffff}
 .hero .tag a{color:inherit;text-decoration:none}
@@ -1081,7 +1081,7 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
 }
 @media (prefers-reduced-motion:reduce){.rvt-billboard__button,.rvt-billboard__button svg,.rvt-billboard__link,.rvt-billboard__arrow svg{transition:none}}
 /* ---------- rvt-hero-callout (Hero – Callout page example, Developer spec checklist) ----------
-   Background background/default; 1px border/default rule along the bottom (the last thing in the hero), running the full width past the side padding.
+   Background background/default; 1px border/default rule along the bottom (the last thing in the hero), starting flush with the content on the left and running past the right padding to the page edge.
    Side by side: spacing/96 top, spacing/80 sides (the page gutter: flush with the main content); text and card in a row, spacing/64 apart, card 440px wide, aligned to the bottom.
    Stacked: spacing/96 top; card under the text, spacing/64 above it, 700px wide.
    Metadata tag/md/caps text/brand, spacing/8 below. Headline display/lg/strong text/brand, up to 920px. Body body/base/regular text/default, spacing/20 above, up to 800px.
@@ -1092,9 +1092,9 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
    Inside the dochub content column that gutter is already there, so the example has no side padding of its own. */
 .rvt-hero-callout{box-sizing:border-box;padding:var(--rvt-spacing-96) 0 0;background:var(--rvt-background-default)}
 .rvt-hero-callout__inner{position:relative;display:flex;align-items:flex-end;gap:var(--rvt-spacing-64);padding-bottom:var(--rvt-spacing-96);border-bottom:1px solid transparent}
-/* The bottom rule runs past the side padding to both edges of the page area at any width (it scales infinitely, like the header and footer), while the content stays flush with the main content.
-   It is the 1px border/default line drawn in the border's own space (so the height matches Figma), stretched 100vw each way and clipped at the page area beside the sidenav. */
-.rvt-hero-callout__inner::after{content:"";position:absolute;left:-100vw;right:-100vw;bottom:-1px;height:1px;background:var(--rvt-border-default);pointer-events:none}
+/* The bottom rule starts flush with the content on the left and runs past the side padding to the right edge of the page at any width (only the right end scales infinitely).
+   It is the 1px border/default line drawn in the border's own space (so the height matches Figma), stretched 100vw to the right and clipped at the page edge. */
+.rvt-hero-callout__inner::after{content:"";position:absolute;left:0;right:-100vw;bottom:-1px;height:1px;background:var(--rvt-border-default);pointer-events:none}
 #app:has(.rvt-hero-callout){overflow-x:clip}
 .rvt-hero-callout--stacked .rvt-hero-callout__inner{flex-direction:column;align-items:flex-start}
 .rvt-hero-callout__text{flex:1 1 0;min-width:0;overflow-wrap:break-word}
