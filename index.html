@@ -46,7 +46,7 @@
   --font-sans:"Roboto Flex",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --font-mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --w-normal:350; --w-bold:600; --w-black:700;
-  --page:1400px; --read:800px;
+  --page:1440px; --read:800px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#1f2528;--surface:#14181a;--border:#000000;--text:#ffffff;--text-strong:#ffffff;--text-brand:#ffffff;--text-accent:#fdfaf7;--text-link-subtle:#fdfaf7;--icon-link-subtle:#fdfaf7;--text-brand-strong:#efdfc8;--icon-accent-strong:#efdfc8;--border-accent-strong:#efdfc8;
@@ -102,7 +102,11 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
    Metadata spacing/8 below. Body spacing/20 above (Mobile spacing/24). Buttons spacing/40 above (Mobile 32px), spacing/16 gap,
    stacked on Mobile, each button hugging its label. Text to card spacing/64 (Mobile spacing/48, 36px). */
 .hero{background:#1f2528;color:#ffffff;padding-top:var(--rvt-spacing-96)}
-.hero-inner{padding-bottom:var(--rvt-spacing-96);border-bottom:1px solid #000000}
+.hero{overflow-x:clip}
+/* The bottom rule runs past the page padding to both edges of the hero (it scales infinitely), so it touches the sidenav; the content stays in the page column.
+   Drawn in the border's own 1px space, stretched 100vw each way and clipped by .hero. */
+.hero-inner{--hero-rule:#000000;position:relative;padding-bottom:var(--rvt-spacing-96);border-bottom:1px solid transparent}
+.hero-inner::after{content:"";position:absolute;left:-100vw;right:-100vw;bottom:-1px;height:1px;background:var(--hero-rule);pointer-events:none}
 .hero-inner>*{max-width:936px}
 .hero .tag{font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:2px;text-transform:uppercase;margin:0 0 var(--rvt-spacing-8);color:#ffffff}
 .hero .tag a{color:inherit;text-decoration:none}
@@ -413,7 +417,7 @@ body:not(.has-rail) #rail-shell{display:none}
 @media (max-width:1023.98px){#rail li:last-child{border-bottom:0}}
 .rail-back{display:flex;width:max-content;align-items:center;gap:8px;height:24px;color:var(--rail-text);text-decoration:none;
   font-size:14px;line-height:20px;font-weight:600}
-.rail-back svg{width:14px;height:14px;display:block;flex:none;fill:currentColor}
+.rail-back svg{width:12px;height:12px;display:block;flex:none;fill:currentColor} /* rvt-arrow-left-12 (14px is not a Rivet icon size) */
 .rail-back:hover,.rail-back:focus-visible{color:var(--rail-strong);text-decoration:none}
 .rail-after-back{padding-top:20px}
 @media (min-width:1024px){.rail-after-back{padding-top:28px}}
@@ -492,6 +496,25 @@ body:not(.has-rail) .site-header__menu{display:none}
   /* v1.1: Back sits 12px under the header. */
   #rail-nav{padding-top:12px}
 }
+/* Desktop side menu = prototype-hub v1.3-bloomington A7 (Figma _rvt-sidebar-menu, Children only). The phone menu below 1024px is unchanged.
+   Rail 260px: 20px above Back, 24px sides and bottom. Back: 12px rvt-arrow-left-12, 8px gap, action/sm/strong 14/20.
+   Title 28px under Back: action/lg/strong 16/24, no rule under it; underlined (from-font) on hover.
+   Rows: body/xs/regular 14/20, no rules between them, 16px apart, the first 16px under the title; each link's click area reaches 8px above and below (36px).
+   Current row: accent, weight 600, underline from the font. Hover/focus: accent + underline. All side menu text is width 100. */
+@media (min-width:1024px){
+  #rail-nav{padding-top:20px}
+  .rail-back,.rail-title,.rail-item{font-stretch:100%}
+  .rail-after-back{padding-top:28px}
+  .rail-title{padding-bottom:0;border-bottom:0;font-size:16px;line-height:24px}
+  .rail-title-label{text-underline-position:from-font}
+  #rail ul{display:flex;flex-direction:column;gap:16px;padding-top:16px}
+  #rail li{border-bottom:0}
+  .rail-item{position:relative;padding:0}
+  .rail-item::before{content:"";position:absolute;inset:-8px 0}
+  .rail-item[aria-current="page"]{font-weight:600}
+  .rail-item:active,.rail-item:focus-visible{color:var(--rail-accent)}
+}
+@media (min-width:1024px) and (hover:hover){.rail-item:hover{color:var(--rail-accent)}}
 
 /* Mobile/tablet: compact sticky bar + in-flow disclosure (prototype's < 1024px sidenav). */
 @media (max-width:1023.98px){
@@ -543,7 +566,7 @@ body:not(.has-rail) .site-header__menu{display:none}
    rvt-hero-callout = background/default, border/default rule, tag + title text/brand, intro text/default, CTA Normal buttons border/accent + text/accent.
    In Dark these resolve to the values the hero and rail use today, so Dark looks unchanged. */
 :root[data-page-theme] .hero{background:var(--rvt-background-default);color:var(--rvt-text-default)}
-:root[data-page-theme] .hero-inner{border-bottom-color:var(--rvt-border-default)}
+:root[data-page-theme] .hero-inner{--hero-rule:var(--rvt-border-default)}
 :root[data-page-theme] .hero .tag,:root[data-page-theme] .hero h1{color:var(--rvt-text-brand)}
 :root[data-page-theme] .hero .intro{color:var(--rvt-text-default)}
 /* Hero cards (rvt-card, Style=Raised): background/raised, title text/strong, body text/default; hover title text/accent, arrow icon/accent. */
@@ -1054,6 +1077,67 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
   .rvt-billboard__actions{padding:0 var(--rvt-spacing-32) var(--rvt-spacing-32)}
 }
 @media (prefers-reduced-motion:reduce){.rvt-billboard__button,.rvt-billboard__button svg,.rvt-billboard__link,.rvt-billboard__arrow svg{transition:none}}
+/* ---------- rvt-hero-callout (Hero – Callout page example, Developer spec checklist) ----------
+   Background background/default; 1px border/default rule along the bottom (the last thing in the hero), running the full width past the side padding.
+   Side by side: spacing/96 top, spacing/80 sides (the page gutter: flush with the main content); text and card in a row, spacing/64 apart, card 440px wide, aligned to the bottom.
+   Stacked: spacing/96 top; card under the text, spacing/64 above it, 700px wide.
+   Metadata tag/md/caps text/brand, spacing/8 below. Headline display/lg/strong text/brand, up to 920px. Body body/base/regular text/default, spacing/20 above, up to 800px.
+   Buttons: rvt-link Extra-large, Strong first then Normal, spacing/40 above, spacing/16 apart (also between wrapped rows).
+   Card: rvt-card Compact, Plain, Raised (the Card example's own classes). */
+.rvt-hero-callout-wrap{container-type:inline-size}
+/* The side padding (spacing/80; Stacked spacing/96 left; Mobile spacing/24) is the page's layout gutter, so the hero's content lines up flush left with the main content.
+   Inside the dochub content column that gutter is already there, so the example has no side padding of its own. */
+.rvt-hero-callout{box-sizing:border-box;padding:var(--rvt-spacing-96) 0 0;background:var(--rvt-background-default)}
+.rvt-hero-callout__inner{position:relative;display:flex;align-items:flex-end;gap:var(--rvt-spacing-64);padding-bottom:var(--rvt-spacing-96);border-bottom:1px solid transparent}
+/* The bottom rule runs past the side padding to both edges of the page area at any width (it scales infinitely, like the header and footer), while the content stays flush with the main content.
+   It is the 1px border/default line drawn in the border's own space (so the height matches Figma), stretched 100vw each way and clipped at the page area beside the sidenav. */
+.rvt-hero-callout__inner::after{content:"";position:absolute;left:-100vw;right:-100vw;bottom:-1px;height:1px;background:var(--rvt-border-default);pointer-events:none}
+#app:has(.rvt-hero-callout){overflow-x:clip}
+.rvt-hero-callout--stacked .rvt-hero-callout__inner{flex-direction:column;align-items:flex-start}
+.rvt-hero-callout__text{flex:1 1 0;min-width:0;overflow-wrap:break-word}
+.rvt-hero-callout--stacked .rvt-hero-callout__text{flex:none;width:100%}
+.rvt-hero-callout__meta{margin:0;padding-bottom:var(--rvt-spacing-8);color:var(--rvt-text-brand);
+  font:var(--rvt-font-tag-md-caps);font-stretch:var(--rvt-font-width-normal);letter-spacing:var(--rvt-font-tracking-xl);text-transform:uppercase}
+.rvt-hero-callout__title{max-width:920px;margin:0;color:var(--rvt-text-brand);
+  font:var(--rvt-font-display-lg-strong);font-stretch:var(--rvt-font-width-normal);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-hero-callout__body{max-width:800px;margin:0;padding-top:var(--rvt-spacing-20);color:var(--rvt-text-default);
+  font:var(--rvt-font-body-base-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-hero-callout__actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-16);padding-top:var(--rvt-spacing-40)}
+/* rvt-link, Extra-large: component/button/height-xl, spacing/16 sides, spacing/8 to the 16px arrow. Focus: 2px border/accent-strong, 2px outside, square corners.
+   Strong: background/brand, text and arrow on-brand-alt; hover background/accent. Normal: 1px border/accent drawn inside, text/accent, icon/accent;
+   hover border/accent-strong, text/brand-strong, icon/accent-strong. 150ms ease-out. */
+.rvt-hero-callout__button{box-sizing:border-box;display:inline-flex;align-items:center;gap:var(--rvt-spacing-8);height:var(--rvt-component-button-height-xl);padding:0 var(--rvt-spacing-16);
+  box-shadow:inset 0 0 0 1px var(--rvt-border-accent);color:var(--rvt-text-accent);text-decoration:none;white-space:nowrap;
+  font:var(--rvt-font-action-lg-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);
+  transition:box-shadow .15s ease-out,color .15s ease-out,background-color .15s ease-out}
+.rvt-hero-callout__button svg{display:block;flex:none;width:16px;height:16px;fill:var(--rvt-icon-accent);transition:fill .15s ease-out}
+.rvt-hero-callout__button:hover{box-shadow:inset 0 0 0 1px var(--rvt-border-accent-strong);color:var(--rvt-text-brand-strong)}
+.rvt-hero-callout__button:hover svg{fill:var(--rvt-icon-accent-strong)}
+.rvt-hero-callout__button--strong,.rvt-hero-callout__button--strong:hover{box-shadow:none;background:var(--rvt-background-brand);color:var(--rvt-text-on-brand-alt)}
+.rvt-hero-callout__button--strong svg,.rvt-hero-callout__button--strong:hover svg{fill:var(--rvt-icon-on-brand-alt)}
+.rvt-hero-callout__button--strong:hover{background:var(--rvt-background-accent)}
+.rvt-hero-callout__button:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+.rvt-hero-callout__card{flex:none;width:440px;max-width:100%}
+.rvt-hero-callout--stacked .rvt-hero-callout__card{width:700px}
+/* Side by side with too little room for the text beside a 440px card: the card drops under the text, as in Stacked. */
+@container (max-width:899px){
+  .rvt-hero-callout__inner{flex-direction:column;align-items:flex-start}
+  .rvt-hero-callout__text{flex:none;width:100%}
+  .rvt-hero-callout__card{width:700px}
+}
+@container (max-width:767px){
+  /* Mobile mode, whatever the screen size (like the billboard): the tokens with a Mobile value take it here, the same values generated/rivet-tokens.css gives them below 768px.
+     Padding spacing/40 top (32px), spacing/24 sides; spacing/48 (36px) below the content and above the card. Body spacing/24 above.
+     Buttons stacked, each hugging its label, spacing/16 apart. Card full width. */
+  .rvt-hero-callout,.rvt-hero-callout--stacked{--rvt-spacing-40:32px;--rvt-spacing-48:36px;--rvt-type-size-29-48:29px;--rvt-type-line-height-32-52:32px;--rvt-type-size-16-18:16px;--rvt-type-line-height-28:24px;
+    padding:var(--rvt-spacing-40) 0 0}
+  .rvt-hero-callout__inner{gap:var(--rvt-spacing-48);padding-bottom:var(--rvt-spacing-48)}
+  .rvt-hero-callout__title{font-size:var(--rvt-type-size-29-48);line-height:var(--rvt-type-line-height-32-52)}
+  .rvt-hero-callout__body{padding-top:var(--rvt-spacing-24);font-size:var(--rvt-type-size-16-18);line-height:var(--rvt-type-line-height-28)}
+  .rvt-hero-callout__actions{flex-direction:column;align-items:flex-start}
+  .rvt-hero-callout__card,.rvt-hero-callout--stacked .rvt-hero-callout__card{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.rvt-hero-callout__button,.rvt-hero-callout__button svg{transition:none}}
 /* ---------- rvt-breadcrumbs (Breadcrumbs page example, Developer spec checklist) ----------
    Trail: one row that wraps, spacing/4 between items and between wrapped lines. Every item is 20px tall.
    Separator: 12px rvt-chevron-right-12 in icon/brand, spacing/4 after every item except the current page; it never changes on hover.
@@ -2870,6 +2954,41 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
       </div>
     </footer>`;
   }
+  /* rvt-hero-callout example: an Office of Admissions page hero with every optional part on (metadata, body, both buttons, hero card).
+     The card is the Card example's rvt-card, Compact, Plain, Raised; the whole card is the link. On a real page the headline is the page's h1;
+     here it is an h3 so the dochub page keeps its own heading order. */
+  const HERO_CALLOUT = {
+    meta: 'Office of Admissions',
+    title: 'Apply to IU Bloomington',
+    body: 'Find deadlines, application steps and scholarship details for students starting college in fall 2027.',
+    actions: ['Apply now', 'Visit campus'],
+    card: {eyebrow: 'Deadline', title: 'Early action closes November 1', desc: 'Apply early to be considered for merit scholarships.'}
+  };
+  const heroCalloutEl = layout => {
+    const h = HERO_CALLOUT, c = h.card;
+    return `<div class="rvt-hero-callout-wrap"><div class="rvt-hero-callout rvt-hero-callout--${layout}">
+      <div class="rvt-hero-callout__inner">
+        <div class="rvt-hero-callout__text">
+          <p class="rvt-hero-callout__meta">${esc(h.meta)}</p>
+          <h3 class="rvt-hero-callout__title">${esc(h.title)}</h3>
+          <p class="rvt-hero-callout__body">${esc(h.body)}</p>
+          <div class="rvt-hero-callout__actions">${h.actions.map((t, i) => `<a class="rvt-hero-callout__button${i === 0 ? ' rvt-hero-callout__button--strong' : ''}" href="#hero-callout">${esc(t)}<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${P.arrowRight}"/></svg></a>`).join('')}</div>
+        </div>
+        <div class="rvt-hero-callout__card">
+          <article class="rvt-card rvt-card--vertical rvt-card--plain rvt-card--raised rvt-card--compact">
+            <div class="rvt-card__body">
+              <p class="rvt-card__eyebrow">${esc(c.eyebrow)}</p>
+              <div class="rvt-card__head">
+                <h4 class="rvt-card__title"><a class="rvt-card__link" href="#hero-callout"><span class="rvt-card__link-text">${esc(c.title)}</span></a></h4>
+                <span class="rvt-card__arrow" aria-hidden="true">${icon12('arrowRight')}</span>
+              </div>
+              <p class="rvt-card__desc">${esc(c.desc)}</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div></div>`;
+  };
   const demos = {
     /* rvt-dropdown: Type is the dropdown (App, Header). Each starts closed; click the button (or press Enter, Space or the down arrow) to open it.
        App is capped at its Figma frame width. Header hugs its longest item, so it is capped at the measured menu width. */
@@ -3256,6 +3375,19 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
       html: () => footerEl(),
       /* Sample links stay on the page. */
       wire: stage => stage.querySelectorAll('.rvt-footer a').forEach(a => a.addEventListener('click', e => e.preventDefault()))
+    },
+    /* rvt-hero-callout: Layout is the dropdown (Side by side, Stacked), each capped at its Breakpoint=Desktop frame width. No Style axis, so no radio.
+       Under 900px of room Side by side drops the card under the text; under 768px both switch to the Mobile layout (container query, so it follows the room it has). */
+    'hero-callout': {
+      maxWidth: 1440, // the preferred max container width (Figma Side by side Desktop frame is 1600px including its 80px gutters)
+      variantLabel: 'Select layout', // the dropdown picks the Layout
+      variants: [
+        {id: 'side', label: 'Side by side'},
+        {id: 'stacked', label: 'Stacked', maxWidth: 1200} // Figma rvt-hero-callout, Breakpoint=Desktop, Column(s)=2 (Stacked) frame width
+      ],
+      html: v => heroCalloutEl(v === 'stacked' ? 'stacked' : 'side'),
+      /* Sample links stay on the page. */
+      wire: stage => stage.querySelectorAll('.rvt-hero-callout a').forEach(a => a.addEventListener('click', e => e.preventDefault()))
     },
     'empty-state': {
       maxWidth: 1024, // Figma rvt-empty-state, Breakpoint=Desktop frame width (Files Added=False and True are both 1024px)
@@ -3667,6 +3799,7 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
   /* ---------- Component rail ---------- */
   const CHEV = 'M6.263 15.146 12.31 8 6.263.854 4.737 2.146 9.69 8l-4.953 5.854 1.526 1.292Z';
   const BACK = 'M15 7H4.156l4.107-4.854L6.737.854.69 8l6.047 7.146 1.526-1.292L4.156 9H15V7Z';
+  const BACK12 = 'M7.18164 1.76953L4.45996 5H11V7H4.45996L7.18164 10.2305L5.65137 11.5195L1.00195 6L5.65137 0.480469L7.18164 1.76953Z'; // rvt-arrow-left-12
   const MENU = 'M15 4H1V2H15V4ZM15 9H1V7H15V9ZM1 14H15V12H1V14Z';
   let railToggle, railPanel, railNav;
   const desktop = window.matchMedia('(min-width: 1024px)');
@@ -3675,7 +3808,7 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
     shell.id = 'rail-shell';
     shell.innerHTML = `
       <nav id="rail" aria-label="All components"><div id="rail-nav">
-        <a class="rail-back" href="#"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="${BACK}"/></svg><span>Home</span></a>
+        <a class="rail-back" href="#"><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="${BACK12}"/></svg><span>Home</span></a>
         <div class="rail-after-back"><a class="rail-title" href="#"><span class="rail-title-label">Components</span></a>
         <ul>${list.map(c => `<li><a class="rail-item" href="#${esc(c.slug)}" data-slug="${esc(c.slug)}"><span class="rail-label">${esc(c.name)}</span></a></li>`).join('')}</ul>
       </div></div></nav>`;
