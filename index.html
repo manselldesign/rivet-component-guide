@@ -501,20 +501,20 @@ body:not(.has-rail) .site-header__menu{display:none}
 }
 /* Desktop side menu = prototype-hub v1.3-bloomington A7 (Figma _rvt-sidebar-menu, Children only). The phone menu below 1024px is unchanged.
    Rail 260px: 20px above Back, 24px sides and bottom. Back: 12px rvt-arrow-left-12, 8px gap, action/sm/strong 14/20.
-   Title 28px under Back: action/lg/strong 16/24, a 1px border/default rule 8px under it (2026-11-24); underlined (from-font) on hover.
-   Rows: body/xs/regular 14/20, no rules between them, 16px apart, the first 19px under the rule; each link's click area reaches 8px above and below (36px).
+   Title 28px under Back: action/lg/strong 16/24, no rule under it; underlined (from-font) on hover.
+   Rows: body/xs/regular 14/20, no rules between them, 12px apart, the first 20px under the title; each link's click area reaches 6px above and below (32px).
    Current row: accent, weight 600, underline from the font. Hover/focus: accent + underline. All side menu text is width 100. */
 @media (min-width:1024px){
   #rail-nav{padding-top:20px}
   .rail-back,.rail-title,.rail-item{font-stretch:100%}
   .rail-after-back{padding-top:28px}
-  .rail-title{padding-bottom:8px;border-bottom:1px solid var(--rail-rule);font-size:16px;line-height:24px} /* 2026-11-24: thin rule 8px under the title, then 19px to the first row (8 + 1 + 19 = 28), as in prototype A7 */
+  .rail-title{padding-bottom:0;border-bottom:0;font-size:16px;line-height:24px}
   .rail-title-label{text-underline-position:from-font}
-  #rail ul{display:flex;flex-direction:column;gap:16px;padding-top:19px}
+  #rail ul{display:flex;flex-direction:column;gap:12px;padding-top:20px} /* 2026-11-24: title to first row 20px (was 16), rows 12px apart (was 16), as in prototype A7 */
   #rail li{border-bottom:0}
   .rail-item{position:relative;padding:0}
-  .rail-item::before{content:"";position:absolute;inset:-8px 0}
-  .rail-item[aria-current="page"]{font-weight:600}
+  .rail-item::before{content:"";position:absolute;inset:-6px 0}
+  .rail-item[aria-current="page"]{font-weight:600;font-stretch:69%} /* 2026-11-24: width 69 so the bold current row is the same width as the regular text (as in prototype A7) */
   .rail-item:active,.rail-item:focus-visible{color:var(--rail-accent)}
 }
 @media (min-width:1024px) and (hover:hover){.rail-item:hover{color:var(--rail-accent)}}
@@ -3378,16 +3378,11 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
       /* Sample links stay on the page. */
       wire: stage => stage.querySelectorAll('.rvt-footer a').forEach(a => a.addEventListener('click', e => e.preventDefault()))
     },
-    /* rvt-hero-callout: Layout is the dropdown (Side by side, Stacked), each capped at its Breakpoint=Desktop frame width. No Style axis, so no radio.
-       Under 900px of room Side by side drops the card under the text; under 768px both switch to the Mobile layout (container query, so it follows the room it has). */
+    /* rvt-hero-callout: one layout, so no dropdown and no Style radio. The card sits beside the text when there is room (1200px or more)
+       and wraps under it otherwise; under 768px the hero switches to Mobile (container query, so it follows the room it has). */
     'hero-callout': {
-      maxWidth: 1440, // the preferred max container width (Figma Side by side Desktop frame is 1600px including its 80px gutters)
-      variantLabel: 'Select layout', // the dropdown picks the Layout
-      variants: [
-        {id: 'side', label: 'Side by side'},
-        {id: 'stacked', label: 'Stacked', maxWidth: 1200} // Figma rvt-hero-callout, Breakpoint=Desktop, Column(s)=2 (Stacked) frame width
-      ],
-      html: v => heroCalloutEl(v === 'stacked' ? 'stacked' : 'side'),
+      maxWidth: 1440, // the preferred max container width (Figma Desktop frame is 1600px including its 80px gutters)
+      html: () => heroCalloutEl('side'),
       /* Sample links stay on the page. */
       wire: stage => stage.querySelectorAll('.rvt-hero-callout a').forEach(a => a.addEventListener('click', e => e.preventDefault()))
     },
