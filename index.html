@@ -1851,9 +1851,11 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
 /* ---------- rvt-footer (Footer page example, Developer spec checklist) ----------
    The footer's Color (Light, Crimson, Dark) is the theme: it follows the page theme through its tokens, so the theme tabs pick it.
    Background background/default (white on Light, color/base/main on Dark, color/brand/main on Crimson). Every color is a theme token.
-   Borders: 1px border/default on top of the footer and above the social row (Mobile: on top of the bottom bar). Both run edge to edge and are
-   drawn inside (inset box-shadow), so they never add height: Desktop 308px, Mobile 972px tall, as designed. Only the rows carry side padding.
-   Side padding matches the header at every width, so the edges line up and scale with the page: spacing/80 from 768px up, spacing/20 below.
+   Borders: 1px border/default on top of the footer and above the social row (Mobile: on top of the bottom bar). Same rule as the heroes: they start
+   flush with the content on the left and run past the page padding to the right edge of the page (only the right end scales infinitely). They are
+   drawn inside the footer's own space (1px lines stretched 100vw to the right and clipped at the page edge), so they never add height.
+   No side padding of its own: the footer's content sits in the page container (up to 1440px), flush left with the main content. The page's
+   layout gutter (spacing/80 from 768px up, spacing/20 below) is already there in the dochub content column.
    Desktop (footer 880px wide and up): resource links spacing/32 top and bottom, contact column 348px then three link groups
    sharing the rest, spacing/64 apart (the contact column gives up width first when space is tight); contact spacing/16 name to details,
    spacing/8 between lines; groups spacing/20 title to links, spacing/8 between links. Social row spacing/16 top and bottom, icons spacing/8 apart.
@@ -1866,8 +1868,11 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
    Link hover: text/accent with the standard underline (1px, at the font's underline position), 150ms. Social links: the rvt-link Social component
    (Size Sm, 24px square), 1px border/accent drawn inside, 12px icon/accent; hover border/accent-strong and icon/accent-strong;
    focus a 2px border/accent-strong ring 1px outside the border. Focus on text links: 2px border/accent-strong. */
-.rvt-footer{--rvt-footer-inline:var(--rvt-spacing-80);container:rvt-footer / inline-size;box-sizing:border-box;display:flex;flex-direction:column;
-  background:var(--rvt-background-default);box-shadow:inset 0 1px 0 var(--rvt-border-default)}
+.rvt-footer{--rvt-footer-inline:0px;container:rvt-footer / inline-size;position:relative;box-sizing:border-box;display:flex;flex-direction:column;
+  background:var(--rvt-background-default)}
+.rvt-footer::before,.rvt-footer__bottom::before,.rvt-footer__resources::after{position:absolute;left:0;right:-100vw;height:1px;background:var(--rvt-border-default);pointer-events:none}
+.rvt-footer::before{content:"";top:0}
+#app:has(.rvt-footer){overflow-x:clip}
 .rvt-footer *{box-sizing:border-box}
 .rvt-footer :where(ul){margin:0;padding:0;list-style:none}
 .rvt-footer :where(li,p,address){display:flex;margin:0;font-style:normal}
@@ -1884,11 +1889,10 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
 .rvt-footer__home{color:inherit;text-decoration:none;transition:color 150ms ease-out}
 .rvt-footer__home:hover{color:var(--rvt-text-accent);text-decoration-line:underline;text-decoration-skip-ink:none}
 .rvt-footer__home:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
-@media (max-width:767px){.rvt-footer{--rvt-footer-inline:var(--rvt-spacing-20)}}
 .rvt-footer__link:hover{color:var(--rvt-text-accent);text-decoration-line:underline;text-decoration-skip-ink:none}
 .rvt-footer__link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
-.rvt-footer__bottom{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-20);margin-top:var(--rvt-spacing-24);padding:var(--rvt-spacing-16) var(--rvt-footer-inline);
-  box-shadow:inset 0 1px 0 var(--rvt-border-default)}
+.rvt-footer__bottom{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-20);margin-top:var(--rvt-spacing-24);padding:var(--rvt-spacing-16) var(--rvt-footer-inline);position:relative}
+.rvt-footer__bottom::before{content:"";top:0}
 .rvt-footer__links{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-8);width:100%}
 .rvt-footer__social{display:flex;justify-content:center;gap:var(--rvt-spacing-12);padding:var(--rvt-spacing-8) 0}
 .rvt-footer__social-link{display:flex;align-items:center;justify-content:center;width:var(--rvt-component-button-height-sm);height:var(--rvt-component-button-height-sm);
@@ -1900,14 +1904,15 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
 .rvt-footer__legal{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-8);text-align:center}
 .rvt-footer__trident{display:block;flex:none;width:22px;height:28px;fill:var(--rvt-icon-brand)}
 @container rvt-footer (min-width:880px){
-  .rvt-footer__resources{flex-direction:row;align-items:flex-start;gap:var(--rvt-spacing-64);padding:var(--rvt-spacing-32) var(--rvt-footer-inline);
-    box-shadow:inset 0 -1px 0 var(--rvt-border-default)}
+  .rvt-footer__resources{flex-direction:row;align-items:flex-start;gap:var(--rvt-spacing-64);padding:var(--rvt-spacing-32) var(--rvt-footer-inline);position:relative}
+  .rvt-footer__resources::after{content:"";bottom:0}
   .rvt-footer__contact{flex:0 1 348px;min-width:min-content;align-self:stretch;gap:var(--rvt-spacing-16)}
   .rvt-footer__details{padding-top:0}
   .rvt-footer__group{flex:1 1 0;min-width:min-content;gap:var(--rvt-spacing-20)}
   .rvt-footer__list{gap:var(--rvt-spacing-8)}
   .rvt-footer__bottom{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:0 var(--rvt-spacing-24);
-    margin-top:0;padding:0 var(--rvt-footer-inline) var(--rvt-spacing-16);box-shadow:none}
+    margin-top:0;padding:0 var(--rvt-footer-inline) var(--rvt-spacing-16)}
+  .rvt-footer__bottom::before{content:none}
   .rvt-footer__links{display:contents}
   .rvt-footer__social{grid-column:1 / -1;grid-row:1;justify-content:flex-start;gap:var(--rvt-spacing-8);padding:var(--rvt-spacing-16) 0}
   .rvt-footer__trident{grid-column:1;grid-row:2}
@@ -3388,11 +3393,11 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
        and Browse files there adds the sample files back. */
     /* rvt-footer: one footer. Its Color (Light, Crimson, Dark) is the theme, so the theme tabs pick it; no dropdown.
        It switches between the Desktop and Mobile layouts by its own width (880px), so it shows the Desktop layout in the dochub column.
-       Side padding matches the header at every width: spacing/80 from 768px up, spacing/20 below. "Indiana University" links to the home page.
+       Same flush rules as the heroes: no side padding of its own, content flush left with the main content, borders running to the right page edge. "Indiana University" links to the home page.
        Every optional part is shown (Resource links, Social badges). Headings are h3 here because they sit under the "Example" heading;
        on a real page they are h2. Social glyphs: the 12px rvt-link Social icons (CC_SOCIAL plus Instagram, from the footer). */
     footer: {
-      // No maxWidth: the footer runs the full width of the page at any size, like the header (its Desktop frame is 1440px wide only as a sample).
+      maxWidth: 1440, // the preferred max container width; the content stays in the page container, only the borders run on to the right edge
       html: () => footerEl(),
       /* Sample links stay on the page. */
       wire: stage => stage.querySelectorAll('.rvt-footer a').forEach(a => a.addEventListener('click', e => e.preventDefault()))
