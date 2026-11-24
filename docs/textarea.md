@@ -59,7 +59,7 @@ Check these before the page goes live. Each one names who owns it.
 
 ## Developer spec checklist
 
-Shared rules: No fill and no radius, with a 1px `component/input/border` border on all sides. Value text is `body/sm/regular` (16 / 24px), `component/input/text`. The resize handle is `rvt-resize-12` (12px), `component/input/icon`, 2px in from the right and bottom edges. In code this is the browser's native resize grip (`resize: both`). Focus adds a 2px `border/accent-strong` ring, 2px outside the field. The label is `heading/xs/strong` (14 / 20px), `text/strong`, with a `text/required` asterisk. Status messages use `rvt-alert` (Inline) and sit between the label and the helper text, `spacing/8` (8px) above and below. Helper text is `body/xs/regular` (14 / 20px), `text/default`, `spacing/4` (4px) above the field. Sizes don't change on Mobile.
+Shared rules: No fill and no radius, with a 1px `component/input/border` border on all sides. Value text is `body/sm/regular` (16 / 24px), `component/input/text`. The resize handle is `rvt-resize-12` (12px), `component/input/icon`, 2px in from the right and bottom edges. In code this is the browser's native resize grip (`resize: both`). Focus adds a 2px `border/accent-strong` ring, 2px outside the field. The label is `heading/sm/strong` (16 / 20px, weight 700, width 110% `--rvt-font-width-semi-expanded`), `text/strong`, with a `text/required` asterisk. Status messages use `rvt-alert` (Inline) and sit between the label and the helper text, `spacing/8` (8px) above and below. Helper text is `body/xs/regular` (14 / 20px), `text/default`, `spacing/4` (4px) above the field. Sizes don't change on Mobile.
 
 | Element | Value |
 | --- | --- |

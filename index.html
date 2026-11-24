@@ -1527,6 +1527,80 @@ body:not(.has-rail) .site-header__menu{display:none}
 /* Description: 29px indent lines it up with the label (20px box + spacing/8, plus 1px optical). */
 .rvt-checkbox__desc{margin:0;padding-left:29px;color:var(--rvt-text-default);
   font:var(--rvt-font-body-xs-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+/* ---------- rvt-dialog (example on the Dialog page) ----------
+   Built from Figma "rvt-dialog" (Breakpoint=Desktop, 640px wide; Mobile under 768px). Type: Default (the dialog by itself) or Modal (over the dimmed page).
+   Box: background/raised, shadow/md, no radius. Title bar (Default, Form): spacing/24 top and bottom, spacing/40 sides, background/brand-subtle,
+   1px border/brand bottom rule drawn inside. Title area (confirmations): spacing/40 all sides, spacing/16 gap, 80px status sticker (64px on mobile),
+   status subtle fill + status border. Title: heading/md/strong. Close: 16px rvt-close, spacing/16 from the top right corner.
+   Content: spacing/40 padding, spacing/32 gap. Body: body/base/regular, text/default. Buttons: rvt-button Form Large, secondary then primary,
+   spacing/16 apart, spacing/8 above (centered; left-aligned in Form). Mobile: stacked full width in the same order, spacing/8 apart.
+   Modal: a native dialog element opened with showModal(), so focus stays inside, the page behind is inert and focus returns to the button that opened it.
+   Overlay: color/base/ultra-dark at 85%, the same in every theme. Sticker colors are the Rivet sticker colors, the same in every theme. */
+.rvt-dialog-stack{display:flex;flex-direction:column;gap:calc(var(--rvt-spacing-24) + var(--rvt-spacing-8))}
+.rvt-dialog-triggers{display:flex;flex-wrap:wrap;gap:var(--rvt-spacing-24)}
+.rvt-dialog{--dlg-fill:var(--rvt-background-brand-subtle);--dlg-rule:var(--rvt-border-brand);--dlg-title:var(--rvt-text-brand);
+  box-sizing:border-box;position:relative;display:flex;flex-direction:column;width:100%;margin:0;padding:0;border:0;
+  background:var(--rvt-background-raised);color:var(--rvt-text-default);box-shadow:var(--rvt-shadow-md)}
+.rvt-dialog--success{--dlg-fill:var(--rvt-background-success-subtle);--dlg-rule:var(--rvt-border-success);--dlg-title:var(--rvt-text-success);
+  --dlg-sticker:var(--rvt-color-status-success-container);--dlg-sticker-art:var(--rvt-color-status-success-main)}
+.rvt-dialog--warning{--dlg-fill:var(--rvt-background-warning-subtle);--dlg-rule:var(--rvt-border-warning);--dlg-title:var(--rvt-text-warning);
+  --dlg-sticker:var(--rvt-color-status-warning-container);--dlg-sticker-art:var(--rvt-color-base-main)}
+.rvt-dialog--danger{--dlg-fill:var(--rvt-background-danger-subtle);--dlg-rule:var(--rvt-border-danger);--dlg-title:var(--rvt-text-danger);
+  --dlg-sticker:var(--rvt-color-status-danger-container);--dlg-sticker-art:var(--rvt-color-status-danger-main)}
+.rvt-dialog__header{position:relative;display:flex;align-items:center;gap:var(--rvt-spacing-16);padding:var(--rvt-spacing-24) var(--rvt-spacing-40);
+  background:var(--dlg-fill);box-shadow:inset 0 -1px 0 var(--dlg-rule)}
+.rvt-dialog--confirm .rvt-dialog__header{flex-direction:column;justify-content:center;padding:var(--rvt-spacing-40);text-align:center}
+.rvt-dialog__sticker{flex:none;display:block;width:80px;height:80px;border-radius:var(--rvt-border-radius-full);background:var(--dlg-sticker);color:var(--dlg-sticker-art)}
+.rvt-dialog__sticker svg{display:block;width:100%;height:100%}
+.rvt-dialog__sticker .fill{fill:var(--rvt-color-base-ultra-light)}
+.rvt-dialog__sticker .art{fill:currentColor}
+.rvt-dialog__title{flex:1 1 0;min-width:0;margin:0;color:var(--dlg-title);overflow-wrap:anywhere;
+  font:var(--rvt-font-heading-md-strong);font-stretch:var(--rvt-font-width-semi-expanded);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-dialog--confirm .rvt-dialog__title{flex:none;align-self:stretch}
+.rvt-dialog__close{position:absolute;top:var(--rvt-spacing-16);right:var(--rvt-spacing-16);display:block;width:16px;height:16px;margin:0;padding:0;border:0;border-radius:0;
+  background:transparent;color:var(--rvt-icon-strong);cursor:pointer;-webkit-appearance:none;appearance:none;transition:color .15s ease-out}
+.rvt-dialog__close::before{content:"";position:absolute;inset:calc(-1 * var(--rvt-spacing-8))}
+.rvt-dialog__close svg{display:block;width:100%;height:100%;fill:currentColor}
+.rvt-dialog__close:hover{color:var(--rvt-component-button-form-text-hover)}
+.rvt-dialog__close:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+.rvt-dialog__content{display:flex;flex-direction:column;gap:var(--rvt-spacing-32);padding:var(--rvt-spacing-40)}
+.rvt-dialog__body{margin:0;color:var(--rvt-text-default);
+  font:var(--rvt-font-body-base-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-dialog__actions{display:flex;justify-content:center;gap:var(--rvt-spacing-16);padding-top:var(--rvt-spacing-8)}
+.rvt-dialog--form .rvt-dialog__actions{justify-content:flex-start}
+/* Form fields: rvt-select-input Large, rvt-textarea and rvt-checkbox, spacing/32 apart (the content gap). Every field label is heading/sm/strong (16 / 20px), the same as the checkbox group label. */
+.rvt-dialog__field{display:flex;flex-direction:column;gap:var(--rvt-spacing-8);min-width:0}
+.rvt-dialog__label{margin:0;color:var(--rvt-text-strong);
+  font:var(--rvt-font-heading-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-dialog__required{color:var(--rvt-text-required)}
+.rvt-dialog__control{display:flex;flex-direction:column;gap:var(--rvt-spacing-4);min-width:0}
+.rvt-dialog__helper{margin:0;color:var(--rvt-text-default);
+  font:var(--rvt-font-body-xs-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-dialog .rvt-select{width:100%}
+.rvt-dialog .rvt-select__input{height:var(--rvt-component-input-height-lg);background:transparent}
+.rvt-dialog__textarea{box-sizing:border-box;display:block;width:100%;height:164px;min-height:var(--rvt-component-input-height-lg);margin:0;padding:var(--rvt-spacing-16) var(--rvt-spacing-12);
+  border:1px solid var(--rvt-component-input-border);border-radius:0;background:transparent;color:var(--rvt-component-input-text);resize:vertical;
+  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-dialog__textarea:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
+/* Type=Modal: centered over the overlay, spacing/48 from the screen edges (spacing/24 on mobile); long dialogs scroll inside. */
+dialog.rvt-dialog{position:fixed;inset:0;margin:auto;width:min(640px,calc(100vw - 2 * var(--rvt-spacing-48)));max-width:none;height:fit-content;
+  max-height:calc(100dvh - 2 * var(--rvt-spacing-48));overflow:auto;overscroll-behavior:contain}
+dialog.rvt-dialog:not([open]){display:none}
+dialog.rvt-dialog:focus{outline:none}
+dialog.rvt-dialog::backdrop{background:color-mix(in srgb,var(--rvt-color-base-ultra-dark) 85%,transparent)}
+dialog.rvt-dialog[open],dialog.rvt-dialog[open]::backdrop{animation:rvt-dialog-in .18s ease-out}
+@keyframes rvt-dialog-in{from{opacity:0}}
+html:has(dialog.rvt-dialog[open]){overflow:hidden}
+@media (max-width:767px){
+  .rvt-dialog__sticker{width:64px;height:64px}
+  .rvt-dialog__actions{flex-direction:column;gap:var(--rvt-spacing-8);padding-top:0}
+  .rvt-dialog__actions .rvt-button{width:100%}
+  dialog.rvt-dialog{width:calc(100vw - 2 * var(--rvt-spacing-24));max-height:calc(100dvh - 2 * var(--rvt-spacing-24))}
+}
+@media (prefers-reduced-motion:reduce){
+  .rvt-dialog__close{transition:none}
+  dialog.rvt-dialog[open],dialog.rvt-dialog[open]::backdrop{animation:none}
+}
 </style>
 </head>
 <body>
@@ -2233,6 +2307,96 @@ body:not(.has-rail) .site-header__menu{display:none}
       </div>
     </div>`;
   };
+  /* rvt-dialog sample content. The status stickers are the Rivet check, minus and x stickers (rivet-stickers, 80 x 80). */
+  const DIALOG_STICKER = {
+    fill: 'M40 16c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24Z',
+    ring: 'M40 16c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24ZM18 40c0-12.15 9.85-22 22-22s22 9.85 22 22-9.85 22-22 22-22-9.85-22-22Z',
+    success: 'm34.951 49.463 16.756-16.756-1.414-1.414-15.244 15.244-6.296-7.195-1.506 1.317 7.704 8.804Z',
+    warning: 'M28 41h24v-2H28v2Z',
+    danger: 'M30.293 31.707 38.586 40l-8.293 8.293 1.414 1.414L40 41.414l8.293 8.293 1.414-1.414L41.414 40l8.293-8.293-1.414-1.414L40 38.586l-8.293-8.293-1.414 1.414Z'
+  };
+  const DIALOGS = [
+    {id: 'default', open: 'Open default', close: true, title: 'Sign out of One.IU?',
+      body: 'You’ll need to log in again to see your tasks and saved searches.', secondary: 'Stay signed in', primary: 'Sign out'},
+    {id: 'success', open: 'Open success', status: 'success', word: 'Success', close: true, title: 'Application submitted',
+      body: 'We emailed a copy to your IU account. You can check your status from your dashboard any time.', secondary: 'View application', primary: 'Back to dashboard'},
+    {id: 'warning', open: 'Open warning', status: 'warning', word: 'Warning', close: true, title: 'Leave without saving?',
+      body: 'Your housing preferences haven’t been saved. If you leave now, your changes will be lost.', secondary: 'Keep editing', primary: 'Leave without saving'},
+    {id: 'danger', open: 'Open destructive', status: 'danger', word: 'Warning', close: false, title: 'Delete saved application?',
+      body: 'This removes your draft for fall admission. This can’t be undone.', secondary: 'Cancel', primary: 'Delete application'},
+    {id: 'form', open: 'Open form', form: true, close: true, title: 'Book a study room',
+      body: 'Add a few details so we can hold the right room for you.', secondary: 'Cancel', primary: 'Book room'}
+  ];
+  const DIALOG_FORM = {
+    library: {label: 'Library', helper: 'Pick the library closest to you.', options: ['Herman B Wells Library', 'Education Library', 'Sciences Library', 'Business/SPEA Library']},
+    notes: {label: 'What are you working on?', helper: '200 characters max.'},
+    length: {label: 'How long do you need the room?', helper: 'Rooms can be held for up to 3 hours.', options: ['1 hour', '2 hours', '3 hours']},
+    needs: {status: 'default', required: true, label: 'What do you need in the room?',
+      stacked: [['Whiteboard', {checked: true}], ['Large display'], ['Video conferencing', {desc: 'Includes a camera and microphone for hybrid meetings.'}], ['Wheelchair-accessible table']]}
+  };
+  const dialogRequired = '<span class="rvt-dialog__required" aria-hidden="true">*</span><span class="sr-only"> (required)</span>';
+  const dialogSelect = (id, f) => `<div class="rvt-dialog__field">
+      <label class="rvt-dialog__label" for="${id}">${esc(f.label)} ${dialogRequired}</label>
+      <div class="rvt-dialog__control">
+        <p class="rvt-dialog__helper" id="${id}-help">${esc(f.helper)}</p>
+        <span class="rvt-select"><select class="rvt-select__input" id="${id}" aria-required="true" aria-describedby="${id}-help">${f.options.map(o => `<option>${esc(o)}</option>`).join('')}</select><span class="rvt-select__icon" aria-hidden="true">${icon('chevronDown')}</span></span>
+      </div>
+    </div>`;
+  const dialogForm = id => `${dialogSelect(`${id}-library`, DIALOG_FORM.library)}
+    <div class="rvt-dialog__field">
+      <label class="rvt-dialog__label" for="${id}-notes">${esc(DIALOG_FORM.notes.label)} ${dialogRequired}</label>
+      <div class="rvt-dialog__control">
+        <p class="rvt-dialog__helper" id="${id}-notes-help">${esc(DIALOG_FORM.notes.helper)}</p>
+        <textarea class="rvt-dialog__textarea" id="${id}-notes" maxlength="200" aria-required="true" aria-describedby="${id}-notes-help"></textarea>
+      </div>
+    </div>
+    ${dialogSelect(`${id}-length`, DIALOG_FORM.length)}
+    ${checkboxGroup(DIALOG_FORM.needs, 'default')}`;
+  /* One dialog. Type=Modal is a native <dialog> (opened with showModal()); Type=Default is the same box in the page. */
+  const dialogEl = (d, type) => {
+    const id = `dialog-${d.id}`;
+    const modal = type === 'modal';
+    const cls = `rvt-dialog${d.status ? ` rvt-dialog--confirm rvt-dialog--${d.status}` : ''}${d.form ? ' rvt-dialog--form' : ''}`;
+    const inner = `<div class="rvt-dialog__header">
+        ${d.status ? `<span class="rvt-dialog__sticker"><svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><path class="fill" d="${DIALOG_STICKER.fill}"/><path class="art" d="${DIALOG_STICKER[d.status]}"/><path class="art" d="${DIALOG_STICKER.ring}"/></svg></span>` : ''}
+        <h3 class="rvt-dialog__title" id="${id}-title">${d.status ? `<span class="sr-only">${esc(d.word)}: </span>` : ''}${esc(d.title)}</h3>
+        ${d.close ? `<button class="rvt-dialog__close" type="button" aria-label="Close" data-dialog-close>${icon('close')}</button>` : ''}
+      </div>
+      <div class="rvt-dialog__content">
+        <p class="rvt-dialog__body" id="${id}-desc">${esc(d.body)}</p>
+        ${d.form ? dialogForm(id) : ''}
+        <div class="rvt-dialog__actions">
+          <button class="rvt-button rvt-button--lg rvt-button--normal" type="button" data-dialog-close${modal && !d.close ? ' autofocus' : ''}>${esc(d.secondary)}</button>
+          <button class="rvt-button rvt-button--lg rvt-button--strong" type="button" data-dialog-close>${esc(d.primary)}</button>
+        </div>
+      </div>`;
+    return modal
+      ? `<dialog class="${cls}" id="${id}" aria-labelledby="${id}-title" aria-describedby="${id}-desc"${d.close ? '' : ' data-must-choose'}>${inner}</dialog>`
+      : `<div class="${cls}" role="dialog" aria-labelledby="${id}-title" aria-describedby="${id}-desc">${inner}</div>`;
+  };
+  /* Modal: each button opens its dialog over the page. Any button inside closes it; Escape closes it too, except the destructive one, where people must choose.
+     Clicking the overlay never closes it. */
+  const wireDialogs = stage => {
+    stage.querySelectorAll('[data-dialog-open]').forEach(b => b.addEventListener('click', () => {
+      const dlg = stage.querySelector('#' + b.dataset.dialogOpen);
+      if (dlg && !dlg.open) dlg.showModal();
+    }));
+    stage.querySelectorAll('dialog.rvt-dialog').forEach(dlg => {
+      dlg.querySelectorAll('[data-dialog-close]').forEach(b => b.addEventListener('click', () => dlg.close()));
+      /* Tab wraps from the last control back to the first (and Shift+Tab the other way), so focus never leaves the dialog. */
+      dlg.addEventListener('keydown', e => {
+        if (e.key !== 'Tab') return;
+        const items = [...dlg.querySelectorAll('button, select, textarea, input')].filter(el => !el.disabled);
+        const first = items[0], last = items[items.length - 1], at = document.activeElement;
+        if (e.shiftKey && (at === first || at === dlg)) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && at === last) { e.preventDefault(); first.focus(); }
+      });
+      if (dlg.hasAttribute('data-must-choose')) {
+        dlg.addEventListener('cancel', e => e.preventDefault());
+        dlg.addEventListener('keydown', e => { if (e.key === 'Escape') e.preventDefault(); });
+      }
+    });
+  };
   const demos = {
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
@@ -2543,6 +2707,21 @@ body:not(.has-rail) .site-header__menu{display:none}
         {id: 'inline', label: 'Inline', maxWidth: 1272} // Figma rvt-checkbox, Type=Inline status frame width
       ],
       html: type => `<div class="rvt-checkbox-stack">${CHECKBOXES.map(g => checkboxGroup(g, type === 'inline' ? 'inline' : 'default')).join('')}</div>`
+    },
+    /* rvt-dialog: Type is the dropdown (Default, Modal). Default shows every purpose (Default, Success, Warning, Destructive, Form) stacked 32px apart.
+       Modal shows one button per purpose; each opens a working modal over the dimmed page. */
+    dialog: {
+      maxWidth: 640, // Figma rvt-dialog, Breakpoint=Desktop, Type=Default frame width
+      variantLabel: 'Select type', // the dropdown picks the Type
+      variants: [
+        {id: 'default', label: 'Default'},
+        {id: 'modal', label: 'Modal', maxWidth: 780} // no frame for the row of buttons: measured row width 771.5px, rounded up
+      ],
+      html: type => type === 'modal'
+        ? `<div class="rvt-dialog-triggers">${DIALOGS.map(d => `<button class="rvt-button rvt-button--lg rvt-button--normal" type="button" aria-haspopup="dialog" data-dialog-open="dialog-${d.id}">${esc(d.open)}</button>`).join('')}</div>
+          ${DIALOGS.map(d => dialogEl(d, 'modal')).join('')}`
+        : `<div class="rvt-dialog-stack">${DIALOGS.map(d => dialogEl(d, 'default')).join('')}</div>`,
+      wire: wireDialogs
     },
     /* rvt-tabs: Type is the variant (Contained, Segmented), each capped at its own Breakpoint=Desktop frame width. */
     tabs: {

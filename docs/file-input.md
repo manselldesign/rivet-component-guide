@@ -57,7 +57,7 @@ Shared rules: Button is `rvt-button` (Type Form, Style Strong, Size Large: `comp
 | Element | Desktop | Mobile |
 | --- | --- | --- |
 | Outer padding | None | `spacing/24` left and right (24px) |
-| Label | `heading/xs/strong` (14 / 20px), `text/strong`; asterisk `text/required`; `spacing/8` below (8px) | Same |
+| Label | `heading/sm/strong` (16 / 20px, weight 700, width 110% `--rvt-font-width-semi-expanded`), `text/strong`; asterisk `text/required`; `spacing/8` below (8px) | Same |
 | Helper text | `body/xs/regular` (14 / 20px), `text/default`; `spacing/4` below (4px) | Same |
 | Button and status or files | Side by side, `spacing/16` gap (16px) | Stacked, button hugs its label, `spacing/16` gap (16px) |
 | File chips | In a row that wraps, `spacing/8` gap (8px) | Same |

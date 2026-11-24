@@ -140,7 +140,7 @@
       "name": "Dialog",
       "summary": "A dialog is a small window that opens over the page to ask for a decision or a few details, like confirming a deletion or saving changes before leaving a form.",
       "status": "ready-for-dev",
-      "updated": "2026-11-23",
+      "updated": "2026-11-24",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-21"
     },
     {
@@ -172,7 +172,7 @@
       "name": "File input",
       "summary": "A file input lets people attach a file to a form, like a letter of recommendation, a transcript or a résumé.",
       "status": "ready-for-dev",
-      "updated": "2026-11-23",
+      "updated": "2026-11-24",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-15"
     },
     {
@@ -242,7 +242,7 @@
       "name": "Input group",
       "summary": "An input group joins a text field with a button or a fixed label, like a search box with a \"Search\" button or an email field that ends in \"@iu.edu\".",
       "status": "ready-for-dev",
-      "updated": "2026-11-23",
+      "updated": "2026-11-24",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-19"
     },
     {
@@ -298,7 +298,7 @@
       "name": "Select input",
       "summary": "A field that opens a list of options so readers can pick one.",
       "status": "ready-for-dev",
-      "updated": "2026-11-23",
+      "updated": "2026-11-24",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-25"
     },
     {
@@ -362,7 +362,7 @@
       "name": "Text input",
       "summary": "A field where readers type a short answer, like a name, email address or search term.",
       "status": "ready-for-dev",
-      "updated": "2026-11-23",
+      "updated": "2026-11-24",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-33"
     },
     {
@@ -370,7 +370,7 @@
       "name": "Textarea",
       "summary": "A larger field where readers type answers that run longer than one line, like a comment or a short essay.",
       "status": "ready-for-dev",
-      "updated": "2026-11-23",
+      "updated": "2026-11-24",
       "figma": "https://www.figma.com/design/h8vuH2kAA3FkJlUEitXK9t/Rivet-3-Components--cleaning-?node-id=1-34"
     },
     {
