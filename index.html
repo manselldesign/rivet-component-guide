@@ -1681,6 +1681,26 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
   .rvt-dialog__actions .rvt-button{width:100%}
   dialog.rvt-dialog{width:calc(100vw - 2 * var(--rvt-spacing-24));max-height:calc(100dvh - 2 * var(--rvt-spacing-24))}
 }
+/* ---------- rvt-file-input (File input page example, Developer spec checklist) ----------
+   Types: No file yet (Choose file + "No file selected" status badge) and File picked (Change file + one file chip per file).
+   Label heading/sm/strong text/strong with a text/required asterisk, spacing/8 below. Helper text body/xs/regular text/default, spacing/4 below.
+   Button: rvt-button Form, Strong, Large (40px) with the 16px rvt-upload icon. Status: rvt-badge Warning, Subtle, with the 12px rvt-minus icon.
+   File chips: the rvt-button itself (Form, Normal, Small, leading 12px rvt-close), so they share its hover, pressed and focus states;
+   they sit in a row that wraps, spacing/8 apart. Desktop: button and status or files side by side, spacing/16 apart.
+   Mobile (under 768px): stacked, the button hugs its label, spacing/16 apart. Hugs its content; no fixed width. */
+.rvt-file-input{display:flex;flex-direction:column;align-items:flex-start;gap:var(--rvt-spacing-8);min-width:0}
+.rvt-file-input__label{margin:0;color:var(--rvt-text-strong);
+  font:var(--rvt-font-heading-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-file-input__required{color:var(--rvt-text-required)}
+.rvt-file-input__control{display:flex;flex-direction:column;align-items:flex-start;gap:var(--rvt-spacing-4);min-width:0;max-width:100%}
+.rvt-file-input__helper{margin:0;color:var(--rvt-text-default);
+  font:var(--rvt-font-body-xs-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-file-input__row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-16);min-width:0;max-width:100%}
+.rvt-file-input__files{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-8);margin:0;padding:0;list-style:none;min-width:0}
+.rvt-file-input__files li{display:flex;margin:0}
+@media (max-width:767px){
+  .rvt-file-input__row{flex-direction:column;align-items:flex-start}
+}
 /* ---------- rvt-empty-state (Empty state page example, Developer spec checklist) ----------
    Types: Empty (bell sticker) and With files (check sticker, removable file chips). Both Desktop frames are 1024px wide.
    background/strong fill; 2px dashed border/default drawn inside (outline with a -2px offset), so it never adds size (Desktop 364px / 412px tall). No radius.
@@ -2498,6 +2518,68 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
       ? `<dialog class="${cls}" id="${id}" aria-labelledby="${id}-title" aria-describedby="${id}-desc"${d.close ? '' : ' data-must-choose'}>${inner}</dialog>`
       : `<div class="${cls}" role="dialog" aria-labelledby="${id}-title" aria-describedby="${id}-desc">${inner}</div>`;
   };
+  /* rvt-file-input sample content: a letter of recommendation on an admissions application. */
+  const FI_UPLOAD = 'M7 4.174V11h2V4.174l2.608 2.236 1.302-1.518L8 .682l-4.91 4.21L4.392 6.41 7 4.174Z M3 13v-3H1v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3h-2v3H3Z'; // rvt-upload (16px), from rivet-icons
+  const FI_SAMPLE = ['letter-ms-lee.pdf', 'letter-coach-ortiz.pdf'];
+  const FI = {label: 'Letter of recommendation', helper: 'PDF or Word, up to 10 MB', empty: 'No file selected'};
+  let fiFiles = FI_SAMPLE.slice();
+  let fiAfter = null; // what to announce and focus after the stage re-renders: {say, focus}
+  const fileInputEl = type => {
+    const picked = type === 'picked';
+    if (picked && !fiFiles.length) fiFiles = FI_SAMPLE.slice();
+    return `<div class="rvt-file-input" role="group" aria-labelledby="fi-label">
+      <p class="rvt-file-input__label" id="fi-label">${esc(FI.label)} <span class="rvt-file-input__required" aria-hidden="true">*</span><span class="sr-only"> (required)</span></p>
+      <div class="rvt-file-input__control">
+        <p class="rvt-file-input__helper" id="fi-help">${esc(FI.helper)}</p>
+        <input type="file" id="fi-input" accept=".pdf,.doc,.docx" multiple hidden tabindex="-1">
+        <div class="rvt-file-input__row">
+          <button class="rvt-button rvt-button--lg rvt-button--strong" type="button" data-fi-choose aria-describedby="fi-help${picked ? '' : ' fi-status'}"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="${FI_UPLOAD}"/></svg>${picked ? 'Change file' : 'Choose file'}</button>
+          ${picked
+            ? `<ul class="rvt-file-input__files" aria-label="Chosen files">${fiFiles.map(f =>
+                `<li><button class="rvt-button rvt-button--sm rvt-button--normal rvt-file-input__file" type="button" data-file="${esc(f)}" aria-label="Remove ${esc(f)}">${icon12('close')}<span>${esc(f)}</span></button></li>`).join('')}</ul>`
+            : `<span class="rvt-badge rvt-badge--subtle rvt-badge--warning" id="fi-status">${icon12('minus')}<span>${esc(FI.empty)}</span></span>`}
+        </div>
+      </div>
+      <p class="sr-only" role="status" aria-live="polite"></p>
+    </div>`;
+  };
+  /* Choose file / Change file opens the device's file picker (a real file input); picked files show as chips.
+     Remove a chip to drop that file; removing the last one goes back to No file yet. Screen readers hear every change. */
+  const wireFileInput = stage => {
+    const fi = stage.querySelector('.rvt-file-input');
+    if (!fi) return;
+    const status = fi.querySelector('[role="status"]');
+    const input = fi.querySelector('#fi-input');
+    const sel = document.getElementById('demo-variant');
+    const show = (type, after) => {
+      fiAfter = after;
+      if (sel && sel.value !== type) { sel.value = type; sel.dispatchEvent(new Event('change')); }
+      else { stage.innerHTML = fileInputEl(type); wireFileInput(stage); }
+    };
+    if (fiAfter) {
+      const a = fiAfter; fiAfter = null;
+      const el = a.focus && fi.querySelector(a.focus);
+      if (el) el.focus();
+      setTimeout(() => { status.textContent = a.say; }, 100);
+    }
+    fi.querySelector('[data-fi-choose]').addEventListener('click', () => input.click());
+    input.addEventListener('change', () => {
+      const names = [...input.files].map(f => f.name);
+      if (!names.length) return;
+      fiFiles = names;
+      show('picked', {say: `Added ${names.join(', ')}.`, focus: '[data-fi-choose]'});
+    });
+    fi.querySelectorAll('.rvt-file-input__file').forEach(btn => btn.addEventListener('click', () => {
+      const name = btn.dataset.file;
+      fiFiles = fiFiles.filter(f => f !== name);
+      if (!fiFiles.length) { show('none', {say: `Removed ${name}. ${FI.empty}.`, focus: '[data-fi-choose]'}); return; }
+      const li = btn.closest('li');
+      const next = (li.nextElementSibling || li.previousElementSibling).querySelector('button');
+      li.remove();
+      next.focus();
+      status.textContent = `Removed ${name}.`;
+    }));
+  };
   /* rvt-empty-state sample content: a transcript upload on an admissions application. Stickers: Rivet bell and check (rivet-stickers, 80 x 80), Crimson with container. */
   const ES_STICKER = {
     bell: {fill: 'M36 17a4 4 0 0 1 8 0v.504C50.9 19.28 56 25.544 56 33v11a4 4 0 0 0 4 4h2v10H43.874a4.002 4.002 0 0 1-7.748 0H18V48h2a4 4 0 0 0 4-4V33c0-7.455 5.1-13.72 12-15.496V17Z',
@@ -3041,6 +3123,18 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
           ${DIALOGS.map(d => dialogEl(d, 'modal')).join('')}`
         : `<div class="rvt-dialog-stack">${DIALOGS.map(d => dialogEl(d, 'default')).join('')}</div>`,
       wire: wireDialogs
+    },
+    /* rvt-file-input: Type is the dropdown (No file yet, File picked). Choose file opens the real file picker; remove a chip to drop a file.
+       The component hugs its content (no fixed frame), so each type is capped at its measured width. */
+    'file-input': {
+      maxWidth: 300, // the Breakpoint=Desktop frames hug their content (318 / 446px with placeholder text): measured No file yet row 300px with Roboto Flex
+      variantLabel: 'Select type', // the dropdown picks the Type
+      variants: [
+        {id: 'none', label: 'No file yet'},
+        {id: 'picked', label: 'File picked', maxWidth: 480} // measured File picked row 478.7px with Roboto Flex, rounded up
+      ],
+      html: type => { if (type !== 'picked' && !fiAfter) fiFiles = FI_SAMPLE.slice(); return fileInputEl(type === 'picked' ? 'picked' : 'none'); },
+      wire: wireFileInput
     },
     /* rvt-empty-state: Type is the dropdown (Empty, With files). Remove a file chip to see the count change; removing the last one shows Empty,
        and Browse files there adds the sample files back. */

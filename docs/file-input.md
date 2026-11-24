@@ -20,15 +20,15 @@ A file input lets people attach a file to a form, like a letter of recommendatio
 ## Types
 
 ### Before and after a file is picked
-- **No file yet:** Before a file is picked. The button says {Choose file} and a status badge says {No file selected}
-- **File picked:** After a file is picked. The button says {Change file} and each file shows as a chip with its name and an × to remove it
+- **No file yet:** Before a file is picked. The button says "Choose file" and a status badge says "No file selected"
+- **File picked:** After a file is picked. The button says "Change file" and each file shows as a chip with its name and an × to remove it
 
 ### Breakpoint
 - **Desktop:** Button and status sit side by side
 - **Mobile:** The button stays the width of its label and the status or files sit below it
 
 ### Optional parts
-- Add helper text to list accepted file types and size, like "PDF or Word, up to 10 MB"
+- Helper text is shown by default. Use it to list accepted file types and size, like "PDF or Word, up to 10 MB", and leave it out only when the page already states them right above
 - Leave out the label only when a heading right above already names the file
 
 ## Writing tips
@@ -52,13 +52,15 @@ Check these before the page goes live. Each one names who owns it.
 
 ## Developer spec checklist
 
-Shared rules: Button is `rvt-button` (Type Form, Style Strong, Size Large: `component/button/height-lg`, 40px tall on Desktop and Mobile). Status is `rvt-badge` (Status Warning, Style Subtle). Each file chip is `rvt-button` (Type Form, Style Normal, Size Small) with a close icon that removes the file. Helper text is off by default. Label, helper text and spacing match every other form field.
+Shared rules: Button is `rvt-button` (Type Form, Style Strong, Size Large: `component/button/height-lg`, 40px tall on Desktop and Mobile). Status is `rvt-badge` (Status Warning, Style Subtle). Each file chip is `rvt-button` (Type Form, Style Normal, Size Small) with a close icon that removes the file. Helper text is on by default, the same as other form fields. No outer padding on any breakpoint: the field fills its container and the page provides the side margins. Label, helper text and spacing match every other form field.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Outer padding | None | `spacing/24` left and right (24px) |
 | Label | `heading/sm/strong` (16 / 20px, weight 700, width 110% `--rvt-font-width-semi-expanded`), `text/strong`; asterisk `text/required`; `spacing/8` below (8px) | Same |
-| Helper text | `body/xs/regular` (14 / 20px), `text/default`; `spacing/4` below (4px) | Same |
+| Helper text | `body/xs/regular` (14 / 20px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`; `spacing/4` below (4px) | Same |
+| Button | `rvt-button` Form, Strong, Large with the leading 16px `rvt-upload` icon, `action/lg/strong` (16 / 24px, weight 600, width 110%) | Same |
+| Status | `rvt-badge` Warning, Subtle with the 12px `rvt-minus` icon, `heading/xs/strong` (14 / 20px, weight 700, width 110%) | Same |
 | Button and status or files | Side by side, `spacing/16` gap (16px) | Stacked, button hugs its label, `spacing/16` gap (16px) |
 | File chips | In a row that wraps, `spacing/8` gap (8px) | Same |
-| File chip padding | `spacing/12` left and right (12px), `spacing/8` icon to name (8px), 1px `component/button/form-border` | Same |
+| File chip | `rvt-button` Form, Normal, Small (`component/button/height-sm`, 24px tall): `spacing/8` left and right (8px), `spacing/4` icon to name (4px), leading 12px `rvt-close` icon, `action/sm/strong` (14 / 20px, weight 600, width 110% `--rvt-font-width-semi-expanded`), 1px `component/button/form-border` drawn inside | Same |
+| File chip states | Same as the Normal button: hover, pressed and focus come from `rvt-button`. Each chip is a button named "Remove" plus the file name | Same |
