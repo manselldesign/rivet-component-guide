@@ -66,14 +66,14 @@ Shared rules: the same specs apply on Desktop and Mobile. Required labels end wi
 
 | Element | Default | Inline |
 | --- | --- | --- |
-| Label | `heading/xs/strong` (14 / 20px), `text/strong` | Same |
+| Label | `heading/sm/strong` (16 / 20px, weight 700, width 110% `--rvt-font-width-semi-expanded`), `text/strong` | Same |
 | Gap between label, status message and options | `spacing/8` (8px) | Same |
 | Gap, helper text to options | `spacing/4` (4px) | Same |
-| Gap between options | `spacing/12` (12px), stacked | `spacing/24` (24px), side by side |
+| Gap between options | `spacing/20` (20px), stacked | `spacing/24` (24px), side by side |
 | Options, space above | `spacing/4` (4px) | 0 |
 | Option text | `action/lg/regular` (16 / 24px), `text/strong` | Same |
 | Gap, circle to option text | `spacing/8` (8px) | Same |
 | Unchecked circle | 1px `border/strong` ring, no fill | Same |
 | Checked circle | 1px `border/accent` ring with a `background/brand` dot | Same |
 | Option description | `body/xs/regular` (14 / 20px), `text/default`, lined up with the option text | Same |
-| Gap, option text to description | `spacing/4` (4px) | Same |
+| Gap, option text to description | None, the description sits right under the option text | Same |

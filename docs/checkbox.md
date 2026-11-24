@@ -63,14 +63,14 @@ Check these before the page goes live. Each one names who owns it.
 
 ## Developer spec checklist
 
-Shared rules: Box 20 × 20px, no radius. Unchecked: 1px `border/strong` border, no fill. Checked: `background/brand` fill, 1px `border/accent` border, 16px check icon. Disabled: box at 40% opacity, checked or unchecked. Label, status message, helper text and spacing match every other form field. No separate Mobile values.
+Shared rules: Box 20 × 20px, no radius, set 1.5px down so it centers on the first line of the label. Unchecked: 1px `border/strong` border drawn inside, no fill. Checked: `background/brand` fill, 1px `border/accent` border, 16px check icon in `icon/on-brand-alt`. Disabled: box at 40% opacity, checked or unchecked; a disabled unchecked box shows a 16px minus icon in `icon/strong`. Focus: 2px `border/accent-strong` ring right outside the box (24px), no offset. No hover state. Label, status message, helper text and spacing match every other form field. No separate Mobile values.
 
 | Element | Default | Inline |
 | --- | --- | --- |
-| Group label | `heading/xs/strong` (14 / 20px), `text/strong`; asterisk `text/required`; `spacing/8` below (8px) | Same |
-| Status message | `rvt-alert` between label and options, `spacing/8` below (8px) | Same |
-| Helper text | `body/xs/regular` (14 / 20px), `text/default`; `spacing/4` below (4px); off by default | Same |
-| Options group | Stacked, `spacing/12` between options (12px) | One row, `spacing/24` between options (24px) |
+| Group label | `heading/sm/strong` (16 / 20px, weight 700, width 110% `--rvt-font-width-semi-expanded`), `text/strong`; asterisk `text/required`; `spacing/8` below (8px) | Same |
+| Status message | Inline `rvt-alert` between label and options; options sit 12px below it (`spacing/8` + `spacing/4`) | Same |
+| Helper text | `body/xs/regular` (14 / 20px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`; `spacing/4` below (4px); off by default | Same |
+| Options group | Stacked, `spacing/20` between options (20px) | One row, `spacing/24` between options (24px); wrapped rows `spacing/16` apart (16px) |
 | Box to label | `spacing/8` gap | Same |
-| Option label | `action/lg/regular` (16 / 24px), `text/default` | Same |
-| Description | `body/xs/regular` (14 / 20px), `text/default`, 29px left indent to line up with the label, `spacing/4` above | Same |
+| Option label | `action/lg/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default` | Same |
+| Description | `body/xs/regular` (14 / 20px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`, 29px left indent to line up with the label, right under the label with no gap | Same |

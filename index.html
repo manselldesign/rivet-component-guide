@@ -1487,6 +1487,46 @@ body:not(.has-rail) .site-header__menu{display:none}
   .rvt-card-contact__media{padding-bottom:var(--rvt-spacing-16)}
 }
 @media (prefers-reduced-motion:reduce){.rvt-card-contact__hours-panel,.rvt-card-contact__link,.rvt-card-contact__social-link,.rvt-card-contact__social-link svg,.rvt-card-contact__button,.rvt-card-contact__button svg{transition:none}}
+/* ---------- rvt-checkbox (Checkbox page example, Developer spec checklist) ----------
+   Group: label, optional status message (the Inline rvt-alert), optional helper text, then the options. spacing/8 between the label, message and options block;
+   helper text sits spacing/4 above the options; stacked options sit spacing/20 apart; with a status message the options get spacing/4 more above them (12px from the message).
+   Box 20px, no radius, nudged 1.5px down so it centers on the 24px label line (optical). Unchecked: 1px border/strong inside, no fill.
+   Checked: background/brand, 1px border/accent, 16px rvt-check in icon/on-brand-alt. Disabled: the box at 40% opacity; unchecked shows the 16px rvt-minus in icon/strong.
+   Focus: 2px border/accent-strong ring right outside the box (24px), no offset. No hover state. No separate Mobile values. */
+/* Each status group sits 32px from the next on every screen (spacing/24 + spacing/8; spacing/32 drops to 24px on phones), so every type has room to breathe. */
+.rvt-checkbox-stack{display:flex;flex-direction:column;gap:calc(var(--rvt-spacing-24) + var(--rvt-spacing-8))}
+.rvt-checkbox{display:flex;flex-direction:column;gap:var(--rvt-spacing-8);min-width:0}
+.rvt-checkbox__legend{margin:0;color:var(--rvt-text-strong);
+  font:var(--rvt-font-heading-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-checkbox__required{color:var(--rvt-text-required)}
+/* The status message keeps its spacing/4 padding on every screen (the checkbox has no separate Mobile values). */
+.rvt-checkbox .rvt-alert--inline{padding:var(--rvt-spacing-4)}
+.rvt-checkbox__content{display:flex;flex-direction:column;gap:var(--rvt-spacing-4);min-width:0}
+.rvt-checkbox__helper{margin:0;color:var(--rvt-text-default);
+  font:var(--rvt-font-body-xs-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-checkbox__options{display:flex;flex-direction:column;align-items:flex-start;gap:var(--rvt-spacing-20)}
+.rvt-checkbox--has-status .rvt-checkbox__options{padding-top:var(--rvt-spacing-4)}
+.rvt-checkbox--inline .rvt-checkbox__options{flex-direction:row;flex-wrap:wrap;gap:var(--rvt-spacing-16) var(--rvt-spacing-24)}
+/* The description sits right under its label, no gap. */
+.rvt-checkbox__item{display:flex;flex-direction:column;min-width:0}
+.rvt-checkbox__option{display:flex;align-items:flex-start;gap:var(--rvt-spacing-8);cursor:pointer;color:var(--rvt-text-default);
+  font:var(--rvt-font-action-lg-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-checkbox__input{box-sizing:border-box;flex:none;position:relative;width:20px;height:20px;margin:1.5px 0;border:1px solid var(--rvt-border-strong);border-radius:0;
+  background:transparent;cursor:pointer;-webkit-appearance:none;appearance:none}
+.rvt-checkbox__input::after{content:"";position:absolute;inset:1px;display:none;background:var(--rvt-icon-on-brand-alt);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M14.9142 4L5.44353 13.4707L1.08997 8.39153L2.60848 7.08995L5.5565 10.5293L13.5 2.58578L14.9142 4Z'/%3E%3C/svg%3E") center/16px 16px no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M14.9142 4L5.44353 13.4707L1.08997 8.39153L2.60848 7.08995L5.5565 10.5293L13.5 2.58578L14.9142 4Z'/%3E%3C/svg%3E") center/16px 16px no-repeat}
+.rvt-checkbox__input:checked{background:var(--rvt-background-brand);border-color:var(--rvt-border-accent)}
+.rvt-checkbox__input:checked::after{display:block}
+.rvt-checkbox__input:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
+.rvt-checkbox__input:disabled{opacity:.4;cursor:not-allowed}
+.rvt-checkbox__input:disabled:not(:checked)::after{display:block;background:var(--rvt-icon-strong);
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M15 9H1V7H15V9Z'/%3E%3C/svg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M15 9H1V7H15V9Z'/%3E%3C/svg%3E")}
+.rvt-checkbox__option:has(.rvt-checkbox__input:disabled){cursor:not-allowed}
+/* Description: 29px indent lines it up with the label (20px box + spacing/8, plus 1px optical). */
+.rvt-checkbox__desc{margin:0;padding-left:29px;color:var(--rvt-text-default);
+  font:var(--rvt-font-body-xs-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
 </style>
 </head>
 <body>
@@ -2154,6 +2194,45 @@ body:not(.has-rail) .site-header__menu{display:none}
       </div>
     </article>`;
   };
+  /* rvt-checkbox example. Status order follows the component: Default, Info, Success, Warning, Danger, stacked 32px apart. Each status is its own question;
+     `stacked` and `inline` hold the options for each Type. o = [label, {checked, disabled, desc}]. */
+  const CHECKBOXES = [
+    {status: 'default', label: 'Which programs interest you?', helper: 'Pick all that apply.',
+      stacked: [['Nursing', {checked: true}], ['Public health'], ['Informatics', {desc: 'Covers data science, cybersecurity and design.'}], ['Music', {disabled: true, desc: 'Fall auditions are full. Spring opens in October.'}]],
+      inline: [['Nursing', {checked: true}], ['Public health'], ['Informatics'], ['Music', {disabled: true}]]},
+    {status: 'info', word: 'Info', glyph: 'info', label: 'What should we email you about?', message: 'You can change these any time in your profile.',
+      stacked: [['Account and billing notices', {checked: true, disabled: true, desc: 'Every student gets these.'}], ['Application updates', {checked: true}], ['Campus events'], ['Scholarship deadlines']],
+      inline: [['Billing', {checked: true, disabled: true}], ['Application', {checked: true}], ['Events'], ['Scholarships']]},
+    {status: 'success', word: 'Success', glyph: 'check', label: 'Which visit days work for you?', message: 'Your visit days were saved.',
+      stacked: [['Friday, October 9', {checked: true}], ['Saturday, October 10', {checked: true}], ['Friday, October 23', {desc: 'Includes a tour of the residence halls.'}], ['Saturday, October 24']],
+      inline: [['October 9', {checked: true}], ['October 10', {checked: true}], ['October 23'], ['October 24']]},
+    {status: 'warning', word: 'Warning', glyph: 'minus', label: 'Which residence halls interest you?', message: 'Briscoe fills early. Add a second choice.',
+      stacked: [['Briscoe', {checked: true}], ['Forest'], ['McNutt', {desc: 'Closest to the Kelley School of Business.'}], ['Teter']],
+      inline: [['Briscoe', {checked: true}], ['Forest'], ['McNutt'], ['Teter']]},
+    {status: 'danger', word: 'Error', glyph: 'exclamation', required: true, label: 'Which terms are you applying for?', message: 'Pick at least one term to continue.',
+      stacked: [['Fall'], ['Spring'], ['Summer', {desc: 'Summer classes start in May or June.'}], ['Winter']],
+      inline: [['Fall'], ['Spring'], ['Summer'], ['Winter']]}
+  ];
+  const checkboxGroup = (g, type) => {
+    const id = `cb-${type}-${g.status}`;
+    const notes = [g.message && `${id}-msg`, g.helper && `${id}-help`].filter(Boolean).join(' ');
+    return `<div class="rvt-checkbox rvt-checkbox--${type}${g.message ? ' rvt-checkbox--has-status' : ''}" role="group" aria-labelledby="${id}-label"${notes ? ` aria-describedby="${notes}"` : ''}>
+      <p class="rvt-checkbox__legend" id="${id}-label">${esc(g.label)}${g.required ? ' <span class="rvt-checkbox__required" aria-hidden="true">*</span><span class="sr-only"> (required)</span>' : ''}</p>
+      ${g.message ? `<div class="rvt-alert rvt-alert--inline rvt-alert--${g.status}" id="${id}-msg">
+        <span class="rvt-alert__slot" aria-hidden="true"><span class="rvt-alert__badge">${icon12(g.glyph)}</span></span>
+        <p class="rvt-alert__message"><span class="sr-only">${esc(g.word)}: </span>${esc(g.message)}</p>
+      </div>` : ''}
+      <div class="rvt-checkbox__content">
+        ${g.helper ? `<p class="rvt-checkbox__helper" id="${id}-help">${esc(g.helper)}</p>` : ''}
+        <div class="rvt-checkbox__options">${g[type === 'inline' ? 'inline' : 'stacked'].map(([label, o = {}], i) => `
+          <div class="rvt-checkbox__item">
+            <label class="rvt-checkbox__option"><input class="rvt-checkbox__input" type="checkbox" name="${id}"${o.checked ? ' checked' : ''}${o.disabled ? ' disabled' : ''}${o.desc ? ` aria-describedby="${id}-desc-${i}"` : ''}><span class="rvt-checkbox__label">${esc(label)}</span></label>
+            ${o.desc ? `<p class="rvt-checkbox__desc" id="${id}-desc-${i}">${esc(o.desc)}</p>` : ''}
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  };
   const demos = {
     accordion: {
       maxWidth: 850, // Figma rvt-accordion, Breakpoint=Desktop frame width
@@ -2453,6 +2532,17 @@ body:not(.has-rail) .site-header__menu{display:none}
       },
       /* Sample link stays on the page. */
       wire: stage => stage.querySelectorAll('.rvt-card-feature__link').forEach(a => a.addEventListener('click', e => e.preventDefault()))
+    },
+    /* rvt-checkbox: Type is the dropdown (Default, Inline). The stage shows every Status (Default, Info, Success, Warning, Danger) stacked 32px apart for the chosen type.
+       The component has no Breakpoint=Desktop frame, so each type is capped at its widest Figma frame. Native checkboxes: Tab to move, Space to check. */
+    checkbox: {
+      maxWidth: 520, // Figma rvt-checkbox, Type=Default, Status=Info frame width (the widest Type=Default frame)
+      variantLabel: 'Select type', // the dropdown picks the Type
+      variants: [
+        {id: 'default', label: 'Default'},
+        {id: 'inline', label: 'Inline', maxWidth: 1272} // Figma rvt-checkbox, Type=Inline status frame width
+      ],
+      html: type => `<div class="rvt-checkbox-stack">${CHECKBOXES.map(g => checkboxGroup(g, type === 'inline' ? 'inline' : 'default')).join('')}</div>`
     },
     /* rvt-tabs: Type is the variant (Contained, Segmented), each capped at its own Breakpoint=Desktop frame width. */
     tabs: {
