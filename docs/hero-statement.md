@@ -47,7 +47,7 @@ A statement hero opens a page with a bold headline and one to three large photos
 
 ## Developer spec checklist
 
-Shared rules: Background `background/default`. Desktop is 1600px wide, Mobile 375px. Primary button is `rvt-link` (Style Strong) with `background/brand`; secondary has a 1px `border/accent` border. The card is `rvt-card-hero` (`component/hero/background`, `shadow/sm`). It uses the same text and sticker sizes and spacing as the Compact card, with the hero colors. Photos are fixed-aspect image slots with `spacing/8` between them (8px).
+Shared rules: Background `background/default`. Desktop is 1600px wide, Mobile 375px. Primary button is `rvt-link` (Style Strong) with `background/brand`; secondary has a 1px `border/accent` border. The card is `rvt-card-hero` (`component/hero/background`, `shadow/sm`). It uses the same text and sticker sizes and spacing as the Compact card, with the hero colors. Photos are fixed-aspect image slots with `spacing/8` between them (8px). Type is fluid, the same as on every hero: any text with a smaller Mobile size scales with the hero's width in a straight line, from its Mobile size at 375px to its Desktop size at 1024px or wider. Sizes are always whole pixels and line heights snap to the 4px grid.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
