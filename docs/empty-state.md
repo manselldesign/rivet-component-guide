@@ -30,8 +30,8 @@ An empty state fills a space that has nothing in it yet, like a file upload area
 - Keep at least one button so people always have a next step
 
 ### Button order
-- On desktop, the main button goes on the right
-- On phones, the buttons stack and the main button goes on top
+- The main button always comes first: on the left on desktop, on top on phones
+- Keep the same order on every screen so people using a keyboard or screen reader meet the buttons in the order they see them
 
 ## Writing tips
 - Write the title as what's happening, like "You haven't added any files"
@@ -54,14 +54,15 @@ Check these before the page goes live. Each one names who owns it.
 
 ## Developer spec checklist
 
-Shared rules: `background/strong` fill, 2px dashed `border/default` border, no radius. Content centered. Main (Strong) button last on Desktop, first on Mobile.
+Shared rules: `background/strong` fill, 2px dashed `border/default` border, no radius. Content centered. Main (Strong) button first on every breakpoint (left on Desktop, top on Mobile), so the DOM, keyboard and visual order match.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
 | Padding | `spacing/64` all sides (64px) | `spacing/48` top and bottom (36px), `spacing/24` sides (24px) |
 | Sticker | 80px (`bell` empty, `check` files added), `spacing/16` below | Same |
-| Content | `spacing/40` between text and buttons (40px) | `spacing/40` (32px) |
-| Title | `heading/md/strong` (20 / 24px), `text/strong` | Same |
-| Body | `body/base/regular` (18 / 28px), `text/default`, `spacing/8` below the title | `body/base/regular` (16 / 24px) |
-| File chips | `rvt-badge` with remove icon, 1px `component/button/form-border` border, `spacing/16` above, `spacing/12` gap | Same |
-| Buttons | `rvt-button` Form, Large (`component/button/height-lg`, 40px tall), side by side, `spacing/16` gap | Same height (40px), stacked and centered, each button hugs its label, `spacing/8` gap |
+| Content | `spacing/40` between text and buttons (40px) | `spacing/32` (24px) |
+| Title | `heading/md/strong` (20 / 24px, weight 700, width 110% `--rvt-font-width-semi-expanded`), `text/strong` | Same |
+| Body | `body/base/regular` (18 / 28px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`, `spacing/8` below the title, up to 750px wide | `body/base/regular` (16 / 24px) |
+| File chips | `rvt-button` Form, Small, Normal (`component/button/height-sm`, 24px tall) with a leading 12px `rvt-close` icon, `spacing/16` above the row, `spacing/12` apart | Same |
+| File chip states | Same as the Normal button: hover, pressed and focus come from `rvt-button`. Each chip is a button named "Remove" plus the file name | Same |
+| Buttons | `rvt-button` Form, Large (`component/button/height-lg`, 40px tall), side by side, Strong first, `spacing/16` gap | Same height (40px), stacked and centered in the same order (Strong on top), each button hugs its label, `spacing/8` gap |

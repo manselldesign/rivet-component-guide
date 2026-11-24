@@ -1681,6 +1681,38 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
   .rvt-dialog__actions .rvt-button{width:100%}
   dialog.rvt-dialog{width:calc(100vw - 2 * var(--rvt-spacing-24));max-height:calc(100dvh - 2 * var(--rvt-spacing-24))}
 }
+/* ---------- rvt-empty-state (Empty state page example, Developer spec checklist) ----------
+   Types: Empty (bell sticker) and With files (check sticker, removable file chips). Both Desktop frames are 1024px wide.
+   background/strong fill; 2px dashed border/default drawn inside (outline with a -2px offset), so it never adds size (Desktop 364px / 412px tall). No radius.
+   Desktop: spacing/64 padding; sticker 80px, spacing/16 below; content spacing/40 between the text and the buttons.
+   Title heading/md/strong (20 / 24px) text/strong; body body/base/regular text/default, spacing/8 below the title; text column up to 750px, centered.
+   File chips: the rvt-button itself (Form, Small, Normal, leading 12px rvt-close), so they share its size, hover, pressed and focus states;
+   spacing/16 above the row, spacing/12 apart. Each is named "Remove <file>".
+   Buttons: rvt-button Form, Large (40px), Strong first then Normal, spacing/16 apart, so the reading and keyboard order match what people see on every screen.
+   Sticker: Crimson, with container, the same in every theme.
+   Mobile (under 768px): spacing/48 top and bottom (36px), spacing/24 sides; content spacing/32 (24px); body 16 / 24px;
+   buttons stack in the same order (Strong on top), each hugging its label, spacing/8 apart. */
+.rvt-empty-state{box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-16);
+  padding:var(--rvt-spacing-64);background:var(--rvt-background-strong);outline:2px dashed var(--rvt-border-default);outline-offset:-2px;text-align:center}
+.rvt-empty-state__sticker{flex:none;display:block;width:80px;height:80px;border-radius:var(--rvt-border-radius-full);background:var(--rvt-color-brand-light);color:var(--rvt-color-brand-main)}
+.rvt-empty-state__sticker svg{display:block;width:100%;height:100%}
+.rvt-empty-state__sticker .fill{fill:var(--rvt-color-base-ultra-light)}
+.rvt-empty-state__sticker .art{fill:currentColor}
+.rvt-empty-state__content{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-40);width:100%}
+.rvt-empty-state__text{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-8);width:100%;max-width:750px}
+.rvt-empty-state__title{margin:0;color:var(--rvt-text-strong);overflow-wrap:break-word;
+  font:var(--rvt-font-heading-md-strong);font-stretch:var(--rvt-font-width-semi-expanded);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-empty-state__title:focus{outline:none}
+.rvt-empty-state__body{margin:0;color:var(--rvt-text-default);overflow-wrap:break-word;
+  font:var(--rvt-font-body-base-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-empty-state__files{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--rvt-spacing-12);margin:0;padding:var(--rvt-spacing-16) 0 0;list-style:none}
+.rvt-empty-state__files li{display:flex;margin:0}
+.rvt-empty-state__actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:var(--rvt-spacing-16);width:100%}
+@media (max-width:767px){
+  .rvt-empty-state{padding:var(--rvt-spacing-48) var(--rvt-spacing-24)}
+  .rvt-empty-state__content{gap:var(--rvt-spacing-32)}
+  .rvt-empty-state__actions{flex-direction:column;gap:var(--rvt-spacing-8)}
+}
 @media (prefers-reduced-motion:reduce){
   .rvt-dialog__close{transition:none}
   dialog.rvt-dialog[open],dialog.rvt-dialog[open]::backdrop{animation:none}
@@ -2466,6 +2498,77 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
       ? `<dialog class="${cls}" id="${id}" aria-labelledby="${id}-title" aria-describedby="${id}-desc"${d.close ? '' : ' data-must-choose'}>${inner}</dialog>`
       : `<div class="${cls}" role="dialog" aria-labelledby="${id}-title" aria-describedby="${id}-desc">${inner}</div>`;
   };
+  /* rvt-empty-state sample content: a transcript upload on an admissions application. Stickers: Rivet bell and check (rivet-stickers, 80 x 80), Crimson with container. */
+  const ES_STICKER = {
+    bell: {fill: 'M36 17a4 4 0 0 1 8 0v.504C50.9 19.28 56 25.544 56 33v11a4 4 0 0 0 4 4h2v10H43.874a4.002 4.002 0 0 1-7.748 0H18V48h2a4 4 0 0 0 4-4V33c0-7.455 5.1-13.72 12-15.496V17Z',
+      art: ['M32 33c0-4.694 3.306-8 8-8v-2c-5.799 0-10 4.201-10 10h2Z', 'M36 17a4 4 0 0 1 8 0v.504C50.9 19.28 56 25.544 56 33v11a4 4 0 0 0 4 4h2v10H43.874a4.002 4.002 0 0 1-7.748 0H18V48h2a4 4 0 0 0 4-4V33c0-7.455 5.1-13.72 12-15.496V17ZM20 50v6h40v-6H20Zm4.472-2h31.056A5.978 5.978 0 0 1 54 44V33c0-7.732-6.268-14-14-14s-14 6.268-14 14v11a5.978 5.978 0 0 1-1.528 4ZM42 17a2 2 0 1 0-4 0v.124a16.158 16.158 0 0 1 4 0V17Z']},
+    check: {fill: DIALOG_STICKER.fill, art: [DIALOG_STICKER.success, DIALOG_STICKER.ring]}
+  };
+  const ES_FILES = ['high-school-transcript.pdf', 'college-transcript.pdf'];
+  const ES = {
+    empty: {sticker: 'bell', title: () => 'You haven’t added any transcripts', body: 'Drag and drop or browse PDF files up to 10 MB to add.',
+      secondary: 'See file requirements', primary: 'Browse files'},
+    files: {sticker: 'check', title: n => `You’ve added ${n} ${n === 1 ? 'file' : 'files'}`, body: 'Drag and drop or browse more files to add.',
+      secondary: 'Add more files', primary: 'Upload files'}
+  };
+  let esFiles = ES_FILES.slice();
+  let esAfter = null; // what to announce and focus after the stage re-renders: {say, focus}
+  const esSticker = name => `<span class="rvt-empty-state__sticker"><svg viewBox="0 0 80 80" aria-hidden="true" focusable="false"><path class="fill" d="${ES_STICKER[name].fill}"/>${ES_STICKER[name].art.map(d => `<path class="art" d="${d}"/>`).join('')}</svg></span>`;
+  const emptyStateEl = type => {
+    const t = ES[type] || ES.empty;
+    const files = type === 'files';
+    if (files && !esFiles.length) esFiles = ES_FILES.slice();
+    return `<div class="rvt-empty-state" data-type="${files ? 'files' : 'empty'}">
+      ${esSticker(t.sticker)}
+      <div class="rvt-empty-state__content">
+        <div class="rvt-empty-state__text">
+          <h3 class="rvt-empty-state__title" tabindex="-1">${esc(t.title(esFiles.length))}</h3>
+          <p class="rvt-empty-state__body">${esc(t.body)}</p>
+          ${files ? `<ul class="rvt-empty-state__files" aria-label="Added files">${esFiles.map(f =>
+            `<li><button class="rvt-button rvt-button--sm rvt-button--normal rvt-empty-state__file" type="button" data-file="${esc(f)}" aria-label="Remove ${esc(f)}">${icon12('close')}<span>${esc(f)}</span></button></li>`).join('')}</ul>` : ''}
+        </div>
+        <div class="rvt-empty-state__actions">
+          <button class="rvt-button rvt-button--lg rvt-button--strong" type="button"${files ? '' : ' data-es-browse'}>${esc(t.primary)}</button>
+          <button class="rvt-button rvt-button--lg rvt-button--normal" type="button">${esc(t.secondary)}</button>
+        </div>
+      </div>
+      <p class="sr-only" role="status" aria-live="polite"></p>
+    </div>`;
+  };
+  /* Remove a file chip: the title count updates, focus moves to the next chip (or the one before), and screen readers hear what changed.
+     Removing the last file switches the example to Empty; Browse files there adds the sample files back. */
+  const wireEmptyState = stage => {
+    const es = stage.querySelector('.rvt-empty-state');
+    if (!es) return;
+    const status = es.querySelector('[role="status"]');
+    const sel = document.getElementById('demo-variant');
+    const switchTo = (type, after) => {
+      esAfter = after;
+      if (sel) { sel.value = type; sel.dispatchEvent(new Event('change')); }
+    };
+    if (esAfter) {
+      const a = esAfter; esAfter = null;
+      const el = a.focus && es.querySelector(a.focus);
+      if (el) el.focus();
+      setTimeout(() => { status.textContent = a.say; }, 100);
+    }
+    es.querySelectorAll('.rvt-empty-state__file').forEach(btn => btn.addEventListener('click', () => {
+      const name = btn.dataset.file;
+      esFiles = esFiles.filter(f => f !== name);
+      if (!esFiles.length) { switchTo('empty', {say: `Removed ${name}. No files added.`, focus: '[data-es-browse]'}); return; }
+      const li = btn.closest('li');
+      const next = (li.nextElementSibling || li.previousElementSibling).querySelector('button');
+      li.remove();
+      es.querySelector('.rvt-empty-state__title').textContent = ES.files.title(esFiles.length);
+      next.focus();
+      status.textContent = `Removed ${name}. ${ES.files.title(esFiles.length)}.`;
+    }));
+    const browse = es.querySelector('[data-es-browse]');
+    if (browse) browse.addEventListener('click', () => {
+      esFiles = ES_FILES.slice();
+      switchTo('files', {say: `${ES.files.title(esFiles.length)}.`, focus: '.rvt-empty-state__file'});
+    });
+  };
   /* Modal: each button opens its dialog over the page. Any button inside closes it; Escape closes it too, except the destructive one, where people must choose.
      Clicking the overlay never closes it. */
   const wireDialogs = stage => {
@@ -2938,6 +3041,18 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
           ${DIALOGS.map(d => dialogEl(d, 'modal')).join('')}`
         : `<div class="rvt-dialog-stack">${DIALOGS.map(d => dialogEl(d, 'default')).join('')}</div>`,
       wire: wireDialogs
+    },
+    /* rvt-empty-state: Type is the dropdown (Empty, With files). Remove a file chip to see the count change; removing the last one shows Empty,
+       and Browse files there adds the sample files back. */
+    'empty-state': {
+      maxWidth: 1024, // Figma rvt-empty-state, Breakpoint=Desktop frame width (Files Added=False and True are both 1024px)
+      variantLabel: 'Select type', // the dropdown picks the Type
+      variants: [
+        {id: 'empty', label: 'Empty'},
+        {id: 'files', label: 'With files'}
+      ],
+      html: type => { if (type !== 'files' && !esAfter) esFiles = ES_FILES.slice(); return emptyStateEl(type === 'files' ? 'files' : 'empty'); },
+      wire: wireEmptyState
     },
     /* rvt-tabs: Type is the variant (Contained, Segmented), each capped at its own Breakpoint=Desktop frame width. */
     tabs: {
