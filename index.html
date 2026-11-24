@@ -118,8 +118,13 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
   .hero h1{--hero-title:round(nearest,clamp(29px,calc(29px + (100vw - 375px) * 0.0230303),48px),1px);
     font-size:var(--hero-title);line-height:round(nearest,calc(var(--hero-title) * 1.1),4px)}
 }
-/* Intro: body/sm/regular 16/24 at every size, spacing/16 above. */
-.hero .intro{font-size:16px;line-height:24px;margin:var(--rvt-spacing-16) 0 0;max-width:800px;color:#ffffff}
+/* Intro: body/base/regular, 18/28 desktop, 16/24 mobile, spacing/16 above. Fluid like the headline (16, 17, 18px; line height on the 4px grid). */
+.hero .intro{font-size:var(--rvt-type-size-16-18);line-height:var(--rvt-type-line-height-28);margin:var(--rvt-spacing-16) 0 0;max-width:800px;color:#ffffff}
+@media (max-width:767px){.hero .intro{line-height:24px}}
+@supports (font-size:round(nearest,1px,1px)){
+  .hero .intro{--hero-intro:round(nearest,clamp(16px,calc(16px + (100vw - 375px) * 0.0024242),18px),1px);
+    font-size:var(--hero-intro);line-height:round(nearest,calc(var(--hero-intro) * 1.5),4px)}
+}
 .hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-16);margin-top:var(--rvt-spacing-40)}
 @media (max-width:767px){
   .hero{padding-top:var(--rvt-spacing-40)}
@@ -1089,7 +1094,7 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
    Background background/default; 1px border/default rule along the bottom (the last thing in the hero), starting flush with the content on the left and running past the right padding to the page edge.
    Side by side: spacing/96 top, spacing/80 sides (the page gutter: flush with the main content); text and card in a row, spacing/64 apart, card 440px wide, aligned to the bottom.
    Stacked: spacing/96 top; card under the text, spacing/64 above it, 700px wide.
-   Metadata tag/md/caps text/brand, spacing/8 below. Headline display/lg/strong text/brand, up to 920px, fluid between its Mobile and Desktop sizes. Body body/sm/regular text/default, spacing/16 above, up to 800px.
+   Metadata tag/md/caps text/brand, spacing/8 below. Headline display/lg/strong text/brand, up to 920px, fluid between its Mobile and Desktop sizes. Body body/base/regular text/default (fluid too), spacing/16 above, up to 800px.
    Buttons: rvt-link Extra-large, Strong first then Normal, spacing/40 above, spacing/16 apart (also between wrapped rows).
    Card: rvt-card Compact, Plain, Raised (the Card example's own classes). */
 .rvt-hero-callout-wrap{container-type:inline-size}
@@ -1109,7 +1114,7 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
 .rvt-hero-callout__title{max-width:920px;margin:0;color:var(--rvt-text-brand);
   font:var(--rvt-font-display-lg-strong);font-stretch:var(--rvt-font-width-normal);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
 .rvt-hero-callout__body{max-width:800px;margin:0;padding-top:var(--rvt-spacing-16);color:var(--rvt-text-default);
-  font:var(--rvt-font-body-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+  font:var(--rvt-font-body-base-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
 .rvt-hero-callout__actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--rvt-spacing-16);padding-top:var(--rvt-spacing-40)}
 /* rvt-link, Extra-large: component/button/height-xl, spacing/16 sides, spacing/8 to the 16px arrow. Focus: 2px border/accent-strong, 2px outside, square corners.
    Strong: background/brand, text and arrow on-brand-alt; hover background/accent. Normal: 1px border/accent drawn inside, text/accent, icon/accent;
@@ -1140,6 +1145,7 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
     padding:var(--rvt-spacing-40) 0 0}
   .rvt-hero-callout__inner{gap:var(--rvt-spacing-48);padding-bottom:var(--rvt-spacing-48)}
   .rvt-hero-callout__title{font-size:var(--rvt-type-size-29-48);line-height:var(--rvt-type-line-height-32-52)}
+  .rvt-hero-callout__body{font-size:var(--rvt-type-size-16-18);line-height:var(--rvt-type-line-height-28)}
   .rvt-hero-callout__actions{flex-direction:column;align-items:flex-start}
 }
 /* Headline, fluid: 29px when the hero has 375px of room up to 48px at 1024px or more, in a straight line between, always a whole pixel.
@@ -1147,6 +1153,9 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
 @supports (font-size:round(nearest,1px,1px)){
   .rvt-hero-callout__title{--hc-title:round(nearest,clamp(29px,calc(29px + (100cqi - 375px) * 0.0292758),48px),1px);
     font-size:var(--hc-title);line-height:round(nearest,calc(var(--hc-title) * 1.1),4px)}
+  /* Body, fluid over the same range: 16px up to 18px (16/24, 17/24, 18/28). */
+  .rvt-hero-callout__body{--hc-body:round(nearest,clamp(16px,calc(16px + (100cqi - 375px) * 0.0030817),18px),1px);
+    font-size:var(--hc-body);line-height:round(nearest,calc(var(--hc-body) * 1.5),4px)}
 }
 @media (prefers-reduced-motion:reduce){.rvt-hero-callout__button,.rvt-hero-callout__button svg{transition:none}}
 /* ---------- rvt-breadcrumbs (Breadcrumbs page example, Developer spec checklist) ----------
