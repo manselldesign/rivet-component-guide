@@ -1489,7 +1489,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 @media (prefers-reduced-motion:reduce){.rvt-card-contact__hours-panel,.rvt-card-contact__link,.rvt-card-contact__social-link,.rvt-card-contact__social-link svg,.rvt-card-contact__button,.rvt-card-contact__button svg{transition:none}}
 /* ---------- rvt-checkbox (Checkbox page example, Developer spec checklist) ----------
    Group: label, optional status message (the Inline rvt-alert), optional helper text, then the options. spacing/8 between the label, message and options block;
-   helper text sits spacing/4 above the options; stacked options sit spacing/20 apart; with a status message the options get spacing/4 more above them (12px from the message).
+   helper text sits spacing/4 above the options; stacked options sit spacing/16 apart; with a status message the options get spacing/4 more above them (12px from the message).
    Box 20px, no radius, nudged 1.5px down so it centers on the 24px label line (optical). Unchecked: 1px border/strong inside, no fill.
    Checked: background/brand, 1px border/accent, 16px rvt-check in icon/on-brand-alt. Disabled: the box at 40% opacity; unchecked shows the 16px rvt-minus in icon/strong.
    Focus: 2px border/accent-strong ring right outside the box (24px), no offset. No hover state. No separate Mobile values. */
@@ -1504,7 +1504,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-checkbox__content{display:flex;flex-direction:column;gap:var(--rvt-spacing-4);min-width:0}
 .rvt-checkbox__helper{margin:0;color:var(--rvt-text-default);
   font:var(--rvt-font-body-xs-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
-.rvt-checkbox__options{display:flex;flex-direction:column;align-items:flex-start;gap:var(--rvt-spacing-20)}
+.rvt-checkbox__options{display:flex;flex-direction:column;align-items:flex-start;gap:var(--rvt-spacing-16)}
 .rvt-checkbox--has-status .rvt-checkbox__options{padding-top:var(--rvt-spacing-4)}
 .rvt-checkbox--inline .rvt-checkbox__options{flex-direction:row;flex-wrap:wrap;gap:var(--rvt-spacing-16) var(--rvt-spacing-24)}
 /* The description sits right under its label, no gap. */

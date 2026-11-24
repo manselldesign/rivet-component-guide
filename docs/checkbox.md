@@ -70,7 +70,7 @@ Shared rules: Box 20 × 20px, no radius, set 1.5px down so it centers on the fir
 | Group label | `heading/sm/strong` (16 / 20px, weight 700, width 110% `--rvt-font-width-semi-expanded`), `text/strong`; asterisk `text/required`; `spacing/8` below (8px) | Same |
 | Status message | Inline `rvt-alert` between label and options; options sit 12px below it (`spacing/8` + `spacing/4`) | Same |
 | Helper text | `body/xs/regular` (14 / 20px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`; `spacing/4` below (4px); off by default | Same |
-| Options group | Stacked, `spacing/20` between options (20px) | One row, `spacing/24` between options (24px); wrapped rows `spacing/16` apart (16px) |
+| Options group | Stacked, `spacing/16` between options (16px) | One row, `spacing/24` between options (24px); wrapped rows `spacing/16` apart (16px) |
 | Box to label | `spacing/8` gap | Same |
 | Option label | `action/lg/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default` | Same |
 | Description | `body/xs/regular` (14 / 20px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`, 29px left indent to line up with the label, right under the label with no gap | Same |
