@@ -408,7 +408,7 @@ button.btn{font-family:var(--font-sans);cursor:pointer;-webkit-appearance:none;a
    text/default #ffffff (ink), text/accent #fdfaf7 (crimson), accent-strong #efdfc8 (hover).
    Always dark, in both page themes, like the hero. Below 1024px the rail becomes the prototype's
    in-flow disclosure under a compact bar (400ms max-height ease, content pushes down). */
-#rail-shell{--rail-pad:24px;--rail-bg:#1f2528;--rail-rule:#000000;--rail-text:#ffffff;--rail-accent:#faf6ef;--rail-strong:#efdfc8;color-scheme:dark}
+#rail-shell{--rail-pad:24px;--rail-bg:#1f2528;--rail-rule:#000000;--rail-text:#ffffff;--rail-ink:#ffffff;--rail-accent:#faf6ef;--rail-strong:#efdfc8;color-scheme:dark}
 :root{--rail-w:260px}
 body:not(.has-rail) #rail-shell{display:none}
 #rail{background:var(--rail-bg);color:var(--rail-text)}
@@ -422,9 +422,9 @@ body:not(.has-rail) #rail-shell{display:none}
 .rail-after-back{padding-top:20px}
 @media (min-width:1024px){.rail-after-back{padding-top:28px}}
 .rail-title{display:flex;width:100%;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--rail-rule);
-  color:var(--rail-accent);text-decoration:none;font-size:14px;line-height:20px;font-weight:600}
+  color:var(--rail-ink);text-decoration:none;font-size:14px;line-height:20px;font-weight:600} /* text/strong: only the page you are on is accent (crimson) */
 .rail-title-label{min-width:0;flex:1;text-decoration:none;text-decoration-thickness:1px;text-underline-offset:3px}
-.rail-title:hover,.rail-title:focus-visible{color:var(--rail-strong);text-decoration:none}
+.rail-title:hover,.rail-title:focus-visible{color:var(--rail-ink);text-decoration:none} /* hover: underline only, no color shift (A7) */
 .rail-title:hover .rail-title-label,.rail-title:focus-visible .rail-title-label{text-decoration:underline}
 .rail-item{display:flex;align-items:center;gap:8px;padding:12px 0;color:var(--rail-text);text-decoration:none;
   font-size:14px;line-height:20px;font-weight:350}
@@ -501,16 +501,16 @@ body:not(.has-rail) .site-header__menu{display:none}
 }
 /* Desktop side menu = prototype-hub v1.3-bloomington A7 (Figma _rvt-sidebar-menu, Children only). The phone menu below 1024px is unchanged.
    Rail 260px: 20px above Back, 24px sides and bottom. Back: 12px rvt-arrow-left-12, 8px gap, action/sm/strong 14/20.
-   Title 28px under Back: action/lg/strong 16/24, no rule under it; underlined (from-font) on hover.
-   Rows: body/xs/regular 14/20, no rules between them, 16px apart, the first 16px under the title; each link's click area reaches 8px above and below (36px).
+   Title 28px under Back: action/lg/strong 16/24, a 1px border/default rule 8px under it (2026-11-24); underlined (from-font) on hover.
+   Rows: body/xs/regular 14/20, no rules between them, 16px apart, the first 19px under the rule; each link's click area reaches 8px above and below (36px).
    Current row: accent, weight 600, underline from the font. Hover/focus: accent + underline. All side menu text is width 100. */
 @media (min-width:1024px){
   #rail-nav{padding-top:20px}
   .rail-back,.rail-title,.rail-item{font-stretch:100%}
   .rail-after-back{padding-top:28px}
-  .rail-title{padding-bottom:0;border-bottom:0;font-size:16px;line-height:24px}
+  .rail-title{padding-bottom:8px;border-bottom:1px solid var(--rail-rule);font-size:16px;line-height:24px} /* 2026-11-24: thin rule 8px under the title, then 19px to the first row (8 + 1 + 19 = 28), as in prototype A7 */
   .rail-title-label{text-underline-position:from-font}
-  #rail ul{display:flex;flex-direction:column;gap:16px;padding-top:16px}
+  #rail ul{display:flex;flex-direction:column;gap:16px;padding-top:19px}
   #rail li{border-bottom:0}
   .rail-item{position:relative;padding:0}
   .rail-item::before{content:"";position:absolute;inset:-8px 0}
@@ -585,7 +585,7 @@ body:not(.has-rail) .site-header__menu{display:none}
 :root[data-page-theme] .btn{border-color:var(--rvt-border-accent);color:var(--rvt-text-accent)}
 :root[data-page-theme] .btn:hover{border-color:var(--rvt-border-accent-strong);color:var(--rvt-text-brand-strong)}
 :root[data-page-theme] .btn:focus-visible{outline-color:var(--rvt-border-accent-strong)}
-:root[data-page-theme] #rail-shell{--rail-bg:var(--rvt-background-default);--rail-rule:var(--rvt-border-default);--rail-text:var(--rvt-text-default);--rail-accent:var(--rvt-text-accent);--rail-strong:var(--rvt-text-brand-strong)}
+:root[data-page-theme] #rail-shell{--rail-bg:var(--rvt-background-default);--rail-rule:var(--rvt-border-default);--rail-text:var(--rvt-text-default);--rail-ink:var(--rvt-text-strong);--rail-accent:var(--rvt-text-accent);--rail-strong:var(--rvt-text-brand-strong)}
 :root[data-page-theme="light"] #rail-shell{color-scheme:light}
 
 /* ---------- rvt-tabs, Type=Segmented, Size=Large (Small below 768px): page theme switcher ----------
