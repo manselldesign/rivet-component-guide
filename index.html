@@ -698,6 +698,66 @@ body:not(.has-rail) .site-header__menu{display:none}
   font:var(--rvt-font-body-xs-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);color:var(--rvt-text-default)}
 @media (prefers-reduced-motion:reduce){.rvt-disclosure__panel,.rvt-disclosure__panel.is-open,.rvt-disclosure__title{transition:none}}
 
+/* ---------- rvt-dropdown (Dropdown page, Developer spec checklist) ----------
+   Menu (both types): background/raised, no radius, absolutely placed spacing/8 under its trigger. Rows 32px tall (App link items 28px), action/sm/regular text/strong;
+   hover text/accent + underline; selected action/sm/strong text/accent + underline (a hidden bold copy holds the width, so bold never shifts the item);
+   focus 2px border/accent-strong, no offset.
+   App: rvt-button (Strong, Extra-large), menu 300px wide, shadow/md, spacing/8 top and bottom, spacing/8 between groups, spacing/16 sides on every row.
+   Header (matches the navigation prototype): the label is the page link and a 20px boxed chevron button opens the menu. The menu is a raised card:
+   shadow/sm, no border, spacing/16 sides, and top/bottom padding that leaves spacing/24 around the text on every side; it hugs its longest item
+   and its text lines up with the label above it.
+   Motion: opening fades in and moves 6px down in 300ms on cubic-bezier(.32,.08,.24,1); closing is instant. The menu keeps its own layer
+   (will-change) so the text is not redrawn when the motion starts and ends, which is what made it flicker. Reduced motion: it just appears.
+   The chevron swaps (down to up), it does not spin. */
+.rvt-dropdown-stage{display:flex;align-items:flex-start}
+.rvt-dropdown-stage--app{min-height:464px} /* Figma Type=App, Open=True frame height, so the page below doesn't move when the menu opens */
+.rvt-dropdown-stage--header{min-height:300px;padding-left:var(--rvt-spacing-24)} /* trigger 20px + spacing/8 + the open menu, rounded up */
+.rvt-dropdown{position:relative;display:inline-flex;align-items:center;max-width:100%}
+.rvt-dropdown--header{gap:var(--rvt-spacing-4)}
+.rvt-dropdown__link{color:var(--rvt-text-strong);text-decoration:none;font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-dropdown__link:hover{text-decoration:underline}
+.rvt-dropdown__link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+.rvt-dropdown__chevron{box-sizing:border-box;flex:none;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;margin:0;padding:0;border:0;border-radius:0;
+  background:transparent;color:var(--rvt-icon-strong);box-shadow:inset 0 0 0 1px var(--rvt-border-default);cursor:pointer;-webkit-appearance:none;appearance:none;transition:background-color .15s ease-out}
+.rvt-dropdown__chevron:hover,.rvt-dropdown.is-open .rvt-dropdown__chevron{background:var(--rvt-background-tint)}
+.rvt-dropdown__chevron:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+.rvt-dropdown__chevron svg{display:block;width:12px;height:12px;fill:currentColor}
+.rvt-dropdown__chevron[aria-expanded="true"] .is-down,.rvt-dropdown__chevron[aria-expanded="false"] .is-up{display:none}
+.rvt-dropdown__menu{position:absolute;top:calc(100% + var(--rvt-spacing-8));left:0;z-index:5;box-sizing:border-box;display:flex;flex-direction:column;margin:0;list-style:none;
+  background:var(--rvt-background-raised);border-radius:0;visibility:hidden;pointer-events:none;opacity:0;transform:translateY(-6px);transition:none;
+  will-change:opacity,transform;backface-visibility:hidden}
+.rvt-dropdown.is-open .rvt-dropdown__menu{visibility:visible;pointer-events:auto;opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion:no-preference){
+  .rvt-dropdown.is-open .rvt-dropdown__menu{transition:opacity .3s cubic-bezier(.32,.08,.24,1),transform .3s cubic-bezier(.32,.08,.24,1)}
+}
+@media (prefers-reduced-motion:reduce){.rvt-dropdown__menu,.rvt-dropdown.is-open .rvt-dropdown__menu{transform:none}.rvt-dropdown__chevron{transition:none}}
+.rvt-dropdown--app .rvt-dropdown__menu{width:300px;max-width:calc(100vw - 2 * var(--rvt-spacing-16));gap:var(--rvt-spacing-8);padding:var(--rvt-spacing-8) 0;box-shadow:var(--rvt-shadow-md)}
+.rvt-dropdown--header .rvt-dropdown__menu{left:calc(-1 * var(--rvt-spacing-24));align-items:stretch;
+  padding:calc(var(--rvt-spacing-24) - (32px - var(--rvt-type-line-height-20)) / 2) var(--rvt-spacing-16);box-shadow:var(--rvt-shadow-sm)}
+.rvt-dropdown__group{display:flex;flex-direction:column;margin:0;padding:0;list-style:none}
+.rvt-dropdown__group>li,.rvt-dropdown--header .rvt-dropdown__menu>li{display:flex;margin:0;padding:0}
+.rvt-dropdown__user{display:flex;flex-direction:column;gap:var(--rvt-spacing-8);padding:0 var(--rvt-spacing-16)}
+.rvt-dropdown__user .rvt-avatar svg{height:50%}
+.rvt-dropdown__name{display:flex;align-items:center;gap:var(--rvt-spacing-4);height:32px;margin:0;color:var(--rvt-text-strong);
+  font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-dropdown__name svg,.rvt-dropdown__action svg{display:block;flex:none;width:16px;height:16px;fill:currentColor}
+.rvt-dropdown__subtitle,.rvt-dropdown__title{margin:0;color:var(--rvt-text-strong);font:var(--rvt-font-body-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-dropdown__subtitle{overflow-wrap:anywhere}
+.rvt-dropdown__title{display:flex;align-items:center;height:32px;padding:0 var(--rvt-spacing-16)}
+.rvt-dropdown__item,.rvt-dropdown__action{box-sizing:border-box;flex:1 1 auto;height:32px;margin:0;border:0;border-radius:0;background:transparent;color:var(--rvt-text-strong);cursor:pointer;
+  font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none);text-align:left;white-space:nowrap;-webkit-appearance:none;appearance:none}
+.rvt-dropdown__item{display:inline-grid;align-content:center;padding:0 var(--rvt-spacing-16);text-decoration:none}
+.rvt-dropdown--app .rvt-dropdown__item{height:28px} /* Figma _rvt-dropdown-item height (spacing/28): link items sit 4px closer than the 32px rows */
+.rvt-dropdown--header .rvt-dropdown__item{padding:0 var(--rvt-spacing-8)}
+/* Hidden bold copy of the label: the item is always as wide as its selected (bold) text. */
+.rvt-dropdown__item::after{content:attr(data-label);height:0;overflow:hidden;visibility:hidden;font:var(--rvt-font-action-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-dropdown__action{display:flex;align-items:center;gap:var(--rvt-spacing-4);padding:0 var(--rvt-spacing-16)}
+.rvt-dropdown__action span{text-decoration:underline}
+.rvt-dropdown__item:hover,.rvt-dropdown__item:active{color:var(--rvt-text-accent);text-decoration:underline}
+.rvt-dropdown__action:hover,.rvt-dropdown__action:active{color:var(--rvt-text-accent)}
+.rvt-dropdown__item[aria-current]{color:var(--rvt-text-accent);text-decoration:underline;font:var(--rvt-font-action-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-dropdown__item:focus-visible,.rvt-dropdown__action:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
+
 /* ---------- Example controls: "Switch theme" tabs, then "Select type" for components with more than one type ----------
    The two controls sit side by side, bottom-aligned, spacing/24 apart, and wrap under each other on narrow screens.
    Each has its own label in the input-label style (.demo-switch-label). */
@@ -2428,7 +2488,108 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
       }
     });
   };
+  /* rvt-dropdown example. App: an account menu (profile header, two titled link groups, two actions). Header: a header link with its page list. */
+  const DD_ICON = {
+    user: 'M8 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM6 4a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm0 5a3 3 0 0 0-3 3v4h10v-4a3 3 0 0 0-3-3H6Zm-1 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2H5v-2Z', // rvt-user
+    gear: ['M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z', 'M5 1.5A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1.304l1.13-.652a1.5 1.5 0 0 1 2.048.549l1.5 2.598a1.5 1.5 0 0 1-.549 2.05L14 8l1.13.652a1.5 1.5 0 0 1 .548 2.049l-1.5 2.598a1.5 1.5 0 0 1-2.049.55L11 13.195V14.5A1.5 1.5 0 0 1 9.5 16h-3A1.5 1.5 0 0 1 5 14.5v-1.304l-1.13.652a1.5 1.5 0 0 1-2.048-.549l-1.5-2.598a1.5 1.5 0 0 1 .549-2.05L2 8 .87 7.348A1.5 1.5 0 0 1 .323 5.3l1.5-2.598a1.5 1.5 0 0 1 2.049-.55L5 2.805V1.5ZM7 2v1.67c0 .169-.027.329-.076.476a3.996 3.996 0 0 0-1.722.996 1.513 1.513 0 0 1-.452-.173l-1.446-.835-1 1.732 1.446.835c.146.084.271.188.375.304a4.007 4.007 0 0 0 0 1.99c-.104.116-.229.22-.375.304l-1.446.835 1 1.732 1.446-.835a1.52 1.52 0 0 1 .452-.173 3.995 3.995 0 0 0 1.722.996c.05.147.076.307.076.476V14h2v-1.67c0-.169.027-.329.076-.476a3.995 3.995 0 0 0 1.722-.996c.153.032.305.088.452.173l1.446.835 1-1.732-1.446-.835a1.514 1.514 0 0 1-.375-.304 4.007 4.007 0 0 0 0-1.99c.104-.116.229-.22.375-.304l1.446-.835-1-1.732-1.446.835a1.514 1.514 0 0 1-.452.173 3.996 3.996 0 0 0-1.722-.996A1.513 1.513 0 0 1 9 3.67V2H7Z'], // rvt-gear
+    lock: ['M9 10a1 1 0 1 0-2 0v1a1 1 0 1 0 2 0v-1Z', 'M7 0a3 3 0 0 0-3 3v2a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2V3a3 3 0 0 0-3-3H7Zm3 5H6V3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2Zm-6 9V7h8v7H4Z'], // rvt-lock-closed
+    chevronDown12: 'M11.52 4.426 6 9.096.48 4.427l1.29-1.528L6 6.477l4.23-3.579z', // rvt-chevron-down-12
+    chevronUp12: 'M11.52 7.574 6 2.904.48 7.573l1.29 1.528L6 5.523l4.23 3.579z' // rvt-chevron-up-12
+  };
+  const ddIcon = name => `<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">${[].concat(DD_ICON[name]).map(d => `<path d="${d}"/>`).join('')}</svg>`;
+  const DD_APP = {
+    button: 'My account', name: 'Jordan Morgan', subtitle: 'jmorgan@iu.edu',
+    groups: [
+      {title: 'Classes', items: ['My courses', 'Class schedule']},
+      {title: 'Money', items: ['Bursar bill', 'Financial aid']}
+    ],
+    actions: [{label: 'Account settings', icon: 'gear'}, {label: 'Sign out', icon: 'lock'}]
+  };
+  const DD_HEADER = {label: 'Academics', selected: 'Schools',
+    items: ['Degrees & Majors', 'Schools', 'Experiential Learning', 'Classes & Registration', 'Academic Calendars', 'Student Records & Grades', 'Degree Requirements & Policies']};
+  const ddItem = (label, selected) => `<li><a class="rvt-dropdown__item" href="#dropdown" data-label="${esc(label)}"${selected ? ' aria-current="page"' : ''}>${esc(label)}</a></li>`;
+  const dropdownEl = type => type === 'header'
+    ? `<div class="rvt-dropdown-stage rvt-dropdown-stage--header"><div class="rvt-dropdown rvt-dropdown--header" data-rvt-dropdown>
+        <a class="rvt-dropdown__link" href="#dropdown">${esc(DD_HEADER.label)}</a>
+        <button class="rvt-dropdown__chevron" type="button" data-dropdown-toggle aria-expanded="false" aria-controls="dd-menu-header">
+          <span class="sr-only">${esc(DD_HEADER.label)} menu</span>
+          <svg class="is-down" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="${DD_ICON.chevronDown12}"/></svg><svg class="is-up" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="${DD_ICON.chevronUp12}"/></svg>
+        </button>
+        <ul class="rvt-dropdown__menu" id="dd-menu-header" aria-label="${esc(DD_HEADER.label)}">${DD_HEADER.items.map(l => ddItem(l, l === DD_HEADER.selected)).join('')}</ul>
+      </div></div>`
+    : `<div class="rvt-dropdown-stage rvt-dropdown-stage--app"><div class="rvt-dropdown rvt-dropdown--app" data-rvt-dropdown>
+        <button class="rvt-button rvt-button--strong rvt-button--xl" type="button" data-dropdown-toggle aria-expanded="false" aria-controls="dd-menu-app">${esc(DD_APP.button)}</button>
+        <div class="rvt-dropdown__menu" id="dd-menu-app">
+          <div class="rvt-dropdown__user">
+            <span class="rvt-avatar rvt-avatar--64" aria-hidden="true"><svg viewBox="7 7 27 34" focusable="false"><path d="${TRIDENT}"/></svg></span>
+            <div><p class="rvt-dropdown__name">${ddIcon('user')}${esc(DD_APP.name)}</p><p class="rvt-dropdown__subtitle">${esc(DD_APP.subtitle)}</p></div>
+          </div>
+          ${DD_APP.groups.map((g, i) => `<div><p class="rvt-dropdown__title" id="dd-group-${i}">${esc(g.title)}</p>
+            <ul class="rvt-dropdown__group" aria-labelledby="dd-group-${i}">${g.items.map(l => ddItem(l, false)).join('')}</ul></div>`).join('')}
+          <ul class="rvt-dropdown__group" aria-label="Account actions">${DD_APP.actions.map(a => `<li><button class="rvt-dropdown__action" type="button">${ddIcon(a.icon)}<span>${esc(a.label)}</span></button></li>`).join('')}</ul>
+        </div>
+      </div></div>`;
+  const setDropdown = (dd, open) => {
+    dd.classList.toggle('is-open', open);
+    dd.querySelector('[data-dropdown-toggle]').setAttribute('aria-expanded', String(open));
+  };
+  /* One page-level listener (added once): a click anywhere outside an open dropdown closes it. */
+  document.addEventListener('click', e => {
+    document.querySelectorAll('#demo-stage [data-rvt-dropdown].is-open').forEach(dd => { if (!dd.contains(e.target)) setDropdown(dd, false); });
+  });
+  const wireDropdowns = root => {
+    root.querySelectorAll('[data-rvt-dropdown]').forEach(dd => {
+      const btn = dd.querySelector('[data-dropdown-toggle]');
+      const menu = dd.querySelector('.rvt-dropdown__menu');
+      const items = () => [...menu.querySelectorAll('a,button')];
+      btn.addEventListener('click', e => {
+        const open = !dd.classList.contains('is-open');
+        setDropdown(dd, open);
+        /* Opened from the keyboard or a screen reader (not a mouse click): focus goes to the first item. */
+        if (open && e.detail === 0) items()[0].focus({preventScroll: true});
+      });
+      dd.addEventListener('keydown', e => {
+        const open = dd.classList.contains('is-open');
+        if (e.key === 'Escape' && open) { setDropdown(dd, false); btn.focus(); return; }
+        const list = items();
+        const i = list.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown' && document.activeElement === btn) { e.preventDefault(); if (!open) setDropdown(dd, true); list[0].focus({preventScroll: true}); return; }
+        if (i < 0) return;
+        const next = {ArrowDown: i + 1, ArrowUp: i - 1, Home: 0, End: list.length - 1}[e.key];
+        if (next === undefined) return;
+        e.preventDefault();
+        list[(next + list.length) % list.length].focus({preventScroll: true});
+      });
+      /* Tabbing out of the dropdown closes it. */
+      dd.addEventListener('focusout', () => requestAnimationFrame(() => {
+        if (!dd.contains(document.activeElement) && document.activeElement !== document.body) setDropdown(dd, false);
+      }));
+      /* Choosing an item: a link becomes the selected page; then the menu closes and focus returns to the button. */
+      menu.addEventListener('click', e => {
+        const el = e.target.closest('a,button');
+        if (!el) return;
+        e.preventDefault();
+        if (el.matches('.rvt-dropdown__item')) { menu.querySelectorAll('[aria-current]').forEach(a => a.removeAttribute('aria-current')); el.setAttribute('aria-current', 'page'); }
+        setDropdown(dd, false);
+        btn.focus({preventScroll: true});
+      });
+      const link = dd.querySelector('.rvt-dropdown__link');
+      if (link) link.addEventListener('click', e => e.preventDefault());
+    });
+  };
   const demos = {
+    /* rvt-dropdown: Type is the dropdown (App, Header). Each starts closed; click the button (or press Enter, Space or the down arrow) to open it.
+       App is capped at its Figma frame width. Header hugs its longest item, so it is capped at the measured menu width. */
+    dropdown: {
+      maxWidth: 300, // Figma rvt-dropdown, Type=App frame width
+      variantLabel: 'Select type', // the dropdown picks the Type
+      variants: [
+        {id: 'app', label: 'App'},
+        {id: 'header', label: 'Header', maxWidth: 260} // no fixed frame (hugs its longest item): measured menu width 256px, rounded up
+      ],
+      html: type => dropdownEl(type === 'header' ? 'header' : 'app'),
+      wire: wireDropdowns
+    },
     disclosure: {
       maxWidth: 811, // Figma rvt-disclosure symbol width (Open=False / Open=True, 811px; no Breakpoint frame, same on Desktop and Mobile)
       html: () => DISCLOSURE_ITEMS.map((it, i) => `<div class="rvt-disclosure" data-rvt-disclosure>

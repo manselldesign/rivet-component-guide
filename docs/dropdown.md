@@ -25,7 +25,7 @@ A dropdown is a short menu that opens from a button or a header link, like an ac
 
 ### Type
 - **App:** Comes with its own button. Use it in web apps and tools, like an account menu
-- **Header:** Just the menu. It opens from a link in the site header, which acts as its button
+- **Header:** Just the menu. It opens from the small arrow button beside a link in the site header. The link itself still goes to its page
 
 ### Alignment
 - **Left:** The menu lines up with the left edge of its button. Use it for buttons on the left of the page
@@ -59,14 +59,19 @@ Check these before the page goes live. Each one names who owns it.
 
 ## Developer spec checklist
 
-Shared rules: Menus use `background/raised` fill and `shadow/md`, no radius. Hover, in every menu: `action/sm/regular`, `text/accent` (crimson on Light), underline. Selected item: `action/sm/strong`, `text/accent`, underline, sized so the bold doesn't shift the item. The selected item is always bold, in every state (default, hover and focus); every other item stays regular. The same values apply on Desktop and Mobile.
+Shared rules: Menus use `background/raised` fill, no radius, and sit `spacing/8` below what opens them. Hover, in every menu: `action/sm/regular`, `text/accent` (crimson on Light), underline. Selected item: `action/sm/strong`, `text/accent`, underline, sized so the bold doesn't shift the item. The selected item is always bold, in every state (default, hover and focus); every other item stays regular. The same values apply on Desktop and Mobile.
+
+Motion: opening fades in and moves 6px down into place in 300ms on `cubic-bezier(0.32, 0.08, 0.24, 1)`; closing is instant. Keep the menu on its own layer (`will-change: opacity, transform`) so the text doesn't flicker when the motion starts and ends. With reduced motion the menu just appears. The arrow swaps between down and up, it doesn't spin.
+
+Keyboard: Enter, Space or the down arrow on the button opens the menu and moves focus to the first item. Up and down arrows, Home and End move through the items. Escape closes it and returns focus to the button. Tabbing out or clicking outside closes it. Focus on an item shows a 2px `border/accent-strong` outline, no offset. The button carries `aria-expanded` and `aria-controls`.
 
 | Element | App | Header |
 | --- | --- | --- |
-| Button | `rvt-button` (form), `spacing/8` above the menu | None, the header link opens it |
-| Menu | `spacing/8` between groups, `spacing/8` bottom padding | `spacing/12` top and bottom, `spacing/16` sides, 1px `border/default` border |
-| Item | 32px tall, `spacing/12` top and bottom, `spacing/16` sides; `action/sm/regular` (14 / 20px), `text/strong`, `background/default` | 32px tall, `spacing/8` sides; `action/sm/regular` (14 / 20px), `text/strong` |
+| Button | `rvt-button` (form, Strong, Extra-large), `spacing/8` above the menu | 20px square arrow button, `spacing/4` after the header link: 12px `rvt-chevron-down-12` (`rvt-chevron-up-12` when open), `icon/strong`, 1px `border/default` drawn inside; `background/tint` on hover and when open; focus 2px `border/accent-strong`, 2px offset |
+| Menu | `shadow/md`; `spacing/8` between groups, `spacing/8` top and bottom padding | `shadow/sm`, no border; `spacing/16` sides, 18px top and bottom, so there is `spacing/24` around the text on every side; hugs its longest item; item text lines up with the header link above it |
+| Item | 28px tall, `spacing/16` sides; `action/sm/regular` (14 / 20px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/strong`, `background/default` | 32px tall, `spacing/8` sides; `action/sm/regular` (14 / 20px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/strong` |
 | Item hover | `action/sm/regular`, `text/accent`, underline | Same |
-| Group title | `_rvt-dropdown-title-item`: 32px tall, `spacing/16` sides; `body/sm/strong` (16 / 24px), `text/strong` | — |
-| Action item | `_rvt-dropdown-button-item`: 32px tall, `spacing/16` sides, 16px icon, `spacing/4` gap; `action/sm/regular` (14 / 20px), `text/strong`; hover adds an underline | — |
-| Profile header | 64px `rvt-avatar`, `spacing/8` gap, name `body/sm/strong` (16 / 24px), `spacing/16` sides | — |
+| Selected item | `action/sm/strong` (14 / 20px, weight 600, width 110% `--rvt-font-width-semi-expanded`), `text/accent`, underline | Same |
+| Group title | `_rvt-dropdown-title-item`: 32px tall, `spacing/16` sides; `body/sm/strong` (16 / 24px, weight 600, width 110% `--rvt-font-width-semi-expanded`), `text/strong` | — |
+| Action item | `_rvt-dropdown-button-item`: 32px tall, `spacing/16` sides, 16px icon, `spacing/4` gap; `action/sm/regular` (14 / 20px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/strong`, always underlined; hover `text/accent` | — |
+| Profile header | 64px `rvt-avatar`, `spacing/8` gap, name `body/sm/strong` (16 / 24px, weight 600, width 110% `--rvt-font-width-semi-expanded`), `spacing/16` sides | — |
