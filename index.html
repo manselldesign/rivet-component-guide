@@ -1737,6 +1737,71 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
   .rvt-dialog__close{transition:none}
   dialog.rvt-dialog[open],dialog.rvt-dialog[open]::backdrop{animation:none}
 }
+/* ---------- rvt-footer (Footer page example, Developer spec checklist) ----------
+   The footer's Color (Light, Crimson, Dark) is the theme: it follows the page theme through its tokens, so the theme tabs pick it.
+   Background background/default (white on Light, color/base/main on Dark, color/brand/main on Crimson). Every color is a theme token.
+   Borders: 1px border/default on top of the footer and above the social row (Mobile: on top of the bottom bar). Both run edge to edge and are
+   drawn inside (inset box-shadow), so they never add height: Desktop 308px, Mobile 972px tall, as designed. Only the rows carry side padding.
+   Side padding matches the header at every width, so the edges line up and scale with the page: spacing/80 from 768px up, spacing/20 below.
+   Desktop (footer 880px wide and up): resource links spacing/32 top and bottom, contact column 348px then three link groups
+   sharing the rest, spacing/64 apart (the contact column gives up width first when space is tight); contact spacing/16 name to details,
+   spacing/8 between lines; groups spacing/20 title to links, spacing/8 between links. Social row spacing/16 top and bottom, icons spacing/8 apart.
+   Bottom bar: no top padding, spacing/16 bottom; trident 22 x 28 icon/brand, then the legal links, spacing/24 apart; legal links spacing/16 apart.
+   Mobile (narrower than 880px): one column, spacing/24 between the resource links and the bottom bar. Resource links spacing/40
+   top, groups spacing/40 apart; contact spacing/8 plus spacing/8 top on the details; groups spacing/16 title to links, spacing/12 between links.
+   Bottom bar centered: spacing/16 top and bottom; social row spacing/8 top and bottom, icons spacing/12 apart; legal links stacked spacing/8 apart,
+   spacing/8 below the social row; trident spacing/20 below.
+   Group title heading/sm/strong (16 / 20px) text/strong; "Indiana University" is a link to the home page with the same hover as the other links. Links and contact text action/sm/regular (14 / 20px) text/link-subtle.
+   Link hover: text/accent with an underline, 150ms. Social links: rvt-link Social, 24px square, 1px border/accent drawn inside, 12px icon/accent;
+   hover border/accent-strong and icon/accent-strong. Focus: 2px border/accent-strong. */
+.rvt-footer{--rvt-footer-inline:var(--rvt-spacing-80);container:rvt-footer / inline-size;box-sizing:border-box;display:flex;flex-direction:column;
+  background:var(--rvt-background-default);box-shadow:inset 0 1px 0 var(--rvt-border-default)}
+.rvt-footer *{box-sizing:border-box}
+.rvt-footer :where(ul){margin:0;padding:0;list-style:none}
+.rvt-footer :where(li,p,address){display:flex;margin:0;font-style:normal}
+.rvt-footer__resources{display:flex;flex-direction:column;gap:var(--rvt-spacing-40);padding:var(--rvt-spacing-40) var(--rvt-footer-inline) 0}
+.rvt-footer__contact{display:flex;flex-direction:column;gap:var(--rvt-spacing-8)}
+.rvt-footer__details{display:flex;flex-direction:column;gap:var(--rvt-spacing-8);padding-top:var(--rvt-spacing-8)}
+.rvt-footer__group{display:flex;flex-direction:column;gap:var(--rvt-spacing-16)}
+.rvt-footer__list{display:flex;flex-direction:column;align-items:flex-start;gap:var(--rvt-spacing-12)}
+.rvt-footer__title{margin:0;color:var(--rvt-text-strong);
+  font:var(--rvt-font-heading-sm-strong);font-stretch:var(--rvt-font-width-semi-expanded);font-variation-settings:var(--rvt-font-axes-heading);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-footer__text,.rvt-footer__link{color:var(--rvt-text-link-subtle);
+  font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
+.rvt-footer__link{text-decoration:none;white-space:nowrap;transition:color 150ms ease-out}
+.rvt-footer__home{color:inherit;text-decoration:none;transition:color 150ms ease-out}
+.rvt-footer__home:hover{color:var(--rvt-text-accent);text-decoration-line:underline;text-decoration-thickness:from-font;text-underline-position:from-font;text-decoration-skip-ink:none}
+.rvt-footer__home:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+@media (max-width:767px){.rvt-footer{--rvt-footer-inline:var(--rvt-spacing-20)}}
+.rvt-footer__link:hover{color:var(--rvt-text-accent);text-decoration-line:underline;text-decoration-thickness:from-font;text-underline-position:from-font;text-decoration-skip-ink:none}
+.rvt-footer__link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
+.rvt-footer__bottom{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-20);margin-top:var(--rvt-spacing-24);padding:var(--rvt-spacing-16) var(--rvt-footer-inline);
+  box-shadow:inset 0 1px 0 var(--rvt-border-default)}
+.rvt-footer__links{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-8);width:100%}
+.rvt-footer__social{display:flex;justify-content:center;gap:var(--rvt-spacing-12);padding:var(--rvt-spacing-8) 0}
+.rvt-footer__social-link{display:flex;align-items:center;justify-content:center;width:var(--rvt-component-button-height-sm);height:var(--rvt-component-button-height-sm);
+  box-shadow:inset 0 0 0 1px var(--rvt-border-accent);transition:box-shadow 150ms ease-out}
+.rvt-footer__social-link svg{display:block;width:12px;height:12px;fill:var(--rvt-icon-accent);transition:fill 150ms ease-out}
+.rvt-footer__social-link:hover{box-shadow:inset 0 0 0 1px var(--rvt-border-accent-strong)}
+.rvt-footer__social-link:hover svg{fill:var(--rvt-icon-accent-strong)}
+.rvt-footer__social-link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
+.rvt-footer__legal{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-8);text-align:center}
+.rvt-footer__trident{display:block;flex:none;width:22px;height:28px;fill:var(--rvt-icon-brand)}
+@container rvt-footer (min-width:880px){
+  .rvt-footer__resources{flex-direction:row;align-items:flex-start;gap:var(--rvt-spacing-64);padding:var(--rvt-spacing-32) var(--rvt-footer-inline);
+    box-shadow:inset 0 -1px 0 var(--rvt-border-default)}
+  .rvt-footer__contact{flex:0 1 348px;min-width:min-content;align-self:stretch;gap:var(--rvt-spacing-16)}
+  .rvt-footer__details{padding-top:0}
+  .rvt-footer__group{flex:1 1 0;min-width:min-content;gap:var(--rvt-spacing-20)}
+  .rvt-footer__list{gap:var(--rvt-spacing-8)}
+  .rvt-footer__bottom{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:0 var(--rvt-spacing-24);
+    margin-top:0;padding:0 var(--rvt-footer-inline) var(--rvt-spacing-16);box-shadow:none}
+  .rvt-footer__links{display:contents}
+  .rvt-footer__social{grid-column:1 / -1;grid-row:1;justify-content:flex-start;gap:var(--rvt-spacing-8);padding:var(--rvt-spacing-16) 0}
+  .rvt-footer__trident{grid-column:1;grid-row:2}
+  .rvt-footer__legal{grid-column:2;grid-row:2;flex-direction:row;flex-wrap:wrap;align-items:flex-start;column-gap:var(--rvt-spacing-16);row-gap:var(--rvt-spacing-8);text-align:left}
+}
+@media (prefers-reduced-motion:reduce){.rvt-footer__home,.rvt-footer__link,.rvt-footer__social-link,.rvt-footer__social-link svg{transition:none}}
 </style>
 </head>
 <body>
@@ -2762,6 +2827,42 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
       if (link) link.addEventListener('click', e => e.preventDefault());
     });
   };
+  /* rvt-footer example (see demos.footer). The trident is the footer's own 22 x 28 mark. */
+  const FOOTER_TRIDENT = 'M7.36801 28V25.0528H8.84162L8.84255 22.1053H4.42172L1.4745 19.158L1.47365 5.89474L0 5.89475V3.68434H7.36805L7.36808 5.89475L5.89448 5.89473L5.8944 17.6848L8.84162 17.6833V2.2104L7.36801 2.2119V0.00148403L14.736 0V2.21041L13.2624 2.2104V17.6833L16.2096 17.6848L16.2107 5.89475L14.7371 5.89473L14.7372 3.68432H22.1052V5.89474L20.6316 5.89475L20.6314 19.158L17.6842 22.1053H13.2633L13.2624 25.0528H14.736V28H7.36801Z';
+  const FOOTER_INSTAGRAM = {name: 'Instagram', evenodd: true, d: 'M6 0C4.3704 0 4.1664 0.0068 3.5264 0.036C2.8876 0.0652 2.4512 0.1668 2.0696 0.3152C1.6696 0.4656 1.3068 0.7016 1.0068 1.0072C0.701689 1.30685 0.465543 1.6694 0.3148 2.0696C0.1672 2.4512 0.0652 2.888 0.036 3.5268C0.0072 4.1664 0 4.37 0 6C0 7.63 0.0068 7.8336 0.036 8.4736C0.0652 9.1124 0.1668 9.5488 0.3152 9.9304C0.4656 10.3304 0.7016 10.6932 1.0072 10.9932C1.30686 11.2983 1.6694 11.5344 2.0696 11.6852C2.4512 11.8332 2.8876 11.9348 3.5264 11.964C4.1664 11.9932 4.3704 12 6 12C7.6296 12 7.8336 11.9932 8.4736 11.964C9.1124 11.9348 9.5488 11.8332 9.9304 11.6848C10.3304 11.5344 10.6932 11.2984 10.9932 10.9928C11.2983 10.6931 11.5345 10.3306 11.6852 9.9304C11.8332 9.5488 11.9348 9.1124 11.964 8.4736C11.9932 7.8336 12 7.6296 12 6C12 4.3704 11.9932 4.1664 11.964 3.5264C11.9348 2.8876 11.8332 2.4512 11.6848 2.0696C11.5342 1.66923 11.298 1.30653 10.9928 1.0068C10.6931 0.701689 10.3306 0.465543 9.9304 0.3148C9.5488 0.1672 9.112 0.0652 8.4732 0.036C7.8336 0.0072 7.63 0 6 0ZM6 1.0812C7.602 1.0812 7.792 1.0872 8.4248 1.116C9.0096 1.1428 9.3272 1.24 9.5388 1.3228C9.8188 1.4312 10.0188 1.5616 10.2288 1.7712C10.4388 1.9812 10.5688 2.1812 10.6772 2.4612C10.7596 2.6728 10.8572 2.9904 10.884 3.5752C10.9128 4.208 10.9188 4.398 10.9188 6C10.9188 7.602 10.9128 7.792 10.884 8.4248C10.8572 9.0096 10.76 9.3272 10.6772 9.5388C10.5812 9.79942 10.428 10.0352 10.2288 10.2288C10.0352 10.428 9.79944 10.5812 9.5388 10.6772C9.3272 10.7596 9.0096 10.8572 8.4248 10.884C7.792 10.9128 7.6024 10.9188 6 10.9188C4.3976 10.9188 4.208 10.9128 3.5752 10.884C2.9904 10.8572 2.6728 10.76 2.4612 10.6772C2.20058 10.5812 1.9648 10.428 1.7712 10.2288C1.57207 10.0352 1.41885 9.79941 1.3228 9.5388C1.2404 9.3272 1.1428 9.0096 1.116 8.4248C1.0872 7.792 1.0812 7.602 1.0812 6C1.0812 4.398 1.0872 4.208 1.116 3.5752C1.1428 2.9904 1.24 2.6728 1.3228 2.4612C1.4312 2.1812 1.5616 1.9812 1.7712 1.7712C1.96478 1.57202 2.20056 1.41879 2.4612 1.3228C2.6728 1.2404 2.9904 1.1428 3.5752 1.116C4.208 1.0872 4.398 1.0812 6 1.0812ZM6 8.002C5.73709 8.002 5.47676 7.95022 5.23387 7.84961C4.99097 7.749 4.77027 7.60153 4.58437 7.41563C4.39847 7.22973 4.251 7.00903 4.15039 6.76613C4.04978 6.52324 3.998 6.26291 3.998 6C3.998 5.73709 4.04978 5.47676 4.15039 5.23387C4.251 4.99097 4.39847 4.77028 4.58437 4.58437C4.77027 4.39847 4.99097 4.251 5.23387 4.15039C5.47676 4.04978 5.73709 3.998 6 3.998C6.53096 3.998 7.04018 4.20892 7.41563 4.58437C7.79107 4.95982 8.002 5.46904 8.002 6C8.002 6.53096 7.79107 7.04018 7.41563 7.41563C7.04018 7.79108 6.53096 8.002 6 8.002ZM6 2.916C5.18207 2.916 4.39764 3.24092 3.81928 3.81928C3.24092 4.39764 2.916 5.18207 2.916 6C2.916 6.81793 3.24092 7.60236 3.81928 8.18072C4.39764 8.75908 5.18207 9.084 6 9.084C6.81793 9.084 7.60235 8.75908 8.18072 8.18072C8.75908 7.60236 9.084 6.81793 9.084 6C9.084 5.18207 8.75908 4.39764 8.18072 3.81928C7.60235 3.24092 6.81793 2.916 6 2.916ZM9.9812 2.86C9.9812 3.05334 9.90439 3.23877 9.76768 3.37548C9.63097 3.5122 9.44554 3.589 9.2522 3.589C9.05886 3.589 8.87343 3.5122 8.73672 3.37548C8.6 3.23877 8.5232 3.05334 8.5232 2.86C8.5232 2.66666 8.6 2.48123 8.73672 2.34452C8.87343 2.20781 9.05886 2.131 9.2522 2.131C9.44554 2.131 9.63097 2.20781 9.76768 2.34452C9.90439 2.48123 9.9812 2.66666 9.9812 2.86Z'};
+  const FOOTER_GROUPS = [
+    {title: 'Students', links: ['Apply', 'Visit campus', 'Tuition and costs', 'Financial aid']},
+    {title: 'Resources', links: ['Academic calendar', 'Registrar', 'Bursar', 'Libraries']},
+    {title: 'Connect', links: ['Contact us', 'Campus map', 'News', 'Events']}
+  ];
+  const FOOTER_LEGAL = ['Accessibility', 'College Scorecard', 'Open to all', 'Privacy Notice'];
+  function footerEl() {
+    const byName = Object.fromEntries(CC_SOCIAL.map(s => [s.name, s]));
+    const social = [byName.Bluesky, byName.Facebook, FOOTER_INSTAGRAM, byName.LinkedIn, byName.YouTube, byName.X];
+    const link = t => `<a class="rvt-footer__link" href="#footer">${esc(t)}</a>`;
+    return `<footer class="rvt-footer">
+      <div class="rvt-footer__resources">
+        <div class="rvt-footer__contact">
+          <h3 class="rvt-footer__title"><a class="rvt-footer__home" href="#footer">Indiana University</a></h3>
+          <address class="rvt-footer__details">
+            <p class="rvt-footer__text">107 S. Indiana Avenue<br>Bloomington, IN 47405-7000</p>
+            <p><a class="rvt-footer__link" href="#footer">(812) 855-4848</a></p>
+          </address>
+        </div>
+        ${FOOTER_GROUPS.map((g, i) => `<nav class="rvt-footer__group" aria-labelledby="footer-group-${i}">
+          <h3 class="rvt-footer__title" id="footer-group-${i}">${esc(g.title)}</h3>
+          <ul class="rvt-footer__list">${g.links.map(t => `<li>${link(t)}</li>`).join('')}</ul>
+        </nav>`).join('')}
+      </div>
+      <div class="rvt-footer__bottom">
+        <div class="rvt-footer__links">
+          <ul class="rvt-footer__social" aria-label="Indiana University on social media">${social.map(s => `<li><a class="rvt-footer__social-link" href="#footer" aria-label="Indiana University on ${esc(s.name)}"><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path${s.evenodd ? ' fill-rule="evenodd"' : ''} d="${s.d}"/></svg></a></li>`).join('')}</ul>
+          <ul class="rvt-footer__legal">${FOOTER_LEGAL.map(t => `<li>${link(t)}</li>`).join('')}<li class="rvt-footer__text">Copyright © 2026 The Trustees of Indiana University</li></ul>
+        </div>
+        <svg class="rvt-footer__trident" viewBox="0 0 22.1052 28" aria-hidden="true" focusable="false"><path d="${FOOTER_TRIDENT}"/></svg>
+      </div>
+    </footer>`;
+  }
   const demos = {
     /* rvt-dropdown: Type is the dropdown (App, Header). Each starts closed; click the button (or press Enter, Space or the down arrow) to open it.
        App is capped at its Figma frame width. Header hugs its longest item, so it is capped at the measured menu width. */
@@ -3138,6 +3239,17 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
     },
     /* rvt-empty-state: Type is the dropdown (Empty, With files). Remove a file chip to see the count change; removing the last one shows Empty,
        and Browse files there adds the sample files back. */
+    /* rvt-footer: one footer. Its Color (Light, Crimson, Dark) is the theme, so the theme tabs pick it; no dropdown.
+       It switches between the Desktop and Mobile layouts by its own width (880px), so it shows the Desktop layout in the dochub column.
+       Side padding matches the header at every width: spacing/80 from 768px up, spacing/20 below. "Indiana University" links to the home page.
+       Every optional part is shown (Resource links, Social badges). Headings are h3 here because they sit under the "Example" heading;
+       on a real page they are h2. Social glyphs: the 12px rvt-link Social icons (CC_SOCIAL plus Instagram, from the footer). */
+    footer: {
+      // No maxWidth: the footer runs the full width of the page at any size, like the header (its Desktop frame is 1440px wide only as a sample).
+      html: () => footerEl(),
+      /* Sample links stay on the page. */
+      wire: stage => stage.querySelectorAll('.rvt-footer a').forEach(a => a.addEventListener('click', e => e.preventDefault()))
+    },
     'empty-state': {
       maxWidth: 1024, // Figma rvt-empty-state, Breakpoint=Desktop frame width (Files Added=False and True are both 1024px)
       variantLabel: 'Select type', // the dropdown picks the Type
