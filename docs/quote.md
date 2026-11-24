@@ -43,9 +43,9 @@ Shared rules: Background `background/default`. Quote, name and title use `text/b
 | Element | Desktop Impact | Desktop Compact | Mobile Impact | Mobile Compact |
 | --- | --- | --- | --- | --- |
 | Padding | `spacing/192` top and bottom (192px), `spacing/80` left and right (80px) | `spacing/128` top and bottom (128px), `spacing/80` left and right (80px) | `spacing/80` top and bottom (60px), `spacing/24` left and right (24px) | `spacing/64` top and bottom (48px), `spacing/24` left and right (24px) |
-| Gap between icon or avatar, quote and name | `spacing/32` (32px) | `spacing/24` (24px) | `spacing/32` (24px) | `spacing/24` (24px) |
 | Quote icon | 85 × 64px | 75 × 56px | 53 × 40px | 53 × 40px |
 | Avatar | 128px | 80px | 64px | 64px |
+| Gap between icon or avatar, quote and name | `spacing/32` (32px) | `spacing/24` (24px) | `spacing/32` (24px) | `spacing/24` (24px) |
 | Quote | `editorial/xl/strong` (54 / 56px) | `editorial/md/strong` (29 / 36px) | `editorial/xl/strong` (36 / 36px) | `editorial/md/strong` (29 / 36px) |
 | Name | `body/sm/strong` (16 / 24px) | `body/sm/strong` (16 / 24px) | `body/sm/strong` (16 / 24px) | `body/sm/strong` (16 / 24px) |
 | Title or school | `body/base/regular` (18 / 28px) | `body/base/regular` (18 / 28px) | `body/base/regular` (16 / 24px) | `body/base/regular` (16 / 24px) |

@@ -111,12 +111,7 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
 .hero .tag{font-family:var(--font-mono);font-size:14px;line-height:20px;letter-spacing:2px;text-transform:uppercase;margin:0 0 var(--rvt-spacing-8);color:#ffffff}
 .hero .tag a{color:inherit;text-decoration:none}
 .hero .tag a:hover{text-decoration:underline}
-/* Tag: tag/md/caps 14/20 desktop, tag/sm/caps 12/16 mobile, fluid like the headline (12, 13, 14px). */
-@media (max-width:767px){.hero .tag{font-size:12px;line-height:16px}}
-@supports (font-size:round(nearest,1px,1px)){
-  .hero .tag{--hero-tag:round(nearest,clamp(12px,calc(12px + (100vw - 375px) * 0.0024242),14px),1px);
-    font-size:var(--hero-tag);line-height:round(nearest,calc(var(--hero-tag) * 1.4),4px)}
-}
+/* Tag: tag/md/caps 14/20 at every size. The all-caps tag does not scale down; 14px is its smallest size. */
 /* display/lg/strong: 48/52 desktop, 29/32 mobile. Fluid in between (below): 29px on a 375px screen up to 48px at 1200px,
    always a whole pixel, line height snapped to the 4px grid. Browsers without round() keep the two fixed sizes. */
 .hero h1{font-size:var(--rvt-type-size-29-48);line-height:var(--rvt-type-line-height-32-52);font-weight:var(--w-black);margin:0;color:#ffffff;text-wrap:balance}
@@ -1100,7 +1095,7 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
    Background background/default; 1px border/default rule along the bottom (the last thing in the hero), starting flush with the content on the left and running past the right padding to the page edge.
    Side by side: spacing/96 top, spacing/80 sides (the page gutter: flush with the main content); text and card in a row, spacing/64 apart, card 440px wide, aligned to the bottom.
    Stacked: spacing/96 top; card under the text, spacing/64 above it, 700px wide.
-   Metadata tag/md/caps text/brand (tag/sm/caps on Mobile, fluid between), spacing/8 below. Headline display/lg/strong text/brand, up to 920px, fluid between its Mobile and Desktop sizes. Body body/base/regular text/default (fluid too), spacing/16 above, up to 800px.
+   Metadata tag/md/caps text/brand at every size (the all-caps tag does not scale down), spacing/8 below. Headline display/lg/strong text/brand, up to 920px, fluid between its Mobile and Desktop sizes. Body body/base/regular text/default (fluid too), spacing/16 above, up to 800px.
    Buttons: rvt-link Extra-large, Strong first then Normal, spacing/40 above, spacing/16 apart (also between wrapped rows).
    Card: rvt-card Compact, Plain, Raised (the Card example's own classes). */
 .rvt-hero-callout-wrap{container-type:inline-size}
@@ -1151,7 +1146,6 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
     padding:var(--rvt-spacing-40) 0 0}
   .rvt-hero-callout__inner{gap:var(--rvt-spacing-48);padding-bottom:var(--rvt-spacing-48)}
   .rvt-hero-callout__title{font-size:var(--rvt-type-size-29-48);line-height:var(--rvt-type-line-height-32-52)}
-  .rvt-hero-callout__meta{font-size:var(--rvt-type-size-12);line-height:var(--rvt-type-line-height-16)}
   .rvt-hero-callout__body{font-size:var(--rvt-type-size-16-18);line-height:var(--rvt-type-line-height-28)}
   .rvt-hero-callout__actions{flex-direction:column;align-items:flex-start}
 }
@@ -1160,9 +1154,6 @@ html body *{text-decoration-thickness:1px!important;text-underline-position:from
 @supports (font-size:round(nearest,1px,1px)){
   .rvt-hero-callout__title{--hc-title:round(nearest,clamp(29px,calc(29px + (100cqi - 375px) * 0.0292758),48px),1px);
     font-size:var(--hc-title);line-height:round(nearest,calc(var(--hc-title) * 1.1),4px)}
-  /* Metadata, fluid over the same range: 12px up to 14px (12/16, 13/20, 14/20). */
-  .rvt-hero-callout__meta{--hc-meta:round(nearest,clamp(12px,calc(12px + (100cqi - 375px) * 0.0030817),14px),1px);
-    font-size:var(--hc-meta);line-height:round(nearest,calc(var(--hc-meta) * 1.4),4px)}
   /* Body, fluid over the same range: 16px up to 18px (16/24, 17/24, 18/28). */
   .rvt-hero-callout__body{--hc-body:round(nearest,clamp(16px,calc(16px + (100cqi - 375px) * 0.0030817),18px),1px);
     font-size:var(--hc-body);line-height:round(nearest,calc(var(--hc-body) * 1.5),4px)}

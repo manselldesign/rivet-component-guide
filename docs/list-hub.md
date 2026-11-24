@@ -59,12 +59,12 @@ Shared rules: items are separated by a 1px `border/default` line below each item
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Gap, introduction or image to list | `spacing/64` (64px), side by side | `spacing/32` (24px), stacked |
-| Gap, intro text to button | `spacing/40` (40px) | `spacing/40` (32px) |
-| Headline | `display/md/strong` (36 / 40px), `text/brand` | TBD |
-| Intro text | `body/md/regular` (20 / 28px), `text/default` | TBD |
-| Gap, headline to intro text | `spacing/24` (24px), above | `spacing/24` (24px), above |
 | Eyebrow, space below | `spacing/16` (16px) | `spacing/8` (8px) |
+| Headline | `display/md/strong` (36 / 40px), `text/brand` | TBD |
+| Gap, headline to intro text | `spacing/24` (24px), above | `spacing/24` (24px), above |
+| Intro text | `body/md/regular` (20 / 28px), `text/default` | TBD |
+| Gap, intro text to button | `spacing/40` (40px) | `spacing/40` (32px) |
+| Gap, introduction or image to list | `spacing/64` (64px), side by side | `spacing/32` (24px), stacked |
 | TOC border | 1px `border/default`, all sides | Same |
 | TOC eyebrow padding | `spacing/12` (12px) top and bottom, `spacing/24` (24px) sides | Same |
 | TOC list padding | `spacing/16` (16px) top and bottom, `spacing/24` (24px) sides | Same |
@@ -74,19 +74,19 @@ Shared rules: items are separated by a 1px `border/default` line below each item
 | Element | Default, Desktop | Default, Mobile | Compact |
 | --- | --- | --- | --- |
 | Item padding | `spacing/20` (20px) top and bottom, `spacing/16` (16px) sides | `spacing/16` (16px) top and bottom, 0 sides | `spacing/12` (12px) top and bottom, 0 sides |
-| Title | `action/xl/strong-fixed` (20 / 24px), `text/strong` | `action/xl/strong-fixed` (20 / 24px), `text/strong` | `action/lg/strong` (16 / 24px), `text/strong` |
-| Description | `body/sm/regular` (16 / 24px) | `body/sm/regular` (16 / 24px) | `body/xs/regular` (14 / 20px) |
-| List item lines | Label `body/sm/strong`, value `body/sm/regular` (16 / 24px) | Label `body/sm/strong`, value `body/sm/regular` (16 / 24px) | 14 / 20px |
 | Arrow | `rvt-arrow-right` (16px) | `rvt-arrow-right` (16px) | `rvt-arrow-right-12` (12px) |
-| Gap, arrow to title | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/4` (4px) |
-| Arrow text indent | `spacing/24` (24px), left | `spacing/24` (24px), left | `spacing/20` (20px), left |
-| Gap, metadata to title | `spacing/4` (4px), below | `spacing/4` (4px), below | `spacing/4` (4px), below |
-| Gap, title to description | `spacing/12` (12px), above | `spacing/8` (8px), above | `spacing/4` (4px), above |
-| Gap, description to list items | `spacing/12` (12px), above | `spacing/12` (12px), above | `spacing/8` (8px), above |
-| Gap between list item lines | `spacing/4` (4px) | `spacing/4` (4px) | `spacing/4` (4px) |
-| Gap, above badge | `spacing/16` (16px) | `spacing/16` (16px) | `spacing/16` (16px) |
 | Checklist marker | 32px circle, `background/brand-alt`, 16px check icon | 24px circle, `background/brand-alt`, 12px check icon | 24px circle, `background/brand-alt`, 12px check icon |
 | X marker | 32px circle, `background/inverse-alt`, 16px close icon | 24px circle, `background/inverse-alt`, 12px close icon | 24px circle, `background/inverse-alt`, 12px close icon |
-| Gap, marker to title | `spacing/12` (12px) | `spacing/8` (8px) | `spacing/8` (8px) |
 | Icon alignment (arrow, check, X) | Top-aligned to the first line of the title (`align-items: flex-start`), never centered on the whole title. The arrow sits in a 24px-tall box (the title's line height), centered. The 32px marker is taller than the 24px line, so the title gets `spacing/4` (4px) top padding to center line one on the marker | Top-aligned to the first line of the title. Arrow and 24px marker sit in a 24px-tall box (the title's line height), centered | Top-aligned to the first line of the title. Arrow and 24px marker sit in a 24px-tall box (the title's line height), centered |
+| Gap, arrow to title | `spacing/8` (8px) | `spacing/8` (8px) | `spacing/4` (4px) |
+| Gap, marker to title | `spacing/12` (12px) | `spacing/8` (8px) | `spacing/8` (8px) |
+| Gap, metadata to title | `spacing/4` (4px), below | `spacing/4` (4px), below | `spacing/4` (4px), below |
+| Title | `action/xl/strong-fixed` (20 / 24px), `text/strong` | `action/xl/strong-fixed` (20 / 24px), `text/strong` | `action/lg/strong` (16 / 24px), `text/strong` |
+| Arrow text indent | `spacing/24` (24px), left | `spacing/24` (24px), left | `spacing/20` (20px), left |
 | Checklist text indent | 44px (32px marker + 12px gap), left | `spacing/40` (32px), left | `spacing/32` (32px) Desktop, `spacing/40` (32px) Mobile, left |
+| Gap, title to description | `spacing/12` (12px), above | `spacing/8` (8px), above | `spacing/4` (4px), above |
+| Description | `body/sm/regular` (16 / 24px) | `body/sm/regular` (16 / 24px) | `body/xs/regular` (14 / 20px) |
+| Gap, description to list items | `spacing/12` (12px), above | `spacing/12` (12px), above | `spacing/8` (8px), above |
+| List item lines | Label `body/sm/strong`, value `body/sm/regular` (16 / 24px) | Label `body/sm/strong`, value `body/sm/regular` (16 / 24px) | 14 / 20px |
+| Gap between list item lines | `spacing/4` (4px) | `spacing/4` (4px) | `spacing/4` (4px) |
+| Gap, above badge | `spacing/16` (16px) | `spacing/16` (16px) | `spacing/16` (16px) |

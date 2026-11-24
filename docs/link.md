@@ -105,12 +105,12 @@ Buttons that act on the current page are a separate component, `rvt-button`. See
 | Height | `component/button/height-xl` (48px) | `component/button/height-lg` (40px) | `component/button/height-md` (32px) | `component/button/height-sm` (24px) |
 | Padding left/right (Strong, Normal) | `spacing/16` | `spacing/16` | `spacing/12` | `spacing/8` |
 | Padding (Subtle) | Same as Normal: the box is identical, the border is just invisible | same | same | same |
-| Label-to-arrow gap | `spacing/8` | `spacing/8` | `spacing/8` | `spacing/4` |
+| Corner radius | 0 | 0 | 0 | 0 |
 | Label | `action/lg/strong` (16 / 24px) | `action/lg/strong` (16 / 24px) | `action/sm/strong` (14 / 20px) | `action/sm/strong` (14 / 20px) |
+| Label-to-arrow gap | `spacing/8` | `spacing/8` | `spacing/8` | `spacing/4` |
 | Arrow icon | 16px, after label | 16px, after label | 12px, after label (`rvt-arrow-*-12`) | 12px, after label (`rvt-arrow-*-12`) |
 | Icon only (square) | `component/button/height-xl` (48 × 48px) | `component/button/height-lg` (40 × 40px) | `component/button/height-md` (32 × 32px) | `component/button/height-sm` (24 × 24px) |
 | Icon only, icon size | 16px, centered | 16px, centered | 16px, centered | 12px, centered |
-| Corner radius | 0 | 0 | 0 | 0 |
 
 ### Color by style
 

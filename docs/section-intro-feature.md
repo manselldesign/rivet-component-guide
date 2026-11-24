@@ -52,10 +52,10 @@ Shared rules: everything is centered and stacked, on a `background/default` fill
 | Section padding, top | `spacing/128` (128px) | `spacing/48` (36px) |
 | Section padding, bottom | `spacing/128` (128px). Image layout: `spacing/80` (80px) | `spacing/48` (36px). Image layout: `spacing/32` (24px) |
 | Section padding, sides | `spacing/80` (80px) | `spacing/24` (24px) |
-| Gap, text to image | `spacing/48` (48px) | `spacing/48` (36px) |
 | Trident | `icon/brand`, `spacing/24` (24px) below | Same |
 | Meta | `tag/sm/caps` (12 / 16px), `spacing/12` (12px) below | Same |
 | Title | `display/xl/strong` (54 / 56px) | `display/xl/strong` (36 / 36px) |
 | Line | 4px `border/brand-alt`, `spacing/32` (32px) above | 4px `border/brand-alt`, `spacing/24` (24px) above |
 | Body | `body/xl/regular` (26 / 36px), `spacing/32` (32px) above | `body/md/regular` (18 / 24px), `spacing/24` (24px) above |
 | Button, space above | `spacing/64` (64px) | `spacing/40` (32px) |
+| Gap, text to image | `spacing/48` (48px) | `spacing/48` (36px) |

@@ -63,9 +63,9 @@ Shared rules: No fill and no radius, with a 1px `component/input/border` border 
 
 | Element | Value |
 | --- | --- |
+| Label to helper text, no status message | `spacing/8` (8px) |
 | Field height | 164px, no token |
 | Field padding | `spacing/16` top and bottom (16px), `spacing/12` left and right (12px) |
-| Label to helper text, no status message | `spacing/8` (8px) |
 
 ### Status messages
 

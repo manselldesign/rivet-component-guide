@@ -54,13 +54,13 @@ Check these before the page goes live. Each one names who owns it.
 | Element | Desktop | Mobile |
 | --- | --- | --- |
 | Item border | 1px `--rvt-border-default` (`#edddc4`), all sides; items share one 1px rule where they meet (no doubled line) | Same |
+| Background, default | None | None |
 | Header padding | `spacing/24` all sides (24px) | `spacing/24` all sides (24px) |
-| Gap, title to icon | `spacing/16` (16px) | `spacing/16` (16px) |
 | Title | `action/xl/strong` (20 / 28px, weight 600, width 110% `--rvt-font-width-semi-expanded`), `--rvt-text-strong` (`#1f2528`) | `action/xl/strong` (18 / 24px) |
+| Gap, title to icon | `spacing/16` (16px) | `spacing/16` (16px) |
 | Icon | `rvt-plus` (closed) / `rvt-minus` (open), 16px, `--rvt-icon-strong`, `spacing/4` above (4px) to align with first line of title | Same |
+| Whole header is the click target | Yes, rendered as a `button` | Same |
 | Body padding (open only) | `spacing/24` left, right and bottom (24px); none on top | Same |
 | Body text | `body/base/regular` (18 / 28px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `--rvt-text-default` (`#343c42`), max-width 811px | `body/base/regular` (16 / 24px) |
-| Background, default | None | None |
 | Background, hover | `--rvt-background-tint` (`#fdfaf7`), applies to whole item, open or closed | Same |
 | Focus | 2px `--rvt-border-accent-strong` outline, 2px offset, around the header button (global `:focus-visible`) | Same |
-| Whole header is the click target | Yes, rendered as a `button` | Same |

@@ -77,12 +77,12 @@ Shared rules: icon and title sit side by side on Desktop and Mobile. Description
 | Title row | Icon and title side by side, `spacing/8` (8px) gap, top-aligned | Same |
 | Status icon | 28px circle, `background/{status}-strong`, 16px glyph centered | Same |
 | Title | `heading/md/strong` (20 / 24px), `text/{status}`, 2px top padding so the first line centers on the 28px icon | Same |
-| Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/8` (8px) below title row, max width 850px | Same |
+| Title colors | Info `text/info`, Success `text/success`, Warning `text/warning`, Danger `text/danger`, Default `text/brand` | Same |
+| Close button | 16px icon, `icon/strong`, 16px from top and right (no token). Hover `component/button/form-text-hover`, the same hover color as buttons. On Info and Success only | Same |
 | Description and list indent | 36px left (28px icon + `spacing/8`), flush with the title text | Same |
+| Description | `body/sm/regular` (16 / 24px), `text/default`, `spacing/8` (8px) below title row, max width 850px | Same |
 | List | `body/sm/regular` (16 / 24px), `text/default`, items `spacing/8` (8px) apart, each item 24px tall, bullet 6px `icon/default` centered in a 24px slot, `spacing/8` (8px) bullet to text, max width 920px | Same |
 | Height with title, description and 3 list items | 212px (276px with buttons) | 244px (364px with buttons, stacked) at 327px wide |
-| Close button | 16px icon, `icon/strong`, 16px from top and right (no token). Hover `component/button/form-text-hover`, the same hover color as buttons. On Info and Success only | Same |
-| Title colors | Info `text/info`, Success `text/success`, Warning `text/warning`, Danger `text/danger`, Default `text/brand` | Same |
 
 ### Buttons actions row
 

@@ -43,5 +43,5 @@ Shared rules: 1px `border/default` border drawn inside (it doesn't add to the si
 | Padding | `spacing/16` all sides (16px) | Same |
 | Arrow | 16px `rvt-chevron-right`, `icon/accent`, `spacing/4` top offset, `spacing/8` gap to title | 16px `rvt-chevron-down` |
 | Title | `action/lg/strong` (16 / 24px, weight 600, width 110% `--rvt-font-width-semi-expanded`), `text/accent` | Same |
-| Hover | Title underlined in `text/accent` (1px, at the font's own underline position, no offset), 150ms ease-out; no fill change | Same |
 | Body text | — | `body/xs/regular` (14 / 20px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default`, max width 800px, `spacing/8` below the title, 24px left indent (`spacing/8` + `spacing/16`) to line up with the title, `spacing/8` below |
+| Hover | Title underlined in `text/accent` (1px, at the font's own underline position, no offset), 150ms ease-out; no fill change | Same |

@@ -59,15 +59,15 @@ Shared rules: `background/raised` fill, `shadow/md`, no radius. Modal adds a ful
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
+| Modal position | Centered on the screen, `spacing/48` from the edges (48px). A dialog taller than the screen scrolls inside | `spacing/24` from the edges (24px) |
 | Title bar (Default, Form) | `spacing/24` top and bottom (24px), `spacing/40` sides (40px); `background/brand-subtle` fill, `border/brand` bottom border | `spacing/40` sides (32px) |
 | Title area (confirmations) | `spacing/40` all sides (40px), `spacing/16` gap; fill and bottom border `background/success-subtle` + `border/success`, `background/warning-subtle` + `border/warning`, or `background/danger-subtle` + `border/danger` | `spacing/40` all sides (32px) |
 | Status sticker | 80px `check`, `minus-circle` or `x` | 64px |
 | Title | `heading/md/strong` (20 / 24px, weight 700, width 110% `--rvt-font-width-semi-expanded`); `text/brand`, `text/success`, `text/warning` or `text/danger`. Centered under the sticker in confirmations | Same |
 | Content | `spacing/40` all sides (40px), `spacing/32` gap (32px) | 32px all sides, 24px gap |
 | Body text | `body/base/regular` (18 / 28px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `text/default` | `body/base/regular` (16 / 24px) |
-| Buttons | `rvt-button` Form, Large (`component/button/height-lg`, 40px tall). Side by side, secondary then primary, `spacing/16` gap, `spacing/8` above. Centered; left-aligned in Form | Same height (40px). Stacked full width, secondary then primary, `spacing/8` gap |
 | Form fields | `rvt-select-input` Large (`component/input/height-lg`, 48px tall), `rvt-textarea`, `rvt-checkbox`, `spacing/32` between. Every field label is `heading/sm/strong` (16 / 20px, weight 700, width 110% `--rvt-font-width-semi-expanded`) | `spacing/32` between (24px) |
-| Modal position | Centered on the screen, `spacing/48` from the edges (48px). A dialog taller than the screen scrolls inside | `spacing/24` from the edges (24px) |
+| Buttons | `rvt-button` Form, Large (`component/button/height-lg`, 40px tall). Side by side, secondary then primary, `spacing/16` gap, `spacing/8` above. Centered; left-aligned in Form | Same height (40px). Stacked full width, secondary then primary, `spacing/8` gap |
 | Focus | 2px `border/accent-strong` outline; 2px offset on the close button, no offset on buttons and fields | Same |
 | Keyboard (Modal) | Focus moves into the dialog when it opens (to Cancel in Destructive Confirmation). Tab and Shift+Tab stay inside. Escape closes it, except Destructive Confirmation. Clicking the overlay doesn't close it. Focus returns to the button that opened it | Same |
 | Motion (Modal) | Dialog and overlay fade in, 180ms ease-out. No movement or scaling. Off when reduced motion is on | Same |

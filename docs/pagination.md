@@ -56,10 +56,10 @@ Shared rules: items have square corners and a 1px `border/default` border. Items
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
-| Page number text | `action/lg/strong` (16 / 24px), `text/default` | `action/lg/strong` (16 / 24px), `text/default` |
-| First and Last text | `action/lg/strong` (16 / 24px), `text/strong` | `action/sm/strong` (14 / 20px), `text/strong` |
-| First and Last padding | `spacing/16` (16px), left and right | `spacing/12` (12px), left and right |
-| Gap, icon to text in First and Last | `spacing/8` (8px) | `spacing/4` (4px) |
-| Icons | 16px (`rvt-chevrons-left`, `rvt-chevron-left`, `rvt-ellipsis` and right-facing pairs) | 12px (the `-12` versions) |
-| Gap between items | `spacing/8` (8px) | `spacing/4` (4px) |
 | Item order | First, Back, Ellipsis, page numbers, Ellipsis, Forward, Last | Same |
+| Gap between items | `spacing/8` (8px) | `spacing/4` (4px) |
+| First and Last padding | `spacing/16` (16px), left and right | `spacing/12` (12px), left and right |
+| Icons | 16px (`rvt-chevrons-left`, `rvt-chevron-left`, `rvt-ellipsis` and right-facing pairs) | 12px (the `-12` versions) |
+| Gap, icon to text in First and Last | `spacing/8` (8px) | `spacing/4` (4px) |
+| First and Last text | `action/lg/strong` (16 / 24px), `text/strong` | `action/sm/strong` (14 / 20px), `text/strong` |
+| Page number text | `action/lg/strong` (16 / 24px), `text/default` | `action/lg/strong` (16 / 24px), `text/default` |

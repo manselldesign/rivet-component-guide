@@ -64,12 +64,12 @@ Shared rules: number circles have a full radius. The selected step's number and 
 | Element | Default (row) | Vertical |
 | --- | --- | --- |
 | Number circle | 40 × 40px | 32 × 32px |
+| Number | `action/lg/regular` (16 / 24px); selected `action/lg/strong` | Same |
 | Icon (Icon style) | 16px, centered in the circle | 16px, centered in the circle |
+| Circle side padding | `spacing/4` (4px) left and right | `spacing/4` (4px) top and bottom |
 | Connector line | 1px `border/default`, fills the space on each side of the circle | 1px `border/default`, 16px long |
 | Gap, circle to label | `spacing/12` (12px), label below | `spacing/16` (16px), label to the right |
-| Circle side padding | `spacing/4` (4px) left and right | `spacing/4` (4px) top and bottom |
 | Label padding | `spacing/12` (12px) left and right | None |
-| Number | `action/lg/regular` (16 / 24px); selected `action/lg/strong` | Same |
 | Label | `action/sm/regular` (14 / 20px), `text/default`; selected `action/sm/strong`, `text/strong` | Same |
 
 | Step status | Circle | Number or icon |

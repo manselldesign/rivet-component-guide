@@ -52,10 +52,10 @@ A highlighted box that draws attention to one thing on a page, like an upcoming 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
 | Container padding | `spacing/80` (80px) all sides | `spacing/32` (24px) top and sides, `spacing/40` (32px) bottom |
-| Media-to-text gap | Left: `spacing/32` (32px). Top: `spacing/24` (24px) | `spacing/20` (20px) |
-| Text column offset (Left only) | `spacing/8` above | None |
 | Sticker | 80px, Crimson, with container | 64px, Crimson, with container |
 | Avatar | `rvt-avatar` 80px, same size as the sticker | `rvt-avatar` 64px, same size as the sticker |
+| Media-to-text gap | Left: `spacing/32` (32px). Top: `spacing/24` (24px) | `spacing/20` (20px) |
+| Text column offset (Left only) | `spacing/8` above | None |
 | Eyebrow (tag) | `tag/sm/caps` (12 / 16px), `font/tracking/xl` (2px), `spacing/8` below | Same |
 | Title | `display/xs/strong` (26 / 32px, weight 700, width 100% `--rvt-font-width-normal`) | `display/xs/strong` (20 / 24px) |
 | Description | `body/sm/regular` (16 / 24px, weight 350, width 110% `--rvt-font-width-semi-expanded`), `spacing/16` (16px) above | Same |
@@ -69,6 +69,6 @@ A highlighted box that draws attention to one thing on a page, like an upcoming 
 | --- | --- | --- |
 | Background | `background/strong` | `background/default` |
 | Border | None | `border/default` (1px) |
+| Corner radius | 0 | 0 |
 | Eyebrow and title | `text/brand` | `text/brand` |
 | Description | `text/brand` | `text/default` |
-| Corner radius | 0 | 0 |

@@ -51,12 +51,12 @@ A small label that shows the status or category of something at a glance, like "
 | --- | --- | --- |
 | Size | Hug width, 24px tall | 24 × 24px fixed, content centered |
 | Padding | `spacing/12` (12px) left and right, 0 top and bottom | n/a |
-| Icon to label gap | `spacing/4` (4px) | n/a |
-| Icon | 12 × 12px, can be hidden | 12 × 12px |
-| Label | `heading/xs/strong` (14 / 20px) | n/a |
 | Corner radius | `border-radius/full` | `border-radius/full` |
 | Border (Subtle only) | 1px inside | 1px inside |
 | Outline (all badges) | 1px white ring outside the badge, `component/badge/ring` (`#ffffff`). Same in Light, Dark and Crimson | Same |
+| Icon | 12 × 12px, can be hidden | 12 × 12px |
+| Icon to label gap | `spacing/4` (4px) | n/a |
+| Label | `heading/xs/strong` (14 / 20px) | n/a |
 
 ### Color
 
