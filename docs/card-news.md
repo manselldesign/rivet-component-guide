@@ -64,7 +64,7 @@ A school news page works the same way. It lists News cards, newest first.
 
 ## Developer spec checklist
 
-Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Raised = `shadow/sm`, no border. On hover anywhere on a Raised card the shadow deepens one step to `shadow/md` (150ms fade; instant with reduced motion). Both use `background/raised` fill. Hover, only when the pointer is on the title text: title turns `text/accent` with the browser's default underline, instantly (no transition). Horizontal cards stack like Vertical on Mobile.
+Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Raised = `shadow/sm`, no border. On hover anywhere on a Raised card the shadow deepens one step to `shadow/md` (150ms fade; instant with reduced motion). Both use `background/raised` fill. Hover, only when the pointer is on the title text: title turns `text/accent` with the standard underline (1px, at the font's own underline position, no offset), instantly (no transition). Horizontal cards stack like Vertical on Mobile.
 
 | Element | Desktop | Mobile |
 | --- | --- | --- |
@@ -82,5 +82,5 @@ Shared rules: Outlined = 1px `border/default` border, no shadow, no radius. Rais
 | Bottom group | Own toggle. `spacing/24` above, `spacing/16` gap | Same |
 | Bottom metadata | `tag/sm/regular` (12 / 16px), `text/default` | Same |
 | Tags row | Own toggle. Subtle badges, `spacing/8` gap, wraps | Same |
-| Hover | Only when the pointer is on the title text: title turns `text/accent` with the browser's default underline and the arrow turns `icon/accent`. Instant, no transition. The border stays | Same |
+| Hover | Only when the pointer is on the title text: title turns `text/accent` with the standard underline (1px, at the font's own underline position, no offset) and the arrow turns `icon/accent`. Instant, no transition. The border stays | Same |
 | Focus | 2px `border/accent-strong` ring right outside the card, no gap | Same |

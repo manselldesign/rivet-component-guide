@@ -123,6 +123,6 @@ Degree programs work the same way. "Arts and Humanities" is a Feature card, and 
 | Shadow | None | `shadow/sm` |
 | Card, hover | No change | Shadow deepens one step to `shadow/md` while the pointer is anywhere on the card. Fades over 150ms; instant when the user has reduced motion on |
 | Corner radius | 0 | 0 |
-| Title, hover | Only when the pointer is on the title text: `text/accent` with the browser's default underline. Instant, no transition | Same |
+| Title, hover | Only when the pointer is on the title text: `text/accent` with the standard underline (1px, at the font's own underline position, no offset). Instant, no transition | Same |
 | Arrow, hover | `icon/accent`, together with the title | Same |
 | Focus | 2px `border/accent-strong` ring, 1px outside the card | Same |

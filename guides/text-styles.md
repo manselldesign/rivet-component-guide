@@ -53,6 +53,8 @@ Roboto Flex is a variable font, so each style sets a few axes explicitly. These 
 | Component: avatar | 600 | 100% | none | none | as written |
 | Component: number | 825 strong, 350 regular | 150% | none | none | as written |
 
+**Underlines, everywhere:** every underline (links at rest, hover, focus, selected and current-page states) is 1px, at the font's own underline position, with no offset: `text-decoration-thickness: 1px; text-underline-position: from-font; text-underline-offset: 0`. This matches the IU Bloomington prototypes.
+
 - **Weights** are exact numbers: 350 regular, 600 strong, 700 bold (headings and display), 825 extra-heavy (caps accents and big numbers)
 - **Width 110%** on headings, body, actions and links makes letters slightly wider and more open, and gives Rivet its look. Links match body text so they sit flush inside a paragraph. Display stays at 100% so the biggest text holds together
 - **Taller ascenders and lowercase** (`YTAS` 720, `YTLC` 530) on headings and strong display text make large text read more clearly. Caps display text doesn't need them: it has no lowercase, and the slant does the work instead

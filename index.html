@@ -89,6 +89,9 @@ h1,h2,h3,h4,h5,h6,td,th,dt,dd,caption,label,.hub-link{text-wrap:balance}
 p,li,figcaption,blockquote,address{text-wrap:pretty}
 a{color:var(--text-accent);text-underline-offset:3px;text-decoration-thickness:1px}
 a:hover{text-decoration-thickness:2px}
+/* Underlines, everywhere (site chrome and every example): match the IU Bloomington prototypes (v1.3).
+   Every underline is 1px, at the font's own underline position, with no offset, at rest, on hover and on focus. */
+html body *{text-decoration-thickness:1px!important;text-underline-position:from-font!important;text-underline-offset:0!important}
 :focus-visible{outline:2px solid var(--input-focus);outline-offset:2px}
 svg.i{width:16px;height:16px;fill:currentColor;flex:none;display:block}
 .wrap{max-width:var(--page);margin-inline:auto;padding-inline:clamp(16px,5vw,80px)}
@@ -674,6 +677,9 @@ body:not(.has-rail) .site-header__menu{display:none}
 .rvt-accordion__body>*+*{margin-top:var(--rvt-spacing-16)}
 .rvt-accordion__body a{color:var(--rvt-text-link);text-underline-offset:3px;text-decoration-thickness:1px;transition:text-decoration-color .15s ease-out}
 .rvt-accordion__body a:hover{text-decoration-thickness:2px}
+/* Underlines, everywhere (site chrome and every example): match the IU Bloomington prototypes (v1.3).
+   Every underline is 1px, at the font's own underline position, with no offset, at rest, on hover and on focus. */
+html body *{text-decoration-thickness:1px!important;text-underline-position:from-font!important;text-underline-offset:0!important}
 
 /* ---------- rvt-disclosure (Disclosure page, Developer spec checklist) ----------
    Box: 1px border/default drawn inside (box-shadow inset, so closed = 56px and open = 112px, like the Figma symbols), no fill, no radius, spacing/16 all sides.
@@ -1752,8 +1758,9 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
    Bottom bar centered: spacing/16 top and bottom; social row spacing/8 top and bottom, icons spacing/12 apart; legal links stacked spacing/8 apart,
    spacing/8 below the social row; trident spacing/20 below.
    Group title heading/sm/strong (16 / 20px) text/strong; "Indiana University" is a link to the home page with the same hover as the other links. Links and contact text action/sm/regular (14 / 20px) text/link-subtle.
-   Link hover: text/accent with an underline, 150ms. Social links: rvt-link Social, 24px square, 1px border/accent drawn inside, 12px icon/accent;
-   hover border/accent-strong and icon/accent-strong. Focus: 2px border/accent-strong. */
+   Link hover: text/accent with the standard underline (1px, at the font's underline position), 150ms. Social links: the rvt-link Social component
+   (Size Sm, 24px square), 1px border/accent drawn inside, 12px icon/accent; hover border/accent-strong and icon/accent-strong;
+   focus a 2px border/accent-strong ring 1px outside the border. Focus on text links: 2px border/accent-strong. */
 .rvt-footer{--rvt-footer-inline:var(--rvt-spacing-80);container:rvt-footer / inline-size;box-sizing:border-box;display:flex;flex-direction:column;
   background:var(--rvt-background-default);box-shadow:inset 0 1px 0 var(--rvt-border-default)}
 .rvt-footer *{box-sizing:border-box}
@@ -1770,10 +1777,10 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
   font:var(--rvt-font-action-sm-regular);font-stretch:var(--rvt-font-width-semi-expanded);letter-spacing:var(--rvt-font-tracking-none)}
 .rvt-footer__link{text-decoration:none;white-space:nowrap;transition:color 150ms ease-out}
 .rvt-footer__home{color:inherit;text-decoration:none;transition:color 150ms ease-out}
-.rvt-footer__home:hover{color:var(--rvt-text-accent);text-decoration-line:underline;text-decoration-thickness:from-font;text-underline-position:from-font;text-decoration-skip-ink:none}
+.rvt-footer__home:hover{color:var(--rvt-text-accent);text-decoration-line:underline;text-decoration-skip-ink:none}
 .rvt-footer__home:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
 @media (max-width:767px){.rvt-footer{--rvt-footer-inline:var(--rvt-spacing-20)}}
-.rvt-footer__link:hover{color:var(--rvt-text-accent);text-decoration-line:underline;text-decoration-thickness:from-font;text-underline-position:from-font;text-decoration-skip-ink:none}
+.rvt-footer__link:hover{color:var(--rvt-text-accent);text-decoration-line:underline;text-decoration-skip-ink:none}
 .rvt-footer__link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:2px}
 .rvt-footer__bottom{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-20);margin-top:var(--rvt-spacing-24);padding:var(--rvt-spacing-16) var(--rvt-footer-inline);
   box-shadow:inset 0 1px 0 var(--rvt-border-default)}
@@ -1784,7 +1791,7 @@ html:has(dialog.rvt-dialog[open]){overflow:hidden}
 .rvt-footer__social-link svg{display:block;width:12px;height:12px;fill:var(--rvt-icon-accent);transition:fill 150ms ease-out}
 .rvt-footer__social-link:hover{box-shadow:inset 0 0 0 1px var(--rvt-border-accent-strong)}
 .rvt-footer__social-link:hover svg{fill:var(--rvt-icon-accent-strong)}
-.rvt-footer__social-link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:0}
+.rvt-footer__social-link:focus-visible{outline:2px solid var(--rvt-border-accent-strong);outline-offset:1px}
 .rvt-footer__legal{display:flex;flex-direction:column;align-items:center;gap:var(--rvt-spacing-8);text-align:center}
 .rvt-footer__trident{display:block;flex:none;width:22px;height:28px;fill:var(--rvt-icon-brand)}
 @container rvt-footer (min-width:880px){
